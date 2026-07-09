@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\caption{Minimum publishable package checklist}
+\begin{tabular}{lllll}
+\toprule
+element & working\_paper\_requirement & journal\_requirement & status & evidence \\
+\midrule
+Baseline deterministico & obligatorio & obligatorio & complete & fiscal\_space\_result.csv \\
+Scenario-regime grid & obligatorio & obligatorio & complete & fiscal\_space\_result.csv \\
+Historical plausibility & obligatorio & obligatorio & complete & historical\_plausibility\_result.csv \\
+Threshold inversion & obligatorio & obligatorio & complete & threshold\_inversion\_result.csv \\
+Monte Carlo & recomendable & obligatorio & complete & monte\_carlo\_result.csv \\
+MC convergence report & opcional & obligatorio & complete & mc\_convergence\_report.csv \\
+GMI microdata & recomendable & muy recomendable & pending\_author\_microdata & not in official aggregate package \\
+Placebo ICT & opcional & obligatorio si claim fuerte & complete & diagnostic\_placebo\_ict\_result.csv \\
+Negative controls & opcional & obligatorio & complete\_with\_caveat & diagnostic\_negative\_control\_result.csv \\
+Leave-one-source-out & opcional & recomendable & complete\_where\_snapshot\_has\_alternative & diagnostic\_loso\_result.csv \\
+Channel ablation & recomendable & obligatorio & complete & diagnostic\_channel\_ablation\_result.csv; informality\_adoption\_ablation\_result.csv \\
+Anti-double-counting audit & obligatorio & obligatorio & complete & double\_counting\_audit \\
+Calibration registry & obligatorio & obligatorio & complete & master\_calibration\_matrix.csv \\
+Results discipline protocol & obligatorio & obligatorio & complete & schemas.yaml; verify.py; hypothesis\_adjudication.csv \\
+\bottomrule
+\end{tabular}
+\end{table}
