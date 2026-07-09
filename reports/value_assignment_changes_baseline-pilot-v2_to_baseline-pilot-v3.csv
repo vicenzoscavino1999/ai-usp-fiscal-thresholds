@@ -1,0 +1,6 @@
+name,module,baseline_value,low_value,high_value,distribution,audit_status,notes
+epsilon,adoption_translation,1e-09,1e-09,1e-09,fixed,registered,Frozen numerical floor epsilon=1e-9 for support checks and de-flooring; reported explicitly in traces so it is not mistaken for zero.
+epsilon_mu,adoption_translation,1e-06,1e-06,1e-06,fixed,registered,"Frozen logit inversion floor epsilon_mu=1e-6; q_use_target_adj is projected to [epsilon_mu, q_bar-epsilon_mu]."
+chi_Kbase,fiscal_channels,0.7,0.55,0.85,bounded_PERT,registered_author_review,"share del excedente no-laboral que es base corporativa gravable; 1.0 solo como variante favorable etiquetada; anclar con cuentas nacionales si el snapshot lo permite, documentándolo"
+chi_dom,fiscal_channels,0.95,0.85,1.0,bounded_PERT,registered_author_review,share doméstica de la base corporativa incremental; author-review con soporte pendiente.
+E_prod_frontier,frontier_benchmark,0.17,0.11,0.25,bounded_PERT,registered_author_review,exposición productiva de economías avanzadas: mayor share de tareas cognitivas aumentables que LAC (8-14%); low = paridad LAC; high = cota exploratoria; pendiente de ancla bibliográfica del autor

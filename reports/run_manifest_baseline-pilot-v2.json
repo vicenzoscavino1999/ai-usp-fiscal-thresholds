@@ -1,0 +1,49 @@
+{
+  "base_grid_cells": 100,
+  "country_scope": [
+    "PER"
+  ],
+  "created_at_utc": "2026-07-08T11:54:40.083574+00:00",
+  "dataset_version": "v0.1.2-pilot-per",
+  "fiscal_space_rows": 500,
+  "frontier_benchmark_set_id": "baseline_oecd_eurostat_ge10_2024",
+  "frontier_missing_exposure_fallback": 1.0,
+  "gmi_version": "GMI_loaded_aggregate",
+  "max_base_cell_runtime_seconds": 0.003118700347840786,
+  "model_version": "deterministic-engine-v1",
+  "parameter_set_id": "baseline-pilot-v2",
+  "policies": [
+    "PEN",
+    "GMI",
+    "MUT",
+    "PBI",
+    "UBI"
+  ],
+  "probabilistic_leg": "not_evaluated",
+  "q_prod_initial_condition": "q_prod_t0 = q_use_target_adj",
+  "regimes": [
+    "r0",
+    "r1",
+    "r2",
+    "r3",
+    "r4"
+  ],
+  "run_id": "pilot_per_tierA_baseline_pilot_v2",
+  "run_label": "pilot",
+  "scenarios": [
+    "low",
+    "mid",
+    "high",
+    "stress"
+  ],
+  "threshold_inversion_rows": 1000,
+  "tier": "A",
+  "trajectory_convention": "frozen_anchor_2024",
+  "xi_grid": [
+    0.0,
+    0.05,
+    0.1,
+    0.25,
+    0.5
+  ]
+}

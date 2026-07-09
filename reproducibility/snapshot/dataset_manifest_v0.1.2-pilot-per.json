@@ -1,0 +1,501 @@
+{
+  "dataset_version": "v0.1.2-pilot-per",
+  "run_label": "pilot",
+  "created_at": "2026-07-08T00:57:04.216951+00:00",
+  "manifest_schema_version": "0.1.1-stage1",
+  "sources": [
+    {
+      "source_dir": "wdi",
+      "expected_file": "wdi_country_year.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\wdi\\metadata.json",
+      "source_id": "WDI",
+      "status": "ok",
+      "raw_file_hash": "a734d7ae9fd85e63f8fef0a7b99bed89b7ccad9005c7ea261e1c004c880fe108",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\wdi\\wdi_country_year.parquet",
+          "sha256": "a734d7ae9fd85e63f8fef0a7b99bed89b7ccad9005c7ea261e1c004c880fe108"
+        }
+      ],
+      "download_date": "2026-07-08T00:56:50.078903+00:00",
+      "source_url": "https://api.worldbank.org/v2",
+      "query_or_endpoint": [
+        "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.CD?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.CN?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.KN?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.TOTL?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.65UP.TO.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.1564.TO.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/FP.CPI.TOTL?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.DEFL.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/PA.NUS.FCRF?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/PA.NUS.PRVT.PP?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/PA.NUS.PPP?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/NE.IMP.GNFS.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/NE.CON.TOTL.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/GC.REV.XGRT.GD.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/IT.NET.SECR.P6?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/EG.ELC.ACCS.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/PER/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=20000"
+      ],
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "all",
+      "script_name": "01_download_wdi.py",
+      "script_version": "0.1.2-stage1",
+      "notes": "WDI API pull for Plan 01 raw_wdi_indicator."
+    },
+    {
+      "source_dir": "pip",
+      "expected_file": "pip_poverty.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\pip\\metadata.json",
+      "source_id": "PIP",
+      "status": "ok",
+      "raw_file_hash": "152a9b289aebaeec8c893ed2e7b2558807de622cb63a0da8a37d34c0a02af331",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\pip\\pip_poverty.parquet",
+          "sha256": "152a9b289aebaeec8c893ed2e7b2558807de622cb63a0da8a37d34c0a02af331"
+        }
+      ],
+      "download_date": "2026-07-07T18:53:42.482324+00:00",
+      "source_url": "https://api.worldbank.org/pip/v1/pip",
+      "query_or_endpoint": [
+        "https://api.worldbank.org/pip/v1/pip?country=PER&povline=3.00&format=json",
+        "https://api.worldbank.org/pip/v1/pip?country=PER&povline=4.20&format=json",
+        "https://api.worldbank.org/pip/v1/pip?country=PER&povline=8.30&format=json"
+      ],
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "all",
+      "script_name": "02_download_pip.py",
+      "script_version": "0.1.0-stage1",
+      "notes": "PIP REST pull preserving unit/currency/periodicity/ppp fields required by Plan 01 section 13.4."
+    },
+    {
+      "source_dir": "sedlac",
+      "expected_file": "sedlac_lac.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\sedlac\\metadata.json",
+      "source_id": "SEDLAC",
+      "status": "manual_pending",
+      "raw_file_hash": null,
+      "hash_check": "not_applicable",
+      "raw_files": [],
+      "download_date": "2026-07-07T19:23:43.763838+00:00",
+      "source_url": "https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/",
+      "query_or_endpoint": "manual download: CEDLAS SEDLAC statistics Excel files",
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "all available survey years",
+      "script_name": "03_download_sedlac.py",
+      "script_version": "0.1.1-stage1",
+      "notes": "SEDLAC/CEDLAS has no public API for this pull; registered as manual_pending, not as a pipeline failure.",
+      "manual_registration": {
+        "registration_script": "12_register_manual_sources.py",
+        "expected_fields": [
+          "country_id",
+          "survey_year",
+          "welfare_concept",
+          "poverty_headcount",
+          "poverty_gap",
+          "gini",
+          "income_deciles",
+          "informality_rate"
+        ],
+        "hash_status": "pending_manual_file",
+        "instructions": "Download SEDLAC/CEDLAS Excel statistics from the CEDLAS SEDLAC site, store the original file under the manual-source intake area, compute sha256, and update metadata/manual_source_registry.yml before any non-pilot run that uses SEDLAC values."
+      }
+    },
+    {
+      "source_dir": "oecd",
+      "expected_file": "oecd_revenue.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\oecd\\metadata.json",
+      "source_id": "OECD_REVSTAT_LAC",
+      "status": "ok",
+      "raw_file_hash": "c1daeda81d0ce30694fe816242dfc1cbd2ed6c06e7b025343daca2a6be612c71",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\oecd\\oecd_revenue.parquet",
+          "sha256": "c1daeda81d0ce30694fe816242dfc1cbd2ed6c06e7b025343daca2a6be612c71"
+        }
+      ],
+      "download_date": "2026-07-07T19:23:47.375808+00:00",
+      "source_url": "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC",
+      "query_or_endpoint": [
+        "https://sdmx.oecd.org/public/rest/dataflow/OECD.CTP.TPS/DSD_REV_COMP_LAC@DF_RSLAC/1.1?references=all",
+        "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/PER......"
+      ],
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "all",
+      "script_name": "04_download_oecd_revenue.py",
+      "script_version": "0.1.1-stage1",
+      "notes": "OECD Revenue Statistics LAC via SDMX; structure request precedes PER-filtered CSV data query.",
+      "sdmx_dimensions": [
+        "REF_AREA",
+        "MEASURE",
+        "SECTOR",
+        "STANDARD_REVENUE",
+        "CTRY_SPECIFIC_REVENUE",
+        "UNIT_MEASURE",
+        "FREQ"
+      ]
+    },
+    {
+      "source_dir": "grd",
+      "expected_file": "grd_revenue.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\grd\\metadata.json",
+      "source_id": "GRD",
+      "status": "manual_pending",
+      "raw_file_hash": null,
+      "hash_check": "not_applicable",
+      "raw_files": [],
+      "download_date": "2026-07-07T19:23:45.807569+00:00",
+      "source_url": "https://data.humdata.org/api/3/action/package_show?id=government-revenue-dataset",
+      "query_or_endpoint": "https://data.humdata.org/api/3/action/package_show?id=government-revenue-dataset",
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "1980-2023 expected in GRD 2025",
+      "script_name": "05_download_grd.py",
+      "script_version": "0.1.1-stage1",
+      "notes": "HDX mirror did not expose the requested Nov 2025 GRD resources; old 2022 resources were not used.",
+      "manual_registration": {
+        "source_url": "https://www.wider.unu.edu/project/grd-government-revenue-dataset",
+        "hash_status": "pending_manual_file",
+        "instructions": "HDX CKAN package is reachable but does not expose a 2025 GRD Excel/Stata resource. Download the November 2025 GRD file from UNU-WIDER, store the original, compute sha256, and update metadata/manual_source_registry.yml."
+      },
+      "available_hdx_resources": [
+        "UNUWIDERGRD_2022 (Oct).xlsx",
+        "UNUWIDER GRD 2022 (Oct).dta_.zip",
+        "UNUWIDERGRD_2022_Central (Oct).xlsx",
+        "UNUWIDERGRD_2022_General (Oct).xlsx",
+        "UNUWIDER GRD 2022 Central Government (Oct).dta_.zip",
+        "UNUWIDER GRD 2022 General Government (Oct).dta_.zip",
+        "Full-GRD-2022 (Oct).zip"
+      ]
+    },
+    {
+      "source_dir": "imf",
+      "expected_file": "imf_fiscal_macro.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\imf\\metadata.json",
+      "source_id": "IMF_WEO_GFS",
+      "status": "ok",
+      "raw_file_hash": "b4759875cb8a1cb339742ec8e021064bf7f43f746ca90b5ef8c7f9ad3cb437b3",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\imf\\imf_fiscal_macro.parquet",
+          "sha256": "b4759875cb8a1cb339742ec8e021064bf7f43f746ca90b5ef8c7f9ad3cb437b3"
+        }
+      ],
+      "download_date": "2026-07-08T00:56:13.659493+00:00",
+      "source_url": "https://www.imf.org/external/datamapper/api/v1",
+      "query_or_endpoint": [
+        "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/PER",
+        "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/PER",
+        "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/PER",
+        "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/PER",
+        "https://www.imf.org/external/datamapper/api/v1/NGDPD/PER",
+        "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/PER",
+        "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/PER"
+      ],
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "all",
+      "script_name": "06_download_imf_weo_gfs.py",
+      "script_version": "0.1.2-stage1",
+      "notes": "IMF DataMapper API pull using browser User-Agent; response filtered explicitly to requested ISO3 countries. Fiscal Monitor DataMapper aliases are used where the requested WEO-style codes are not exposed in the public indicator catalog.",
+      "manual_registration": {
+        "source_url": "https://www.imf.org/en/Publications/WEO/weo-database",
+        "status": "manual_contrast_optional",
+        "instructions": "If exact WEO bulk fiscal codes are required later, download the latest WEO database bulk file from IMF, store the original, compute sha256, and register it before replacing these DataMapper Fiscal Monitor aliases."
+      }
+    },
+    {
+      "source_dir": "ilostat",
+      "expected_file": "ilostat_labor.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\ilostat\\metadata.json",
+      "source_id": "ILOSTAT",
+      "status": "ok",
+      "raw_file_hash": "41f2f5c18932b80fa754f8e0a3e95ea4300f7134067d980f4df985b7e850bc99",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\ilostat\\ilostat_labor.parquet",
+          "sha256": "41f2f5c18932b80fa754f8e0a3e95ea4300f7134067d980f4df985b7e850bc99"
+        }
+      ],
+      "download_date": "2026-07-07T18:55:22.581165+00:00",
+      "source_url": "https://rplumber.ilo.org/data/ref_area",
+      "query_or_endpoint": [
+        "https://rplumber.ilo.org/data/ref_area?id=PER_A&format=.csv.gz"
+      ],
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "all annual",
+      "script_name": "07_download_ilostat.py",
+      "script_version": "0.1.0-stage1",
+      "notes": "ILOSTAT bulk ref_area annual files. classif1/classif2 are mapped only when prefixes identify age, sector, or occupation."
+    },
+    {
+      "source_dir": "pwt",
+      "expected_file": "pwt_country_year.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\pwt\\metadata.json",
+      "source_id": "PWT_10_01",
+      "status": "ok",
+      "raw_file_hash": "2c39a0d502535b50b0a1a95aff3980512b45d5b3a2bbd967b53fc904416cdb51",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\pwt\\pwt_country_year.parquet",
+          "sha256": "2c39a0d502535b50b0a1a95aff3980512b45d5b3a2bbd967b53fc904416cdb51"
+        }
+      ],
+      "download_date": "2026-07-07T18:55:28.534077+00:00",
+      "source_url": "https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/QT5BCC",
+      "query_or_endpoint": "https://dataverse.nl/api/access/datafile/354098",
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "all",
+      "script_name": "08_download_pwt.py",
+      "script_version": "0.1.0-stage1",
+      "notes": "PWT 10.01 Stata .dta via DataverseNL API."
+    },
+    {
+      "source_dir": "itu",
+      "expected_file": "itu_digital.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\itu\\metadata.json",
+      "source_id": "WDI_FALLBACK_ITU",
+      "status": "ok",
+      "raw_file_hash": "ce7aaf9718a53d44670b79556f6d2e0af3ae23e822eaabc0a2ba3a2ca0073013",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\itu\\itu_digital.parquet",
+          "sha256": "ce7aaf9718a53d44670b79556f6d2e0af3ae23e822eaabc0a2ba3a2ca0073013"
+        }
+      ],
+      "download_date": "2026-07-07T19:23:49.466778+00:00",
+      "source_url": "https://api.worldbank.org/v2",
+      "query_or_endpoint": [
+        "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/all/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/all/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+        "https://api.worldbank.org/v2/country/all/indicator/IT.NET.SECR.P6?format=json&per_page=20000"
+      ],
+      "country_filter": "ALL",
+      "year_filter": "all",
+      "script_name": "09_download_itu.py",
+      "script_version": "0.1.1-stage1",
+      "notes": "Plan 01 pilot rule keeps frontier/benchmark inputs unfiltered. This WDI fallback captures all economies even when --countries is passed."
+    },
+    {
+      "source_dir": "imf_aipi",
+      "expected_file": "aipi.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\imf_aipi\\metadata.json",
+      "source_id": "IMF_AIPI_DATA360",
+      "status": "ok",
+      "raw_file_hash": "bc4b322197f7d752d5b1a841646be204428cf2693fcef09b5e1d5229b2a2d0fd",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\imf_aipi\\aipi.parquet",
+          "sha256": "bc4b322197f7d752d5b1a841646be204428cf2693fcef09b5e1d5229b2a2d0fd"
+        }
+      ],
+      "download_date": "2026-07-07T18:55:33.351748+00:00",
+      "source_url": "https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI",
+      "query_or_endpoint": "https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI",
+      "country_filter": "ALL",
+      "year_filter": "all",
+      "script_name": "10_download_aipi.py",
+      "script_version": "0.1.0-stage1",
+      "notes": "Downloaded all AIPI economies as required for frontier benchmark. --countries was accepted (['PER']) but not used to filter AIPI."
+    },
+    {
+      "source_dir": "national",
+      "expected_file": null,
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\national\\metadata.json",
+      "source_id": "NATIONAL_PER_BCRP",
+      "status": "ok",
+      "raw_file_hash": "26af0b80a65f141dc9bfb3826e9e69c6f0c5ad69c3f84ebb4131d7c7ef646967",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\national\\national_per_bcrp.parquet",
+          "sha256": "26af0b80a65f141dc9bfb3826e9e69c6f0c5ad69c3f84ebb4131d7c7ef646967"
+        }
+      ],
+      "download_date": "2026-07-07T19:23:46.890806+00:00",
+      "source_url": "https://estadisticas.bcrp.gob.pe/estadisticas/series/api",
+      "query_or_endpoint": [
+        "https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PM10103FA-PM04863AA-PM05776FA-PM05848FA-PM05846FA-PM05876FA/json/1990/2025",
+        "https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN03112FQ-PN03432FQ/json/1990-1/2026-1"
+      ],
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": {
+        "annual": "1990-2025",
+        "quarterly": "1990Q1-2026Q1"
+      },
+      "script_name": "11_download_national_sources.py",
+      "script_version": "0.1.1-stage1",
+      "notes": "BCRPData API implemented for Peru macro-fiscal contrast series; SUNAT Excel tables are manual_registered.",
+      "manual_registered_sources": [
+        {
+          "source_id": "SUNAT_PER",
+          "source_url": "https://www.sunat.gob.pe/estadisticasestudios/",
+          "status": "manual_pending",
+          "instructions": "Download SUNAT statistical Excel tables manually and register file hash before use."
+        }
+      ],
+      "bcrp_series_codes": {
+        "annual": [
+          "PM10103FA",
+          "PM04863AA",
+          "PM05776FA",
+          "PM05848FA",
+          "PM05846FA",
+          "PM05876FA"
+        ],
+        "quarterly": [
+          "PN03112FQ",
+          "PN03432FQ"
+        ]
+      }
+    },
+    {
+      "source_dir": "manual",
+      "expected_file": "manual_source_registry.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\manual\\metadata.json",
+      "source_id": "MANUAL_SOURCE_REGISTRY",
+      "status": "ok",
+      "raw_file_hash": "628a3b3bf9f7aaca028a63106cf8329bac462cf4a14f2a5f447e0ed44da2f48f",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\manual\\manual_source_registry.parquet",
+          "sha256": "628a3b3bf9f7aaca028a63106cf8329bac462cf4a14f2a5f447e0ed44da2f48f"
+        }
+      ],
+      "download_date": "2026-07-08T00:56:08.271260+00:00",
+      "source_url": "Plan 01 Appendix A.2-A.5",
+      "query_or_endpoint": "metadata\\manual_source_registry.yml",
+      "country_filter": [
+        "PER"
+      ],
+      "year_filter": "not_applicable",
+      "script_name": "12_register_manual_sources.py",
+      "script_version": "0.1.2-stage1",
+      "notes": "Created metadata/manual_source_registry.yml and mirrored it as parquet for the snapshot manifest."
+    },
+    {
+      "source_dir": "frontier",
+      "expected_file": "frontier_benchmark.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\frontier\\metadata.json",
+      "source_id": "FRONTIER_BENCHMARK",
+      "status": "ok",
+      "raw_file_hash": "1125ac37946813106c10d1a02184b673982db4501f1cdcf570269f8212fc148b",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\frontier\\frontier_benchmark.parquet",
+          "sha256": "1125ac37946813106c10d1a02184b673982db4501f1cdcf570269f8212fc148b"
+        }
+      ],
+      "download_date": "2026-07-07T19:24:13.168007+00:00",
+      "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON",
+      "query_or_endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON",
+      "country_filter": "EU_BENCHMARK_ECONOMIES_ALL",
+      "year_filter": [
+        "2021",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "script_name": "13_download_frontier_benchmark.py",
+      "script_version": "0.1.1-stage1",
+      "notes": "Captured Eurostat isoc_eb_ai adoption_proxy inputs. No benchmark set is selected here; Phase 1 calibration chooses the benchmark population.",
+      "manual_registered_sources": [
+        {
+          "source_id": "FRONTIER_NON_EU_AI_ADOPTION_USA",
+          "status": "manual_pending",
+          "notes": "Non-EU benchmarks such as USA remain registered manual inputs; benchmark-set selection is deferred to Phase 1 calibration."
+        }
+      ],
+      "input_completeness_checks": {
+        "aipi_country_filter": "ALL",
+        "aipi_n_countries": 175,
+        "itu_country_filter": "ALL",
+        "itu_n_countries": 260
+      }
+    },
+    {
+      "source_dir": "wpp",
+      "expected_file": "wpp_projections.parquet",
+      "metadata_path": "data\\raw_snapshots\\v0.1.2-pilot-per\\wpp\\metadata.json",
+      "source_id": "UN_WPP",
+      "status": "ok",
+      "raw_file_hash": "df487359ec709695339bb09ac32c982fc6b2dc4c503656f211d7f647625c5ee8",
+      "hash_check": "ok",
+      "raw_files": [
+        {
+          "path": "data\\raw_snapshots\\v0.1.2-pilot-per\\wpp\\wpp_projections.parquet",
+          "sha256": "df487359ec709695339bb09ac32c982fc6b2dc4c503656f211d7f647625c5ee8"
+        }
+      ],
+      "download_date": "2026-07-07T19:23:59.735528+00:00",
+      "source_url": "https://population.un.org/wpp/",
+      "query_or_endpoint": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz",
+      "country_filter": [
+        "PER",
+        "CHL",
+        "COL",
+        "MEX"
+      ],
+      "year_filter": "2024-2035",
+      "script_name": "14_download_wpp_projections.py",
+      "script_version": "0.1.1-stage1",
+      "notes": "UN WPP 2024 bulk CSV, Standard Projections, single-age/sex, medium variant. No five-year age groups or 65+/15-64/18+ aggregates are constructed in raw ingest.",
+      "filter_applied": {
+        "ISO3_code": [
+          "PER",
+          "CHL",
+          "COL",
+          "MEX"
+        ],
+        "Time": [
+          2024,
+          2035
+        ],
+        "Variant": "Medium",
+        "file": "WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz"
+      },
+      "download_file_hash": "31804a296b663716236cd26c46415271cc9386fb3b2be56aff6467ad32283dc8"
+    }
+  ],
+  "summary": {
+    "ok": 12,
+    "manual_pending": 2,
+    "failed": 0,
+    "missing": 0
+  }
+}

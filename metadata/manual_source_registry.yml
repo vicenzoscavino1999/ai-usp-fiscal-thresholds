@@ -1,0 +1,172 @@
+source_id: MANUAL_SOURCE_REGISTRY
+generated_at: '2026-07-08T23:28:35.939725+00:00'
+notes: Manual registry for sources without public API or with source-side file selection.
+  Rows marked manual_pending introduce no data values into the pilot snapshot.
+sources:
+- source_id: INEI
+  country_id: PER
+  source_type: national_statistics
+  status: pending_exact_url
+  source_url: https://www.inei.gob.pe/
+  instructions: Register exact INEI national poverty-line file/API URL as a contrast
+    only; baseline poverty-line LCU conversion uses PIP 8.30 PPP with WDI private-consumption
+    PPP and CPI.
+  expected_fields: national poverty line value, currency, periodicity, price base,
+    coverage, publication date
+  hash_status: pending_manual_file
+- source_id: BCRP
+  country_id: PER
+  source_type: central_bank_api
+  status: api_resolved
+  source_url: https://estadisticas.bcrp.gob.pe/estadisticas/series/api
+  instructions: BCRPData macro-fiscal contrast series are downloaded by 11_download_national_sources.py.
+  expected_fields: series_code, period, value, unit
+  hash_status: not_applicable_api
+- source_id: MEF_PER
+  country_id: PER
+  source_type: public_finance
+  status: pending_exact_url
+  source_url: https://www.mef.gob.pe/
+  instructions: Register exact MEF public finance file only if used downstream.
+  expected_fields: public finance series by year
+  hash_status: pending_manual_file
+- source_id: SUNAT_PER
+  country_id: PER
+  source_type: tax_authority_manual
+  status: manual_pending
+  source_url: https://www.sunat.gob.pe/estadisticasestudios/
+  instructions: Download SUNAT cuadros estadisticos Excel, store original file, compute
+    sha256, and register before use.
+  expected_fields: tax revenue, VAT/IGV, income tax, excise, refunds, year
+  hash_status: pending_manual_file
+- source_id: SEDLAC_CEDLAS
+  country_id: PER
+  source_type: regional_poverty_labor_manual
+  status: manual_pending
+  source_url: https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/
+  instructions: Download CEDLAS SEDLAC statistics Excel files manually; register original
+    file path and sha256 before use.
+  expected_fields: survey_year, welfare_concept, poverty_headcount, poverty_gap, gini,
+    deciles, informality
+  hash_status: pending_manual_file
+- source_id: GRD_UNU_WIDER_2025
+  country_id: ALL
+  source_type: fiscal_manual_fallback
+  status: ok
+  source_url: https://www.wider.unu.edu/database/government-revenue-dataset
+  instructions: GRD 2025 manual files registered and converted to grd/grd_revenue.parquet.
+    Use metadata.json for file-level SHA-256 hashes and mapping notes.
+  expected_fields: country, year, total revenue, tax revenue, non-resource revenue,
+    government_level
+  hash_status: sha256_registered
+  registered_files: '{"GRD_User_Guide_2025.pdf": "59ae449c7dbd4e710b6baa477ee73b79227c9c695ef2e93916edff3e898b28a3",
+    "UNUWIDERGRD_2025_Central.xlsx": "76b5e7bdc40cf514c8fece9fd42f9658dcf6452d5d09b4c718976172095711d8",
+    "UNUWIDERGRD_2025_General.xlsx": "97f74af1b19efc80fd29f8743176466e4a619b44dbe9cbfbbff83c1c361d1b17",
+    "grd_revenue.parquet": "fa363c5b4211ed24c4975023aa438fbcb69b657d5b93d3342c461cbf34969368"}'
+  official_citation: 'UNU-WIDER (2025). UNU-WIDER Government Revenue Dataset. Version
+    2025. Helsinki: UNU-WIDER. https://doi.org/10.35188/UNU-WIDER/GRD-2025'
+- source_id: FRONTIER_NON_EU_AI_ADOPTION_USA
+  country_id: ALL_BENCHMARK_ECONOMIES
+  source_type: frontier_manual_benchmark
+  status: manual_pending
+  source_url: US Census AI Supplement or other approved non-EU benchmark source
+  instructions: Register non-EU AI adoption benchmark files manually; benchmark-set
+    selection remains a Phase 1 calibration decision.
+  expected_fields: country_id, year, adoption_proxy, unit, survey_population
+  hash_status: pending_manual_file
+- source_id: INE_CHILE
+  country_id: CHL
+  source_type: national_statistics
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: BCCH
+  country_id: CHL
+  source_type: central_bank
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: DIPRES
+  country_id: CHL
+  source_type: public_finance
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: SII
+  country_id: CHL
+  source_type: tax_authority
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: DANE
+  country_id: COL
+  source_type: national_statistics
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: BANREP
+  country_id: COL
+  source_type: central_bank
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: MHCP_COL
+  country_id: COL
+  source_type: public_finance
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: DIAN
+  country_id: COL
+  source_type: tax_authority
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: INEGI
+  country_id: MEX
+  source_type: national_statistics
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: BANXICO
+  country_id: MEX
+  source_type: central_bank
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: SHCP
+  country_id: MEX
+  source_type: public_finance
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file
+- source_id: SAT
+  country_id: MEX
+  source_type: tax_authority
+  status: pending_exact_url
+  source_url: ''
+  instructions: ''
+  expected_fields: ''
+  hash_status: pending_manual_file

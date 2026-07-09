@@ -1,0 +1,11 @@
+name: Reproducibility Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  stage1-placeholder:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "CI is deferred beyond Etapa 1."
+

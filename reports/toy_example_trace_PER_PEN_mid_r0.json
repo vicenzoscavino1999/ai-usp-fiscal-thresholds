@@ -1,0 +1,247 @@
+{
+  "adoption": {
+    "mu_t0": -1.7051933577034264,
+    "q_bar": 0.643135,
+    "q_prod": 0.11067357435335731,
+    "q_prod_t0": 0.11067357435335731,
+    "q_use_target": 0.11067357435335731,
+    "q_use_target_adj": 0.11067357435335731
+  },
+  "country_id": "PER",
+  "fiscal_channel": {
+    "ac_me": 0.0,
+    "erosion_companion_applied": false,
+    "leak_me": 0.0,
+    "mfc_gross": 0.08514959924161579,
+    "mfc_gross_mechanical": 0.08514959924161579,
+    "mfc_tilde_gross": 0.08514959924161579,
+    "omega_c": 0.3382970445397593,
+    "omega_k": 0.2951293233385192,
+    "omega_k_net": 0.26512932333851924,
+    "omega_l": 0.4778782426563127,
+    "tau_ai": 0.0,
+    "tau_c": 0.08476226759934355,
+    "tau_k": 0.0679185390505772,
+    "tau_l": 0.0804966095753286,
+    "tr_me": 0.0
+  },
+  "fiscal_space": {
+    "fs_eff": 0.000695038533719264,
+    "fs_gross": 0.001723127203670003,
+    "v_gross": 0.12469641711311297,
+    "v_net": 0.12469641711311297
+  },
+  "fixed_policy_costs": {
+    "ac_net_fix": 0.00045,
+    "f_fix": 0.001028088669950739,
+    "leak_fix": 8e-05,
+    "tr_ann": 0.0004980886699507389
+  },
+  "floors": {
+    "epsilon": {
+      "formula_id": "epsilon floor for tilde_x=epsilon+(1-epsilon)x and de-flooring in inversions",
+      "high": 1e-09,
+      "justification": "Frozen numerical floor epsilon=1e-9 for support checks and de-flooring; reported explicitly in traces so it is not mistaken for zero.",
+      "low": 1e-09,
+      "unit": "share",
+      "value": 1e-09
+    },
+    "epsilon_mu": {
+      "formula_id": "epsilon_mu floor for q_use_target interior projection and mu inversion",
+      "high": 1e-06,
+      "justification": "Frozen logit inversion floor epsilon_mu=1e-6; q_use_target_adj is projected to [epsilon_mu, q_bar-epsilon_mu].",
+      "low": 1e-06,
+      "unit": "share",
+      "value": 1e-06
+    }
+  },
+  "frontier_benchmark": {
+    "E_prod_frontier": 0.17,
+    "benchmark_set_id": "baseline_oecd_eurostat_ge10_2024",
+    "exposure_source": "value_assignment_table:E_prod_frontier",
+    "fallback_used": false,
+    "n_members": 24
+  },
+  "historical_total_revenue_class": {
+    "borderline_plausibility_flag": false,
+    "historical_plausibility_class": "fiscally_ordinary"
+  },
+  "inversions_xi_0_10": {
+    "baseline": {
+      "ME_addback": 0.0,
+      "R_req": 0.007159318458194525,
+      "R_req_components": {
+        "buffered_policy_cost": 0.006131229788243786,
+        "fixed_costs": 0.001028088669950739,
+        "sPB_plus": 0.0
+      },
+      "R_req_formula": "(1+xi)*c_gross + fixed_costs + sPB_plus_if_debt_consistent",
+      "S_required": null,
+      "T_req_H": 1.9072425074547044,
+      "chi_AI_used": 0.03,
+      "chi_AI_used_source_note": "No separate chi_AI capturability parameter is registered in baseline-pilot-v3; the trace field echoes lambda_AI, the scenario AI-rent subset share used as the denominator in the 7.7.6bis tau_AI_required inversion.",
+      "des_flooring_formula": "q=(tilde_q-epsilon)/(1-epsilon)",
+      "existence_condition_pass": false,
+      "flags": [
+        "frontier_exceeds_one",
+        "ai_rent_capture_impossible"
+      ],
+      "g_ai_level_input": 0.020236468744621483,
+      "g_ai_required": 0.08407929716591665,
+      "g_ai_required_formula": "R_req / MFCtilde",
+      "mfc_required_gross": 0.35378299191143975,
+      "mfc_required_gross_formula": "R_req / g_ai_level + ME_addback",
+      "mfc_tilde_gross_input": 0.08514959924161579,
+      "q_prod_required": null,
+      "requirement_basis": "baseline",
+      "tau_AI_required": 8.954446422327464,
+      "tau_AI_required_inputs": {
+        "MFC_base_without_AI_rent": 0.08514959924161579,
+        "R_req": 0.007159318458194525,
+        "g_ai_level": 0.020236468744621483,
+        "lambda_AI": 0.03
+      },
+      "tau_AI_required_statutory_formula": "tau_AI_required=max(0,(R_req/g_ai_level - MFC_base_without_AI_rent)/lambda_AI)",
+      "tilde_q_required": null,
+      "xi": 0.1
+    },
+    "debt_consistent": {
+      "ME_addback": 0.0,
+      "R_req": 0.014266289877231952,
+      "R_req_components": {
+        "buffered_policy_cost": 0.006131229788243786,
+        "fixed_costs": 0.001028088669950739,
+        "sPB_plus": 0.007106971419037426
+      },
+      "R_req_formula": "(1+xi)*c_gross + fixed_costs + sPB_plus_if_debt_consistent",
+      "S_required": null,
+      "T_req_H": 3.6731342289083164,
+      "chi_AI_used": 0.03,
+      "chi_AI_used_source_note": "No separate chi_AI capturability parameter is registered in baseline-pilot-v3; the trace field echoes lambda_AI, the scenario AI-rent subset share used as the denominator in the 7.7.6bis tau_AI_required inversion.",
+      "des_flooring_formula": "q=(tilde_q-epsilon)/(1-epsilon)",
+      "existence_condition_pass": false,
+      "flags": [
+        "frontier_exceeds_one",
+        "ai_rent_capture_impossible"
+      ],
+      "g_ai_level_input": 0.020236468744621483,
+      "g_ai_required": 0.1675438287941992,
+      "g_ai_required_formula": "R_req / MFCtilde",
+      "mfc_required_gross": 0.7049792163478964,
+      "mfc_required_gross_formula": "R_req / g_ai_level + ME_addback",
+      "mfc_tilde_gross_input": 0.08514959924161579,
+      "q_prod_required": null,
+      "requirement_basis": "debt_consistent",
+      "tau_AI_required": 20.66098723687602,
+      "tau_AI_required_inputs": {
+        "MFC_base_without_AI_rent": 0.08514959924161579,
+        "R_req": 0.014266289877231952,
+        "g_ai_level": 0.020236468744621483,
+        "lambda_AI": 0.03
+      },
+      "tau_AI_required_statutory_formula": "tau_AI_required=max(0,(R_req/g_ai_level - MFC_base_without_AI_rent)/lambda_AI)",
+      "tilde_q_required": null,
+      "xi": 0.1
+    }
+  },
+  "omega_c_components": {
+    "capital_flow": {
+      "Delta_Pi_dom": 0.005972375327361232,
+      "available_after_tax": 0.005566740320465145,
+      "mpc_Pi": 0.37092222088305,
+      "product": 0.002064827682746153,
+      "tau_K_disp_is_regime_indexed": false,
+      "tau_K_disp_used": 0.0679185390505772
+    },
+    "delta_consumption_taxable_total": 0.00684593756822666,
+    "disposal_tax_convention": {
+      "reason": "Regime-indexed tau_j affects MFC capture. The disposable-income chain uses the frozen 2024 observed effective disposal rates to avoid feeding reform rates twice into endpoint weights.",
+      "regime_code": "r0",
+      "used": "frozen 2024 observed r0 disposal rates"
+    },
+    "exempt_C_is_regime_indexed": false,
+    "exempt_C_used": 0.0,
+    "exemption_factor_1_minus_exempt_C": 1.0,
+    "flow_sum_before_import_and_exemption": 0.009883040435673167,
+    "formula": "Delta_C_taxable=(1-exempt_C_r)*(1-m_M)*max(0, mpc_W*(1-tau_L_disp)*Delta_W + mpc_Pi*(1-tau_K_disp)*Delta_Pi_dom + mpc_R*theta_R_dom*(1-tau_R_disp)*Delta_R)",
+    "import_factor_1_minus_m_M": 0.6926954931314475,
+    "labor_flow": {
+      "Delta_W": 0.009670568121249112,
+      "available_after_tax": 0.008892120174821303,
+      "mpc_W": 0.7418444417661,
+      "product": 0.006596569927207385,
+      "tau_L_disp_is_regime_indexed": false,
+      "tau_L_disp_used": 0.0804966095753286
+    },
+    "m_M_used": 0.30730450686855254,
+    "omega_c_check": 0.3382970445397593,
+    "omega_c_formula": "omega_C=Delta_C_taxable/g_ai_level",
+    "omega_c_recomputed": 0.3382970445397593,
+    "reference": "Plan 02 sec. 7.4.1 / consumption-channel endpoint weights",
+    "rent_flow": {
+      "Delta_R": 0.0031697701870117114,
+      "actual_base_formula": "Delta_R=max(0, Delta_NLS - Delta_Kbase)",
+      "available_after_tax_and_domestic_routing": 0.002195685522805438,
+      "enters_consumption_chain": true,
+      "lambda_times_g_diagnostic_not_used": 0.0006070940623386444,
+      "lambda_times_g_note": "lambda_AI*g is reported only as a diagnostic for AI-rent scale; the consumption chain uses residual non-corporate NLS to avoid double-counting the AI-rent fiscal channel.",
+      "mpc_R": 0.556383331324575,
+      "product": 0.0012216428257196307,
+      "tau_R_disp_is_regime_indexed": false,
+      "tau_R_disp_used": 0.0,
+      "theta_R_dom": 0.6926954931314475
+    }
+  },
+  "policy_cost": {
+    "cost_2024_gdp": 0.004324768262351125,
+    "cost_gross_gdp": 0.005573845262039806,
+    "cost_net_gdp": 0.005573845262039806,
+    "cost_source": "None",
+    "eligible_share_2024": 0.09228133854114157,
+    "eligible_share_endpoint": 0.11893397990360866
+  },
+  "policy_id": "PEN",
+  "regime": {
+    "base_broadening_delta": 0.0,
+    "epsilon_ero_ai": 0.0,
+    "epsilon_ero_c": 0.0,
+    "epsilon_ero_k": 0.0,
+    "epsilon_ero_l": 0.0,
+    "leakage_multiplier": 1.0,
+    "regime_code": "r0",
+    "tau_ai_eff": 0.0,
+    "tau_c_delta": 0.0,
+    "tau_k_delta": 0.0,
+    "tau_l_delta": 0.0
+  },
+  "regime_id": "r0",
+  "run_id": "pilot_per_tierA_baseline_pilot_v3",
+  "scenario_id": "mid",
+  "shock": {
+    "kappa_to_y": 1.0,
+    "phi_raw": 0.00425,
+    "phi_y_nom": 0.004250000000000087,
+    "phi_y_real": 0.00425,
+    "pi_ai_y": 0.0,
+    "scenario_id": "mid"
+  },
+  "translation": {
+    "frontier_exposure_fallback_used": false,
+    "g_ai_level": 0.020236468744621483,
+    "s_frontier": 0.025799625270163256,
+    "s_ndc": 0.012174093375194695,
+    "translation_factor": 0.4718709379579163
+  },
+  "weights": {
+    "delta_capital_base_gdp0": 0.007396130436360659,
+    "delta_capital_domestic_gdp0": 0.005972375327361232,
+    "delta_consumption_taxable_gdp0": 0.00684593756822666,
+    "delta_nls_gdp0": 0.01056590062337237,
+    "delta_w_gdp0": 0.009670568121249112,
+    "labor_share_prime": 0.4478205405912998,
+    "omega_c": 0.3382970445397593,
+    "omega_k": 0.2951293233385192,
+    "omega_l": 0.4778782426563127
+  },
+  "xi": 0.1
+}

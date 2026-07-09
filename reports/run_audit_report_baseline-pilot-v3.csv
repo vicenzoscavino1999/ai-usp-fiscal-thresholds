@@ -1,0 +1,6 @@
+gate_id,status,severity,notes
+phi_raw_direct_fiscal_use,pass,hard,phi_raw blocked from fiscal equations.
+mfc_mode_exclusion,pass,hard,No rate-side/base-side mixing on the same margin.
+double_counting_audit,pass,hard,No hard double-counting failures in the pilot subset.
+parameter_set_lock,pass,hard,parameter_set_id=baseline-pilot-v3; expected baseline-pilot-v3.
+frontier_exposure_parameter,pass,hard,E_prod_frontier is registered and materialized in frontier_benchmark_anchor; no exposure fallback is used.

@@ -1,0 +1,21 @@
+source_name,source_id,url_or_api,license_notes,raw_file_path
+wdi,WDI,https://api.worldbank.org/v2,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\wdi\wdi_country_year.parquet
+pip,PIP,https://api.worldbank.org/pip/v1/pip,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\pip\pip_poverty.parquet
+sedlac,SEDLAC,https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/,See provider terms; raw snapshot preserves metadata.,
+oecd,OECD_REVSTAT_LAC,"https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC",See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\oecd\oecd_revenue.parquet
+grd,GRD,https://www.wider.unu.edu/database/government-revenue-dataset,Manual author download after UNU-WIDER form completion; observe UNU-WIDER GRD terms for redistribution.,data\raw_snapshots\v1.0.1-official-4c\grd\grd_revenue.parquet
+imf,IMF_WEO_GFS,https://www.imf.org/external/datamapper/api/v1,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\imf\imf_fiscal_macro.parquet
+ilostat,ILOSTAT,https://rplumber.ilo.org/data/ref_area,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\ilostat\ilostat_labor.parquet
+pwt,PWT_10_01,https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/QT5BCC,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\pwt\pwt_country_year.parquet
+itu,ITU_DATAHUB_WDI_FALLBACK,https://api.worldbank.org/v2,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\itu\itu_digital.parquet
+imf_aipi,IMF_AIPI_DATA360,https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\imf_aipi\aipi.parquet
+national,NATIONAL_PER_BCRP,https://estadisticas.bcrp.gob.pe/estadisticas/series/api,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\national\national_per_bcrp.parquet
+manual,MANUAL_SOURCE_REGISTRY,Plan 01 Appendix A.2-A.5,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\manual\manual_source_registry.parquet
+frontier,FRONTIER_BENCHMARK,https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\frontier\frontier_benchmark.parquet
+wpp,UN_WPP,https://population.un.org/wpp/,See provider terms; raw snapshot preserves metadata.,data\raw_snapshots\v1.0.1-official-4c\wpp\wpp_projections.parquet
+ookla,OOKLA_SPEEDTEST_OPEN_DATA,https://registry.opendata.aws/speedtest-global-performance/,Ookla Open Data is published under CC BY-NC-SA 4.0. Internal snapshot use is OK for calibration review; public archiving of raw tile cache is deferred. The derived gap_index can be archived with attribution and license note.,data\raw_snapshots\v1.0.1-official-4c\ookla\ookla_speedtest.parquet
+Chile PGU official 2024,SP_CHILE_PGU_2024,https://www.spensiones.cl/portal/institucional/594/w3-article-15857.html,official public information,
+Colombia Mayor official 2024,PROSPERIDAD_SOCIAL_COLOMBIA_MAYOR_2024,https://prosperidadsocial.gov.co/colombia-mayor/,official public information,
+Mexico Pension Bienestar 2024,BIENESTAR_MEXICO_ADULTOS_MAYORES_2024,https://www.gob.mx/bienestar/prensa/2024-inicia-con-aumentos-a-pensiones-de-bienestar-anuncia-ariadna-montiel?idiom=es,official public information,
+AIPI component note,IMF_AIPI_NOTE_COMPONENTS,https://www.imf.org/external/datamapper/AIPINote.pdf,public documentation,
+Project plans,PLAN_01_02,01_database_construction_plan_AI_USP_threshold_framework_v6.md; 02_ESD_AI_USP_v6.md,project documentation,

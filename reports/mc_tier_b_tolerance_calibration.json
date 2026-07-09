@@ -1,0 +1,16 @@
+[
+  {
+    "comparison":"seed1_vs_seed2",
+    "m_draws":5000,
+    "max_abs_probability_difference":0.0284,
+    "configured_tier_b_atol":0.02,
+    "factor_note":"Tier B atol set to 0.02, at least the plan convergence tolerance and above observed seed jitter for probe cells unless reported otherwise."
+  },
+  {
+    "comparison":"seed1_vs_seed3",
+    "m_draws":5000,
+    "max_abs_probability_difference":0.0202,
+    "configured_tier_b_atol":0.02,
+    "factor_note":"Tier B atol set to 0.02, at least the plan convergence tolerance and above observed seed jitter for probe cells unless reported otherwise."
+  }
+]

@@ -1,0 +1,43 @@
+DATASET_VERSION ?= v1.0.1-official-4c
+PARAMETER_SET_ID ?= baseline-official-v2
+RUN_LABEL ?= official
+
+.PHONY: reproduce build-from-frozen-dataset run verify figures test check reproduce-deterministic reproduce-full run-diagnostics check-env determinism-check not-implemented
+
+reproduce: run verify
+
+build-from-frozen-dataset:
+	python scripts/build_anchors_from_snapshot.py --dataset-version $(DATASET_VERSION) --strict-gates
+
+run:
+	python reproducibility/run_all.py --tier A --run-label $(RUN_LABEL) --parameter-set-id $(PARAMETER_SET_ID) --dataset-version $(DATASET_VERSION)
+
+verify:
+	python reproducibility/verify.py
+
+figures:
+	$(MAKE) not-implemented TARGET=$@
+
+test:
+	python -m pytest
+
+check: test verify
+
+reproduce-deterministic:            # Tier A: Fases 2-5, exacto
+	python reproducibility/run_all.py --tier A --run-label $(RUN_LABEL) --parameter-set-id $(PARAMETER_SET_ID) --dataset-version $(DATASET_VERSION)
+
+reproduce-full:                     # Tier A + B (MC), consume snapshot congelado
+	$(MAKE) not-implemented TARGET=$@
+
+run-diagnostics:                    # Tier D: placebo ICT, negative controls, LOSO, ablation
+	$(MAKE) not-implemented TARGET=$@
+
+check-env:
+	python reproducibility/run_all.py --check-env-only
+
+determinism-check:
+	$(MAKE) not-implemented TARGET=$@
+
+not-implemented:
+	@echo "$(TARGET) no implementado en Etapa 1"
+	@exit 1

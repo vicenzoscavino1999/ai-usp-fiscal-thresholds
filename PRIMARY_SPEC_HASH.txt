@@ -1,0 +1,5 @@
+﻿filename: 02_ESD_AI_USP_v6.md
+sha256: 0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81
+timestamp_utc: 2026-07-07T18:43:33Z
+hash_scope: full file content
+

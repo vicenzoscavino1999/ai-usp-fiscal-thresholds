@@ -1,0 +1,6 @@
+from_parameter_set_id,to_parameter_set_id,change_id,change_text,dataset_version,created_at,created_by_script
+baseline-pilot-v1,baseline-pilot-v2,C1,"E_auto reset to 0.035 with support [0.02,0.05]; E_aug/E_prod remain 0.11 with support [0.08,0.14].",v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+baseline-pilot-v1,baseline-pilot-v2,C2,"psi_shift reset to 0.15 with support [0.00,0.30], bounded PERT, author-review status.",v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+baseline-pilot-v1,baseline-pilot-v2,C3,Gap pilot note changed to diagnostic neutral value with favorable-bias and official-baseline blocker; robustness_only audit row added.,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+baseline-pilot-v1,baseline-pilot-v2,C4,"q_use_target support reset to prior +/-30 percent around the derived target: [0.077,0.144]; AIPI double-use note added.",v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+baseline-pilot-v1,baseline-pilot-v2,C5,"phi high interpretive note added: high LP-to-Y bridge makes phi_high_Y below phi_mid, so scenario labels are source-disciplined, not monotone in phi_Y.",v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py

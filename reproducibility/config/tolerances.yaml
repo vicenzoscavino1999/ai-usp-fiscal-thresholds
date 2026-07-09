@@ -1,0 +1,28 @@
+tier_A:
+  default_float:
+    atol: 1.0e-10
+    rtol: 1.0e-8
+  exact_columns:
+    - g_ai_level
+    - xi
+    - endpoint_year
+  bool_exact: true
+  string_exact: true
+tier_B:
+  default_float:
+    atol: 2.0e-2
+    rtol: 1.0e-8
+  exact_columns:
+    - mc_n_draws
+    - endpoint_year
+  bool_exact: true
+  string_exact: true
+tier_C:
+  default_float:
+    atol: 1.0e-10
+    rtol: 1.0e-8
+  exact_columns:
+    - g_ai_level
+    - xi
+  bool_exact: true
+  string_exact: true

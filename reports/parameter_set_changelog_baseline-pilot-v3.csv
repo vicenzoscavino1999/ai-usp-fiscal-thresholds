@@ -1,0 +1,4 @@
+from_parameter_set_id,to_parameter_set_id,change_id,change_text,dataset_version,created_at,created_by_script
+baseline-pilot-v2,baseline-pilot-v3,F1,"Registered E_prod_frontier=0.17 [0.11,0.25] and materialized frontier benchmark exposure; removed fallback exposure=1.0.",v0.1.2-pilot-per,2026-07-08T16:43:04.835196+00:00,build_v3_calibration.py
+baseline-pilot-v2,baseline-pilot-v3,F2,"Recalibrated chi_Kbase=0.70 [0.55,0.85] and chi_dom=0.95 [0.85,1.00] as author-review capital-chain priors.",v0.1.2-pilot-per,2026-07-08T16:43:04.835196+00:00,build_v3_calibration.py
+baseline-pilot-v2,baseline-pilot-v3,F3,Echo frozen floors epsilon=1e-9 and epsilon_mu=1e-6 in calibration reports and traces.,v0.1.2-pilot-per,2026-07-08T16:43:04.835196+00:00,build_v3_calibration.py

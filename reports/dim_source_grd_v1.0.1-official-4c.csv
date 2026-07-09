@@ -1,0 +1,2 @@
+source_id,source_name,provider,url_or_api,download_date,license_notes,raw_file_path,citation_text
+GRD,grd,UNU-WIDER,https://www.wider.unu.edu/database/government-revenue-dataset,2026-07-08,Manual author download after UNU-WIDER form completion; observe UNU-WIDER GRD terms for redistribution.,data/raw_snapshots/v1.0.1-official-4c/grd/grd_revenue.parquet,UNU-WIDER (2025). UNU-WIDER Government Revenue Dataset. Version 2025. Helsinki: UNU-WIDER. https://doi.org/10.35188/UNU-WIDER/GRD-2025

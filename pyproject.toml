@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-usp-fiscal-thresholds"
+version = "0.1.0"
+description = "Reproduction package for the AI-USP fiscal threshold framework."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Vicenzo Scavino" }]
+dependencies = [
+  "numpy",
+  "scipy",
+  "pandas",
+  "duckdb",
+  "pyarrow",
+  "pyyaml",
+  "pandera",
+  "matplotlib",
+  "SALib",
+]
+
+[project.optional-dependencies]
+ingest = [
+  "wbgapi",
+  "requests",
+  "sdmx1",
+  "pyreadstat",
+]
+dev = [
+  "pytest",
+  "pip-tools",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

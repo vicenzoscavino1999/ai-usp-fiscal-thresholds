@@ -1,0 +1,4 @@
+from_parameter_set_id,to_parameter_set_id,change_id,description,direction,author_approval_date
+baseline-official-v1,baseline-official-v2,R1,"E_prod_frontier re-anchored to ILO HIC augmentation potential 0.134 [0.11,0.20].",favorable_to_feasibility_declared,2026-07-08
+baseline-official-v1,baseline-official-v2,B0,ratificacion del autor registrada pre-resultados,governance_signature_only,2026-07-08
+baseline-official-v1,baseline-official-v2,B1,Baseline-official-v2 expanded with certified deterministic-run parameter families and v1.0.1 GRD contrast.,materialization_for_official_run,2026-07-08

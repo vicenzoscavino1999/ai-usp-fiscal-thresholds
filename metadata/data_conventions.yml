@@ -1,0 +1,63 @@
+dataset_version: v1.0.1-official-4c
+build_id: v1.0.1-official-4c-anchors-20260709T110732Z
+years:
+  anchor_year: 2024
+  endpoint_year: 2034
+  harmonization_year: 2024
+official_countries:
+- PER
+- CHL
+- COL
+- MEX
+government_level_choice:
+  PER:
+    baseline_historical_series: general_government
+    primary_sources:
+    - OECD_REVSTAT_LAC sector S13
+    - IMF_WEO_GFS general government
+    justification: Maintain one fiscal level per country-window for historical capture
+      and debt guardrail.
+  CHL:
+    baseline_historical_series: general_government
+    primary_sources:
+    - OECD_REVSTAT_LAC sector S13
+    - IMF_WEO_GFS general government
+    justification: Maintain one fiscal level per country-window for historical capture
+      and debt guardrail.
+  COL:
+    baseline_historical_series: general_government
+    primary_sources:
+    - OECD_REVSTAT_LAC sector S13
+    - IMF_WEO_GFS general government
+    justification: Maintain one fiscal level per country-window for historical capture
+      and debt guardrail.
+  MEX:
+    baseline_historical_series: general_government
+    primary_sources:
+    - OECD_REVSTAT_LAC sector S13
+    - IMF_WEO_GFS general government
+    justification: Maintain one fiscal level per country-window for historical capture
+      and debt guardrail.
+adoption_gap_convention:
+  gap_construction_convention: excluded_indicators
+  gap_index_formula: 1 - average(min(LTE/benchmark_mean_LTE,1), min(fixed_speed/benchmark_mean_fixed,1),
+    min(mobile_speed/benchmark_mean_mobile,1))
+  normalization_method: relative_to_frontier_benchmark_set_mean_capped_at_1
+  aipi_overlap_flag: false
+  aipi_note_url: https://www.imf.org/external/datamapper/AIPINote.pdf
+  pilot_gap_zero_status: historical diagnostic only; superseded for official 4C calibration
+    by excluded coverage+speed Gap
+  gap_values:
+    PER: 0.26508123256559324
+    CHL: 0.0886511843200829
+    COL: 0.23850844421210804
+    MEX: 0.3512321314632644
+stage_4a_prerun_governance:
+  parameter_set_id: baseline-official-v1
+  no_official_baseline_run: true
+  bias_notes:
+  - Disposable tax rates are frozen at r0 in the consumption chain; favorable second-order
+    bias for r>=1 is declared.
+  - theta_R_dom is anchored to (1-m_M).
+  gmi_grid_convention: baseline grid should carry GMI_ideal_aggregate with warning;
+    GMI_loaded_aggregate is a mandatory companion row for rankings.

@@ -1,0 +1,17 @@
+data/
+results/
+figures/
+db/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.synctex.gz
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.venv/
+CLAUDE.md
+*.prompt
+*.notes

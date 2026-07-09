@@ -1,0 +1,12 @@
+threshold_name,controls_decision,threshold_type,baseline_value,sensitivity_values,action_on_fail,source_section,parameter_set_id,dataset_version,created_at,created_by_script
+Vgross_min,True,inequality_min,1.0,,classify not_feasible if Vgross < 1,PLAN_02_SEC_10_12,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+xi_buffer,True,buffer_grid,0.1,"0,0.05,0.25,0.50",compute requirements as R_req(xi),PLAN_02_SEC_10_12,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+MFC_P50_total_revenue_2000plus,True,historical_percentile,0.2844348613838572,,historical plausibility ordinary/moderate threshold,PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+MFC_P75_total_revenue_2000plus,True,historical_percentile,0.29703744263423987,,historical plausibility moderate/demanding threshold,PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+MFC_P90_total_revenue_2000plus,True,historical_percentile,0.3475264401739878,,historical plausibility extreme threshold,PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+prob_v_ge_1_10_min,True,probability_min,0.75,"0.50,0.90",robustness probability label; prob_basis=all_draw,PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+prob_v_ge_1_fragility,True,probability_min,0.5,,"below this, no robust language",PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+debt_guardrail_required,True,boolean,1.0,,debt guardrail must pass for robust class,PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+q_required_max,True,support_max,0.643135,,q_required <= q_bar,PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+T_required_max,True,support_max,1.0,,T_required <= 1 and frontier_exceeds_one applies to T_req_H,PLAN_02_SEC_7_7;PLAN_02_SEC_10_13,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py
+E_required_max,True,support_max,1.0,,E_required <= 1,PLAN_02_SEC_10_14,baseline-pilot-v2,v0.1.2-pilot-per,2026-07-08T01:42:42.405929+00:00,build_prerun_governance.py

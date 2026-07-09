@@ -1,0 +1,232 @@
+schemas:
+  fiscal_space_result:
+    file: fiscal_space_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - xi
+    columns:
+      run_id: string
+      model_version: string
+      parameter_set_id: string
+      dataset_version: string
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      scenario_id: string
+      regime_id: string
+      endpoint_year: int
+      xi: float
+      phi_y_nominal: float
+      translation_factor: float
+      g_ai_level: float
+      mfc_gross: float
+      mfc_tilde_gross: float
+      fs_gross: float
+      fs_eff: float
+      cost_gross_gdp: float
+      cost_net_gdp: float
+      v_gross: float
+      v_net: float
+      crosses_v1: bool
+      crosses_v1_10: bool
+      crosses_buffer: bool
+      debt_guardrail_pass: bool
+      existence_condition_pass: bool
+      historical_tax_class: string
+      historical_tax_borderline: bool
+      historical_total_revenue_class: string
+      historical_total_revenue_borderline: bool
+      cell_result_class: string
+      endpoint_cost_rule: string
+      country_policy_result_class: string
+  threshold_inversion_result:
+    file: threshold_inversion_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - requirement_basis
+      - xi
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      model_version: string
+      parameter_set_id: string
+      dataset_version: string
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      requirement_basis: string
+      xi: float
+      scenario_id: string
+      regime_id: string
+      endpoint_year: int
+      required_revenue_gdp: float
+      g_ai_required: float
+      mfc_required_gross: float
+      historical_tax_class: string
+      historical_tax_borderline: bool
+      historical_total_revenue_class: string
+      historical_total_revenue_borderline: bool
+      realized_mfc_tax_class: string
+      realized_mfc_tax_borderline: bool
+      realized_mfc_total_revenue_class: string
+      realized_mfc_total_revenue_borderline: bool
+      t_required_H: float
+      tau_ai_required: {type: float, nullable: true}
+      q_prod_required: {type: float, nullable: true}
+      q_use_required: {type: float, nullable: true}
+      aipi_required: {type: float, nullable: true}
+      exposure_required: {type: float, nullable: true}
+      existence_condition_pass: bool
+      impossibility_reason: {type: string, nullable: true}
+      flags: {type: string, nullable: true}
+      floor_driven_flag: bool
+      epsilon_used: float
+  historical_plausibility_result:
+    file: historical_plausibility_result.csv
+    primary_key:
+      - country_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      country_id: string
+      scenario_id: string
+      regime_id: string
+      mfc_gross: float
+      tax_class: string
+      tax_borderline: bool
+      total_revenue_class: string
+      total_revenue_borderline: bool
+      parameter_set_id: string
+      dataset_version: string
+  country_policy_classification_preliminary:
+    file: country_policy_classification_preliminary.csv
+    primary_key:
+      - country_id
+      - policy_id
+      - gmi_version
+    columns:
+      run_id: string
+      country_id: string
+      policy_id: string
+      gmi_version: {type: string, nullable: true}
+      country_policy_result_class: string
+      probabilistic_leg: string
+      parameter_set_id: string
+      dataset_version: string
+  monte_carlo_result:
+    file: monte_carlo_result.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - prob_basis
+      - mc_mode
+    columns:
+      run_id: string
+      model_version: string
+      parameter_set_id: string
+      dataset_version: string
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      scenario_id: string
+      regime_id: string
+      endpoint_year: int
+      prob_basis: string
+      mc_mode: string
+      mc_n_draws: int
+      v_p05: float
+      v_p25: float
+      v_p50: float
+      v_p75: float
+      v_p95: float
+      valid_support_share: float
+      valid_support_share_above_threshold: bool
+      threshold_computability_share: float
+      requirement_already_covered_share: float
+      converged_flag: bool
+      prob_v_ge_1_00: float
+      prob_debt_consistent_1_00: float
+      failure_severity_mean_1_00: float
+      failure_severity_median_1_00: float
+      prob_v_ge_1_05: float
+      prob_debt_consistent_1_05: float
+      failure_severity_mean_1_05: float
+      failure_severity_median_1_05: float
+      prob_v_ge_1_10: float
+      prob_debt_consistent_1_10: float
+      failure_severity_mean_1_10: float
+      failure_severity_median_1_10: float
+      prob_v_ge_1_25: float
+      prob_debt_consistent_1_25: float
+      failure_severity_mean_1_25: float
+      failure_severity_median_1_25: float
+      prob_v_ge_1_50: float
+      prob_debt_consistent_1_50: float
+      failure_severity_mean_1_50: float
+      failure_severity_median_1_50: float
+      prob_v_ge_1: float
+  mc_convergence_report:
+    file: mc_convergence_report.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - mc_n_draws
+    columns:
+      run_id: string
+      mc_mode: string
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      mc_n_draws: int
+      prob_v_ge_1_10: float
+      valid_support_share: float
+      valid_support_share_above_threshold: bool
+      delta_from_previous: {type: float, nullable: true}
+      convergence_tolerance: float
+      support_share_threshold: float
+      converged_flag: bool
+      parameter_set_id: string
+      dataset_version: string
+  country_policy_classification_final:
+    file: country_policy_classification_final.csv
+    primary_key:
+      - country_id
+      - policy_id
+      - gmi_version
+    columns:
+      run_id: string
+      country_id: string
+      policy_id: string
+      gmi_version: {type: string, nullable: true}
+      preliminary_country_policy_result_class: string
+      final_country_policy_result_class:
+        type: string
+        allowed_values:
+          - robustly_feasible
+          - conditionally_feasible
+          - fragile_feasible
+          - not_feasible
+          - stress_benchmark_only
+      probabilistic_leg: string
+      max_prob_v_ge_1: float
+      max_prob_v_ge_1_10: float
+      min_valid_support_share: float
+      classification_note: string
+      parameter_set_id: string
+      dataset_version: string

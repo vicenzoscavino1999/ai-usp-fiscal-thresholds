@@ -1,0 +1,12 @@
+seed_policy: fixed
+rng_algorithm: numpy.random.PCG64
+historical_bootstrap_seed: 20240707
+historical_bootstrap_draws: 2000
+monte_carlo_master_seed: 20260709
+monte_carlo_pert_lambda: 4
+monte_carlo_draws_baseline: 5000
+monte_carlo_convergence_draw_grid:
+  - 5000
+  - 10000
+  - 25000
+  - 50000
