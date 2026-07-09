@@ -1,15 +1,34 @@
-\begin{table}[!htbp]
-\centering
-\caption{Final hypothesis adjudication}
-\begin{tabular}{llllllll}
+\begin{landscape}
+\fontsize{6.3}{7.6}\selectfont
+\setlength{\tabcolsep}{1pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\let\tableunderscore\_
+\renewcommand{\_}{\tableunderscore\allowbreak}
+\begin{longtable}{@{}
+>{\raggedright\arraybackslash}p{0.045\linewidth}
+>{\raggedright\arraybackslash}p{0.04\linewidth}
+>{\raggedright\arraybackslash}p{0.115\linewidth}
+>{\raggedright\arraybackslash}p{0.275\linewidth}
+>{\raggedright\arraybackslash}p{0.065\linewidth}
+>{\raggedright\arraybackslash}p{0.055\linewidth}
+>{\raggedright\arraybackslash}p{0.185\linewidth}
+>{\raggedright\arraybackslash}p{0.17\linewidth}@{}}
+\caption{Final hypothesis adjudication}\label{tab:results_adjudication}\\
 \toprule
-tier & hypothesis\_id & statement & evidence\_summary & verdict & preliminary\_flag & evidence\_file & notes \\
+tier & \shortstack{hypothesis\\id} & statement & \shortstack{evidence\\summary} & verdict & \shortstack{preliminary\\flag} & \shortstack{evidence\\file} & notes \\
 \midrule
+\endfirsthead
+\caption[]{Final hypothesis adjudication (continued)}\\
+\toprule
+tier & \shortstack{hypothesis\\id} & statement & \shortstack{evidence\\summary} & verdict & \shortstack{preliminary\\flag} & \shortstack{evidence\\file} & notes \\
+\midrule
+\endhead
 A+B+D & H1 & Cost/feasibility gradient across policy instruments & Final evidence is mixed: high-cost UBI remains only a stress benchmark, but the lower-cost ordering is not universal. PGU/PEN-style categorical pensions and ideal GMI switch order across countries; ideal GMI cannot alone support an operational ranking. & MIXED & False & fiscal\_space\_result.csv; policy\_parameter\_official\_4c.csv; country\_policy\_classification\_final.csv & H1 is retained as a qualitative gradient claim, not a strict PEN/MUT<GMI<PBI<UBI ordering. \\
 A+B+D & H2 & Preparedness/adoption matter more than total exposure across countries & The official four-country baseline uses a common LAC fallback E\_prod, so cross-country exposure variation is not identified. Preparedness, adoption, Gap and informality move T, but the total-exposure margin is not separately testable. & NOT\_TESTABLE & False & value\_assignment\_table\_baseline-official-v3.csv; informality\_adoption\_ablation\_result.csv & Requires country-specific E\_prod before becoming a cross-country test. \\
 A+B+D & H3 & High informality reduces feasibility through adoption and fiscal channels & Adoption-only ablation removes I from q\_bar and logit, raising q\_bar but leaving q\_prod fixed by the frozen q\_use\_target/mu inversion; max\_abs\_delta\_v=0, gained\_crossings=0. The fiscal side is not ablated because informality is embedded in observed effective tax rates. & MIXED & False & informality\_adoption\_ablation\_result.csv; diagnostic\_result.csv & The adoption-margin mechanism is inactive in the official frozen baseline because q\_bar is not binding; the fiscal channel remains non-separable without a tax-rate counterfactual. \\
 A+B+D & H4 & Fiscal regimes materially affect feasibility & Regime changes materially move V and crossings in stress cells; r2/r4 raise feasible support relative to r0, with erosion companions reported for r>=1. & HOLDS & False & fiscal\_space\_result.csv; robustness\_table.csv; diagnostic\_channel\_ablation\_result.csv & The claim is about regime sensitivity, not about robust feasibility under mid scenarios. \\
 A+B+D & H5 & Crossings requiring historically extreme fiscal capture are fragile & Required-MFC classes are computed against country percentiles and stress/fragile labels are retained. No final robust claim is supported by an extreme historical-capture requirement. & HOLDS & False & threshold\_inversion\_result.csv; historical\_window\_plausibility\_changes.csv; country\_policy\_classification\_final.csv & The rule is enforced by schema/tests and the required-MFC class pipeline. \\
 \bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\end{landscape}
