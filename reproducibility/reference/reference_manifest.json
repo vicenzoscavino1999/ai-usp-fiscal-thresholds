@@ -5,8 +5,8 @@
     "Etapa 5A: Monte Carlo independiente, robustez historica r0, convergencia Tier B y clasificacion final probabilistica; motor certificado intacto.",
     "Etapa 5A.1: grilla MC canonica 1.00/1.05/1.10/1.25/1.50, vocabulario final canonico y matriz rank-correlated traducida a primitivos imponibles."
   ],
-  "commit": "unavailable_no_commit",
-  "created_at_utc": "2026-07-09T11:09:21.946643+00:00",
+  "commit": "9023b3311c46219a49b8f12e20473c434d14cc69",
+  "created_at_utc": "2026-07-09T11:27:07.777071+00:00",
   "dataset_manifest_hash": "74ab875ba64b31fa4e757c9932c6083bc34e01f0a30540e04bd12dbc10d047c8",
   "dataset_version": "v1.0.1-official-4c",
   "files": {
@@ -14,7 +14,8 @@
     "country_policy_classification_preliminary.csv": "f02177ba5dc101918b5a6ab50b4e1e89ea539224c73e5e77532a06e8afc7a0ea",
     "fiscal_space_result.csv": "130716b2bfe6cb076d65946038f85ac77602863baaa4cd67ce0e2fd3c15d12d9",
     "historical_plausibility_result.csv": "b3ab6ad0a3a06217b64c5e1fb4280890e257ac32b871c4338c7c6b0a0a5b119e",
-    "manifest.json": "efaad26eb1774e2c039b16b40c2c250ae26f083405d2ba0b4ee4f8aff5690f04",
+    "hypothesis_adjudication.csv": "c05a02104b1b954a588acbac7497d8f654bc76391d5a54349a163ba1c264a986",
+    "manifest.json": "c5ad95c01d22a06b8b141bac01cb478f754dac26523d28fcaecd2c83f843a331",
     "mc_convergence_report.csv": "ae39bf07ba26d7a790e7c814eaad0fbb212fb6ad5901b944ccf4979dd9644e3f",
     "monte_carlo_result.csv": "e8e65e5cc976844b6d4ff4b80fe5f054e7082dfcd08037e39176412f81bcdc93",
     "threshold_inversion_result.csv": "9c3636a144969f6fda5306610dd1e136efc830297b5f5a12abb3adc47336e53e"

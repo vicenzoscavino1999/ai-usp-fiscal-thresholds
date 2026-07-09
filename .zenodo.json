@@ -1,20 +1,32 @@
 {
-  "title": "Code and data for: AI, Fiscal Space, and Universal Social Protection in Emerging Economies - A Robust Accounting-Fiscal Threshold Framework",
+  "title": "AI-USP Fiscal Thresholds: Reproduction Package for AI, Fiscal Space, and Universal Social Protection",
   "creators": [
     {
       "name": "Scavino, Vicenzo",
+      "affiliation": "Independent researcher",
       "orcid": "0000-0000-0000-0000"
     }
   ],
-  "description": "Stage 1 scaffold for the reproduction package.",
+  "description": "Phase A reproduction package for an accounting-fiscal threshold framework evaluating whether AI-induced fiscal space can cover universal or categorical social protection costs in Peru, Chile, Colombia, and Mexico. Includes certified deterministic engine, audited calibration registry, frozen snapshot manifests, archived reference outputs, schemas, tests, and minimal methods documentation.",
   "license": "MIT",
   "upload_type": "software",
+  "version": "0.1.0-phase-A",
+  "doi": "10.5281/zenodo.TBD",
   "keywords": [
     "artificial intelligence",
     "fiscal space",
     "universal social protection",
-    "emerging economies"
+    "Latin America",
+    "Monte Carlo",
+    "reproducibility",
+    "threshold analysis",
+    "social protection"
   ],
-  "related_identifiers": []
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.TBD",
+      "relation": "isSupplementTo",
+      "scheme": "doi"
+    }
+  ]
 }
-

@@ -6,7 +6,7 @@
     "Etapa 5A: Monte Carlo independiente, robustez historica r0, matriz rank-correlated propuesta; motor certificado intacto."
   ],
   "colombia_pen_eligibility_rule": "WPP by sex and single age: women>=54, men>=59; COP 80,000 monthly under 80 and COP 225,000 monthly age>=80.",
-  "commit_sha": "unavailable_no_commit",
+  "commit_sha": "9023b3311c46219a49b8f12e20473c434d14cc69",
   "country_scope": [
     "PER",
     "CHL",

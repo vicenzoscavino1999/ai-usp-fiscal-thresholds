@@ -1,5 +1,6 @@
 .git
 data/
+db/
 results/
 figures/
 paper/
@@ -13,4 +14,3 @@ CLAUDE.md
 *.log
 *.out
 *.synctex.gz
-
