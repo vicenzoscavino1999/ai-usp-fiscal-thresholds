@@ -35,6 +35,7 @@ REFERENCE_CHANGELOG = [
     "Etapa 6A.1: cierre de revision de robustez K1-K6; R2b conservador q_prod_t0=0, not_available sin delta cero, Gap residualizado auditado, tabla K5 y GRD non-resource auditado.",
     "Etapa 6B: diagnosticos Tier D y falsificacion; placebo ICT, negative controls, LOSO, ablation, high leakage y Sobol/Saltelli sobre baseline-official-v3 sin modificar baseline.",
     "Etapa 7: cierre Fase B; ablation adopcion-only de informalidad, adjudicacion final H1-H5, tablas/figuras del paper y paquete de publicacion minimo.",
+    "Etapa 7.1: inversion de horizonte H* post-baseline; derivada de insumos firmados, sin recalibrar ni alterar resultados pre-registrados; PRIMARY_SPEC_HASH intacto.",
 ]
 
 

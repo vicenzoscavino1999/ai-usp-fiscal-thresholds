@@ -1,0 +1,5 @@
+country_id,policy_id,policy_variant_id,gmi_version,scenario_id,regime_id,h_star_baseline,h_star_status_baseline,h_star_debt_consistent,h_star_status_debt_consistent,prob_h_star_le_10,prob_h_star_le_25,note
+CHL,GMI,GMI:GMI_ideal_aggregate,GMI_ideal_aggregate,mid,r0,19.0,crosses_within_cap,19.0,crosses_within_cap,0.0,0.797,"H* censored at 25 years; values are conditional years of frozen scenario persistence, not calendar forecasts."
+CHL,GMI,GMI:GMI_ideal_aggregate,GMI_ideal_aggregate,stress,r0,6.0,crosses_within_cap,6.0,crosses_within_cap,0.978,1.0,"H* censored at 25 years; values are conditional years of frozen scenario persistence, not calendar forecasts."
+PER,PEN,PEN,,stress,r2,10.0,crosses_within_cap,20.0,crosses_within_cap,0.4666,0.994,"H* censored at 25 years; values are conditional years of frozen scenario persistence, not calendar forecasts."
+PER,PEN,PEN,,stress,r4,8.0,crosses_within_cap,17.0,crosses_within_cap,0.7186,0.9988,"H* censored at 25 years; values are conditional years of frozen scenario persistence, not calendar forecasts."

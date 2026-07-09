@@ -31,6 +31,7 @@ reproduce-full:                     # Tier A + B (MC), consume snapshot congelad
 	python scripts/run_deterministic_robustness_6a.py
 	python scripts/run_diagnostics_6b.py
 	python scripts/finalize_phase_b.py
+	python scripts/run_h_star_extension_7_1.py
 	python reproducibility/verify.py
 
 run-diagnostics:                    # Tier D: placebo ICT, negative controls, LOSO, ablation

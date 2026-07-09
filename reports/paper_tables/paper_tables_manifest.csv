@@ -24,3 +24,4 @@ bias_ledger,9,Bias ledger and direction of declared conventions,bias_ledger.csv,
 minimum_publishable_package_checklist,14,Minimum publishable package checklist,minimum_publishable_package_checklist.csv,minimum_publishable_package_checklist.tex
 hypothesis_adjudication_final,5,Final hypothesis adjudication,hypothesis_adjudication_final.csv,hypothesis_adjudication_final.tex
 robustness_summary,116,Robustness headline summary,robustness_summary.csv,robustness_summary.tex
+table5b_time_to_threshold,4,Time to threshold H* (post-baseline extension),table5b_time_to_threshold.csv,table5b_time_to_threshold.tex

@@ -190,6 +190,112 @@ schemas:
       failure_severity_mean_1_50: float
       failure_severity_median_1_50: float
       prob_v_ge_1: float
+      prob_h_star_le_10: {type: float, nullable: true}
+      prob_h_star_le_25: {type: float, nullable: true}
+  h_star_result:
+    file: h_star_result.csv
+    tolerance_tier: tier_A
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - requirement_basis
+      - xi
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - post_baseline_extension
+      model_version: string
+      parameter_set_id: string
+      dataset_version: string
+      source_dataset_version: string
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      scenario_id: string
+      regime_id: string
+      requirement_basis:
+        type: string
+        allowed_values:
+          - baseline
+          - debt_consistent
+      xi: float
+      h_star: {type: int, nullable: true}
+      h_star_status:
+        type: string
+        allowed_values:
+          - crosses_within_cap
+          - censored_beyond_defensible_horizon
+          - noncomputable
+      h_star_reporting_cap: int
+      endpoint_year_at_h_star: {type: int, nullable: true}
+      threshold_value: float
+      threshold_at_h_star: {type: float, nullable: true}
+      threshold_at_h_minus_1: {type: float, nullable: true}
+      v_at_h_star: {type: float, nullable: true}
+      v_at_h_minus_1: {type: float, nullable: true}
+      mfc_tilde_gross: float
+      phi_y_nominal: float
+      translation_factor: float
+      annual_ai_growth: float
+      fixed_cost_gdp: float
+      cost_2024_gdp: float
+      cost_at_h_star_gdp: {type: float, nullable: true}
+      spb_plus_gdp: float
+      flags: {type: string, nullable: true}
+      source_fiscal_space_hash: string
+      convention_note: string
+      source_threshold_flags: {type: string, nullable: true}
+  h_star_manual_check_inputs:
+    file: h_star_manual_check_inputs.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      xi: float
+      mfc_tilde_gross: float
+      phi_y_nominal: float
+      translation_factor_T: float
+      annual_ai_growth_phi_times_T: float
+      fixed_cost_gdp: float
+      cost_2024_gdp: float
+      spb_plus_gdp: float
+      h_star_baseline: {type: int, nullable: true}
+      h_star_debt_consistent: {type: int, nullable: true}
+      h_star_baseline_status: string
+      h_star_debt_consistent_status: string
+      ratio_by_year_json: string
+      v_by_year_baseline_json: string
+      convention_note: string
+      parameter_set_id: string
+      dataset_version: string
+  h_star_amendment_registry:
+    file: h_star_amendment_registry.csv
+    primary_key:
+      - amendment_id
+    columns:
+      run_id: string
+      amendment_id: string
+      amendment_text: string
+      primary_spec_hash_status: string
+      primary_spec_hash_actual: {type: string, nullable: true}
+      primary_spec_hash_expected: {type: string, nullable: true}
+      h_star_reporting_cap: int
+      convention_note: string
+      parameter_set_id: string
+      dataset_version: string
+      created_at_utc: string
   mc_convergence_report:
     file: mc_convergence_report.csv
     tolerance_tier: tier_B
