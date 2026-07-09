@@ -94,4 +94,5 @@ results. The primary specification hash is stored in `PRIMARY_SPEC_HASH.txt`;
 the pre-flight emits a warning if it differs from the checked-out plan 02.
 
 Git policy from Phase A onward: commit at the close of each stage using
-`etapa X: ...`; tag major milestones (`fase-A`, `fase-B`, `submission`).
+`etapa X: ...`; tag major milestones (`fase-A`, `fase-B`, `submission`);
+push each closing-stage commit to `origin` together with its tags.
