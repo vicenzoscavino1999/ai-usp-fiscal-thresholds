@@ -1,0 +1,26 @@
+artifact_id,rows,caption,csv,latex
+table1_anchors,4,Table 1. Observed anchors by country,table1_anchors.csv,table1_anchors.tex
+table2_policy_costs,24,Table 2. Gross policy costs,table2_policy_costs.csv,table2_policy_costs.tex
+table3_primary_specification,9,Table 3. Primary AI scenarios and fiscal regimes,table3_primary_specification.csv,table3_primary_specification.tex
+table4_vgross_baseline,480,"Table 4. Baseline Vgross by country, policy, scenario and regime",table4_vgross_baseline.csv,table4_vgross_baseline.tex
+table5_threshold_inversion,960,Table 5. Threshold inversion,table5_threshold_inversion.csv,table5_threshold_inversion.tex
+table6_historical_plausibility,80,Table 6. Historical plausibility,table6_historical_plausibility.csv,table6_historical_plausibility.tex
+table7_monte_carlo,480,Table 7. Monte Carlo probabilities and percentiles,table7_monte_carlo.csv,table7_monte_carlo.tex
+table8_final_classification,24,Table 8. Final country-policy classification,table8_final_classification.csv,table8_final_classification.tex
+appendix_a_net_cost_specification,32,Appendix A. Net-cost specification,appendix_a_net_cost_specification.csv,appendix_a_net_cost_specification.tex
+appendix_b_historical_reduced_form,1152,Appendix B. Historical reduced-form fiscal mode,appendix_b_historical_reduced_form.csv,appendix_b_historical_reduced_form.tex
+appendix_c_debt_integrated_specification,480,Appendix C. Debt-integrated threshold specification,appendix_c_debt_integrated_specification.csv,appendix_c_debt_integrated_specification.tex
+appendix_d_placebo_ict,120,Appendix D. Placebo ICT,appendix_d_placebo_ict.csv,appendix_d_placebo_ict.tex
+appendix_e_negative_controls,484,Appendix E. Negative controls,appendix_e_negative_controls.csv,appendix_e_negative_controls.tex
+appendix_f_leave_one_source_out,6,Appendix F. Leave-one-source-out,appendix_f_leave_one_source_out.csv,appendix_f_leave_one_source_out.tex
+appendix_g_channel_ablation,492,Appendix G. Channel and informality ablations,appendix_g_channel_ablation.csv,appendix_g_channel_ablation.tex
+appendix_h_double_counting_audit,8,Appendix H. Anti-double-counting audit,appendix_h_double_counting_audit.csv,appendix_h_double_counting_audit.tex
+appendix_i_master_calibration_matrix,456,Appendix I. Master calibration matrix,appendix_i_master_calibration_matrix.csv,appendix_i_master_calibration_matrix.tex
+appendix_i_calibrated_parameter_registry,445,Appendix I. Calibrated parameter registry,appendix_i_calibrated_parameter_registry.csv,appendix_i_calibrated_parameter_registry.tex
+appendix_j_mc_convergence,96,Appendix J. Monte Carlo convergence report,appendix_j_mc_convergence.csv,appendix_j_mc_convergence.tex
+appendix_k_computational_validation_tests,30,Appendix K. Computational validation tests,appendix_k_computational_validation_tests.csv,appendix_k_computational_validation_tests.tex
+master_calibration_matrix,456,Master calibration matrix,master_calibration_matrix.csv,master_calibration_matrix.tex
+bias_ledger,9,Bias ledger and direction of declared conventions,bias_ledger.csv,bias_ledger.tex
+minimum_publishable_package_checklist,14,Minimum publishable package checklist,minimum_publishable_package_checklist.csv,minimum_publishable_package_checklist.tex
+hypothesis_adjudication_final,5,Final hypothesis adjudication,hypothesis_adjudication_final.csv,hypothesis_adjudication_final.tex
+robustness_summary,116,Robustness headline summary,robustness_summary.csv,robustness_summary.tex

@@ -1,0 +1,206 @@
+{
+  "commit_sha": "77607cfc0052895a04c11332a878a87a2a856e09",
+  "created_at_utc": "2026-07-09T15:46:41.354750+00:00",
+  "dataset_manifest_hash": "74ab875ba64b31fa4e757c9932c6083bc34e01f0a30540e04bd12dbc10d047c8",
+  "dataset_version": "v1.0.1-official-4c",
+  "figures": [
+    {
+      "country_id": "PER",
+      "figure": "heatmap_vgross_PER.png"
+    },
+    {
+      "country_id": "CHL",
+      "figure": "heatmap_vgross_CHL.png"
+    },
+    {
+      "country_id": "COL",
+      "figure": "heatmap_vgross_COL.png"
+    },
+    {
+      "country_id": "MEX",
+      "figure": "heatmap_vgross_MEX.png"
+    }
+  ],
+  "git_dirty": true,
+  "paper_tables": [
+    {
+      "artifact_id": "table1_anchors",
+      "caption": "Table 1. Observed anchors by country",
+      "csv": "table1_anchors.csv",
+      "latex": "table1_anchors.tex",
+      "rows": 4
+    },
+    {
+      "artifact_id": "table2_policy_costs",
+      "caption": "Table 2. Gross policy costs",
+      "csv": "table2_policy_costs.csv",
+      "latex": "table2_policy_costs.tex",
+      "rows": 24
+    },
+    {
+      "artifact_id": "table3_primary_specification",
+      "caption": "Table 3. Primary AI scenarios and fiscal regimes",
+      "csv": "table3_primary_specification.csv",
+      "latex": "table3_primary_specification.tex",
+      "rows": 9
+    },
+    {
+      "artifact_id": "table4_vgross_baseline",
+      "caption": "Table 4. Baseline Vgross by country, policy, scenario and regime",
+      "csv": "table4_vgross_baseline.csv",
+      "latex": "table4_vgross_baseline.tex",
+      "rows": 480
+    },
+    {
+      "artifact_id": "table5_threshold_inversion",
+      "caption": "Table 5. Threshold inversion",
+      "csv": "table5_threshold_inversion.csv",
+      "latex": "table5_threshold_inversion.tex",
+      "rows": 960
+    },
+    {
+      "artifact_id": "table6_historical_plausibility",
+      "caption": "Table 6. Historical plausibility",
+      "csv": "table6_historical_plausibility.csv",
+      "latex": "table6_historical_plausibility.tex",
+      "rows": 80
+    },
+    {
+      "artifact_id": "table7_monte_carlo",
+      "caption": "Table 7. Monte Carlo probabilities and percentiles",
+      "csv": "table7_monte_carlo.csv",
+      "latex": "table7_monte_carlo.tex",
+      "rows": 480
+    },
+    {
+      "artifact_id": "table8_final_classification",
+      "caption": "Table 8. Final country-policy classification",
+      "csv": "table8_final_classification.csv",
+      "latex": "table8_final_classification.tex",
+      "rows": 24
+    },
+    {
+      "artifact_id": "appendix_a_net_cost_specification",
+      "caption": "Appendix A. Net-cost specification",
+      "csv": "appendix_a_net_cost_specification.csv",
+      "latex": "appendix_a_net_cost_specification.tex",
+      "rows": 32
+    },
+    {
+      "artifact_id": "appendix_b_historical_reduced_form",
+      "caption": "Appendix B. Historical reduced-form fiscal mode",
+      "csv": "appendix_b_historical_reduced_form.csv",
+      "latex": "appendix_b_historical_reduced_form.tex",
+      "rows": 1152
+    },
+    {
+      "artifact_id": "appendix_c_debt_integrated_specification",
+      "caption": "Appendix C. Debt-integrated threshold specification",
+      "csv": "appendix_c_debt_integrated_specification.csv",
+      "latex": "appendix_c_debt_integrated_specification.tex",
+      "rows": 480
+    },
+    {
+      "artifact_id": "appendix_d_placebo_ict",
+      "caption": "Appendix D. Placebo ICT",
+      "csv": "appendix_d_placebo_ict.csv",
+      "latex": "appendix_d_placebo_ict.tex",
+      "rows": 120
+    },
+    {
+      "artifact_id": "appendix_e_negative_controls",
+      "caption": "Appendix E. Negative controls",
+      "csv": "appendix_e_negative_controls.csv",
+      "latex": "appendix_e_negative_controls.tex",
+      "rows": 484
+    },
+    {
+      "artifact_id": "appendix_f_leave_one_source_out",
+      "caption": "Appendix F. Leave-one-source-out",
+      "csv": "appendix_f_leave_one_source_out.csv",
+      "latex": "appendix_f_leave_one_source_out.tex",
+      "rows": 6
+    },
+    {
+      "artifact_id": "appendix_g_channel_ablation",
+      "caption": "Appendix G. Channel and informality ablations",
+      "csv": "appendix_g_channel_ablation.csv",
+      "latex": "appendix_g_channel_ablation.tex",
+      "rows": 492
+    },
+    {
+      "artifact_id": "appendix_h_double_counting_audit",
+      "caption": "Appendix H. Anti-double-counting audit",
+      "csv": "appendix_h_double_counting_audit.csv",
+      "latex": "appendix_h_double_counting_audit.tex",
+      "rows": 8
+    },
+    {
+      "artifact_id": "appendix_i_master_calibration_matrix",
+      "caption": "Appendix I. Master calibration matrix",
+      "csv": "appendix_i_master_calibration_matrix.csv",
+      "latex": "appendix_i_master_calibration_matrix.tex",
+      "rows": 456
+    },
+    {
+      "artifact_id": "appendix_i_calibrated_parameter_registry",
+      "caption": "Appendix I. Calibrated parameter registry",
+      "csv": "appendix_i_calibrated_parameter_registry.csv",
+      "latex": "appendix_i_calibrated_parameter_registry.tex",
+      "rows": 445
+    },
+    {
+      "artifact_id": "appendix_j_mc_convergence",
+      "caption": "Appendix J. Monte Carlo convergence report",
+      "csv": "appendix_j_mc_convergence.csv",
+      "latex": "appendix_j_mc_convergence.tex",
+      "rows": 96
+    },
+    {
+      "artifact_id": "appendix_k_computational_validation_tests",
+      "caption": "Appendix K. Computational validation tests",
+      "csv": "appendix_k_computational_validation_tests.csv",
+      "latex": "appendix_k_computational_validation_tests.tex",
+      "rows": 30
+    },
+    {
+      "artifact_id": "master_calibration_matrix",
+      "caption": "Master calibration matrix",
+      "csv": "master_calibration_matrix.csv",
+      "latex": "master_calibration_matrix.tex",
+      "rows": 456
+    },
+    {
+      "artifact_id": "bias_ledger",
+      "caption": "Bias ledger and direction of declared conventions",
+      "csv": "bias_ledger.csv",
+      "latex": "bias_ledger.tex",
+      "rows": 9
+    },
+    {
+      "artifact_id": "minimum_publishable_package_checklist",
+      "caption": "Minimum publishable package checklist",
+      "csv": "minimum_publishable_package_checklist.csv",
+      "latex": "minimum_publishable_package_checklist.tex",
+      "rows": 14
+    },
+    {
+      "artifact_id": "hypothesis_adjudication_final",
+      "caption": "Final hypothesis adjudication",
+      "csv": "hypothesis_adjudication_final.csv",
+      "latex": "hypothesis_adjudication_final.tex",
+      "rows": 5
+    },
+    {
+      "artifact_id": "robustness_summary",
+      "caption": "Robustness headline summary",
+      "csv": "robustness_summary.csv",
+      "latex": "robustness_summary.tex",
+      "rows": 116
+    }
+  ],
+  "parameter_set_id": "baseline-official-v3",
+  "run_id": "official_4c_phase_b_closure_baseline_official_v3",
+  "run_type": "phase_b_closure",
+  "runtime_seconds": 16.882949400001962
+}

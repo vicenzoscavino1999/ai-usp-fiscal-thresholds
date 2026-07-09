@@ -1,15 +1,18 @@
-"""Stage 1 figure-generation stub."""
+"""Generate paper figures from official result CSVs."""
 
 from __future__ import annotations
 
-import sys
+import json
+
+from scripts.finalize_phase_b import ensure_dirs, generate_heatmaps
 
 
 def main() -> int:
-    print("generate_all_figures.py no implementado en Etapa 1", file=sys.stderr)
-    return 1
+    ensure_dirs()
+    figures = generate_heatmaps()
+    print(json.dumps({"status": "OK", "figures": figures}, indent=2))
+    return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

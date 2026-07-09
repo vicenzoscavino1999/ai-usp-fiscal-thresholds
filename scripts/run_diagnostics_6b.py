@@ -683,7 +683,11 @@ def diagnostic_rows(
             "variant_id": "D2_negative_control_sectorial",
             "diagnostic_key": "exposure_displacement_control",
             "diagnostic_value": json.dumps(negative_summary, sort_keys=True),
-            "diagnostic_note": "E_prod replaced by automation/displacement exposure E_auto=0.035; expected V collapse roughly proportional to 0.035/0.11.",
+            "diagnostic_note": (
+                "E_prod replaced by automation/displacement exposure E_auto=0.035; expected V collapse roughly proportional to 0.035/0.11. "
+                "Interpretation: el colapso mecanico opera (ratio = ratio de exposiciones); la celda superviviente CHL GMI stress refleja "
+                "sobredeterminacion por escala del shock vs costo (corroborado por D4); caveat aplicado al claim condicional de CHL GMI."
+            ),
             "diagnostic_family": "negative_control",
             "expected_verdict": "PASS if no headline crossing survives the non-productive exposure control",
             "verdict": negative_summary["verdict"],

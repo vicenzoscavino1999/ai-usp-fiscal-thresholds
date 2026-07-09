@@ -1,22 +1,23 @@
 # AI-USP Fiscal Thresholds
 
-This repository is the reproduction package for the AI-USP fiscal threshold
-framework. It combines frozen country data, an audited calibration registry, a
-certified deterministic engine, and archived reference outputs for the official
-four-country baseline (`PER`, `CHL`, `COL`, `MEX`).
+Reproduction package for a calibrated accounting-fiscal threshold framework on
+AI-induced fiscal space and universal or categorical social protection in Peru,
+Chile, Colombia, and Mexico.
 
-Current status: Phase A deterministic Tier A is operational and verified
-against the archived reference. Tier B Monte Carlo and Tier D diagnostics are
-treated as Phase B work for official claims, although review artifacts from the
-Monte Carlo apparatus are archived for audit continuity.
+Current status: Phase B release candidate. Tier A deterministic outputs, Tier B
+Monte Carlo, Tier D diagnostics/falsification, robustness tables, final
+hypothesis adjudication, paper tables, and reference outputs are implemented.
+The official data snapshot is `v1.0.1-official-4c`. The deterministic official
+grid remains `baseline-official-v2`; Phase B uncertainty/diagnostics use
+`baseline-official-v3`.
 
 ## Requirements
 
 - Python 3.12.x.
-- Docker, for the canonical clean-run recipe.
-- GNU Make, optional on Windows because direct Python commands are provided.
-- Local frozen data under `data/`, local DuckDB under `db/`, and writable
-  `results/`; these are intentionally not versioned.
+- Docker 27+ for the canonical clean-run recipe.
+- GNU Make in Docker or locally. Windows users can run the direct Python commands.
+- Local author-held `data/` and `db/` folders for full reproduction. They are
+  intentionally ignored by Git.
 
 Install locally:
 
@@ -28,8 +29,6 @@ pip install --no-deps -e .
 
 ## Canonical Docker Run
 
-From the repository root in PowerShell:
-
 ```powershell
 docker build -t ai-usp-fiscal-thresholds .
 docker run --rm `
@@ -37,62 +36,82 @@ docker run --rm `
   -v "${PWD}\db:/app/db" `
   -v "${PWD}\results:/app/results" `
   -v "${PWD}\reports:/app/reports" `
+  -v "${PWD}\figures:/app/figures" `
   ai-usp-fiscal-thresholds `
-  sh -lc "make reproduce-deterministic && make verify"
+  sh -lc "make reproduce-full"
 ```
 
-## Local Reproduction
+The Dockerfile is pinned to `python:3.12.4-slim` by digest. `make
+reproduce-full` runs Tier A+B, deterministic robustness, diagnostics, Phase B
+closure exports, and `verify.py`.
+
+## Local Commands
 
 With Make:
 
 ```powershell
 make reproduce-deterministic
+make reproduce-full
+make run-diagnostics
 make verify
+make test
 ```
 
-Direct Windows recipe without Make:
+Direct Windows recipe:
 
 ```powershell
-python reproducibility\run_all.py --tier A --run-label official --parameter-set-id baseline-official-v2 --dataset-version v1.0.1-official-4c
+python reproducibility\run_all.py --tier B --run-label official --parameter-set-id baseline-official-v2 --dataset-version v1.0.1-official-4c
+python scripts\run_deterministic_robustness_6a.py
+python scripts\run_diagnostics_6b.py
+python scripts\finalize_phase_b.py
 python reproducibility\verify.py
-python -m pytest
+python -m pytest -q
 ```
 
-The verification target compares current outputs in `results/official/` against
-the archived reference in `reproducibility/reference/` using the schemas and
-tolerances under `reproducibility/config/`.
+`verify.py` compares `results/official/` against
+`reproducibility/reference/`, enforces schemas, rejects missing/extra rows or
+columns, checks NaN/type violations, and verifies the frozen snapshot manifest
+hash.
 
 ## Folder Structure
 
-- `src/ai_usp/`: certified deterministic model components.
-- `scripts/`: data ingestion, anchor construction, calibration, and runners.
-- `reproducibility/`: run harness, schemas, tolerances, and reference outputs.
+- `src/ai_usp/`: certified deterministic mechanics.
+- `scripts/`: ingestion, anchor builders, calibration, runners, closure exports.
+- `reproducibility/`: run harness, schemas, tolerances, snapshot manifests, reference outputs.
 - `reproducibility/reference/`: versioned official reference CSVs and hashes.
-- `reproducibility/snapshot/`: versioned frozen snapshot manifests only.
-- `reports/`: versioned audit reports, calibration exports, and summaries.
-- `tests/`: unit, regression, schema, and verifier tests.
-- `metadata/`: conventions and source registry notes.
-- `paper/`: paper scaffold and references.
-- `data/`, `db/`, `results/`, `figures/`: local, ignored runtime artifacts.
+- `reports/`: versioned audit reports, calibration exports, paper-table mirror.
+- `results/`: local runtime outputs, including `results/paper_tables/`.
+- `figures/`: local generated figures; mirrored under `reports/figures/` for review.
+- `tests/`: unit, regression, schema, verifier, and closure tests.
+- `metadata/`: conventions and manual source registry notes.
+- `data/`, `db/`: author-held local inputs and DuckDB, ignored by Git.
 
 ## Data Policy
 
-The package is built around frozen snapshot manifests rather than redistributing
-all raw inputs. `data/` is local and ignored. Microdata and manually downloaded
-restricted files are not redistributed. GRD 2025 is registered as an author-held
-manual source with the official UNU-WIDER citation and DOI; derived audit
-contrasts are versioned where allowed. Ookla Speedtest raw data is treated under
-its CC BY-NC license note: internal snapshot use is recorded, while public raw
-archiving is deferred; derived gap-index outputs are archived. The official
-snapshot version for Phase A is `v1.0.1-official-4c`.
+The package stores snapshot manifests and derived audit artifacts, not all raw
+inputs. `data/`, `db/`, `results/`, and `figures/` are ignored runtime folders.
+Restricted microdata and author-downloaded raw files are not redistributed.
+GRD 2025 is registered with the official UNU-WIDER citation and DOI. Ookla
+Speedtest raw data is treated under CC BY-NC-SA 4.0: raw tiles are not
+redistributed in this package; the derived `gap_index` is archived with
+attribution and the license caveat.
+
+## Paper Artifact Map
+
+| Paper element | Code | Output | Verification |
+| --- | --- | --- | --- |
+| Feasibility ratio `Vgross` | `src/ai_usp/fiscal_space.py` | `fiscal_space_result.csv` | `verify.py`, `test_cost_monotonicity` |
+| Threshold inversion | `src/ai_usp/thresholds.py` | `threshold_inversion_result.csv` | `test_frozen_weight_inversion` |
+| Historical plausibility | `src/ai_usp/historical.py` | `historical_plausibility_result.csv` | `test_historical_class` |
+| Monte Carlo probabilities | `scripts/run_official_monte_carlo.py` | `monte_carlo_result.csv` | Tier B tolerances, `test_determinism_mc` |
+| Placebo ICT and controls | `scripts/run_diagnostics_6b.py` | `diagnostic_*_result.csv` | `test_diagnostics_6b` |
+| Informality ablation H3 | `scripts/finalize_phase_b.py` | `informality_adoption_ablation_result.csv` | `test_phase_b_closure` |
+| Paper tables/figures | `scripts/finalize_phase_b.py` | `results/paper_tables/`, `figures/` | final `verify.py` + pytest |
+| Hypothesis H1-H5 | `scripts/finalize_phase_b.py` | `hypothesis_adjudication.csv` | schema-locked by `verify.py` |
 
 ## Governance
 
-The official parameter set is `baseline-official-v2`. Rows requiring author
-review were materialized as `author_approved` before official deterministic
-results. The primary specification hash is stored in `PRIMARY_SPEC_HASH.txt`;
-the pre-flight emits a warning if it differs from the checked-out plan 02.
-
-Git policy from Phase A onward: commit at the close of each stage using
-`etapa X: ...`; tag major milestones (`fase-A`, `fase-B`, `submission`);
-push each closing-stage commit to `origin` together with its tags.
+Author-approved calibration rows are materialized before result generation.
+The primary specification hash is stored in `PRIMARY_SPEC_HASH.txt`; pre-flight
+warns if it differs from the checked-out plan 02. Closing-stage commits are
+tagged and pushed with their tags (`fase-A`, `etapa-*`, `fase-B`).

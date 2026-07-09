@@ -1,0 +1,10 @@
+bias_id,convention,direction
+frozen_anchor_2024,T and weights held at 2024 anchor,mixed; can understate diffusion but avoid unregistered transition dynamics
+pure_layering,existing spending not netted from new policy cost,conservative for feasibility
+available_tax_rates_r0,consumption disposable-tax rates frozen at r0 convention,favorable second-order for r>=1
+theta_target_loaded,GMI loaded companion uses theta_target,conservative relative to ideal GMI
+GMI_ideal,ideal aggregate GMI has no implementation load,favorable; cannot support ranking alone
+common_LAC_Eprod,E_prod common fallback across four countries,limits cross-country exposure inference
+Gap_excluded_indicators,Gap built from ITU/Ookla excluded indicators,reduces AIPI overlap risk
+AI_rent_subset,"AI rents inactive in r0-r2, active only conditional/stress",prevents robust claims from rent capture
+D2_negative_control,displacement exposure collapses V by exposure ratio but CHL GMI stress survives,caveat on CHL GMI conditional claim

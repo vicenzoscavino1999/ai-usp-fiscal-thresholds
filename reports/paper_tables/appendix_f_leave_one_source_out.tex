@@ -1,0 +1,16 @@
+\begin{table}[!htbp]
+\centering
+\caption{Appendix F. Leave-one-source-out}
+\begin{tabular}{lllllllllllllllll}
+\toprule
+run\_id & run\_type & diagnostic\_id & country\_id & policy\_variant\_id & scenario\_id & regime\_id & alternative\_source & status & baseline\_v & alternative\_v & baseline\_class & alternative\_class & rank\_change & notes & parameter\_set\_id & dataset\_version \\
+\midrule
+official\_4c\_diagnostics\_6b\_baseline\_official\_v3 & diagnostic & D3\_no\_oecd\_revstats & PER & PEN & stress & r4 & GRD tax including social contributions vs OECD tax including social contributions & PASS & 1.4222907379520815 & 1.455676151282658 & crosses & crosses & 0.0 & Like-for-like GRD/OECD tax comparison when general-government contrast exists; duplicate GRD rows outside plausible GDP-share bounds are excluded. & baseline-official-v3 & v1.0.1-official-4c \\
+official\_4c\_diagnostics\_6b\_baseline\_official\_v3 & diagnostic & D3\_no\_oecd\_revstats & CHL & GMI:GMI\_ideal\_aggregate & mid & r0 & GRD tax including social contributions vs OECD tax including social contributions & PASS & -0.6119963968804701 & -0.6114028425078 & not\_feasible & not\_feasible & 0.0 & Like-for-like GRD/OECD tax comparison when general-government contrast exists; duplicate GRD rows outside plausible GDP-share bounds are excluded. & baseline-official-v3 & v1.0.1-official-4c \\
+official\_4c\_diagnostics\_6b\_baseline\_official\_v3 & diagnostic & D3\_no\_oecd\_revstats & CHL & GMI:GMI\_ideal\_aggregate & stress & r0 & GRD tax including social contributions vs OECD tax including social contributions & PASS & 3.901937871138183 & 3.898153515058463 & crosses & crosses & 0.0 & Like-for-like GRD/OECD tax comparison when general-government contrast exists; duplicate GRD rows outside plausible GDP-share bounds are excluded. & baseline-official-v3 & v1.0.1-official-4c \\
+official\_4c\_diagnostics\_6b\_baseline\_official\_v3 & diagnostic & D3\_no\_wdi\_macro & ALL & ALL & ALL & ALL & not\_available\_in\_snapshot & not\_available &  &  & not\_evaluated & not\_available &  & IMF snapshot has NGDPD and growth but no complete nominal LCU + population/demography path; full WDI-free rebuild is not available in frozen inputs. & baseline-official-v3 & v1.0.1-official-4c \\
+official\_4c\_diagnostics\_6b\_baseline\_official\_v3 & diagnostic & D3\_no\_pip & ALL & ALL & ALL & ALL & not\_available\_in\_snapshot & not\_available &  &  & not\_evaluated & not\_available &  & National poverty-line alternatives for all four countries are not present as clean frozen manual sources; no-PIP rebuild is not available. & baseline-official-v3 & v1.0.1-official-4c \\
+official\_4c\_diagnostics\_6b\_baseline\_official\_v3 & diagnostic & D3\_no\_aipi & ALL & ALL & ALL & ALL & not\_available\_in\_snapshot & not\_available &  &  & not\_evaluated & not\_available &  & AIPI has no comparable official alternative in the frozen snapshot; source-unique limitation declared. & baseline-official-v3 & v1.0.1-official-4c \\
+\bottomrule
+\end{tabular}
+\end{table}

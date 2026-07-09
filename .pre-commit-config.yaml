@@ -1,2 +1,9 @@
-repos: []
-
+repos:
+  - repo: local
+    hooks:
+      - id: large-file-data-guard
+        name: large-file-data-guard
+        entry: python scripts/check_large_files.py
+        language: system
+        pass_filenames: true
+        stages: [pre-commit]

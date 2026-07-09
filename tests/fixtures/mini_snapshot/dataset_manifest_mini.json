@@ -1,0 +1,8 @@
+{
+  "dataset_version": "mini-ci-tier-a-fixture",
+  "manifest_schema_version": "0.1.1-stage1",
+  "countries": ["PER"],
+  "purpose": "Fast CI fixture marker. The full official snapshot is author-held under data/; CI validates package tests and the archived reference contract without redownloading sources.",
+  "sources": [],
+  "created_by": "Etapa 7 closure"
+}

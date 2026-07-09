@@ -1,6 +1,37 @@
-Data license placeholder for Stage 1.
+# Data License and Redistribution Policy
 
-Archived public-data snapshots, derived data, and figures are intended to be
-released under CC-BY-4.0 unless a source license requires stricter treatment.
-Restricted microdata are not redistributed.
+The source code is licensed under MIT. Derived tables, audit reports, figures,
+and paper-ready CSV/LaTeX exports produced by this package are intended for
+release under CC-BY-4.0 unless a source-specific license imposes a stricter
+condition.
 
+## Not Redistributed
+
+- Raw files under `data/`.
+- Local DuckDB files under `db/`.
+- Restricted or manually downloaded microdata.
+- Author-held raw GRD Excel files.
+- Ookla Speedtest raw tile/cache data.
+
+## GRD 2025
+
+UNU-WIDER GRD 2025 is registered as an author-held manual source and cited as:
+
+UNU-WIDER (2025). UNU-WIDER Government Revenue Dataset. Version 2025. Helsinki:
+UNU-WIDER. https://doi.org/10.35188/UNU-WIDER/GRD-2025
+
+Derived contrast tables may be archived with citation. Raw Excel files are not
+redistributed by this repository.
+
+## Ookla Speedtest Open Data
+
+Ookla Speedtest open data is under CC BY-NC-SA 4.0. This package records
+internal snapshot use for calibration and cites the source. The raw Ookla data
+are not redistributed in the public package. The derived `gap_index` is archived
+as a transformed calibration artifact with attribution and this license caveat.
+
+## Snapshot Manifests
+
+Snapshot manifests in `reproducibility/snapshot/` contain source metadata,
+hashes, and license notes. They are the reproducibility contract for the frozen
+dataset version, not a redistribution of all raw inputs.

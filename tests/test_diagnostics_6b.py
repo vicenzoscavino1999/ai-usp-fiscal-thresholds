@@ -39,6 +39,7 @@ def test_diagnostics_6b_outputs_if_present():
         "D6_high_leakage_stress",
         "D7_informalization_mirror",
         "D8_sobol_saltelli",
+        "P0_informality_adoption_ablation",
     }
     assert rows.loc[rows["variant_id"].eq("D1_placebo_ict"), "verdict"].item() == "PASS"
     assert rows.loc[rows["variant_id"].eq("D3_leave_one_source_out"), "verdict"].item() == "PASS"

@@ -724,6 +724,41 @@ schemas:
       dataset_version: string
       sobol_st_rank: int
       rank_change_abs: int
+  informality_adoption_ablation_result:
+    file: informality_adoption_ablation_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      scenario_id: string
+      regime_id: string
+      informality_observed: float
+      q_bar_baseline: float
+      q_bar_no_informality: float
+      delta_q_bar: float
+      q_prod_baseline: float
+      q_prod_no_informality: float
+      delta_q_prod: float
+      v_baseline_recomputed: float
+      v_no_informality_adoption: float
+      delta_v: float
+      baseline_crosses_v1: bool
+      variant_crosses_v1: bool
+      crossing_changed: bool
+      asymmetry_note: string
+      parameter_set_id: string
+      dataset_version: string
   historical_window_plausibility_changes:
     file: historical_window_plausibility_changes.csv
     primary_key:

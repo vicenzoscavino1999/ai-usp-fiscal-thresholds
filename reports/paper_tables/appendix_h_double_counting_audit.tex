@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\centering
+\caption{Appendix H. Anti-double-counting audit}
+\begin{tabular}{lllllllllll}
+\toprule
+audit\_id & module & table\_name & passed & severity & notes & parameter\_set\_id & dataset\_version & audit\_table & risk & status \\
+\midrule
+official\_country\_scope\_complete & governance & dim\_country & True & hard & PER/CHL/COL/MEX present for official run. | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & input\_audit\_report &  &  \\
+gap\_pilot\_robustness\_closed & adoption\_translation & digital\_gap\_anchor & True & robustness\_only & Pilot Gap=0 diagnostic row closed; official calibration uses excluded coverage+speed gap\_index. | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & input\_audit\_report &  &  \\
+author\_signature\_materialized & governance & value\_assignment\_table & True & hard & ratificacion del autor registrada pre-resultados | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & input\_audit\_report &  &  \\
+run\_readiness\_flag & governance & input\_audit\_report & True & hard & TRUE for official deterministic Tier A after author ratification and v1.0.1 anchors. | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & input\_audit\_report &  &  \\
+aipi\_q\_target\_and\_mu\_inversion & adoption\_translation &  &  &  & Frozen baseline logit inversion of mu absorbs the level and neutralizes double use; structural-intercept mode must remember this. | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & double\_counting\_audit & AIPI enters target derivation and logistic index & pass \\
+gap\_excluded\_indicators & adoption\_translation &  &  &  & Gap indicators are LTE coverage and Ookla fixed/mobile speed, verified as excluded from the IMF AIPI component note. | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & double\_counting\_audit & AIPI digital overlap & pass \\
+tax\_base\_double\_discount & fiscal\_channels &  &  &  & Base broadening changes psi\_shift/exempt\_C; effective tax rates are not broadened on the same margin twice. | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & double\_counting\_audit & rate-side and base-side broadening mix & pass \\
+ai\_rent\_capital\_overlap & fiscal\_channels &  &  &  & lambda\_AI\_Kbase nets the AI-rent subset out of omega\_K. | Cloned for baseline-official-v3 measurement-uncertainty amendment. & baseline-official-v3 & v1.0.1-official-4c & double\_counting\_audit & AI rents counted in capital and AI-rent channels & pass \\
+\bottomrule
+\end{tabular}
+\end{table}

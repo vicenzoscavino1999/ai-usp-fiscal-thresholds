@@ -1,0 +1,15 @@
+element,working_paper_requirement,journal_requirement,status,evidence
+Baseline deterministico,obligatorio,obligatorio,complete,fiscal_space_result.csv
+Scenario-regime grid,obligatorio,obligatorio,complete,fiscal_space_result.csv
+Historical plausibility,obligatorio,obligatorio,complete,historical_plausibility_result.csv
+Threshold inversion,obligatorio,obligatorio,complete,threshold_inversion_result.csv
+Monte Carlo,recomendable,obligatorio,complete,monte_carlo_result.csv
+MC convergence report,opcional,obligatorio,complete,mc_convergence_report.csv
+GMI microdata,recomendable,muy recomendable,pending_author_microdata,not in official aggregate package
+Placebo ICT,opcional,obligatorio si claim fuerte,complete,diagnostic_placebo_ict_result.csv
+Negative controls,opcional,obligatorio,complete_with_caveat,diagnostic_negative_control_result.csv
+Leave-one-source-out,opcional,recomendable,complete_where_snapshot_has_alternative,diagnostic_loso_result.csv
+Channel ablation,recomendable,obligatorio,complete,diagnostic_channel_ablation_result.csv; informality_adoption_ablation_result.csv
+Anti-double-counting audit,obligatorio,obligatorio,complete,double_counting_audit
+Calibration registry,obligatorio,obligatorio,complete,master_calibration_matrix.csv
+Results discipline protocol,obligatorio,obligatorio,complete,schemas.yaml; verify.py; hypothesis_adjudication.csv

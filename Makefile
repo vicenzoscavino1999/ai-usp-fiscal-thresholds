@@ -16,7 +16,7 @@ verify:
 	python reproducibility/verify.py
 
 figures:
-	$(MAKE) not-implemented TARGET=$@
+	python scripts/finalize_phase_b.py
 
 test:
 	python -m pytest
@@ -27,10 +27,15 @@ reproduce-deterministic:            # Tier A: Fases 2-5, exacto
 	python reproducibility/run_all.py --tier A --run-label $(RUN_LABEL) --parameter-set-id $(PARAMETER_SET_ID) --dataset-version $(DATASET_VERSION)
 
 reproduce-full:                     # Tier A + B (MC), consume snapshot congelado
-	$(MAKE) not-implemented TARGET=$@
+	python reproducibility/run_all.py --tier B --run-label $(RUN_LABEL) --parameter-set-id $(PARAMETER_SET_ID) --dataset-version $(DATASET_VERSION)
+	python scripts/run_deterministic_robustness_6a.py
+	python scripts/run_diagnostics_6b.py
+	python scripts/finalize_phase_b.py
+	python reproducibility/verify.py
 
 run-diagnostics:                    # Tier D: placebo ICT, negative controls, LOSO, ablation
 	python scripts/run_diagnostics_6b.py
+	python scripts/finalize_phase_b.py
 
 check-env:
 	python reproducibility/run_all.py --check-env-only
