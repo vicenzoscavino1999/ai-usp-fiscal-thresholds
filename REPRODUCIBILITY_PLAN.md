@@ -549,7 +549,10 @@ Los fallos críticos abortan antes de empezar el cómputo numérico.
 
 ## Política de ejecución larga
 
-Cualquier cómputo que supere ~30 min soporta checkpointing y recovery.
+Cualquier cómputo que supere ~60 min soporta checkpointing y recovery. (Umbral operativo
+ajustado de ~30 a ~60 min, 2026-07-09: el reproduce-full completo tarda ~30 min, de modo
+que el costo máximo de reintento es inferior al costo de mantener y testear la maquinaria
+de resume; decisión de proporcionalidad documentada.)
 
 - `run_all.py` escribe resultados parciales bloque a bloque bajo `results/.partial/`.
 - Un bloque se considera completo solo tras escribir su data **y** su checksum
