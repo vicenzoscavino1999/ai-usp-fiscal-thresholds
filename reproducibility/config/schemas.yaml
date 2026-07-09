@@ -507,12 +507,223 @@ schemas:
         allowed_values:
           - robustness
           - labeled_illustrative
+          - diagnostic
       variant_id: string
       diagnostic_key: string
       diagnostic_value: string
       diagnostic_note: string
+      diagnostic_family: {type: string, nullable: true}
+      expected_verdict: {type: string, nullable: true}
+      verdict: {type: string, nullable: true}
+      rank_change: {type: string, nullable: true}
       parameter_set_id: string
       dataset_version: string
+  diagnostic_placebo_ict_result:
+    file: diagnostic_placebo_ict_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      scenario_id: string
+      regime_id: string
+      anchor_year: int
+      endpoint_year: int
+      phi_ict_annual: float
+      phi_ict_range_low: float
+      phi_ict_range_high: float
+      ict_proxy_2010: float
+      ict_proxy_components_json: string
+      g_placebo: float
+      mfc_pre2009_p50: float
+      policy_cost_gdp_2010_proxy: float
+      v_placebo: float
+      placebo_cell_class: string
+      assumptions_note: string
+      parameter_set_id: string
+      dataset_version: string
+  diagnostic_negative_control_result:
+    file: diagnostic_negative_control_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      v_baseline: float
+      v_negative_control: float
+      collapse_ratio: float
+      baseline_crosses_v1: bool
+      negative_control_crosses_v1: bool
+      verdict:
+        type: string
+        allowed_values:
+          - PASS
+          - FAIL
+      parameter_set_id: string
+      dataset_version: string
+  diagnostic_loso_result:
+    file: diagnostic_loso_result.csv
+    primary_key:
+      - diagnostic_id
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      diagnostic_id: string
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      alternative_source: string
+      status:
+        type: string
+        allowed_values:
+          - PASS
+          - FAIL
+          - not_available
+      baseline_v: {type: float, nullable: true}
+      alternative_v: {type: float, nullable: true}
+      baseline_class: string
+      alternative_class: string
+      rank_change: {type: float, nullable: true}
+      notes: string
+      parameter_set_id: string
+      dataset_version: string
+  diagnostic_channel_ablation_result:
+    file: diagnostic_channel_ablation_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - channel
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      channel:
+        type: string
+        allowed_values:
+          - labor
+          - capital
+          - consumption
+          - ai_rent
+      channel_contribution_mfc: float
+      channel_share_mfc: float
+      v_baseline_recomputed: float
+      v_without_channel: float
+      delta_v: float
+      crossing_survives_without_channel: bool
+      parameter_set_id: string
+      dataset_version: string
+  diagnostic_no_rent_capture_result:
+    file: diagnostic_no_rent_capture_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      v_baseline_recomputed: float
+      v_no_rent_capture: float
+      delta_v: float
+      r4_crossing_depends_on_rents: bool
+      parameter_set_id: string
+      dataset_version: string
+  diagnostic_high_leakage_result:
+    file: diagnostic_high_leakage_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      v_baseline_recomputed: float
+      v_high_leakage: float
+      delta_v: float
+      crossing_survives_high_leakage: bool
+      parameter_set_id: string
+      dataset_version: string
+  diagnostic_sobol_result:
+    file: diagnostic_sobol_result.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - parameter_name
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - diagnostic
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      parameter_name: string
+      saltelli_n: int
+      s1: float
+      st: float
+      spearman_rank: int
+      spearman_rho: float
+      parameter_p10: float
+      parameter_p90: float
+      parameter_set_id: string
+      dataset_version: string
+      sobol_st_rank: int
+      rank_change_abs: int
   historical_window_plausibility_changes:
     file: historical_window_plausibility_changes.csv
     primary_key:

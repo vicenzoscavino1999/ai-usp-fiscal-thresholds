@@ -33,6 +33,7 @@ REFERENCE_CHANGELOG = [
     "Etapa 5B-R: baseline-official-v3 con incertidumbre de medicion A/Gap/I; dependencia institucional factor + cross-check par-a-par; clasificacion final sigue usando solo MC_independent_baseline.",
     "Etapa 6A: robustez deterministica Exp 6; corridas etiquetadas run_type=robustness comparadas contra baseline-official-v3 sin reclasificar el baseline.",
     "Etapa 6A.1: cierre de revision de robustez K1-K6; R2b conservador q_prod_t0=0, not_available sin delta cero, Gap residualizado auditado, tabla K5 y GRD non-resource auditado.",
+    "Etapa 6B: diagnosticos Tier D y falsificacion; placebo ICT, negative controls, LOSO, ablation, high leakage y Sobol/Saltelli sobre baseline-official-v3 sin modificar baseline.",
 ]
 
 

@@ -1,0 +1,2 @@
+run_id,run_type,country_id,policy_variant_id,scenario_id,regime_id,v_baseline_recomputed,v_no_rent_capture,delta_v,r4_crossing_depends_on_rents,parameter_set_id,dataset_version
+official_4c_diagnostics_6b_baseline_official_v3,diagnostic,PER,PEN,stress,r4,1.402956888234968,1.2734639699316452,-0.12949291830332266,False,baseline-official-v3,v1.0.1-official-4c

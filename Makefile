@@ -30,7 +30,7 @@ reproduce-full:                     # Tier A + B (MC), consume snapshot congelad
 	$(MAKE) not-implemented TARGET=$@
 
 run-diagnostics:                    # Tier D: placebo ICT, negative controls, LOSO, ablation
-	$(MAKE) not-implemented TARGET=$@
+	python scripts/run_diagnostics_6b.py
 
 check-env:
 	python reproducibility/run_all.py --check-env-only
