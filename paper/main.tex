@@ -8,6 +8,7 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{lscape}
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{natbib}
@@ -1742,8 +1743,62 @@ macroeconomic literature and are not forecasts.
 
 \input{tables/table4_vgross_baseline}
 
-% [Paso 2b -- pendiente] \subsection{Historical plausibility and debt guardrails}
-% [Paso 2b -- pendiente] \subsection{Monte Carlo feasibility probabilities}
+\subsection{Historical plausibility and debt guardrails}\label{subsec:results_plausibility}
+
+The channel-based capture rates that generate the baseline results are themselves
+historically ordinary: constructed marginal capture lies below each country's median
+historical capture, so no baseline result relies on fiscally unusual behavior. The
+discipline binds on the \emph{required} side. Table~\ref{tab:results_plausibility} reports
+the classification of required captures against each country's historical distribution,
+with bootstrap confidence intervals on the percentile boundaries. Only one requirement in
+the moderate scenario lies inside historical experience: Chile's guaranteed minimum income,
+whose required capture of roughly $0.17$ is classified as fiscally ordinary, with a
+borderline flag reflecting proximity to the confidence band. Every other requirement is
+outside historical support, in most cases by multiples of the ninetieth percentile. Peru's
+universal pension at stress is the instructive marginal case: its required capture of
+$0.305$ exceeds the ninetieth percentile of $0.297$ but falls inside that percentile's
+bootstrap interval, and is reported as extreme with an explicit borderline flag rather than
+as a clean classification. These class assignments are invariant to the historical window:
+recomputing the percentiles on post-2010, post-2015, and pandemic-excluded samples changes
+no classification, and only adds borderline flags where the shorter samples widen the
+confidence bands.
+
+The debt-stabilizing guardrail then separates the pilot countries more sharply than any
+other layer. Chile's stabilizing primary-balance gap is approximately zero, so its
+debt-consistent requirements coincide with the baseline requirements. Peru requires a fiscal
+adjustment of roughly $0.7$ percent of GDP before new spending is debt-consistent, which is
+why its stress crossings fail the guardrail throughout. For Colombia and Mexico the
+guardrail is decisive, as the required persistence horizons of
+Section~\ref{subsec:results_inversions} make explicit.
+
+\input{tables/table6_historical_plausibility}
+
+\subsection{Monte Carlo feasibility probabilities}\label{subsec:results_mc}
+
+Table~\ref{tab:results_mc} propagates the registered parameter uncertainty through the full
+chain and reports crossing probabilities on the frozen buffer grid, under the three
+pre-registered denominators (all draws, arithmetically valid draws, and support-valid
+draws) and with convergence verified on a ladder of draw sizes for all headline cells.
+Under the moderate scenario the probabilistic results confirm the deterministic ones with
+near-certainty: crossing probabilities are indistinguishable from zero for every instrument
+and country. Under the stress support, Chile's guaranteed minimum income crosses with
+probability above $0.97$ in every regime while passing the debt guardrail; Peru's universal
+pension crosses with probability between roughly $0.6$ and $0.8$ depending on the regime,
+but its debt-consistent crossing probability is below one percent, which is what the
+fragile classification records. Three robustness properties of these probabilities deserve
+emphasis. First, they are insensitive to the declared institutional-dependence structure:
+imposing the signed rank-dependence at intensities between $0.3$ and $0.8$, under either a
+one-factor or a pairwise implementation, trims stress probabilities by two to four
+percentage points and never moves any result across a decision threshold. Second, the
+driver ranking is stable across methods: the scenario shock dominates everywhere, followed
+by the adoption anchor and the frontier-exposure calibration, with rent-capture parameters
+entering only in the reform regimes that activate them. Third, the labelled historical
+reduced-form robustness mode is systematically more optimistic than the channel mode ---
+for Chile's mid-scenario minimum income it yields crossing probabilities in the $0.7$ to
+$0.9$ range where the channel mode yields effectively zero --- which quantifies how much of
+the optimism in reduced-form reasoning the channel accounting disciplines away.
+
+\input{tables/table7_monte_carlo}
 % [Paso 2c -- pendiente] \subsection{Threshold inversions and required persistence horizons}
 % [Paso 2c -- pendiente] \subsection{Diagnostics and falsification}
 % [Paso 2d -- pendiente] \subsection{Hypothesis adjudication}

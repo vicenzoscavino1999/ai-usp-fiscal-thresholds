@@ -1,10 +1,18 @@
-\begin{table}[!htbp]
-\centering
-\caption{Table 6. Historical plausibility}
-\begin{tabular}{lllllllllll}
+\begin{landscape}
+\pdfpageattr{/Rotate 90}
+\fontsize{6.5}{7.8}\selectfont
+\setlength{\tabcolsep}{1.5pt}
+\begin{longtable}{lllllllllll}
+\caption{Table 6. Historical plausibility}\label{tab:results_plausibility}\\
 \toprule
 run\_id & country\_id & scenario\_id & regime\_id & mfc\_gross & tax\_class & tax\_borderline & total\_revenue\_class & total\_revenue\_borderline & parameter\_set\_id & dataset\_version \\
 \midrule
+\endfirsthead
+\caption[]{Table 6. Historical plausibility (continued)}\\
+\toprule
+run\_id & country\_id & scenario\_id & regime\_id & mfc\_gross & tax\_class & tax\_borderline & total\_revenue\_class & total\_revenue\_borderline & parameter\_set\_id & dataset\_version \\
+\midrule
+\endhead
 official\_4c\_tierA\_baseline\_official\_v2 & PER & low & r0 & 0.0981653639417149 & fiscally\_ordinary & False & fiscally\_ordinary & False & baseline-official-v2 & v1.0.1-official-4c \\
 official\_4c\_tierA\_baseline\_official\_v2 & PER & low & r1 & 0.1033827250809843 & fiscally\_ordinary & False & fiscally\_ordinary & False & baseline-official-v2 & v1.0.1-official-4c \\
 official\_4c\_tierA\_baseline\_official\_v2 & PER & low & r2 & 0.1080252574732752 & fiscally\_ordinary & False & fiscally\_ordinary & False & baseline-official-v2 & v1.0.1-official-4c \\
@@ -86,5 +94,6 @@ official\_4c\_tierA\_baseline\_official\_v2 & MEX & stress & r2 & 0.098604718045
 official\_4c\_tierA\_baseline\_official\_v2 & MEX & stress & r3 & 0.0914011399474405 & fiscally\_ordinary & False & fiscally\_ordinary & False & baseline-official-v2 & v1.0.1-official-4c \\
 official\_4c\_tierA\_baseline\_official\_v2 & MEX & stress & r4 & 0.1145554991629147 & fiscally\_ordinary & False & fiscally\_ordinary & False & baseline-official-v2 & v1.0.1-official-4c \\
 \bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\end{landscape}
+\pdfpageattr{}

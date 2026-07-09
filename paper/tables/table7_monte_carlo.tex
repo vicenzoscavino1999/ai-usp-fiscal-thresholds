@@ -1,10 +1,18 @@
-\begin{table}[!htbp]
-\centering
-\caption{Table 7. Monte Carlo probabilities and percentiles}
-\begin{tabular}{llllllllll}
+\begin{landscape}
+\pdfpageattr{/Rotate 90}
+\fontsize{7}{8.4}\selectfont
+\setlength{\tabcolsep}{1.5pt}
+\begin{longtable}{llllllllll}
+\caption{Table 7. Monte Carlo probabilities and percentiles}\label{tab:results_mc}\\
 \toprule
 country\_id & policy\_variant\_id & scenario\_id & regime\_id & prob\_v\_ge\_1 & prob\_v\_ge\_1\_10 & v\_p05 & v\_p50 & v\_p95 & converged\_flag \\
 \midrule
+\endfirsthead
+\caption[]{Table 7. Monte Carlo probabilities and percentiles (continued)}\\
+\toprule
+country\_id & policy\_variant\_id & scenario\_id & regime\_id & prob\_v\_ge\_1 & prob\_v\_ge\_1\_10 & v\_p05 & v\_p50 & v\_p95 & converged\_flag \\
+\midrule
+\endhead
 PER & PEN & low & r0 & 0.0 & 0.0 & -0.280804716583315 & -0.2647799071131987 & -0.2439667941816916 & True \\
 PER & GMI:GMI\_ideal\_aggregate & low & r0 & 0.0 & 0.0 & -0.1243837331284456 & -0.1211790996123289 & -0.1170169035251048 & True \\
 PER & GMI:GMI\_loaded\_aggregate & low & r0 & 0.0 & 0.0 & -0.082922488752297 & -0.0807860664082192 & -0.0780112690167365 & True \\
@@ -86,5 +94,6 @@ PER & UBI & high & r2 & 0.0 & 0.0 & 0.0022655240320006 & 0.0059563023293532 & 0.
 PER & PEN & high & r3 & 0.0 & 0.0 & -0.1153534323989077 & 0.0136378251875298 & 0.1909656774213741 & True \\
 PER & GMI:GMI\_ideal\_aggregate & high & r3 & 0.0 & 0.0 & -0.0908294285156541 & -0.0650189941216629 & -0.0296831765125295 & True \\
 \bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\end{landscape}
+\pdfpageattr{}
