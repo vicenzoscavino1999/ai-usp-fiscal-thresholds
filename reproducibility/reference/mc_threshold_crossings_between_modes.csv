@@ -1,0 +1,1 @@
+country_id,policy_variant_id,scenario_id,regime_id,probability_column,decision_threshold,min_probability,max_probability,crosses_between_modes,modes_below,modes_above

@@ -1,0 +1,6 @@
+country_id,policy_variant_id,scenario_id,regime_id,prob_basis,prob_v_ge_1_pairwise05,prob_v_ge_1_10_pairwise05,prob_v_ge_1_factor05,prob_v_ge_1_10_factor05,abs_diff_prob_v_ge_1,abs_diff_prob_v_ge_1_10,tier_b_probability_tolerance,structure_inmaterial_within_tolerance
+CHL,GMI:GMI_ideal_aggregate,mid,r0,all_draw,0.0006,0.0002,0.0012,0.0008,0.0006,0.0006000000000000001,0.02,True
+CHL,GMI:GMI_ideal_aggregate,stress,r0,all_draw,0.9844,0.9804,0.971,0.9636,0.013400000000000079,0.016800000000000037,0.02,True
+CHL,GMI:GMI_ideal_aggregate,stress,r4,all_draw,0.999,0.9988,0.9986,0.9978,0.00039999999999995595,0.0010000000000000009,0.02,True
+PER,PEN,stress,r2,all_draw,0.5876,0.475,0.5772,0.4724,0.010399999999999965,0.002599999999999991,0.02,True
+PER,PEN,stress,r4,all_draw,0.8098,0.7182,0.789,0.702,0.02079999999999993,0.016199999999999992,0.02,False

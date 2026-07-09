@@ -1,0 +1,4 @@
+from_parameter_set_id,to_parameter_set_id,change_id,description,direction,author_approval_date
+baseline-official-v2,baseline-official-v3,J0,"A_aipi_total and Gap_excluded_indicators changed from fixed_observed to bounded_PERT measurement uncertainty +/-0.05 absolute, truncated to [0,1] and q_bar coherent.",measurement_uncertainty_author_signed,2026-07-09
+baseline-official-v2,baseline-official-v3,J0_I,"I_adopt_informality changed from fixed_observed to bounded_PERT measurement uncertainty +/-0.04 absolute, truncated to [0,1].",measurement_uncertainty_author_signed,2026-07-09
+baseline-official-v2,baseline-official-v3,J1,Signed dependency design: institutional factor plus pairwise cross-check; classification remains independent-baseline only.,dependency_structure_governance,2026-07-09

@@ -24,12 +24,13 @@ if str(ROOT) not in sys.path:
 DATASET_VERSION = "v1.0.1-official-4c"
 PARAMETER_SET_ID = "baseline-official-v2"
 RUN_LABEL = "official"
-REFERENCE_TAG = "official-tierB-baseline-official-v2"
+REFERENCE_TAG = "official-tierB-baseline-official-v3"
 REFERENCE_CHANGELOG = [
     "correccion de clase historica del objeto requerido; V intacto",
     "restaurado esquema canonico de historical_capture_percentiles segun plan 01 seccion 15.5; clases titulares sin cambios",
     "Etapa 5A: Monte Carlo independiente, robustez historica r0, convergencia Tier B y clasificacion final probabilistica; motor certificado intacto.",
     "Etapa 5A.1: grilla MC canonica 1.00/1.05/1.10/1.25/1.50, vocabulario final canonico y matriz rank-correlated traducida a primitivos imponibles.",
+    "Etapa 5B-R: baseline-official-v3 con incertidumbre de medicion A/Gap/I; dependencia institucional factor + cross-check par-a-par; clasificacion final sigue usando solo MC_independent_baseline.",
 ]
 
 

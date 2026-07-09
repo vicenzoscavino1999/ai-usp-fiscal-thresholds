@@ -3,25 +3,34 @@
     "correccion de clase historica del objeto requerido; V intacto",
     "restaurado esquema canonico de historical_capture_percentiles segun plan 01 seccion 15.5; clases titulares sin cambios",
     "Etapa 5A: Monte Carlo independiente, robustez historica r0, convergencia Tier B y clasificacion final probabilistica; motor certificado intacto.",
-    "Etapa 5A.1: grilla MC canonica 1.00/1.05/1.10/1.25/1.50, vocabulario final canonico y matriz rank-correlated traducida a primitivos imponibles."
+    "Etapa 5A.1: grilla MC canonica 1.00/1.05/1.10/1.25/1.50, vocabulario final canonico y matriz rank-correlated traducida a primitivos imponibles.",
+    "Etapa 5B-R: baseline-official-v3 con incertidumbre de medicion A/Gap/I; dependencia institucional factor + cross-check par-a-par; clasificacion final sigue usando solo MC_independent_baseline."
   ],
-  "commit": "9023b3311c46219a49b8f12e20473c434d14cc69",
-  "created_at_utc": "2026-07-09T11:27:07.777071+00:00",
+  "commit": "f33aa08212d8e5e4d1a91fbf99a66fd42cd92e0b",
+  "created_at_utc": "2026-07-09T12:17:00.003858+00:00",
   "dataset_manifest_hash": "74ab875ba64b31fa4e757c9932c6083bc34e01f0a30540e04bd12dbc10d047c8",
   "dataset_version": "v1.0.1-official-4c",
   "files": {
-    "country_policy_classification_final.csv": "1bf756d41ea2b612b10ac23bf833c244eef022af3fff63405b188fee35ad7c7d",
+    "country_policy_classification_final.csv": "498109047ee2a2a1ee3aacb360c8b3472b300fb9e778c8a729e9ada5685ffc4f",
     "country_policy_classification_preliminary.csv": "f02177ba5dc101918b5a6ab50b4e1e89ea539224c73e5e77532a06e8afc7a0ea",
+    "driver_ranking.csv": "fab04d1f68128e5632ab6fcb31a12586b2d2fd0245ee8ad745eb746e44fa7695",
     "fiscal_space_result.csv": "130716b2bfe6cb076d65946038f85ac77602863baaa4cd67ce0e2fd3c15d12d9",
     "historical_plausibility_result.csv": "b3ab6ad0a3a06217b64c5e1fb4280890e257ac32b871c4338c7c6b0a0a5b119e",
     "hypothesis_adjudication.csv": "c05a02104b1b954a588acbac7497d8f654bc76391d5a54349a163ba1c264a986",
-    "manifest.json": "c5ad95c01d22a06b8b141bac01cb478f754dac26523d28fcaecd2c83f843a331",
-    "mc_convergence_report.csv": "ae39bf07ba26d7a790e7c814eaad0fbb212fb6ad5901b944ccf4979dd9644e3f",
-    "monte_carlo_result.csv": "e8e65e5cc976844b6d4ff4b80fe5f054e7082dfcd08037e39176412f81bcdc93",
+    "manifest.json": "61f01ceac975de06afdc81a8e0efbaa2636fe48d3e0aee4b2f9350d5fe72dd81",
+    "mc_convergence_report.csv": "10f071190fca5b597127ab3e56de4b4d75dba7b4dae60e903156b6999b633683",
+    "mc_correlated_seed_check.csv": "0284eb3a2b23061e2a6c71ee1bf41da685171a0704a0e0baab66a0656668fdbe",
+    "mc_dependency_marginal_preservation.csv": "dac0a5afad9ec961ef890c8d8a45cc036bf8b61318d95eee83fe9187e2db4d08",
+    "mc_factor_pairwise_nominal_comparison.csv": "dd991ac1cc8add2e4a55b3ac3a04c3209a408be7589be789665749adbfe3ff5e",
+    "mc_mode_comparison.csv": "a326ee396973fb805d4d138a13a73c3cab4098cd58e61ae77d904852f5677895",
+    "mc_threshold_crossings_between_modes.csv": "93ffcd86244bed14eaa6e6e5a78cfffc5b5bfc9a2e6852a5159553207cfb97a4",
+    "mc_v2_to_v3_headline_deltas.csv": "5fc878425d35b84462068c754795790fb6d5b65ee79a3f2fe9f66ddd81f9552c",
+    "monte_carlo_result.csv": "3cdd9b413f41e7d0a4623d4f4528a706bae3ecce2b767adf1f1b3c86afef9a4c",
+    "rank_dependency_matrix_approved.csv": "0fa54e42db6c68eaf326cb3a35d0014dfd3d7a8065cf914e552642f675f2b56a",
     "threshold_inversion_result.csv": "9c3636a144969f6fda5306610dd1e136efc830297b5f5a12abb3adc47336e53e"
   },
   "git_dirty_at_reference_creation": true,
-  "parameter_set_id": "baseline-official-v2",
+  "parameter_set_id": "baseline-official-v3",
   "run_id": "official_4c_tierA_baseline_official_v2",
-  "tag": "official-tierB-baseline-official-v2"
+  "tag": "official-tierB-baseline-official-v3"
 }

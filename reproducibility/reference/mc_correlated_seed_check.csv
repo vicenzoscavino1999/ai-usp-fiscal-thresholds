@@ -1,0 +1,3 @@
+country_id,policy_variant_id,scenario_id,regime_id,prob_v_ge_1_seed707,prob_v_ge_1_10_seed707,prob_v_ge_1_seed1707,prob_v_ge_1_10_seed1707,abs_diff_prob_v_ge_1,abs_diff_prob_v_ge_1_10,tier_b_probability_tolerance,within_tolerance
+CHL,GMI:GMI_ideal_aggregate,stress,r4,0.9974,0.9974,0.9986,0.9972,0.0012000000000000899,0.00019999999999997797,0.02,True
+PER,PEN,stress,r4,0.7852,0.7038,0.788,0.704,0.0028000000000000247,0.00019999999999997797,0.02,True

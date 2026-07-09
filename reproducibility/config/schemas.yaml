@@ -144,7 +144,20 @@ schemas:
       regime_id: string
       endpoint_year: int
       prob_basis: string
-      mc_mode: string
+      mc_mode:
+        type: string
+        allowed_values:
+          - MC_independent_baseline
+          - mechanical_erosion_zero_diagnostic
+          - historical_reduced_form_positive_tax
+          - historical_reduced_form_mixture_tax
+          - historical_reduced_form_positive_total_revenue
+          - historical_reduced_form_mixture_total_revenue
+          - MC_pairwise_05_check
+          - MC_factor_nominal
+          - MC_factor_rho03
+          - MC_factor_rho07
+          - MC_factor_rho08
       mc_n_draws: int
       v_p05: float
       v_p25: float
@@ -181,6 +194,7 @@ schemas:
     file: mc_convergence_report.csv
     tolerance_tier: tier_B
     primary_key:
+      - mc_mode
       - country_id
       - policy_variant_id
       - scenario_id
@@ -188,7 +202,11 @@ schemas:
       - mc_n_draws
     columns:
       run_id: string
-      mc_mode: string
+      mc_mode:
+        type: string
+        allowed_values:
+          - MC_independent_baseline
+          - MC_factor_nominal
       country_id: string
       policy_variant_id: string
       scenario_id: string
@@ -203,6 +221,213 @@ schemas:
       converged_flag: bool
       parameter_set_id: string
       dataset_version: string
+  mc_v2_to_v3_headline_deltas:
+    file: mc_v2_to_v3_headline_deltas.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - prob_basis
+      - mc_mode
+    columns:
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      prob_basis: string
+      mc_mode: string
+      prob_v_ge_1_v2: float
+      prob_v_ge_1_10_v2: float
+      valid_support_share_v2: float
+      prob_v_ge_1_v3: float
+      prob_v_ge_1_10_v3: float
+      valid_support_share_v3: float
+      delta_prob_v_ge_1: float
+      abs_delta_prob_v_ge_1: float
+      delta_prob_v_ge_1_10: float
+      abs_delta_prob_v_ge_1_10: float
+      delta_valid_support_share: float
+      abs_delta_valid_support_share: float
+      delta_soft_threshold: float
+      delta_small_flag: bool
+  mc_mode_comparison:
+    file: mc_mode_comparison.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - mc_mode
+    columns:
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      scenario_id: string
+      regime_id: string
+      mc_mode:
+        type: string
+        allowed_values:
+          - MC_independent_baseline
+          - MC_pairwise_05_check
+          - MC_factor_nominal
+          - MC_factor_rho03
+          - MC_factor_rho07
+          - MC_factor_rho08
+      prob_v_ge_1: float
+      prob_v_ge_1_10: float
+      prob_debt_consistent_1_10: float
+      valid_support_share: float
+  mc_threshold_crossings_between_modes:
+    file: mc_threshold_crossings_between_modes.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - probability_column
+      - decision_threshold
+    columns:
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      probability_column: string
+      decision_threshold: float
+      min_probability: float
+      max_probability: float
+      crosses_between_modes: bool
+      modes_below: string
+      modes_above: string
+  mc_factor_pairwise_nominal_comparison:
+    file: mc_factor_pairwise_nominal_comparison.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - prob_basis
+    columns:
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      prob_basis: string
+      prob_v_ge_1_pairwise05: float
+      prob_v_ge_1_10_pairwise05: float
+      prob_v_ge_1_factor05: float
+      prob_v_ge_1_10_factor05: float
+      abs_diff_prob_v_ge_1: float
+      abs_diff_prob_v_ge_1_10: float
+      tier_b_probability_tolerance: float
+      structure_inmaterial_within_tolerance: bool
+  mc_dependency_marginal_preservation:
+    file: mc_dependency_marginal_preservation.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - mc_mode
+      - country_id
+      - parameter_name
+    columns:
+      run_id: string
+      mc_mode:
+        type: string
+        allowed_values:
+          - MC_pairwise_05_check
+          - MC_factor_nominal
+          - MC_factor_rho03
+          - MC_factor_rho07
+          - MC_factor_rho08
+      country_id: string
+      parameter_name: string
+      metric: string
+      value: float
+      pass_exact_preservation: bool
+      parameter_set_id: string
+      dataset_version: string
+  mc_correlated_seed_check:
+    file: mc_correlated_seed_check.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      prob_v_ge_1_seed707: float
+      prob_v_ge_1_10_seed707: float
+      prob_v_ge_1_seed1707: float
+      prob_v_ge_1_10_seed1707: float
+      abs_diff_prob_v_ge_1: float
+      abs_diff_prob_v_ge_1_10: float
+      tier_b_probability_tolerance: float
+      within_tolerance: bool
+  rank_dependency_matrix_approved:
+    file: rank_dependency_matrix_approved.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - mc_mode
+      - variable_a
+      - variable_b
+    columns:
+      parameter_set_id: string
+      mc_mode:
+        type: string
+        allowed_values:
+          - MC_pairwise_05_check
+          - MC_factor_nominal
+          - MC_factor_rho03
+          - MC_factor_rho07
+          - MC_factor_rho08
+      variable_a: string
+      variable_b: string
+      rho: float
+      signed_pair_from_author: bool
+      author_signed_rho: {type: float, nullable: true}
+      dependency_structure: string
+      psd_min_eigenvalue: float
+      audit_status: string
+      author_approval_date: string
+      notes: string
+  driver_ranking:
+    file: driver_ranking.csv
+    tolerance_tier: tier_B
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - rank_within_cell
+    columns:
+      run_id: string
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      parameter_name: string
+      parameter_country_id: {type: string, nullable: true}
+      parameter_scenario_id: {type: string, nullable: true}
+      parameter_policy_id: {type: string, nullable: true}
+      parameter_regime_id: {type: string, nullable: true}
+      spearman_rho_with_v_gross: float
+      abs_spearman_rho: float
+      parameter_p10: float
+      parameter_p90: float
+      v_gross_at_parameter_p10_others_central: {type: float, nullable: true}
+      v_gross_at_parameter_p90_others_central: {type: float, nullable: true}
+      tornado_abs_range: {type: float, nullable: true}
+      parameter_set_id: string
+      dataset_version: string
+      rank_within_cell: int
   country_policy_classification_final:
     file: country_policy_classification_final.csv
     primary_key:

@@ -1,0 +1,6 @@
+country_id,policy_variant_id,scenario_id,regime_id,prob_basis,mc_mode,prob_v_ge_1_v2,prob_v_ge_1_10_v2,valid_support_share_v2,prob_v_ge_1_v3,prob_v_ge_1_10_v3,valid_support_share_v3,delta_prob_v_ge_1,abs_delta_prob_v_ge_1,delta_prob_v_ge_1_10,abs_delta_prob_v_ge_1_10,delta_valid_support_share,abs_delta_valid_support_share,delta_soft_threshold,delta_small_flag
+CHL,GMI:GMI_ideal_aggregate,mid,r0,all_draw,MC_independent_baseline,0.0,0.0,1.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.05,True
+CHL,GMI:GMI_ideal_aggregate,stress,r0,all_draw,MC_independent_baseline,0.9924,0.99,1.0,0.9838,0.978,1.0,-0.008599999999999941,0.008599999999999941,-0.01200000000000001,0.01200000000000001,0.0,0.0,0.05,True
+CHL,GMI:GMI_ideal_aggregate,stress,r4,all_draw,MC_independent_baseline,1.0,1.0,1.0,0.9998,0.9998,1.0,-0.00019999999999997797,0.00019999999999997797,-0.00019999999999997797,0.00019999999999997797,0.0,0.0,0.05,True
+PER,PEN,stress,r2,all_draw,MC_independent_baseline,0.606,0.4806,1.0,0.596,0.4666,1.0,-0.010000000000000009,0.010000000000000009,-0.014000000000000012,0.014000000000000012,0.0,0.0,0.05,True
+PER,PEN,stress,r4,all_draw,MC_independent_baseline,0.8348,0.7408,1.0,0.805,0.7186,1.0,-0.029799999999999938,0.029799999999999938,-0.022199999999999998,0.022199999999999998,0.0,0.0,0.05,True

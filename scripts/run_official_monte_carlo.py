@@ -40,29 +40,53 @@ from scripts.run_official_tier_a import (
     ENDPOINT_YEAR,
     HORIZON_YEARS,
     MODEL_VERSION,
-    PARAMETER_SET_ID,
+    PARAMETER_SET_ID as TIER_A_PARAMETER_SET_ID,
     POLICIES,
     REGIMES,
     SCENARIOS,
+    OfficialRunError,
     clean,
     git_value,
     historical_percentiles,
-    load_inputs,
+    load_inputs as load_tier_a_inputs,
+    normalize_keys,
     policy_instances,
     sha256_file,
     value_lookup,
 )
 
 
-RUN_ID = "official_4c_tierB_mc_baseline_official_v2"
+PARAMETER_SET_ID = "baseline-official-v3"
+RUN_ID = "official_4c_tierB_mc_baseline_official_v3"
 MC_MODE = "MC_independent_baseline"
+MC_PAIRWISE_05_CHECK = "MC_pairwise_05_check"
+MC_FACTOR_NOMINAL = "MC_factor_nominal"
+MC_FACTOR_RHO03 = "MC_factor_rho03"
+MC_FACTOR_RHO07 = "MC_factor_rho07"
+MC_FACTOR_RHO08 = "MC_factor_rho08"
+CORRELATED_MODES = (
+    MC_PAIRWISE_05_CHECK,
+    MC_FACTOR_RHO03,
+    MC_FACTOR_NOMINAL,
+    MC_FACTOR_RHO07,
+    MC_FACTOR_RHO08,
+)
 MECHANICAL_EROSION_DIAGNOSTIC_MODE = "mechanical_erosion_zero_diagnostic"
 HIST_POS_MODE_TAX = "historical_reduced_form_positive_tax"
 HIST_MIX_MODE_TAX = "historical_reduced_form_mixture_tax"
 HIST_POS_MODE_TOTAL = "historical_reduced_form_positive_total_revenue"
 HIST_MIX_MODE_TOTAL = "historical_reduced_form_mixture_total_revenue"
+MC_MODE_ALLOWED_VALUES = (
+    MC_MODE,
+    MECHANICAL_EROSION_DIAGNOSTIC_MODE,
+    HIST_POS_MODE_TAX,
+    HIST_MIX_MODE_TAX,
+    HIST_POS_MODE_TOTAL,
+    HIST_MIX_MODE_TOTAL,
+    *CORRELATED_MODES,
+)
 DRAW_DISTRIBUTIONS = {"bounded_PERT", "discrete_grid_or_bounded_PERT"}
-EXPLICIT_REGISTERED_DRAWS = {"q_use_target"}
+EXPLICIT_REGISTERED_DRAWS = {"q_use_target", "E_prod"}
 PROB_BASES = ("all_draw", "basic_valid", "support_valid")
 THRESHOLDS = (1.00, 1.05, 1.10, 1.25, 1.50)
 THRESHOLD_SUFFIX = {
@@ -90,6 +114,51 @@ MAIN_CELLS = {
     ("CHL", "GMI:GMI_ideal_aggregate", "mid", "r0"),
     ("PER", "PEN", "mid", "r0"),
 }
+HEADLINE_COMPARISON_CELLS = {
+    ("CHL", "GMI:GMI_ideal_aggregate", "stress", "r0"),
+    ("CHL", "GMI:GMI_ideal_aggregate", "stress", "r4"),
+    ("CHL", "GMI:GMI_ideal_aggregate", "mid", "r0"),
+    ("PER", "PEN", "stress", "r2"),
+    ("PER", "PEN", "stress", "r4"),
+}
+DEPENDENCY_VARIABLES = (
+    "q_use_target",
+    "A_aipi_total",
+    "E_prod",
+    "chi_Kbase",
+    "Gap_excluded_indicators",
+    "I_adopt_informality",
+)
+FACTOR_SIGNS = {
+    "q_use_target": 1.0,
+    "A_aipi_total": 1.0,
+    "E_prod": 1.0,
+    "chi_Kbase": 1.0,
+    "Gap_excluded_indicators": -1.0,
+    "I_adopt_informality": -1.0,
+}
+SIGNED_PAIRWISE_RHO = (
+    ("A_aipi_total", "q_use_target", 0.5),
+    ("Gap_excluded_indicators", "q_use_target", -0.5),
+    ("I_adopt_informality", "q_use_target", -0.5),
+    ("I_adopt_informality", "chi_Kbase", -0.5),
+    ("A_aipi_total", "E_prod", 0.5),
+)
+FACTOR_RHO_BY_MODE = {
+    MC_FACTOR_RHO03: 0.3,
+    MC_FACTOR_NOMINAL: 0.5,
+    MC_FACTOR_RHO07: 0.7,
+    MC_FACTOR_RHO08: 0.8,
+}
+DEPENDENCY_MODE_SEED_OFFSET = {
+    MC_MODE: 0,
+    MC_PAIRWISE_05_CHECK: 90_005,
+    MC_FACTOR_RHO03: 90_003,
+    MC_FACTOR_NOMINAL: 90_050,
+    MC_FACTOR_RHO07: 90_007,
+    MC_FACTOR_RHO08: 90_008,
+}
+V2_V3_DELTA_SOFT_THRESHOLD = 0.05
 
 
 class MonteCarloError(RuntimeError):
@@ -149,6 +218,29 @@ def normalize_text(value: Any) -> str | None:
     return None if value is None else str(value)
 
 
+def load_inputs(root: Path) -> dict[str, Any]:
+    inputs = load_tier_a_inputs(root)
+    con = duckdb.connect(str(root / "db" / "ai_usp_threshold.duckdb"))
+    try:
+        values = normalize_keys(
+            con.execute(
+                "SELECT * FROM value_assignment_table WHERE parameter_set_id = ?",
+                [PARAMETER_SET_ID],
+            ).fetchdf()
+        )
+        if values.empty:
+            raise OfficialRunError(f"No rows for {PARAMETER_SET_ID}. Run materialize_official_v3_measurement_uncertainty.py first.")
+        pending = values[values["audit_status"].isin({"registered_author_review", "literature_disciplined_pending_author_signature"})]
+        if not pending.empty:
+            raise OfficialRunError("Pending v3 author-review rows remain:\n" + pending[["name", "country_id", "audit_status"]].to_string(index=False))
+        inputs["values"] = values
+        inputs["input_audit_report"] = con.execute("SELECT * FROM input_audit_report WHERE parameter_set_id = ?", [PARAMETER_SET_ID]).fetchdf()
+        inputs["double_counting_audit"] = con.execute("SELECT * FROM double_counting_audit WHERE parameter_set_id = ?", [PARAMETER_SET_ID]).fetchdf()
+    finally:
+        con.close()
+    return inputs
+
+
 @dataclass(frozen=True)
 class ValueKey:
     name: str
@@ -170,12 +262,13 @@ class SeedBank:
 
 
 class ValueSampler:
-    def __init__(self, values: pd.DataFrame, size: int, seed: int, record_parameters: bool = True):
+    def __init__(self, values: pd.DataFrame, size: int, seed: int, record_parameters: bool = True, mc_mode: str = MC_MODE):
         self.values = values.copy()
         for col in ["country_id", "scenario_id", "policy_id", "regime_code"]:
             self.values[col] = self.values[col].map(normalize_text)
         self.size = int(size)
         self.record_parameters = bool(record_parameters)
+        self.mc_mode = mc_mode
         self.seed_bank = SeedBank(seed)
         self.cache: dict[ValueKey, np.ndarray] = {}
         self.rows: dict[ValueKey, pd.Series] = {}
@@ -251,7 +344,7 @@ class ValueSampler:
             self.parameter_records.append(
                 {
                     "run_id": RUN_ID,
-                    "mc_mode": MC_MODE,
+                    "mc_mode": self.mc_mode,
                     "draw_id": draw_id,
                     "parameter_name": key.name,
                     "country_id": key.country,
@@ -266,6 +359,118 @@ class ValueSampler:
                     "dataset_version": DATASET_VERSION,
                 }
             )
+
+
+def dependency_matrix(mode: str) -> pd.DataFrame:
+    names = list(DEPENDENCY_VARIABLES)
+    mat = np.eye(len(names), dtype=float)
+    index = {name: i for i, name in enumerate(names)}
+    if mode == MC_PAIRWISE_05_CHECK:
+        for a, b, rho in SIGNED_PAIRWISE_RHO:
+            i = index[a]
+            j = index[b]
+            mat[i, j] = mat[j, i] = float(rho)
+    elif mode in FACTOR_RHO_BY_MODE:
+        rho = float(FACTOR_RHO_BY_MODE[mode])
+        for i, a in enumerate(names):
+            for j, b in enumerate(names):
+                if i != j:
+                    mat[i, j] = FACTOR_SIGNS[a] * FACTOR_SIGNS[b] * rho
+    else:
+        raise MonteCarloError(f"Unknown dependency mode {mode}")
+    return pd.DataFrame(mat, index=names, columns=names)
+
+
+def assert_psd(matrix: pd.DataFrame, *, label: str) -> None:
+    eigenvalues = np.linalg.eigvalsh(matrix.to_numpy(dtype=float))
+    if float(eigenvalues.min()) < -1e-10:
+        raise MonteCarloError(f"{label} is not PSD; min eigenvalue={eigenvalues.min():.6g}")
+
+
+def reorder_to_scores(values: np.ndarray, scores: np.ndarray) -> np.ndarray:
+    """Assign sorted values to the rank order of scores, preserving marginals."""
+
+    if len(values) != len(scores):
+        raise MonteCarloError("Rank reorder length mismatch")
+    order = np.argsort(scores, kind="mergesort")
+    out = np.empty_like(values, dtype=float)
+    out[order] = np.sort(values)
+    return out
+
+
+def dependency_scores(mode: str, size: int, rng: np.random.Generator) -> dict[str, np.ndarray]:
+    names = list(DEPENDENCY_VARIABLES)
+    if mode in FACTOR_RHO_BY_MODE:
+        rho = float(FACTOR_RHO_BY_MODE[mode])
+        loading = math.sqrt(rho)
+        idiosyncratic_scale = math.sqrt(max(0.0, 1.0 - rho))
+        factor = rng.standard_normal(size)
+        eps = rng.standard_normal((size, len(names)))
+        return {
+            name: FACTOR_SIGNS[name] * loading * factor + idiosyncratic_scale * eps[:, pos]
+            for pos, name in enumerate(names)
+        }
+    if mode == MC_PAIRWISE_05_CHECK:
+        target = dependency_matrix(mode)
+        assert_psd(target, label=mode)
+        z = rng.standard_normal((size, len(names)))
+        chol = np.linalg.cholesky(target.to_numpy(dtype=float))
+        correlated = z @ chol.T
+        return {name: correlated[:, pos] for pos, name in enumerate(names)}
+    raise MonteCarloError(f"Unknown dependency mode {mode}")
+
+
+def apply_rank_dependency(sampler: ValueSampler, country: str, mode: str) -> dict[str, float]:
+    """Apply signed country-level rank dependence in-place on sampler cache."""
+
+    if mode == MC_MODE:
+        return {}
+    rng = sampler.seed_bank.rng(f"rank_dependency|{mode}|{country}")
+    scores = dependency_scores(mode, sampler.size, rng)
+    diagnostics: dict[str, float] = {}
+    for name in DEPENDENCY_VARIABLES:
+        key = ValueKey(name, country=country)
+        # Force E_prod into the signed Theta_channel draw family without
+        # changing its official central/range calibration.
+        arr = sampler.array(name, country=country, force_draw=name == "E_prod")
+        before = np.nanpercentile(arr, [5, 25, 50, 75, 95])
+        sampler.cache[key] = reorder_to_scores(arr, scores[name])
+        after = np.nanpercentile(sampler.cache[key], [5, 25, 50, 75, 95])
+        diagnostics[f"{country}:{name}:max_abs_percentile_delta"] = float(np.max(np.abs(before - after)))
+    return diagnostics
+
+
+def dependency_matrix_rows() -> pd.DataFrame:
+    rows: list[dict[str, Any]] = []
+    signed = {tuple(sorted((a, b))): rho for a, b, rho in SIGNED_PAIRWISE_RHO}
+    for mode in [MC_PAIRWISE_05_CHECK, MC_FACTOR_RHO03, MC_FACTOR_NOMINAL, MC_FACTOR_RHO07, MC_FACTOR_RHO08]:
+        mat = dependency_matrix(mode)
+        assert_psd(mat, label=mode)
+        eigen_min = float(np.linalg.eigvalsh(mat.to_numpy(dtype=float)).min())
+        for i, a in enumerate(mat.index):
+            for b in list(mat.columns)[i + 1 :]:
+                pair_key = tuple(sorted((a, b)))
+                rho = float(mat.loc[a, b])
+                rows.append(
+                    {
+                        "parameter_set_id": PARAMETER_SET_ID,
+                        "mc_mode": mode,
+                        "variable_a": a,
+                        "variable_b": b,
+                        "rho": rho,
+                        "signed_pair_from_author": pair_key in signed,
+                        "author_signed_rho": signed.get(pair_key),
+                        "dependency_structure": "pairwise_literal" if mode == MC_PAIRWISE_05_CHECK else "institutional_factor",
+                        "psd_min_eigenvalue": eigen_min,
+                        "audit_status": "author_approved",
+                        "author_approval_date": "2026-07-09",
+                        "notes": (
+                            "PSD by construction for factor modes; pairwise mode imposes only the five signed pairs, "
+                            "with unspecified pairs set to zero."
+                        ),
+                    }
+                )
+    return pd.DataFrame(rows)
 
 
 def scenario_kappa_name(scenario: str) -> str:
@@ -606,11 +811,12 @@ def fiscal_draw_frame(
     policy: dict[str, Any],
     scenario: str,
     regime: str,
+    mc_mode: str,
 ) -> pd.DataFrame:
     return pd.DataFrame(
         {
             "run_id": RUN_ID,
-            "mc_mode": MC_MODE,
+            "mc_mode": mc_mode,
             "draw_id": np.arange(len(arrays["v_gross"]), dtype=np.int64),
             "country_id": country,
             "policy_id": policy["policy_id"],
@@ -689,6 +895,7 @@ def build_global_draw_frames(
     sampler: ValueSampler,
     inputs: dict[str, Any],
     regime_draws: dict[str, dict[str, np.ndarray]],
+    mc_mode: str,
 ) -> dict[str, pd.DataFrame]:
     global_rows = []
     country_rows = []
@@ -699,7 +906,7 @@ def build_global_draw_frames(
             pd.DataFrame(
                 {
                     "run_id": RUN_ID,
-                    "mc_mode": MC_MODE,
+                    "mc_mode": mc_mode,
                     "draw_id": draw_ids,
                     "country_id": country,
                     "scenario_id": scenario,
@@ -716,7 +923,7 @@ def build_global_draw_frames(
             pd.DataFrame(
                 {
                     "run_id": RUN_ID,
-                    "mc_mode": MC_MODE,
+                    "mc_mode": mc_mode,
                     "draw_id": draw_ids,
                     "country_id": country,
                     "scenario_id": scenario,
@@ -742,7 +949,7 @@ def build_global_draw_frames(
                 pd.DataFrame(
                     {
                         "run_id": RUN_ID,
-                        "mc_mode": MC_MODE,
+                        "mc_mode": mc_mode,
                         "draw_id": draw_ids,
                         "country_id": country,
                         "policy_id": policy["policy_id"],
@@ -771,13 +978,15 @@ def run_single_mc(
     m_draws: int,
     seed: int,
     persist_draws: bool,
+    mc_mode: str = MC_MODE,
     cell_filter: set[tuple[str, str, str, str]] | None = None,
     convergence_flags: dict[tuple[str, str, str, str], bool] | None = None,
+    include_companions: bool = True,
 ) -> dict[str, Any]:
     inputs = load_inputs(root)
     values = inputs["values"]
     value = value_lookup(values)
-    sampler = ValueSampler(values, m_draws, seed, record_parameters=persist_draws)
+    sampler = ValueSampler(values, m_draws, seed, record_parameters=persist_draws, mc_mode=mc_mode)
     eprod_frontier = sampler.array("E_prod_frontier")
     if cell_filter is None:
         countries = list(COUNTRIES)
@@ -787,6 +996,10 @@ def run_single_mc(
         countries = sorted({key[0] for key in cell_filter})
         scenarios = sorted({key[2] for key in cell_filter}, key=list(SCENARIOS).index)
         regimes = sorted({key[3] for key in cell_filter}, key=list(REGIMES).index)
+    dependency_diagnostics = {}
+    if mc_mode != MC_MODE:
+        for country in countries:
+            dependency_diagnostics.update(apply_rank_dependency(sampler, country, mc_mode))
     country_scenario = {
         (country, scenario): build_country_scenario_draws(sampler, inputs, country, scenario, eprod_frontier)
         for country in countries
@@ -822,13 +1035,13 @@ def run_single_mc(
                             policy=policy,
                             scenario=scenario,
                             regime=regime,
-                            mc_mode=MC_MODE,
+                            mc_mode=mc_mode,
                             converged=converged,
                             support_threshold=SUPPORT_SHARE_THRESHOLD,
                             spb_plus_gdp=spb,
                         )
                     )
-                    if regime != "r0":
+                    if include_companions and regime != "r0":
                         mechanical_arrays = compute_cell_arrays(
                             sampler,
                             inputs,
@@ -854,8 +1067,8 @@ def run_single_mc(
                             )
                         )
                     if persist_draws:
-                        fiscal_frames.append(fiscal_draw_frame(arrays=arrays, country=country, policy=policy, scenario=scenario, regime=regime))
-                    if regime == "r0":
+                        fiscal_frames.append(fiscal_draw_frame(arrays=arrays, country=country, policy=policy, scenario=scenario, regime=regime, mc_mode=mc_mode))
+                    if include_companions and regime == "r0":
                         for concept, pos_mode, mix_mode in [
                             ("tax", HIST_POS_MODE_TAX, HIST_MIX_MODE_TAX),
                             ("total_revenue", HIST_POS_MODE_TOTAL, HIST_MIX_MODE_TOTAL),
@@ -892,7 +1105,7 @@ def run_single_mc(
                                         spb_plus_gdp=spb,
                                     )
                                 )
-    draw_frames = build_global_draw_frames(country_scenario, policies_by_country, sampler, inputs, regime_draws) if persist_draws else {}
+    draw_frames = build_global_draw_frames(country_scenario, policies_by_country, sampler, inputs, regime_draws, mc_mode) if persist_draws else {}
     if persist_draws:
         draw_frames["fiscal_conversion_draw"] = pd.concat(fiscal_frames, ignore_index=True)
     return {
@@ -901,10 +1114,11 @@ def run_single_mc(
         "max_cell_seconds": max(cell_seconds) if cell_seconds else 0.0,
         "values": values,
         "inputs": inputs,
+        "dependency_diagnostics": dependency_diagnostics,
     }
 
 
-def run_convergence(root: Path, seed: int) -> tuple[pd.DataFrame, dict[tuple[str, str, str, str], bool]]:
+def run_convergence(root: Path, seed: int, mc_mode: str = MC_MODE) -> tuple[pd.DataFrame, dict[tuple[str, str, str, str], bool]]:
     rows: list[dict[str, Any]] = []
     flags: dict[tuple[str, str, str, str], bool] = {}
     max_m = max(CONVERGENCE_GRID)
@@ -920,17 +1134,19 @@ def run_convergence(root: Path, seed: int) -> tuple[pd.DataFrame, dict[tuple[str
                 m_draws=m,
                 seed=cell_seed,
                 persist_draws=False,
+                mc_mode=mc_mode,
                 cell_filter={key},
+                include_companions=False,
             )
             if m == max_m and partial_result["max_cell_seconds"] > 1.0:
                 raise MonteCarloError(f"Vectorization gate failed for {key}: {partial_result['max_cell_seconds']:.3f}s at M=50k")
             partial = partial_result["monte_carlo_result"]
-            row = partial[(partial["mc_mode"].eq(MC_MODE)) & (partial["prob_basis"].eq("all_draw"))].iloc[0]
+            row = partial[(partial["mc_mode"].eq(mc_mode)) & (partial["prob_basis"].eq("all_draw"))].iloc[0]
             probs.append(float(row["prob_v_ge_1_10"]))
             rows.append(
                 {
                     "run_id": RUN_ID,
-                    "mc_mode": MC_MODE,
+                    "mc_mode": mc_mode,
                     "country_id": key[0],
                     "policy_variant_id": key[1],
                     "scenario_id": key[2],
@@ -1054,7 +1270,10 @@ def correlation_matrix_rows() -> pd.DataFrame:
                 "impose_in_iman_conover": impose,
                 "translation_status": status,
                 "magnitude_rule": "0.3 for moderado; 0.5 otherwise",
-                "audit_status": "author_review",
+                "stress_flag": False,
+                "audit_status": "author_approved" if impose else "documented_not_imposed",
+                "author_approval_date": "2026-07-09" if impose else None,
+                "author_approval_note": "ratificacion del autor pre-corrida correlacionada" if impose else "par mecanico documentado como inducido por derivacion; no impuesto",
                 "source_id": "PLAN_02_SEC_14_2",
                 "notes": notes,
             }
@@ -1102,33 +1321,69 @@ def upsert_governance(root: Path, matrix: pd.DataFrame) -> None:
                     "scenario_id": None,
                     "policy_id": None,
                     "regime_code": None,
-                    "value_type": "rank_correlation_proposal",
+                    "value_type": "rank_correlation_author_approved" if row["impose_in_iman_conover"] else "rank_correlation_documented_not_imposed",
                     "unit": "spearman_rho",
                     "baseline_value": row["spearman_rho_proposed"],
                     "low_value": row["spearman_rho_proposed"],
                     "high_value": row["spearman_rho_proposed"],
-                    "support_type": "plan_14_2_sign_with_etapa_5a_magnitude_proposal",
+                    "support_type": "plan_14_2_sign_with_author_approved_magnitude",
                     "source_id": "PLAN_02_SEC_14_2",
-                    "formula_id": "IMAN_CONOVER_RANK_CORRELATION_PROPOSAL",
-                    "distribution": "fixed_proposal",
-                    "truncation_rule": "not_used_until_author_signature",
+                    "formula_id": "SIGNED_THETA_CHANNEL_DEPENDENCY_5B_R",
+                    "distribution": "fixed_signed",
+                    "truncation_rule": "applied_in_baseline_official_v3_dependency_modes" if row["impose_in_iman_conover"] else "not_imposed_double_counting_guardrail",
                     "primary_spec_flag": False,
                     "robustness_flag": True,
-                    "stress_flag": False,
-                    "double_counting_risk": "not_applicable_pre_run_declaration",
-                    "double_counting_note": "Not applied in MC_independent_baseline; exported for Etapa 5B review.",
-                    "audit_status": "author_review",
+                    "stress_flag": bool(row.get("stress_flag", False)),
+                    "double_counting_risk": "dependency_double_counting_guarded",
+                    "double_counting_note": "Applied only in correlated MC modes; final classification remains MC_independent_baseline only.",
+                    "audit_status": row["audit_status"],
                     "notes": row["notes"],
                     "is_lac_fallback": False,
                     "assumption_id": row["pair_id"],
                     "dataset_version": DATASET_VERSION,
-                    "build_id": "etapa_5a_mc_dependency_declaration",
+                    "build_id": "etapa_5B_R_mc_dependency_author_approved",
                     "created_at": now,
                     "created_by_script": "run_official_monte_carlo.py",
-                    "author_approval_date": None,
-                    "author_approval_note": None,
+                    "author_approval_date": row.get("author_approval_date"),
+                    "author_approval_note": row.get("author_approval_note"),
                 }
             )
+        rows.append(
+            {
+                "parameter_set_id": PARAMETER_SET_ID,
+                "name": "rank_corr_institutional_factor_stress_rho",
+                "module": "monte_carlo_dependency",
+                "country_id": None,
+                "scenario_id": None,
+                "policy_id": None,
+                "regime_code": None,
+                "value_type": "rank_correlation_stress_magnitude",
+                "unit": "factor_pairwise_rho",
+                "baseline_value": 0.8,
+                "low_value": 0.8,
+                "high_value": 0.8,
+                "support_type": "author_declared_dependency_stress",
+                "source_id": "PLAN_02_SEC_14_2;AUTHOR_SIGNATURE_2026_07_09",
+                "formula_id": "MC_factor_rho08_loadings_sqrt_0_8",
+                "distribution": "fixed_signed",
+                "truncation_rule": "diagnostic_stress_not_baseline_classification",
+                "primary_spec_flag": False,
+                "robustness_flag": True,
+                "stress_flag": True,
+                "double_counting_risk": "diagnostic_only",
+                "double_counting_note": "MC_factor_rho08 is a dependence stress and never feeds final classification.",
+                "audit_status": "author_approved",
+                "notes": "Magnitud stress +/-0.8 registrada bajo la firma del autor de 2026-07-09.",
+                "is_lac_fallback": False,
+                "assumption_id": "rank_corr_institutional_factor_stress_rho",
+                "dataset_version": DATASET_VERSION,
+                "build_id": "etapa_5B_R_mc_dependency_author_approved",
+                "created_at": now,
+                "created_by_script": "run_official_monte_carlo.py",
+                "author_approval_date": "2026-07-09",
+                "author_approval_note": "ratificacion del autor pre-corrida correlacionada",
+            }
+        )
         value_df = pd.DataFrame(rows)
         value_df = value_df.reindex(columns=existing_cols)
         con.register("_pairs", value_df)
@@ -1150,14 +1405,22 @@ def write_outputs(root: Path, outputs: dict[str, Any]) -> dict[str, str]:
         "monte_carlo_result": outputs["monte_carlo_result"],
         "mc_convergence_report": outputs["mc_convergence_report"],
         "country_policy_classification_final": outputs["country_policy_classification_final"],
+        "mc_v2_to_v3_headline_deltas": outputs["mc_v2_to_v3_headline_deltas"],
+        "mc_mode_comparison": outputs["mc_mode_comparison"],
+        "mc_threshold_crossings_between_modes": outputs["mc_threshold_crossings_between_modes"],
+        "mc_factor_pairwise_nominal_comparison": outputs["mc_factor_pairwise_nominal_comparison"],
+        "mc_dependency_marginal_preservation": outputs["mc_dependency_marginal_preservation"],
+        "mc_correlated_seed_check": outputs["mc_correlated_seed_check"],
+        "rank_dependency_matrix_approved": outputs["rank_dependency_matrix_approved"],
+        "driver_ranking": outputs["driver_ranking"],
     }
     for name, df in csv_outputs.items():
         df.to_csv(result_dir / f"{name}.csv", index=False)
-        df.to_csv(reports / f"{name}_baseline-official-v2.csv", index=False)
+        df.to_csv(reports / f"{name}_{PARAMETER_SET_ID}.csv", index=False)
 
-    outputs["rank_correlation_matrix_proposed"].to_csv(reports / "rank_correlation_matrix_proposed_baseline-official-v2.csv", index=False)
+    outputs["rank_correlation_matrix_proposed"].to_csv(reports / f"rank_correlation_matrix_proposed_{PARAMETER_SET_ID}.csv", index=False)
     outputs["rank_correlation_matrix_proposed"].to_csv(result_dir / "rank_correlation_matrix_proposed.csv", index=False)
-    outputs["mc_tier_b_tolerance_calibration"].to_json(reports / "mc_tier_b_tolerance_calibration.json", orient="records", indent=2)
+    outputs["mc_tier_b_tolerance_calibration"].to_json(reports / f"mc_tier_b_tolerance_calibration_{PARAMETER_SET_ID}.json", orient="records", indent=2)
     outputs["mc_tier_b_tolerance_calibration"].to_json(result_dir / "mc_tier_b_tolerance_calibration.json", orient="records", indent=2)
 
     draw_hashes = {}
@@ -1185,7 +1448,10 @@ def write_outputs(root: Path, outputs: dict[str, Any]) -> dict[str, str]:
             "run_id": manifest.get("run_id", "official_4c_tierA_baseline_official_v2"),
             "tier": "A+B",
             "monte_carlo_run_id": RUN_ID,
-            "monte_carlo_mode": MC_MODE,
+            "parameter_set_id": PARAMETER_SET_ID,
+            "dataset_version": DATASET_VERSION,
+            "monte_carlo_mode": "multiple",
+            "monte_carlo_modes": list(MC_MODE_ALLOWED_VALUES),
             "monte_carlo_draws_base": int(outputs["m_draws"]),
             "monte_carlo_convergence_grid": list(CONVERGENCE_GRID),
             "monte_carlo_main_cells": [list(k) for k in sorted(MAIN_CELLS)],
@@ -1193,12 +1459,16 @@ def write_outputs(root: Path, outputs: dict[str, Any]) -> dict[str, str]:
             "mc_valid_support_share_threshold": SUPPORT_SHARE_THRESHOLD,
             "run_modes": sorted(
                 set(manifest.get("run_modes", []))
-                | {MC_MODE, MECHANICAL_EROSION_DIAGNOSTIC_MODE, "historical_reduced_form_r0", "mc_convergence_report"}
+                | set(MC_MODE_ALLOWED_VALUES)
+                | {"historical_reduced_form_r0", "mc_convergence_report"}
             ),
             "seeds": {**manifest.get("seeds", {}), "monte_carlo_master": outputs["seed"]},
             "monte_carlo_runtime_seconds": outputs["runtime_seconds"],
             "monte_carlo_max_cell_runtime_seconds_M5000": outputs["max_cell_seconds"],
-            "changelog": manifest.get("changelog", []) + ["Etapa 5A: Monte Carlo independiente, robustez historica r0, matriz rank-correlated propuesta; motor certificado intacto."],
+            "changelog": manifest.get("changelog", [])
+            + [
+                "Etapa 5B-R: baseline-official-v3 con incertidumbre de medicion A/Gap/I; MC independiente v3; dependencia institucional factor + cross-check par-a-par; motor certificado intacto."
+            ],
         }
     )
     output_hashes = {}
@@ -1210,7 +1480,7 @@ def write_outputs(root: Path, outputs: dict[str, Any]) -> dict[str, str]:
     manifest["commit_sha"] = git_value(["rev-parse", "HEAD"]) or "unavailable_no_commit"
     manifest["git_dirty"] = bool(git_value(["status", "--short"]))
     manifest["created_at_utc"] = datetime.now(timezone.utc).isoformat()
-    (reports / "run_manifest_baseline-official-v2.json").write_text(json.dumps(clean(manifest), indent=2, sort_keys=True), encoding="utf-8")
+    (reports / f"run_manifest_{PARAMETER_SET_ID}.json").write_text(json.dumps(clean(manifest), indent=2, sort_keys=True), encoding="utf-8")
     (result_dir / "manifest.json").write_text(json.dumps(clean(manifest), indent=2, sort_keys=True), encoding="utf-8")
     return output_hashes
 
@@ -1255,29 +1525,381 @@ def calibrate_tier_b_tolerance(root: Path, seed: int) -> pd.DataFrame:
     return pd.DataFrame(records)
 
 
+def headline_mask(df: pd.DataFrame) -> pd.Series:
+    keys = set(HEADLINE_COMPARISON_CELLS)
+    return df.apply(lambda r: (r["country_id"], r["policy_variant_id"], r["scenario_id"], r["regime_id"]) in keys, axis=1)
+
+
+def build_v2_v3_delta_report(root: Path, mc_v3: pd.DataFrame) -> pd.DataFrame:
+    v2_path = root / "reports" / "monte_carlo_result_baseline-official-v2.csv"
+    if not v2_path.exists():
+        v2_path = root / "reproducibility" / "reference" / "monte_carlo_result.csv"
+    v2 = pd.read_csv(v2_path)
+    key_cols = ["country_id", "policy_variant_id", "scenario_id", "regime_id", "prob_basis", "mc_mode"]
+    cols = key_cols + ["prob_v_ge_1", "prob_v_ge_1_10", "valid_support_share"]
+    old = v2[
+        v2["mc_mode"].eq(MC_MODE)
+        & v2["prob_basis"].eq("all_draw")
+        & headline_mask(v2)
+    ][cols].copy()
+    new = mc_v3[
+        mc_v3["mc_mode"].eq(MC_MODE)
+        & mc_v3["prob_basis"].eq("all_draw")
+        & headline_mask(mc_v3)
+    ][cols].copy()
+    merged = old.merge(new, on=key_cols, suffixes=("_v2", "_v3"), how="outer")
+    for col in ["prob_v_ge_1", "prob_v_ge_1_10", "valid_support_share"]:
+        merged[f"delta_{col}"] = merged[f"{col}_v3"] - merged[f"{col}_v2"]
+        merged[f"abs_delta_{col}"] = merged[f"delta_{col}"].abs()
+    merged["delta_soft_threshold"] = V2_V3_DELTA_SOFT_THRESHOLD
+    merged["delta_small_flag"] = (
+        (merged["abs_delta_prob_v_ge_1"] <= V2_V3_DELTA_SOFT_THRESHOLD)
+        & (merged["abs_delta_prob_v_ge_1_10"] <= V2_V3_DELTA_SOFT_THRESHOLD)
+    )
+    return merged.sort_values(["country_id", "policy_variant_id", "scenario_id", "regime_id"]).reset_index(drop=True)
+
+
+def assert_delta_report_small(delta: pd.DataFrame) -> None:
+    bad = delta[~delta["delta_small_flag"]]
+    if not bad.empty:
+        raise MonteCarloError(
+            "J2 v2->v3 headline deltas exceed declared soft threshold:\n"
+            + bad[
+                [
+                    "country_id",
+                    "policy_variant_id",
+                    "scenario_id",
+                    "regime_id",
+                    "abs_delta_prob_v_ge_1",
+                    "abs_delta_prob_v_ge_1_10",
+                ]
+            ].to_string(index=False)
+        )
+
+
+def build_mode_comparison(mc: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
+    modes = [MC_MODE, MC_PAIRWISE_05_CHECK, MC_FACTOR_RHO03, MC_FACTOR_NOMINAL, MC_FACTOR_RHO07, MC_FACTOR_RHO08]
+    comp = mc[
+        mc["mc_mode"].isin(modes)
+        & mc["prob_basis"].eq("all_draw")
+        & headline_mask(mc)
+    ][
+        [
+            "country_id",
+            "policy_id",
+            "policy_variant_id",
+            "gmi_version",
+            "scenario_id",
+            "regime_id",
+            "mc_mode",
+            "prob_v_ge_1",
+            "prob_v_ge_1_10",
+            "prob_debt_consistent_1_10",
+            "valid_support_share",
+        ]
+    ].copy()
+    threshold_rows = []
+    for key, group in comp.groupby(["country_id", "policy_variant_id", "scenario_id", "regime_id"], dropna=False):
+        for prob_col in ["prob_v_ge_1", "prob_v_ge_1_10"]:
+            values = group.set_index("mc_mode")[prob_col]
+            for threshold in [0.50, 0.75]:
+                below = values < threshold
+                above = values >= threshold
+                if bool(below.any() and above.any()):
+                    threshold_rows.append(
+                        {
+                            "country_id": key[0],
+                            "policy_variant_id": key[1],
+                            "scenario_id": key[2],
+                            "regime_id": key[3],
+                            "probability_column": prob_col,
+                            "decision_threshold": threshold,
+                            "min_probability": float(values.min()),
+                            "max_probability": float(values.max()),
+                            "crosses_between_modes": True,
+                            "modes_below": ";".join(sorted(values[below].index.tolist())),
+                            "modes_above": ";".join(sorted(values[above].index.tolist())),
+                        }
+                    )
+    crossing_cols = [
+        "country_id",
+        "policy_variant_id",
+        "scenario_id",
+        "regime_id",
+        "probability_column",
+        "decision_threshold",
+        "min_probability",
+        "max_probability",
+        "crosses_between_modes",
+        "modes_below",
+        "modes_above",
+    ]
+    crossings = pd.DataFrame(threshold_rows, columns=crossing_cols)
+    return comp.sort_values(["country_id", "policy_variant_id", "scenario_id", "regime_id", "mc_mode"]).reset_index(drop=True), crossings
+
+
+def build_factor_pairwise_nominal_comparison(mc: pd.DataFrame) -> pd.DataFrame:
+    key_cols = ["country_id", "policy_variant_id", "scenario_id", "regime_id", "prob_basis"]
+    a = mc[mc["mc_mode"].eq(MC_PAIRWISE_05_CHECK) & mc["prob_basis"].eq("all_draw") & headline_mask(mc)].copy()
+    b = mc[mc["mc_mode"].eq(MC_FACTOR_NOMINAL) & mc["prob_basis"].eq("all_draw") & headline_mask(mc)].copy()
+    cols = key_cols + ["prob_v_ge_1", "prob_v_ge_1_10"]
+    merged = a[cols].merge(b[cols], on=key_cols, suffixes=("_pairwise05", "_factor05"))
+    for col in ["prob_v_ge_1", "prob_v_ge_1_10"]:
+        merged[f"abs_diff_{col}"] = (merged[f"{col}_factor05"] - merged[f"{col}_pairwise05"]).abs()
+    merged["tier_b_probability_tolerance"] = 0.02
+    merged["structure_inmaterial_within_tolerance"] = (
+        (merged["abs_diff_prob_v_ge_1"] <= 0.02)
+        & (merged["abs_diff_prob_v_ge_1_10"] <= 0.02)
+    )
+    return merged.sort_values(["country_id", "policy_variant_id", "scenario_id", "regime_id"]).reset_index(drop=True)
+
+
+def build_seed_check(root: Path, seed: int) -> pd.DataFrame:
+    cells = {
+        ("CHL", "GMI:GMI_ideal_aggregate", "stress", "r4"),
+        ("PER", "PEN", "stress", "r4"),
+    }
+    frames = []
+    for offset in [707, 1707]:
+        frame = run_single_mc(
+            root=root,
+            m_draws=5_000,
+            seed=seed + offset,
+            persist_draws=False,
+            mc_mode=MC_FACTOR_NOMINAL,
+            cell_filter=cells,
+            include_companions=False,
+        )["monte_carlo_result"]
+        frame = frame[frame["prob_basis"].eq("all_draw")].copy()
+        frame["seed_offset"] = offset
+        frames.append(frame)
+    key_cols = ["country_id", "policy_variant_id", "scenario_id", "regime_id"]
+    merged = frames[0][key_cols + ["prob_v_ge_1", "prob_v_ge_1_10"]].merge(
+        frames[1][key_cols + ["prob_v_ge_1", "prob_v_ge_1_10"]],
+        on=key_cols,
+        suffixes=("_seed707", "_seed1707"),
+    )
+    for col in ["prob_v_ge_1", "prob_v_ge_1_10"]:
+        merged[f"abs_diff_{col}"] = (merged[f"{col}_seed707"] - merged[f"{col}_seed1707"]).abs()
+    merged["tier_b_probability_tolerance"] = 0.02
+    merged["within_tolerance"] = (
+        (merged["abs_diff_prob_v_ge_1"] <= 0.02)
+        & (merged["abs_diff_prob_v_ge_1_10"] <= 0.02)
+    )
+    return merged
+
+
+def value_key_from_parameter_record(record: pd.Series) -> ValueKey:
+    return ValueKey(
+        str(record["parameter_name"]),
+        None if pd.isna(record.get("country_id")) else str(record.get("country_id")),
+        None if pd.isna(record.get("scenario_id")) else str(record.get("scenario_id")),
+        None if pd.isna(record.get("policy_id")) else str(record.get("policy_id")),
+        None if pd.isna(record.get("regime_id")) else str(record.get("regime_id")),
+    )
+
+
+def parameter_scope_applies(record: pd.Series, *, country: str, policy_id: str, scenario: str, regime: str) -> bool:
+    for col, value in [
+        ("country_id", country),
+        ("policy_id", policy_id),
+        ("scenario_id", scenario),
+        ("regime_id", regime),
+    ]:
+        raw = record.get(col)
+        if pd.notna(raw) and str(raw) != value:
+            return False
+    return True
+
+
+def compute_cell_v_with_override(
+    *,
+    inputs: dict[str, Any],
+    country: str,
+    scenario: str,
+    regime: str,
+    policy_variant_id: str,
+    key: ValueKey,
+    value: float,
+) -> float:
+    sampler = ValueSampler(inputs["values"], 1, 424242, record_parameters=False, mc_mode=MC_MODE)
+    sampler.cache[key] = np.array([float(value)], dtype=float)
+    eprod_frontier = sampler.array("E_prod_frontier")
+    cs = build_country_scenario_draws(sampler, inputs, country, scenario, eprod_frontier)
+    rd = build_regime_draws(sampler, regime)
+    policies = policy_instances(country, inputs["policy_cost"], inputs["wpp"])
+    policy = next(p for p in policies if p["policy_variant_id"] == policy_variant_id)
+    arrays = compute_cell_arrays(sampler, inputs, country, scenario, regime, policy, cs, rd)
+    return float(arrays["v_gross"][0])
+
+
+def build_driver_ranking(base: dict[str, Any]) -> pd.DataFrame:
+    draw_frames = base["draw_frames"]
+    fiscal = draw_frames["fiscal_conversion_draw"]
+    params = draw_frames["draw_parameter_value"]
+    params = params[params["drawn_flag"].astype(bool)].copy()
+    rows: list[dict[str, Any]] = []
+    for key in sorted(HEADLINE_COMPARISON_CELLS):
+        country, policy_variant_id, scenario, regime = key
+        cell = fiscal[
+            fiscal["country_id"].eq(country)
+            & fiscal["policy_variant_id"].eq(policy_variant_id)
+            & fiscal["scenario_id"].eq(scenario)
+            & fiscal["regime_id"].eq(regime)
+        ][["draw_id", "v_gross", "policy_id"]].copy()
+        if cell.empty:
+            continue
+        policy_id = str(cell["policy_id"].iloc[0])
+        applicable = params[
+            params.apply(
+                lambda r: parameter_scope_applies(r, country=country, policy_id=policy_id, scenario=scenario, regime=regime),
+                axis=1,
+            )
+        ]
+        for scope, group in applicable.groupby(["parameter_name", "country_id", "scenario_id", "policy_id", "regime_id"], dropna=False):
+            merged = cell.merge(group[["draw_id", "parameter_value"]], on="draw_id", how="inner")
+            if len(merged) < 10 or merged["parameter_value"].nunique() < 3:
+                continue
+            spearman = float(merged["parameter_value"].corr(merged["v_gross"], method="spearman"))
+            if not np.isfinite(spearman):
+                continue
+            p10 = float(np.nanpercentile(merged["parameter_value"], 10))
+            p90 = float(np.nanpercentile(merged["parameter_value"], 90))
+            record = group.iloc[0]
+            key_obj = value_key_from_parameter_record(record)
+            try:
+                v_p10 = compute_cell_v_with_override(
+                    inputs=base["inputs"],
+                    country=country,
+                    scenario=scenario,
+                    regime=regime,
+                    policy_variant_id=policy_variant_id,
+                    key=key_obj,
+                    value=p10,
+                )
+                v_p90 = compute_cell_v_with_override(
+                    inputs=base["inputs"],
+                    country=country,
+                    scenario=scenario,
+                    regime=regime,
+                    policy_variant_id=policy_variant_id,
+                    key=key_obj,
+                    value=p90,
+                )
+                tornado_range = abs(v_p90 - v_p10)
+            except Exception:
+                v_p10 = np.nan
+                v_p90 = np.nan
+                tornado_range = np.nan
+            rows.append(
+                {
+                    "run_id": RUN_ID,
+                    "country_id": country,
+                    "policy_variant_id": policy_variant_id,
+                    "scenario_id": scenario,
+                    "regime_id": regime,
+                    "parameter_name": scope[0],
+                    "parameter_country_id": None if pd.isna(scope[1]) else scope[1],
+                    "parameter_scenario_id": None if pd.isna(scope[2]) else scope[2],
+                    "parameter_policy_id": None if pd.isna(scope[3]) else scope[3],
+                    "parameter_regime_id": None if pd.isna(scope[4]) else scope[4],
+                    "spearman_rho_with_v_gross": spearman,
+                    "abs_spearman_rho": abs(spearman),
+                    "parameter_p10": p10,
+                    "parameter_p90": p90,
+                    "v_gross_at_parameter_p10_others_central": v_p10,
+                    "v_gross_at_parameter_p90_others_central": v_p90,
+                    "tornado_abs_range": tornado_range,
+                    "parameter_set_id": PARAMETER_SET_ID,
+                    "dataset_version": DATASET_VERSION,
+                }
+            )
+    ranking = pd.DataFrame(rows)
+    if ranking.empty:
+        return ranking
+    ranking["rank_within_cell"] = (
+        ranking.sort_values(["country_id", "policy_variant_id", "scenario_id", "regime_id", "abs_spearman_rho"], ascending=[True, True, True, True, False])
+        .groupby(["country_id", "policy_variant_id", "scenario_id", "regime_id"])
+        .cumcount()
+        + 1
+    )
+    return ranking[ranking["rank_within_cell"] <= 10].sort_values(
+        ["country_id", "policy_variant_id", "scenario_id", "regime_id", "rank_within_cell"]
+    ).reset_index(drop=True)
+
+
 def run_monte_carlo(root: Path = ROOT, m_draws: int = 5_000, persist_draws: bool = True) -> dict[str, Any]:
     started = time.perf_counter()
+    from scripts.materialize_official_v3_measurement_uncertainty import materialize as materialize_v3
+
+    materialize_v3(root)
     rng_policy = load_rng_policy(root)
     seed = int(rng_policy.get("monte_carlo_master_seed", 20260709))
     matrix = correlation_matrix_rows()
+    dependency_rows = dependency_matrix_rows()
     upsert_governance(root, matrix)
-    convergence, convergence_flags = run_convergence(root, seed)
+    convergence_independent, convergence_flags = run_convergence(root, seed, MC_MODE)
     base = run_single_mc(
         root=root,
         m_draws=m_draws,
         seed=seed,
         persist_draws=persist_draws,
+        mc_mode=MC_MODE,
         convergence_flags=convergence_flags,
     )
-    mc = base["monte_carlo_result"].copy()
+    delta_report = build_v2_v3_delta_report(root, base["monte_carlo_result"])
+    assert_delta_report_small(delta_report)
+    correlated_frames = []
+    marginal_rows = []
+    convergence_factor, factor_flags = run_convergence(root, seed + DEPENDENCY_MODE_SEED_OFFSET[MC_FACTOR_NOMINAL], MC_FACTOR_NOMINAL)
+    for mode in CORRELATED_MODES:
+        mode_result = run_single_mc(
+            root=root,
+            m_draws=m_draws,
+            seed=seed + DEPENDENCY_MODE_SEED_OFFSET[mode],
+            persist_draws=False,
+            mc_mode=mode,
+            convergence_flags=factor_flags if mode == MC_FACTOR_NOMINAL else None,
+            include_companions=False,
+        )
+        correlated_frames.append(mode_result["monte_carlo_result"])
+        for key, value in mode_result["dependency_diagnostics"].items():
+            country, parameter, metric = key.split(":")
+            marginal_rows.append(
+                {
+                    "run_id": RUN_ID,
+                    "mc_mode": mode,
+                    "country_id": country,
+                    "parameter_name": parameter,
+                    "metric": metric,
+                    "value": value,
+                    "pass_exact_preservation": bool(value <= 1e-14),
+                    "parameter_set_id": PARAMETER_SET_ID,
+                    "dataset_version": DATASET_VERSION,
+                }
+            )
+    mc = pd.concat([base["monte_carlo_result"], *correlated_frames], ignore_index=True, sort=False)
     final_class = classify_final(mc, root)
     tolerance_calibration = calibrate_tier_b_tolerance(root, seed)
+    mode_comparison, threshold_crossings = build_mode_comparison(mc)
+    factor_pairwise = build_factor_pairwise_nominal_comparison(mc)
+    seed_check = build_seed_check(root, seed)
+    driver_ranking = build_driver_ranking(base)
+    convergence = pd.concat([convergence_independent, convergence_factor], ignore_index=True, sort=False)
     runtime = time.perf_counter() - started
     outputs = {
         "monte_carlo_result": mc,
         "mc_convergence_report": convergence,
         "country_policy_classification_final": final_class,
         "rank_correlation_matrix_proposed": matrix,
+        "rank_dependency_matrix_approved": dependency_rows,
+        "mc_v2_to_v3_headline_deltas": delta_report,
+        "mc_mode_comparison": mode_comparison,
+        "mc_threshold_crossings_between_modes": threshold_crossings,
+        "mc_factor_pairwise_nominal_comparison": factor_pairwise,
+        "mc_dependency_marginal_preservation": pd.DataFrame(marginal_rows),
+        "mc_correlated_seed_check": seed_check,
+        "driver_ranking": driver_ranking,
         "mc_tier_b_tolerance_calibration": tolerance_calibration,
         "draw_frames": base["draw_frames"],
         "m_draws": m_draws,
