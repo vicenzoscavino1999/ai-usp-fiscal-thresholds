@@ -51,7 +51,7 @@
 \maketitle
 
 \begin{abstract}
-This paper does not forecast whether artificial intelligence (AI) will finance a universal basic income (UBI). It develops a calibrated threshold-accounting framework to identify the threshold combinations of AI-induced productivity, productive adoption, fiscal capture, informality reduction, labor-share allocation, and policy cost under which universal or semi-universal social protection instruments become accounting-fiscally feasible in emerging economies. The framework compares universal social pensions, minimum universal transfers, guaranteed minimum income, partial basic income, and a full UBI benchmark. Its methodological contribution is a set of transparent equations for constructing AI shocks, converting those shocks into tax-base channels, adjusting for institutional frictions without double counting informality, and deriving policy-specific thresholds for growth, adoption, and fiscal capture. The paper separates observed variables from literature-disciplined scenario parameters and from unobserved structural parameters that require sensitivity analysis or Monte Carlo simulation. It also introduces impossibility diagnostics, temporal placebos, sectoral negative controls, leave-one-source-out ablations, Monte Carlo feasibility distributions, and global sensitivity diagnostics. The value of the framework is therefore not a point forecast but a falsifiable and reusable frontier that can be recalibrated as better evidence on AI productivity, adoption, labor-share effects, and fiscal capture becomes available.
+This paper does not forecast whether artificial intelligence (AI) will finance a universal basic income (UBI). It develops a calibrated threshold-accounting framework to identify the threshold combinations of AI-induced productivity, productive adoption, fiscal capture, informality reduction, labor-share allocation, and policy cost under which universal or semi-universal social protection instruments become accounting-fiscally feasible in emerging economies. The framework compares universal social pensions, minimum universal transfers, guaranteed minimum income, partial basic income, and a full UBI benchmark. Its methodological contribution is a set of transparent equations for constructing AI shocks, converting those shocks into tax-base channels, adjusting for institutional frictions without double counting informality, and deriving policy-specific thresholds for growth, adoption, fiscal capture, and required persistence horizons. The paper separates observed variables from literature-disciplined scenario parameters and from unobserved structural parameters that require sensitivity analysis or Monte Carlo simulation. It also introduces impossibility diagnostics, temporal placebos, sectoral negative controls, leave-one-source-out ablations, Monte Carlo feasibility distributions, and global sensitivity diagnostics. The value of the framework is therefore not a point forecast but a falsifiable and reusable frontier that can be recalibrated as better evidence on AI productivity, adoption, labor-share effects, and fiscal capture becomes available.
 \end{abstract}
 
 \noindent \textbf{Keywords:} artificial intelligence, fiscal space, universal social protection, universal basic income, informality, fiscal capacity, labor share, emerging economies, Latin America.\\
@@ -857,7 +857,7 @@ The debt-consistent prudential guardrail is
     fs^{eff}_{i,p,s,r,t}\geq (1+\xi)c^{gross}_{i,p,t}+s^{PB}_{i,t}.
 \end{equation}
 This condition is not the primary marginal self-financing benchmark. The primary benchmark asks whether the AI-induced fiscal space finances the incremental policy cost, $fs^{eff}\geq(1+\xi)c^{gross}$. The debt-consistent version asks a stronger prudential question: whether the same marginal fiscal space also covers the first-order primary-balance correction needed to satisfy a debt-stabilization guardrail. It should therefore be reported as a strong/debt-consistent layer, not as evidence that a policy fails to autofinance marginally. A stricter version with a buffer on both terms can be reported as an ultra-conservative robustness check, but it is not the baseline guardrail.
-Because $PB^{stab}$ is evaluated at baseline growth, the guardrail ignores that the AI scenario itself improves debt dynamics through higher nominal growth; the debt-consistent layer is therefore conservative by construction. A separate timing caveat applies: feasibility is an endpoint-year condition, so the crossing year is not a launch year. If a policy is launched before the endpoint, the years in which the accumulated level gain is still below its endpoint value generate transition deficits that neither the accounting threshold nor the first-order guardrail capture. Financing an early launch requires transition financing outside the framework, and implementations that report launch scenarios must state this explicitly.
+Because $PB^{stab}$ is evaluated at baseline growth, the guardrail ignores that the AI scenario itself improves debt dynamics through higher nominal growth; the debt-consistent layer is therefore conservative by construction. A separate timing caveat applies: feasibility is an endpoint-year condition, so the crossing year is not a launch year. If a policy is launched before the endpoint, the years in which the accumulated level gain is still below its endpoint value generate transition deficits that neither the accounting threshold nor the first-order guardrail capture. Financing an early launch requires transition financing outside the framework, and implementations that report launch scenarios must state this explicitly. The required persistence horizon $H^{*}$ of Section~\ref{subsec:h_star_inversion} makes the endpoint timing explicit without converting it into a forecast.
 
 Define
 \begin{equation}\label{eq:Rreq_main_v10}
@@ -1282,6 +1282,38 @@ Because productive adoption is stock-like while use is a flow, a use threshold m
     \right\}.
 \end{equation}
 If the inherited productive-adoption stock is already sufficient, the required contemporaneous use is set to zero and the use margin is classified as already satisfied. If $\lambda_q=0$, contemporaneous use cannot move productive adoption and the use-threshold inversion is not defined.
+
+\subsection{Required persistence horizon}\label{subsec:h_star_inversion}
+
+The inversions above hold the accumulation horizon fixed at $H$ and ask how large each
+structural margin would have to be. The dual question is temporal: holding the scenario and
+the frozen 2024 structure fixed, for how many years would the annual increment
+$\phi^{Y,nom}_{s}T_{i,s}$ have to persist before the accumulated level gain covers the
+buffered requirement? The required persistence horizon is
+\begin{equation}\label{eq:h_star_inversion}
+    H^{*}_{i,p,s,r}(\xi)=\min\left\{H\in\mathbb{N}:\;
+    \widetilde{MFC}^{gross}_{i,s,r}\left[(1+\phi^{Y,nom}_{s}T_{i,s})^{H}-1\right]
+    -F^{fix}_{i,p,s,r}\;\geq\;(1+\xi)\,c^{gross}_{i,p}(2024+H)\right\},
+\end{equation}
+where $c^{gross}_{i,p}(2024+H)$ carries the projected demographic eligibility ratio of the
+evaluation year for age-conditioned instruments and is constant for gap-based instruments,
+consistent with the endpoint cost convention. The debt-consistent analogue adds
+$s^{PB+}_{i}$ to the requirement. When $c^{gross}$ is constant in $H$, the closed form is
+$H^{*}=\lceil \ln(1+R^{req}/\widetilde{MFC}^{gross})/\ln(1+\phi^{Y,nom}T)\rceil$.
+
+Three conventions discipline this statistic. First, $H^{*}$ is a requirement, not a
+forecast: it states the number of years of scenario persistence that would be needed,
+exactly as $MFC^{gross,*}$ states the capture that would be needed; it does not assert that
+any calendar year will deliver it. Second, $H^{*}$ inherits the frozen-structure convention,
+so it extends the maintained persistence assumption from the baseline $H=10$ to a variable
+horizon; because long horizons stretch that assumption, reported values are censored at a
+declared cap of $25$ years, beyond which the statistic is reported only as ``not reachable
+within a defensible persistence horizon.'' Third, $H^{*}$ was added to the reporting set
+after the pre-registered baseline was computed; it is a derived statistic of previously
+frozen quantities, introduces no new calibrated parameter, and alters no pre-registered
+result. The noncomputability flags of the preceding subsections apply unchanged, and the
+Monte Carlo layer reports $\Pr(H^{*}\leq 10)$ and $\Pr(H^{*}\leq 25)$ under the same draw
+discipline.
 
 For each draw $m$, define basic denominator validity and support validity separately. Negative effective fiscal space and zero AI-induced level gains are not invalid draws; they are failure outcomes that remain in the denominator of all-draw probabilities:
 \begin{equation}
