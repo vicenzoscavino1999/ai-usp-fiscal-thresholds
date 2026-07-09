@@ -1,9 +1,27 @@
+\begin{landscape}
+\setlength{\tabcolsep}{0.7pt}
 \begin{table}[!htbp]
 \centering
-\caption{Time to threshold H* (post-baseline extension)}
-\begin{tabular}{lllllllllllll}
+\caption{Time to threshold H* (post-baseline extension)}\label{tab:results_h_star}
+\fontsize{6.1}{7.3}\selectfont
+\let\tableunderscore\_
+\renewcommand{\_}{\tableunderscore\allowbreak}
+\begin{tabular}{@{}
+>{\raggedright\arraybackslash}p{0.035\linewidth}
+>{\raggedright\arraybackslash}p{0.03\linewidth}
+>{\raggedright\arraybackslash}p{0.14\linewidth}
+>{\raggedright\arraybackslash}p{0.119\linewidth}
+>{\raggedright\arraybackslash}p{0.05\linewidth}
+>{\raggedright\arraybackslash}p{0.035\linewidth}
+>{\raggedright\arraybackslash}p{0.045\linewidth}
+>{\raggedright\arraybackslash}p{0.093\linewidth}
+>{\raggedright\arraybackslash}p{0.045\linewidth}
+>{\raggedright\arraybackslash}p{0.093\linewidth}
+>{\raggedright\arraybackslash}p{0.055\linewidth}
+>{\raggedright\arraybackslash}p{0.055\linewidth}
+>{\raggedright\arraybackslash}p{0.181\linewidth}@{}}
 \toprule
-country\_id & policy\_id & policy\_variant\_id & gmi\_version & scenario\_id & regime\_id & h\_star\_baseline & h\_star\_status\_baseline & h\_star\_debt\_consistent & h\_star\_status\_debt\_consistent & prob\_h\_star\_le\_10 & prob\_h\_star\_le\_25 & note \\
+\shortstack{country\\id} & \shortstack{policy\\id} & \shortstack{policy\\variant\\id} & \shortstack{gmi\\version} & \shortstack{scenario\\id} & \shortstack{regime\\id} & \shortstack{h star\\baseline} & \shortstack{h star status\\baseline} & \shortstack{h star debt\\consistent} & \shortstack{h star status\\debt consistent} & \shortstack{prob h star\\le 10} & \shortstack{prob h star\\le 25} & note \\
 \midrule
 CHL & GMI & GMI:GMI\_ideal\_aggregate & GMI\_ideal\_aggregate & mid & r0 & 19.0 & crosses\_within\_cap & 19.0 & crosses\_within\_cap & 0.0 & 0.797 & H* censored at 25 years; values are conditional years of frozen scenario persistence, not calendar forecasts. \\
 CHL & GMI & GMI:GMI\_ideal\_aggregate & GMI\_ideal\_aggregate & stress & r0 & 6.0 & crosses\_within\_cap & 6.0 & crosses\_within\_cap & 0.978 & 1.0 & H* censored at 25 years; values are conditional years of frozen scenario persistence, not calendar forecasts. \\
@@ -12,3 +30,4 @@ PER & PEN & PEN &  & stress & r4 & 8.0 & crosses\_within\_cap & 17.0 & crosses\_
 \bottomrule
 \end{tabular}
 \end{table}
+\end{landscape}

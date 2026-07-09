@@ -1,10 +1,31 @@
-\begin{table}[!htbp]
-\centering
-\caption{Table 5. Threshold inversion}
-\begin{tabular}{llllllllll}
+\begin{landscape}
+\fontsize{6}{7.2}\selectfont
+\setlength{\tabcolsep}{0.5pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\let\tableunderscore\_
+\renewcommand{\_}{\tableunderscore\allowbreak}
+\begin{longtable}{@{}
+>{\raggedright\arraybackslash}p{0.03\linewidth}
+>{\raggedright\arraybackslash}p{0.13\linewidth}
+>{\raggedright\arraybackslash}p{0.045\linewidth}
+>{\raggedright\arraybackslash}p{0.035\linewidth}
+>{\raggedright\arraybackslash}p{0.09\linewidth}
+>{\raggedright\arraybackslash}p{0.09\linewidth}
+>{\raggedright\arraybackslash}p{0.09\linewidth}
+>{\raggedright\arraybackslash}p{0.08\linewidth}
+>{\raggedright\arraybackslash}p{0.17\linewidth}
+>{\raggedright\arraybackslash}p{0.19\linewidth}@{}}
+\caption{Table 5. Threshold inversion}\label{tab:results_inversions}\\
 \toprule
 country\_id & policy\_variant\_id & scenario\_id & regime\_id & requirement\_basis & g\_ai\_required & mfc\_required\_gross & q\_prod\_required & historical\_total\_revenue\_class & flags \\
 \midrule
+\endfirsthead
+\caption[]{Table 5. Threshold inversion (continued)}\\
+\toprule
+country\_id & policy\_variant\_id & scenario\_id & regime\_id & requirement\_basis & g\_ai\_required & mfc\_required\_gross & q\_prod\_required & historical\_total\_revenue\_class & flags \\
+\midrule
+\endhead
 PER & PEN & low & r0 & baseline & 0.0803401385209352 & 2.6186862411420764 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
 PER & PEN & low & r0 & debt\_consistent & 0.1527380916651536 & 4.978497006668828 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
 PER & GMI:GMI\_ideal\_aggregate & low & r0 & baseline & 0.3495769751876287 & 11.39445900887217 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
@@ -86,5 +107,5 @@ PER & GMI:GMI\_loaded\_aggregate & mid & r1 & debt\_consistent & 0.6343395168655
 PER & MUT & mid & r1 & baseline & 0.6699766182065765 & 2.315814431577223 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
 PER & MUT & mid & r1 & debt\_consistent & 0.7494827359861023 & 2.5906321042377534 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
 \bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
+\end{landscape}
