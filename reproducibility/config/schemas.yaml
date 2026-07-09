@@ -469,6 +469,7 @@ schemas:
         type: string
         allowed_values:
           - robustness
+          - labeled_illustrative
       variant_id: string
       variant_family: string
       variant_label: string
@@ -480,9 +481,9 @@ schemas:
       regime_id: string
       headline_cell: bool
       v_baseline: float
-      v_variant: float
-      delta_v: float
-      abs_delta_v: float
+      v_variant: {type: float, nullable: true}
+      delta_v: {type: float, nullable: true}
+      abs_delta_v: {type: float, nullable: true}
       baseline_cell_result_class: string
       variant_cell_result_class: string
       cambia_clase_celda: bool
@@ -505,10 +506,55 @@ schemas:
         type: string
         allowed_values:
           - robustness
+          - labeled_illustrative
       variant_id: string
       diagnostic_key: string
       diagnostic_value: string
       diagnostic_note: string
+      parameter_set_id: string
+      dataset_version: string
+  historical_window_plausibility_changes:
+    file: historical_window_plausibility_changes.csv
+    primary_key:
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+      - requirement_basis
+      - xi
+      - revenue_concept
+      - percentile_sample
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - robustness
+      country_id: string
+      policy_variant_id: string
+      scenario_id: string
+      regime_id: string
+      requirement_basis: string
+      xi: float
+      revenue_concept:
+        type: string
+        allowed_values:
+          - tax
+          - total_revenue
+      percentile_sample:
+        type: string
+        allowed_values:
+          - 2000plus
+          - 2010plus
+          - 2015plus
+          - excl_pandemic_2020_2021
+      mfc_required_gross: float
+      historical_class: string
+      borderline_flag: bool
+      baseline_2000plus_class: string
+      baseline_2000plus_borderline: bool
+      class_changed_vs_2000plus: bool
+      borderline_changed_vs_2000plus: bool
       parameter_set_id: string
       dataset_version: string
   hypothesis_adjudication:

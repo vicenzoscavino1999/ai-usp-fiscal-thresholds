@@ -64,10 +64,12 @@ from scripts.run_official_tier_a import (
 
 RUN_ID = "official_4c_deterministic_robustness_6a_baseline_official_v3"
 RUN_TYPE = "robustness"
+ILLUSTRATIVE_RUN_TYPE = "labeled_illustrative"
 BASELINE_RESULTS_PARAMETER_SET = "baseline-official-v2"
 BASELINE_COMPARISON_PARAMETER_SET = PARAMETER_SET_ID
 DEFAULT_ENDPOINT_YEAR = 2034
 DEFAULT_HORIZON_YEARS = 10
+FRONTIER_Q_USE_2034 = 0.152
 XI = 0.10
 HEADLINE_CELLS = {
     ("CHL", "GMI:GMI_ideal_aggregate", "stress", "r0"),
@@ -75,6 +77,11 @@ HEADLINE_CELLS = {
     ("PER", "PEN", "stress", "r2"),
     ("PER", "PEN", "stress", "r4"),
 }
+PURE_LAYERING_EXISTING_SPENDING_TREATMENT = (
+    "pure_layering_zero_existing_spending: current programs are not netted from the policy cost; "
+    "V_net=V_gross is conservative relative to crediting existing budgets; official pension rows "
+    "retain country normative sources, while synthetic GMI/MUT/PBI/UBI rows remain new-layer designs."
+)
 
 
 @dataclass(frozen=True)
@@ -90,11 +97,17 @@ def variants() -> list[Variant]:
     return [
         Variant("R1_horizon_H5", "R1_horizon", "H=5 endpoint 2029", {"horizon": 5, "endpoint_year": 2029}),
         Variant("R1_horizon_H15", "R1_horizon", "H=15 endpoint 2039; WPP clipped to 2035 if unavailable", {"horizon": 15, "endpoint_year": 2039}),
-        Variant("R2_trajectory_lambda_015", "R2_trajectory_sensitivity", "explicit q trajectory lambda_q=0.15", {"trajectory_lambda": 0.15}),
-        Variant("R2_trajectory_lambda_030", "R2_trajectory_sensitivity", "explicit q trajectory lambda_q=0.30", {"trajectory_lambda": 0.30}),
-        Variant("R2_trajectory_lambda_050", "R2_trajectory_sensitivity", "explicit q trajectory lambda_q=0.50", {"trajectory_lambda": 0.50}),
+        Variant("R2b_conservative_q0_lambda_015", "R2b_conservative_initial_condition", "q_prod_t0=0, diffusion lambda_q=0.15 toward frozen q_use_target", {"trajectory_lambda": 0.15, "trajectory_initial": 0.0}),
+        Variant("R2b_conservative_q0_lambda_030", "R2b_conservative_initial_condition", "q_prod_t0=0, diffusion lambda_q=0.30 toward frozen q_use_target", {"trajectory_lambda": 0.30, "trajectory_initial": 0.0}),
+        Variant("R2b_conservative_q0_lambda_050", "R2b_conservative_initial_condition", "q_prod_t0=0, diffusion lambda_q=0.50 toward frozen q_use_target", {"trajectory_lambda": 0.50, "trajectory_initial": 0.0}),
+        Variant(
+            "R2_labeled_illustrative_qtarget_frontier2034_lambda_030",
+            "R2_labeled_illustrative",
+            "illustrative q_use_target path grows linearly to frontier 0.152 in 2034; lambda_q=0.30",
+            {"trajectory_lambda": 0.30, "trajectory_target": "linear_frontier_2034", "run_type": ILLUSTRATIVE_RUN_TYPE},
+        ),
         Variant("R3_frontier_best_country", "R3_S_frontier", "frontier=max individual benchmark score", {"frontier": "best_individual"}),
-        Variant("R3_frontier_alt_year", "R3_S_frontier", "alternate benchmark year; frozen snapshot only has 2024", {"frontier": "alt_year_noop"}),
+        Variant("R3_frontier_alt_year", "R3_S_frontier", "alternate benchmark year unavailable in frozen snapshot", {"diagnostic_only": "frontier_alt_year_unavailable"}),
         Variant("R3_full_score_alpha1", "R3_S_frontier", "full score robustness alpha=1 with AIPI in both domestic/frontier score", {"frontier": "full_score_alpha1"}),
         Variant("R4_cost_net", "R4_cost_net", "V_net with documented C_exist, no contributive subtraction", {"cost_metric": "net"}),
         Variant("R5_demography_constant_2024", "R5_demography_constant", "endpoint costs fixed at 2024 demographic shares", {"constant_demography": True}),
@@ -108,7 +121,7 @@ def variants() -> list[Variant]:
         Variant("R11_hist_window_2010plus", "R11_historical_windows", "required-MFC plausibility with 2010plus window", {"historical_window": "2010plus"}),
         Variant("R11_hist_window_2015plus", "R11_historical_windows", "required-MFC plausibility with 2015plus window", {"historical_window": "2015plus"}),
         Variant("R11_hist_window_excl_pandemic", "R11_historical_windows", "required-MFC plausibility excluding 2020-2021", {"historical_window": "excl_pandemic_2020_2021"}),
-        Variant("R12_non_resource_plausibility", "R12_non_resource", "non-resource plausibility unavailable in frozen canonical percentiles", {"diagnostic_only": "non_resource_unavailable"}),
+        Variant("R12_non_resource_plausibility", "R12_non_resource", "non-resource plausibility attempted from GRD; unavailable if not clean for all 4 countries", {"diagnostic_only": "non_resource_unavailable"}),
         Variant("R13_recycling_mpc_ben", "R13_recycling", "first-round benefit recycling c_recyc with mpc_ben proxy", {"recycling": True}),
         Variant("R14_hist_tax_p10", "R14_historical_reduced_form", "r0 V with tax historical MFC P10", {"historical_mfc": ("tax", "p10")}),
         Variant("R14_hist_tax_p50", "R14_historical_reduced_form", "r0 V with tax historical MFC P50", {"historical_mfc": ("tax", "p50")}),
@@ -209,6 +222,78 @@ def residualized_gap_map(root: Path) -> dict[str, float]:
     return {country: float(df.loc[df["country_id"].eq(country), "gap_residualized"].iloc[0]) for country in COUNTRIES}
 
 
+def gap_comparison_diagnostics(inputs: dict[str, Any], gap_resid: dict[str, float]) -> list[dict[str, Any]]:
+    values = inputs["values"]
+    value = value_lookup(values)
+    rows = []
+    for country in COUNTRIES:
+        excluded = float(value("Gap_excluded_indicators", country=country))
+        residualized = float(gap_resid[country])
+        rows.append(
+            {
+                "run_id": RUN_ID,
+                "run_type": RUN_TYPE,
+                "variant_id": "R6_gap_residualized",
+                "diagnostic_key": f"gap_residualized_vs_excluded|{country}",
+                "diagnostic_value": json.dumps(
+                    {"gap_excluded_indicators": excluded, "gap_residualized": residualized, "delta": residualized - excluded},
+                    sort_keys=True,
+                ),
+                "diagnostic_note": "K3 check: residualized Gap recomputed from international ITU LTE coverage vs AIPI; no silent fallback.",
+                "parameter_set_id": PARAMETER_SET_ID,
+                "dataset_version": DATASET_VERSION,
+            }
+        )
+    return rows
+
+
+def nonresource_grd_diagnostics(root: Path) -> tuple[str, list[dict[str, Any]]]:
+    path = root / "data" / "raw_snapshots" / DATASET_VERSION / "grd" / "grd_revenue.parquet"
+    if not path.exists():
+        return "GRD parquet not found in frozen snapshot.", []
+    grd = pd.read_parquet(path)
+    rows = []
+    clean = True
+    for country in COUNTRIES:
+        general = grd[grd["country_id"].eq(country) & grd["government_level"].eq("general_government")]
+        total_nonresource = int(general["total_non_resource_revenue_inc_sc"].notna().sum()) if "total_non_resource_revenue_inc_sc" in general else 0
+        tax_nonresource = int(general["non_resource_tax_revenue_excluding_sc"].notna().sum()) if "non_resource_tax_revenue_excluding_sc" in general else 0
+        years_total = sorted(pd.to_numeric(general.loc[general["total_non_resource_revenue_inc_sc"].notna(), "year"], errors="coerce").dropna().astype(int).unique().tolist())
+        if total_nonresource < 10 or not years_total:
+            clean = False
+        rows.append(
+            {
+                "country": country,
+                "general_government_total_nonresource_nonnull": total_nonresource,
+                "general_government_nonresource_tax_ex_sc_nonnull": tax_nonresource,
+                "total_nonresource_year_min": None if not years_total else min(years_total),
+                "total_nonresource_year_max": None if not years_total else max(years_total),
+            }
+        )
+    if not clean:
+        note = (
+            "GRD 2025 has resource/non-resource fields, but the general-government total non-resource "
+            "mapping is not clean for all four countries; PER has no non-null total_non_resource_revenue_inc_sc "
+            "at general-government level. Non-resource plausibility remains not_available."
+        )
+    else:
+        note = "GRD general-government total non-resource coverage appears sufficient, but canonical percentiles were not rebuilt in this robustness-only step."
+    return note, rows
+
+
+def unavailable_grid(variant: Variant, baseline: pd.DataFrame, note: str, run_type: str = RUN_TYPE) -> pd.DataFrame:
+    b = baseline.copy()
+    b["variant_id"] = variant.variant_id
+    b["variant_family"] = variant.family
+    b["variant_label"] = variant.label
+    b["row_run_type"] = run_type
+    b["v_variant"] = np.nan
+    b["variant_cell_result_class"] = "not_available_in_snapshot"
+    b["variant_country_policy_result_class"] = b["country_policy_result_class"]
+    b["variant_note"] = note
+    return b
+
+
 def frontier_rows_for_variant(inputs: dict[str, Any], value, country: str, variant: Variant) -> tuple[list[dict[str, Any]], str]:
     frontier = inputs["frontier_benchmark_anchor"].copy()
     eprod_frontier = value("E_prod_frontier")
@@ -257,12 +342,27 @@ def translate_variant(
         return {"s_frontier": s_frontier, "translation_factor": t, "g_ai_level": g, "fallback": False, "note": "full_score alpha=1 applied symmetrically."}
     if "trajectory_lambda" in variant.params:
         lam = float(variant.params["trajectory_lambda"])
-        q = adoption.q_prod_t0
+        q = float(variant.params.get("trajectory_initial", adoption.q_prod_t0))
         factors = []
         s_frontier = None
         t_last = None
-        for _ in range(horizon):
-            q = q + lam * (adoption.q_use_target_adj - q)
+        q_targets = [adoption.q_use_target_adj] * horizon
+        note = (
+            "R2b unfavorable path: q_prod_t0=0 and diffusion moves toward frozen q_use_target_adj. "
+            "The superseded t0=target trajectory is flat because q_prod_t0=q_use_target_adj is a fixed point."
+        )
+        if variant.params.get("trajectory_target") == "linear_frontier_2034":
+            q = adoption.q_prod_t0
+            q_targets = [
+                adoption.q_use_target_adj + (FRONTIER_Q_USE_2034 - adoption.q_use_target_adj) * (step + 1) / horizon
+                for step in range(horizon)
+            ]
+            note = (
+                "labeled_illustrative only: q_use_target grows linearly from the country anchor to "
+                f"frontier {FRONTIER_Q_USE_2034:.3f} by 2034, with lambda=0.30; this is not formal robustness."
+            )
+        for q_target in q_targets:
+            q = q + lam * (q_target - q)
             tr = translate_to_growth(
                 exposure_productive=eprod,
                 q_prod=q,
@@ -282,7 +382,7 @@ def translate_variant(
             "translation_factor": float(t_last or 0.0),
             "g_ai_level": math.prod(factors) - 1.0,
             "fallback": False,
-            "note": f"explicit q path lambda={lam}; q_use_target equals q_prod_t0 in frozen convention.",
+            "note": f"{note} lambda={lam}; terminal_q_prod={q:.6f}.",
         }
     tr = translate_to_growth(
         exposure_productive=eprod,
@@ -321,29 +421,50 @@ def run_variant(root: Path, inputs: dict[str, Any], variant: Variant, baseline: 
     horizon = int(variant.params.get("horizon", DEFAULT_HORIZON_YEARS))
     fiscal_rows: list[dict[str, Any]] = []
     diagnostic_rows: list[dict[str, Any]] = []
-    if variant.params.get("diagnostic_only") == "non_resource_unavailable":
+    if variant.params.get("diagnostic_only") == "frontier_alt_year_unavailable":
+        years = sorted(inputs["frontier_benchmark_anchor"]["year"].dropna().astype(int).unique().tolist())
+        note = f"not_available_in_snapshot: frontier_benchmark_anchor contains benchmark years={years}; no alternate benchmark year exists."
         diagnostic_rows.append(
             {
                 "run_id": RUN_ID,
                 "run_type": RUN_TYPE,
                 "variant_id": variant.variant_id,
-                "diagnostic_key": "non_resource_percentiles",
-                "diagnostic_value": "not_available",
-                "diagnostic_note": "Frozen historical_capture_percentiles has tax and total_revenue only; non-resource concept deferred.",
+                "diagnostic_key": "benchmark_year_coverage",
+                "diagnostic_value": "not_available_in_snapshot",
+                "diagnostic_note": note,
                 "parameter_set_id": PARAMETER_SET_ID,
                 "dataset_version": DATASET_VERSION,
             }
         )
-        # no-op grid to keep the variant visible in robustness_table
-        b = baseline.copy()
-        b["variant_id"] = variant.variant_id
-        b["variant_family"] = variant.family
-        b["variant_label"] = variant.label
-        b["v_variant"] = b["v_gross"]
-        b["variant_cell_result_class"] = b["cell_result_class"]
-        b["variant_country_policy_result_class"] = b["country_policy_result_class"]
-        b["variant_note"] = "diagnostic-only: non-resource percentiles unavailable."
-        return b, diagnostic_rows
+        return unavailable_grid(variant, baseline, note), diagnostic_rows
+    if variant.params.get("diagnostic_only") == "non_resource_unavailable":
+        note, coverage_rows = nonresource_grd_diagnostics(root)
+        diagnostic_rows.append(
+            {
+                "run_id": RUN_ID,
+                "run_type": RUN_TYPE,
+                "variant_id": variant.variant_id,
+                "diagnostic_key": "non_resource_grd_mapping",
+                "diagnostic_value": "not_available",
+                "diagnostic_note": note,
+                "parameter_set_id": PARAMETER_SET_ID,
+                "dataset_version": DATASET_VERSION,
+            }
+        )
+        for item in coverage_rows:
+            diagnostic_rows.append(
+                {
+                    "run_id": RUN_ID,
+                    "run_type": RUN_TYPE,
+                    "variant_id": variant.variant_id,
+                    "diagnostic_key": f"non_resource_grd_coverage|{item['country']}",
+                    "diagnostic_value": json.dumps(item, sort_keys=True),
+                    "diagnostic_note": "K6 coverage audit for attempted non-resource mapping from GRD 2025.",
+                    "parameter_set_id": PARAMETER_SET_ID,
+                    "dataset_version": DATASET_VERSION,
+                }
+            )
+        return unavailable_grid(variant, baseline, f"not_available_in_snapshot: {note}"), diagnostic_rows
 
     for country in COUNTRIES:
         gap = gap_resid[country] if variant.params.get("gap") == "residualized" else value("Gap_excluded_indicators", country=country)
@@ -552,22 +673,64 @@ def run_variant(root: Path, inputs: dict[str, Any], variant: Variant, baseline: 
     grid["variant_id"] = variant.variant_id
     grid["variant_family"] = variant.family
     grid["variant_label"] = variant.label
+    grid["row_run_type"] = variant.params.get("run_type", RUN_TYPE)
     grid["v_variant"] = grid["v_gross"]
     grid["variant_cell_result_class"] = grid["cell_result_class"]
     return grid, diagnostic_rows
 
 
 def classify_required_windows(inputs: dict[str, Any]) -> pd.DataFrame:
+    table = required_window_plausibility_table(inputs)
+    rows = []
+    for variant_id, sample in [
+        ("R11_hist_window_2010plus", "2010plus"),
+        ("R11_hist_window_2015plus", "2015plus"),
+        ("R11_hist_window_excl_pandemic", "excl_pandemic_2020_2021"),
+    ]:
+        sample_rows = table[table["percentile_sample"].eq(sample)]
+        changes = int(sample_rows["class_changed_vs_2000plus"].sum())
+        borderline_changes = int(sample_rows["borderline_changed_vs_2000plus"].sum())
+        rows.append(
+            {
+                "run_id": RUN_ID,
+                "run_type": RUN_TYPE,
+                "variant_id": variant_id,
+                "diagnostic_key": "required_plausibility_window_change_summary",
+                "diagnostic_value": json.dumps(
+                    {"class_changes_vs_2000plus": changes, "borderline_changes_vs_2000plus": borderline_changes},
+                    sort_keys=True,
+                ),
+                "diagnostic_note": "K5 required-MFC plausibility class changes for headline cells by historical window.",
+                "parameter_set_id": PARAMETER_SET_ID,
+                "dataset_version": DATASET_VERSION,
+            }
+        )
+    return pd.DataFrame(rows)
+
+
+def required_window_plausibility_table(inputs: dict[str, Any]) -> pd.DataFrame:
     threshold = pd.read_csv(ROOT / "results" / "official" / "threshold_inversion_result.csv")
     cells = threshold[
         threshold["xi"].eq(0.10)
         & threshold["requirement_basis"].eq("baseline")
         & threshold.apply(lambda r: (r["country_id"], r["policy_variant_id"], r["scenario_id"], r["regime_id"]) in HEADLINE_CELLS, axis=1)
     ].copy()
+    samples = ["2000plus", "2010plus", "2015plus", "excl_pandemic_2020_2021"]
     rows = []
-    for sample in ["2010plus", "2015plus", "excl_pandemic_2020_2021"]:
+    baseline_lookup: dict[tuple[str, str, str, str, str], tuple[str | None, bool]] = {}
+    for _, r in cells.iterrows():
+        for concept in ["tax", "total_revenue"]:
+            key = (r["country_id"], r["policy_variant_id"], r["scenario_id"], r["regime_id"], concept)
+            if pd.isna(r["mfc_required_gross"]):
+                baseline_lookup[key] = (None, False)
+            else:
+                pct = historical_percentiles_sample(inputs, r["country_id"], concept, "2000plus")
+                res = classify_historical_plausibility(float(r["mfc_required_gross"]), pct)
+                baseline_lookup[key] = (res.historical_plausibility_class, bool(res.borderline_plausibility_flag))
+    for sample in samples:
         for _, r in cells.iterrows():
             for concept in ["tax", "total_revenue"]:
+                key = (r["country_id"], r["policy_variant_id"], r["scenario_id"], r["regime_id"], concept)
                 if pd.isna(r["mfc_required_gross"]):
                     klass = None
                     border = False
@@ -575,15 +738,27 @@ def classify_required_windows(inputs: dict[str, Any]) -> pd.DataFrame:
                     pct = historical_percentiles_sample(inputs, r["country_id"], concept, sample)
                     res = classify_historical_plausibility(float(r["mfc_required_gross"]), pct)
                     klass = res.historical_plausibility_class
-                    border = res.borderline_plausibility_flag
+                    border = bool(res.borderline_plausibility_flag)
+                baseline_class, baseline_border = baseline_lookup[key]
                 rows.append(
                     {
                         "run_id": RUN_ID,
                         "run_type": RUN_TYPE,
-                        "variant_id": f"R11_hist_window_{sample}",
-                        "diagnostic_key": f"{r['country_id']}|{r['policy_variant_id']}|{r['scenario_id']}|{r['regime_id']}|{concept}",
-                        "diagnostic_value": klass,
-                        "diagnostic_note": f"required MFC plausibility with sample={sample}; borderline={border}",
+                        "country_id": r["country_id"],
+                        "policy_variant_id": r["policy_variant_id"],
+                        "scenario_id": r["scenario_id"],
+                        "regime_id": r["regime_id"],
+                        "requirement_basis": r["requirement_basis"],
+                        "xi": float(r["xi"]),
+                        "revenue_concept": concept,
+                        "percentile_sample": sample,
+                        "mfc_required_gross": float(r["mfc_required_gross"]) if pd.notna(r["mfc_required_gross"]) else np.nan,
+                        "historical_class": klass,
+                        "borderline_flag": border,
+                        "baseline_2000plus_class": baseline_class,
+                        "baseline_2000plus_borderline": baseline_border,
+                        "class_changed_vs_2000plus": (klass != baseline_class) if klass is not None and baseline_class is not None else False,
+                        "borderline_changed_vs_2000plus": bool(border != baseline_border),
                         "parameter_set_id": PARAMETER_SET_ID,
                         "dataset_version": DATASET_VERSION,
                     }
@@ -625,7 +800,19 @@ def build_outputs(root: Path) -> dict[str, pd.DataFrame | dict[str, Any]]:
     gap_resid = residualized_gap_map(root)
 
     grids = []
-    diagnostic_rows: list[dict[str, Any]] = []
+    diagnostic_rows: list[dict[str, Any]] = gap_comparison_diagnostics(inputs, gap_resid)
+    diagnostic_rows.append(
+        {
+            "run_id": RUN_ID,
+            "run_type": RUN_TYPE,
+            "variant_id": "R4_cost_net",
+            "diagnostic_key": "existing_spending_treatment",
+            "diagnostic_value": "pure_layering_zero_existing_spending",
+            "diagnostic_note": f"K2: {PURE_LAYERING_EXISTING_SPENDING_TREATMENT}",
+            "parameter_set_id": PARAMETER_SET_ID,
+            "dataset_version": DATASET_VERSION,
+        }
+    )
     for variant in variants():
         grid, diag = run_variant(root, inputs, variant, baseline, baseline_classes, gap_resid)
         grids.append(grid)
@@ -655,14 +842,15 @@ def build_outputs(root: Path) -> dict[str, pd.DataFrame | dict[str, Any]]:
     )
     merged["delta_v"] = merged["v_variant"] - merged["v_baseline"]
     merged["abs_delta_v"] = merged["delta_v"].abs()
-    merged["cambia_clase_celda"] = merged["variant_cell_result_class"] != merged["baseline_cell_result_class"]
-    merged["cambia_clasificacion_pais_politica"] = merged["variant_country_policy_result_class"] != merged["baseline_country_policy_result_class"]
+    available = merged["v_variant"].notna()
+    merged["cambia_clase_celda"] = available & (merged["variant_cell_result_class"] != merged["baseline_cell_result_class"])
+    merged["cambia_clasificacion_pais_politica"] = available & (merged["variant_country_policy_result_class"] != merged["baseline_country_policy_result_class"])
     merged["baseline_crosses_v1"] = merged["v_baseline"] >= 1.0
     merged["variant_crosses_v1"] = merged["v_variant"] >= 1.0
-    merged["baseline_reversed_flag"] = merged["baseline_crosses_v1"] & ~merged["variant_crosses_v1"]
+    merged["baseline_reversed_flag"] = available & merged["baseline_crosses_v1"] & ~merged["variant_crosses_v1"]
     merged["headline_cell"] = merged.apply(lambda r: (r["country_id"], r["policy_variant_id"], r["scenario_id"], r["regime_id"]) in HEADLINE_CELLS, axis=1)
     merged["run_id"] = RUN_ID
-    merged["run_type"] = RUN_TYPE
+    merged["run_type"] = merged.get("row_run_type", RUN_TYPE)
     merged["parameter_set_id"] = PARAMETER_SET_ID
     merged["baseline_parameter_set_id"] = BASELINE_COMPARISON_PARAMETER_SET
     merged["dataset_version"] = DATASET_VERSION
@@ -701,15 +889,18 @@ def build_outputs(root: Path) -> dict[str, pd.DataFrame | dict[str, Any]]:
 
     summaries = []
     for variant_id, grp in robustness_table.groupby("variant_id"):
+        headline_delta = grp.loc[grp["headline_cell"], "abs_delta_v"].dropna()
+        max_headline_delta = None if headline_delta.empty else float(headline_delta.max())
+        run_type = str(grp["run_type"].iloc[0])
         summaries.append(
             {
                 "run_id": RUN_ID,
-                "run_type": RUN_TYPE,
+                "run_type": run_type,
                 "variant_id": variant_id,
                 "diagnostic_key": "summary",
                 "diagnostic_value": json.dumps(
                     {
-                        "max_abs_delta_v_headline": float(grp.loc[grp["headline_cell"], "abs_delta_v"].max() or 0.0),
+                        "max_abs_delta_v_headline": max_headline_delta,
                         "cell_class_changes": int(grp["cambia_clase_celda"].sum()),
                         "country_policy_class_changes": int(grp["cambia_clasificacion_pais_politica"].sum()),
                         "baseline_reversed_cells": int(grp["baseline_reversed_flag"].sum()),
@@ -721,7 +912,10 @@ def build_outputs(root: Path) -> dict[str, pd.DataFrame | dict[str, Any]]:
                 "dataset_version": DATASET_VERSION,
             }
         )
+    window_table = required_window_plausibility_table(inputs)
     diagnostic = pd.concat([pd.DataFrame(diagnostic_rows), classify_required_windows(inputs), pd.DataFrame(summaries)], ignore_index=True, sort=False)
+    formal_variants = [v for v in variants() if v.params.get("run_type", RUN_TYPE) == RUN_TYPE]
+    illustrative_variants = [v for v in variants() if v.params.get("run_type", RUN_TYPE) == ILLUSTRATIVE_RUN_TYPE]
     manifest = {
         "run_id": RUN_ID,
         "run_type": RUN_TYPE,
@@ -730,15 +924,43 @@ def build_outputs(root: Path) -> dict[str, pd.DataFrame | dict[str, Any]]:
         "dataset_version": DATASET_VERSION,
         "dataset_manifest_hash": sha256_file(root / "reproducibility" / "snapshot" / f"dataset_manifest_{DATASET_VERSION}.json"),
         "variant_count": len(variants()),
+        "formal_robustness_variant_count": len(formal_variants),
+        "labeled_illustrative_variant_count": len(illustrative_variants),
         "robustness_rows": int(len(robustness_table)),
+        "formal_robustness_rows": int(robustness_table["run_type"].eq(RUN_TYPE).sum()),
         "headline_rows": int(robustness_table["headline_cell"].sum()),
+        "formal_headline_rows": int((robustness_table["headline_cell"] & robustness_table["run_type"].eq(RUN_TYPE)).sum()),
         "runtime_seconds": time.perf_counter() - started,
         "commit_sha": git_value(["rev-parse", "HEAD"]) or "unavailable_no_commit",
         "git_dirty": bool(git_value(["status", "--short"])),
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "notes": "GMI microdata-strong deferred pending ENAHO, Phase B optional.",
     }
-    return {"robustness_table": robustness_table, "diagnostic_result": diagnostic, "manifest": manifest}
+    return {"robustness_table": robustness_table, "diagnostic_result": diagnostic, "historical_window_plausibility_changes": window_table, "manifest": manifest}
+
+
+def register_existing_spending_treatment(root: Path) -> None:
+    report = root / "reports" / "policy_parameter_official_4c.csv"
+    if report.exists():
+        df = pd.read_csv(report)
+        if "existing_spending_treatment" in df.columns:
+            df["existing_spending_treatment"] = PURE_LAYERING_EXISTING_SPENDING_TREATMENT
+            df.to_csv(report, index=False)
+    db_path = root / "db" / "ai_usp_threshold.duckdb"
+    if db_path.exists():
+        con = duckdb.connect(str(db_path))
+        try:
+            exists = con.execute(
+                """
+                SELECT COUNT(*) > 0
+                FROM information_schema.tables
+                WHERE table_name = 'policy_parameter'
+                """
+            ).fetchone()[0]
+            if exists:
+                con.execute("UPDATE policy_parameter SET existing_spending_treatment = ?", [PURE_LAYERING_EXISTING_SPENDING_TREATMENT])
+        finally:
+            con.close()
 
 
 def write_outputs(root: Path, outputs: dict[str, Any]) -> None:
@@ -746,15 +968,16 @@ def write_outputs(root: Path, outputs: dict[str, Any]) -> None:
     result_dir = root / "results" / "official"
     reports.mkdir(exist_ok=True)
     result_dir.mkdir(parents=True, exist_ok=True)
-    for name in ["robustness_table", "diagnostic_result"]:
+    register_existing_spending_treatment(root)
+    for name in ["robustness_table", "diagnostic_result", "historical_window_plausibility_changes"]:
         df = outputs[name]
         df.to_csv(result_dir / f"{name}.csv", index=False)
         df.to_csv(reports / f"{name}_baseline-official-v3.csv", index=False)
-    (reports / "run_manifest_robustness_6a_baseline-official-v3.json").write_text(json.dumps(clean(outputs["manifest"]), indent=2, sort_keys=True), encoding="utf-8")
+    (reports / "run_manifest_robustness_6a1_baseline-official-v3.json").write_text(json.dumps(clean(outputs["manifest"]), indent=2, sort_keys=True), encoding="utf-8")
     (result_dir / "robustness_manifest.json").write_text(json.dumps(clean(outputs["manifest"]), indent=2, sort_keys=True), encoding="utf-8")
     con = duckdb.connect(str(root / "db" / "ai_usp_threshold.duckdb"))
     try:
-        for name in ["robustness_table", "diagnostic_result"]:
+        for name in ["robustness_table", "diagnostic_result", "historical_window_plausibility_changes"]:
             con.register("_df", outputs[name])
             con.execute(f"CREATE OR REPLACE TABLE {name} AS SELECT * FROM _df")
             con.unregister("_df")

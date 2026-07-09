@@ -1,0 +1,20 @@
+{
+  "baseline_parameter_set_id": "baseline-official-v3",
+  "commit_sha": "34bbcb65ac2b11f5fc453809e10c22ea46b8f4bf",
+  "created_at_utc": "2026-07-09T13:07:48.507910+00:00",
+  "dataset_manifest_hash": "74ab875ba64b31fa4e757c9932c6083bc34e01f0a30540e04bd12dbc10d047c8",
+  "dataset_version": "v1.0.1-official-4c",
+  "formal_headline_rows": 112,
+  "formal_robustness_rows": 13440,
+  "formal_robustness_variant_count": 28,
+  "git_dirty": true,
+  "headline_rows": 116,
+  "labeled_illustrative_variant_count": 1,
+  "notes": "GMI microdata-strong deferred pending ENAHO, Phase B optional.",
+  "parameter_set_id": "baseline-official-v3",
+  "robustness_rows": 13920,
+  "run_id": "official_4c_deterministic_robustness_6a_baseline_official_v3",
+  "run_type": "robustness",
+  "runtime_seconds": 197.08827590000146,
+  "variant_count": 29
+}
