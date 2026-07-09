@@ -31,6 +31,7 @@ REFERENCE_CHANGELOG = [
     "Etapa 5A: Monte Carlo independiente, robustez historica r0, convergencia Tier B y clasificacion final probabilistica; motor certificado intacto.",
     "Etapa 5A.1: grilla MC canonica 1.00/1.05/1.10/1.25/1.50, vocabulario final canonico y matriz rank-correlated traducida a primitivos imponibles.",
     "Etapa 5B-R: baseline-official-v3 con incertidumbre de medicion A/Gap/I; dependencia institucional factor + cross-check par-a-par; clasificacion final sigue usando solo MC_independent_baseline.",
+    "Etapa 6A: robustez deterministica Exp 6; corridas etiquetadas run_type=robustness comparadas contra baseline-official-v3 sin reclasificar el baseline.",
 ]
 
 

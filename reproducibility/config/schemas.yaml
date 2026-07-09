@@ -455,6 +455,62 @@ schemas:
       classification_note: string
       parameter_set_id: string
       dataset_version: string
+  robustness_table:
+    file: robustness_table.csv
+    primary_key:
+      - variant_id
+      - country_id
+      - policy_variant_id
+      - scenario_id
+      - regime_id
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - robustness
+      variant_id: string
+      variant_family: string
+      variant_label: string
+      country_id: string
+      policy_id: string
+      policy_variant_id: string
+      gmi_version: {type: string, nullable: true}
+      scenario_id: string
+      regime_id: string
+      headline_cell: bool
+      v_baseline: float
+      v_variant: float
+      delta_v: float
+      abs_delta_v: float
+      baseline_cell_result_class: string
+      variant_cell_result_class: string
+      cambia_clase_celda: bool
+      baseline_country_policy_result_class: string
+      variant_country_policy_result_class: string
+      cambia_clasificacion_pais_politica: bool
+      baseline_reversed_flag: bool
+      variant_note: string
+      parameter_set_id: string
+      baseline_parameter_set_id: string
+      dataset_version: string
+  diagnostic_result:
+    file: diagnostic_result.csv
+    primary_key:
+      - variant_id
+      - diagnostic_key
+    columns:
+      run_id: string
+      run_type:
+        type: string
+        allowed_values:
+          - robustness
+      variant_id: string
+      diagnostic_key: string
+      diagnostic_value: string
+      diagnostic_note: string
+      parameter_set_id: string
+      dataset_version: string
   hypothesis_adjudication:
     file: hypothesis_adjudication.csv
     primary_key:
