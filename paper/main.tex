@@ -319,7 +319,7 @@ where $T_{i,s,t}\in[0,1]$ measures how much of the baseline-compatible nominal G
     \item $A_{i,t}$: AI preparedness or absorptive capacity, including digital infrastructure, human capital and labour-market policies, innovation and economic integration, and regulation and ethics.
     \item $q^{prod}_{i,s,t}$: realized productive adoption, meaning AI use that has been integrated into production processes rather than merely accessed or tested.
 \end{itemize}
-The IMF AI Preparedness Index is the preferred source for $A_{i,t}$ because it is explicitly designed to compare AI adoption preparedness across countries using digital infrastructure, human capital and labour-market policies, innovation/economic integration, and regulation/ethics indicators \citep{imf2024aipi,cazzaniga2024genai}. For Latin America and the Caribbean, productive exposure should not be equated with total exposure: the World Bank--ILO study estimates that $26$--$38\%$ of jobs may be exposed to GenAI, but only $8$--$14\%$ may experience productivity-enhancing transformation, while $2$--$5\%$ face full-automation risk under current capabilities \citep{worldbankilo2024lacgenai}. Therefore the baseline uses the productivity-enhancing component for $E^{prod}$ and sends automation exposure to the labour-share/displacement block.
+The IMF AI Preparedness Index is the preferred source for $A_{i,t}$ because it is explicitly designed to compare AI adoption preparedness across countries using digital infrastructure, human capital and labour-market policies, innovation/economic integration, and regulation/ethics indicators \citep{imf2024aipi,cazzaniga2024genai}. For Latin America and the Caribbean, the World Bank--ILO ranges of Section \ref{subsec:prod_disp_exposure_main} show that productive exposure is well below total exposure \citep{worldbankilo2024lacgenai}. Therefore the baseline uses the productivity-enhancing component for $E^{prod}$ and sends automation exposure to the labour-share/displacement block.
 
 If occupation-level and sector-level measures are available, productive exposure is computed as
 \begin{align}
@@ -1619,7 +1619,7 @@ All AI-shock inputs must be transformed to a common $[0,1]$ scale before aggrega
 \begin{equation}
     X^{MM}_{i,t}=\frac{X_{i,t}-\min_i X_{i,t}}{\max_i X_{i,t}-\min_i X_{i,t}}.
 \end{equation}
-This expression is used only when $\max_iX_{i,t}>\min_iX_{i,t}$. If all observations are equal, min--max normalization is not informative; a diagnostic value such as $0.5$ may be assigned only for descriptive plots, while threshold calculations must use external-frontier normalization. Because min--max normalization can depend strongly on sample composition and outliers, the empirical stage should also report percentile-rank and frontier normalizations:
+This expression is used only when $\max_iX_{i,t}>\min_iX_{i,t}$. If all observations are equal, min--max normalization is not informative; a diagnostic value such as $0.5$ may be assigned only for descriptive plots, while threshold calculations must use external-frontier normalization. Because min--max normalization can depend strongly on sample composition and outliers, percentile-rank and frontier normalizations are available as labelled robustness alternatives:
 \begin{align}
     X^{pct}_{i,t}&=\frac{rank(X_{i,t})-1}{N_t-1}\quad (N_t>1),\\
     X^{frontier}_{i,t}&=\min\left\{1,\frac{X_{i,t}}{X^{frontier}_t}\right\}.
@@ -1636,7 +1636,7 @@ with
 \begin{equation}
     \epsilon\in\{0,0.01,0.05\}.
 \end{equation}
-For low but positive interior adoption, the floor also creates a level distortion: with $\epsilon=0.05$, a small $q^{prod}$ is inflated proportionally by the transformation. The grid therefore includes $\epsilon=0$, which is the preferred option whenever threshold inversion is numerically stable.
+For low but positive interior adoption, the floor also creates a level distortion: with $\epsilon=0.05$, a small $q^{prod}$ is inflated proportionally by the transformation. The grid therefore includes $\epsilon=0$, which is the preferred option whenever threshold inversion is numerically stable. The official implementation freezes the numerical floor at $\epsilon=10^{-9}$ for support checks and de-flooring, the numerically stabilized version of the preferred grid point $\epsilon=0$, with the logit-inversion floor frozen at $\epsilon_\mu=10^{-6}$.
 The floor is a numerical regularization device, not a substantive claim that every country has positive AI capability in all dimensions. The implementation therefore separates the numerical object $\tilde q^{prod,num}=\epsilon+(1-\epsilon)q^{prod}$ from the substantive adoption object $q^{prod}$ and the substantive exposure object $E^{prod}$. The floor is never allowed to create translation or fiscal space by itself. In every translation score, multiplicative or additive, zero substantive adoption or zero substantive productive exposure is imposed as a hard gate:
 \begin{equation}\label{eq:q_zero_gate_v21}
     q^{prod}_{i,s,t}\leq0\ \text{or}\ E^{prod}_{i,t}\leq0\quad\Longrightarrow\quad
@@ -1671,7 +1671,7 @@ with preparedness added only when adoption is independently observed. The zero-a
 
 \subsection{Elasticity grid}
 
-Since the structural elasticities governing the translation of AI exposure into aggregate productivity are not directly observed, the baseline uses unit elasticities for transparency. The named specifications below span the main directions; the full sensitivity grid for active elasticities is $\{0.5,1,1.5,2\}$, as declared in the master calibration matrix. Robustness exercises should include:
+Since the structural elasticities governing the translation of AI exposure into aggregate productivity are not directly observed, the baseline uses unit elasticities for transparency. The named specifications below span the main directions; the full sensitivity grid for active elasticities is $\{0.5,1,1.5,2\}$, as declared in the master calibration matrix. The elasticity menu is:
 \begin{table}[H]
 \centering
 \caption{Elasticity-grid robustness for AI-shock translation}
@@ -1715,9 +1715,9 @@ where
 and $D_{s,t}=1$ in the static implementation.
 This extension changes the annual path of the shock but does not alter the central accounting-fiscal threshold logic.
 
-\subsection{Required robustness table}
+\subsection{Robustness menu}
 
-The empirical section should report whether the main ranking of policies and country-policy pairs is stable across the following dimensions:
+The framework's robustness menu spans the following dimensions; the officially executed subset and its outputs are recorded in the pre-registered plans and the robustness summary of the reproducibility package:
 \begin{longtable}{p{0.25\textwidth}p{0.62\textwidth}}
 \caption{AI-shock robustness dimensions}\label{tab:ai_shock_robustness}\\
 \toprule
@@ -1788,7 +1788,7 @@ The initial intercept is
     \mu_{i,s,t_0}=\log\left(\frac{q^{use,target,adj}_{i,t_0}}{\bar q_{i,t_0}-q^{use,target,adj}_{i,t_0}}\right)
     -\nu_A A_{i,t_0}+\nu_I I_{i,t_0}+\nu_G Gap_{i,t_0}.
 \end{equation}
-The replication file must report the source or scenario used for $q^{use,target}_{i,t_0}$. This is an anchored diffusion convention: $\mu_{i,s,t_0}$ is a residual initial-condition term, not evidence that $A$, $I$, and $Gap$ have been structurally identified as predictors of the initial level. If no adoption data are available, low/central/high targets are calibrated from digital access, firm digitalization, and country preparedness. If the paper wants a predictive adoption model, it must use a separate structural-intercept robustness specification with $\mu_s$ or $\mu_s+\alpha_i$ and evaluate fit without target inversion. The module contains no endogenous imitation or network-diffusion term of the Bass type: with the anchored intercept held fixed, adoption paths are driven by scenario updates to preparedness, frictions, gaps, and ceilings. Adoption trajectories are therefore scenario paths, not endogenous-diffusion forecasts; if GenAI diffuses through imitation faster than preparedness improves, the baseline understates medium-term adoption.
+The calibration registry records the source of $q^{use,target}_{i,t_0}$: an OECD--Eurostat benchmark adoption average scaled by country AIPI relative to the benchmark AIPI, with a declared $\pm30\%$ support. This is an anchored diffusion convention: $\mu_{i,s,t_0}$ is a residual initial-condition term, not evidence that $A$, $I$, and $Gap$ have been structurally identified as predictors of the initial level. If no adoption data are available, low/central/high targets are calibrated from digital access, firm digitalization, and country preparedness. If the paper wants a predictive adoption model, it must use a separate structural-intercept robustness specification with $\mu_s$ or $\mu_s+\alpha_i$ and evaluate fit without target inversion. The module contains no endogenous imitation or network-diffusion term of the Bass type: with the anchored intercept held fixed, adoption paths are driven by scenario updates to preparedness, frictions, gaps, and ceilings. Adoption trajectories are therefore scenario paths, not endogenous-diffusion forecasts; if GenAI diffuses through imitation faster than preparedness improves, the baseline understates medium-term adoption.
 
 \subsection{Productive-adoption lag}
 
@@ -1817,7 +1817,7 @@ The preferred empirical input is an adjusted labor share. In economies with subs
 \begin{equation}
     LS^{raw}_{i,t}=\frac{\text{Compensation of employees}_{i,t}}{Y^0_{i,t}},
 \end{equation}
-plus an adjusted measure $LS^{adj}_{i,t}$ when mixed-income imputations are available. The main results should state which version is used and test whether policy rankings change under $LS^{raw}$ and $LS^{adj}$.
+plus an adjusted measure $LS^{adj}_{i,t}$ when mixed-income imputations are available. The main results state the version used: the country-specific PWT labor share, recorded in the calibration registry; ranking stability under raw versus adjusted measures is a declared robustness item.
 
 \subsection{Automation, augmentation, and reskilling scenarios}
 
@@ -1960,7 +1960,7 @@ This appendix formalizes the fiscal conversion block in Section \ref{sec:fiscal_
 
 \subsection{Nested specifications and no double counting}
 
-The empirical implementation reports three nested fiscal-conversion specifications:
+The framework defines three nested fiscal-conversion specifications; the channel specification is the operative official mode:
 \begin{longtable}{p{0.25\textwidth}p{0.39\textwidth}p{0.24\textwidth}}
 \caption{Nested fiscal conversion specifications}\label{tab:fiscal_nested_specs}\\
 \toprule
@@ -2155,7 +2155,7 @@ The central reporting object remains $V^{gross}=fs^{eff}/c^{gross}$, with $V^{ne
 
 \subsection{Historical fiscal-capture implementation details}
 
-For reproducibility, the historical plausibility check should be implemented as a separate data object. For each country-year, the replication file stores nominal GDP, tax revenue, total revenue, non-resource revenue where available, and government level. The preferred window is 2000--latest available year, with robustness windows 2010--latest and 2015--latest. Cleaning rules follow Section \ref{sec:historical_plausibility}. The appendix table for each country should report
+The historical plausibility check is implemented as a separate data object in the reproducibility package. For each country-year, the replication file stores nominal GDP, tax revenue, total revenue, non-resource revenue where available, and government level. The preferred window is 2000--latest available year, with robustness windows 2010--latest and 2015--latest. Cleaning rules follow Section \ref{sec:historical_plausibility}. The historical output reports, for each country,
 \begin{equation}
     \{P10,P25,P50,P75,P90\}\left(MFC^{hist,gross,+}_i\right),
     \qquad
@@ -2225,11 +2225,12 @@ Labor channel, base-side alternative & No rate-side labor-informality penalty & 
 Residual penalty $\Omega^{res}$ & Stress test only & Used only for frictions not included in channel-specific rates \\
 \bottomrule
 \end{longtable}
-Legal consumption exemptions and consumption informality overlap empirically: informal purchases concentrate in exempt staples. To avoid discounting the same untaxed consumption twice, $exempt^C$ must be measured on the formal consumption basket, or $I^C$ on the taxable basket, and the replication file must state which convention is used. A parallel overlap applies to the capital channel: mixed income and informal-business income already excluded from the taxable base through $\chi^{Kbase}$ must not be penalized again through $I^{F,marg}$. Under the baseline, $\chi^{Kbase}$ is a composition filter selecting the profit-type components of the non-labor residual, while $I^{F,marg}$ is a compliance filter on firms inside that taxable-profit perimeter; the replication file must state that $I^{F,marg}$ is measured on the perimeter-consistent firm population, or assign the informal-business margin to one side only.
+The official implementation derives effective fiscal rates from observed revenue composition, so no additional informality penalty is applied to them, consistent with the observed-effective-rate row of Table \ref{tab:no_double_counting_informality}.
+Legal consumption exemptions and consumption informality overlap empirically: informal purchases concentrate in exempt staples. To avoid discounting the same untaxed consumption twice, $exempt^C$ must be measured on the formal consumption basket, or $I^C$ on the taxable basket, and the calibration registry states which convention is used. A parallel overlap applies to the capital channel: mixed income and informal-business income already excluded from the taxable base through $\chi^{Kbase}$ must not be penalized again through $I^{F,marg}$. Under the baseline, $\chi^{Kbase}$ is a composition filter selecting the profit-type components of the non-labor residual, while $I^{F,marg}$ is a compliance filter on firms inside that taxable-profit perimeter; the calibration registry states that $I^{F,marg}$ is measured on the perimeter-consistent firm population, or assigns the informal-business margin to one side only.
 
 \subsection{Informality in adoption versus fiscal capture}
 
-Informality can constrain both adoption and fiscal capture, but through different equations. In adoption, informality affects $q^{prod}$ and therefore $g^{AI}$. In fiscal conversion, informality affects $\tau^{j,eff}$ and therefore $fs^{eff}$ conditional on $g^{AI}$. The replication file must state whether an informality variable is being used on the adoption side, the fiscal side, or both; if both, the interpretation must be that they represent separate mechanisms rather than a repeated penalty on the same object.
+Informality can constrain both adoption and fiscal capture, but through different equations. In adoption, informality affects $q^{prod}$ and therefore $g^{AI}$. In fiscal conversion, informality affects $\tau^{j,eff}$ and therefore $fs^{eff}$ conditional on $g^{AI}$. The calibration registry declares whether an informality variable is being used on the adoption side, the fiscal side, or both; if both, the interpretation must be that they represent separate mechanisms rather than a repeated penalty on the same object.
 
 \subsection{Formalization-enhancing AI as a scenario}
 
@@ -2477,15 +2478,15 @@ If the Monte Carlo imposes dependence, Sobol indices are reported only in an ind
 
 \subsection{Deterministic stress tests}
 
-Report low AI productivity, slow adoption, weak fiscal capture, high informality, high administrative cost, high leakage, no AI-rent tax, no formalization effect, and no labor augmentation.
+The deterministic stress menu spans low AI productivity, slow adoption, weak fiscal capture, high informality, high administrative cost, high leakage, no AI-rent tax, no formalization effect, and no labor augmentation; the executed stress and ablation outputs are recorded in the reproducibility package.
 
 \subsection{Ablation, placebo, and negative-control outputs}
 
-The replication package should include temporal placebo, sectoral negative-control, leave-one-source-out, and channel-ablation tables.
+The replication package includes temporal placebo, sectoral negative-control, leave-one-source-out, and channel-ablation outputs.
 
 \subsection{Numerical convergence and reproducibility}
 
-Report the random seed, draw count, convergence checks for crossing probabilities, support-valid draw share, code version, and data version. Any table using $V^{net}$ must also report $V^{gross}$.
+The replication package reports the random seed, draw count, convergence checks for crossing probabilities (its Monte Carlo convergence output), support-valid draw share, code version, and data version. Any table using $V^{net}$ must also report $V^{gross}$.
 
 \section{Calibration Matrix and Assumption Ledger}\label{app:calibration_ledger}
 
