@@ -1092,37 +1092,7 @@ Micro studies such as \citet{noy2023experimental} and \citet{brynjolfsson2023gen
 
 \subsection{AI-productivity scenario ladder}
 
-The base AI shock is externally disciplined and numerically closed before any country-specific translation is applied. The empirical implementation must report the source-unit raw object $\phi^{raw}_{s,u}$, the bridge $\kappa^{u\to Y}_s$, the nominal adjustment $\pi^{AI,Y}_s$, and the accumulated level object $g^{AI,level}$. The baseline paper uses the moderate TFP-equivalent scenario as the central case and reports the conservative scenario as a lower-bound case. The high scenario is a frontier-adoption case and the disruptive scenario is a stress test.
-
-\begin{longtable}{p{0.12\textwidth}p{0.16\textwidth}p{0.13\textwidth}p{0.29\textwidth}p{0.18\textwidth}}
-\caption{Disciplined scenario ladder for the base AI shock $\phi_s$}\label{tab:phi_scenario_ladder}\\
-\toprule
-Scenario & Annual support & Unit & Source discipline & Baseline status \\
-\midrule
-\endfirsthead
-\toprule
-Scenario & Annual support & Unit & Source discipline & Baseline status \\
-\midrule
-\endhead
-Conservative & $[0.0003,0.0007]$ & TFP-equivalent & Annualized from \citet{acemoglu2024simple}; approximately bounded by a $0.66\%$ TFP gain over ten years & Lower-bound baseline \\
-Moderate & $[0.0025,0.0060]$ & TFP-equivalent & OECD aggregate TFP contribution from AI, $0.25$--$0.60$ percentage points annually over a decade \citep{filippucci2024miracle} & Main baseline \\
-High frontier input & $[0.0040,0.0130]$ & Labour-productivity equivalent before conversion & OECD G7 estimates for high-exposure, high-adoption economies \citep{oecd2025g7}; converted with $\kappa^{LP\to Y}$ & Frontier/stress-adjacent, not emerging-economy baseline \\
-Disruptive stress & $[0.0100,0.0200]$ & GDP/TFP-equivalent stress & Deliberately beyond the baseline macro literature & Diagnostic only \\
-\bottomrule
-\end{longtable}
-
-The deterministic values used in non-stochastic summary tables are the midpoints of each support, with the high case reported before and after the labour-productivity bridge:
-\begin{equation}
-    \bar\phi^{low}=0.0005,
-    \quad
-    \bar\phi^{mid}=0.00425,
-    \quad
-    \bar\phi^{high,LP}=0.0085,
-    \quad
-    \bar\phi^{high,Y}=\kappa^{LP\to Y}\bar\phi^{high,LP},
-    \quad
-    \bar\phi^{stress}=0.015.
-\end{equation}
+The externally disciplined scenario supports and deterministic closures are reported in Table \ref{tab:phi_numerical_closure}. The empirical implementation must report the source-unit raw object $\phi^{raw}_{s,u}$, the bridge $\kappa^{u\to Y}_s$, the nominal adjustment $\pi^{AI,Y}_s$, and the accumulated level object $g^{AI,level}$.
 A result may be called ``baseline feasible'' only if it holds after converting conservative or moderate TFP-equivalent raw supports into model-ready $\phi^{Y,nom}$ and then into $g^{AI,level}$. A result that requires the high G7 frontier case must be labelled ``frontier feasible.'' A result that requires the disruptive support must be labelled ``stress feasible'' and not interpreted as a forecast.
 
 \subsection{Master calibration matrix}
@@ -1143,7 +1113,7 @@ Input & Definition and unit & Baseline assignment & Uncertainty treatment & Prim
 $Y_{i,t}$, $Pop_{i,t}$, $N_{i,p,t}$ & GDP, population, and eligible population for policy $p$ & Observed country-year values; keep nominal and PPP versions separate & Fixed in baseline; measurement-error check if data are interpolated & World Bank PIP/WDI; national accounts \\
 $c^{gross,0}_{i,p,t}$, $c^{net,0}_{i,p,t}$ & Annual gross or net policy cost as share of no-AI counterfactual GDP $Y^0_{i,t}$ & Construct from benefit rule $B_{i,p,t}$ and eligible population; subtract existing spending only in the net-cost specification; post-AI denominators are robustness only & Low/central/high benefit rules; no mixing gross and net cost & ASPIRE, PIP, national budgets, \citet{gentilini2020ubi} \\
 $\eta_{MUT},\eta_{PBI},\eta_{UBI},\chi_{GMI},B^{PEN},\theta^{target}$ & Benefit-rule parameters, pension benefit level, and GMI targeting-and-behavior loading & Indicative support $[0.25,1.00]$ for poverty-line fractions and gap coverage, including $B^{PEN}/PL$; $\theta^{target}\in[1.0,1.5]$ for labelled GMI robustness; to be finalized in the empirical version & Low/central/high grid or bounded PERT within declared support & PIP, ASPIRE, and national benefit rules \\
-$\phi^{raw}_{s,u}$, $\phi^{Y,nom}_s$, $g^{AI,level}$ & Raw source-unit AI shock, nominal GDP-equivalent annual bridge, and accumulated level shock used against recurring costs & Draw raw support from Table \ref{tab:phi_scenario_ladder}; convert through $\kappa^{u\to Y}$ and $\pi^{AI,Y}$; accumulate before feasibility comparison & Bounded PERT on raw support; bridge uncertainty reported separately; triangular/uniform only robustness & \citet{acemoglu2024simple}, \citet{filippucci2024miracle}, \citet{oecd2025g7} \\
+$\phi^{raw}_{s,u}$, $\phi^{Y,nom}_s$, $g^{AI,level}$ & Raw source-unit AI shock, nominal GDP-equivalent annual bridge, and accumulated level shock used against recurring costs & Draw raw support from Table \ref{tab:phi_numerical_closure}; convert through $\kappa^{u\to Y}$ and $\pi^{AI,Y}$; accumulate before feasibility comparison & Bounded PERT on raw support; bridge uncertainty reported separately; triangular/uniform only robustness & \citet{acemoglu2024simple}, \citet{filippucci2024miracle}, \citet{oecd2025g7} \\
 $A_{i,t}$ & AI preparedness, normalized $[0,1]$ & IMF AIPI or documented reconstruction from its four dimensions: digital infrastructure, human capital and labour-market policies, innovation/economic integration, regulation/ethics & Fixed observed index plus normalization robustness; avoid using as causal estimate & \citet{imf2024aipi,cazzaniga2024genai} \\
 $Gap_{i,t}$ & Digital and skills gap, normalized to $[0,1]$ & Construct only from indicators excluded from AIPI & Fixed observed index plus normalization robustness & ITU and World Bank digital indicators \\
 $E^{prod}_{i,t}$, $\varpi$ & Productive AI exposure and occupational-versus-sectoral combination weight & Prefer occupation/sector exposure mapped to employment or value added; for LAC, use productivity-enhancing exposure as baseline rather than total exposure & Beta/PERT distribution around low-central-high exposure; $\varpi\in\{0.25,0.50,0.75\}$ or a declared weight; broad exposure is robustness, not baseline & \citet{worldbankilo2024lacgenai,cazzaniga2024genai} \\
@@ -1583,26 +1553,7 @@ Three of the four pilot countries are upper-middle-income economies, while Chile
 
 The pilot uses $t_0=2024$ as its harmonization year. If a variable is observed in 2024, the 2024 value is used. If the closest available observation is earlier, it is carried forward and flagged as carried-forward. If a newer value such as 2026 is used, the table must either update all macro anchors to a 2026 version or mark the cell as a non-harmonized source-specific robustness value. Baseline cross-country comparisons should not silently mix source years.
 
-Table \ref{tab:pilot_seed_values} reports seed values that can be used to initialize the pilot application. They are not yet final simulation estimates. Their role is to make the empirical section concrete and reproducible: observed variables are taken from public sources, while unobserved variables such as productive AI adoption remain model-calibrated using the rules in Section \ref{sec:parameters}. Tax ratios are harmonized using OECD Revenue Statistics where available and checked against GRD revenue series. GDP anchors use the World Bank WDI country page. AIPI scores come from the IMF AI Preparedness Index, which reports an index for 2023 and covers 174 economies \citep{imf2024aipi}. Informality anchors are deliberately source-tagged because definitions differ across national statistical systems and World Bank/ILO harmonized indicators.
-
-\begin{longtable}{p{0.12\textwidth}p{0.10\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.19\textwidth}}
-\caption{Observed seed values for the minimum pilot application}\label{tab:pilot_seed_values}\\
-\toprule
-Country & AIPI & GDP 2024, USD bn & GDP pc 2024, USD & Tax/GDP & Informality seed \\
-\midrule
-\endfirsthead
-\toprule
-Country & AIPI & GDP 2024, USD bn & GDP pc 2024, USD & Tax/GDP & Informality seed \\
-\midrule
-\endhead
-Peru & 0.49 & 289.22 & 8,452.4 & 17.0\% & 72.2\% adult informal employment, 2022 (carried forward to $t_0$); broader estimates exceed 70\% \\
-Chile & 0.59 & 330.27 & 16,709.9 & 20.6\% & 27.5\% informal occupation rate, 2024 \\
-Colombia & 0.49 & 418.82 & 7,919.2 & 22.1\% & 55.3\% occupied informal workers, Jan--Mar 2026 (non-harmonized robustness value) \\
-Mexico & 0.53 & 1,856.37 & 14,185.8 & 17.7\% & 54.3\% labor informality rate, Q2 2024 \\
-\bottomrule
-\end{longtable}
-
-\noindent Sources: AIPI values from IMF DataMapper (2023 index values, carried forward to $t_0=2024$) \citep{imf2024aipi}; GDP and GDP per capita from World Bank WDI country data \citep{worldbank2026wdi}; tax-to-GDP ratios from OECD Revenue Statistics, with Peru's 2024 ratio also reported at 17\% in the OECD Economic Survey \citep{oecd2025revenue,oecd2025peru}; informality anchors from World Bank Human Capital for Peru, INE Chile, DANE Colombia, and INEGI Mexico \citep{worldbank2026humancapital,inechile2025ene,dane2026informalidad,inegi2024enoe}. Because informality definitions are not identical and source years may differ from $t_0=2024$, the final simulation must either harmonize them through ILOSTAT/LABLAC, carry them forward with an explicit flag, or run source-specific robustness checks.
+The preliminary seed values in the methodological draft have been superseded by the official observed anchors constructed by the reproducibility pipeline and reported in Table \ref{tab:results_anchors} in the results section. Those official anchors draw on GRD, OECD Revenue Statistics, WDI, AIPI, and national informality sources, under the harmonization rules above \citep{imf2024aipi,worldbank2026wdi,oecd2025revenue,oecd2025peru,worldbank2026humancapital,inechile2025ene,dane2026informalidad,inegi2024enoe}.
 
 \subsection{Policy instruments and cost equations}
 
@@ -1647,42 +1598,26 @@ The final pilot table must report, for every country-policy-scenario-regime cell
 \begin{equation}
     \left(A_i,E^{prod}_i,q^{prod}_{i,s,t},I_i,MFC^{gross}_{i,s,r,t},fs^{eff}_{i,p,s,r,t},c_{i,p,t},V_{i,p,s,r,t}\right).
 \end{equation}
-The pilot's fiscal-conversion mode is declared once: all $V$ columns are computed in the channel-based mode, which represents reform regimes natively, while the historical gross-capture distribution enters through the plausibility flag and through a labelled historical reduced-form robustness run; the two modes are never mixed inside one cell. The minimum results table has the following structure:
-
-\begin{longtable}{p{0.10\textwidth}p{0.15\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.13\textwidth}p{0.18\textwidth}}
-\caption{Minimum pilot results table to be populated after data pull}\label{tab:minimum_results_table}\\
-\toprule
-Country & Policy & $V_{low,r0}$ & $V_{mid,r0}$ & $V_{mid,r4}$ & Fiscal plausibility flag \\
-\midrule
-\endfirsthead
-\toprule
-Country & Policy & $V_{low,r0}$ & $V_{mid,r0}$ & $V_{mid,r4}$ & Fiscal plausibility flag \\
-\midrule
-\endhead
-Peru & PEN / MUT / GMI / PBI / UBI & -- & -- & -- & Compare $MFC^{gross}$ to $P50/P75/P90(MFC^{hist,gross,+})$ \\
-Chile & PEN / MUT / GMI / PBI / UBI & -- & -- & -- & Compare $MFC^{gross}$ to $P50/P75/P90(MFC^{hist,gross,+})$ \\
-Colombia & PEN / MUT / GMI / PBI / UBI & -- & -- & -- & Compare $MFC^{gross}$ to $P50/P75/P90(MFC^{hist,gross,+})$ \\
-Mexico & PEN / MUT / GMI / PBI / UBI & -- & -- & -- & Compare $MFC^{gross}$ to $P50/P75/P90(MFC^{hist,gross,+})$ \\
-\bottomrule
-\end{longtable}
-
-The dashes are intentional in the methodological draft: they prevent the paper from presenting simulated feasibility before policy costs, adoption parameters, and historical fiscal-capture distributions have been fully reproduced. The empirical version replaces them with numerical values and reports confidence intervals or Monte Carlo percentiles.
+The pilot's fiscal-conversion mode is declared once: all $V$ columns are computed in the channel-based mode, which represents reform regimes natively, while the historical gross-capture distribution enters through the plausibility flag and through a labelled historical reduced-form robustness run; the two modes are never mixed inside one cell. Results from this design are reported in Section \ref{sec:empirical_results}.
 
 \subsection{Implementation sequence}
 
-The pilot proceeds as follows:
-\begin{enumerate}
-    \item Pull GDP, population, GDP per capita, and poverty data from WDI, PIP, SEDLAC, and national sources.
-    \item Pull tax revenue, total revenue, social contributions, and resource-revenue adjustments from GRD and OECD Revenue Statistics; pull primary balances and debt-stabilizing benchmarks ($PB^0$, $PB^{stab}$) from the IMF WEO and debt-sustainability analyses for the debt-consistent layer.
-    \item Construct $MFC^{hist,gross}_{i,t}$, the non-negative-capture support $H_i^+$, and $Buoyancy^{hist}_{i,t}$; then compute $P10$, $P25$, $P50$, $P75$, and $P90$ of $H_i^+$ for each country.
-    \item Pull AIPI and informality/digital-gap variables; construct $q^{use}$ and $q^{prod}$ using the calibrated logistic adoption block.
-    \item Construct policy-cost ratios for PEN, MUT, GMI, PBI, and UBI.
-    \item Compute $V_{i,p,s,r,t}$ under all AI scenarios and fiscal regimes, together with the debt-consistent layer of Section \ref{sec:thresholds}.
-    \item Run the required diagnostics: temporal placebo, sectoral negative controls, leave-one-source-out exclusions, and channel ablations.
-    \item Report whether each result is technologically feasible, fiscally ordinary, fiscally demanding, or impossible under the stated regime.
-\end{enumerate}
+The sequence was implemented in full in the tagged reproducibility package described in the data and code availability statement, and its outputs are reported in Section \ref{sec:empirical_results}.
 
 This empirical design is intentionally modular. If a reader disagrees with the AI shock, adoption speed, tax-base channel, or policy-cost benchmark, the framework allows that block to be replaced without changing the threshold logic.
+
+\subsection{Expected qualitative pattern}\label{sec:expected}
+
+Before empirical implementation, the expected pattern is:
+\begin{itemize}
+    \item Full UBI is likely to require implausibly high AI growth or fiscal capture in many emerging economies.
+    \item Universal social pensions, minimum universal transfers, and targeted guaranteed minimum income schemes should cross thresholds earlier, with the GMI comparison subject to the ideal-targeting caveat of Section \ref{sec:policy_costs}: its early crossing partly reflects the poverty-gap costing convention and must be re-examined under the $\theta^{target}$ loading.
+    \item Countries with stronger AI preparedness and stronger fiscal capacity should cross thresholds first.
+    \item Countries with high exposure, low preparedness, high informality, and low fiscal capacity should score high on the pressure-without-capacity index.
+    \item Fiscal reform may matter as much as AI optimism: a moderate increase in marginal fiscal conversion can reduce the required AI growth threshold substantially.
+\end{itemize}
+
+These are hypotheses, not results.
 
 \section{Empirical Results}\label{sec:empirical_results}
 
@@ -1964,19 +1899,6 @@ A result should be read against this ledger: headline feasibility that survives 
 \subsection{Claims to avoid}
 
 The paper should not claim that AI will finance a full UBI, that a given transfer is politically optimal, that implementation capacity exists, or that the model estimates actual future revenues. It should also avoid interpreting stress-test scenarios as forecasts. Baseline accounting-fiscal feasibility is not equivalent to welfare optimality, political feasibility, administrative feasibility, or a full debt-sustainability assessment. A result that fails placebo, negative-control, or leave-one-source-out diagnostics should not be presented as robust even if its point estimate satisfies $V\geq1$. Symmetrically, a finding of infeasibility must not be read as evidence that AI gains are small. Because part of the welfare gain from AI accrues as consumer surplus through lower prices and free services, which is outside the fiscal base, the framework measures taxable-income feasibility, not welfare. Infeasibility can coexist with large welfare gains that are simply hard to tax.
-
-\section{Expected Qualitative Pattern}\label{sec:expected}
-
-Before empirical implementation, the expected pattern is:
-\begin{itemize}
-    \item Full UBI is likely to require implausibly high AI growth or fiscal capture in many emerging economies.
-    \item Universal social pensions, minimum universal transfers, and targeted guaranteed minimum income schemes should cross thresholds earlier, with the GMI comparison subject to the ideal-targeting caveat of Section \ref{sec:policy_costs}: its early crossing partly reflects the poverty-gap costing convention and must be re-examined under the $\theta^{target}$ loading.
-    \item Countries with stronger AI preparedness and stronger fiscal capacity should cross thresholds first.
-    \item Countries with high exposure, low preparedness, high informality, and low fiscal capacity should score high on the pressure-without-capacity index.
-    \item Fiscal reform may matter as much as AI optimism: a moderate increase in marginal fiscal conversion can reduce the required AI growth threshold substantially.
-\end{itemize}
-
-These are hypotheses, not results.
 
 \section{Conclusion}\label{sec:conclusion}
 
