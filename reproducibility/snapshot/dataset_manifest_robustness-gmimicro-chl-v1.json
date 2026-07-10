@@ -1,0 +1,39 @@
+{
+  "baseline_dataset_version_unchanged": "v1.0.1-official-4c",
+  "created_at": "2026-07-10T20:38:19.385765+00:00",
+  "dataset_version": "robustness-gmimicro-chl-v1",
+  "manifest_schema_version": "0.1.1-stage1-extension",
+  "run_label": "post_baseline_robustness_extension_new_input_series",
+  "sources": [
+    {
+      "hash_check": "ok",
+      "metadata_path": "data/raw_snapshots/robustness-gmimicro-chl-v1/casen_2024/metadata.json",
+      "query_or_endpoint": "https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav",
+      "raw_file_hash": "ac2d48b5c0b17f6e9c9744dd55853d1021248e2d985d173871338abfe3c8758f",
+      "raw_files": [
+        {
+          "path": "data/raw_snapshots/robustness-gmimicro-chl-v1/casen_2024/casen_2024.sav",
+          "sha256": "ac2d48b5c0b17f6e9c9744dd55853d1021248e2d985d173871338abfe3c8758f"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-gmimicro-chl-v1/casen_2024/Libro_de_codigos_Casen_2024.xlsx",
+          "sha256": "c78453bb68ca55cd0201d5421c14a6fee80028e40b6ece639e6a5c6c8b7d4f74"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-gmimicro-chl-v1/casen_2024/casen_2024_gmi_required_variables.parquet",
+          "sha256": "8be9a199edda2c9490482d4cd1cf9a3817bd4fe8bc93dcf7563854862ebe8ab1"
+        }
+      ],
+      "source_dir": "casen_2024",
+      "source_id": "MDSF_CASEN_2024",
+      "source_url": "https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav",
+      "status": "ok"
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "manual_pending": 0,
+    "missing": 0,
+    "ok": 1
+  }
+}
