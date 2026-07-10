@@ -1,0 +1,72 @@
+{
+  "baseline_dataset_version_unchanged": "v1.0.1-official-4c",
+  "created_at": "2026-07-10T17:54:23.063341+00:00",
+  "dataset_version": "robustness-lsraw-v1",
+  "manifest_schema_version": "0.1.1-stage1-extension",
+  "run_label": "post_baseline_robustness_extension_new_input_series",
+  "sources": [
+    {
+      "hash_check": "ok",
+      "metadata_path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/metadata.json",
+      "query_or_endpoint": [
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A604%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A604%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A152%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A152%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A170%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A170%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A484%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+        "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A484%3Bgroup_code%3A101&DataMartId=SNA&Format=csv"
+      ],
+      "raw_file_hash": "619656bc9d1989fa12f76ec96bd236fa36d280b3e90c1d1b6e535f9b5a2c2ada",
+      "raw_files": [
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_PER_group_401.zip",
+          "sha256": "7ae1df712202fc4bc0d529976ccde65694ba4026f3f879efd14a02d30df0aac9"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_PER_group_101.zip",
+          "sha256": "70c5a9bbe69e9aa328835c4515eb30ef927618a8d8424a4c70ea14fa0ea9bf63"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_CHL_group_401.zip",
+          "sha256": "257b05100536aefa5f7bef7aecfc5d32ae8b8d00dcfaee8c6051a396dded6a71"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_CHL_group_101.zip",
+          "sha256": "dbfa02aa528bfa88e0453d647bfa7172512a74133d0fe26697001de9a264fda2"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_COL_group_401.zip",
+          "sha256": "0c5bec95d9472f2a8f348d628bbd992c49521c97589baacd31e7501a5b42e12d"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_COL_group_101.zip",
+          "sha256": "8852321b95ab0dcf3cdea6222940c64d71722872171b782e7a077b67ecc3acc2"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_MEX_group_401.zip",
+          "sha256": "0e66c6489615f897f7de0d424702db039161f96212141f42b5e714da708c6eb8"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/UNdata_SNA_MEX_group_101.zip",
+          "sha256": "4265c7320add93711a05a21d8f0bde9ddbf581e5b6dc463f4d85099fe6a6e60e"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/un_sna_labor_share_raw.parquet",
+          "sha256": "619656bc9d1989fa12f76ec96bd236fa36d280b3e90c1d1b6e535f9b5a2c2ada"
+        }
+      ],
+      "source_dir": "un_sna_labor_share",
+      "source_id": "UN_SNA",
+      "source_url": "https://data.un.org/Data.aspx?d=SNA&f=group_code%3A401",
+      "status": "ok"
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "manual_pending": 0,
+    "missing": 0,
+    "ok": 1
+  }
+}

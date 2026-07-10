@@ -1,0 +1,25 @@
+{
+  "baseline_dataset_version": "v1.0.1-official-4c",
+  "baseline_parameter_set_id": "baseline-official-v3",
+  "cell_class_changes": 1,
+  "commit_sha_at_run": "b53fad4b8901e632beacc8ee5b8e52fa5ea75173",
+  "comparison_rows": 480,
+  "country_policy_class_changes": 0,
+  "created_at_utc": "2026-07-10T18:10:59.697472+00:00",
+  "extension_id": "LS_RAW_VS_ADJUSTED_ROBUSTNESS_EXTENSION_2026_07_10",
+  "extension_input_snapshot_id": "robustness-lsraw-v1",
+  "extension_type": "post_baseline_robustness_extension_new_input_series",
+  "git_dirty_at_run": true,
+  "notes": "Only the fiscal LS chain changes: LS_labor_share, tau_L_eff, tau_K_eff, tau_L_disp, and tau_K_disp. Adoption, shocks (including the high-scenario LP bridge), costs, and ceilings remain identical to baseline-official-v3.",
+  "parameter_set_id": "robustness-lsraw-v1",
+  "policy_rank_row_changes": 0,
+  "primary_spec_hash": {
+    "actual": "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81",
+    "declared": "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81",
+    "status": "PASS"
+  },
+  "protected_files_unchanged": true,
+  "run_id": "official_4c_lsraw_robustness_extension_baseline_official_v3",
+  "run_type": "robustness",
+  "runtime_seconds": 8.376096499996493
+}
