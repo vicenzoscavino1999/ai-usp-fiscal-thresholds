@@ -1,0 +1,39 @@
+{
+  "baseline_dataset_version_unchanged": "v1.0.1-official-4c",
+  "created_at": "2026-07-10T19:22:40.640597+00:00",
+  "dataset_version": "robustness-gmimicro-per-v1",
+  "manifest_schema_version": "0.1.1-stage1-extension",
+  "run_label": "post_baseline_robustness_extension_new_input_series",
+  "sources": [
+    {
+      "hash_check": "ok",
+      "metadata_path": "data/raw_snapshots/robustness-gmimicro-per-v1/enaho_sumaria/metadata.json",
+      "query_or_endpoint": "https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip",
+      "raw_file_hash": "5ee98dad87810d42d7e252401d8366feac2fbce151c7af986d9644a40952567c",
+      "raw_files": [
+        {
+          "path": "data/raw_snapshots/robustness-gmimicro-per-v1/enaho_sumaria/966-Modulo34.zip",
+          "sha256": "5ee98dad87810d42d7e252401d8366feac2fbce151c7af986d9644a40952567c"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-gmimicro-per-v1/enaho_sumaria/sumaria-2024.dta",
+          "sha256": "491066f6049b0debc542739ea379e66e8eac8912162e31c5628114aae3c4592d"
+        },
+        {
+          "path": "data/raw_snapshots/robustness-gmimicro-per-v1/enaho_sumaria/enaho_sumaria_2024_required_variables.parquet",
+          "sha256": "762717615f316603f4a2ccb155b4f29ce2be68b2f723690fa679737a9bde785c"
+        }
+      ],
+      "source_dir": "enaho_sumaria",
+      "source_id": "INEI_ENAHO_SUMARIA",
+      "source_url": "https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip",
+      "status": "ok"
+    }
+  ],
+  "summary": {
+    "failed": 0,
+    "manual_pending": 0,
+    "missing": 0,
+    "ok": 1
+  }
+}

@@ -1,0 +1,4 @@
+country_id,survey_year,validation_object,recalculated_exact,recalculated_percent,official_percent,rounding_decimals,assert_status,formula
+PER,2024,FGT0_headcount,0.2757946814687513,27.57946814687513,27.6,1,PASS,"weighted mean[GASHOG2D/(12*MIEPERHO) < LINEA], weight=FACTOR07*MIEPERHO"
+PER,2024,FGT1_poverty_gap,0.07207172925438653,7.207172925438653,7.199999999999999,1,PASS,"weighted mean[max(0,(LINEA-ypc_expenditure)/LINEA)], weight=FACTOR07*MIEPERHO"
+PER,2024,POBREZA_household_classification,33691.0,100.0,100.0,9,PASS,"POBREZA in {1,2} equals ypc_expenditure < LINEA: 33691/33691"

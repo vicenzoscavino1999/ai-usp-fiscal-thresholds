@@ -1,0 +1,79 @@
+{
+  "baseline_dataset_version": "v1.0.1-official-4c",
+  "baseline_parameter_set_id": "baseline-official-v3",
+  "cell_class_changes": 0,
+  "commit_sha_at_run": "fccaa9808e96080532061f022c1fde5ab752c1f0",
+  "comparison_rows": 40,
+  "country_policy_class_changes": 0,
+  "created_at_utc": "2026-07-10T19:34:27.576845+00:00",
+  "crosses_v1_10_changes": 0,
+  "crosses_v1_changes": 0,
+  "debt_guardrail_changes": 0,
+  "extension_id": "GMI_MICRODATA_STRONG_PER_EXTENSION_2026_07_10",
+  "extension_input_snapshot_id": "robustness-gmimicro-per-v1",
+  "extension_type": "post_baseline_robustness_extension_new_input_series",
+  "git_dirty_at_run": true,
+  "notes": "Only PER GMI ideal/loaded policy costs change in memory. Income is primary because the official PIP anchor records welfare_type=income; expenditure is reported as a cost sensitivity only.",
+  "official_gmi_provenance": {
+    "chi_gmi": 1.0,
+    "gdp_nominal_lcu_2024": 1095204000000.0,
+    "official_ideal_cost_gdp": 0.02787208206208022,
+    "official_ideal_cost_lcu": 30525615762.718506,
+    "official_loaded_cost_gdp": 0.04180812309312033,
+    "official_loaded_cost_lcu": 45788423644.07775,
+    "official_poverty_gap": 0.1305,
+    "official_poverty_line_lcu_annual": 6835.9866112358295,
+    "official_poverty_line_ppp_daily": 8.3,
+    "official_source_year": 2024,
+    "official_welfare_type": "income",
+    "theta_ideal": 1.0,
+    "theta_loaded": 1.4999999999999998
+  },
+  "parameter_set_id": "robustness-gmimicro-per-v1",
+  "policy_rank_row_changes": 10,
+  "primary_five_policy_rank_row_changes": 5,
+  "primary_spec_hash": {
+    "actual": "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81",
+    "declared": "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81",
+    "status": "PASS"
+  },
+  "protected_files_unchanged": true,
+  "run_id": "official_4c_gmimicro_per_robustness_extension_baseline_official_v3",
+  "run_type": "robustness",
+  "runtime_seconds": 7.773126200016122,
+  "validation": [
+    {
+      "assert_status": "PASS",
+      "country_id": "PER",
+      "formula": "weighted mean[GASHOG2D/(12*MIEPERHO) < LINEA], weight=FACTOR07*MIEPERHO",
+      "official_percent": 27.6,
+      "recalculated_exact": 0.2757946814687513,
+      "recalculated_percent": 27.57946814687513,
+      "rounding_decimals": 1,
+      "survey_year": 2024,
+      "validation_object": "FGT0_headcount"
+    },
+    {
+      "assert_status": "PASS",
+      "country_id": "PER",
+      "formula": "weighted mean[max(0,(LINEA-ypc_expenditure)/LINEA)], weight=FACTOR07*MIEPERHO",
+      "official_percent": 7.199999999999999,
+      "recalculated_exact": 0.07207172925438653,
+      "recalculated_percent": 7.207172925438653,
+      "rounding_decimals": 1,
+      "survey_year": 2024,
+      "validation_object": "FGT1_poverty_gap"
+    },
+    {
+      "assert_status": "PASS",
+      "country_id": "PER",
+      "formula": "POBREZA in {1,2} equals ypc_expenditure < LINEA: 33691/33691",
+      "official_percent": 100.0,
+      "recalculated_exact": 33691.0,
+      "recalculated_percent": 100.0,
+      "rounding_decimals": 9,
+      "survey_year": 2024,
+      "validation_object": "POBREZA_household_classification"
+    }
+  ]
+}
