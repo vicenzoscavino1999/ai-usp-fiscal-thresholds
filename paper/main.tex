@@ -950,49 +950,7 @@ A result may be called ``baseline feasible'' only if it holds after converting c
 
 \subsection{Master calibration matrix}
 
-The following matrix is the minimum reporting standard for the empirical version. It is designed to make each value reproducible and to prevent the model from hiding fragile assumptions inside a single composite index.
-
-\scriptsize
-\begin{longtable}{p{0.14\textwidth}p{0.22\textwidth}p{0.25\textwidth}p{0.20\textwidth}p{0.11\textwidth}}
-\caption{Master parameter-assignment and calibration matrix}\label{tab:master_calibration_matrix}\\
-\toprule
-Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source discipline \\
-\midrule
-\endfirsthead
-\toprule
-Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source discipline \\
-\midrule
-\endhead
-$Y_{i,t}$, $Pop_{i,t}$, $N_{i,p,t}$ & GDP, population, and eligible population for policy $p$ & Observed country-year values; keep nominal and PPP versions separate & Fixed in baseline; measurement-error check if data are interpolated & World Bank PIP/WDI; national accounts \\
-$c^{gross,0}_{i,p,t}$, $c^{net,0}_{i,p,t}$ & Annual gross or net policy cost as share of no-AI counterfactual GDP $Y^0_{i,t}$ & Construct from benefit rule $B_{i,p,t}$ and eligible population; subtract existing spending only in the net-cost specification; post-AI denominators are robustness only & Low/central/high benefit rules; no mixing gross and net cost & ASPIRE, PIP, national budgets, \citet{gentilini2020ubi} \\
-$\eta_{MUT},\eta_{PBI},\eta_{UBI},\chi_{GMI},B^{PEN},\theta^{target}$ & Benefit-rule parameters, pension benefit level, and GMI targeting-and-behavior loading & Indicative support $[0.25,1.00]$ for poverty-line fractions and gap coverage, including $B^{PEN}/PL$; $\theta^{target}\in[1.0,1.5]$ for labelled GMI robustness; to be finalized in the empirical version & Low/central/high grid or bounded PERT within declared support & PIP, ASPIRE, and national benefit rules \\
-$\phi^{raw}_{s,u}$, $\phi^{Y,nom}_s$, $g^{AI,level}$ & Raw source-unit AI shock, nominal GDP-equivalent annual bridge, and accumulated level shock used against recurring costs & Draw raw support from Table \ref{tab:phi_numerical_closure}; convert through $\kappa^{u\to Y}$ and $\pi^{AI,Y}$; accumulate before feasibility comparison & Bounded PERT on raw support; bridge uncertainty reported separately; triangular/uniform only robustness & \citet{acemoglu2024simple}, \citet{filippucci2024miracle}, \citet{oecd2025g7} \\
-$A_{i,t}$ & AI preparedness, normalized $[0,1]$ & IMF AIPI or documented reconstruction from its four dimensions: digital infrastructure, human capital and labour-market policies, innovation/economic integration, regulation/ethics & Fixed observed index plus normalization robustness; avoid using as causal estimate & \citet{imf2024aipi,cazzaniga2024genai} \\
-$Gap_{i,t}$ & Digital and skills gap, normalized to $[0,1]$ & Construct only from indicators excluded from AIPI & Fixed observed index plus normalization robustness & ITU and World Bank digital indicators \\
-$E^{prod}_{i,t}$, $\varpi$ & Productive AI exposure and occupational-versus-sectoral combination weight & Prefer occupation/sector exposure mapped to employment or value added; for LAC, use productivity-enhancing exposure as baseline rather than total exposure & Beta/PERT distribution around low-central-high exposure; $\varpi\in\{0.25,0.50,0.75\}$ or a declared weight; broad exposure is robustness, not baseline & \citet{worldbankilo2024lacgenai,cazzaniga2024genai} \\
-$E^{disp}_{i,t}$ & Displacement or automation exposure & Separate from $E^{prod}$; used in pressure and labour-share modules, not directly as productivity opportunity & Scenario range; never add to $E^{prod}$ & \citet{worldbankilo2024lacgenai,cazzaniga2024genai} \\
-$q^{use}_{i,s,t}$, $q^{prod}_{i,s,t}$, $\omega_I$, $\omega_G$ & AI use, productive adoption, and adoption-ceiling parameters; adoption shares lie in $[0,1]$ & If observed, use firm/worker adoption data; if simulated, use logistic module with country ceiling $\bar q_i$ & Logit-normal or bounded PERT for adoption; grid or bounded PERT with declared support for $\omega_I$ and $\omega_G$; enforce $0\le q^{prod}\le\bar q_i\le1$; impose $q^{prod}\le q^{use}$ only under non-decreasing-use robustness & Diffusion literature \citep{bass1969newproduct,rogers2003diffusion}; micro-productivity evidence \citep{noy2023experimental,brynjolfsson2023generative} \\
-$\lambda_q$ & Productive-adoption lag parameter & Baseline grid $\{0.15,0.30,0.50\}$; $1.00$ only as instant-adoption stress & Discrete grid & Diffusion theory and adoption-lag logic \\
-$\nu_A,\nu_I,\nu_G,q^{use,target}$ & Logistic adoption coefficients and anchored adoption moment & Calibrate the anchored simulated-adoption mode in Appendix \ref{app:adoption_module} & Grid or bounded PERT with declared support & Appendix \ref{app:adoption_module}; diffusion literature; national ICT/firm surveys or World Bank technology adoption surveys for the target moment \\
-$S^{frontier}_{s,t}$ & External translation benchmark & Document the frontier-economy set and benchmark year & Fixed within each threshold inversion; alternative external sets as robustness & External frontier sample; Appendix \ref{app:ai_shock_module} \\
-$\alpha,\beta,\gamma$ & Elasticities in the translation factor & $\beta=\gamma=1$ baseline; $\alpha=0$ under the no-double-counting baseline ($\alpha=1$ only in full-score robustness; see Appendix \ref{app:ai_shock_module} elasticity grid) & Grid $\{0.5,1,1.5,2\}$ for active elasticities and global sensitivity & Model discipline; no direct causal claim \\
-$RST_{i,t}$, $\delta_s,\psi_s,\zeta_s,\lambda_{LS}$ & Reskilling/task-reinstatement capacity in $[0,1]$ plus labor-share automation, augmentation, mitigation, and partial-adjustment parameters & Indicative provisional grids $\delta_s,\psi_s,\zeta_s\in\{0.25,0.50,1.00\}$ and $\lambda_{LS}\in\{0.25,0.50,1.00\}$; enforce $\zeta_sRST\leq\delta_s$ outside augmentation-dominant robustness; to be finalized in the empirical version & Low/central/high grid for scenario parameters; $RST\in[0,1]$ from declared proxy; bounded PERT only after pilot supports are declared & \citet{acemoglu2018race,acemoglu2019automation}; active labour-market policy spending, training participation (ILOSTAT), or residualized human-capital component of AIPI; calibrated scenario discipline \\
-$MFC^{gross}_{i,s,r,t}$ & Gross marginal fiscal capture of AI-induced output before administrative costs, transition costs, and leakage & Construct from channel model or draw from historical gross-capture distribution, but not both in the same run & Channel-mode derived object or historical-mode stochastic object; report mode explicitly & UNU-WIDER GRD; \citet{brollo2024fiscal}; IMF fiscal-space guidance \\
-$MFC^{eff}_{i,p,s,r,t}$ & Derived reporting object after subtracting $ac$, $tr$, and $leak$ from fiscal space & Compute only as $MFC^{eff}=fs^{eff}/g^{AI}$ when $g^{AI}>0$; not drawn as an independent primitive & Report for interpretation; do not use for gross historical plausibility checks & Derived from $MFC^{gross}$, $g^{AI}$, $ac$, $tr$, and $leak$ \\
-$\tau^{L,fisc,eff},\tau^{K,fisc,eff},\tau^{C,eff},\tau^{AI}$; $\tau^{L,disp},\tau^{K,disp}$ & Fiscal-capture rates for revenue and disposable-income rates for induced consumption & Infer fiscal rates from revenue composition where possible; disposable rates may coincide only in simplified calibration & Grid by regime; cap AI-rent tax at plausible maximum $\bar\tau^{AI}$ & GRD revenue composition; \citet{brollo2024fiscal} \\
-$\chi^{Kbase},\chi^{dom},\psi^{shift}$; $\psi^{K,rate}$ & Capital-base chain parameters, each in $[0,1]$; $\psi^{K,rate}$ is the rate-side shifting parameter, active only under the labelled rate-side convention with $\psi^{shift}=0$ & Construct the taxable domestic post-shifting capital base without double counting & Bounded PERT on low/central/high supports & National accounts and profit-shifting literature \\
-$mpc^W,mpc^{\Pi},mpc^R,mpc^{ben},m^M,exempt^C,\theta^{R,dom},\tau^{R,disp}$ & Induced-consumption shares and rates, each in $[0,1]$; $mpc^{ben}$ active only in the labelled first-round recycling variant & Calibrate disposable-income pass-through, domestic routing, imports, and exemptions consistently & Bounded PERT or declared grid & Household surveys, national accounts, and VAT rules \\
-$\lambda^{AI},\chi^{AI,dom},\psi^{shift,tech},\chi^{AI,compliance},\chi^{AI,enforce}$ & AI-rent share and capturability components in $[0,1]$ & Zero AI-rent channel in the status quo through $\tau^{AI}=0$ unless such an instrument already exists; bounded shares in positive scenarios & Bounded scenario grid or PERT & Fiscal law, international taxation, and Appendix \ref{app:fiscal_conversion_module} \\
-$I^L_{i,t}, I^F_{i,t}, I^C_{i,t}$ & Labour, firm, and consumption-base informality & Use source-specific measures where available; do not collapse all frictions into one informal-economy scalar unless data force it & Fixed observed value; marginal informality $I^{j,marg}$ preferred when sectoral AI-shock weights exist, aggregate $I^j$ as declared fallback & ILOSTAT; \citet{worldbank2021informality,medina2018shadow} \\
-$\rho_L,\rho_K,\rho_C,\rho_E,\rho_\psi$ & Elasticities for capturability, exemptions, and rate-side profit shifting & No preferred point value without estimation; $\rho_E$ and $\rho_\psi$ active only in their labelled conventions & Grid $\{0.5,1,1.5,2\}$; report sensitivity and Spearman/Sobol diagnostics & Calibrated structural parameters \\
-$\epsilon^{ero,j}$ & Behavioral taxable-base erosion elasticities by channel & Zero only in the mechanical upper-bound reading of reform regimes; mandatory companion for $r\geq1$ results, with $\epsilon^{ero,j}\tau^j<1$ & Declared grid or bounded PERT; recorded in the calibration audit trail & Tax avoidance and evasion elasticity literature; Appendix \ref{app:fiscal_conversion_module} \\
-$ac^{net,fix},tr^{ann},leak^{fix}$ & Fixed administrative, transition, and residual leakage costs as GDP-normalized ratios & Subtract from fiscal space after the AI shock is converted into revenue & Bounded PERT supports; triangular only as robustness & ASPIRE expenditure concepts; IMF fiscal policy; GRD \\
-$ac^{ME},tr^{ME},leak^{ME}$ & Marginal-equivalent deductions per unit of AI-induced output & Enter only through $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$ & Bounded PERT or zero in baseline if costs are fixed & IMF fiscal policy; implementation stress tests \\
-$\Omega^{res},s^{PB}$ & Residual stress penalty and primary-balance correction & $\Omega^{res}=0$ in the baseline; derive $s^{PB}$ from baseline and debt-stabilizing primary balances & Positive stress grid for $\Omega^{res}$; WEO/DSA scenarios for $s^{PB}$ & IMF WEO and debt-sustainability analysis \\
-$\xi$, $\bar\pi$ & Prudential buffer and probability label & $\xi\in\{0,0.05,0.10,0.25,0.50\}$ and $\bar\pi\in\{0.50,0.75,0.90\}$ & Fixed reporting grid, not estimated parameter & Robust Decision Making logic \citep{lempert2003shaping,rand2013rdm} \\
-\bottomrule
-\end{longtable}
-\normalsize
+The required parameter-reporting standard is in Table \ref{tab:master_calibration_matrix} (Appendix \ref{app:calibration_ledger}). The machine-readable country-parameter registry, including values, supports, sources, and approval status, is provided in the reproducibility package's \texttt{appendix\_i} calibration-registry files.
 
 \subsection{Fiscal-conversion modes}
 
@@ -1089,6 +1047,8 @@ $MFC^{gross,*}_{i,p,s,r,t}>P90(MFC^{hist,gross,+}_i)$ & Required gross fiscal ca
 $\tau^{AI,*}_{i,p,s,r,t}>\bar\tau^{AI}_{i,r,t}$ & Required AI-rent tax exceeds admissible policy bound & AI-rent-tax-impossible \\
 $\tau^{AI,eff,*}_{i,p,s,r,t}>\bar\tau^{AI,eff}_{i,s,r,t}$ & Required effective AI-rent capture exceeds the effective bound $\bar\tau^{AI}\chi^{AI}$ & AI-rent-tax-impossible (effective bound) \\
 $g^{AI,*}_{i,p,s,r,t}>g^{AI,max}_{s,t}$ & Required AI-induced growth exceeds scenario support & Technology-scenario-insufficient \\
+$g^{AI,*}_{i,p,s,r,t}>g^{AI,max}_{s,H}$ & Required accumulated-horizon AI-induced growth exceeds the scenario-supported maximum defined in Appendix \ref{app:threshold_module} & Technology-scenario-insufficient (accumulated horizon) \\
+$\widetilde{MFC}^{gross}_{i,s,r,t}\leq0$ and $R^{req,gross}_{i,p,s,r,t}>0$ & Net marginal fiscal capture is non-positive after marginal-equivalent deductions & Net-capture-impossible \\
 $c^{gross}_{i,p,t}>c^{gross,max,+}_{i,p,s,r,t}$ & Program cost exceeds the financeable envelope & Policy-cost-too-large (threshold failure, not a support violation) \\
 $(1+\xi)c^{gross}_{i,p,t}+s^{PB}_{i,t}>fs^{eff}_{i,p,s,r,t}$ & Debt-consistent guardrail fails & Fiscal-sustainability failure (threshold failure, not a support violation) \\
 \bottomrule
@@ -1634,39 +1594,7 @@ where $E^{disp}$ captures displacement exposure, $(1-A)$ captures low preparedne
 
 \subsection{Maintained economic assumptions and bias directions}
 
-The accounting frontier rests on maintained assumptions stated throughout the paper. They are consolidated here with their bias direction: conservative assumptions understate feasibility, optimistic ones overstate it.
-
-\begin{longtable}{p{0.43\textwidth}p{0.22\textwidth}p{0.25\textwidth}}
-\caption{Maintained economic assumptions and bias directions}\label{tab:maintained_assumptions_bias}\\
-\toprule
-Assumption & Stated in & Direction \\
-\midrule
-\endfirsthead
-\toprule
-Assumption & Stated in & Direction \\
-\midrule
-\endhead
-One-directional chain; no feedback from protection to productivity & Section \ref{sec:conceptual} & Ambiguous \\
-Endpoint level gain persists as long as the policy; composition may degrade through rent dissipation & Section \ref{subsec:phi_ladder_main} & Optimistic for long-run capture \\
-Non-market and zero-price AI gains outside the fiscal base; framework measures taxable income, not welfare & Sections \ref{subsec:phi_ladder_main} and \ref{sec:claims} & Conservative \\
-\(\kappa^{TFP\to Y}\leq1\) excludes induced capital deepening & Section \ref{subsec:phi_ladder_main} & Conservative \\
-No general equilibrium: no wage spillovers, first-round consumption only & Sections \ref{sec:conceptual} and \ref{sec:fiscal_conversion} & Conservative \\
-\(S^{frontier}\) benchmark matches the population of \(\phi_s\) & Section \ref{subsec:ndc_translation_main} & Conservative wedge if mismatched \\
-No endogenous imitation diffusion; adoption paths are scenario paths & Appendix \ref{app:adoption_module} & Conservative in the medium term \\
-Informality fixed in baseline; formalization and informalization only as labelled scenarios, reported jointly & Appendix \ref{app:informality_module} & Ambiguous \\
-One adoption stock gates automation and augmentation; \(E^{auto}\) anchored to full-automation risk is a lower bound on displacement & Section \ref{sec:labor_share} & Optimistic for the labor tax base \\
-\(\chi^{Kbase}\) calibrated on average non-labor-residual composition and applied to the AI increment & Section \ref{sec:labor_share} & Conservative \\
-LAC anchoring uses productivity-enhancing exposure only; automation-driven output gains excluded from \(E^{prod}\) & Section \ref{subsec:prod_disp_exposure_main} & Conservative \\
-Statutory-accrual incidence; no incidence shifting & Section \ref{sec:fiscal_conversion} & Ambiguous \\
-Reform-regime gains are mechanical upper bounds; behavioral-erosion companion mandatory for \(r\geq1\) & Section \ref{sec:fiscal_conversion} & Optimistic for \(r\geq1\) \\
-Historical capture prior is composition-weighted and policy-inclusive (buoyancy, not elasticity) & Section \ref{sec:historical_plausibility} & Ambiguous; generous for $r=0$ plausibility labels \\
-Recipient behavior fixed; GMI priced at ideal targeting absent \(\theta^{target}\); no transfer recycling & Section \ref{sec:policy_costs} & GMI-optimistic; recycling omission conservative \\
-Feasibility is an endpoint condition; crossing year is not a launch year & Section \ref{sec:thresholds} & Naive launch reading optimistic \\
-\(PB^{stab}\) static at baseline growth & Section \ref{sec:thresholds} & Conservative \\
-\bottomrule
-\end{longtable}
-
-A result should be read against this ledger: headline feasibility that survives the optimistic-side assumptions and fails only conservative ones is robust; the reverse is fragile.
+A result should be read against this ledger: headline feasibility that survives the optimistic-side assumptions and fails only conservative ones is robust; the reverse is fragile. The consolidated ledger is in Table \ref{tab:maintained_assumptions_bias} (Appendix \ref{app:calibration_ledger}).
 
 \subsection{Claims to avoid}
 
@@ -2410,28 +2338,7 @@ For accumulated-horizon implementations, the scenario-supported maximum AI level
 \begin{equation}
     g^{AI,max}_{s,H}=\prod_{\tau=1}^{H}\left(1+\phi^{Y,nom,max}_{s,\tau}D_{s,\tau}T^{max}\right)-1.
 \end{equation}
-The static object $g^{AI,max}_{s,t}=\phi^{Y,nom,max}_sD_{s,t}T^{max}$ is used only for one-period static runs.
-
-\begin{longtable}{p{0.30\textwidth}p{0.42\textwidth}p{0.18\textwidth}}
-\caption{Threshold-inversion impossibility diagnostics}\label{tab:threshold_impossibility_v10}\\
-\toprule
-Condition & Meaning & Flag \\
-\midrule
-\endfirsthead
-\toprule
-Condition & Meaning & Flag \\
-\midrule
-\endhead
-$q^{prod,*}>\bar q_i$ & Required productive adoption exceeds the country ceiling & Impossible \\
-$q^{use,*}>\bar q_i$ & Required use exceeds country ceiling & Impossible \\
-$\tau^{AI,eff,*}>\bar\tau^{AI,eff}$ & Required effective AI-rent capture rate exceeds effective bound & Impossible \\
-$\tau^{AI,*}>\bar\tau^{AI}$ & Required statutory AI-rent rate exceeds statutory bound & Impossible \\
-$MFC^{gross,*}>P90(MFC^{hist,gross,+})$ & Required gross capture is historically extreme & Demanding/extreme \\
-$g^{AI,*}>g^{AI,max}_{s,t}$ & Static one-period requirement exceeds $g^{AI,max}_{s,t}=\phi^{Y,nom,max}_sD_{s,t}T^{max}$, with $T^{max}\equiv1$ and $D_{s,t}=1$ in static runs & Impossible \\
-$g^{AI,*}>g^{AI,max}_{s,H}$ & Horizon requirement exceeds $g^{AI,max}_{s,H}=\prod_{\tau=1}^{H}(1+\phi^{Y,nom,max}_{s,\tau}D_{s,\tau}T^{max})-1$ in accumulated-horizon runs & Impossible \\
-$\widetilde{MFC}^{gross}\leq0$ and $R^{req,gross}>0$ & Non-positive net marginal fiscal capture after marginal-equivalent deductions & Net-capture-impossible \\
-\bottomrule
-\end{longtable}
+The static object $g^{AI,max}_{s,t}=\phi^{Y,nom,max}_sD_{s,t}T^{max}$ is used only for one-period static runs. The consolidated classification of impossibility diagnostics is in Table \ref{tab:impossibility_diagnostics_v10}; this module reports the ratios and gaps defined above.
 
 \subsection{Comparative statics}
 
@@ -2579,6 +2486,90 @@ The replication package should include temporal placebo, sectoral negative-contr
 \subsection{Numerical convergence and reproducibility}
 
 Report the random seed, draw count, convergence checks for crossing probabilities, support-valid draw share, code version, and data version. Any table using $V^{net}$ must also report $V^{gross}$.
+
+\section{Calibration Matrix and Assumption Ledger}\label{app:calibration_ledger}
+
+This appendix consolidates the minimum parameter-reporting standard and the ledger of maintained assumptions with their bias directions.
+
+\subsection{Master parameter-assignment and calibration matrix}
+
+The following matrix is the minimum reporting standard for the empirical version. It is designed to make each value reproducible and to prevent the model from hiding fragile assumptions inside a single composite index.
+
+\scriptsize
+\begin{longtable}{p{0.14\textwidth}p{0.22\textwidth}p{0.25\textwidth}p{0.20\textwidth}p{0.11\textwidth}}
+\caption{Master parameter-assignment and calibration matrix}\label{tab:master_calibration_matrix}\\
+\toprule
+Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source discipline \\
+\midrule
+\endfirsthead
+\toprule
+Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source discipline \\
+\midrule
+\endhead
+$Y_{i,t}$, $Pop_{i,t}$, $N_{i,p,t}$ & GDP, population, and eligible population for policy $p$ & Observed country-year values; keep nominal and PPP versions separate & Fixed in baseline; measurement-error check if data are interpolated & World Bank PIP/WDI; national accounts \\
+$c^{gross,0}_{i,p,t}$, $c^{net,0}_{i,p,t}$ & Annual gross or net policy cost as share of no-AI counterfactual GDP $Y^0_{i,t}$ & Construct from benefit rule $B_{i,p,t}$ and eligible population; subtract existing spending only in the net-cost specification; post-AI denominators are robustness only & Low/central/high benefit rules; no mixing gross and net cost & ASPIRE, PIP, national budgets, \citet{gentilini2020ubi} \\
+$\eta_{MUT},\eta_{PBI},\eta_{UBI},\chi_{GMI},B^{PEN},\theta^{target}$ & Benefit-rule parameters, pension benefit level, and GMI targeting-and-behavior loading & Indicative support $[0.25,1.00]$ for poverty-line fractions and gap coverage, including $B^{PEN}/PL$; $\theta^{target}\in[1.0,1.5]$ for labelled GMI robustness; to be finalized in the empirical version & Low/central/high grid or bounded PERT within declared support & PIP, ASPIRE, and national benefit rules \\
+$\phi^{raw}_{s,u}$, $\phi^{Y,nom}_s$, $g^{AI,level}$ & Raw source-unit AI shock, nominal GDP-equivalent annual bridge, and accumulated level shock used against recurring costs & Draw raw support from Table \ref{tab:phi_numerical_closure}; convert through $\kappa^{u\to Y}$ and $\pi^{AI,Y}$; accumulate before feasibility comparison & Bounded PERT on raw support; bridge uncertainty reported separately; triangular/uniform only robustness & \citet{acemoglu2024simple}, \citet{filippucci2024miracle}, \citet{oecd2025g7} \\
+$A_{i,t}$ & AI preparedness, normalized $[0,1]$ & IMF AIPI or documented reconstruction from its four dimensions: digital infrastructure, human capital and labour-market policies, innovation/economic integration, regulation/ethics & Fixed observed index plus normalization robustness; avoid using as causal estimate & \citet{imf2024aipi,cazzaniga2024genai} \\
+$Gap_{i,t}$ & Digital and skills gap, normalized to $[0,1]$ & Construct only from indicators excluded from AIPI & Fixed observed index plus normalization robustness & ITU and World Bank digital indicators \\
+$E^{prod}_{i,t}$, $\varpi$ & Productive AI exposure and occupational-versus-sectoral combination weight & Prefer occupation/sector exposure mapped to employment or value added; for LAC, use productivity-enhancing exposure as baseline rather than total exposure & Beta/PERT distribution around low-central-high exposure; $\varpi\in\{0.25,0.50,0.75\}$ or a declared weight; broad exposure is robustness, not baseline & \citet{worldbankilo2024lacgenai,cazzaniga2024genai} \\
+$E^{disp}_{i,t}$ & Displacement or automation exposure & Separate from $E^{prod}$; used in pressure and labour-share modules, not directly as productivity opportunity & Scenario range; never add to $E^{prod}$ & \citet{worldbankilo2024lacgenai,cazzaniga2024genai} \\
+$q^{use}_{i,s,t}$, $q^{prod}_{i,s,t}$, $\omega_I$, $\omega_G$ & AI use, productive adoption, and adoption-ceiling parameters; adoption shares lie in $[0,1]$ & If observed, use firm/worker adoption data; if simulated, use logistic module with country ceiling $\bar q_i$ & Logit-normal or bounded PERT for adoption; grid or bounded PERT with declared support for $\omega_I$ and $\omega_G$; enforce $0\le q^{prod}\le\bar q_i\le1$; impose $q^{prod}\le q^{use}$ only under non-decreasing-use robustness & Diffusion literature \citep{bass1969newproduct,rogers2003diffusion}; micro-productivity evidence \citep{noy2023experimental,brynjolfsson2023generative} \\
+$\lambda_q$ & Productive-adoption lag parameter & Baseline grid $\{0.15,0.30,0.50\}$; $1.00$ only as instant-adoption stress & Discrete grid & Diffusion theory and adoption-lag logic \\
+$\nu_A,\nu_I,\nu_G,q^{use,target}$ & Logistic adoption coefficients and anchored adoption moment & Calibrate the anchored simulated-adoption mode in Appendix \ref{app:adoption_module} & Grid or bounded PERT with declared support & Appendix \ref{app:adoption_module}; diffusion literature; national ICT/firm surveys or World Bank technology adoption surveys for the target moment \\
+$S^{frontier}_{s,t}$ & External translation benchmark & Document the frontier-economy set and benchmark year & Fixed within each threshold inversion; alternative external sets as robustness & External frontier sample; Appendix \ref{app:ai_shock_module} \\
+$\alpha,\beta,\gamma$ & Elasticities in the translation factor & $\beta=\gamma=1$ baseline; $\alpha=0$ under the no-double-counting baseline ($\alpha=1$ only in full-score robustness; see Appendix \ref{app:ai_shock_module} elasticity grid) & Grid $\{0.5,1,1.5,2\}$ for active elasticities and global sensitivity & Model discipline; no direct causal claim \\
+$RST_{i,t}$, $\delta_s,\psi_s,\zeta_s,\lambda_{LS}$ & Reskilling/task-reinstatement capacity in $[0,1]$ plus labor-share automation, augmentation, mitigation, and partial-adjustment parameters & Indicative provisional grids $\delta_s,\psi_s,\zeta_s\in\{0.25,0.50,1.00\}$ and $\lambda_{LS}\in\{0.25,0.50,1.00\}$; enforce $\zeta_sRST\leq\delta_s$ outside augmentation-dominant robustness; to be finalized in the empirical version & Low/central/high grid for scenario parameters; $RST\in[0,1]$ from declared proxy; bounded PERT only after pilot supports are declared & \citet{acemoglu2018race,acemoglu2019automation}; active labour-market policy spending, training participation (ILOSTAT), or residualized human-capital component of AIPI; calibrated scenario discipline \\
+$MFC^{gross}_{i,s,r,t}$ & Gross marginal fiscal capture of AI-induced output before administrative costs, transition costs, and leakage & Construct from channel model or draw from historical gross-capture distribution, but not both in the same run & Channel-mode derived object or historical-mode stochastic object; report mode explicitly & UNU-WIDER GRD; \citet{brollo2024fiscal}; IMF fiscal-space guidance \\
+$MFC^{eff}_{i,p,s,r,t}$ & Derived reporting object after subtracting $ac$, $tr$, and $leak$ from fiscal space & Compute only as $MFC^{eff}=fs^{eff}/g^{AI}$ when $g^{AI}>0$; not drawn as an independent primitive & Report for interpretation; do not use for gross historical plausibility checks & Derived from $MFC^{gross}$, $g^{AI}$, $ac$, $tr$, and $leak$ \\
+$\tau^{L,fisc,eff},\tau^{K,fisc,eff},\tau^{C,eff},\tau^{AI}$; $\tau^{L,disp},\tau^{K,disp}$ & Fiscal-capture rates for revenue and disposable-income rates for induced consumption & Infer fiscal rates from revenue composition where possible; disposable rates may coincide only in simplified calibration & Grid by regime; cap AI-rent tax at plausible maximum $\bar\tau^{AI}$ & GRD revenue composition; \citet{brollo2024fiscal} \\
+$\chi^{Kbase},\chi^{dom},\psi^{shift}$; $\psi^{K,rate}$ & Capital-base chain parameters, each in $[0,1]$; $\psi^{K,rate}$ is the rate-side shifting parameter, active only under the labelled rate-side convention with $\psi^{shift}=0$ & Construct the taxable domestic post-shifting capital base without double counting & Bounded PERT on low/central/high supports & National accounts and profit-shifting literature \\
+$mpc^W,mpc^{\Pi},mpc^R,mpc^{ben},m^M,exempt^C,\theta^{R,dom},\tau^{R,disp}$ & Induced-consumption shares and rates, each in $[0,1]$; $mpc^{ben}$ active only in the labelled first-round recycling variant & Calibrate disposable-income pass-through, domestic routing, imports, and exemptions consistently & Bounded PERT or declared grid & Household surveys, national accounts, and VAT rules \\
+$\lambda^{AI},\chi^{AI,dom},\psi^{shift,tech},\chi^{AI,compliance},\chi^{AI,enforce}$ & AI-rent share and capturability components in $[0,1]$ & Zero AI-rent channel in the status quo through $\tau^{AI}=0$ unless such an instrument already exists; bounded shares in positive scenarios & Bounded scenario grid or PERT & Fiscal law, international taxation, and Appendix \ref{app:fiscal_conversion_module} \\
+$I^L_{i,t}, I^F_{i,t}, I^C_{i,t}$ & Labour, firm, and consumption-base informality & Use source-specific measures where available; do not collapse all frictions into one informal-economy scalar unless data force it & Fixed observed value; marginal informality $I^{j,marg}$ preferred when sectoral AI-shock weights exist, aggregate $I^j$ as declared fallback & ILOSTAT; \citet{worldbank2021informality,medina2018shadow} \\
+$\rho_L,\rho_K,\rho_C,\rho_E,\rho_\psi$ & Elasticities for capturability, exemptions, and rate-side profit shifting & No preferred point value without estimation; $\rho_E$ and $\rho_\psi$ active only in their labelled conventions & Grid $\{0.5,1,1.5,2\}$; report sensitivity and Spearman/Sobol diagnostics & Calibrated structural parameters \\
+$\epsilon^{ero,j}$ & Behavioral taxable-base erosion elasticities by channel & Zero only in the mechanical upper-bound reading of reform regimes; mandatory companion for $r\geq1$ results, with $\epsilon^{ero,j}\tau^j<1$ & Declared grid or bounded PERT; recorded in the calibration audit trail & Tax avoidance and evasion elasticity literature; Appendix \ref{app:fiscal_conversion_module} \\
+$ac^{net,fix},tr^{ann},leak^{fix}$ & Fixed administrative, transition, and residual leakage costs as GDP-normalized ratios & Subtract from fiscal space after the AI shock is converted into revenue & Bounded PERT supports; triangular only as robustness & ASPIRE expenditure concepts; IMF fiscal policy; GRD \\
+$ac^{ME},tr^{ME},leak^{ME}$ & Marginal-equivalent deductions per unit of AI-induced output & Enter only through $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$ & Bounded PERT or zero in baseline if costs are fixed & IMF fiscal policy; implementation stress tests \\
+$\Omega^{res},s^{PB}$ & Residual stress penalty and primary-balance correction & $\Omega^{res}=0$ in the baseline; derive $s^{PB}$ from baseline and debt-stabilizing primary balances & Positive stress grid for $\Omega^{res}$; WEO/DSA scenarios for $s^{PB}$ & IMF WEO and debt-sustainability analysis \\
+$\xi$, $\bar\pi$ & Prudential buffer and probability label & $\xi\in\{0,0.05,0.10,0.25,0.50\}$ and $\bar\pi\in\{0.50,0.75,0.90\}$ & Fixed reporting grid, not estimated parameter & Robust Decision Making logic \citep{lempert2003shaping,rand2013rdm} \\
+\bottomrule
+\end{longtable}
+\normalsize
+
+\subsection{Maintained economic assumptions and bias directions}
+
+The accounting frontier rests on maintained assumptions stated throughout the paper. They are consolidated here with their bias direction: conservative assumptions understate feasibility, optimistic ones overstate it.
+
+\begin{longtable}{p{0.43\textwidth}p{0.22\textwidth}p{0.25\textwidth}}
+\caption{Maintained economic assumptions and bias directions}\label{tab:maintained_assumptions_bias}\\
+\toprule
+Assumption & Stated in & Direction \\
+\midrule
+\endfirsthead
+\toprule
+Assumption & Stated in & Direction \\
+\midrule
+\endhead
+One-directional chain; no feedback from protection to productivity & Section \ref{sec:conceptual} & Ambiguous \\
+Endpoint level gain persists as long as the policy; composition may degrade through rent dissipation & Section \ref{subsec:phi_ladder_main} & Optimistic for long-run capture \\
+Non-market and zero-price AI gains outside the fiscal base; framework measures taxable income, not welfare & Sections \ref{subsec:phi_ladder_main} and \ref{sec:claims} & Conservative \\
+\(\kappa^{TFP\to Y}\leq1\) excludes induced capital deepening & Section \ref{subsec:phi_ladder_main} & Conservative \\
+No general equilibrium: no wage spillovers, first-round consumption only & Sections \ref{sec:conceptual} and \ref{sec:fiscal_conversion} & Conservative \\
+\(S^{frontier}\) benchmark matches the population of \(\phi_s\) & Section \ref{subsec:ndc_translation_main} & Conservative wedge if mismatched \\
+No endogenous imitation diffusion; adoption paths are scenario paths & Appendix \ref{app:adoption_module} & Conservative in the medium term \\
+Informality fixed in baseline; formalization and informalization only as labelled scenarios, reported jointly & Appendix \ref{app:informality_module} & Ambiguous \\
+One adoption stock gates automation and augmentation; \(E^{auto}\) anchored to full-automation risk is a lower bound on displacement & Section \ref{sec:labor_share} & Optimistic for the labor tax base \\
+\(\chi^{Kbase}\) calibrated on average non-labor-residual composition and applied to the AI increment & Section \ref{sec:labor_share} & Conservative \\
+LAC anchoring uses productivity-enhancing exposure only; automation-driven output gains excluded from \(E^{prod}\) & Section \ref{subsec:prod_disp_exposure_main} & Conservative \\
+Statutory-accrual incidence; no incidence shifting & Section \ref{sec:fiscal_conversion} & Ambiguous \\
+Reform-regime gains are mechanical upper bounds; behavioral-erosion companion mandatory for \(r\geq1\) & Section \ref{sec:fiscal_conversion} & Optimistic for \(r\geq1\) \\
+Historical capture prior is composition-weighted and policy-inclusive (buoyancy, not elasticity) & Section \ref{sec:historical_plausibility} & Ambiguous; generous for $r=0$ plausibility labels \\
+Recipient behavior fixed; GMI priced at ideal targeting absent \(\theta^{target}\); no transfer recycling & Section \ref{sec:policy_costs} & GMI-optimistic; recycling omission conservative \\
+Feasibility is an endpoint condition; crossing year is not a launch year & Section \ref{sec:thresholds} & Naive launch reading optimistic \\
+\(PB^{stab}\) static at baseline growth & Section \ref{sec:thresholds} & Conservative \\
+\bottomrule
+\end{longtable}
 
 \begin{thebibliography}{99}
 
