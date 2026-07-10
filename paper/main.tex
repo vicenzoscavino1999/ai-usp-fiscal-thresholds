@@ -234,7 +234,7 @@ If annual model-ready shocks are accumulated over horizon $H$, the level object 
 \begin{equation}
     g^{AI,level}_{i,s,H}=\prod_{\tau=1}^{H}\left(1+\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}\right)-1.
 \end{equation}
-For compactness, later equations write $g^{AI}_{i,s,t}$ for this fiscal-base-compatible level object unless the annual increment is explicitly being discussed. The implementation table must report whether a cell uses the static one-period approximation or an accumulated horizon. The recurring-cost comparison is an endpoint annual-flow comparison: the AI-induced level gain at horizon $H$ is interpreted as the permanent annual fiscal-base increment available at the endpoint year, and policy costs are measured or projected for that same endpoint year. This endpoint convention embeds a persistence assumption: the AI-induced level gain must persist at least as long as the recurring policy obligation. Two departures matter economically. If competition dissipates AI rents over time, the level gain may persist while its composition shifts from taxable profits toward lower prices and consumer surplus, reducing long-run marginal fiscal capture even at constant $g^{AI}$; this composition risk makes the baseline optimistic about long-run capture and motivates the labor-share and channel-composition robustness checks. If instead AI accelerates innovation, gains compound and the level convention is conservative. A present-value comparison, reported only as robustness and never mixed with the baseline annual-flow threshold, partially spans both cases. For accumulated-horizon implementations, threshold inversion is performed on the level equation
+For compactness, later equations write $g^{AI}_{i,s,t}$ for this fiscal-base-compatible level object unless the annual increment is explicitly being discussed. The official tables use the accumulated level object $g^{AI,level}$ under the frozen 2024 anchor trajectory; the static one-period approximation appears only where it is explicitly labelled. The recurring-cost comparison is an endpoint annual-flow comparison: the AI-induced level gain at horizon $H$ is interpreted as the permanent annual fiscal-base increment available at the endpoint year, and policy costs are measured or projected for that same endpoint year. This endpoint convention embeds a persistence assumption: the AI-induced level gain must persist at least as long as the recurring policy obligation. Two departures matter economically. If competition dissipates AI rents over time, the level gain may persist while its composition shifts from taxable profits toward lower prices and consumer surplus, reducing long-run marginal fiscal capture even at constant $g^{AI}$; this composition risk makes the baseline optimistic about long-run capture and motivates the labor-share and channel-composition robustness checks. If instead AI accelerates innovation, gains compound and the level convention is conservative. A present-value comparison, reported only as robustness and never mixed with the baseline annual-flow threshold, partially spans both cases. For accumulated-horizon implementations, threshold inversion is performed on the level equation
 \begin{equation}\label{eq:accumulated_threshold_condition_v22}
     \widetilde{MFC}^{gross}_{i,s,r,t}\left[\prod_{\tau=1}^{H}\left(1+\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}\right)-1\right]
     \geq R^{req,gross}_{i,p,s,r,t}(\xi).
@@ -341,7 +341,7 @@ Preparedness can either be read directly from the IMF AIPI or reconstructed from
 \begin{equation}
     A_{i,t}=\left(D_{i,t}^{w_D}H_{i,t}^{w_H}R_{i,t}^{w_R}G_{i,t}^{w_G}\right)^{1/(w_D+w_H+w_R+w_G)},
 \end{equation}
-where $D$ is digital infrastructure, $H$ is human capital and labour-market policy readiness, $R$ is innovation and economic integration, and $G$ is regulation and ethics. The geometric aggregation is preferred because a severe bottleneck in one dimension should reduce absorptive capacity even when another dimension is strong. A reconstructed index need not coincide numerically with the published AIPI value, so the implementation must adopt one convention---published index or documented reconstruction---consistently across all countries and label which one is used. The dimension symbols $D$, $H$, $R$, and $G$ are local to this reconstruction equation; elsewhere in the paper $D_{s,t}$ denotes the dynamic diffusion path, $H$ an accumulation horizon, and $R$ revenue objects.
+where $D$ is digital infrastructure, $H$ is human capital and labour-market policy readiness, $R$ is innovation and economic integration, and $G$ is regulation and ethics. The geometric aggregation is preferred because a severe bottleneck in one dimension should reduce absorptive capacity even when another dimension is strong. A reconstructed index need not coincide numerically with the published AIPI value. The implementation adopts the published AIPI index values consistently across countries and labels that convention; the reconstruction equation remains a documented alternative. The dimension symbols $D$, $H$, $R$, and $G$ are local to this reconstruction equation; elsewhere in the paper $D_{s,t}$ denotes the dynamic diffusion path, $H$ an accumulation horizon, and $R$ revenue objects.
 
 
 \subsection{Calibrable logistic adoption module}\label{subsec:logistic_adoption_main}
@@ -996,7 +996,7 @@ This audit trail is not optional. It is what makes the framework reusable when f
 
 \subsection{Threshold-based rather than point-estimate reporting}
 
-The empirical section should report continuous threshold objects before any categorical labels:
+The empirical section reports continuous threshold objects before any categorical labels:
 \begin{enumerate}
     \item $V^{gross}$: baseline accounting-fiscal feasibility index.
     \item $GAP^{gross}=fs^{eff}-c^{gross}$: absolute fiscal gap as a share of no-AI counterfactual GDP.
@@ -1191,7 +1191,7 @@ The expectation is not that $T^{NC}=0$, but that it remains substantially below 
 
 \subsection{Leave-one-source-out and channel-ablation protocol}
 
-The replication package should report leave-one-source-out and channel-ablation checks:
+The replication package reports leave-one-source-out and channel-ablation checks:
 \begin{itemize}
     \item AI-productivity source: Acemoglu-only, OECD-only, and high/stress-only exclusions.
     \item Exposure source: IMF/OECD exposure only, World Bank--ILO exposure only, and country-sector exposure only where available.
@@ -1217,7 +1217,7 @@ Specification checks include effective versus gross fiscal conversion, gross-cos
 
 \subsection{Parameter-grid robustness}
 
-The deterministic grid should include
+The deterministic grid includes
 \begin{align}
     \phi^{Y,nom}_s &\in \{\phi^{low,Y,nom},\phi^{mid,Y,nom},\phi^{high,Y,nom},\phi^{stress,Y,nom}\},\\
     \lambda^{AI} &\in \{\lambda^{AI}_L,\lambda^{AI}_M,\lambda^{AI}_H\},\\
@@ -1252,7 +1252,7 @@ If the denominator is zero, the corresponding conditional probability is reporte
 
 \subsection{Distributional choices and dependence}
 
-The baseline distribution for low-central-high calibrated scalar parameters is bounded PERT. Triangular and truncated-uniform draws are robustness checks, not the baseline convention. Bounded share variables may also be drawn from beta distributions when moments are available. Dependence between preparedness, adoption, informality, and fiscal capacity may be implemented through correlated latent shocks. If dependence is imposed, the paper should report Spearman and tornado diagnostics as the baseline sensitivity outputs and reserve classical Sobol indices for an independent-input diagnostic run or a dependence-aware sensitivity method; Appendix \ref{app:uncertainty_module} gives the scenario-consistent dependence structure.
+The baseline distribution for low-central-high calibrated scalar parameters is bounded PERT. Triangular and truncated-uniform draws are robustness checks, not the baseline convention. Bounded share variables may also be drawn from beta distributions when moments are available. Dependence between preparedness, adoption, informality, and fiscal capacity may be implemented through correlated latent shocks. If dependence is imposed, the paper reports Spearman and tornado diagnostics as the baseline sensitivity outputs and reserves classical Sobol indices for an independent-input diagnostic run or a dependence-aware sensitivity method; Appendix \ref{app:uncertainty_module} gives the scenario-consistent dependence structure.
 
 \subsection{Global sensitivity and stress tests}
 
@@ -1264,11 +1264,11 @@ The replication package should publish the country-year dataset, parameter matri
 
 \subsection{Placebo and negative-control checks}
 
-Placebo and negative-control outputs are required tables, not optional prose. They should include the temporal placebo, low-exposure sector negative controls, leave-one-source-out results, and channel ablations.
+Placebo and negative-control outputs are required tables, not optional prose. They include the temporal placebo, low-exposure sector negative controls, leave-one-source-out results, and channel ablations.
 
 \section{Empirical Design and Minimum Pilot Application}\label{sec:empirical_design}
 
-The first empirical application should be deliberately small: Peru as the primary case, with Chile, Colombia, and Mexico as comparators. The purpose is not to claim regional representativeness. The purpose is to show that the framework can be populated with real country data, that the same equations work across different fiscal and institutional settings, and that the feasibility result is driven by transparent observed inputs rather than by hidden assumptions.
+The empirical application is deliberately small: Peru as the primary case, with Chile, Colombia, and Mexico as comparators. The purpose is not to claim regional representativeness. The purpose is to show that the framework can be populated with real country data, that the same equations work across different fiscal and institutional settings, and that the feasibility result is driven by transparent observed inputs rather than by hidden assumptions.
 
 \subsection{Pilot country sample}
 
@@ -1326,7 +1326,7 @@ ASPIRE is the preferred source for existing social protection expenditure, cover
 \subsection{AI exposure, adoption, and fiscal conversion in the pilot}
 
 The pilot uses the World Bank--ILO exposure ranges defined in Section \ref{subsec:prod_disp_exposure_main}. Country differentiation through AIPI, informality, digital gaps, and productive adoption follows the logistic and diffusion module in Section \ref{subsec:logistic_adoption_main}.
-The final pilot table must report, for every country-policy-scenario-regime cell,
+The official tables report, for every country-policy-scenario-regime cell,
 \begin{equation}
     \left(A_i,E^{prod}_i,q^{prod}_{i,s,t},I_i,MFC^{gross}_{i,s,r,t},fs^{eff}_{i,p,s,r,t},c_{i,p,t},V_{i,p,s,r,t}\right).
 \end{equation}
@@ -2493,7 +2493,7 @@ This appendix consolidates the minimum parameter-reporting standard and the ledg
 
 \subsection{Master parameter-assignment and calibration matrix}
 
-The following matrix is the minimum reporting standard for the empirical version. It is designed to make each value reproducible and to prevent the model from hiding fragile assumptions inside a single composite index.
+The following matrix is the minimum reporting standard for the empirical application. It is designed to make each value reproducible and to prevent the model from hiding fragile assumptions inside a single composite index.
 
 \scriptsize
 \begin{longtable}{p{0.14\textwidth}p{0.22\textwidth}p{0.25\textwidth}p{0.20\textwidth}p{0.11\textwidth}}
@@ -2508,7 +2508,7 @@ Input & Definition and unit & Baseline assignment & Uncertainty treatment & Prim
 \endhead
 $Y_{i,t}$, $Pop_{i,t}$, $N_{i,p,t}$ & GDP, population, and eligible population for policy $p$ & Observed country-year values; keep nominal and PPP versions separate & Fixed in baseline; measurement-error check if data are interpolated & World Bank PIP/WDI; national accounts \\
 $c^{gross,0}_{i,p,t}$, $c^{net,0}_{i,p,t}$ & Annual gross or net policy cost as share of no-AI counterfactual GDP $Y^0_{i,t}$ & Construct from benefit rule $B_{i,p,t}$ and eligible population; subtract existing spending only in the net-cost specification; post-AI denominators are robustness only & Low/central/high benefit rules; no mixing gross and net cost & ASPIRE, PIP, national budgets, \citet{gentilini2020ubi} \\
-$\eta_{MUT},\eta_{PBI},\eta_{UBI},\chi_{GMI},B^{PEN},\theta^{target}$ & Benefit-rule parameters, pension benefit level, and GMI targeting-and-behavior loading & Indicative support $[0.25,1.00]$ for poverty-line fractions and gap coverage, including $B^{PEN}/PL$; $\theta^{target}\in[1.0,1.5]$ for labelled GMI robustness; to be finalized in the empirical version & Low/central/high grid or bounded PERT within declared support & PIP, ASPIRE, and national benefit rules \\
+$\eta_{MUT},\eta_{PBI},\eta_{UBI},\chi_{GMI},B^{PEN},\theta^{target}$ & Benefit-rule parameters, pension benefit level, and GMI targeting-and-behavior loading & Indicative support $[0.25,1.00]$ for poverty-line fractions and gap coverage, including $B^{PEN}/PL$; $\theta^{target}\in[1.0,1.5]$ for labelled GMI robustness; finalized in the official calibration registry (reproducibility package, appendix\_i files) & Low/central/high grid or bounded PERT within declared support & PIP, ASPIRE, and national benefit rules \\
 $\phi^{raw}_{s,u}$, $\phi^{Y,nom}_s$, $g^{AI,level}$ & Raw source-unit AI shock, nominal GDP-equivalent annual bridge, and accumulated level shock used against recurring costs & Draw raw support from Table \ref{tab:phi_numerical_closure}; convert through $\kappa^{u\to Y}$ and $\pi^{AI,Y}$; accumulate before feasibility comparison & Bounded PERT on raw support; bridge uncertainty reported separately; triangular/uniform only robustness & \citet{acemoglu2024simple}, \citet{filippucci2024miracle}, \citet{oecd2025g7} \\
 $A_{i,t}$ & AI preparedness, normalized $[0,1]$ & IMF AIPI or documented reconstruction from its four dimensions: digital infrastructure, human capital and labour-market policies, innovation/economic integration, regulation/ethics & Fixed observed index plus normalization robustness; avoid using as causal estimate & \citet{imf2024aipi,cazzaniga2024genai} \\
 $Gap_{i,t}$ & Digital and skills gap, normalized to $[0,1]$ & Construct only from indicators excluded from AIPI & Fixed observed index plus normalization robustness & ITU and World Bank digital indicators \\
@@ -2519,7 +2519,7 @@ $\lambda_q$ & Productive-adoption lag parameter & Baseline grid $\{0.15,0.30,0.5
 $\nu_A,\nu_I,\nu_G,q^{use,target}$ & Logistic adoption coefficients and anchored adoption moment & Calibrate the anchored simulated-adoption mode in Appendix \ref{app:adoption_module} & Grid or bounded PERT with declared support & Appendix \ref{app:adoption_module}; diffusion literature; national ICT/firm surveys or World Bank technology adoption surveys for the target moment \\
 $S^{frontier}_{s,t}$ & External translation benchmark & Document the frontier-economy set and benchmark year & Fixed within each threshold inversion; alternative external sets as robustness & External frontier sample; Appendix \ref{app:ai_shock_module} \\
 $\alpha,\beta,\gamma$ & Elasticities in the translation factor & $\beta=\gamma=1$ baseline; $\alpha=0$ under the no-double-counting baseline ($\alpha=1$ only in full-score robustness; see Appendix \ref{app:ai_shock_module} elasticity grid) & Grid $\{0.5,1,1.5,2\}$ for active elasticities and global sensitivity & Model discipline; no direct causal claim \\
-$RST_{i,t}$, $\delta_s,\psi_s,\zeta_s,\lambda_{LS}$ & Reskilling/task-reinstatement capacity in $[0,1]$ plus labor-share automation, augmentation, mitigation, and partial-adjustment parameters & Indicative provisional grids $\delta_s,\psi_s,\zeta_s\in\{0.25,0.50,1.00\}$ and $\lambda_{LS}\in\{0.25,0.50,1.00\}$; enforce $\zeta_sRST\leq\delta_s$ outside augmentation-dominant robustness; to be finalized in the empirical version & Low/central/high grid for scenario parameters; $RST\in[0,1]$ from declared proxy; bounded PERT only after pilot supports are declared & \citet{acemoglu2018race,acemoglu2019automation}; active labour-market policy spending, training participation (ILOSTAT), or residualized human-capital component of AIPI; calibrated scenario discipline \\
+$RST_{i,t}$, $\delta_s,\psi_s,\zeta_s,\lambda_{LS}$ & Reskilling/task-reinstatement capacity in $[0,1]$ plus labor-share automation, augmentation, mitigation, and partial-adjustment parameters & Indicative provisional grids $\delta_s,\psi_s,\zeta_s\in\{0.25,0.50,1.00\}$ and $\lambda_{LS}\in\{0.25,0.50,1.00\}$; enforce $\zeta_sRST\leq\delta_s$ outside augmentation-dominant robustness; finalized in the official calibration registry (reproducibility package, appendix\_i files) & Low/central/high grid for scenario parameters; $RST\in[0,1]$ from declared proxy; bounded PERT only after pilot supports are declared & \citet{acemoglu2018race,acemoglu2019automation}; active labour-market policy spending, training participation (ILOSTAT), or residualized human-capital component of AIPI; calibrated scenario discipline \\
 $MFC^{gross}_{i,s,r,t}$ & Gross marginal fiscal capture of AI-induced output before administrative costs, transition costs, and leakage & Construct from channel model or draw from historical gross-capture distribution, but not both in the same run & Channel-mode derived object or historical-mode stochastic object; report mode explicitly & UNU-WIDER GRD; \citet{brollo2024fiscal}; IMF fiscal-space guidance \\
 $MFC^{eff}_{i,p,s,r,t}$ & Derived reporting object after subtracting $ac$, $tr$, and $leak$ from fiscal space & Compute only as $MFC^{eff}=fs^{eff}/g^{AI}$ when $g^{AI}>0$; not drawn as an independent primitive & Report for interpretation; do not use for gross historical plausibility checks & Derived from $MFC^{gross}$, $g^{AI}$, $ac$, $tr$, and $leak$ \\
 $\tau^{L,fisc,eff},\tau^{K,fisc,eff},\tau^{C,eff},\tau^{AI}$; $\tau^{L,disp},\tau^{K,disp}$ & Fiscal-capture rates for revenue and disposable-income rates for induced consumption & Infer fiscal rates from revenue composition where possible; disposable rates may coincide only in simplified calibration & Grid by regime; cap AI-rent tax at plausible maximum $\bar\tau^{AI}$ & GRD revenue composition; \citet{brollo2024fiscal} \\
