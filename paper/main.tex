@@ -444,7 +444,7 @@ The complement is not labelled mechanically as corporate profits. It is a non-la
 \begin{equation}
     NLS_{i,t}=1-LS_{i,t},
 \end{equation}
-which may include mixed income, depreciation, net taxes on production, gross operating surplus, rents, and other non-labor components depending on the national-accounts concept used. In economies with large self-employment or informal employment, the empirical implementation should distinguish a raw labor share, $LS^{raw}_{i,t}$, from an adjusted labor share, $LS^{adj}_{i,t}$, that imputes the labor component of mixed income when data allow \citep{gollin2002getting}. The baseline notation uses $LS_{i,t}$ for the preferred adjusted measure.
+which may include mixed income, depreciation, net taxes on production, gross operating surplus, rents, and other non-labor components depending on the national-accounts concept used. In economies with large self-employment or informal employment, the implementation distinguishes raw and mixed-income-adjusted labor shares; Appendix \ref{app:labor_share_module} defines both measures, and the baseline notation $LS_{i,t}$ denotes the preferred adjusted measure \citep{gollin2002getting}.
 
 The labor-share block is not intended to forecast the full general-equilibrium effect of AI on wages. Its purpose is narrower: it allocates the AI-induced output increment between labor-income and capital/profit-income channels, because these channels differ in taxability and therefore in fiscal capture. This is important because automation can shift the distribution of income between labor and capital even when aggregate output rises \citep{acemoglu2018race,acemoglu2019automation,karabarbounis2014global}.
 
@@ -487,39 +487,8 @@ The AI-induced labor-share change is therefore
     \Delta LS^{AI}_{i,s,t}=LS'_{i,s,t}-LS_{i,t}.
 \end{equation}
 
-In accumulated-horizon implementations, the counterfactual labor share $LS_{i,t}$ is held at its anchor-year value unless a documented counterfactual path is available, and the latent pressure $\Delta\ell_{i,s,t}$ is evaluated once at the endpoint year using the endpoint productive-adoption stock; because $q^{prod}$ is a stock object, applying $\Delta\ell$ cumulatively each year would double-count adoption. The mapping from factor shares to income flows uses exact accounting identities. After the AI shock,
-\begin{equation}
-    Y'_{i,s,t}=Y^0_{i,t}(1+g^{AI}_{i,s,t}),
-\end{equation}
-so that $Y'_{i,s,t}$ coincides with the post-AI level $Y^{AI}_{i,s,t}$ of Section \ref{sec:ai_shocks}. The change in labor income as a share of initial GDP is
-\begin{equation}
-    \frac{\Delta W^{AI}_{i,s,t}}{Y^0_{i,t}}
-    =
-    LS'_{i,s,t}(1+g^{AI}_{i,s,t})-LS_{i,t}.
-\end{equation}
-The change in the non-labor residual as a share of initial GDP is
-\begin{equation}
-    \frac{\Delta NLS^{AI}_{i,s,t}}{Y^0_{i,t}}
-    =
-    NLS'_{i,s,t}(1+g^{AI}_{i,s,t})-NLS_{i,t},
-\end{equation}
-where $NLS'_{i,s,t}=1-LS'_{i,s,t}$. The taxable capital/profit-base component is
-\begin{equation}
-    \frac{\Delta \Pi^{AI,gross}_{i,s,t}}{Y^0_{i,t}}
-    =
-    \chi^{Kbase}_{i,t}\frac{\Delta NLS^{AI}_{i,s,t}}{Y^0_{i,t}},
-    \qquad 0\leq\chi^{Kbase}_{i,t}\leq1.
-\end{equation}
-The parameter $\chi^{Kbase}$ converts the broad non-labor residual into the portion that is plausibly taxable as corporate profits, business income, capital income, or AI-related rents. Because it multiplies the AI-induced increment, $\chi^{Kbase}$ is a marginal-composition parameter: the AI increment is plausibly more concentrated in corporate and formal sectors than the economy-wide non-labor residual, so the taxable share of the increment may exceed the average taxable share of $NLS$, and calibrating $\chi^{Kbase}$ from average national-accounts composition is a conservative convention. Supports should therefore be chosen for the incremental base, mirroring the marginal-informality convention of Appendix \ref{app:informality_module}, with sectorally weighted variants reported where data allow. The labor and non-labor residual components exhaust the AI-induced output increment:
-\begin{equation}
-\begin{split}
-    &\Bigl[LS'_{i,s,t}(1+g^{AI}_{i,s,t})-LS_{i,t}\Bigr]
-    +\Bigl[NLS'_{i,s,t}(1+g^{AI}_{i,s,t})-NLS_{i,t}\Bigr] \\
-    &=g^{AI}_{i,s,t}.
-\end{split}
-\end{equation}
-When $\Delta NLS^{AI}<0$ in augmentation-dominant scenarios, fiscal capture of the decrement is treated symmetrically for accounting simplicity. This abstracts from real tax asymmetries such as loss carry-forwards, an empirical risk listed in Table \ref{tab:preferred_fiscal_channels}.
-A decline in labor share is therefore not mechanically interpreted as a decline in total labor income. Labor income can rise in levels if the output effect dominates the distributional shift. The framework reports $\Delta LS^{AI}$, $\Delta W^{AI}/Y^0$, $\Delta NLS^{AI}/Y^0$, and the taxable-capital-base component $\Delta\Pi^{AI,gross}/Y^0$ because the first is distributional, the second is a labor-income-flow object, and the last two distinguish national-accounts residual income from the base actually available for capital/profit taxation.
+In accumulated-horizon implementations, the counterfactual labor share $LS_{i,t}$ is held at its anchor-year value unless a documented counterfactual path is available, and the latent pressure $\Delta\ell_{i,s,t}$ is evaluated once at the endpoint year using the endpoint productive-adoption stock; because $q^{prod}$ is a stock object, applying $\Delta\ell$ cumulatively each year would double-count adoption.
+The resulting labor and non-labor income flows follow exact accounting identities that exhaust the AI-induced increment; Appendix \ref{app:labor_share_module} gives the full derivation. When $\Delta NLS^{AI}<0$ in augmentation-dominant scenarios, fiscal capture of the decrement is treated symmetrically for accounting simplicity. This abstracts from real tax asymmetries such as loss carry-forwards, an empirical risk listed in Table \ref{tab:preferred_fiscal_channels}. A decline in labor share is not mechanically a decline in total labor income; the framework reports $\Delta LS^{AI}$, $\Delta W^{AI}/Y^0$, $\Delta NLS^{AI}/Y^0$, and $\Delta\Pi^{AI,gross}/Y^0$ to distinguish distribution, labor-income flows, residual income, and the taxable capital/profit base.
 
 
 
@@ -589,65 +558,11 @@ Under the subset convention, the implementation verifies $\lambda^{AI,Kbase}_{i,
 The effective fiscal rates $\tau^{j,fisc,eff}$ already include the compliance, informality, exemption, and capturability adjustments that the declared channel conventions assign to the rate side; adjustments assigned to the base side, such as consumption exemptions inside $\Delta C^{AI,taxable}$ under the baseline convention, are not embedded in the rate again. Therefore Equation \eqref{eq:mfc_gross_channel_v10} does not multiply by an additional $\chi^j$. If a statutory or normative rate is used instead, the appendix decomposes $\tau^{j,fisc,eff}=\tau^{j,base}\chi^j$ before it enters the main formula. The objects $\omega^L$, $\omega^K$, and $\omega^C$ are tax-base response ratios, not probability weights. If a channel response is negative under a robustness scenario, it must be reported as a negative tax-base contribution rather than hidden by renormalizing the remaining channels.
 Labor informality is assigned to exactly one side of the labor channel. The rate-side convention is the baseline, consistent with the convention that $\tau^{eff}$ already includes informality: $\omega^L$ is constructed from gross $\Delta W^{AI}$ and $\chi^L=(1-I^{L,marg})^{\rho_L}$ enters once inside $\tau^{L,fisc,eff}$. Under the alternative base-side convention, $\omega^L$ is constructed from $\Delta W^{taxable}$ in Equation \eqref{eq:labor_informality_base_side_v25}, and $\tau^{L,fisc,eff}$ must not include $\chi^L$. The base-side and rate-side penalties are never applied together.
 
-A key implementation convention is required here. Equation \eqref{eq:mfc_gross_channel_v10} is a realized-scenario marginal-conversion object. In the historical reduced-form mode, $MFC^{gross}$ is drawn directly and is fixed when solving threshold inversions. In the channel-based mode, however, some exposure ratios $\omega^j$ may themselves be functions of the AI shock because $\omega^j=(\Delta B^{j,tax}/Y^0)/g^{AI}$. Therefore the compact product $MFC^{gross}g^{AI}$ is exact at the evaluated scenario, but closed-form inversions that vary $g^{AI}$ are valid only under a frozen-weight convention. When channel weights are recomputed as the shock varies, the implementation solves thresholds from the channel-revenue function
-\begin{equation}\label{eq:channel_revenue_function_v24}
-\begin{split}
-    rev^{ch}_{i,s,r,t}(g)
-    &=\sum_{j\in\{L,K,C\}}\tau^{j,fisc,eff}_{i,s,r,t}\frac{\Delta B^{j,tax}_{i,s,t}(g)}{Y^0_{i,t}}
-      +\lambda^{AI}_{i,s,t}(g)\tau^{AI,eff}_{i,s,r,t}g,\\
-    fs^{eff,ch}_{i,p,s,r,t}(g)
-    &=rev^{ch}_{i,s,r,t}(g)
-      -g\left(ac^{ME}_{i,s,r,t}+tr^{ME}_{i,s,r,t}+leak^{ME}_{i,s,r,t}\right)
-      -ac^{net,fix}_{i,p,s,r,t}-tr^{ann}_{i,s,r,t}-leak^{fix}_{i,s,r,t}.
-\end{split}
-\end{equation}
-The reduced-form and frozen-weight versions are the special cases in which $rev^{ch}(g)$ is linear in $g$. Under the subset convention of Equation \eqref{eq:omega_k_net_v16}, $\Delta B^{K,tax}_{i,s,t}(g)$ in Equation \eqref{eq:channel_revenue_function_v24} is the domestic post-shifting profit base net of the AI-rent component, mirroring $\omega^{K,net}$; otherwise the rent flow would enter both the $K$ term and the AI-rent term. This distinction protects the threshold formulas below from treating an endogenous fiscal-conversion object as if it were fixed.
+A key implementation convention is required here. Equation \eqref{eq:mfc_gross_channel_v10} is a realized-scenario marginal-conversion object. In the historical reduced-form mode, $MFC^{gross}$ is drawn directly and is fixed when solving threshold inversions. In the channel-based mode, however, some exposure ratios $\omega^j$ may themselves be functions of the AI shock because $\omega^j=(\Delta B^{j,tax}/Y^0)/g^{AI}$. Therefore the compact product $MFC^{gross}g^{AI}$ is exact at the evaluated scenario, but closed-form inversions that vary $g^{AI}$ are valid only under a frozen-weight convention. When channel weights are recomputed as the shock varies, the implementation solves thresholds from the channel-revenue function in Appendix \ref{app:fiscal_conversion_module}, Equation \eqref{eq:channel_revenue_function_v24}.
 
-The AI-rent channel is interpreted as incremental rent capture not already included in the capital/profit taxable-base channel. Each simulation must declare one convention. If AI rents are inside the capital/profit base, Equation \eqref{eq:omega_k_net_v16} uses a unit-compatible $\lambda^{AI,Kbase}$ and $\omega^{K,net}=\max\{0,\omega^K-\lambda^{AI,Kbase}\}$ or sets $\lambda^{AI}\tau^{AI,eff}=0$. Let $\Delta\Pi^{AI,rent,gross}$ denote the AI-rent component of $\Delta\Pi^{AI,gross}$. Unit compatibility with the domestic post-shifting base used by $\omega^K$ requires
-\begin{equation}
-\begin{split}
-    \lambda^{AI,Kbase}_{i,s,t}
-    &=\chi^{dom}_{i,s,t}(1-\psi^{shift}_{i,s,t})
-    \frac{\Delta\Pi^{AI,rent,gross}_{i,s,t}}{\Delta\Pi^{AI,gross}_{i,s,t}}
-    \frac{\Delta\Pi^{AI,gross}_{i,s,t}/Y^0_{i,t}}{g^{AI}_{i,s,t}}\\
-    &=\chi^{dom}_{i,s,t}(1-\psi^{shift}_{i,s,t})
-    \frac{\Delta\Pi^{AI,rent,gross}_{i,s,t}/Y^0_{i,t}}{g^{AI}_{i,s,t}}.
-\end{split}
-\end{equation}
-If $\lambda^{AI}$ is measured on the total AI shock, it must be rescaled to this domestic post-shifting base before it is subtracted from $\omega^K$. If AI rents are outside the measured capital/profit base, $\omega^{K,net}=\omega^K$ and the AI-rent channel is additional. This rule prevents double counting between the $K$ channel and the AI-specific rent channel.
+Each simulation must declare one AI-rent convention. If AI rents are a subset of the capital/profit base, $\omega^{K,net}=\max\{0,\omega^K-\lambda^{AI,Kbase}\}$ with the consistency verification of Equation \eqref{eq:omega_k_net_v16}; if they are additional, $\omega^{K,net}=\omega^K$. The unit-compatible rescaling rule is in Appendix \ref{app:fiscal_conversion_module}.
 
-The implementation separates administrative flow costs, annualized one-off transition costs, fixed leakage, and marginal-equivalent deductions. All objects in the fiscal-space equation are annual shares of no-AI counterfactual GDP. Administrative costs are net of savings from programs that the new policy replaces:
-\begin{equation}\label{eq:admin_net_costs_v21}
-\begin{split}
-    ac^{new,fix}_{i,p,s,r,t}&=\frac{AC^{new,fix}_{i,p,s,r,t}}{Y^0_{i,t}},\qquad
-    ac^{exist,sav}_{i,p,t}=\frac{AC^{exist,sav}_{i,p,t}}{Y^0_{i,t}},\\
-    ac^{net,fix}_{i,p,s,r,t}&=ac^{new,fix}_{i,p,s,r,t}-ac^{exist,sav}_{i,p,t}.
-\end{split}
-\end{equation}
-The administrative-savings term is included only when the gross or net policy-cost object does not already include administrative expenditure from the replaced program. If $C^{exist}$ already includes both transfer spending and administrative spending, $ac^{exist,sav}$ is set to zero to avoid double counting. A scenario-pairing rule also applies: administrative savings presuppose that the replaced programs are actually terminated, which is the same replacement interpretation that defines $C^{exist}$ on the cost side. Pure-layering implementations, in which the new instrument is added on top of existing programs, must set $ac^{exist,sav}=0$. If $V^{gross}$ is reported with $ac^{exist,sav}>0$, the combination must be labelled a conservative hybrid: the numerator credits replacement administrative savings while the gross-cost denominator does not credit the replaced transfer budget.
-Per-beneficiary administrative costs are systematically ordered: means-tested instruments exceed categorical instruments, which exceed universal instruments. Pilot implementations must not apply a uniform administrative-cost ratio across instruments, since that would compound the ideal-targeting bias in the GMI comparison.
-
-Transition expenditure is compared with recurring annual policy costs only after annualization. Let $tr^{oneoff}_{i,s,r,t}=TR^{oneoff}_{i,s,r,t}/Y^0_{i,t}$ denote an implementation stock cost and $tr^{rec}_{i,s,r,t}$ any recurring transition-management cost. For horizon $H^{tr}$ and discount or financing rate $r^{tr}$, define
-\begin{equation}\label{eq:transition_annualization_v21}
-    a(H^{tr},r^{tr})=\begin{cases}
-    \dfrac{r^{tr}(1+r^{tr})^{H^{tr}}}{(1+r^{tr})^{H^{tr}}-1}, & r^{tr}>0,\\[6pt]
-    \dfrac{1}{H^{tr}}, & r^{tr}=0,
-    \end{cases}
-\end{equation}
-\begin{equation}\label{eq:annualized_transition_v21}
-    tr^{ann}_{i,s,r,t}=tr^{rec}_{i,s,r,t}+a(H^{tr}_{i,s,r},r^{tr}_{i,s,r})tr^{oneoff}_{i,s,r,t},
-    \qquad
-    leak^{fix}_{i,s,r,t}=\frac{Leak^{fix}_{i,s,r,t}}{Y^0_{i,t}}.
-\end{equation}
-A transition component already reported as an annual flow enters $tr^{rec}$ and is not annualized again. A one-off component enters only through $tr^{oneoff}$ and the annuity factor.
-
-Marginal-equivalent deductions are per unit of the AI-induced fiscal-base shock:
-\begin{equation}\label{eq:marginal_equiv_costs_v17}
-    ac^{ME}_{i,s,r,t}\geq0,
-    \qquad tr^{ME}_{i,s,r,t}\geq0,
-    \qquad leak^{ME}_{i,s,r,t}\geq0.
-\end{equation}
-They are not computed by dividing fixed or annualized costs by $g^{AI}$. A cost component must be assigned to one margin only. If a cost is an annual administrative flow, an annualized one-off transition cost, or a fixed leakage, it enters $ac^{net,fix}$, $tr^{ann}$, or $leak^{fix}$. If it scales with the AI-induced output increment, it enters $ac^{ME}$, $tr^{ME}$, or $leak^{ME}$. Define the net marginal gross-capture object
+Fixed costs and marginal-equivalent deductions are separate margins, and each cost component enters exactly one margin; administrative netting, transition annualization, and the one-margin rule are detailed in Appendix \ref{app:fiscal_conversion_module}. Define the net marginal gross-capture object
 \begin{equation}\label{eq:mfc_tilde_v17}
     \widetilde{MFC}^{gross}_{i,s,r,t}
     =MFC^{gross}_{i,s,r,t}-ac^{ME}_{i,s,r,t}-tr^{ME}_{i,s,r,t}-leak^{ME}_{i,s,r,t}.
@@ -665,7 +580,7 @@ An optional residual-friction penalty $\Omega^{res}_{i,s,r,t}\geq0$ is used only
 \begin{equation}\label{eq:omega_res_stress_v17}
     fs^{eff,res}_{i,p,s,r,t}=fs^{eff}_{i,p,s,r,t}-\Omega^{res}_{i,s,r,t}.
 \end{equation}
-This term must never be used as a second leakage penalty for the same mechanism. If the stress-test object is activated in threshold calculations, the equivalent gross-revenue requirement is $R^{req,gross,res}_{i,p,s,r,t}(\xi)=R^{req,gross}_{i,p,s,r,t}(\xi)+\Omega^{res}_{i,s,r,t}$, with the debt-consistent analogue $R^{req,gross,DC,res}=R^{req,gross,DC}+\Omega^{res}$. Equivalently, one may keep $R^{req,gross}$ unchanged and test $fs^{eff,res}\geq R^{req}_{i,p,t}(\xi)$; the two conventions must not be mixed in the same table.
+This term must never be used as a second leakage penalty for the same mechanism. The equivalent threshold rule is given in Appendix \ref{app:threshold_module}.
 
 When a per-unit effective conversion rate is useful for reporting, it is derived as
 \begin{equation}\label{eq:mfc_eff_v17}
@@ -693,36 +608,7 @@ Costs/leakages & Enforcement cost, transitional compensation, imported cloud/sof
 
 \subsection{Consumption as an induced tax base}
 
-The consumption channel is not a component of the functional-income decomposition of output. It is an induced taxable base. The capital/profit base used for disposable-income calculations follows the same ordered chain as the fiscal block, but the residual non-labor component that is not treated as taxable capital/profit is not discarded:
-\begin{equation}\label{eq:profit_chain_consumption_v20}
-\Delta NLS^{AI}
-\rightarrow
-\left\{
-\Delta\Pi^{AI,gross}=\chi^{Kbase}\Delta NLS^{AI},\quad
-\Delta R^{AI,gross}=(1-\chi^{Kbase})\Delta NLS^{AI}
-\right\}
-\rightarrow
-\left\{\Delta\Pi^{AI,disp},\Delta R^{AI,disp}\right\}.
-\end{equation}
-The direct-tax rates that reduce disposable income need not equal the effective fiscal-capture rates used in $MFC^{gross}$. Define
-\begin{equation}\label{eq:disposable_increments_v20}
-\begin{split}
-    \Delta W^{AI,disp}_{i,s,t}&=(1-\tau^{L,disp}_{i,s,r,t})\Delta W^{AI}_{i,s,t},\\
-    \Delta \Pi^{AI,disp}_{i,s,t}&=(1-\tau^{K,disp}_{i,s,r,t})\Delta\Pi^{AI,dom}_{i,s,t},\\
-    \Delta R^{AI,disp}_{i,s,t}&=\theta^{R,dom}_{i,s,t}(1-\tau^{R,disp}_{i,s,r,t})\Delta R^{AI,gross}_{i,s,t}.
-\end{split}
-\end{equation}
-Here $\tau^{L,disp}$, $\tau^{K,disp}$, and $\tau^{R,disp}$ are disposable-income rates, whereas $\tau^{L,fisc,eff}$ and $\tau^{K,fisc,eff}$ are fiscal-capture rates. The residual term $\Delta R^{AI,gross}$ represents mixed income, informal-business income, or other non-labor residual income not directly treated as taxable capital/profit. It may still induce VAT- or sales-taxable consumption, so it enters the consumption base with its own domesticity and marginal-propensity parameters. This prevents the complement $(1-\chi^{Kbase})\Delta NLS^{AI}$ from disappearing mechanically.
-
-The taxable domestic consumption increment is
-\begin{equation}\label{eq:consumption_induced_v20}
-\begin{split}
-    \Delta C^{AI,taxable}_{i,s,t}
-    &=(1-exempt^C_{i,t})(1-m^M_i)\\
-    &\quad\times\left(mpc^W_i\Delta W^{AI,disp}_{i,s,t}+mpc^{\Pi}_i\Delta\Pi^{AI,disp}_{i,s,t}+mpc^R_i\Delta R^{AI,disp}_{i,s,t}\right).
-\end{split}
-\end{equation}
-Here $m^M_i\in[0,1]$ is the import-content share of induced consumption. Equivalently, one may define $\Delta M^{AI}_{i,s,t}=m^M_i(mpc^W_i\Delta W^{AI,disp}_{i,s,t}+mpc^{\Pi}_i\Delta\Pi^{AI,disp}_{i,s,t}+mpc^R_i\Delta R^{AI,disp}_{i,s,t})$ and subtract $\Delta M^{AI}$ once; the coefficient and the import increment must not both be applied to the same base. If $exempt^C$ is already used to construct $\Delta C^{AI,taxable}$, it must not also enter $\chi^C$ or $\tau^{C,eff}$. Conversely, if exemptions are embedded in $\tau^{C,eff}$, then $\Delta C^{AI,taxable}$ omits the $(1-exempt^C)$ multiplier. Using disposable increments avoids taxing the same gross labor or capital income mechanically through both direct taxes and the induced consumption channel. The consumption channel is first-round only: induced consumption is not recycled into further income and consumption rounds. This truncation is consistent with the absence of general-equilibrium multipliers elsewhere in the framework and biases the frontier conservatively.
+Consumption is an induced tax base rather than a third functional component of output. The disposable-income rates $\tau^{j,disp}$ are not fiscal-capture rates, and import content and consumption exemptions enter exactly once, on either the base side or the rate side. The consumption channel is first-round only: induced consumption is not recycled into further income and consumption rounds. This truncation is consistent with the absence of general-equilibrium multipliers elsewhere in the framework and biases the frontier conservatively. Appendix \ref{app:fiscal_conversion_module} gives the full construction.
 
 \subsection{From channel formula to regimes}
 
@@ -2188,6 +2074,15 @@ with first-order approximation
 \end{equation}
 The exact identities are the benchmark; the approximations are only interpretive shortcuts.
 
+The parameter $\chi^{Kbase}$ converts the broad non-labor residual into the portion that is plausibly taxable as corporate profits, business income, capital income, or AI-related rents. Because it multiplies the AI-induced increment, $\chi^{Kbase}$ is a marginal-composition parameter: the AI increment is plausibly more concentrated in corporate and formal sectors than the economy-wide non-labor residual, so the taxable share of the increment may exceed the average taxable share of $NLS$, and calibrating $\chi^{Kbase}$ from average national-accounts composition is a conservative convention. Supports should therefore be chosen for the incremental base, mirroring the marginal-informality convention of Appendix \ref{app:informality_module}, with sectorally weighted variants reported where data allow. The labor and non-labor residual components exhaust the AI-induced output increment:
+\begin{equation}
+\begin{split}
+    &\Bigl[LS'_{i,s,t}(1+g^{AI}_{i,s,t})-LS_{i,t}\Bigr]
+    +\Bigl[NLS'_{i,s,t}(1+g^{AI}_{i,s,t})-NLS_{i,t}\Bigr] \\
+    &=g^{AI}_{i,s,t}.
+\end{split}
+\end{equation}
+
 \subsection{Bounds and functional-form robustness}
 
 The baseline uses a logit transformation to keep $LS'$ in $(0,1)$. Define the share-point shock, measured in labor-share points, implied by the logit model as
@@ -2286,6 +2181,21 @@ After this construction, the main channel formula uses $\tau^{j,eff}$ only:
 \end{equation}
 It does not use $\tau^{j,eff}\chi^j$. Under the subset convention of Equation \eqref{eq:omega_k_net_v16}, the capital weight in this sum is $\omega^{K,net}$ rather than $\omega^K$.
 
+\subsection{Channel-revenue function and frozen-weight convention}
+
+\begin{equation}\label{eq:channel_revenue_function_v24}
+\begin{split}
+    rev^{ch}_{i,s,r,t}(g)
+    &=\sum_{j\in\{L,K,C\}}\tau^{j,fisc,eff}_{i,s,r,t}\frac{\Delta B^{j,tax}_{i,s,t}(g)}{Y^0_{i,t}}
+      +\lambda^{AI}_{i,s,t}(g)\tau^{AI,eff}_{i,s,r,t}g,\\
+    fs^{eff,ch}_{i,p,s,r,t}(g)
+    &=rev^{ch}_{i,s,r,t}(g)
+      -g\left(ac^{ME}_{i,s,r,t}+tr^{ME}_{i,s,r,t}+leak^{ME}_{i,s,r,t}\right)
+      -ac^{net,fix}_{i,p,s,r,t}-tr^{ann}_{i,s,r,t}-leak^{fix}_{i,s,r,t}.
+\end{split}
+\end{equation}
+The reduced-form and frozen-weight versions are the special cases in which $rev^{ch}(g)$ is linear in $g$. Under the subset convention of Equation \eqref{eq:omega_k_net_v16}, $\Delta B^{K,tax}_{i,s,t}(g)$ in Equation \eqref{eq:channel_revenue_function_v24} is the domestic post-shifting profit base net of the AI-rent component, mirroring $\omega^{K,net}$; otherwise the rent flow would enter both the $K$ term and the AI-rent term. This distinction protects the threshold formulas below from treating an endogenous fiscal-conversion object as if it were fixed.
+
 \subsection{Consumption channel robustness}
 
 The baseline consumption channel is induced by income flows:
@@ -2327,7 +2237,54 @@ where the AI-rent capturability term is explicitly decomposed as
     =\chi^{AI,dom}_{i,s,t}(1-\psi^{shift,tech}_{i,s,t})
     \chi^{AI,compliance}_{i,r,t}\chi^{AI,enforce}_{i,r,t}.
 \end{equation}
+The AI-rent channel is interpreted as incremental rent capture not already included in the capital/profit taxable-base channel. Each simulation must declare one convention. If AI rents are inside the capital/profit base, Equation \eqref{eq:omega_k_net_v16} uses a unit-compatible $\lambda^{AI,Kbase}$ and $\omega^{K,net}=\max\{0,\omega^K-\lambda^{AI,Kbase}\}$ or sets $\lambda^{AI}\tau^{AI,eff}=0$. Let $\Delta\Pi^{AI,rent,gross}$ denote the AI-rent component of $\Delta\Pi^{AI,gross}$. Unit compatibility with the domestic post-shifting base used by $\omega^K$ requires
+\begin{equation}
+\begin{split}
+    \lambda^{AI,Kbase}_{i,s,t}
+    &=\chi^{dom}_{i,s,t}(1-\psi^{shift}_{i,s,t})
+    \frac{\Delta\Pi^{AI,rent,gross}_{i,s,t}}{\Delta\Pi^{AI,gross}_{i,s,t}}
+    \frac{\Delta\Pi^{AI,gross}_{i,s,t}/Y^0_{i,t}}{g^{AI}_{i,s,t}}\\
+    &=\chi^{dom}_{i,s,t}(1-\psi^{shift}_{i,s,t})
+    \frac{\Delta\Pi^{AI,rent,gross}_{i,s,t}/Y^0_{i,t}}{g^{AI}_{i,s,t}}.
+\end{split}
+\end{equation}
+If $\lambda^{AI}$ is measured on the total AI shock, it must be rescaled to this domestic post-shifting base before it is subtracted from $\omega^K$. If AI rents are outside the measured capital/profit base, $\omega^{K,net}=\omega^K$ and the AI-rent channel is additional. This rule prevents double counting between the $K$ channel and the AI-specific rent channel.
 Here $\chi^{AI,dom}$ captures the domestically reachable share of AI rents, $\psi^{shift,tech}$ captures technology-specific profit shifting through intellectual property, cloud location, licensing, royalties, or platform routing, and $\chi^{AI,compliance}$ and $\chi^{AI,enforce}$ capture legal compliance and administrative enforcement. The technology-shifting term is not assumed to equal ordinary capital-profit shifting; for emerging-market applications it may be larger. Existing digital services taxes in the region are typically turnover taxes on gross revenues rather than profit taxes; they map into this block as a higher effective rate on the rent margin with its own distortion costs. If $\tau^{AI,eff}$ is used directly, none of the components in $\chi^{AI}$ is multiplied again. Positive AI-rent taxation is not assumed in the status-quo baseline unless it exists in the country-year being modeled. The AI-rent channel must represent incremental capture outside the capital/profit channel. If AI rents are modeled as part of taxable profits, set $\lambda^{AI}\tau^{AI,eff}=0$ for the separate AI-rent term or net the corresponding component out of $\omega^K$. Technology profit shifting must be placed either inside $\chi^{AI}$ or inside residual leakage, but not both.
+
+\subsection{Fixed costs, transition annualization, and marginal-equivalent deductions}
+
+The implementation separates administrative flow costs, annualized one-off transition costs, fixed leakage, and marginal-equivalent deductions. All objects in the fiscal-space equation are annual shares of no-AI counterfactual GDP. Administrative costs are net of savings from programs that the new policy replaces:
+\begin{equation}\label{eq:admin_net_costs_v21}
+\begin{split}
+    ac^{new,fix}_{i,p,s,r,t}&=\frac{AC^{new,fix}_{i,p,s,r,t}}{Y^0_{i,t}},\qquad
+    ac^{exist,sav}_{i,p,t}=\frac{AC^{exist,sav}_{i,p,t}}{Y^0_{i,t}},\\
+    ac^{net,fix}_{i,p,s,r,t}&=ac^{new,fix}_{i,p,s,r,t}-ac^{exist,sav}_{i,p,t}.
+\end{split}
+\end{equation}
+The administrative-savings term is included only when the gross or net policy-cost object does not already include administrative expenditure from the replaced program. If $C^{exist}$ already includes both transfer spending and administrative spending, $ac^{exist,sav}$ is set to zero to avoid double counting. A scenario-pairing rule also applies: administrative savings presuppose that the replaced programs are actually terminated, which is the same replacement interpretation that defines $C^{exist}$ on the cost side. Pure-layering implementations, in which the new instrument is added on top of existing programs, must set $ac^{exist,sav}=0$. If $V^{gross}$ is reported with $ac^{exist,sav}>0$, the combination must be labelled a conservative hybrid: the numerator credits replacement administrative savings while the gross-cost denominator does not credit the replaced transfer budget.
+Per-beneficiary administrative costs are systematically ordered: means-tested instruments exceed categorical instruments, which exceed universal instruments. Pilot implementations must not apply a uniform administrative-cost ratio across instruments, since that would compound the ideal-targeting bias in the GMI comparison.
+
+Transition expenditure is compared with recurring annual policy costs only after annualization. Let $tr^{oneoff}_{i,s,r,t}=TR^{oneoff}_{i,s,r,t}/Y^0_{i,t}$ denote an implementation stock cost and $tr^{rec}_{i,s,r,t}$ any recurring transition-management cost. For horizon $H^{tr}$ and discount or financing rate $r^{tr}$, define
+\begin{equation}\label{eq:transition_annualization_v21}
+    a(H^{tr},r^{tr})=\begin{cases}
+    \dfrac{r^{tr}(1+r^{tr})^{H^{tr}}}{(1+r^{tr})^{H^{tr}}-1}, & r^{tr}>0,\\[6pt]
+    \dfrac{1}{H^{tr}}, & r^{tr}=0,
+    \end{cases}
+\end{equation}
+\begin{equation}\label{eq:annualized_transition_v21}
+    tr^{ann}_{i,s,r,t}=tr^{rec}_{i,s,r,t}+a(H^{tr}_{i,s,r},r^{tr}_{i,s,r})tr^{oneoff}_{i,s,r,t},
+    \qquad
+    leak^{fix}_{i,s,r,t}=\frac{Leak^{fix}_{i,s,r,t}}{Y^0_{i,t}}.
+\end{equation}
+A transition component already reported as an annual flow enters $tr^{rec}$ and is not annualized again. A one-off component enters only through $tr^{oneoff}$ and the annuity factor.
+
+Marginal-equivalent deductions are per unit of the AI-induced fiscal-base shock:
+\begin{equation}\label{eq:marginal_equiv_costs_v17}
+    ac^{ME}_{i,s,r,t}\geq0,
+    \qquad tr^{ME}_{i,s,r,t}\geq0,
+    \qquad leak^{ME}_{i,s,r,t}\geq0.
+\end{equation}
+They are not computed by dividing fixed or annualized costs by $g^{AI}$. A cost component must be assigned to one margin only. If a cost is an annual administrative flow, an annualized one-off transition cost, or a fixed leakage, it enters $ac^{net,fix}$, $tr^{ann}$, or $leak^{fix}$. If it scales with the AI-induced output increment, it enters $ac^{ME}$, $tr^{ME}$, or $leak^{ME}$.
 
 \subsection{Timing, base erosion, and behavioral response}
 
