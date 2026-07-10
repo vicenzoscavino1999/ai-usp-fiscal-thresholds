@@ -29,13 +29,14 @@ from scripts import run_deterministic_robustness_6a as robustness
 from scripts import run_official_monte_carlo as mc
 
 
-RUN_ID = "official_4c_gmimicro_per_robustness_extension_baseline_official_v3"
-EXTENSION_ID = "GMI_MICRODATA_STRONG_PER_EXTENSION_2026_07_10"
+RUN_ID = "official_4c_gmimicro_per_pip_line_correction_baseline_official_v3"
+EXTENSION_ID = "GMI_MICRODATA_STRONG_PER_PIP_LINE_CORRECTION_2026_07_10"
+SUPERSEDES_EXTENSION_ID = "GMI_MICRODATA_STRONG_PER_EXTENSION_2026_07_10"
 EXTENSION_TYPE = "post_baseline_robustness_extension_new_input_series"
-PARAMETER_SET_ID = "robustness-gmimicro-per-v1"
+PARAMETER_SET_ID = "robustness-gmimicro-per-v2"
 BASELINE_PARAMETER_SET_ID = "baseline-official-v3"
 BASELINE_DATASET_VERSION = "v1.0.1-official-4c"
-INPUT_SNAPSHOT_ID = PARAMETER_SET_ID
+INPUT_SNAPSHOT_ID = "robustness-gmimicro-per-v1"
 EXPECTED_PRIMARY_SPEC_HASH = "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81"
 SNAPSHOT_DIR = ROOT / "data" / "raw_snapshots" / INPUT_SNAPSHOT_ID / "enaho_sumaria"
 SNAPSHOT_MANIFEST = ROOT / "reproducibility" / "snapshot" / f"dataset_manifest_{INPUT_SNAPSHOT_ID}.json"
@@ -50,6 +51,8 @@ PRIMARY_WELFARE_CONCEPT = "income"
 PRIMARY_WELFARE_VARIABLE = "INGHOG2D"
 SENSITIVITY_WELFARE_CONCEPT = "expenditure"
 SENSITIVITY_WELFARE_VARIABLE = "GASHOG2D"
+PIP_LINE_DAILY_PPP = 8.30
+EXPECTED_PIP_LINE_LCU_ANNUAL = 6835.986611
 OFFICIAL_FGT0 = 0.276
 OFFICIAL_FGT1 = 0.072
 EXPECTED_HOUSEHOLDS = 33_691
@@ -119,7 +122,7 @@ def load_microdata() -> tuple[pd.DataFrame, dict[str, Any]]:
     return frame, metadata
 
 
-def validate_enaho(frame: pd.DataFrame) -> pd.DataFrame:
+def validate_enaho(frame: pd.DataFrame, official: dict[str, float | str]) -> pd.DataFrame:
     numeric_columns = ["GASHOG2D", "INGHOG2D", "MIEPERHO", "FACTOR07", "POBREZA", "LINEA", "LINPE"]
     df = frame.copy()
     for column in numeric_columns:
@@ -137,7 +140,7 @@ def validate_enaho(frame: pd.DataFrame) -> pd.DataFrame:
     poor_from_line = ypc_expenditure < df["LINEA"]
     poor_from_code = df["POBREZA"].isin([1, 2])
     matches = poor_from_line.eq(poor_from_code)
-    person_weight = df["FACTOR07"] * df["MIEPERHO"]
+    person_weight = df["FACTOR07"].astype(float) * df["MIEPERHO"].astype(float)
     relative_gap = ((df["LINEA"] - ypc_expenditure) / df["LINEA"]).clip(lower=0.0)
     fgt0 = float(np.average(poor_from_line.astype(float), weights=person_weight))
     fgt1 = float(np.average(relative_gap, weights=person_weight))
@@ -149,6 +152,16 @@ def validate_enaho(frame: pd.DataFrame) -> pd.DataFrame:
         raise ExtensionError(f"FGT0 validation failed: recalculated={100*fgt0:.9f}%")
     if round(100.0 * fgt1, 1) != round(100.0 * OFFICIAL_FGT1, 1):
         raise ExtensionError(f"FGT1 validation failed: recalculated={100*fgt1:.9f}%")
+    pip_line = float(official["official_poverty_line_lcu_annual"])
+    if abs(pip_line - EXPECTED_PIP_LINE_LCU_ANNUAL) > 1e-6:
+        raise ExtensionError(
+            f"PIP line constant failed: {pip_line:.12f} != {EXPECTED_PIP_LINE_LCU_ANNUAL:.12f}"
+        )
+    income_annual_pc = df["INGHOG2D"].astype(float) / df["MIEPERHO"].astype(float)
+    pip_income_gap = (pip_line - income_annual_pc).clip(lower=0.0)
+    pip_fgt0 = float(np.average(income_annual_pc.lt(pip_line).astype(float), weights=person_weight))
+    pip_fgt1 = float(np.average(pip_income_gap / pip_line, weights=person_weight))
+    expanded_population = float(person_weight.sum())
     return pd.DataFrame(
         [
             {
@@ -184,6 +197,50 @@ def validate_enaho(frame: pd.DataFrame) -> pd.DataFrame:
                 "assert_status": "PASS",
                 "formula": f"POBREZA in {{1,2}} equals ypc_expenditure < LINEA: {int(matches.sum())}/{len(matches)}",
             },
+            {
+                "country_id": "PER",
+                "survey_year": 2024,
+                "validation_object": "PIP_line_constant_lcu_annual",
+                "recalculated_exact": pip_line,
+                "recalculated_percent": np.nan,
+                "official_percent": np.nan,
+                "rounding_decimals": 6,
+                "assert_status": "PASS",
+                "formula": "z_h = PIP PPP 8.30 line converted to 2024 PEN; constant for every household",
+            },
+            {
+                "country_id": "PER",
+                "survey_year": 2024,
+                "validation_object": "FGT0_income_at_PIP_line",
+                "recalculated_exact": pip_fgt0,
+                "recalculated_percent": 100.0 * pip_fgt0,
+                "official_percent": 100.0 * float(official["official_poverty_headcount"]),
+                "rounding_decimals": 6,
+                "assert_status": "REPORTED_CONTRAST",
+                "formula": "weighted mean[INGHOG2D/MIEPERHO < constant PIP line], weight=FACTOR07*MIEPERHO",
+            },
+            {
+                "country_id": "PER",
+                "survey_year": 2024,
+                "validation_object": "FGT1_income_at_PIP_line",
+                "recalculated_exact": pip_fgt1,
+                "recalculated_percent": 100.0 * pip_fgt1,
+                "official_percent": 100.0 * float(official["official_poverty_gap"]),
+                "rounding_decimals": 6,
+                "assert_status": "REPORTED_CONTRAST",
+                "formula": "weighted mean[max(0,(constant PIP line-income_pc)/constant PIP line)]",
+            },
+            {
+                "country_id": "PER",
+                "survey_year": 2024,
+                "validation_object": "expanded_population",
+                "recalculated_exact": expanded_population,
+                "recalculated_percent": np.nan,
+                "official_percent": np.nan,
+                "rounding_decimals": 0,
+                "assert_status": "REPORTED_CONTRAST",
+                "formula": "sum(FACTOR07*MIEPERHO); official comparator stored in cost output",
+            },
         ]
     )
 
@@ -191,7 +248,7 @@ def validate_enaho(frame: pd.DataFrame) -> pd.DataFrame:
 def official_inputs(inputs: dict[str, Any]) -> dict[str, float | str]:
     poverty = pd.read_parquet(ROOT / "data" / "model_inputs" / "poverty_distribution_anchor.parquet")
     poverty = poverty[poverty["country_id"].eq("PER") & poverty["year"].eq(2024)]
-    macro = inputs["macro_anchor"]
+    macro = pd.read_parquet(ROOT / "data" / "model_inputs" / "macro_anchor.parquet")
     macro = macro[macro["country_id"].eq("PER") & macro["year"].eq(2024)]
     costs = inputs["policy_cost"]
     costs = costs[costs["country_id"].eq("PER") & costs["policy_id"].eq("GMI")]
@@ -208,7 +265,9 @@ def official_inputs(inputs: dict[str, Any]) -> dict[str, float | str]:
         "official_poverty_line_ppp_daily": float(p["poverty_line_ppp_daily"]),
         "official_poverty_line_lcu_annual": float(p["poverty_line_national_lcu_annual"]),
         "official_poverty_gap": float(p["poverty_gap"]),
+        "official_poverty_headcount": float(p["poverty_headcount"]),
         "official_source_year": int(p["source_year"]),
+        "official_population_total": float(macro.iloc[0]["population_total_wpp"]),
         "official_ideal_cost_gdp": float(ideal["policy_cost_gross_gdp"]),
         "official_loaded_cost_gdp": float(loaded["policy_cost_gross_gdp"]),
         "official_ideal_cost_lcu": float(ideal["policy_cost_gross_lcu"]),
@@ -219,56 +278,138 @@ def official_inputs(inputs: dict[str, Any]) -> dict[str, float | str]:
     }
 
 
-def aggregate_micro_gap(frame: pd.DataFrame, welfare_variable: str) -> float:
-    ypc_monthly = frame[welfare_variable].astype(float) / (12.0 * frame["MIEPERHO"].astype(float))
-    monthly_gap = (frame["LINEA"].astype(float) - ypc_monthly).clip(lower=0.0)
-    return float(
-        (frame["FACTOR07"].astype(float) * frame["MIEPERHO"].astype(float) * 12.0 * monthly_gap).sum()
-    )
+def aggregate_micro_gap(
+    frame: pd.DataFrame,
+    welfare_variable: str,
+    *,
+    policy_variant_z: str,
+    pip_line_lcu_annual: float,
+) -> dict[str, float]:
+    members = frame["MIEPERHO"].astype(float)
+    person_weight = frame["FACTOR07"].astype(float) * members
+    welfare_annual_pc = frame[welfare_variable].astype(float) / members
+    if policy_variant_z == "pip_ppp_8_30_line":
+        poverty_line_annual = pd.Series(pip_line_lcu_annual, index=frame.index, dtype=float)
+        poverty_line_value = pip_line_lcu_annual
+        poverty_line_min = pip_line_lcu_annual
+        poverty_line_max = pip_line_lcu_annual
+    elif policy_variant_z == "national_line":
+        poverty_line_annual = 12.0 * frame["LINEA"].astype(float)
+        poverty_line_value = float(np.average(poverty_line_annual, weights=person_weight))
+        poverty_line_min = float(poverty_line_annual.min())
+        poverty_line_max = float(poverty_line_annual.max())
+    else:
+        raise ValueError(policy_variant_z)
+    shortfall = (poverty_line_annual - welfare_annual_pc).clip(lower=0.0)
+    return {
+        "aggregate_gap_lcu_annual": float((person_weight * shortfall).sum()),
+        "expanded_population": float(person_weight.sum()),
+        "fgt0": float(np.average(welfare_annual_pc.lt(poverty_line_annual), weights=person_weight)),
+        "fgt1": float(np.average(shortfall / poverty_line_annual, weights=person_weight)),
+        "poverty_line_value": poverty_line_value,
+        "poverty_line_min": poverty_line_min,
+        "poverty_line_max": poverty_line_max,
+    }
 
 
 def build_costs(frame: pd.DataFrame, official: dict[str, float | str]) -> pd.DataFrame:
     gdp = float(official["gdp_nominal_lcu_2024"])
     chi = float(official["chi_gmi"])
+    pip_line = float(official["official_poverty_line_lcu_annual"])
     rows: list[dict[str, Any]] = []
     concepts = [
-        (PRIMARY_WELFARE_CONCEPT, PRIMARY_WELFARE_VARIABLE, True),
-        (SENSITIVITY_WELFARE_CONCEPT, SENSITIVITY_WELFARE_VARIABLE, False),
+        (PRIMARY_WELFARE_CONCEPT, PRIMARY_WELFARE_VARIABLE),
+        (SENSITIVITY_WELFARE_CONCEPT, SENSITIVITY_WELFARE_VARIABLE),
     ]
-    for concept, variable, primary in concepts:
-        gap_lcu = aggregate_micro_gap(frame, variable)
-        for targeting, theta in [("ideal", float(official["theta_ideal"])), ("loaded", float(official["theta_loaded"]))]:
-            cost_lcu = theta * chi * gap_lcu
-            official_cost_lcu = float(official[f"official_{targeting}_cost_lcu"])
-            official_cost_gdp = float(official[f"official_{targeting}_cost_gdp"])
-            rows.append(
-                {
-                    "parameter_set_id": PARAMETER_SET_ID,
-                    "country_id": "PER",
-                    "policy_id": "GMI",
-                    "micro_gmi_version": f"GMI_{targeting}_microdata_{concept}",
-                    "baseline_gmi_version": f"GMI_{targeting}_aggregate",
-                    "welfare_concept": concept,
-                    "welfare_variable": variable,
-                    "primary_variant": primary,
-                    "poverty_line_variable": "LINEA",
-                    "survey_year": 2024,
-                    "carried_forward_to_2024": False,
-                    "chi_gmi": chi,
-                    "theta_target": theta,
-                    "aggregate_gap_lcu_annual": gap_lcu,
-                    "cost_micro_lcu": cost_lcu,
-                    "cost_micro_gdp": cost_lcu / gdp,
-                    "cost_official_aggregate_lcu": official_cost_lcu,
-                    "cost_official_aggregate_gdp": official_cost_gdp,
-                    "difference_lcu": cost_lcu - official_cost_lcu,
-                    "difference_gdp": cost_lcu / gdp - official_cost_gdp,
-                    "difference_percent_vs_official": 100.0 * (cost_lcu / official_cost_lcu - 1.0),
-                    "gdp_nominal_lcu_2024": gdp,
-                    "source_id": "INEI_ENAHO_SUMARIA_2024",
-                    "robustness_flag": True,
-                }
+    line_variants = [
+        (
+            "pip_ppp_8_30_line",
+            "PIP_PPP_8_30_constant_lcu_annual",
+            "Like-for-like threshold used by the official aggregate GMI cost.",
+        ),
+        (
+            "national_line",
+            "LINEA",
+            "GMI at the national poverty line (different policy threshold z).",
+        ),
+    ]
+    for concept, variable in concepts:
+        for policy_variant_z, line_variable, line_note in line_variants:
+            stats = aggregate_micro_gap(
+                frame,
+                variable,
+                policy_variant_z=policy_variant_z,
+                pip_line_lcu_annual=pip_line,
             )
+            primary = concept == PRIMARY_WELFARE_CONCEPT and policy_variant_z == "pip_ppp_8_30_line"
+            if policy_variant_z == "national_line":
+                harmonization_note = (
+                    "Different policy threshold z: retained only to supersede transparently the initial "
+                    "LINEA-based computation; not a like-for-like comparison with the official GMI cost."
+                )
+            elif concept == PRIMARY_WELFARE_CONCEPT:
+                harmonization_note = (
+                    "Residual difference reflects raw INGHOG2D versus harmonized PIP/SEDLAC income, "
+                    "including imputations, imputed rents, and treatment of zeros; it is not a z mismatch."
+                )
+            else:
+                harmonization_note = (
+                    "Welfare-concept sensitivity using expenditure at the same PIP threshold z; the official "
+                    "PIP welfare concept is income, so this row is not expected to reproduce its aggregate gap."
+                )
+            for targeting, theta in [
+                ("ideal", float(official["theta_ideal"])),
+                ("loaded", float(official["theta_loaded"])),
+            ]:
+                gap_lcu = stats["aggregate_gap_lcu_annual"]
+                cost_lcu = theta * chi * gap_lcu
+                official_cost_lcu = float(official[f"official_{targeting}_cost_lcu"])
+                official_cost_gdp = float(official[f"official_{targeting}_cost_gdp"])
+                rows.append(
+                    {
+                        "parameter_set_id": PARAMETER_SET_ID,
+                        "country_id": "PER",
+                        "policy_id": "GMI",
+                        "micro_gmi_version": f"GMI_{targeting}_microdata_{concept}_{policy_variant_z}",
+                        "baseline_gmi_version": f"GMI_{targeting}_aggregate",
+                        "welfare_concept": concept,
+                        "welfare_variable": variable,
+                        "primary_variant": primary,
+                        "policy_variant_z": policy_variant_z,
+                        "poverty_line_variable": line_variable,
+                        "poverty_line_value": stats["poverty_line_value"],
+                        "poverty_line_value_unit": "PEN_per_person_per_year",
+                        "poverty_line_value_statistic": (
+                            "constant" if policy_variant_z == "pip_ppp_8_30_line" else "person_weighted_mean"
+                        ),
+                        "poverty_line_min": stats["poverty_line_min"],
+                        "poverty_line_max": stats["poverty_line_max"],
+                        "policy_variant_z_note": line_note,
+                        "survey_year": 2024,
+                        "carried_forward_to_2024": False,
+                        "chi_gmi": chi,
+                        "theta_target": theta,
+                        "expanded_population_enaho": stats["expanded_population"],
+                        "population_official_cost": float(official["official_population_total"]),
+                        "population_difference": stats["expanded_population"] - float(official["official_population_total"]),
+                        "fgt0_micro": stats["fgt0"],
+                        "fgt1_micro": stats["fgt1"],
+                        "pip_harmonized_headcount": float(official["official_poverty_headcount"]),
+                        "pip_harmonized_gap": float(official["official_poverty_gap"]),
+                        "aggregate_gap_lcu_annual": gap_lcu,
+                        "cost_micro_lcu": cost_lcu,
+                        "cost_micro_gdp": cost_lcu / gdp,
+                        "cost_official_aggregate_lcu": official_cost_lcu,
+                        "cost_official_aggregate_gdp": official_cost_gdp,
+                        "difference_lcu": cost_lcu - official_cost_lcu,
+                        "difference_gdp": cost_lcu / gdp - official_cost_gdp,
+                        "difference_percent_vs_official": 100.0 * (cost_lcu / official_cost_lcu - 1.0),
+                        "gdp_nominal_lcu_2024": gdp,
+                        "source_id": "INEI_ENAHO_SUMARIA_2024;PIP;WDI",
+                        "harmonization_note": harmonization_note,
+                        "robustness_flag": True,
+                    }
+                )
     return pd.DataFrame(rows)
 
 
@@ -297,11 +438,15 @@ def build_parameter_set(inputs: dict[str, Any], costs: pd.DataFrame, metadata: d
         values.loc[mask, "value_type"] = "observed_microdata_derived_cost"
         values.loc[mask, "support_type"] = "post_baseline_robustness_new_input_series"
         values.loc[mask, "source_id"] = "INEI_ENAHO_SUMARIA_2024"
-        values.loc[mask, "formula_id"] = "theta_target*chi_gmi*sum(FACTOR07*MIEPERHO*12*max(0,LINEA-INGHOG2D/(12*MIEPERHO)))/GDP_2024"
+        values.loc[mask, "formula_id"] = (
+            "theta_target*chi_gmi*sum(FACTOR07*MIEPERHO*"
+            "max(0,PIP_line_LCU_annual-INGHOG2D/MIEPERHO))/GDP_2024"
+        )
         values.loc[mask, "distribution"] = "fixed"
         values.loc[mask, "audit_status"] = "registered_post_baseline_robustness"
         values.loc[mask, "notes"] = (
-            "Labelled post-baseline GMI microdata-strong variant; official PIP aggregate cost remains unchanged. "
+            "Corrected labelled post-baseline GMI microdata-strong variant using the same constant PIP PPP "
+            "8.30 threshold z as the official aggregate GMI cost; official cost remains unchanged. "
             f"ENAHO 2024 t0 exact, no carried-forward; source={metadata['source_url']}."
         )
         changes.append(
@@ -371,9 +516,12 @@ def build_comparison(inputs: dict[str, Any], costs: pd.DataFrame) -> pd.DataFram
         ["country_id", "policy_id", "gmi_version", "country_policy_result_class"]
     ].drop_duplicates()
     variant = robustness.Variant(
-        variant_id="GMI_microdata_strong_PER",
+        variant_id="GMI_microdata_strong_PER_PIP_line_corrected",
         family="post_baseline_GMI_microdata_strong",
-        label="ENAHO 2024 microdata income-gap GMI cost; official aggregate cost retained as comparator",
+        label=(
+            "ENAHO 2024 raw-income gap at the same constant PIP PPP 8.30 line used by the official "
+            "aggregate GMI cost; corrected like-for-like comparator"
+        ),
     )
     variant_grid, diagnostics = robustness.run_variant(
         ROOT, inputs, variant, baseline, baseline_classes, gap_resid={}
@@ -427,8 +575,8 @@ def build_comparison(inputs: dict[str, Any], costs: pd.DataFrame) -> pd.DataFram
         }
     )
     micro_version = {
-        "GMI_ideal_aggregate": "GMI_ideal_microdata_income",
-        "GMI_loaded_aggregate": "GMI_loaded_microdata_income",
+        "GMI_ideal_aggregate": "GMI_ideal_microdata_income_pip_ppp_8_30_line",
+        "GMI_loaded_aggregate": "GMI_loaded_microdata_income_pip_ppp_8_30_line",
     }
     result["micro_gmi_version"] = result["baseline_gmi_version"].map(micro_version)
     result["delta_v"] = result["v_micro"] - result["v_baseline"]
@@ -469,10 +617,22 @@ def write_outputs() -> dict[str, Any]:
         raise ExtensionError(f"PRIMARY_SPEC_HASH gate failed: {spec}")
     protected_before = file_hashes(PROTECTED_FILES)
     frame, metadata = load_microdata()
-    validation = validate_enaho(frame)
     inputs = mc.load_inputs(ROOT)
     official = official_inputs(inputs)
+    validation = validate_enaho(frame, official)
     costs = build_costs(frame, official)
+    primary_costs = costs[costs["primary_variant"]]
+    if len(primary_costs) != 2:
+        raise ExtensionError(f"Expected two corrected primary cost rows, found {len(primary_costs)}")
+    if not primary_costs["policy_variant_z"].eq("pip_ppp_8_30_line").all():
+        raise ExtensionError("Corrected primary cost does not exclusively use the PIP-line policy variant")
+    if not np.allclose(
+        primary_costs["poverty_line_value"].to_numpy(dtype=float),
+        EXPECTED_PIP_LINE_LCU_ANNUAL,
+        rtol=0.0,
+        atol=1e-6,
+    ):
+        raise ExtensionError("Corrected primary cost did not use the constant PIP line")
     parameter_set, parameter_changes = build_parameter_set(inputs, costs, metadata)
     variant_inputs = {
         **inputs,
@@ -508,18 +668,24 @@ def write_outputs() -> dict[str, Any]:
         "crosses_v1_10_changes": int(comparison["crosses_v1_10_changed_flag"].sum()),
         "debt_guardrail_changes": int(comparison["debt_guardrail_changed_flag"].sum()),
     }
-    amendment = pd.DataFrame(
+    new_amendment = pd.DataFrame(
         [
             {
                 "run_id": RUN_ID,
                 "amendment_id": EXTENSION_ID,
+                "supersedes": SUPERSEDES_EXTENSION_ID,
                 "extension_type": EXTENSION_TYPE,
                 "amendment_text": (
-                    "Post-baseline robustness extension using newly declared ENAHO 2024 Sumaria microdata. "
-                    "The official PIP aggregate GMI cost remains unchanged and is used only as comparator; "
-                    "the microdata cost is a labelled variant."
+                    "Corrected post-baseline GMI microdata robustness extension. The primary microdata gap now "
+                    "uses the same constant PIP PPP 8.30 threshold z as the official aggregate GMI cost; the "
+                    "initial national-line calculation is retained and relabelled as a different policy variant."
+                ),
+                "supersession_reason": (
+                    "initial computation used the national line; superseded because the official GMI cost is "
+                    "defined at the PIP PPP 8.30 line; z must match for a like-for-like comparison"
                 ),
                 "new_input_series": True,
+                "new_input_since_superseded": False,
                 "input_snapshot_id": INPUT_SNAPSHOT_ID,
                 "input_snapshot_manifest_sha256": sha256_file(SNAPSHOT_MANIFEST),
                 "baseline_parameter_set_id": BASELINE_PARAMETER_SET_ID,
@@ -548,11 +714,26 @@ def write_outputs() -> dict[str, Any]:
             }
         ]
     )
+    if AMENDMENT_OUTPUT.exists():
+        prior_amendments = pd.read_csv(AMENDMENT_OUTPUT)
+        if SUPERSEDES_EXTENSION_ID not in set(prior_amendments["amendment_id"]):
+            raise ExtensionError(f"Superseded amendment is missing: {SUPERSEDES_EXTENSION_ID}")
+        prior_amendments = prior_amendments[
+            ~prior_amendments["amendment_id"].eq(EXTENSION_ID)
+        ].copy()
+        amendment = pd.concat([prior_amendments, new_amendment], ignore_index=True, sort=False)
+    else:
+        raise ExtensionError("Original GMI-micro amendment registry is missing; supersession cannot be recorded")
     amendment.to_csv(AMENDMENT_OUTPUT, index=False)
     manifest = {
         "run_id": RUN_ID,
         "run_type": "robustness",
         "extension_id": EXTENSION_ID,
+        "supersedes": SUPERSEDES_EXTENSION_ID,
+        "supersession_reason": (
+            "initial computation used the national line; superseded because the official GMI cost is defined "
+            "at the PIP PPP 8.30 line; z must match for a like-for-like comparison"
+        ),
         "extension_type": EXTENSION_TYPE,
         "parameter_set_id": PARAMETER_SET_ID,
         "baseline_parameter_set_id": BASELINE_PARAMETER_SET_ID,
@@ -561,15 +742,16 @@ def write_outputs() -> dict[str, Any]:
         "primary_spec_hash": spec_after,
         "protected_files_unchanged": True,
         "official_gmi_provenance": official,
-        "validation": validation.to_dict(orient="records"),
+        "validation": json.loads(validation.to_json(orient="records")),
         **counts,
         "runtime_seconds": time.perf_counter() - started,
         "commit_sha_at_run": git_value(["rev-parse", "HEAD"]),
         "git_dirty_at_run": bool(git_value(["status", "--short"])),
         "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "notes": (
-            "Only PER GMI ideal/loaded policy costs change in memory. Income is primary because the official "
-            "PIP anchor records welfare_type=income; expenditure is reported as a cost sensitivity only."
+            "Only PER GMI ideal/loaded policy costs change in memory. Corrected primary: raw ENAHO income at "
+            "the constant official PIP PPP 8.30 line. Expenditure at that line is a sensitivity; prior LINEA "
+            "calculations are retained as a distinct national-line policy variant."
         ),
     }
     MANIFEST_OUTPUT.write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding="utf-8")

@@ -1,4 +1,8 @@
 country_id,survey_year,validation_object,recalculated_exact,recalculated_percent,official_percent,rounding_decimals,assert_status,formula
-PER,2024,FGT0_headcount,0.2757946814687513,27.57946814687513,27.6,1,PASS,"weighted mean[GASHOG2D/(12*MIEPERHO) < LINEA], weight=FACTOR07*MIEPERHO"
-PER,2024,FGT1_poverty_gap,0.07207172925438653,7.207172925438653,7.199999999999999,1,PASS,"weighted mean[max(0,(LINEA-ypc_expenditure)/LINEA)], weight=FACTOR07*MIEPERHO"
+PER,2024,FGT0_headcount,0.2757946816356908,27.579468163569082,27.6,1,PASS,"weighted mean[GASHOG2D/(12*MIEPERHO) < LINEA], weight=FACTOR07*MIEPERHO"
+PER,2024,FGT1_poverty_gap,0.07207172926547437,7.207172926547437,7.199999999999999,1,PASS,"weighted mean[max(0,(LINEA-ypc_expenditure)/LINEA)], weight=FACTOR07*MIEPERHO"
 PER,2024,POBREZA_household_classification,33691.0,100.0,100.0,9,PASS,"POBREZA in {1,2} equals ypc_expenditure < LINEA: 33691/33691"
+PER,2024,PIP_line_constant_lcu_annual,6835.9866112358295,,,6,PASS,z_h = PIP PPP 8.30 line converted to 2024 PEN; constant for every household
+PER,2024,FGT0_income_at_PIP_line,0.34210874308287076,34.210874308287075,36.199999999999996,6,REPORTED_CONTRAST,"weighted mean[INGHOG2D/MIEPERHO < constant PIP line], weight=FACTOR07*MIEPERHO"
+PER,2024,FGT1_income_at_PIP_line,0.11948283470308899,11.9482834703089,13.05,6,REPORTED_CONTRAST,"weighted mean[max(0,(constant PIP line-income_pc)/constant PIP line)]"
+PER,2024,expanded_population,34482699.311318874,,,0,REPORTED_CONTRAST,sum(FACTOR07*MIEPERHO); official comparator stored in cost output
