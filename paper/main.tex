@@ -365,22 +365,7 @@ The country adoption ceiling is
     \bar q_{i,t}=\max\left\{0,\min\left[1,1-\omega_I I_{i,t}-\omega_G Gap_{i,t}\right]\right\}.
 \end{equation}
 The economic mechanism behind the informality term is that informality proxies small firm scale, credit constraints, low managerial capital, and weak complementary investments, which limit productive integration of AI even when consumer-side use is high \citep{worldbank2021informality}. Because informal firms do adopt some digital technologies partially, $\omega_I<1$ is the economically plausible range; a unit penalty is an extreme convention. For high-informality countries such as the pilot's primary case, the sensitivity of results to $\omega_I$ must be reported prominently.
-Informality and $Gap$ affect short-run diffusion through $\ell^q$ and long-run adoption capacity through $\bar q$. If the same empirical variable is used in both margins, the implementation must partition the effect across the diffusion and ceiling equations or residualize one margin against the other; halving the coefficient in each use is permitted only as a crude approximation and is not preferred. The initial moment is calibrated by choosing a target $q^{use,target}_{i,t_0}$ that lies strictly inside the country ceiling. The logit inversion exists only if
-\begin{equation}
-    \bar q_{i,t_0}>2\epsilon_{\mu},\qquad \epsilon_{\mu}>0.
-\end{equation}
-If this condition fails, the country-scenario cell is classified as adoption-ceiling-impossible for the target moment. Otherwise the candidate target is projected onto the interior support before the intercept is computed:
-\begin{equation}\label{eq:q_target_adjusted_main_v10}
-    q^{use,target,adj}_{i,t_0}
-    =\min\left\{\max\left\{q^{use,target}_{i,t_0},\epsilon_{\mu}\right\},
-    \bar q_{i,t_0}-\epsilon_{\mu}\right\}.
-\end{equation}
-The intercept is then
-\begin{equation}\label{eq:mu_calibration_main_v10}
-    \mu_{i,s,t_0}=\log\left(\frac{q^{use,target,adj}_{i,t_0}}{\bar q_{i,t_0}-q^{use,target,adj}_{i,t_0}}\right)
-    -\nu_A A_{i,t_0}+\nu_I I_{i,t_0}+\nu_G Gap_{i,t_0}.
-\end{equation}
-This is an anchored calibration, not an identified cross-country forecasting equation. The country-scenario intercept absorbs the initial adoption level required to match $q^{use,target,adj}_{i,t_0}$. Consequently, $A$, $I$, and $Gap$ are interpreted in the baseline as variables governing counterfactual movements, ceilings, and dynamic updates around the anchor, not as independently identified explanations of the initial adoption level. Unless a time trend or scenario path is explicitly calibrated, the implementation holds the anchored intercept fixed after the calibration year, $\mu_{i,s,t}=\mu_{i,s,t_0}$ for $t>t_0$, so subsequent adoption changes arise from updated preparedness, frictions, gaps, and ceilings rather than from an implicit drift in $\mu$. A predictive structural-intercept specification with a common or hierarchical intercept, $\mu_s$ or $\mu_s+\alpha_i$, may be reported only as a separate robustness mode.
+Informality and $Gap$ may enter both short-run diffusion and long-run adoption capacity only if their empirical content is partitioned across the diffusion and ceiling equations or one margin is residualized against the other. This is an anchored calibration, not an identified cross-country forecasting equation; unless a time trend or scenario path is explicitly calibrated, the anchored intercept is held fixed after $t_0$, $\mu_{i,s,t}=\mu_{i,s,t_0}$ for $t>t_0$. The logit inversion of the intercept, interior projection of the target, initial condition, and support restrictions are specified in Appendix \ref{app:adoption_module}.
 Productive adoption follows a lagged diffusion law with an explicit ceiling projection:
 \begin{equation}\label{eq:q_prod_diffusion_main_v10}
     q^{prod}_{i,s,t}=\min\left\{\bar q_{i,t},
@@ -388,16 +373,6 @@ Productive adoption follows a lagged diffusion law with an explicit ceiling proj
     \qquad \lambda_q\in\{0.15,0.30,0.50\}\quad\text{in baseline, with }\lambda_q=1\text{ only as an instant-adoption stress test}.
 \end{equation}
 The projection is needed because $q^{prod}$ is stock-like; if the ceiling $\bar q_{i,t}$ falls after a shock to infrastructure, informality, or access, the unprojected stock could otherwise exceed the current feasible ceiling.
-The initial condition must be stated in the replication file. The default is
-\begin{equation}
-    q^{prod}_{i,s,t_0}=q^{use,target,adj}_{i,t_0},
-\end{equation}
-with $q^{prod}_{i,s,t_0}=0$ reported as a conservative robustness check. Because $q^{prod}$ is a stock-like integration object, the maintained support restriction is
-\begin{equation}
-    0\leq q^{prod}_{i,s,t}\leq \bar q_{i,t}\leq 1.
-\end{equation}
-The model does not require $q^{prod}_{i,s,t}\leq q^{use}_{i,s,t}$ in every year, because current use can fall while installed organizational integration persists. If the empirical application assumes non-decreasing use, this stronger inequality may be imposed as a robustness restriction.
-
 \subsection[No-double-counting construction of T]{No-double-counting construction of $T_{i,s,t}$}\label{subsec:ndc_translation_main}
 
 The preferred country translation factor separates productive exposure from productive adoption without reusing the same information twice. Under the baseline convention, $E^{prod}$ enters the translation score, while $q^{prod}$ is calibrated from preparedness and frictions, not from $E^{prod}$. Define
@@ -773,19 +748,11 @@ The minimum AI-induced level-gain threshold exists only when net marginal gross 
     Valid^{g*,gross}_{i,p,s,r,t}(\xi)
     =\mathbf{1}\left\{\widetilde{MFC}^{gross}_{i,s,r,t}>0,\ R^{req,gross}_{i,p,s,r,t}(\xi)>0\right\}.
 \end{equation}
-For valid cells,
-\begin{equation}\label{eq:gstar_gross_main_v17}
-    g^{AI,*,gross}_{i,p,s,r,t}(\xi)=\frac{R^{req,gross}_{i,p,s,r,t}(\xi)}{\widetilde{MFC}^{gross}_{i,s,r,t}}.
-\end{equation}
-If $\widetilde{MFC}^{gross}\leq0$ and $R^{req,gross}>0$, the growth threshold is reported as infeasible under positive net marginal fiscal capture, equivalently $g^{AI,*}=+\infty$ for ranking purposes. It is not reported as a negative or finite crossing value. The debt-consistent version replaces $R^{req,gross}$ with $R^{req,gross,DC}$ and uses the same existence rule. These closed-form thresholds are reduced-form or frozen-weight thresholds. In endogenous channel-based mode, where $rev^{ch}(g)$ is not linear in $g$, the growth threshold is instead the smallest feasible $g\geq0$ satisfying
+For valid cells, the closed-form inversions for $g^{AI,*}$, $MFC^{gross,*}$, and $T^{*,static}$ are stated jointly in Proposition \ref{prop:unified_inversion}. In endogenous channel-based mode, the growth threshold is instead the smallest feasible $g\geq0$ satisfying
 \begin{equation}\label{eq:gstar_channel_root_v24}
     fs^{eff,ch}_{i,p,s,r,t}(g)\geq R^{req}_{i,p,t}(\xi),
 \end{equation}
-with $R^{req,DC}$ used for the debt-consistent version and $fs^{eff,ch}(g)-\Omega^{res}$ used if the residual stress-test penalty is activated. The minimum gross fiscal-conversion threshold before marginal-equivalent deductions exists only when $g^{AI}_{i,s,t}>0$:
-\begin{equation}\label{eq:mfcstar_gross_main_v17}
-    MFC^{gross,*}_{i,p,s,r,t}(\xi)=\frac{R^{req,gross}_{i,p,s,r,t}(\xi)}{g^{AI}_{i,s,t}}+ac^{ME}_{i,s,r,t}+tr^{ME}_{i,s,r,t}+leak^{ME}_{i,s,r,t},
-    \qquad g^{AI}_{i,s,t}>0.
-\end{equation}
+with $R^{req,DC}$ used for the debt-consistent version and $fs^{eff,ch}(g)-\Omega^{res}$ used if the residual stress-test penalty is activated.
 If $g^{AI}\leq0$ and the required revenue is positive, no finite gross-capture threshold exists. For reporting only, the derived effective per-unit threshold is
 \begin{equation}\label{eq:mfcstar_eff_main_v17}
     MFC^{eff,*}_{i,p,s,r,t}(\xi)=\frac{R^{req}_{i,p,t}(\xi)}{g^{AI}_{i,s,t}},
@@ -1305,102 +1272,31 @@ Let $\Theta^{(m)}$ denote draw $m$ of the uncertain-input vector. The full vecto
 
 In an observed-adoption mode, $q^{prod}$ is drawn from observed adoption or measurement-error distributions and $A,I,Gap$ are controls/descriptors. In the baseline anchored simulated-adoption mode, $A,I,Gap,\lambda_q,\nu_A,\nu_I,\nu_G$, and the target moment $q^{use,target}_{i,t_0}$ are primitives; $\mu_{i,s,t_0}$ is derived by logit inversion and is not interpreted as an independently identified structural coefficient. In a structural-intercept robustness mode, a common or hierarchical intercept is drawn directly and the target-matching inversion is not used. In all simulated-adoption modes, $q^{use}$ and $q^{prod}$ are derived endogenously and $q^{prod}$ is not drawn independently.
 
-In the channel-based fiscal mode, gross fiscal capture is derived from tax-base channels and is not drawn independently. If thresholds vary the AI shock, adoption, or translation support, the implementation must declare whether channel weights are frozen at the realized scenario or recomputed endogenously. Frozen-weight thresholds may use the closed-form formulas in the main text; endogenous channel thresholds must solve Equation \eqref{eq:channel_revenue_function_v24} directly:
-\begin{equation}\label{eq:theta_channel_main_v17}
-\begin{split}
-    \Theta^{(m)}_{channel}=\{&\phi^{raw}_{s,u},\kappa^{u\to Y},\pi^{AI,Y},A,E^{prod},I,Gap,\lambda_q,
-    \nu_A,\nu_I,\nu_G,\omega_I,\omega_G,q^{use,target},
-    \tau^{L,fisc,eff},\tau^{K,fisc,eff},\tau^{C,eff},\tau^{AI,eff},\lambda^{AI},\\
-    &ac^{net,fix},tr^{ann},leak^{fix},ac^{ME},tr^{ME},leak^{ME},
-    \rho_L,\rho_K,\rho_C,\rho_E,\rho_\psi,\alpha,\beta,\gamma,\\
-    &LS,E^{auto},E^{aug},RST,\delta,\psi,\zeta,\lambda_{LS},\chi^{Kbase},
-    mpc^W,mpc^{\Pi},mpc^R,m^M,exempt^C,\chi^{dom},\psi^{shift},\theta^{R,dom},\tau^{L,disp},\tau^{K,disp},\tau^{R,disp},\\
-    &\Omega^{res},s^{PB},c^{gross},c^{net}\}^{(m)},
-\end{split}
-\end{equation}
-with $MFC^{gross,(m)}$ computed from the channel equation.
-The AI-rent block is written here in composite form $\tau^{AI,eff}$; the fully decomposed parameterization $\tau^{AI}$, $\chi^{AI,dom}$, $\psi^{shift,tech}$, $\chi^{AI,compliance}$, and $\chi^{AI,enforce}$ in Appendix \ref{app:uncertainty_module} is the complete primitive set, with $\tau^{AI,eff}=\tau^{AI}\chi^{AI}$ as the derived composite.
-In the historical reduced-form mode, gross fiscal capture is drawn directly from the historical gross-capture distribution and channel rates are not used to construct it:
-\begin{equation}\label{eq:theta_hist_main_v17}
-\begin{split}
-    \Theta^{(m)}_{hist}=\{&\phi^{raw}_{s,u},\kappa^{u\to Y},\pi^{AI,Y},A,E^{prod},I,Gap,\lambda_q,\nu_A,\nu_I,\nu_G,q^{use,target},\omega_I,\omega_G,
-    MFC^{gross},ac^{net,fix},tr^{ann},leak^{fix},ac^{ME},tr^{ME},leak^{ME},\\
-    &\alpha,\beta,\gamma,
-    \Omega^{res},s^{PB},c^{gross},c^{net}\}^{(m)}.
-\end{split}
-\end{equation}
+In the channel-based fiscal mode, gross fiscal capture is derived from tax-base channels and is not drawn independently. If thresholds vary the AI shock, adoption, or translation support, the implementation must declare whether channel weights are frozen at the realized scenario or recomputed endogenously. Frozen-weight thresholds may use the closed-form formulas in the main text; endogenous channel thresholds must solve Equation \eqref{eq:channel_revenue_function_v24} directly. The complete mode-specific uncertainty vectors are specified in Appendix \ref{app:uncertainty_module}: channel mode derives $MFC^{gross,(m)}$ from its primitives, while historical reduced-form mode draws gross fiscal capture directly. The fully decomposed AI-rent parameterization $\tau^{AI}$, $\chi^{AI,dom}$, $\psi^{shift,tech}$, $\chi^{AI,compliance}$, and $\chi^{AI,enforce}$ in that appendix is the complete primitive set, with $\tau^{AI,eff}=\tau^{AI}\chi^{AI}$ as the derived composite.
 Capturability elasticities $\rho_j$ have no equation in the historical reduced-form mode and are therefore not primitives of $\Theta_{hist}$. Under the labelled alternative conventions, the corresponding parameters are added to the declared vector and recorded in the audit trail: $\psi^{K,rate}$ for rate-side profit shifting and $\epsilon^{ero,j}$ for the behavioral-erosion companion of reform regimes.
 Channel rates may be reported descriptively in the historical reduced-form mode, but they are not simultaneously used to build $MFC^{gross}$. The Monte Carlo specification must also declare whether adoption is observed or simulated; $q^{prod}$ is a primitive only in observed-adoption mode. The baseline stochastic vector draws fixed GDP-share costs and marginal-equivalent deductions with each cost component assigned to exactly one margin, according to the declared convention. Nominal $AC$, $TR$, and $Leak$ objects are derived from GDP when needed; they are not drawn independently from normalized objects in the same simulation.
 
-For each draw, compute effective fiscal space directly:
-\begin{equation}\label{eq:mc_fs_eff_v17}
-    fs^{eff,(m)}=\widetilde{MFC}^{gross,(m)}g^{AI,level,(m)}-ac^{net,fix,(m)}-tr^{ann,(m)}-leak^{fix,(m)}.
-\end{equation}
-When $g^{AI,level,(m)}>0$, the derived per-unit object is
-\begin{equation}
-    MFC^{eff,(m)}=\frac{fs^{eff,(m)}}{g^{AI,level,(m)}}.
-\end{equation}
+For each draw, effective fiscal space is computed directly from net marginal gross capture and fixed costs; when $g^{AI,level,(m)}>0$, the per-unit object $MFC^{eff,(m)}=fs^{eff,(m)}/g^{AI,level,(m)}$ is derived rather than drawn. The complete draw-level specification is in Appendix \ref{app:uncertainty_module}.
 A draw with $fs^{eff,(m)}<0$ is not invalid. It is an economically meaningful failure draw: administrative costs, transition costs, and leakage exceed gross AI-generated fiscal space. Such draws remain in the all-draw feasibility probability and lower the crossing probability.
-The basic denominator-validity indicator is
-\begin{equation}\label{eq:valid_draw_main_v17}
-    Valid^{basic,(m)}=\mathbf{1}\{c^{gross,(m)}>0\}.
-\end{equation}
+Arithmetic/basic validity requires $c^{gross,(m)}>0$.
 Draws with $g^{AI,level,(m)}=0$ are included as non-crossing economic draws in $\widehat{\pi}(\xi)$ and $\widehat{\pi}^{basic}(\xi)$; they are excluded only from threshold-ratio inversions that require division by a positive AI-induced level gain.
 Growth and translation/adoption thresholds condition on the single computability indicator $Valid^{threshold,(m)}$ defined in Equation \eqref{eq:valid_threshold_operational_v25}; the growth threshold uses only the subset of conditions it needs, but the bundled indicator is the conservative reporting standard.
 If $\widetilde{MFC}^{gross,(m)}\leq0$ with a positive required-revenue target, the draw is a valid economic failure draw but its growth, adoption, and translation thresholds are reported as non-positive-net-capture infeasible rather than divided through. AI-rent effective-rate thresholds condition on $Valid^{AIrent,eff}$; statutory-rate thresholds condition on $Valid^{AIrent,stat}$.
-Then compute
-\begin{equation}
-    V^{gross,(m)}=\frac{fs^{eff,(m)}}{c^{gross,(m)}}.
-\end{equation}
-The net object is computed only for draws with $c^{net,(m)}>0$:
-\begin{equation}
-    V^{net,(m)}=\frac{fs^{eff,(m)}}{c^{net,(m)}}\quad\text{if }c^{net,(m)}>0.
-\end{equation}
+The gross feasibility ratio is $V^{gross,(m)}=fs^{eff,(m)}/c^{gross,(m)}$. The net ratio $V^{net,(m)}=fs^{eff,(m)}/c^{net,(m)}$ is computed only for draws with $c^{net,(m)}>0$.
 If $c^{net,(m)}=0$, the draw is classified as already covered by existing spending on the net-cost margin. $V^{gross}$ remains the baseline reporting object.
 
 \subsection{Monte Carlo output layers}
 
-For each country-policy-scenario-regime cell, report
-\begin{equation}
-    \{P5,P25,P50,P75,P95\}(V^{gross}).
-\end{equation}
-Then report the full crossing-probability grid:
-\begin{equation}
-    \widehat{\pi}(\xi)=\frac{1}{M}\sum_{m=1}^{M}\mathbf{1}\{V^{gross,(m)}\geq1+\xi\},
-    \qquad
-    \xi\in\{0,0.05,0.10,0.25,0.50\}.
-\end{equation}
-The basic-valid and support-valid versions are
-\begin{equation}
-    \widehat{\pi}^{basic}(\xi)=
-    \frac{\sum_m Valid^{basic,(m)}\mathbf{1}\{V^{gross,(m)}\geq1+\xi\}}
-    {\sum_m Valid^{basic,(m)}}
-    \quad\text{if }\sum_m Valid^{basic,(m)}>0,
-\end{equation}
-\begin{equation}
-    \widehat{\pi}^{support}(\xi)=
-    \frac{\sum_m Valid^{support,(m)}\mathbf{1}\{V^{gross,(m)}\geq1+\xi\}}
-    {\sum_m Valid^{support,(m)}}
-    \quad\text{if }\sum_m Valid^{support,(m)}>0.
-\end{equation}
+For each country-policy-scenario-regime cell, the percentile and conditional-probability layers are those specified in Appendix \ref{app:uncertainty_module}; the canonical all-draw crossing grid is Equation \eqref{eq:mc_prob_main_v10}.
 If the denominator is zero, the corresponding conditional probability is reported as undefined/NA and the relevant valid-share, $\pi^{basic}$ or $\pi^{support}$, is reported as zero. This distinguishes ``no valid support exists'' from ``valid support exists but no draw crosses the threshold.'' The debt-consistent version uses Equation \eqref{eq:debt_requirement_main_v10}.
 
 \subsection{Distributional choices and dependence}
 
-The baseline distribution for low-central-high calibrated scalar parameters is bounded PERT. Triangular and truncated-uniform draws are robustness checks, not the baseline convention. Bounded share variables may also be drawn from beta distributions when moments are available. Dependence between preparedness, adoption, informality, and fiscal capacity may be implemented through correlated latent shocks. Because the signs cluster advantages, scenario-consistent dependence widens the cross-country dispersion of $V$ relative to independence: strong countries cross earlier and weak countries later. If dependence is imposed, the paper should report Spearman and tornado diagnostics as the baseline sensitivity outputs and reserve classical Sobol indices for an independent-input diagnostic run or a dependence-aware sensitivity method.
+The baseline distribution for low-central-high calibrated scalar parameters is bounded PERT. Triangular and truncated-uniform draws are robustness checks, not the baseline convention. Bounded share variables may also be drawn from beta distributions when moments are available. Dependence between preparedness, adoption, informality, and fiscal capacity may be implemented through correlated latent shocks. If dependence is imposed, the paper should report Spearman and tornado diagnostics as the baseline sensitivity outputs and reserve classical Sobol indices for an independent-input diagnostic run or a dependence-aware sensitivity method; Appendix \ref{app:uncertainty_module} gives the scenario-consistent dependence structure.
 
 \subsection{Global sensitivity and stress tests}
 
-Report Spearman rank correlations
-\begin{equation}
-    \rho^S_j=Corr_S(\theta_j,V^{gross}),
-\end{equation}
-one-at-a-time tornado ranges, and grouped block sensitivity for AI productivity, adoption, fiscal capture, informality, leakage, and cost \citep{mckay1979lhs,morris1991factorial,saltelli2008global,sobol2001global}. Where inputs are independent, first-order and total-order Sobol indices may be reported:
-\begin{equation}
-    S_j=\frac{Var_{\theta_j}\left(E[V\mid\theta_j]\right)}{Var(V)},
-    \qquad
-    S^T_j=1-\frac{Var_{\theta_{-j}}\left(E[V\mid\theta_{-j}]\right)}{Var(V)}.
-\end{equation}
+Report Spearman rank correlations, one-at-a-time tornado ranges, and grouped block sensitivity for AI productivity, adoption, fiscal capture, informality, leakage, and cost \citep{mckay1979lhs,morris1991factorial,saltelli2008global,sobol2001global}. Classical Sobol indices are reserved for independent-input diagnostic runs or dependence-aware sensitivity methods; Appendix \ref{app:uncertainty_module} gives the full formulas and protocol.
 
 \subsection{Numerical precision and reproducibility}
 
@@ -1469,17 +1365,7 @@ ASPIRE is the preferred source for existing social protection expenditure, cover
 
 \subsection{AI exposure, adoption, and fiscal conversion in the pilot}
 
-For the initial Latin American pilot, country-specific productive exposure may be initialized using the World Bank--ILO regional range
-\begin{equation}
-    E^{prod}_{i,t}\in[0.08,0.14],\qquad
-    E^{disp}_{i,t}\in[0.02,0.05],\qquad
-    E^{total}_{i,t}\in[0.26,0.38],
-\end{equation}
-where $E^{prod}$ is the productive transformation share, $E^{disp}$ is the displacement-risk share, and $E^{total}$ is total exposure \citep{worldbankilo2024lacgenai}. Country differentiation then enters through AIPI, informality, digital gaps, and the logistic adoption equation:
-\begin{equation}
-    q^{use}_{i,s,t}=\bar q_{i,t}\Lambda(\ell^q_{i,s,t}),\qquad
-    q^{prod}_{i,s,t}=\min\{\bar q_{i,t},(1-\lambda_q)q^{prod}_{i,s,t-1}+\lambda_q q^{use}_{i,s,t}\}.
-\end{equation}
+The pilot uses the World Bank--ILO exposure ranges defined in Section \ref{subsec:prod_disp_exposure_main}. Country differentiation through AIPI, informality, digital gaps, and productive adoption follows the logistic and diffusion module in Section \ref{subsec:logistic_adoption_main}.
 The final pilot table must report, for every country-policy-scenario-regime cell,
 \begin{equation}
     \left(A_i,E^{prod}_i,q^{prod}_{i,s,t},I_i,MFC^{gross}_{i,s,r,t},fs^{eff}_{i,p,s,r,t},c_{i,p,t},V_{i,p,s,r,t}\right).
@@ -2486,29 +2372,7 @@ To avoid circularity and relative-sample inflation, the adoption threshold uses 
 \begin{equation}
     S^{NDC}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde E^{prod}_{i,t})^\beta(\tilde q^{prod,num}_{i,s,t})^\gamma,
 \end{equation}
-first compute the one-period static translation requirement
-\begin{equation}\label{eq:T_req_app_v10}
-    T^{req,static}_{i,p,s,r,t}(\xi)=\frac{R^{req,gross}_{i,p,s,r,t}(\xi)}{\phi^{Y,nom}_s\widetilde{MFC}^{gross}_{i,s,r,t}},
-    \qquad \phi^{Y,nom}_s>0,\quad \widetilde{MFC}^{gross}_{i,s,r,t}>0.
-\end{equation}
-For accumulated-horizon runs, replace $T^{req,static}$ with the numerical or closed-form accumulated-horizon solution implied by Equation \eqref{eq:accumulated_threshold_condition_v22}; do not use the static inversion unless the implementation is explicitly one-period static. In endogenous channel-based mode, this inversion is additionally interpreted as a frozen-weight diagnostic; the operative adoption threshold is obtained by solving $fs^{eff,ch}(T)$ or $fs^{eff,ch}(q^{prod})$ directly, holding fixed only the parameters that the scenario protocol declares exogenous.
-If $\phi^{Y,nom}_s\leq0$ or $\widetilde{MFC}^{gross}\leq0$ with positive required revenue, no finite adoption threshold exists and the cell is labelled non-positive technology/fiscal support. If $T^{req,static}>1$, even the saturated value $T=1$ cannot cross the threshold and the cell is classified as technology/fiscal-support insufficient. If $0<T^{req,static}\leq1$, the normalized adoption threshold is
-\begin{equation}\label{eq:qtilde_star_app_v10}
-    \tilde q^{prod,*}_{i,p,s,r,t}(\xi)=
-    \left[
-    \frac{T^{req,static}_{i,p,s,r,t}(\xi)S^{ref}_{s,t}}
-    {(\tilde E^{prod}_{i,t})^{\beta}}
-    \right]^{1/\gamma}.
-\end{equation}
-If $\tilde q^{num}=\epsilon+(1-\epsilon)q$, first compute the raw original-scale threshold:
-\begin{equation}\label{eq:q_orig_star_app_v10}
-    q^{prod,*,raw}_{i,p,s,r,t}(\xi)=\frac{\tilde q^{prod,*}_{i,p,s,r,t}(\xi)-\epsilon}{1-\epsilon}.
-\end{equation}
-The reported adoption threshold is truncated at the lower support bound:
-\begin{equation}\label{eq:q_orig_star_truncated_app_v10}
-    q^{prod,*}_{i,p,s,r,t}(\xi)=\max\{0,q^{prod,*,raw}_{i,p,s,r,t}(\xi)\}.
-\end{equation}
-Diagnostics must be applied to the truncated original-scale object $q^{prod,*}$, not only to $\tilde q^{prod,*}$. If $q^{prod,*}>\bar q_i$, feasibility cannot be obtained by adoption alone under the maintained exposure, AI-productivity, and fiscal-conversion assumptions. For positive required revenue, $q^{prod,*}=0$ is never reported as a substantive adoption crossing because the zero-adoption/zero-exposure gate sets $S=T=g^{AI}=0$. The unique operational definition of floor-driven is the one in Section \ref{subsec:impossibility_score}, Equation \eqref{eq:floor_driven_operational_v25}: $q^{prod,*}=0$, $\epsilon>0$, and the crossing fails when $\epsilon=0$. Such a cell is not counted as adoption-feasible. A substantive adoption crossing must satisfy $q^{prod,*}>0$ and $q^{prod,*}\leq\bar q_i$.
+The closed-form translation and adoption thresholds, including the conversion back from the floor-regularized scale and lower-support truncation, are stated in Proposition \ref{prop:q_threshold_v10}. If $\phi^{Y,nom}_s\leq0$ or $\widetilde{MFC}^{gross}\leq0$ with positive required revenue, no finite adoption threshold exists and the cell is labelled non-positive technology/fiscal support. If $T^{req,static}>1$, even the saturated value $T=1$ cannot cross the threshold and the cell is classified as technology/fiscal-support insufficient. Diagnostics apply to the truncated original-scale object $q^{prod,*}$; if $q^{prod,*}>\bar q_i$, feasibility cannot be obtained by adoption alone under the maintained exposure, AI-productivity, and fiscal-conversion assumptions. The unique operational definition of floor-driven is the one in Section \ref{subsec:impossibility_score}, Equation \eqref{eq:floor_driven_operational_v25}: $q^{prod,*}=0$, $\epsilon>0$, and the crossing fails when $\epsilon=0$. Such a cell is not counted as adoption-feasible. A substantive adoption crossing must satisfy $q^{prod,*}>0$ and $q^{prod,*}\leq\bar q_i$.
 
 \subsection{Minimum base-shock threshold}
 
@@ -2656,7 +2520,20 @@ The crossing-probability grid is
     \widehat{\pi}(\xi)=\frac{1}{M}\sum_{m=1}^{M}\mathbf{1}\{V^{gross,(m)}\geq1+\xi\},
     \qquad \xi\in\{0,0.05,0.10,0.25,0.50\}.
 \end{equation}
-The basic-valid version conditions only on arithmetic validity, while the support-valid version conditions on threshold computability and no bounded-support violation. Report $\pi^{threshold|basic}$ and $IS^{support|threshold}$ to separate non-computable thresholds from support violations, and retain $\pi^{support|basic}$ as the aggregate support-valid share. The debt-consistent version additionally requires $fs^{eff,(m)}\geq(1+\xi)c^{gross,(m)}+s^{PB,(m)}$.
+The basic-valid and support-valid versions are
+\begin{equation}
+    \widehat{\pi}^{basic}(\xi)=
+    \frac{\sum_m Valid^{basic,(m)}\mathbf{1}\{V^{gross,(m)}\geq1+\xi\}}
+    {\sum_m Valid^{basic,(m)}}
+    \quad\text{if }\sum_m Valid^{basic,(m)}>0,
+\end{equation}
+\begin{equation}
+    \widehat{\pi}^{support}(\xi)=
+    \frac{\sum_m Valid^{support,(m)}\mathbf{1}\{V^{gross,(m)}\geq1+\xi\}}
+    {\sum_m Valid^{support,(m)}}
+    \quad\text{if }\sum_m Valid^{support,(m)}>0.
+\end{equation}
+Report $\pi^{threshold|basic}$ and $IS^{support|threshold}$ to separate non-computable thresholds from support violations, and retain $\pi^{support|basic}$ as the aggregate support-valid share. The debt-consistent version additionally requires $fs^{eff,(m)}\geq(1+\xi)c^{gross,(m)}+s^{PB,(m)}$.
 
 \begin{longtable}{p{0.18\textwidth}p{0.36\textwidth}p{0.34\textwidth}}
 \caption{Required Monte Carlo output layers}\label{tab:mc_output_layers}\\
