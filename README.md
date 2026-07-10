@@ -4,12 +4,12 @@ Reproduction package for a calibrated accounting-fiscal threshold framework on
 AI-induced fiscal space and universal or categorical social protection in Peru,
 Chile, Colombia, and Mexico.
 
-Current status: Phase B release candidate. Tier A deterministic outputs, Tier B
-Monte Carlo, Tier D diagnostics/falsification, robustness tables, final
-hypothesis adjudication, paper tables, and reference outputs are implemented.
-The official data snapshot is `v1.0.1-official-4c`. The deterministic official
-grid remains `baseline-official-v2`; Phase B uncertainty/diagnostics use
-`baseline-official-v3`.
+Current status: the official pipeline is complete, five registered post-baseline
+extensions are implemented, and paper v3 is in submission preparation. The
+official data snapshot is `v1.0.1-official-4c`; the deterministic grid remains
+`baseline-official-v2`, while uncertainty and diagnostics use
+`baseline-official-v3`. See `REPRODUCING.md` for reviewer commands and
+`REPRODUCIBILITY_STATUS.md` for the current operational inventory.
 
 ## Requirements
 

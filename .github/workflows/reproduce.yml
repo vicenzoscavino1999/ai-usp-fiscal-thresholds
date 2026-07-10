@@ -24,6 +24,9 @@ jobs:
       - name: Check mini snapshot fixture
         run: python -m json.tool tests/fixtures/mini_snapshot/dataset_manifest_mini.json > /dev/null
 
+      - name: Verify frozen specification and protected tracked files
+        run: python reproducibility/verify_freeze.py
+
       - name: Unit and contract tests
         run: python -m pytest -q
 

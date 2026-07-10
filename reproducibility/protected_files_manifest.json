@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-07-10T21:57:23.826159+00:00",
+  "generated_from_commit": "d268ef076644a30ebe9a28f8b16ab664f2cb3d34",
+  "scope_note": "Tracked frozen specification and official comparators consumed by post-baseline extensions; author-held runtime mirrors under data/, db/, and results/ are outside this standalone manifest.",
+  "hash_mode": "sha256 of bytes; CRLF is normalized to LF for declared text suffixes",
+  "protected_files": [
+    {
+      "path": "02_ESD_AI_USP_v6.md",
+      "sha256": "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81"
+    },
+    {
+      "path": "PRIMARY_SPEC_HASH.txt",
+      "sha256": "a3d22e685c5f37a967d6d34c54579da05a35b27ce8ae33e8ee0094d24289b767"
+    },
+    {
+      "path": "reports/calibrated_parameter_registry_baseline-official-v3.csv",
+      "sha256": "8cf76fbda2a83c60c042c78a752b94c2c1c64a7083718dff222313b81378e15c"
+    },
+    {
+      "path": "reports/country_policy_classification_final_baseline-official-v3.csv",
+      "sha256": "62e705b213333aeb1a4bcb5a9be9406ab521f313284c676b1642f49def7eac85"
+    },
+    {
+      "path": "reports/driver_ranking_baseline-official-v3.csv",
+      "sha256": "4406bec2a5900a5beb751aeeaf48dd58ab2eb41efba129fc7c4ceb2b09560c9c"
+    },
+    {
+      "path": "reports/fiscal_space_result_baseline-official-v2.csv",
+      "sha256": "f0cb7f1cf58d6cb2db420beb651225d9c510db5f28a62ace0a160b4ea43de3a7"
+    },
+    {
+      "path": "reports/monte_carlo_result_baseline-official-v3.csv",
+      "sha256": "52a147519a213a6ba9700058b8691cdf66877107d48607c252976511d13ad635"
+    },
+    {
+      "path": "reports/paper_tables/table2_policy_costs.csv",
+      "sha256": "653294f9d5823fe15537e41d9258a66400d2fbbc04846f8b36e21316a559ce37"
+    },
+    {
+      "path": "reports/policy_parameter_official_4c.csv",
+      "sha256": "4b64c396a6cda7e396f2b0bfd28635505a6fb4e8008546a453acd3b5a5e23cee"
+    },
+    {
+      "path": "reports/value_assignment_table_baseline-official-v3.csv",
+      "sha256": "5d0cccff856725ccbb19486595a12aed84f153a454d0e6f5d7dcf5f14e3886aa"
+    },
+    {
+      "path": "reproducibility/reference/country_policy_classification_final.csv",
+      "sha256": "62e705b213333aeb1a4bcb5a9be9406ab521f313284c676b1642f49def7eac85"
+    },
+    {
+      "path": "reproducibility/reference/driver_ranking.csv",
+      "sha256": "ebb213f492263cca52a5eb19e5f01bea3a8373b6dad00add7d909c98938691c2"
+    },
+    {
+      "path": "reproducibility/reference/fiscal_space_result.csv",
+      "sha256": "f0cb7f1cf58d6cb2db420beb651225d9c510db5f28a62ace0a160b4ea43de3a7"
+    },
+    {
+      "path": "reproducibility/reference/monte_carlo_result.csv",
+      "sha256": "52a147519a213a6ba9700058b8691cdf66877107d48607c252976511d13ad635"
+    }
+  ],
+  "amendment_registries": [
+    "reports/h_star_amendment_registry_baseline-official-v3.csv",
+    "reports/omega_i_reporting_extension_amendment_registry_baseline-official-v3.csv",
+    "reports/lsraw_robustness_amendment_registry_baseline-official-v3.csv",
+    "reports/gmimicro_robustness_amendment_registry_baseline-official-v3.csv",
+    "reports/gmimicro_chl_robustness_amendment_registry_baseline-official-v3.csv"
+  ]
+}

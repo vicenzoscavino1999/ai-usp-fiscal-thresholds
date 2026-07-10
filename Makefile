@@ -2,9 +2,9 @@ DATASET_VERSION ?= v1.0.1-official-4c
 PARAMETER_SET_ID ?= baseline-official-v2
 RUN_LABEL ?= official
 
-.PHONY: reproduce build-from-frozen-dataset run verify figures test check reproduce-deterministic reproduce-full run-diagnostics check-env determinism-check not-implemented
+.PHONY: reproduce build-from-frozen-dataset run verify verify-freeze verify-extensions reproduce-extensions figures test check reproduce-deterministic reproduce-full run-diagnostics check-env determinism-check
 
-reproduce: run verify
+reproduce: reproduce-full verify-freeze verify-extensions
 
 build-from-frozen-dataset:
 	python scripts/build_anchors_from_snapshot.py --dataset-version $(DATASET_VERSION) --strict-gates
@@ -14,6 +14,15 @@ run:
 
 verify:
 	python reproducibility/verify.py
+
+verify-freeze:
+	python reproducibility/verify_freeze.py
+
+verify-extensions:
+	python reproducibility/verify_extensions.py
+
+reproduce-extensions:
+	python reproducibility/reproduce_extensions.py
 
 figures:
 	python scripts/finalize_phase_b.py
@@ -42,8 +51,4 @@ check-env:
 	python reproducibility/run_all.py --check-env-only
 
 determinism-check:
-	$(MAKE) not-implemented TARGET=$@
-
-not-implemented:
-	@echo "$(TARGET) no implementado en Etapa 1"
-	@exit 1
+	python -m pytest tests/test_determinism.py tests/test_determinism_mc.py -q
