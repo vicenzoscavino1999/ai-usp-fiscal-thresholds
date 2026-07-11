@@ -371,6 +371,7 @@ The preferred country translation factor separates productive exposure from prod
     S^{NDC}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde E^{prod}_{i,t})^{\beta}(\tilde q^{prod,num}_{i,s,t})^{\gamma},
 \end{equation}
 where $NDC$ denotes no-double-counting and $\tilde E^{prod}_{i,t}$ and $\tilde q^{prod,num}_{i,s,t}$ are the floor-regularized inputs $\tilde X=\epsilon+(1-\epsilon)X$ defined in Appendix \ref{app:ai_shock_module}. The full score with direct preparedness is a labelled robustness specification, valid only when $q^{prod}$ is independently observed from adoption data rather than generated from $A$ or $E^{prod}$ (Appendix \ref{app:ai_shock_module}).
+If, instead, adoption is simulated with $E^{prod}$ inside the adoption equation, the baseline score must drop the direct exposure term and use $S^{q\text{-}only}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde q^{prod,num}_{i,s,t})^{\gamma}$, retaining the zero-adoption/zero-exposure gate; otherwise the specification is a partial double-counting correction, not a no-double-counting specification.
 
 The baseline translation factor is
 \begin{equation}\label{eq:T_ndc_main_v10}
@@ -772,20 +773,7 @@ All feasibility thresholds transform the accounting backbone in Equation \eqref{
     g^{AI}_{i,s,t}\widetilde{MFC}^{gross}_{i,s,r,t}\geq R^{req,gross}_{i,p,s,r,t}(\xi).
 \end{equation}
 
-\begin{proposition}[Feasibility-frontier equivalence]\label{prop:frontier_equivalence}
-Assume $c^{gross}_{i,p,t}>0$, $\widetilde{MFC}^{gross}_{i,s,r,t}>0$, and $g^{AI}_{i,s,t}>0$. For any buffer $\xi\geq0$, the following statements are equivalent under the non-debt baseline:
-\begin{align}
-    V^{gross}_{i,p,s,r,t}&\geq1+\xi,\\
-    fs^{eff}_{i,p,s,r,t}&\geq(1+\xi)c^{gross}_{i,p,t},\\
-    \widetilde{MFC}^{gross}_{i,s,r,t}g^{AI}_{i,s,t}&\geq R^{req,gross}_{i,p,s,r,t}(\xi),\\
-    (g^{AI}_{i,s,t},\widetilde{MFC}^{gross}_{i,s,r,t})&\in\mathcal{F}^{\widetilde{MFC}}_{i,p,s,r,t}(\xi).
-\end{align}
-The debt-consistent version is obtained by replacing $R^{req,gross}$ with $R^{req,gross,DC}$.
-\end{proposition}
-
-\begin{proof}
-Substitute $V^{gross}=fs^{eff}/c^{gross}$ and $fs^{eff}=\widetilde{MFC}^{gross}g^{AI}-ac^{net,fix}-tr^{ann}-leak^{fix}$, then move the fixed-cost terms to the right-hand side.
-\end{proof}
+For $c^{gross}_{i,p,t}>0$, $\widetilde{MFC}^{gross}_{i,s,r,t}>0$, and $g^{AI}_{i,s,t}>0$, the conditions $V^{gross}_{i,p,s,r,t}\geq1+\xi$, $fs^{eff}_{i,p,s,r,t}\geq(1+\xi)c^{gross}_{i,p,t}$, $\widetilde{MFC}^{gross}_{i,s,r,t}g^{AI}_{i,s,t}\geq R^{req,gross}_{i,p,s,r,t}(\xi)$, and membership in $\mathcal{F}^{\widetilde{MFC}}_{i,p,s,r,t}(\xi)$ are algebraically equivalent; the debt-consistent versions replace $R^{req,gross}$ with $R^{req,gross,DC}$.
 
 \begin{proposition}[Unified threshold inversion]\label{prop:unified_inversion}
 Define $R_{i,p,s,r,t}(\xi)\in\{R^{req,gross}_{i,p,s,r,t}(\xi),R^{req,gross,DC}_{i,p,s,r,t}(\xi)\}$. The following closed-form inversions assume that $\widetilde{MFC}^{gross}$ is fixed with respect to the variable being inverted; this holds in the historical reduced-form mode and in channel-based frozen-weight sensitivity exercises. If channel weights are recomputed endogenously as $g^{AI}$, $T$, or $q^{prod}$ changes, the implementation solves the corresponding root of Equation \eqref{eq:channel_revenue_function_v24} and reports the closed-form number only as a frozen-weight diagnostic. If $R>0$, $\widetilde{MFC}^{gross}>0$, $g^{AI}>0$, and $\phi^{Y,nom}_s>0$, then the required level-gain and gross-capture thresholds are
@@ -835,29 +823,7 @@ If $q^{prod,*}=0$, the cell is not automatically classified as substantively fea
 \begin{proof}
 Solve the feasibility inequality for $\tilde q^{prod,num}$ holding $S^{frontier}$, $\phi^{Y,nom}_s$, $\widetilde{MFC}^{gross}$, and $\tilde E^{prod}$ fixed. The second equation is the inverse of the floor transformation used to construct $\tilde q^{prod,num}$.
 \end{proof}
-\begin{proposition}[No-double-counting convention]\label{prop:ndc_warning}
-If $q^{prod}$ is simulated from preparedness and frictions,
-\begin{equation}
-    q^{prod}_{i,s,t}=h(A_{i,t},I_{i,t},Gap_{i,t}),
-\end{equation}
-then the baseline translation score may include $E^{prod}$ separately:
-\begin{equation}
-    S^{NDC}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde E^{prod}_{i,t})^{\beta}(\tilde q^{prod,num}_{i,s,t})^{\gamma}.
-\end{equation}
-If, instead, the adoption equation also includes $E^{prod}$, then the baseline score must remove the direct exposure term and use $S^{q\text{-}only}=\mathbf{1}\{q^{prod}>0,\ E^{prod}>0\}(\tilde q^{prod,num})^{\gamma}$, retaining the zero-adoption/zero-exposure gate, or the specification must be labeled a partial double-counting correction rather than a no-double-counting specification.
-\end{proposition}
-
-\begin{proof}
-If exposure enters both $h(\cdot)$ and $S$ directly, exposure affects $S$ through two channels. The convention above assigns exposure to the shock-translation margin and adoption to the diffusion margin, preventing the same exposure information from being multiplied twice.
-\end{proof}
-
-\begin{proposition}[Monotonicity and impossibility diagnostics]\label{prop:monotonicity_impossibility}
-Holding fixed-cost terms, marginal-equivalent deductions, $S^{frontier}$, and all other arguments fixed as appropriate, and restricting attention to draws with $\phi^{Y,nom}_s\geq0$ so that $g^{AI}\geq0$ because $T_{i,s,t}\in[0,1]$, feasibility is weakly increasing in $\phi$, $T$, and $g^{AI}$ provided $\widetilde{MFC}^{gross}\geq0$. With $\widetilde{MFC}^{gross}<0$, feasibility is weakly decreasing in the AI shock because marginal-equivalent deductions exceed marginal revenue. Feasibility is weakly increasing in $MFC^{gross}$ because $g^{AI}\geq0$ on this support, and weakly decreasing in $c^{gross}$ and $\xi$. Draws with $\phi^{Y,nom}_s<0$ are retained economic failure draws for which the derivatives with respect to $T$ and $MFC^{gross}$ reverse sign; in particular, a draw with both $g^{AI}<0$ and $\widetilde{MFC}^{gross}<0$ would mechanically yield $\widetilde{MFC}^{gross}g^{AI}>0$ and is classified as an economic failure draw, not as a crossing. For components entering through $T=\min\{1,S/S^{frontier}\}$, monotonicity is weak and becomes flat after saturation at $T=1$. Hard-support violations---$q^{prod,*}>\bar q_i$, $q^{use,*}>\bar q_i$, $\tau^{AI,eff,*}>\bar\tau^{AI,eff}$, $\tau^{AI,*}>\bar\tau^{AI}$, and $g^{AI,*}>g^{AI,max}$---make the policy-scenario pair infeasible through that margin. By contrast, $MFC^{gross,*}>P90(MFC^{hist,gross,+})$ is historically extreme, a plausibility flag rather than a support violation.
-\end{proposition}
-
-\begin{proof}
-The signs follow from differentiating Equation \eqref{eq:backbone_inequality_v17} under the stated ceteris-paribus conditions. The sign of the derivative with respect to $g^{AI}$ is the sign of $\widetilde{MFC}^{gross}$, while the derivative with respect to $MFC^{gross}$ is proportional to $g^{AI}$, which is non-negative on the restricted support $\phi^{Y,nom}_s\geq0$. Because $T$ is capped at one, changes in exposure or adoption that operate through $S$ have zero marginal effect after saturation. Hard-support diagnostics follow from the maintained supports of adoption, tax rates, and scenario-bounded AI growth; the historical fiscal-capture comparison is instead a plausibility diagnostic.
-\end{proof}
+Feasibility is weakly increasing in $\phi$, $T$, and $g^{AI}$ when $\widetilde{MFC}^{gross}\geq0$, weakly decreasing in the AI shock when $\widetilde{MFC}^{gross}<0$, weakly increasing in $MFC^{gross}$, and weakly decreasing in $c^{gross}$ and $\xi$; monotonicity through $T=\min\{1,S/S^{frontier}\}$ flattens at saturation. Draws with $\phi^{Y,nom}_s<0$ are retained as economic failure draws with reversed derivative signs, never as crossings. Hard-support violations define impossibility through a margin (Table \ref{tab:impossibility_diagnostics_v10}); a required capture above $P90(MFC^{hist,gross,+}_i)$ is a historical plausibility flag, not a support violation.
 
 The substantive implication is precise: disagreement about the size of the AI shock changes $\phi_s$; disagreement about diffusion changes $T$; disagreement about tax institutions changes $MFC^{gross}$ and the net fiscal-space deductions; disagreement about gross versus net program cost changes $c^{gross}$ or $c^{net}$; and debt prudence changes $s^{PB}$. The paper reports the frontier and the required thresholds rather than a single forecast.
 

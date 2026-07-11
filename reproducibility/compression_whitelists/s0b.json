@@ -1,0 +1,126 @@
+{
+  "type": "deletion-demotion",
+  "note": "S-0b demueve P1/P4/P5 a prosa compacta; deltas adjudicados por Claude tras el censo G9.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:backbone_inequality_v17}",
+      "delta": -1,
+      "justification": "vivia en la prueba de P5 (borrado aprobado); label huerfano aceptado, politica CB-7"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{prop:frontier_equivalence}",
+      "delta": -1,
+      "justification": "democion aprobada, 0 refs"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{prop:ndc_warning}",
+      "delta": -1,
+      "justification": "democion aprobada, 0 refs"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{prop:monotonicity_impossibility}",
+      "delta": -1,
+      "justification": "democion aprobada, 0 refs"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{tab:impossibility_diagnostics_v10}",
+      "delta": 1,
+      "justification": "puntero del texto B4 aprobado (pre-declarado)"
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -6,
+      "justification": "tokens estructurales de desigualdades borradas (>0, >=0); persisten en B1/B3/B4 y en la tabla de seccion 12"
+    },
+    {
+      "scope": "body",
+      "token": "number:1",
+      "delta": -3,
+      "justification": "indicadores 1{...} y saturacion T=1 de los duplicados borrados; persisten en S^NDC (L371) y T=min{1,.} (L377)"
+    },
+    {
+      "scope": "body",
+      "token": "sign:<",
+      "delta": -2,
+      "justification": "democion aprobada; las desigualdades persisten en los reemplazos, la tabla de seccion 12 y seccion 5"
+    },
+    {
+      "scope": "body",
+      "token": "sign:>",
+      "delta": -7,
+      "justification": "democion aprobada; las desigualdades persisten en los reemplazos, la tabla de seccion 12 y seccion 5"
+    },
+    {
+      "scope": "body",
+      "token": "sign:\\geq",
+      "delta": -5,
+      "justification": "democion aprobada; las desigualdades persisten en los reemplazos, la tabla de seccion 12 y seccion 5"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:backbone_inequality_v17}",
+      "delta": -1,
+      "justification": "vivia en la prueba de P5 (borrado aprobado); label huerfano aceptado, politica CB-7"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{prop:frontier_equivalence}",
+      "delta": -1,
+      "justification": "democion aprobada, 0 refs"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{prop:ndc_warning}",
+      "delta": -1,
+      "justification": "democion aprobada, 0 refs"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{prop:monotonicity_impossibility}",
+      "delta": -1,
+      "justification": "democion aprobada, 0 refs"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{tab:impossibility_diagnostics_v10}",
+      "delta": 1,
+      "justification": "puntero del texto B4 aprobado (pre-declarado)"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -6,
+      "justification": "tokens estructurales de desigualdades borradas (>0, >=0); persisten en B1/B3/B4 y en la tabla de seccion 12"
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": -3,
+      "justification": "indicadores 1{...} y saturacion T=1 de los duplicados borrados; persisten en S^NDC (L371) y T=min{1,.} (L377)"
+    },
+    {
+      "scope": "document",
+      "token": "sign:<",
+      "delta": -2,
+      "justification": "democion aprobada; las desigualdades persisten en los reemplazos, la tabla de seccion 12 y seccion 5"
+    },
+    {
+      "scope": "document",
+      "token": "sign:>",
+      "delta": -7,
+      "justification": "democion aprobada; las desigualdades persisten en los reemplazos, la tabla de seccion 12 y seccion 5"
+    },
+    {
+      "scope": "document",
+      "token": "sign:\\geq",
+      "delta": -5,
+      "justification": "democion aprobada; las desigualdades persisten en los reemplazos, la tabla de seccion 12 y seccion 5"
+    }
+  ]
+}
