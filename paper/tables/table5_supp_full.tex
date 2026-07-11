@@ -1,0 +1,72 @@
+\begin{landscape}
+\fontsize{6}{7.2}\selectfont
+\setlength{\tabcolsep}{1.5pt}
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\let\tableunderscore\_
+\renewcommand{\_}{\tableunderscore\allowbreak}
+\begin{longtable}{@{}
+>{\raggedright\arraybackslash}p{0.03\linewidth}
+>{\raggedright\arraybackslash}p{0.13\linewidth}
+>{\raggedright\arraybackslash}p{0.045\linewidth}
+>{\raggedright\arraybackslash}p{0.035\linewidth}
+>{\raggedright\arraybackslash}p{0.09\linewidth}
+>{\raggedright\arraybackslash}p{0.09\linewidth}
+>{\raggedright\arraybackslash}p{0.09\linewidth}
+>{\raggedright\arraybackslash}p{0.08\linewidth}
+>{\raggedright\arraybackslash}p{0.17\linewidth}
+>{\raggedright\arraybackslash}p{0.19\linewidth}
+@{}}
+\caption{Table 5. Threshold inversion: headline cells}\label{tab:results_inversions}\\
+\toprule
+country\_id & policy\_variant\_id & scenario\_id & regime\_id & requirement\_basis & g\_ai\_required & mfc\_required\_gross & q\_prod\_required & historical\_total\_revenue\_class & flags \\
+\midrule
+\endfirsthead
+\caption[]{Table 5. Threshold inversion: headline cells (continued)}\\
+\toprule
+country\_id & policy\_variant\_id & scenario\_id & regime\_id & requirement\_basis & g\_ai\_required & mfc\_required\_gross & q\_prod\_required & historical\_total\_revenue\_class & flags \\
+\midrule
+\endhead
+CHL & GMI:GMI\_ideal\_aggregate & mid & r0 & baseline & 0.058961369896838 & 0.1703917298779569 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r0 & debt\_consistent & 0.058961369896838 & 0.1703917298779569 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r1 & baseline & 0.055747862766219 & 0.1687742033362891 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r1 & debt\_consistent & 0.055747862766219 & 0.1687742033362891 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r2 & baseline & 0.0532949307271395 & 0.1687742033362891 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r2 & debt\_consistent & 0.0532949307271395 & 0.1687742033362891 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r3 & baseline & 0.0603464096353531 & 0.1697447192612898 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r3 & debt\_consistent & 0.0603464096353531 & 0.1697447192612898 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r4 & baseline & 0.0474832853486911 & 0.1671566767946213 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & mid & r4 & debt\_consistent & 0.0474832853486911 & 0.1671566767946213 &  & fiscally\_ordinary & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r0 & baseline & 0.0635180536168128 & 0.0466217878394694 & 0.07573616388301 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r0 & debt\_consistent & 0.0635180536168128 & 0.0466217878394694 & 0.07573616388301 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r1 & baseline & 0.0600690925713408 & 0.0461792077957997 & 0.071729694873811 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r1 & debt\_consistent & 0.0600690925713408 & 0.0461792077957997 & 0.071729694873811 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r2 & baseline & 0.0574083189193934 & 0.0461792077957997 & 0.0686307955270862 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r2 & debt\_consistent & 0.0574083189193934 & 0.0461792077957997 & 0.0686307955270862 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r3 & baseline & 0.0623048192908522 & 0.0464447558220015 & 0.0743281510510759 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r3 & debt\_consistent & 0.0623048192908522 & 0.0464447558220015 & 0.0743281510510759 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r4 & baseline & 0.04846101111926 & 0.0457366277521299 & 0.058158483206631 & fiscally\_ordinary & requirement\_already\_covered \\
+CHL & GMI:GMI\_ideal\_aggregate & stress & r4 & debt\_consistent & 0.04846101111926 & 0.0457366277521299 & 0.058158483206631 & fiscally\_ordinary & requirement\_already\_covered \\
+PER & PEN & mid & r0 & baseline & 0.0930780545727182 & 0.3049656645066527 &  & fiscally\_demanding & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r0 & debt\_consistent & 0.1769546915535554 & 0.5797833371671834 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r1 & baseline & 0.0879595921251269 & 0.3040376146025564 &  & fiscally\_demanding & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r1 & debt\_consistent & 0.1674657099046527 & 0.5788552872630872 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r2 & baseline & 0.0840785922521413 & 0.3040376146025564 &  & fiscally\_demanding & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r2 & debt\_consistent & 0.1600766988466565 & 0.5788552872630872 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r3 & baseline & 0.094833365540356 & 0.3045944445450142 &  & fiscally\_demanding & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r3 & debt\_consistent & 0.1803959398916242 & 0.579412117205545 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r4 & baseline & 0.0753100315197287 & 0.3031095646984601 &  & fiscally\_demanding & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & mid & r4 & debt\_consistent & 0.1435907128332082 & 0.5779272373589909 &  & extreme\_or\_outside\_historical\_support & frontier\_exceeds\_one;ai\_rent\_capture\_impossible \\
+PER & PEN & stress & r0 & baseline & 0.0999721807025207 & 0.0839172321326687 & 0.1173826778266382 & fiscally\_ordinary &  \\
+PER & PEN & stress & r0 & debt\_consistent & 0.1900614111603496 & 0.1595386581319568 &  & fiscally\_ordinary & frontier\_exceeds\_one \\
+PER & PEN & stress & r1 & baseline & 0.0944755888991784 & 0.0836618611571895 & 0.1111834472512639 & fiscally\_ordinary &  \\
+PER & PEN & stress & r1 & debt\_consistent & 0.1798714748603459 & 0.1592832871564775 &  & fiscally\_ordinary & frontier\_exceeds\_one \\
+PER & PEN & stress & r2 & baseline & 0.090281494348363 & 0.0836618611571895 & 0.1064343388387812 & fiscally\_ordinary & requirement\_already\_covered \\
+PER & PEN & stress & r2 & debt\_consistent & 0.1718863648298174 & 0.1592832871564775 &  & fiscally\_ordinary & frontier\_exceeds\_one \\
+PER & PEN & stress & r3 & baseline & 0.0974293898017232 & 0.083815083742477 & 0.1145183113777666 & fiscally\_ordinary &  \\
+PER & PEN & stress & r3 & debt\_consistent & 0.185334204329909 & 0.159436509741765 &  & fiscally\_ordinary & frontier\_exceeds\_one \\
+PER & PEN & stress & r4 & baseline & 0.0764586709452878 & 0.0834064901817102 & 0.0906650576363045 & fiscally\_ordinary & requirement\_already\_covered \\
+PER & PEN & stress & r4 & debt\_consistent & 0.1457807790246047 & 0.1590279161809982 & 0.1679894898554811 & fiscally\_ordinary &  \\
+\bottomrule
+\end{longtable}
+\end{landscape}
