@@ -1,0 +1,1300 @@
+{
+  "note": "Consolidated CB-1 through CB-7 whitelist. Each auditable entry is the signed sum by (scope, token); source contributions are retained verbatim. Net-zero groups are documented separately and excluded from entries because the auditor rejects unused zero-delta allowances.",
+  "baseline_alias": {
+    "requested": "10f6dfd:paper/main_jpm.tex",
+    "used": "10f6dfd:paper/main.tex",
+    "reason": "main_jpm.tex did not yet exist at 10f6dfd; this object is byte-identical to c2064ab:paper/main_jpm.tex",
+    "git_blob": "4f2cc9c5436b84e6cd9e99f213a3ca0ec8203eca"
+  },
+  "source_files": [
+    "cb1.json",
+    "cb2.json",
+    "cb3.json",
+    "cb4.json",
+    "cb5.json",
+    "cb5b.json",
+    "cb6.json",
+    "cb7.json"
+  ],
+  "entries": [
+    {
+      "scope": "appendix",
+      "token": "command:\\label{eq:distance_ratios_main_v19}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "Destination-side record of the intact realized-distance label moved to Appendix F."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): Destination-side record of the intact realized-distance label moved to Appendix F."
+    },
+    {
+      "scope": "appendix",
+      "token": "command:\\label{eq:headroom_ratios_main_v19}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "Destination-side record of the intact support-headroom label moved to Appendix F."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): Destination-side record of the intact support-headroom label moved to Appendix F."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:0",
+      "delta": 6,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": 1,
+          "justification": "ecuaciones recibidas en App A"
+        },
+        {
+          "file": "cb3.json",
+          "delta": 3,
+          "justification": "Structural zero conditions accompanying the complete D/H family are now stated in Appendix F."
+        },
+        {
+          "file": "cb4.json",
+          "delta": 2,
+          "justification": "Destination-side structural literals PB^0 and [0,1] moved intact with the nine O-1 bullets to Appendix H."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (+1): ecuaciones recibidas en App A | cb3.json (+3): Structural zero conditions accompanying the complete D/H family are now stated in Appendix F. | cb4.json (+2): Destination-side structural literals PB^0 and [0,1] moved intact with the nine O-1 bullets to Appendix H."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:1",
+      "delta": 4,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": 3,
+          "justification": "ecuaciones recibidas en App A"
+        },
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "Destination-side [0,1] normalization literal moved intact with O-1 to Appendix H."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (+3): ecuaciones recibidas en App A | cb4.json (+1): Destination-side [0,1] normalization literal moved intact with O-1 to Appendix H."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:16",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Metadato aprobado del titulo bibliografico de Ito: 16-Parameter Model."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Metadato aprobado del titulo bibliografico de Ito: 16-Parameter Model."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:2025",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "Ano aprobado de Nayebi, presente en la etiqueta bibliografica y en la linea de autor."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): Ano aprobado de Nayebi, presente en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:2026",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "Ano aprobado de Ito, presente en la etiqueta bibliografica y en la linea de autor."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): Ano aprobado de Ito, presente en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:2505.18687",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Identificador arXiv aprobado para Nayebi (2025)."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Identificador arXiv aprobado para Nayebi (2025)."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:6170447",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Identificador SSRN aprobado para Ito (2026)."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Identificador SSRN aprobado para Ito (2026)."
+    },
+    {
+      "scope": "appendix",
+      "token": "sign:<",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "Appendix F now states the approved lower side of the adoption-support dichotomy explicitly."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): Appendix F now states the approved lower side of the adoption-support dichotomy explicitly."
+    },
+    {
+      "scope": "appendix",
+      "token": "sign:>",
+      "delta": 3,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 3,
+          "justification": "Positive-support guards from the complete D/H family moved into Appendix F."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+3): Positive-support guards from the complete D/H family moved into Appendix F."
+    },
+    {
+      "scope": "appendix",
+      "token": "sign:\\leq",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "Appendix F now states the approved upper side of the adoption-support dichotomy explicitly."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): Appendix F now states the approved upper side of the adoption-support dichotomy explicitly."
+    },
+    {
+      "scope": "body",
+      "token": "classification:floordriven",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "A duplicated draw-semantics restatement was removed from Robustness; the canonical FloorDriven formula and classification remain unchanged in the impossibility chain."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): A duplicated draw-semantics restatement was removed from Robustness; the canonical FloorDriven formula and classification remain unchanged in the impossibility chain."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:floor_driven_operational_v25}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": -1,
+          "justification": "The duplicated equation-level floor-driven restatement was removed under E2; the body retains the required pointer to the canonical subsection, while the operational equation remains unchanged there."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (-1): The duplicated equation-level floor-driven restatement was removed under E2; the body retains the required pointer to the canonical subsection, while the operational equation remains unchanged there."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:fs_gross_eff_v21}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "E6 folds an unlabelled duplicate fiscal-space display into prose and points to the existing canonical fiscal-space equation."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): E6 folds an unlabelled duplicate fiscal-space display into prose and points to the existing canonical fiscal-space equation."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:valid_threshold_operational_v25}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "E1 replaces four repeated draw-validity sentences with one pointer to the full canonical impossibility subsection rather than one equation inside it."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): E1 replaces four repeated draw-validity sentences with one pointer to the full canonical impossibility subsection rather than one equation inside it."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:S_full_main_v10}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -1,
+          "justification": "dedup S_full aprobado, canonica en App ai_shock_module"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-1): dedup S_full aprobado, canonica en App ai_shock_module"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:distance_ratios_main_v19}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": -1,
+          "justification": "The complete realized-distance align and its intact label moved from the body to Appendix F under E1."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (-1): The complete realized-distance align and its intact label moved from the body to Appendix F under E1."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:headroom_ratios_main_v19}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": -1,
+          "justification": "The complete support-headroom align and its intact label moved from the body to Appendix F under E1."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (-1): The complete support-headroom align and its intact label moved from the body to Appendix F under E1."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{tab:policy_cost_equations}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "E1 removes the duplicated Design longtable after V1 confirmed that its label had no references anywhere in the document."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): E1 removes the duplicated Design longtable after V1 confirmed that its label had no references anywhere in the document."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:ai_shock_module}",
+      "delta": 3,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": 3,
+          "justification": "punteros del move aprobado"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (+3): punteros del move aprobado"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:calibration_ledger}",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "O-1 adds the required body pointer to the complete data-construction rules moved intact to Appendix H."
+        },
+        {
+          "file": "cb5.json",
+          "delta": 1,
+          "justification": "E3 replaces duplicated source detail with the approved pointer to the complete data-construction rules in Appendix H."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): O-1 adds the required body pointer to the complete data-construction rules moved intact to Appendix H. | cb5.json (+1): E3 replaces duplicated source detail with the approved pointer to the complete data-construction rules in Appendix H."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:threshold_module}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "The compressed body now points explicitly to Appendix F for the consolidated D/H definitions and use rules."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): The compressed body now points explicitly to Appendix F for the consolidated D/H definitions and use rules."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:uncertainty_module}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "E3 adds an explicit pointer from the compressed dependence paragraph to the scenario-consistent structure in Appendix G."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): E3 adds an explicit pointer from the compressed dependence paragraph to the scenario-consistent structure in Appendix G."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": 1,
+          "justification": "E1 points Design to the canonical nominal policy-cost equations retained unchanged in the Policy Costs section."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (+1): E1 points Design to the canonical nominal policy-cost equations retained unchanged in the Policy Costs section."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "E2 replaces the duplicated xi display with a pointer to the already declared canonical threshold grid."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): E2 replaces the duplicated xi display with a pointer to the already declared canonical threshold grid."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{subsec:impossibility_score}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "E1 points the robustness discussion to the complete canonical chain for arithmetic, computability, support, and failure semantics."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): E1 points the robustness discussion to the complete canonical chain for arithmetic, computability, support, and failure semantics."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{subsec:phi_ladder_main}",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb2.json",
+          "delta": 2,
+          "justification": "Two explicit pointers replace duplicated nominal/real unit rules in the fiscal-calibration and historical-plausibility sections; the canonical rule remains in Section 5."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb2.json (+2): Two explicit pointers replace duplicated nominal/real unit rules in the fiscal-calibration and historical-plausibility sections; the canonical rule remains in Section 5."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{subsec:results_costs}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb5b.json",
+          "delta": 1,
+          "justification": "Fix A aprobado por el autor: referencia cruzada a la subsecci\u00f3n de validaciones microdato"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5b.json (+1): Fix A aprobado por el autor: referencia cruzada a la subsecci\u00f3n de validaciones microdato"
+    },
+    {
+      "scope": "body",
+      "token": "number:-0",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "A LaTeX negative vertical-spacing literal from the removed GMI longtable cell disappeared with that duplicated table; it is formatting, not an economic value."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): A LaTeX negative vertical-spacing literal from the removed GMI longtable cell disappeared with that duplicated table; it is formatting, not an economic value."
+    },
+    {
+      "scope": "body",
+      "token": "number:-1",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -1,
+          "justification": "token estructural de las ecuaciones deduplicadas (cero economico)"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-1): token estructural de las ecuaciones deduplicadas (cero economico)"
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -28,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -3,
+          "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+        },
+        {
+          "file": "cb3.json",
+          "delta": -8,
+          "justification": "Structural zero literals moved with the D/H conditions or were removed from the duplicated floor-driven definition; all canonical support and floor conditions remain."
+        },
+        {
+          "file": "cb4.json",
+          "delta": -6,
+          "justification": "Two structural zero literals moved with O-1, while duplicated xi-zero and draw-validity zero conditions were removed from the body; their canonical definitions remain."
+        },
+        {
+          "file": "cb5.json",
+          "delta": -11,
+          "justification": "Superscript-zero ratio labels, a duplicated max-at-zero term, and table-formatting zeros were removed with the five duplicate ratio equations; the canonical nominal equations and no-AI denominator rule remain."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-3): tokens estructurales de las ecuaciones deduplicadas (ceros economicos) | cb3.json (-8): Structural zero literals moved with the D/H conditions or were removed from the duplicated floor-driven definition; all canonical support and floor conditions remain. | cb4.json (-6): Two structural zero literals moved with O-1, while duplicated xi-zero and draw-validity zero conditions were removed from the body; their canonical definitions remain. | cb5.json (-11): Superscript-zero ratio labels, a duplicated max-at-zero term, and table-formatting zeros were removed with the five duplicate ratio equations; the canonical nominal equations and no-AI denominator rule remain."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.05",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.10",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.18",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Column-width formatting literal removed with the duplicated policy-cost longtable."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): Column-width formatting literal removed with the duplicated policy-cost longtable."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.20",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Column-width formatting literal removed with the duplicated policy-cost longtable."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): Column-width formatting literal removed with the duplicated policy-cost longtable."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.25",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.50",
+      "delta": -2,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+        },
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Column-width formatting literal removed with the duplicated policy-cost longtable."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds. | cb5.json (-1): Column-width formatting literal removed with the duplicated policy-cost longtable."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.6",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Resultado copiado literalmente de Empirical Results: limite inferior de la probabilidad de cruce de la pension universal de Peru bajo stress."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Resultado copiado literalmente de Empirical Results: limite inferior de la probabilidad de cruce de la pension universal de Peru bajo stress."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.8",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Resultado copiado literalmente de Empirical Results: limite superior de la probabilidad de cruce de la pension universal de Peru bajo stress."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Resultado copiado literalmente de Empirical Results: limite superior de la probabilidad de cruce de la pension universal de Peru bajo stress."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.97",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Resultado copiado literalmente de Empirical Results: probabilidad de cruce de la renta minima garantizada de Chile bajo stress."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Resultado copiado literalmente de Empirical Results: probabilidad de cruce de la renta minima garantizada de Chile bajo stress."
+    },
+    {
+      "scope": "body",
+      "token": "number:1",
+      "delta": -7,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -6,
+          "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+        },
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "The [0,1] normalization literal in O-1 moved intact from the body to Appendix H."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-6): tokens estructurales de las ecuaciones deduplicadas (ceros economicos) | cb4.json (-1): The [0,1] normalization literal in O-1 moved intact from the body to Appendix H."
+    },
+    {
+      "scope": "body",
+      "token": "number:16",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Metadato aprobado de Ito (2026): descripcion del modelo de 16 parametros en la nueva subseccion de posicionamiento."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Metadato aprobado de Ito (2026): descripcion del modelo de 16 parametros en la nueva subseccion de posicionamiento."
+    },
+    {
+      "scope": "body",
+      "token": "scenario:disruptive",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "condicionante de soporte restaurado (fix G6)"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): condicionante de soporte restaurado (fix G6)"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:high",
+      "delta": -2,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -2,
+          "justification": "menciones en prosa de las ecuaciones movidas"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-2): menciones en prosa de las ecuaciones movidas"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": 3,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 3,
+          "justification": "Tres menciones de framing copiadas de Empirical Results: no cruces, probabilidades y restriccion de traduccion bajo el escenario moderado."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+3): Tres menciones de framing copiadas de Empirical Results: no cruces, probabilidades y restriccion de traduccion bajo el escenario moderado."
+    },
+    {
+      "scope": "body",
+      "token": "scenario:stress",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Etiqueta copiada literalmente de Empirical Results para las probabilidades titulares bajo stress."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Etiqueta copiada literalmente de Empirical Results para las probabilidades titulares bajo stress."
+    },
+    {
+      "scope": "body",
+      "token": "sign:>",
+      "delta": -8,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -2,
+          "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+        },
+        {
+          "file": "cb3.json",
+          "delta": -5,
+          "justification": "Positive-support guards moved with the ratio family to Appendix F, while repeated floor-driven guards were consolidated at their canonical definition."
+        },
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "One repeated positive-validity guard was removed from Robustness; it remains in the unchanged canonical validity chain."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-2): tokens estructurales de las ecuaciones deduplicadas (ceros economicos) | cb3.json (-5): Positive-support guards moved with the ratio family to Appendix F, while repeated floor-driven guards were consolidated at their canonical definition. | cb4.json (-1): One repeated positive-validity guard was removed from Robustness; it remains in the unchanged canonical validity chain."
+    },
+    {
+      "scope": "body",
+      "token": "sign:\\geq",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "The duplicated elderly-age eligibility symbol moved out with the ratio table; it remains unchanged in the canonical pension-cost equation."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): The duplicated elderly-age eligibility symbol moved out with the ratio table; it remains unchanged in the canonical pension-cost equation."
+    },
+    {
+      "scope": "body",
+      "token": "sign:\\leq",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "One repeated non-positive-capture guard was removed from Robustness; it remains in the unchanged canonical validity chain."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): One repeated non-positive-capture guard was removed from Robustness; it remains in the unchanged canonical validity chain."
+    },
+    {
+      "scope": "document",
+      "token": "classification:floordriven",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "Net removal of one duplicated FloorDriven textual restatement; the formula and canonical classification remain unchanged."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): Net removal of one duplicated FloorDriven textual restatement; the formula and canonical classification remain unchanged."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:floor_driven_operational_v25}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": -1,
+          "justification": "Document-level removal of one duplicated floor-driven equation pointer; the canonical equation and subsection pointer remain."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (-1): Document-level removal of one duplicated floor-driven equation pointer; the canonical equation and subsection pointer remain."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:fs_gross_eff_v21}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "Document-level pointer introduced by folding the duplicate unlabelled fiscal-space display under E6."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): Document-level pointer introduced by folding the duplicate unlabelled fiscal-space display under E6."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:valid_threshold_operational_v25}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "The narrow repeated equation pointer was replaced by a pointer to the complete canonical subsection."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): The narrow repeated equation pointer was replaced by a pointer to the complete canonical subsection."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{eq:S_full_main_v10}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -1,
+          "justification": "dedup S_full aprobado, canonica en App ai_shock_module"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-1): dedup S_full aprobado, canonica en App ai_shock_module"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{tab:policy_cost_equations}",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Document-level removal of the unreferenced duplicate policy-cost table label under E1."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): Document-level removal of the unreferenced duplicate policy-cost table label under E1."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:ai_shock_module}",
+      "delta": 3,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": 3,
+          "justification": "punteros del move aprobado"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (+3): punteros del move aprobado"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:calibration_ledger}",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "Document-level O-1 pointer to the relocated data-construction rules."
+        },
+        {
+          "file": "cb5.json",
+          "delta": 1,
+          "justification": "Document-level E3 pointer to the detailed source and construction rules in Appendix H."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): Document-level O-1 pointer to the relocated data-construction rules. | cb5.json (+1): Document-level E3 pointer to the detailed source and construction rules in Appendix H."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:threshold_module}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "Document-level pointer to the new canonical location of the complete distance/headroom family."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): Document-level pointer to the new canonical location of the complete distance/headroom family."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:uncertainty_module}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "Document-level E3 pointer to the dependence structure in Appendix G."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): Document-level E3 pointer to the dependence structure in Appendix G."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": 1,
+          "justification": "Document-level E1 pointer to the canonical nominal policy-cost equations."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (+1): Document-level E1 pointer to the canonical nominal policy-cost equations."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "Document-level pointer replacing the duplicated xi display."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): Document-level pointer replacing the duplicated xi display."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{subsec:impossibility_score}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": 1,
+          "justification": "Document-level pointer replacing repeated draw-validity semantics in Robustness."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (+1): Document-level pointer replacing repeated draw-validity semantics in Robustness."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{subsec:phi_ladder_main}",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb2.json",
+          "delta": 2,
+          "justification": "Document-level reflection of the two deliberate cross-references added while consolidating the nominal/real unit convention at its canonical Section 5 location."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb2.json (+2): Document-level reflection of the two deliberate cross-references added while consolidating the nominal/real unit convention at its canonical Section 5 location."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{subsec:results_costs}",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb5b.json",
+          "delta": 1,
+          "justification": "Fix A aprobado por el autor: referencia cruzada a la subsecci\u00f3n de validaciones microdato"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5b.json (+1): Fix A aprobado por el autor: referencia cruzada a la subsecci\u00f3n de validaciones microdato"
+    },
+    {
+      "scope": "document",
+      "token": "number:-0",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Document-level removal of a LaTeX cell-spacing literal with the duplicate longtable."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): Document-level removal of a LaTeX cell-spacing literal with the duplicate longtable."
+    },
+    {
+      "scope": "document",
+      "token": "number:-1",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -1,
+          "justification": "token estructural de las ecuaciones deduplicadas (cero economico)"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-1): token estructural de las ecuaciones deduplicadas (cero economico)"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -22,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -2,
+          "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+        },
+        {
+          "file": "cb3.json",
+          "delta": -5,
+          "justification": "Net removal of duplicated structural-zero restatements during floor-driven and ratio-rule consolidation; no economic value changed."
+        },
+        {
+          "file": "cb4.json",
+          "delta": -4,
+          "justification": "Net removal of duplicated xi-zero and draw-validity zero restatements after the O-1 movement cancels at document level; no economic value changed."
+        },
+        {
+          "file": "cb5.json",
+          "delta": -11,
+          "justification": "Document-level removal of duplicated ratio superscripts, max-at-zero, and formatting zeros from the deleted longtable; no canonical economic quantity changed."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-2): tokens estructurales de las ecuaciones deduplicadas (ceros economicos) | cb3.json (-5): Net removal of duplicated structural-zero restatements during floor-driven and ratio-rule consolidation; no economic value changed. | cb4.json (-4): Net removal of duplicated xi-zero and draw-validity zero restatements after the O-1 movement cancels at document level; no economic value changed. | cb5.json (-11): Document-level removal of duplicated ratio superscripts, max-at-zero, and formatting zeros from the deleted longtable; no canonical economic quantity changed."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.05",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.10",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.18",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Document-level removal of a longtable column-width literal."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): Document-level removal of a longtable column-width literal."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.20",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Document-level removal of a longtable column-width literal."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): Document-level removal of a longtable column-width literal."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.25",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.50",
+      "delta": -2,
+      "sources": [
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+        },
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Document-level removal of a longtable column-width literal."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb4.json (-1): Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds. | cb5.json (-1): Document-level removal of a longtable column-width literal."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.6",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Delta documental del resultado de probabilidad de Peru copiado de Empirical Results."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Delta documental del resultado de probabilidad de Peru copiado de Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.8",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Delta documental del resultado de probabilidad de Peru copiado de Empirical Results."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Delta documental del resultado de probabilidad de Peru copiado de Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.97",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Delta documental del resultado de probabilidad de Chile copiado de Empirical Results."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Delta documental del resultado de probabilidad de Chile copiado de Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": -3,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -3,
+          "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-3): tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+    },
+    {
+      "scope": "document",
+      "token": "number:16",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "Metadato de Ito presente una vez en el posicionamiento y una vez en el bibitem."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): Metadato de Ito presente una vez en el posicionamiento y una vez en el bibitem."
+    },
+    {
+      "scope": "document",
+      "token": "number:2025",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "Ano de Nayebi en la etiqueta bibliografica y en la linea de autor."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): Ano de Nayebi en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "document",
+      "token": "number:2026",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "Ano de Ito en la etiqueta bibliografica y en la linea de autor."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): Ano de Ito en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "document",
+      "token": "number:2505.18687",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Identificador arXiv aprobado para Nayebi."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Identificador arXiv aprobado para Nayebi."
+    },
+    {
+      "scope": "document",
+      "token": "number:6170447",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 1,
+          "justification": "Identificador SSRN aprobado para Ito."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+1): Identificador SSRN aprobado para Ito."
+    },
+    {
+      "scope": "document",
+      "token": "scenario:disruptive",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "condicionante de soporte restaurado (fix G6)"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): condicionante de soporte restaurado (fix G6)"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:high",
+      "delta": -2,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -2,
+          "justification": "menciones en prosa de las ecuaciones movidas"
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-2): menciones en prosa de las ecuaciones movidas"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": 4,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 4,
+          "justification": "Tres copias en Introduccion y una en el abstract, todas consistentes con Empirical Results."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+4): Tres copias en Introduccion y una en el abstract, todas consistentes con Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": 2,
+      "sources": [
+        {
+          "file": "cb6.json",
+          "delta": 2,
+          "justification": "Una copia en Introduccion y una en el abstract, ambas consistentes con Empirical Results."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb6.json (+2): Una copia en Introduccion y una en el abstract, ambas consistentes con Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "sign:<",
+      "delta": 1,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "The support dichotomy is retained in the body and now also stated in the consolidated Appendix F rules."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb3.json (+1): The support dichotomy is retained in the body and now also stated in the consolidated Appendix F rules."
+    },
+    {
+      "scope": "document",
+      "token": "sign:>",
+      "delta": -5,
+      "sources": [
+        {
+          "file": "cb1.json",
+          "delta": -2,
+          "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+        },
+        {
+          "file": "cb3.json",
+          "delta": -2,
+          "justification": "Net removal of repeated floor-driven positivity guards; canonical support guards remain in Appendix F and Proposition 3."
+        },
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "Net removal of one repeated positive-validity guard from Robustness; the canonical condition remains."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb1.json (-2): tokens estructurales de las ecuaciones deduplicadas (ceros economicos) | cb3.json (-2): Net removal of repeated floor-driven positivity guards; canonical support guards remain in Appendix F and Proposition 3. | cb4.json (-1): Net removal of one repeated positive-validity guard from Robustness; the canonical condition remains."
+    },
+    {
+      "scope": "document",
+      "token": "sign:\\geq",
+      "delta": -1,
+      "sources": [
+        {
+          "file": "cb5.json",
+          "delta": -1,
+          "justification": "Document-level removal of the duplicated age-eligibility sign; the canonical nominal equation is unchanged."
+        }
+      ],
+      "justification": "Consolidated signed sum: cb5.json (-1): Document-level removal of the duplicated age-eligibility sign; the canonical nominal equation is unchanged."
+    }
+  ],
+  "zero_sum_groups": [
+    {
+      "scope": "document",
+      "token": "sign:\\leq",
+      "delta": 0,
+      "sources": [
+        {
+          "file": "cb3.json",
+          "delta": 1,
+          "justification": "The support dichotomy is retained in the body and now also stated in the consolidated Appendix F rules."
+        },
+        {
+          "file": "cb4.json",
+          "delta": -1,
+          "justification": "Net removal of one repeated non-positive-capture guard from Robustness; the canonical condition remains."
+        }
+      ]
+    }
+  ]
+}

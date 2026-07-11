@@ -1,0 +1,101 @@
+{
+  "note": "whitelist retroactiva creada en CB-7; CB-1 se cerro antes de la regla de whitelists committeadas; deltas reproducidos por Claude con audit c2064ab->97085f5 el 2026-07-11",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:S_full_main_v10}",
+      "delta": -1,
+      "justification": "dedup S_full aprobado, canonica en App ai_shock_module"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:ai_shock_module}",
+      "delta": 3,
+      "justification": "punteros del move aprobado"
+    },
+    {
+      "scope": "body",
+      "token": "number:-1",
+      "delta": -1,
+      "justification": "token estructural de las ecuaciones deduplicadas (cero economico)"
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -3,
+      "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+    },
+    {
+      "scope": "body",
+      "token": "number:1",
+      "delta": -6,
+      "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+    },
+    {
+      "scope": "body",
+      "token": "sign:>",
+      "delta": -2,
+      "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:high",
+      "delta": -2,
+      "justification": "menciones en prosa de las ecuaciones movidas"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:0",
+      "delta": 1,
+      "justification": "ecuaciones recibidas en App A"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:1",
+      "delta": 3,
+      "justification": "ecuaciones recibidas en App A"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{eq:S_full_main_v10}",
+      "delta": -1,
+      "justification": "dedup S_full aprobado, canonica en App ai_shock_module"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:ai_shock_module}",
+      "delta": 3,
+      "justification": "punteros del move aprobado"
+    },
+    {
+      "scope": "document",
+      "token": "number:-1",
+      "delta": -1,
+      "justification": "token estructural de las ecuaciones deduplicadas (cero economico)"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -2,
+      "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": -3,
+      "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:high",
+      "delta": -2,
+      "justification": "menciones en prosa de las ecuaciones movidas"
+    },
+    {
+      "scope": "document",
+      "token": "sign:>",
+      "delta": -2,
+      "justification": "tokens estructurales de las ecuaciones deduplicadas (ceros economicos)"
+    }
+  ]
+}
