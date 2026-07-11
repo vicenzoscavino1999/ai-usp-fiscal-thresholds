@@ -27,8 +27,8 @@
     {
       "scope": "body",
       "token": "scenario:disruptive",
-      "delta": 1,
-      "justification": "Etiqueta copiada literalmente de Empirical Results para los horizontes de persistencia de Colombia y Mexico."
+      "delta": 2,
+      "justification": "condicionante de soporte restaurado (fix G6)"
     },
     {
       "scope": "body",
@@ -123,8 +123,8 @@
     {
       "scope": "document",
       "token": "scenario:disruptive",
-      "delta": 1,
-      "justification": "Etiqueta de Results copiada al framing de horizontes."
+      "delta": 2,
+      "justification": "condicionante de soporte restaurado (fix G6)"
     },
     {
       "scope": "document",
