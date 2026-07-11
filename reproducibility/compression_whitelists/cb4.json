@@ -1,0 +1,178 @@
+{
+  "entries": [
+    {
+      "scope": "body",
+      "token": "classification:floordriven",
+      "delta": -1,
+      "justification": "A duplicated draw-semantics restatement was removed from Robustness; the canonical FloorDriven formula and classification remain unchanged in the impossibility chain."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:valid_threshold_operational_v25}",
+      "delta": -1,
+      "justification": "E1 replaces four repeated draw-validity sentences with one pointer to the full canonical impossibility subsection rather than one equation inside it."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:calibration_ledger}",
+      "delta": 1,
+      "justification": "O-1 adds the required body pointer to the complete data-construction rules moved intact to Appendix H."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:uncertainty_module}",
+      "delta": 1,
+      "justification": "E3 adds an explicit pointer from the compressed dependence paragraph to the scenario-consistent structure in Appendix G."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": 1,
+      "justification": "E2 replaces the duplicated xi display with a pointer to the already declared canonical threshold grid."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{subsec:impossibility_score}",
+      "delta": 1,
+      "justification": "E1 points the robustness discussion to the complete canonical chain for arithmetic, computability, support, and failure semantics."
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -6,
+      "justification": "Two structural zero literals moved with O-1, while duplicated xi-zero and draw-validity zero conditions were removed from the body; their canonical definitions remain."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.05",
+      "delta": -1,
+      "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.10",
+      "delta": -1,
+      "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.25",
+      "delta": -1,
+      "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.50",
+      "delta": -1,
+      "justification": "The duplicate xi grid was replaced by a cross-reference to its unchanged canonical declaration in Thresholds."
+    },
+    {
+      "scope": "body",
+      "token": "number:1",
+      "delta": -1,
+      "justification": "The [0,1] normalization literal in O-1 moved intact from the body to Appendix H."
+    },
+    {
+      "scope": "body",
+      "token": "sign:>",
+      "delta": -1,
+      "justification": "One repeated positive-validity guard was removed from Robustness; it remains in the unchanged canonical validity chain."
+    },
+    {
+      "scope": "body",
+      "token": "sign:\\leq",
+      "delta": -1,
+      "justification": "One repeated non-positive-capture guard was removed from Robustness; it remains in the unchanged canonical validity chain."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:0",
+      "delta": 2,
+      "justification": "Destination-side structural literals PB^0 and [0,1] moved intact with the nine O-1 bullets to Appendix H."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:1",
+      "delta": 1,
+      "justification": "Destination-side [0,1] normalization literal moved intact with O-1 to Appendix H."
+    },
+    {
+      "scope": "document",
+      "token": "classification:floordriven",
+      "delta": -1,
+      "justification": "Net removal of one duplicated FloorDriven textual restatement; the formula and canonical classification remain unchanged."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:valid_threshold_operational_v25}",
+      "delta": -1,
+      "justification": "The narrow repeated equation pointer was replaced by a pointer to the complete canonical subsection."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:calibration_ledger}",
+      "delta": 1,
+      "justification": "Document-level O-1 pointer to the relocated data-construction rules."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:uncertainty_module}",
+      "delta": 1,
+      "justification": "Document-level E3 pointer to the dependence structure in Appendix G."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": 1,
+      "justification": "Document-level pointer replacing the duplicated xi display."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{subsec:impossibility_score}",
+      "delta": 1,
+      "justification": "Document-level pointer replacing repeated draw-validity semantics in Robustness."
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -4,
+      "justification": "Net removal of duplicated xi-zero and draw-validity zero restatements after the O-1 movement cancels at document level; no economic value changed."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.05",
+      "delta": -1,
+      "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.10",
+      "delta": -1,
+      "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.25",
+      "delta": -1,
+      "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.50",
+      "delta": -1,
+      "justification": "Duplicate xi-grid literal removed; the canonical grid remains unchanged in Thresholds."
+    },
+    {
+      "scope": "document",
+      "token": "sign:>",
+      "delta": -1,
+      "justification": "Net removal of one repeated positive-validity guard from Robustness; the canonical condition remains."
+    },
+    {
+      "scope": "document",
+      "token": "sign:\\leq",
+      "delta": -1,
+      "justification": "Net removal of one repeated non-positive-capture guard from Robustness; the canonical condition remains."
+    }
+  ]
+}
