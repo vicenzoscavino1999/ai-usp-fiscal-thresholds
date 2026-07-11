@@ -52,7 +52,7 @@
 \maketitle
 
 \begin{abstract}
-This paper does not forecast whether artificial intelligence (AI) will finance a universal basic income (UBI). It develops a calibrated threshold-accounting framework to identify the threshold combinations of AI-induced productivity, productive adoption, fiscal capture, informality reduction, labor-share allocation, and policy cost under which universal or semi-universal social protection instruments become accounting-fiscally feasible in emerging economies. The framework compares universal social pensions, minimum universal transfers, guaranteed minimum income, partial basic income, and a full UBI benchmark. Its methodological contribution is a set of transparent equations for constructing AI shocks, converting those shocks into tax-base channels, adjusting for institutional frictions without double counting informality, and deriving policy-specific thresholds for growth, adoption, fiscal capture, and required persistence horizons. The paper separates observed variables from literature-disciplined scenario parameters and from unobserved structural parameters that require sensitivity analysis or Monte Carlo simulation. It also introduces impossibility diagnostics, temporal placebos, sectoral negative controls, leave-one-source-out ablations, Monte Carlo feasibility distributions, and global sensitivity diagnostics. The value of the framework is therefore not a point forecast but a falsifiable and reusable frontier that can be recalibrated as better evidence on AI productivity, adoption, labor-share effects, and fiscal capture becomes available.
+This paper develops a pre-registered threshold-accounting framework that converts AI productivity scenarios into fiscal space and asks when universal or semi-universal social protection becomes accounting-fiscally feasible in emerging economies. In its pilot application to Peru, Chile, Colombia, and Mexico, no instrument is feasible under moderate scenarios; under stress scenarios only Chile's guaranteed minimum income crosses robustly while satisfying a debt guardrail. The binding margin is the translation of global AI capability into domestic adoption, not taxation. The framework returns required-persistence horizons and falsifiable diagnostics that policy-makers can recalibrate as evidence accumulates.
 \end{abstract}
 
 \noindent \textbf{Keywords:} artificial intelligence, fiscal space, universal social protection, universal basic income, informality, fiscal capacity, labor share, emerging economies, Latin America.\\
@@ -65,11 +65,11 @@ This paper does not forecast whether artificial intelligence (AI) will finance a
 
 \section{Introduction}
 
-The rapid diffusion of artificial intelligence (AI), especially generative AI, has reopened a classic question in political economy: if technology raises productivity while weakening the employment-income link for some workers, can social protection be redesigned so that technological gains are broadly shared? In public debate, this question is often reduced to whether AI will finance a universal basic income. That version is too strong. It mixes an uncertain technological forecast, a fiscal conclusion, and a specific policy instrument.
+The rapid diffusion of artificial intelligence (AI), especially generative AI, has reopened a classic political-economy question: if technology raises productivity while weakening the employment-income link, can social protection spread the gains? Public debate often reduces this to whether AI will finance a universal basic income, conflating an uncertain technological forecast, a fiscal conclusion, and one policy instrument.
 
-This paper proposes a narrower and more defensible research question: under what combinations of AI-induced growth, adoption, exposure, labor-share pressure, informality, and fiscal capacity do universal or semi-universal social protection instruments become baseline accounting-fiscally feasible in emerging economies? The aim is not to predict that AI will finance a full UBI. The aim is to build a threshold methodology that shows which instruments become feasible first under explicit assumptions.
+This paper asks when combinations of AI-induced growth, adoption, exposure, labor-share pressure, informality, and fiscal capacity make universal or semi-universal social protection baseline accounting-fiscally feasible in emerging economies. It does not predict that AI will finance a full UBI; its threshold method shows which instruments become feasible first under explicit assumptions.
 
-The distinction matters for three reasons. First, macroeconomic estimates of AI productivity gains remain uncertain. A conservative task-based approach implies modest aggregate effects when the affected task share or cost savings are limited \citep{acemoglu2024simple}. A micro-to-macro approach by the OECD estimates annual aggregate total-factor productivity gains from AI of about 0.25 to 0.6 percentage points over a ten-year horizon under its main assumptions \citep{filippucci2024miracle}. Second, exposure is not adoption. Countries with high occupational exposure may not obtain high productivity gains if they lack digital infrastructure, human capital, firm capabilities, or regulatory readiness. The IMF AI Preparedness Index explicitly combines digital infrastructure, innovation and economic integration, human capital and labor market policies, and regulation and ethics \citep{cazzaniga2024genai}. Third, even if AI raises output, fiscal capacity determines whether governments can convert output gains into usable revenue. High informality, limited tax capacity, and weak tax systems can block the conversion of technological gains into social protection \citep{gaspar2016tax}.
+Three gaps motivate the question. Macroeconomic estimates are uncertain: conservative task-based evidence implies modest effects, while OECD micro-to-macro estimates imply annual aggregate TFP gains of 0.25 to 0.6 percentage points over a ten-year horizon \citep{acemoglu2024simple,filippucci2024miracle}. Exposure is not adoption: high occupational exposure may not yield high productivity gains without digital infrastructure, human capital, firm capabilities, and regulatory readiness, as the IMF AI Preparedness Index makes explicit \citep{cazzaniga2024genai}. Fiscal capacity is the final bottleneck: high informality, limited tax capacity, and weak tax systems can block the conversion of output gains into social protection \citep{gaspar2016tax}.
 
 The central object is a country-policy-scenario feasibility condition. For country $i$, policy instrument $p$, fiscal regime $r$, and AI scenario $s$, the framework asks whether effective additional fiscal space is at least as large as the annual cost of the policy:
 \begin{equation}
@@ -81,7 +81,15 @@ where all terms are expressed as shares of the no-AI counterfactual GDP $Y^0_{i,
 \end{equation}
 The policy crosses the structural accounting threshold when $V_{i,p,s,r,t}\geq 1$.
 
-The contribution is methodological. The paper develops: (i) a disciplined construction of AI shocks from exposure, preparedness, adoption, and base productivity scenarios; (ii) a fiscal conversion block that separates labor-, consumption-, and capital/profit-base capture, AI-rent capture, and administrative and transition frictions; (iii) a labor-share block that distinguishes productivity gains from their distribution between labor and capital; (iv) explicit thresholds for growth, adoption, and fiscal capture; and (v) a robustness protocol that prevents the results from depending on arbitrary single-number assumptions.
+The paper makes four contributions. First, it unifies required growth, adoption, fiscal capture, and persistence $H^*$ in one accounting backbone. Second, it separates productivity, adoption, distribution, and fiscal capture while assigning informality once. Third, it yields structural results beyond the four countries: instrument ordering is a country-structure outcome, and translation can bind before taxation. Fourth, it produces a falsifiable pre-registered frontier with impossibility and placebo diagnostics rather than a point forecast.
+
+Under the moderate scenario, no instrument in any country reaches the accounting threshold in any fiscal regime, and crossing probabilities are indistinguishable from zero for every instrument and country. Under the disruptive stress support, Chile's guaranteed minimum income crosses with probability above $0.97$ in every regime while passing the debt guardrail; Peru's universal pension crosses with probability between roughly $0.6$ and $0.8$ depending on the regime, but its debt-consistent crossing probability is below one percent, which is what the fragile classification records. Under the same support, Chile's guaranteed minimum income requires six years of scenario persistence in the status quo and five under combined reform. Debt-consistency doubles Peru's requirement to seventeen to twenty-two years; Colombia's pension and Mexico's minimum income require thirteen to twenty-one years of disruptive persistence, and their debt-consistent horizons exceed the twenty-five-year cap.
+
+The binding margin at moderate scenarios is translation, not taxation. For every country-policy pair in the moderate support, the required translation factor exceeds one, so no attainable level of domestic adoption would suffice. Required effective rent-capture rates also exceed any declared or statutory bound by an order of magnitude.
+
+For policy-makers, the framework indicates which instrument to evaluate first within their country structure, which observable conditions to monitor --- scenario persistence, historical capture, and the debt guardrail --- and when new evidence warrants rerunning the frontier.
+
+These are baseline accounting-fiscal feasibility results under declared scenario supports, not a general-equilibrium forecast or prediction that AI will finance UBI. A crossing is a conditional threshold, not political, administrative, or long-run fiscal feasibility.
 
 \section{Related Literature and Positioning}\label{sec:literature}
 
@@ -113,14 +121,17 @@ A fourth literature studies how fiscal policy should adapt to generative AI. \ci
 
 A fifth literature studies UBI and social protection design. \citet{gentilini2020ubi} emphasize that UBI must be analyzed as a specific transfer architecture, not as a generic promise of technological abundance. \citet{oecd2017basicincome} show that replacing benefit systems with a basic income involves difficult fiscal and distributional tradeoffs. This paper therefore compares a menu of instruments instead of treating full UBI as the only relevant policy.
 
+\subsection{Positioning relative to AI-UBI feasibility models}
+
+\citet{nayebi2025threshold} derives an AI-capability threshold at which rents finance UBI in a Solow--Zeira model calibrated to the United States. The threshold logic is related, but the setting is an advanced economy, the financing side is limited to rents, and the model considers one instrument without fiscal-capacity or informality structure. \citet{ito2026ubi} simulates UBI feasibility for Japan with a 16-parameter model and dynamic social-security offsets. It is likewise a feasibility simulation, but for one advanced country and one instrument, without a pre-registered falsification protocol. This paper instead studies emerging economies, compares five instruments, models channel-specific fiscal conversion with informality discipline, inverts thresholds including required-persistence horizons, and implements a falsifiable pre-registered pipeline.
+
 \section{Conceptual Mechanism}\label{sec:conceptual}
 
 The core mechanism is
 \begin{equation}
 AI \rightarrow adoption \rightarrow productivity \rightarrow income distribution \rightarrow fiscal space \rightarrow social protection.
 \end{equation}
-The chain is deliberately one-directional: the framework does not model feedback from social protection to adoption or productivity (for example through human capital, entrepreneurship, or labor-supply responses). This is a maintained assumption of the static accounting frontier, not an empirical claim.
-Five frictions mediate this chain: limited digital preparedness, uneven exposure, labor-share displacement, informality, and weak fiscal capacity.
+The deliberately one-directional chain omits feedback from protection to adoption or productivity through human capital, entrepreneurship, or labor supply; this is a maintained static-frontier assumption, not an empirical claim. Five frictions intervene: limited digital preparedness, uneven exposure, labor-share displacement, informality, and weak fiscal capacity.
 
 The paper's key conceptual distinction is between \emph{technical exposure} and \emph{fiscal feasibility}. A country can be highly exposed to AI but fiscally unable to finance broad social protection. Conversely, a country with moderate exposure but strong tax capacity and low informality may cross policy thresholds sooner.
 
@@ -156,18 +167,18 @@ and the baseline gross cost ratio is
 \begin{equation}
     c^{gross,0}_{i,p,t}=\frac{C^{gross}_{i,p,t}}{Y^0_{i,t}}.
 \end{equation}
-For notational economy, $c^{gross}_{i,p,t}$ denotes $c^{gross,0}_{i,p,t}$ unless a post-AI denominator is explicitly stated. A post-AI robustness version may be reported as $c^{gross,AI}_{i,p,s,t}=C^{gross}_{i,p,t}/Y^{AI}_{i,s,t}$, where $Y^{AI}_{i,s,t}$ is the post-AI GDP level defined in Section \ref{sec:ai_shocks}, but it is not the baseline denominator. If part of the spending is already covered by existing social protection budgets, define
+Unless stated otherwise, $c^{gross}_{i,p,t}$ denotes $c^{gross,0}_{i,p,t}$. The post-AI-denominator version $c^{gross,AI}_{i,p,s,t}=C^{gross}_{i,p,t}/Y^{AI}_{i,s,t}$, using Section \ref{sec:ai_shocks}, is robustness only. With existing social-protection spending, define
 \begin{equation}
     C^{net}_{i,p,t}=\max\{0,C^{gross}_{i,p,t}-C^{exist}_{i,p,t}\},
     \qquad
     c^{net,0}_{i,p,t}=\frac{C^{net}_{i,p,t}}{Y^0_{i,t}}.
 \end{equation}
-$C^{exist}$ may include only substitutable, non-contributory social protection spending: contributory pensions and benefits protected by acquired rights cannot be redirected and are excluded from the offset.
-The gross cost is not net of first-round fiscal recycling: transfer recipients spend part of the benefit on VAT-taxable consumption, so the net fiscal cost is below $c^{gross}$. Symmetry with the induced-consumption channel admits the labelled first-round extension
+$C^{exist}$ includes only substitutable non-contributory spending; contributory pensions and acquired-right benefits cannot be redirected and are excluded.
+The gross cost is not net of first-round fiscal recycling: transfer recipients spend part of the benefit on VAT-taxable consumption, so the net fiscal cost is below $c^{gross}$. The labelled first-round extension is
 \begin{equation}\label{eq:first_round_benefit_recycling_e5}
     c^{recyc}_{i,p,r,t}=c^{gross}_{i,p,t}\left[1-mpc^{ben}_i(1-m^M_i)(1-exempt^C_{i,t})\tau^{C,eff}_{i,r,t}\right],
 \end{equation}
-where $mpc^{ben}$ is the recipients' marginal propensity to consume. The baseline omits recycling, which biases feasibility conservatively; if the extension is used, it must be reported as a labelled variant and the same convention applied to all instruments. Because transfer recipients are concentrated at the bottom of the consumption distribution, where exempt staples and informal purchases dominate, economy-wide values of $exempt^C$ and $\tau^{C,eff}$ overstate first-round recovery; the import-content margin works in the opposite direction, since staple-heavy recipient baskets are typically more domestic than average consumption, so an economy-wide $m^M$ overstates recipients' import leakage and understates recovery. The variant should therefore use recipient-basket parameters where available; with economy-wide parameters it is read as an approximate upper bound on recycling, driven by the exemption and effective-rate margins. Equation \eqref{eq:first_round_benefit_recycling_e5} is written under the base-side exemption convention: if consumption exemptions are instead embedded in $\tau^{C,eff}$, the $(1-exempt^C_{i,t})$ multiplier is omitted, following the same assignment rule as the induced-consumption channel in Section \ref{sec:fiscal_conversion}.
+where $mpc^{ben}$ is recipients' marginal propensity to consume. The baseline omits recycling, which biases feasibility conservatively; if the extension is used, it must be reported as a labelled variant and the same convention applied to all instruments. With economy-wide parameters, it is an approximate upper bound because recipient baskets are more exempt or informal and more domestic than average. Greater domestic content works oppositely through lower import leakage, so exemption and effective-rate margins drive that upper-bound reading. Equation \eqref{eq:first_round_benefit_recycling_e5} uses the base-side exemption convention; if exemptions instead enter $\tau^{C,eff}$, omit $(1-exempt^C_{i,t})$ under the assignment rule of Section \ref{sec:fiscal_conversion}.
 For readability, $c^{net}_{i,p,t}$ denotes the no-AI-denominator net-cost ratio unless otherwise stated. The corresponding ratios are
 \begin{equation}
     V^{gross}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{c^{gross}_{i,p,t}},
@@ -204,14 +215,14 @@ The corresponding gross-cost rules are
     C^{PBI,gross}_{i,t} &= \eta_{PBI}PL_{i,t}N^{PBI}_{i,t},\\
     C^{UBI,gross}_{i,t} &= \eta_{UBI}PL_{i,t}Pop_{i,t}.
 \end{align}
-Here $PL_{i,t}$ is a poverty-line benchmark, $z_{i,t}$ is a per-capita minimum-income threshold, $y^{pc}_{h,i,t}$ is per-capita household income or consumption, $n_{h,i,t}$ is household size, $w_{h,i,t}$ is a household survey weight, and $\chi_{GMI}\in(0,1]$ is the share of the poverty gap closed by the guaranteed minimum income. If the implementation uses household-level rather than per-capita objects, the equivalent rule is $\chi_{GMI}\sum_h w_h\max\{0,z^H_h-y^H_h\}$. The unit of $z$ and $y$ must therefore be matched before computing the GMI cost. Benefit levels, poverty-line benchmarks, and minimum-income thresholds are expressed at annual frequency before entering the cost ratios. The full UBI benchmark should be interpreted as a fiscal stress test, not as the default policy.
+Here $PL_{i,t}$ is the poverty-line benchmark; $z_{i,t}$ the per-capita minimum-income threshold; $y^{pc}_{h,i,t}$ household income or consumption per capita; $n_{h,i,t}$ household size; $w_{h,i,t}$ survey weight; and $\chi_{GMI}\in(0,1]$ the poverty-gap share closed. With household-level objects, the equivalent rule is $\chi_{GMI}\sum_h w_h\max\{0,z^H_h-y^H_h\}$. Units of $z$ and $y$ must match before computing GMI cost; benefit levels and poverty or minimum-income thresholds enter the ratios annually. Full UBI is a fiscal stress test, not the default policy.
 
-The GMI cost equation prices the aggregate poverty gap and therefore embeds three idealized assumptions: exact identification of poor households (no inclusion or exclusion errors), perfect benefit tapering to each household's gap, and no behavioral response of incomes to the transfer. Full gap-filling imposes an implicit 100 percent marginal tax rate below $z$, the strongest incentive distortion in the policy menu, under which households may reduce or underreport income to qualify, endogenously widening the measured gap. A labelled targeting-and-behavior loading factor $\theta^{target}\geq1$ defines the robustness object $C^{GMI,load}=\theta^{target}C^{GMI,gross}$; cross-instrument comparisons must report it alongside the ideal-targeting baseline, because universal-instrument costs contain no such idealization and the GMI-before-UBI ranking is otherwise partly mechanical.
+The GMI equation prices the aggregate poverty gap under three idealizations: exact identification of poor households (no inclusion or exclusion errors), perfect tapering to each household's gap, and no income response. Full gap-filling implies a 100 percent marginal tax rate below $z$; households may reduce or underreport income, widening the gap. The labelled loading $\theta^{target}\geq1$ defines $C^{GMI,load}=\theta^{target}C^{GMI,gross}$ and must be reported alongside ideal targeting, because universal costs lack this idealization and the GMI-before-UBI ranking is partly mechanical.
 The cost side holds recipient behavior fixed: labor-supply responses to transfers (small in the cash-transfer evidence, in either direction) and local price effects of large transfers in poor areas are outside the accounting frontier \citep{gentilini2020ubi,oecd2017basicincome}.
 
 \section{Constructing AI Growth Shocks}\label{sec:ai_shocks}
 
-The construction of $g^{AI}_{i,s,t}$ is treated as a calibrated scenario-based \emph{level} increment in the fiscal base relative to a no-AI counterfactual, not as a one-year flow that is mechanically compared with a permanent annual policy cost. This distinction is essential because the social-protection costs below are annual recurring costs. The framework separates the externally disciplined AI productivity scenario from the country-specific translation of that scenario into a domestic, fiscal-base-compatible level effect. This separation is the core protection against overclaiming: optimism about frontier AI capabilities enters through $\phi^{Y,nom}_s$ after unit bridging and, when needed, accumulation into a level effect, while country readiness, exposure, adoption, informality, and digital constraints enter through $T_{i,s,t}$.
+The calibrated $g^{AI}_{i,s,t}$ is a scenario-based \emph{level} increment in the fiscal base relative to a no-AI counterfactual, not a one-year flow compared mechanically with a recurring annual policy cost. The framework separates an externally disciplined AI productivity scenario, bridged into $\phi^{Y,nom}_s$ and accumulated when needed, from its country-specific translation through readiness, exposure, adoption, informality, and digital constraints in $T_{i,s,t}$.
 
 \subsection{Numerically closed AI-productivity scenario ladder}\label{subsec:phi_ladder_main}
 
@@ -224,7 +235,7 @@ The nominal fiscal-base-compatible shock is then
 \begin{equation}
     \phi^{Y,nom}_s=(1+\phi^Y_s)(1+\pi^{AI,Y}_s)-1,
 \end{equation}
-or, for small rates, $\phi^{Y,nom}_s\approx \phi^Y_s+\pi^{AI,Y}_s$. The exact expression is multiplicative; the approximation is not described as log-additive. The term $\pi^{AI,Y}_s$ may be negative if AI reduces relative prices; its sign enters through the nominal bridge rather than being imposed as an assumption. Within all fiscal-space equations, the only admissible AI shock is $\phi^{Y,nom}_s$ or an explicitly real counterpart matched to a real historical fiscal-capture anchor. Raw TFP or labour-productivity estimates are never inserted directly into fiscal-space equations. The nominal bridge is admissible only when historical fiscal-capture anchors and policy costs are measured in nominal terms for the same endpoint horizon. If benefit rules, poverty-line benchmarks, or eligibility costs are price-indexed, the baseline either uses a real GDP-equivalent AI shock with real fiscal-capture anchors or projects policy costs onto the same nominal horizon. AI-related price effects are never interpreted as real fiscal capacity by themselves. AI gains realized as non-market output or zero-price services are outside GDP and therefore outside the fiscal base; this is conceptually distinct from informality, which is non-taxed GDP, and it biases the frontier conservatively. The scenario supports are strictly positive in source units; because $\pi^{AI,Y}_s$ may be negative, $\phi^{Y,nom}_s$ is nonetheless not guaranteed to be positive draw by draw. Draws with $\phi^{Y,nom}_s\leq0$ are retained as economic failure draws in all-draw feasibility probabilities and are excluded only from threshold inversions, which condition on $\phi^{Y,nom}_s>0$ (Section \ref{subsec:impossibility_score}). A persistently negative aggregate AI effect, as contemplated in parts of the task-based literature, would only reduce $fs^{eff}$ further, so reported frontiers are upper bounds along that margin.
+or, for small rates, $\phi^{Y,nom}_s\approx \phi^Y_s+\pi^{AI,Y}_s$. The exact expression is multiplicative, not log-additive, and $\pi^{AI,Y}_s$ may be negative. The nominal bridge is admissible only when fiscal-capture anchors and policy costs are nominal and share the endpoint horizon. For price-indexed benefits, poverty lines, or eligibility costs, the baseline instead pairs a real GDP-equivalent shock with real capture anchors or projects costs to that nominal horizon; price effects alone are never real fiscal capacity. Non-market or zero-price AI output lies outside GDP and the fiscal base, distinct from informality, biasing the frontier conservatively. Although source-unit supports are positive, draws with $\phi^{Y,nom}_s\leq0$ remain economic failure draws in all-draw probabilities and are excluded only from inversions conditional on $\phi^{Y,nom}_s>0$ (Section \ref{subsec:impossibility_score}). A persistently negative aggregate effect would reduce $fs^{eff}$ further, so the reported frontiers are upper bounds on that margin.
 
 When the literature reports annual growth increments over a horizon, the recurring-cost comparison uses the induced level difference relative to a no-AI counterfactual. In the static one-period notation this object is written compactly as
 \begin{equation}
@@ -234,7 +245,7 @@ If annual model-ready shocks are accumulated over horizon $H$, the level object 
 \begin{equation}
     g^{AI,level}_{i,s,H}=\prod_{\tau=1}^{H}\left(1+\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}\right)-1.
 \end{equation}
-For compactness, later equations write $g^{AI}_{i,s,t}$ for this fiscal-base-compatible level object unless the annual increment is explicitly being discussed. The official tables use the accumulated level object $g^{AI,level}$ under the frozen 2024 anchor trajectory; the static one-period approximation appears only where it is explicitly labelled. The recurring-cost comparison is an endpoint annual-flow comparison: the AI-induced level gain at horizon $H$ is interpreted as the permanent annual fiscal-base increment available at the endpoint year, and policy costs are measured or projected for that same endpoint year. This endpoint convention embeds a persistence assumption: the AI-induced level gain must persist at least as long as the recurring policy obligation. Two departures matter economically. If competition dissipates AI rents over time, the level gain may persist while its composition shifts from taxable profits toward lower prices and consumer surplus, reducing long-run marginal fiscal capture even at constant $g^{AI}$; this composition risk makes the baseline optimistic about long-run capture and motivates the labor-share and channel-composition robustness checks. If instead AI accelerates innovation, gains compound and the level convention is conservative. A present-value comparison, reported only as robustness and never mixed with the baseline annual-flow threshold, partially spans both cases. For accumulated-horizon implementations, threshold inversion is performed on the level equation
+Later equations write $g^{AI}_{i,s,t}$ for this fiscal-base-compatible level object unless discussing the annual increment. Official tables use accumulated $g^{AI,level}$ under the frozen 2024 anchor; any static one-period approximation is explicitly labelled. The recurring-cost test compares the endpoint annual fiscal-base increment with policy costs measured or projected for that endpoint, assuming the gain persists at least as long as the obligation. A shift from taxable rents toward lower prices and consumer surplus could reduce long-run capture even at constant $g^{AI}$, making the baseline optimistic about composition; innovation-driven compounding instead makes the level convention conservative. Present-value comparisons are robustness only and are never mixed with the baseline annual-flow threshold. Accumulated-horizon inversion uses
 \begin{equation}\label{eq:accumulated_threshold_condition_v22}
     \widetilde{MFC}^{gross}_{i,s,r,t}\left[\prod_{\tau=1}^{H}\left(1+\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}\right)-1\right]
     \geq R^{req,gross}_{i,p,s,r,t}(\xi).
@@ -260,12 +271,9 @@ $g^{AI,level}_{i,s,H}$ & AI-induced level gain relative to the no-AI counterfact
 \bottomrule
 \end{tabular}
 \end{table}
-\noindent The implementation must never set $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}$ directly: the translation factor is always applied, and the one-period object $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}T_{i,s,t}$ is admissible only when the calculation is explicitly labelled as a one-period static approximation. In the baseline recurring-cost comparison, $g^{AI}$ denotes the level object, not the raw annual increment.
+\noindent The implementation must never set $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}$ directly: the translation factor is always applied, and $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}T_{i,s,t}$ is admissible only as an explicitly labelled one-period static approximation. Baseline recurring-cost comparisons use the level object, not the raw annual increment. In particular, a high labour-productivity input is reported after applying $\kappa^{LP\to Y}$ and the nominal bridge, never as the source-unit value.
 
-The model assigns a GDP-equivalent support only after this bridge has been applied:
-\begin{equation}
-    \phi^Y_s\in\{\phi^{low,Y},\phi^{mid,Y},\phi^{high,Y},\phi^{stress,Y}\}.
-\end{equation}
+Only after bridging does the model assign the low, mid, high, or stress GDP-equivalent support listed in Table \ref{tab:phi_numerical_closure}.
 Because historical fiscal-capture anchors are usually constructed from nominal revenue and nominal GDP, the baseline fiscal-space implementation must use $\phi^{Y,nom}_s$ and the induced $g^{AI,level}$, or reconstruct the fiscal-capture anchor in real terms with explicit revenue and GDP deflators. Results that multiply a raw real/TFP/labour-productivity AI shock by a nominal historical capture distribution are reported only as heuristic plausibility checks, not as baseline fiscal-space estimates. For compactness, later formulas write $\phi_s$ only as shorthand for the baseline-compatible object $\phi^{Y,nom}_s$.
 
 Micro-level productivity experiments discipline plausibility in exposed tasks but do not directly identify aggregate TFP, GDP, or nominal fiscal-base effects. For example, \citet{noy2023experimental} estimate large effects for professional writing tasks, and \citet{brynjolfsson2023generative} estimate productivity gains in customer support. Those studies justify allowing positive task-level productivity gains, but they are not used as direct macro-growth estimates.
@@ -287,13 +295,11 @@ Disruptive stress, $\phi^{stress}$ & $[0.0100,0.0200]$ & GDP/TFP-equivalent stre
 \bottomrule
 \end{longtable}
 
-The preferred stochastic assignment is bounded PERT on the source-unit raw shock, followed by explicit conversion:
-\begin{align}
-    \phi^{raw}_{s,u}&\sim \mathrm{PERT}(a_s,m_s,b_s),\\
-    \phi^Y_s&=\kappa^{u\to Y}_s\phi^{raw}_{s,u},\\
-    \phi^{Y,nom}_s&=(1+\phi^Y_s)(1+\pi^{AI,Y}_s)-1.
-\end{align}
-Here $a_s$ and $b_s$ are the source-unit bounds in Table \ref{tab:phi_numerical_closure}; they are not automatically bounds for $\phi^{Y,nom}_s$ unless the table explicitly states that the support has already been converted. The modal value $m_s$ is the midpoint unless the empirical application has a source-specific central estimate.
+The preferred stochastic assignment applies bounded PERT to the source-unit shock:
+\begin{equation}
+    \phi^{raw}_{s,u}\sim \mathrm{PERT}(a_s,m_s,b_s).
+\end{equation}
+Conversion then follows the bridges above; $a_s$ and $b_s$ are the table's source-unit bounds, and $m_s$ is their midpoint unless a source-specific central estimate is available.
 
 For transparent non-stochastic reporting, the deterministic scenario values are
 \begin{equation}
@@ -305,48 +311,33 @@ For transparent non-stochastic reporting, the deterministic scenario values are
     \qquad
     \bar\phi^{stress}=0.015.
 \end{equation}
-If $\phi^{high,LP}$ is used in a GDP- or TFP-equivalent specification, the reported value is $\kappa^{LP\to Y}\bar\phi^{high,LP}$, not $\bar\phi^{high,LP}$ itself. Within fiscal-space equations this value must also be expressed as $\phi^{Y,nom}_s$ or matched to a real historical fiscal-capture anchor.
-
 \subsection{Country translation factor}\label{subsec:translation_factor_main}
 
 The static country-specific level shock is
 \begin{equation}
     g^{AI,level}_{i,s,t}=\phi^{Y,nom}_s T_{i,s,t},
 \end{equation}
-where $T_{i,s,t}\in[0,1]$ measures how much of the baseline-compatible nominal GDP-equivalent AI-productivity scenario can plausibly be translated into a domestic fiscal-base level gain. Unless a dynamic horizon is explicitly used, $g^{AI}_{i,s,t}$ below denotes this $g^{AI,level}_{i,s,t}$ object. The translation factor is built from three distinct objects:
+where $T_{i,s,t}\in[0,1]$ is the share of the baseline-compatible nominal GDP-equivalent scenario translated into a domestic fiscal-base level gain. Unless a dynamic horizon is explicit, $g^{AI}_{i,s,t}$ below denotes this level object. Translation uses three distinct inputs:
 \begin{itemize}
     \item $E^{prod}_{i,t}$: productive AI exposure, or the share of tasks, occupations, or sectors where AI can plausibly raise output or efficiency.
     \item $A_{i,t}$: AI preparedness or absorptive capacity, including digital infrastructure, human capital and labour-market policies, innovation and economic integration, and regulation and ethics.
     \item $q^{prod}_{i,s,t}$: realized productive adoption, meaning AI use that has been integrated into production processes rather than merely accessed or tested.
 \end{itemize}
-The IMF AI Preparedness Index is the preferred source for $A_{i,t}$ because it is explicitly designed to compare AI adoption preparedness across countries using digital infrastructure, human capital and labour-market policies, innovation/economic integration, and regulation/ethics indicators \citep{imf2024aipi,cazzaniga2024genai}. For Latin America and the Caribbean, the World Bank--ILO ranges of Section \ref{subsec:prod_disp_exposure_main} show that productive exposure is well below total exposure \citep{worldbankilo2024lacgenai}. Therefore the baseline uses the productivity-enhancing component for $E^{prod}$ and sends automation exposure to the labour-share/displacement block.
+The IMF AI Preparedness Index (AIPI) supplies $A_{i,t}$ consistently across countries \citep{imf2024aipi,cazzaniga2024genai}. World Bank--ILO ranges show that productive exposure in Latin America and the Caribbean is well below total exposure \citep{worldbankilo2024lacgenai}; the baseline therefore assigns the productivity-enhancing component to $E^{prod}$ and automation exposure to the labour-share/displacement block (Section \ref{subsec:prod_disp_exposure_main}).
 
-If occupation-level and sector-level measures are available, productive exposure is computed as
-\begin{align}
-    E^{occ,prod}_{i,t}&=\sum_o \omega^{emp}_{i,o,t}e^{prod}_o,\\
-    E^{sec,prod}_{i,t}&=\sum_j \omega^{va}_{i,j,t}e^{prod}_j,
-\end{align}
-and combined as
-\begin{equation}
-    E^{prod}_{i,t}=\varpi E^{occ,prod}_{i,t}+(1-\varpi)E^{sec,prod}_{i,t},
-    \qquad \varpi\in[0,1].
-\end{equation}
+Where occupational and sectoral maps exist, $E^{prod}$ is their convex combination (weight $\varpi$), with occupational exposure weighted by employment and sectoral exposure by value added (Appendix \ref{app:ai_shock_module}); the pilot uses the regional fallback below.
 When the application is restricted to Latin America and lacks country-specific task maps, the fallback support is
 \begin{equation}
     E^{prod}_{i,t}\in[0.08,0.14],
 \end{equation}
 interpreted as a regional support for productivity-enhancing GenAI exposure, not as total exposure. Total exposure $[0.26,0.38]$ is reported only as a broad-exposure robustness check, and full-automation exposure $[0.02,0.05]$ is used only in the labour-displacement channel.
 
-Preparedness can either be read directly from the IMF AIPI or reconstructed from its dimensions:
-\begin{equation}
-    A_{i,t}=\left(D_{i,t}^{w_D}H_{i,t}^{w_H}R_{i,t}^{w_R}G_{i,t}^{w_G}\right)^{1/(w_D+w_H+w_R+w_G)},
-\end{equation}
-where $D$ is digital infrastructure, $H$ is human capital and labour-market policy readiness, $R$ is innovation and economic integration, and $G$ is regulation and ethics. The geometric aggregation is preferred because a severe bottleneck in one dimension should reduce absorptive capacity even when another dimension is strong. A reconstructed index need not coincide numerically with the published AIPI value. The implementation adopts the published AIPI index values consistently across countries and labels that convention; the reconstruction equation remains a documented alternative. The dimension symbols $D$, $H$, $R$, and $G$ are local to this reconstruction equation; elsewhere in the paper $D_{s,t}$ denotes the dynamic diffusion path, $H$ an accumulation horizon, and $R$ revenue objects.
+The implementation adopts published AIPI values consistently across countries; Appendix \ref{app:ai_shock_module} documents reconstruction from its four dimensions.
 
 
 \subsection{Calibrable logistic adoption module}\label{subsec:logistic_adoption_main}
 
-The framework distinguishes AI access, AI use, and productive AI adoption. Access means that firms or workers can technically reach AI tools. Use means that they use those tools in some tasks. Productive adoption means that use is integrated into output-producing processes in a way that plausibly affects productivity. This distinction matters because micro-level productivity gains do not automatically become macroeconomic productivity gains.
+The framework distinguishes technical access, task-level use, and productive adoption integrated into output processes; micro productivity gains need not become macro gains.
 
 The baseline use equation is
 \begin{equation}\label{eq:q_use_logistic_main_v10}
@@ -379,33 +370,28 @@ The preferred country translation factor separates productive exposure from prod
 \begin{equation}\label{eq:S_ndc_main_v10}
     S^{NDC}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde E^{prod}_{i,t})^{\beta}(\tilde q^{prod,num}_{i,s,t})^{\gamma},
 \end{equation}
-where $NDC$ denotes no-double-counting and $\tilde E^{prod}_{i,t}$ and $\tilde q^{prod,num}_{i,s,t}$ are the floor-regularized inputs $\tilde X=\epsilon+(1-\epsilon)X$ defined in Appendix \ref{app:ai_shock_module}. The full score
-\begin{equation}\label{eq:S_full_main_v10}
-    S^{full}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde A_{i,t})^{\alpha}(\tilde E^{prod}_{i,t})^{\beta}(\tilde q^{prod,num}_{i,s,t})^{\gamma}
-\end{equation}
-is not the baseline if $q^{prod}$ is simulated from preparedness. It is a robustness specification, or a valid alternative only when $q^{prod}$ is independently observed from adoption data rather than generated from $A$ or $E^{prod}$.
+where $NDC$ denotes no-double-counting and $\tilde E^{prod}_{i,t}$ and $\tilde q^{prod,num}_{i,s,t}$ are the floor-regularized inputs $\tilde X=\epsilon+(1-\epsilon)X$ defined in Appendix \ref{app:ai_shock_module}. The full score with direct preparedness is a labelled robustness specification, valid only when $q^{prod}$ is independently observed from adoption data rather than generated from $A$ or $E^{prod}$ (Appendix \ref{app:ai_shock_module}).
 
 The baseline translation factor is
 \begin{equation}\label{eq:T_ndc_main_v10}
     T_{i,s,t}=\min\left\{1,\frac{S^{NDC}_{i,s,t}}{S^{frontier}_{s,t}}\right\}.
 \end{equation}
 Because $S^{NDC}$ contains the substantive-adoption indicator, $q^{prod}_{i,s,t}\leq0$ implies $S^{NDC}_{i,s,t}=0$, $T_{i,s,t}=0$, and therefore $g^{AI}_{i,s,t}=0$ in the static implementation.
-The term $S^{frontier}_{s,t}$ is an external frontier benchmark for the scenario-year, calibrated from high-preparedness, high-exposure, high-adoption benchmark economies or an explicitly documented frontier sample. It is not computed as the internal percentile of the emerging-economy pilot sample, because an internal regional percentile could assign $T\approx1$ to the strongest country in a weak sample and thereby overstate absolute AI translation capacity. When threshold inversions solve for $q^{prod,*}$, $E^{prod,*}$, or $T^*$, this reference value is held fixed with respect to the country-policy cell being inverted. This avoids circularity in which the threshold changes the normalization constant it is trying to cross. If a within-sample percentile is reported, it is labelled as a relative-index robustness check rather than the baseline AI-translation factor. A population-consistency convention applies: because $T=1$ means the country translates the scenario like the benchmark set, the benchmark economies defining $S^{frontier}_{s,t}$ must be the population for which $\phi_s$ was estimated. If $\phi_s$ is an average-advanced-economy estimate, $S^{frontier}$ is calibrated on that same average set, not on the top performer; using a stricter benchmark than the estimation population double-discounts adoption and must be labelled as an additional conservative wedge.
+$S^{frontier}_{s,t}$ is an external scenario-year benchmark from high-preparedness, high-exposure, high-adoption economies, never an internal pilot percentile that could assign $T\approx1$ within a weak sample. It remains fixed when inversions solve for $q^{prod,*}$, $E^{prod,*}$, or $T^*$, avoiding circular normalization. Any within-sample percentile is labelled only as a relative-index robustness check. Because $T=1$ denotes benchmark-like translation, population consistency requires the benchmark to match the population underlying $\phi_s$: an average-advanced-economy estimate uses that average set, not its top performer; a stricter benchmark double-discounts adoption and must be labelled as an additional conservative wedge.
 
 \subsection{Productive exposure versus displacement exposure}\label{subsec:prod_disp_exposure_main}
 
-The model separates productivity-enhancing exposure from labor-displacement exposure. The variables $E^{prod}_{i,t}$, $E^{disp}_{i,t}$, and $E^{total}_{i,t}$ denote conceptually distinct exposure measures, not interchangeable labels. In applications,
+Productivity-enhancing, labor-displacement, and total exposure are distinct, not interchangeable:
 \begin{equation}
     E^{prod}_{i,t}\leq E^{total}_{i,t},\qquad E^{disp}_{i,t}\leq E^{total}_{i,t}.
 \end{equation}
-If the empirical source defines the productive and displacement categories as non-overlapping, the additional restriction $E^{prod}_{i,t}+E^{disp}_{i,t}\leq E^{total}_{i,t}$ is imposed. If the categories may overlap, the overlap is documented rather than forced to zero.
-For Latin America, the World Bank--ILO evidence provides a useful regional anchor: total GenAI exposure is approximately $26$--$38$ percent of employment, productivity-transforming exposure is approximately $8$--$14$ percent, and automation risk is approximately $2$--$5$ percent \citep{worldbankilo2024lacgenai}. The baseline therefore initializes
+For source-defined non-overlapping categories, $E^{prod}_{i,t}+E^{disp}_{i,t}\leq E^{total}_{i,t}$ is imposed; otherwise overlap is documented, not forced to zero. World Bank--ILO evidence anchors Latin American total exposure at approximately $26$--$38$ percent of employment, productivity-transforming exposure at $8$--$14$ percent, and automation risk at $2$--$5$ percent \citep{worldbankilo2024lacgenai}. The baseline initializes
 \begin{equation}
     E^{prod}_{i,t}\in[0.08,0.14],\qquad
     E^{disp}_{i,t}\in[0.02,0.05],\qquad
     E^{total}_{i,t}\in[0.26,0.38],
 \end{equation}
-for the Latin American pilot unless better country-sector data are available. In the labor-share module, $E^{auto}$ maps to $E^{disp}$ when only aggregate automation-risk data are available, and $E^{aug}$ maps to $E^{prod}$ when only productivity-enhancing exposure is available. If finer task-level measures exist, $E^{auto}$ and $E^{aug}$ are estimated separately.
+unless better country-sector data exist. In the labor-share module, $E^{auto}$ maps to $E^{disp}$ with aggregate automation-risk data and $E^{aug}$ to $E^{prod}$ with productivity-enhancing data; finer task maps estimate them separately.
 
 \section{Labor-Share Channel}\label{sec:labor_share}
 
@@ -413,17 +399,16 @@ Let
 \begin{equation}
     LS_{i,t}=\frac{W_{i,t}}{Y^0_{i,t}}
 \end{equation}
-denote the labor share of income, where $W_{i,t}$ is baseline total labor compensation and $Y^0_{i,t}$ is the no-AI counterfactual GDP or value-added denominator. In the static accounting implementation, any legacy notation $Y_{i,t}$ in calibration tables is identified with $Y^0_{i,t}$ before ratios are computed.
-At the anchor year $t_0$, the counterfactual is initialized at observed GDP, $Y^0_{i,t_0}=Y_{i,t_0}$, so the GenAI-induced GDP component is treated as negligible at $t_0$. The strict condition $LS_{i,t}\in(0,1)$ is required for the logit transformation.
+denote the labor share of income, with baseline total labor compensation $W_{i,t}$ and no-AI GDP or value added $Y^0_{i,t}$. Legacy calibration notation $Y_{i,t}$ is identified with $Y^0_{i,t}$ before computing ratios. At the anchor $t_0$, $Y^0_{i,t_0}=Y_{i,t_0}$, treating the GenAI-induced component as negligible at $t_0$; $LS_{i,t}\in(0,1)$ is required for the logit transformation.
 The complement is not labelled mechanically as corporate profits. It is a non-labor residual share,
 \begin{equation}
     NLS_{i,t}=1-LS_{i,t},
 \end{equation}
 which may include mixed income, depreciation, net taxes on production, gross operating surplus, rents, and other non-labor components depending on the national-accounts concept used. In economies with large self-employment or informal employment, the implementation distinguishes raw and mixed-income-adjusted labor shares; Appendix \ref{app:labor_share_module} defines both measures, and the baseline notation $LS_{i,t}$ denotes the preferred adjusted measure \citep{gollin2002getting}.
 
-The labor-share block is not intended to forecast the full general-equilibrium effect of AI on wages. Its purpose is narrower: it allocates the AI-induced output increment between labor-income and capital/profit-income channels, because these channels differ in taxability and therefore in fiscal capture. This is important because automation can shift the distribution of income between labor and capital even when aggregate output rises \citep{acemoglu2018race,acemoglu2019automation,karabarbounis2014global}.
+The labor-share block does not forecast general-equilibrium wage effects. Its narrower purpose is to allocate the AI-induced output increment between labor and capital/profit income, whose taxability and fiscal capture differ. Automation can shift this distribution even when aggregate output rises \citep{acemoglu2018race,acemoglu2019automation,karabarbounis2014global}.
 
-The model separates productivity-enhancing exposure from labor-displacement exposure. Let $E^{auto}_{i,t}$ denote exposure to tasks that AI can plausibly automate or substitute, and let $E^{aug}_{i,t}$ denote exposure to tasks that AI can plausibly augment or complement. Let $RST_{i,t}$ denote reskilling, task-reinstatement, or human-AI-complementarity capacity. Empirically, $RST$ may be proxied by active labour-market policy spending, training participation from ILOSTAT, or a residualized human-capital component of the AIPI, residualized against $A$ to avoid double counting. The latent pressure on the labor share is
+The model separates exposure to tasks AI can automate or substitute, $E^{auto}_{i,t}$, from those it can augment or complement, $E^{aug}_{i,t}$. Reskilling, task reinstatement, or human--AI complementarity capacity $RST_{i,t}$ may be proxied by active labour-market policy spending, ILOSTAT training participation, or an AIPI human-capital component residualized against $A$ to avoid double counting. The latent labor-share pressure is
 \begin{equation}
     \Delta \ell_{i,s,t}
     =
@@ -432,12 +417,12 @@ The model separates productivity-enhancing exposure from labor-displacement expo
     +
     \psi_s E^{aug}_{i,t}q^{prod}_{i,s,t},
 \end{equation}
-where $\delta_s\geq0$ measures automation pressure, $\psi_s\geq0$ measures augmentation pressure, and $\zeta_s\geq0$ measures the extent to which reskilling or task reinstatement mitigates automation pressure. The restriction $\psi_s\geq0$ is a scenario convention, not a general theoretical implication: whether augmentation raises the labor share depends on substitution elasticities between augmented labor and capital. The low-$\psi_s$ cells approximate the neutral case, which is reached exactly only in the no-labor-augmentation ablation ($\psi_s=0$). In the baseline calibration, $RST$ mitigates displacement rather than raising the labor share independently of AI adoption. A conservative restriction is
+where $\delta_s\geq0$ is automation pressure, $\psi_s\geq0$ augmentation pressure, and $\zeta_s\geq0$ mitigation through reskilling or task reinstatement. The convention $\psi_s\geq0$ is scenario-specific, not theoretical: the labor-share effect of augmentation depends on substitution elasticities between augmented labor and capital. Low-$\psi_s$ cells approach neutrality, reached exactly only in the no-labor-augmentation ablation ($\psi_s=0$). Baseline $RST$ mitigates displacement rather than independently raising labor share. A conservative restriction is
 \begin{equation}
     0\leq \zeta_s RST_{i,t}\leq \delta_s,
 \end{equation}
 with possible overcompensation allowed only in an explicitly augmentation-dominant robustness scenario.
-A single productive-adoption stock $q^{prod}$ scales both automation and augmentation pressure. Economically, automation adoption responds to labor costs while augmentation adoption responds to complementary skills; using one diffusion object is a deliberate simplification with ambiguous direction, spanned partially by the $\delta_s/\psi_s$ scenario grid. When $E^{auto}$ is anchored to full-automation risk only, displacement pressure is a lower bound: partial task automation within the broader exposed share also displaces labor income. The automation-heavy scenario partially compensates by raising $\delta_s$.
+A single productive-adoption stock $q^{prod}$ scales both pressures, although automation responds to labor costs and augmentation to complementary skills. Using one diffusion object is a deliberate simplification with ambiguous direction, partially spanned by the $\delta_s/\psi_s$ scenario grid. If $E^{auto}$ captures only full-automation risk, displacement pressure is a lower bound because partial task automation also displaces labor income; the automation-heavy scenario partially compensates through higher $\delta_s$.
 
 To keep the post-shock labor share inside the unit interval, the target labor share is defined on the logit scale:
 \begin{equation}
@@ -470,7 +455,7 @@ The resulting labor and non-labor income flows follow exact accounting identitie
 
 \section{Fiscal Conversion Block}\label{sec:fiscal_conversion}
 
-A central weakness of reduced-form claims about AI-financed social protection is the implicit assumption that additional output automatically becomes public revenue. This paper therefore treats fiscal conversion as a tax-base-channel problem. The relevant object is not the average tax-to-GDP ratio. It is the effective marginal fiscal capture of an AI-induced output increment after the composition of the tax base, observed effective rates, compliance, exemptions, leakage, administrative costs, and transition costs are handled without double counting. The framework uses a statutory-accrual incidence convention: revenue is attributed to the channel where the income flow legally accrues. Economic incidence shifting (corporate taxes partially borne by labor under capital mobility, incomplete VAT pass-through) is a behavioral response outside the accounting baseline and is spanned only by the behavioral-erosion extension in Appendix \ref{app:fiscal_conversion_module}. This follows the policy logic in \citet{brollo2024fiscal}, where generative AI raises questions about labor disruption, social protection, capital-income taxation, corporate taxation, market power, and highly uncertain technological scenarios.
+Additional output does not automatically become public revenue, so fiscal conversion is a tax-base-channel problem rather than an average tax-to-GDP ratio. The object is effective marginal capture after base composition, observed effective rates, compliance, exemptions, leakage, administrative costs, and transition costs are assigned without double counting. Under the statutory-accrual convention, revenue belongs to the channel where income legally accrues. Economic incidence shifting---including corporate-tax burdens on labor under capital mobility and incomplete VAT pass-through---is behavioral, lies outside the accounting baseline, and is covered only by the erosion extension in Appendix \ref{app:fiscal_conversion_module}. This implements the policy logic of \citet{brollo2024fiscal} on labor disruption, social protection, capital and corporate taxation, market power, and technological uncertainty.
 
 Let the AI-induced output increment be
 \begin{equation}
@@ -494,7 +479,7 @@ The baseline labor-share block sets $\Delta O^{AI}_{i,s,t}=0$ because labor inco
     =(1-\tau^{K,disp}_{i,s,r,t})\Delta\Pi^{AI,dom}_{i,s,t}.
 \end{split}
 \end{equation}
-The fiscal capital channel uses $\tau^{K,fisc,eff}_{i,s,r,t}$, while the consumption channel uses the disposable-income rate $\tau^{K,disp}_{i,s,r,t}$. The two rates need not be identical: effective fiscal capture may include compliance, corporate taxation, withholding, and other institutional components that do not map one-to-one into household disposable income. Consumption is not a third functional component of output. It is an induced tax base generated by disposable income and import leakages. Consequently, the fiscal weights below are tax-base exposure weights, not exhaustive shares of $\Delta Y^{AI}$, and they need not sum to one. In the baseline convention, foreign ownership and profit shifting enter once, through the construction of $\Delta\Pi^{AI,dom}$. They are therefore not re-applied inside the capital-channel capturability term $\chi^K$. A rate-side profit-shifting convention may be used only as an explicitly labelled robustness check, in which case $\psi^{shift}$ is set to zero in the base-side chain.
+The capital fiscal-capture rate $\tau^{K,fisc,eff}_{i,s,r,t}$ and disposable-income rate $\tau^{K,disp}_{i,s,r,t}$ may differ because compliance, corporate taxation, withholding, and related institutions need not map one-to-one into household income. Consumption is an induced base from disposable income and import leakages, not a third functional output component. Thus the fiscal weights are tax-base exposure ratios, not exhaustive shares of $\Delta Y^{AI}$, and need not sum to one.
 
 \subsection{Gross and effective fiscal conversion}\label{subsec:gross_effective_fiscal_conversion}
 
@@ -530,7 +515,7 @@ Under the subset convention, the implementation verifies $\lambda^{AI,Kbase}_{i,
     +\omega^C_{i,s,t}\tau^{C,eff}_{i,s,r,t}
     +\lambda^{AI}_{i,s,t}\tau^{AI,eff}_{i,s,r,t}.
 \end{equation}
-The effective fiscal rates $\tau^{j,fisc,eff}$ already include the compliance, informality, exemption, and capturability adjustments that the declared channel conventions assign to the rate side; adjustments assigned to the base side, such as consumption exemptions inside $\Delta C^{AI,taxable}$ under the baseline convention, are not embedded in the rate again. Therefore Equation \eqref{eq:mfc_gross_channel_v10} does not multiply by an additional $\chi^j$. If a statutory or normative rate is used instead, the appendix decomposes $\tau^{j,fisc,eff}=\tau^{j,base}\chi^j$ before it enters the main formula. The objects $\omega^L$, $\omega^K$, and $\omega^C$ are tax-base response ratios, not probability weights. If a channel response is negative under a robustness scenario, it must be reported as a negative tax-base contribution rather than hidden by renormalizing the remaining channels.
+Effective fiscal rates $\tau^{j,fisc,eff}$ already include rate-side compliance, informality, exemption, and capturability adjustments; base-side adjustments such as consumption exemptions inside $\Delta C^{AI,taxable}$ are not embedded again. Equation \eqref{eq:mfc_gross_channel_v10} therefore applies no additional $\chi^j$; with statutory or normative rates, the appendix first constructs $\tau^{j,fisc,eff}=\tau^{j,base}\chi^j$. The $\omega^L$, $\omega^K$, and $\omega^C$ objects are tax-base response ratios, not probability weights. A negative robustness-channel response is reported as a negative base contribution, never hidden by renormalization.
 Labor informality is assigned to exactly one side of the labor channel. The rate-side convention is the baseline, consistent with the convention that $\tau^{eff}$ already includes informality: $\omega^L$ is constructed from gross $\Delta W^{AI}$ and $\chi^L=(1-I^{L,marg})^{\rho_L}$ enters once inside $\tau^{L,fisc,eff}$. Under the alternative base-side convention, $\omega^L$ is constructed from $\Delta W^{taxable}$ in Equation \eqref{eq:labor_informality_base_side_v25}, and $\tau^{L,fisc,eff}$ must not include $\chi^L$. The base-side and rate-side penalties are never applied together.
 
 A key implementation convention is required here. Equation \eqref{eq:mfc_gross_channel_v10} is a realized-scenario marginal-conversion object. In the historical reduced-form mode, $MFC^{gross}$ is drawn directly and is fixed when solving threshold inversions. In the channel-based mode, however, some exposure ratios $\omega^j$ may themselves be functions of the AI shock because $\omega^j=(\Delta B^{j,tax}/Y^0)/g^{AI}$. Therefore the compact product $MFC^{gross}g^{AI}$ is exact at the evaluated scenario, but closed-form inversions that vary $g^{AI}$ are valid only under a frozen-weight convention. When channel weights are recomputed as the shock varies, the implementation solves thresholds from the channel-revenue function in Appendix \ref{app:fiscal_conversion_module}, Equation \eqref{eq:channel_revenue_function_v24}.
@@ -595,7 +580,7 @@ Fiscal regimes are indexed by $r$:
     \item $r=3$: AI-rent capture - explicit taxation of digital or AI-specific rents.
     \item $r=4$: combined reform - compliance gains, base broadening, and AI-rent capture.
 \end{itemize}
-The regime index changes $\tau^{j,fisc,eff}$, $\tau^{AI,eff}$, $ac^{net,fix}$, $tr^{ann}$, $leak^{fix}$, $ac^{ME}$, $tr^{ME}$, and $leak^{ME}$; the rent share $\lambda^{AI}_{i,s,t}$ is an economic scenario object and accordingly carries no $r$ index. It does not change the AI productivity shock itself. One qualification applies to base-side conventions: base-broadening reforms operate on legal margins that the baseline conventions assign to the base side, since consumption exemptions enter $\Delta C^{AI,taxable}$ through $(1-exempt^C)$ and ordinary profit shifting enters $\Delta\Pi^{AI,dom}$ through $\psi^{shift}$. In regimes $r\geq2$ these base-side parameters therefore carry the regime index in implementation, $exempt^C_{i,r,t}$ and $\psi^{shift}_{i,s,r,t}$, and the induced exposure weights $\omega^C$ and $\omega^K$ inherit it; equivalently, the implementation may switch to the corresponding labelled rate-side convention and let the reform act through $\chi^j$. The same reform margin must not be implemented base-side and rate-side simultaneously. Reform-regime revenue gains are mechanical upper bounds: regimes $r\geq1$ raise effective rates and capture shares without a baseline behavioral cost, while evasion, avoidance, and relocation respond to enforcement and rates, and AI rents are the most mobile base in the menu. Any headline result that relies on $r\geq1$ must therefore be accompanied by the behavioral-erosion robustness of Appendix \ref{app:fiscal_conversion_module} for $B^{j,taxable}$; reporting reform regimes without it overstates reform payoffs relative to the conservative discipline used elsewhere in the framework. This separation is important because optimistic fiscal reform should not be hidden inside optimistic technology assumptions.
+The regime index changes $\tau^{j,fisc,eff}$, $\tau^{AI,eff}$, $ac^{net,fix}$, $tr^{ann}$, $leak^{fix}$, $ac^{ME}$, $tr^{ME}$, and $leak^{ME}$, but the scenario rent share $\lambda^{AI}_{i,s,t}$ has no $r$ index and regimes do not alter the AI shock. Base broadening acts on legal base-side margins: because exemptions and ordinary shifting enter $\Delta C^{AI,taxable}$ through $(1-exempt^C)$ and $\Delta\Pi^{AI,dom}$ through $\psi^{shift}$, regimes $r\geq2$ index $exempt^C_{i,r,t}$ and $\psi^{shift}_{i,s,r,t}$, inherited by $\omega^C$ and $\omega^K$; alternatively, a labelled rate-side convention acts through $\chi^j$. The same margin must never operate on both sides. Gains for $r\geq1$ are mechanical upper bounds because the baseline omits behavioral responses of evasion, avoidance, and relocation, especially for mobile AI rents. Every headline result relying on $r\geq1$ therefore requires the behavioral-erosion companion for $B^{j,taxable}$ in Appendix \ref{app:fiscal_conversion_module}; omitting it overstates reform payoffs relative to the conservative discipline used elsewhere. Fiscal-reform optimism must remain separate from technology optimism.
 
 \subsection{Observed fiscal anchors}
 
@@ -614,7 +599,7 @@ For each country $i$, fiscal regime $r$, and scenario $s$, fiscal-conversion dra
     MFC^{gross}_{i,s,r,t}
     \sim \text{PERT}\left(P10(MFC^{hist,gross,+}_i),P50(MFC^{hist,gross,+}_i),P90(MFC^{hist,gross,+}_i)\right),
 \end{equation}
-with country-regime bounds. A tighter interquartile support $\text{PERT}(P25,P50,P75)$ may be reported as a low-dispersion robustness variant; using quartiles as distribution bounds truncates the historical support more severely than the baseline decile bounds and is not the baseline. For unconditional fiscal-risk assessment, the implementation uses the two-component mixture in Section \ref{sec:historical_plausibility}. Second, enforce unit consistency. If $MFC^{gross}$ is calibrated from nominal revenue and nominal GDP, the AI shock used in $fs^{eff}$ must be the accumulated level object $g^{AI,level}_{i,s,t}$ constructed from $\phi^{Y,nom}$ and $T$. Alternatively, the historical fiscal-capture anchor must be reconstructed in real terms with explicit revenue and GDP deflators and then matched to a real GDP-equivalent AI shock. The baseline does not multiply a real/TFP-equivalent $g^{AI}$ by a nominal historical $MFC^{gross}$.
+with country-regime bounds. A tighter $\text{PERT}(P25,P50,P75)$ is a low-dispersion robustness variant, not the baseline, because quartile bounds truncate support more than decile bounds. Unconditional assessment uses the two-component mixture in Section \ref{sec:historical_plausibility}. Unit matching follows the canonical nominal/real rule in Section \ref{subsec:phi_ladder_main}; in particular, the baseline never combines real/TFP-equivalent $g^{AI}$ with nominal historical $MFC^{gross}$.
 
 Then compute $fs^{eff}=\widetilde{MFC}^{gross}g^{AI,level}-ac^{net,fix}-tr^{ann}-leak^{fix}$ and derive $MFC^{eff}=fs^{eff}/g^{AI,level}$ only when needed for reporting and $g^{AI,level}>0$. This ensures that the historical plausibility check compares gross objects with gross objects, while effective feasibility uses net fiscal space.
 
@@ -634,10 +619,7 @@ Because $\Delta R$ may be negative even when nominal GDP growth is positive, the
 \begin{equation}\label{eq:mfc_hist_positive_v10}
     H_i^+=\{MFC^{hist,gross}_{i,t}:MFC^{hist,gross}_{i,t}\geq0\}.
 \end{equation}
-Negative-capture years are not deleted silently; they are reported as fiscal-stress years. The positive-capture calibration is explicitly conditional and is labelled as a positive-capture scenario, not unconditional baseline capacity:
-\begin{equation}
-    MFC^{gross}\sim MFC^{hist,gross}\mid MFC^{hist,gross}\geq0.
-\end{equation}
+Negative-capture years remain reported as fiscal-stress years. The positive-capture calibration $MFC^{gross}\sim MFC^{hist,gross}\mid MFC^{hist,gross}\geq0$ is explicitly conditional and labelled as a positive-capture scenario, not unconditional baseline capacity.
 The empirical table must also report
 \begin{equation}
     p_i^- = \Pr\left(MFC^{hist,gross}_{i,t}<0\right)
@@ -650,8 +632,8 @@ inside the historical window. When the goal is unconditional uncertainty propaga
     MFC^{hist,gross,+}, & \text{with probability }1-p_i^- ,
     \end{cases}
 \end{equation}
-where $MFC^{hist,gross,+}$ is the positive-capture support and $MFC^{hist,gross,-}$ is the negative-capture or fiscal-stress support. PERT distributions based only on $H_i^+$ are therefore interpreted as positive-capture conditional scenarios and may overstate unconditional fiscal capacity in crisis-prone economies. This does not imply $MFC^{eff}\geq0$: after subtracting administrative costs, transition costs, and leakage, effective fiscal space may be negative. Negative $fs^{eff}$ draws are economic failure draws, not invalid draws.
-The mixture is unconditional with respect to the sign of revenue capture but conditional on positive nominal GDP growth years (cleaning rule 2); this is the relevant reference class because the fiscal-capture question is posed conditional on a positive AI-induced fiscal-base increment, and draws with zero or negative increments are handled as economic non-crossing or failure draws to which no capture ratio is applied.
+Here $MFC^{hist,gross,+}$ and $MFC^{hist,gross,-}$ are the positive and fiscal-stress supports. PERT draws from $H_i^+$ are positive-capture conditional and may overstate unconditional capacity in crisis-prone economies. Nor does this imply $MFC^{eff}\geq0$: net fiscal space can be negative after costs and leakage, and negative $fs^{eff}$ draws are economic failures, not invalid draws.
+The mixture is unconditional over the sign of capture but conditional on positive nominal GDP growth (cleaning rule 2), the relevant class for a positive AI-induced increment. Zero or negative increments remain economic non-crossings or failure draws without a capture ratio.
 
 The positive-capture PERT is the baseline conditional-feasibility benchmark: it asks whether a policy could cross under years in which marginal revenue capture is positive. The two-component mixture is the unconditional fiscal-risk benchmark: it preserves the empirical probability of negative-capture years. The positive-capture conditional benchmark is reported in the Monte Carlo table of Section \ref{sec:empirical_results}; the unconditional mixture is reported, for both tax and total-revenue anchors, in the historical reduced-form output of the reproducibility package. Claims of expected feasibility must rely on the unconditional mixture or explicitly state that they are conditional on positive fiscal-capture years.
 
@@ -661,7 +643,7 @@ The historical plausibility comparison is
     \{P25,P50,P75,P90\}(MFC^{hist,gross,+}_i).
 \end{equation}
 A scenario requiring $MFC^{gross}>P90(MFC^{hist,gross,+}_i)$ is flagged as historically demanding. A scenario requiring $MFC^{eff}>P90(MFC^{hist,gross,+}_i)$ is not used as the primary comparison because it compares a net object to a gross historical object. Effective feasibility is assessed through $V^{gross}$ and $V^{net}$, while plausibility of fiscal capture is assessed using the gross-to-gross comparison.
-The historical prior is composition-weighted: $MFC^{hist}$ reflects the sectoral and factor composition of historical growth, including commodity cycles and formalization episodes. The AI increment is plausibly more formal-sector and more intangible-intensive, which pushes capture in opposite directions. A divergence between channel-mode and historical-mode results is therefore evidence about composition change, not a specification error; the $P90$ flag is a plausibility label under historical composition. The historical prior is also policy-inclusive: $MFC^{hist,gross}$ and $Buoyancy^{hist}$ are buoyancy-type objects that embed discretionary rate changes, new taxes, and administrative reforms inside the window, not pure elasticities net of policy change. Comparing a status-quo ($r=0$) scenario against this distribution is therefore generous, since part of the historical upper tail was achieved through reform, while a reform-regime scenario flagged as historically demanding is being compared against a history that already contains reform episodes. The $P90$ flag must be read with this buoyancy-not-elasticity caveat.
+The historical prior is composition-weighted: $MFC^{hist}$ reflects sectoral and factor composition, commodity cycles, and formalization, while a more formal and intangible-intensive AI increment pushes capture in opposite directions. Divergence between channel and historical modes therefore signals composition change, not specification error; the $P90$ flag applies under historical composition. The prior is also policy-inclusive: $MFC^{hist,gross}$ and $Buoyancy^{hist}$ embed discretionary rate changes, new taxes, and administration, rather than pure elasticities. It is thus generous to status quo $r=0$, since reform helped produce the historical upper tail, while reform regimes are compared with a history already containing reforms. The $P90$ flag retains this buoyancy-not-elasticity caveat.
 
 The cleaning rules are:
 \begin{enumerate}
@@ -672,7 +654,7 @@ The cleaning rules are:
     \item Report results with and without resource revenue where GRD provides the distinction.
     \item Winsorize raw ratios at $P1/P99$ or report robust medians to avoid denominator artifacts.
 \end{enumerate}
-The purpose is not to reject ambitious fiscal reform mechanically. The purpose is to label whether a feasibility result requires ordinary, demanding, or historically extreme fiscal capture. Because historical revenue and GDP series are usually nominal while AI-productivity studies often report real, TFP-equivalent, or labour-productivity-equivalent objects, the empirical implementation must choose one baseline convention before computing fiscal space: either convert the AI shock into a nominal GDP-equivalent fiscal-base shock $g^{AI,level}$, or reconstruct the historical fiscal-capture anchor in real terms with explicit revenue and GDP deflators. The official implementation adopts the first convention: raw scenario supports are converted into nominal GDP-equivalent shocks and accumulated into $g^{AI,level}$ under the frozen-anchor trajectory, and the post-bridge nominal supports are reported in the primary-specification table of Section \ref{sec:empirical_results}. Results that multiply a real/TFP-equivalent AI shock by a nominal historical capture distribution are reported only as heuristic plausibility checks, not as baseline fiscal-space estimates.
+The comparison labels whether feasibility requires ordinary, demanding, or historically extreme capture rather than mechanically rejecting reform. Unit matching follows the canonical rule in Section \ref{subsec:phi_ladder_main}. The official implementation adopts its nominal convention: raw supports become nominal GDP-equivalent shocks accumulated into $g^{AI,level}$ under the frozen-anchor trajectory, with post-bridge supports reported in the primary-specification table of Section \ref{sec:empirical_results}. Products of real/TFP-equivalent shocks and nominal historical capture remain heuristic plausibility checks, never baseline fiscal-space estimates.
 
 
 \section{Feasibility Thresholds and Fiscal Guardrails}\label{sec:thresholds}
@@ -687,7 +669,7 @@ The structural accounting threshold is $V^{gross}=1$. A net-cost version,
 \begin{equation}\label{eq:Vnet_main_v10}
     V^{net}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{c^{net}_{i,p,t}},\qquad c^{net}_{i,p,t}>0,
 \end{equation}
-is reported only as robustness when existing spending offsets are measured and the net incremental cost is strictly positive. If $c^{net}=0$, the policy is reported as already covered by existing spending and $V^{net}$ is not computed. To preserve backward readability, $V$ without superscript denotes $V^{gross}$ unless explicitly stated otherwise.
+is robustness only when measured spending offsets leave a strictly positive net incremental cost. If $c^{net}=0$, existing spending already covers the policy and $V^{net}$ is not computed. Without a superscript, $V$ denotes $V^{gross}$.
 
 Define the absolute and relative gaps as
 \begin{equation}
@@ -702,15 +684,11 @@ A prudential buffer $\xi\geq0$ requires
 \begin{equation}\label{eq:prudential_main_v10}
     fs^{eff}_{i,p,s,r,t}\geq(1+\xi)c^{gross}_{i,p,t}.
 \end{equation}
-The standard grid is
-\begin{equation}
-    \xi\in\{0,0.05,0.10,0.25,0.50\}.
-\end{equation}
-These values are reporting margins under deep uncertainty, not structural constants.
+The standard grid $\xi\in\{0,0.05,0.10,0.25,0.50\}$ defines reporting margins under deep uncertainty, not structural constants.
 
 \subsection{Debt-stabilizing primary-balance guardrail}
 
-Let $PB^0_{i,t}$ be the baseline primary balance and $PB^{stab}_{i,t}$ the debt-stabilizing primary balance, both as shares of GDP. When $s^{PB}$ enters the guardrail below alongside $Y^0$-denominated objects, the distinction between observed-GDP and counterfactual-GDP shares is second-order and the implementation may treat $s^{PB}$ as a share of $Y^0$. The required primary-balance correction is
+Let $PB^0_{i,t}$ and $PB^{stab}_{i,t}$ be baseline and debt-stabilizing primary balances as GDP shares. Alongside $Y^0$-denominated objects, the observed- versus counterfactual-GDP denominator difference is second-order, so $s^{PB}$ may be treated as a share of $Y^0$. The required correction is
 \begin{equation}\label{eq:spb_main_v10}
     s^{PB}_{i,t}=\max\{0,PB^{stab}_{i,t}-PB^0_{i,t}\}.
 \end{equation}
@@ -718,8 +696,8 @@ The debt-consistent prudential guardrail is
 \begin{equation}\label{eq:debt_requirement_main_v10}
     fs^{eff}_{i,p,s,r,t}\geq (1+\xi)c^{gross}_{i,p,t}+s^{PB}_{i,t}.
 \end{equation}
-This condition is not the primary marginal self-financing benchmark. The primary benchmark asks whether the AI-induced fiscal space finances the incremental policy cost, $fs^{eff}\geq(1+\xi)c^{gross}$. The debt-consistent version asks a stronger prudential question: whether the same marginal fiscal space also covers the first-order primary-balance correction needed to satisfy a debt-stabilization guardrail. It should therefore be reported as a strong/debt-consistent layer, not as evidence that a policy fails to autofinance marginally. A stricter version with a buffer on both terms can be reported as an ultra-conservative robustness check, but it is not the baseline guardrail.
-Because $PB^{stab}$ is evaluated at baseline growth, the guardrail ignores that the AI scenario itself improves debt dynamics through higher nominal growth; the debt-consistent layer is therefore conservative by construction. A separate timing caveat applies: feasibility is an endpoint-year condition, so the crossing year is not a launch year. If a policy is launched before the endpoint, the years in which the accumulated level gain is still below its endpoint value generate transition deficits that neither the accounting threshold nor the first-order guardrail capture. Financing an early launch requires transition financing outside the framework, and implementations that report launch scenarios must state this explicitly. The required persistence horizon $H^{*}$ of Section~\ref{subsec:h_star_inversion} makes the endpoint timing explicit without converting it into a forecast.
+This is not the primary marginal self-financing benchmark, which asks whether $fs^{eff}\geq(1+\xi)c^{gross}$. The debt-consistent layer asks whether that space also covers the first-order primary-balance correction and must be reported as a strong/debt-consistent test, not as marginal autofinancing failure. Buffering both terms is an ultra-conservative labelled robustness check, never the baseline guardrail.
+Because $PB^{stab}$ uses baseline growth, it ignores improved debt dynamics from AI-driven nominal growth and is conservative by construction. The timing caveat remains: feasibility is an endpoint condition, so a crossing year is not a launch year. Earlier launch creates transition deficits while accumulated gains remain below their endpoint, outside both the accounting threshold and first-order guardrail. Early launch requires transition financing outside the framework, and launch scenarios must state this explicitly. The required persistence horizon $H^{*}$ in Section~\ref{subsec:h_star_inversion} exposes this timing without becoming a forecast.
 
 Define
 \begin{equation}\label{eq:Rreq_main_v10}
@@ -748,11 +726,11 @@ The minimum AI-induced level-gain threshold exists only when net marginal gross 
     Valid^{g*,gross}_{i,p,s,r,t}(\xi)
     =\mathbf{1}\left\{\widetilde{MFC}^{gross}_{i,s,r,t}>0,\ R^{req,gross}_{i,p,s,r,t}(\xi)>0\right\}.
 \end{equation}
-For valid cells, the closed-form inversions for $g^{AI,*}$, $MFC^{gross,*}$, and $T^{*,static}$ are stated jointly in Proposition \ref{prop:unified_inversion}. In endogenous channel-based mode, the growth threshold is instead the smallest feasible $g\geq0$ satisfying
+For valid cells, Proposition \ref{prop:unified_inversion} gives the closed-form $g^{AI,*}$, $MFC^{gross,*}$, and $T^{*,static}$. With endogenous channels, the growth threshold is instead the smallest feasible $g\geq0$ satisfying
 \begin{equation}\label{eq:gstar_channel_root_v24}
     fs^{eff,ch}_{i,p,s,r,t}(g)\geq R^{req}_{i,p,t}(\xi),
 \end{equation}
-with $R^{req,DC}$ used for the debt-consistent version and $fs^{eff,ch}(g)-\Omega^{res}$ used if the residual stress-test penalty is activated.
+using $R^{req,DC}$ for debt consistency and $fs^{eff,ch}(g)-\Omega^{res}$ when the residual stress penalty is active.
 If $g^{AI}\leq0$ and the required revenue is positive, no finite gross-capture threshold exists. For reporting only, the derived effective per-unit threshold is
 \begin{equation}\label{eq:mfcstar_eff_main_v17}
     MFC^{eff,*}_{i,p,s,r,t}(\xi)=\frac{R^{req}_{i,p,t}(\xi)}{g^{AI}_{i,s,t}},
@@ -775,21 +753,8 @@ The baseline frontier is written in terms of the net marginal gross-capture obje
     \mathcal{F}^{\widetilde{MFC}}_{i,p,s,r,t}(\xi)=
     \left\{(g,\widetilde M):g\geq0,\ \widetilde M g\geq R^{req,gross}_{i,p,s,r,t}(\xi)\right\}.
 \end{equation}
-Here $\widetilde M$ denotes $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$. Equivalently, the required gross capture before marginal-equivalent deductions is $MFC^{gross,*}=R^{req,gross}/g+ac^{ME}+tr^{ME}+leak^{ME}$. This is a reduced-form or frozen-weight frontier. If channel weights are recomputed as $g$ varies, the frontier is the nonlinear set $\{g:fs^{eff,ch}(g)\geq R^{req}\}$ rather than a rectangular hyperbola in $(g,\widetilde M)$. The debt-consistent frontier replaces $R^{req,gross}$ with $R^{req,gross,DC}$. Distance diagnostics are separated into realized coverage ratios and support-headroom ratios. Realized coverage ratios compare realized inputs with required inputs:
-\begin{align}\label{eq:distance_ratios_main_v19}
-    D^{g,real}&=\frac{g^{AI}}{g^{AI,*}},
-    &D^{MFC,gross,real}&=\frac{MFC^{gross}}{MFC^{gross,*}},\\
-    D^{q,real}&=\frac{q^{prod}}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,
-    &D^{AI,eff,real}&=\frac{\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
-\end{align}
-Support-headroom ratios compare the feasible upper support with the required input:
-\begin{align}\label{eq:headroom_ratios_main_v19}
-    H^g&=\frac{g^{AI,max}}{g^{AI,*}},
-    &H^q&=\frac{\bar q_i}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,\\
-    H^{AI,eff}&=\frac{\bar\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
-\end{align}
-Values above one indicate that the realized value or support ceiling exceeds the required value within the corresponding family. The effective AI-rent bound is the statutory cap combined with capturability, $\bar\tau^{AI,eff}_{i,s,r,t}=\bar\tau^{AI}_{i,r,t}\chi^{AI}_{i,s,r,t}$. Realized ratios and support-headroom ratios are not pooled into a single cross-margin ranking. If a derived effective-conversion distance is reported, it must be labelled separately as $D^{MFC,eff,real}=MFC^{eff}/MFC^{eff,*}$ and used only as a derived reporting object. The baseline fiscal-capture plausibility metric remains the gross realized ratio because historical capture is calibrated on gross revenue.
-If $q^{prod,*}=0$, $D^{q,real}$ and $H^q$ are not computed. The cell is labelled as adoption-margin already satisfied only if the crossing is not generated solely by the numerical floor. Throughout the paper, floor-driven has the unique operational definition in Section \ref{subsec:impossibility_score}, Equation \eqref{eq:floor_driven_operational_v25}: $q^{prod,*}=0$, $\epsilon>0$, and the crossing fails when $\epsilon=0$. If $0<q^{prod,*}\leq\bar q_i$, the adoption support is sufficient; if $q^{prod,*}>\bar q_i$, the country-specific adoption ceiling fails. If an absolute excess is reported, it is labeled as a gap, not a distance ratio; for example $Gap^q=q^{prod,*}-\bar q_i$.
+Here $\widetilde M$ denotes $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$. This is a reduced-form or frozen-weight frontier; with weights recomputed as $g$ varies, it becomes the nonlinear set $\{g:fs^{eff,ch}(g)\geq R^{req}\}$ rather than a rectangular hyperbola in $(g,\widetilde M)$. The debt-consistent version substitutes $R^{req,gross,DC}$ for $R^{req,gross}$. Distance diagnostics comprise realized-coverage and support-headroom ratio families, which are never pooled; Appendix \ref{app:threshold_module} gives their complete definitions and use rules.
+For adoption, $0<q^{prod,*}\leq\bar q_i$ means support is sufficient, whereas $q^{prod,*}>\bar q_i$ means the country ceiling fails; an absolute excess is a gap, not a ratio. Zero-threshold and floor-driven cases follow the unique operational definition in Section \ref{subsec:impossibility_score}.
 
 \subsection{Monte Carlo feasibility probability}
 
@@ -802,13 +767,7 @@ The support-valid version conditions on support-valid and no-impossibility draws
 
 \section{Theoretical Results: A Single Feasibility Backbone}\label{sec:theory}
 
-The framework is modular, but all feasibility thresholds are transformations of one accounting backbone. Under the preferred generalized gross-capture convention,
-\begin{equation}
-    fs^{eff}_{i,p,s,r,t}=\widetilde{MFC}^{gross}_{i,s,r,t}g^{AI}_{i,s,t}-ac^{net,fix}_{i,p,s,r,t}-tr^{ann}_{i,s,r,t}-leak^{fix}_{i,s,r,t},
-    \qquad
-    g^{AI}_{i,s,t}=g^{AI,level}_{i,s,t}.
-\end{equation}
-The baseline gross-cost feasibility condition is
+All feasibility thresholds transform the accounting backbone in Equation \eqref{eq:fs_gross_eff_v21}, under the preferred generalized gross-capture convention and with $g^{AI}_{i,s,t}=g^{AI,level}_{i,s,t}$. The baseline gross-cost condition is
 \begin{equation}\label{eq:backbone_inequality_v17}
     g^{AI}_{i,s,t}\widetilde{MFC}^{gross}_{i,s,r,t}\geq R^{req,gross}_{i,p,s,r,t}(\xi).
 \end{equation}
@@ -933,7 +892,7 @@ Stress-test parameters & Disruptive AI shock, instant adoption, zero leakage, hi
 \bottomrule
 \end{longtable}
 
-A result is labelled as baseline only if it uses no $\Theta^{stress}$ inputs and its conclusion is robust across the declared grids or distributions of $\Theta^{calib}$; since calibrated parameters enter every run, the baseline label refers to robustness over their declared supports, not to their absence. Results that require $\Theta^{stress}$ are reported as stress feasibility.
+A result is baseline only if it uses no $\Theta^{stress}$ and is robust over the declared $\Theta^{calib}$ supports. Because calibrated inputs enter every run, the label means robustness over their supports, not their absence. Results requiring $\Theta^{stress}$ are stress feasibility.
 
 \subsection{Unit discipline}
 
@@ -954,7 +913,7 @@ The required parameter-reporting standard is in Table \ref{tab:master_calibratio
 
 \subsection{Fiscal-conversion modes}
 
-The calibration table distinguishes two mutually exclusive ways to obtain $MFC^{gross}$. In the channel-based mode, $MFC^{gross}$ is computed from effective channel rates and tax-base exposure weights. In the historical reduced-form mode, $MFC^{gross}$ is drawn directly from the historical gross-capture distribution. A single Monte Carlo run must not draw both the channel rates and an independent $MFC^{gross}$ and then treat both as primitives. If both are reported, one is the operative specification and the other is a diagnostic decomposition.
+Two mutually exclusive modes obtain $MFC^{gross}$: channel mode derives it from effective rates and base-exposure weights; historical reduced-form mode draws it from the historical gross-capture distribution. A run must not treat both channel rates and independent $MFC^{gross}$ as primitives. If both are reported, one is the operative specification and the other a diagnostic decomposition.
 
 \subsection{Distributional assignment rules}
 
@@ -964,24 +923,13 @@ When a parameter has a lower value $a$, a modal or central value $m$, and an upp
     \qquad
     Z\sim Beta\left(1+4\frac{m-a}{b-a},\ 1+4\frac{b-m}{b-a}\right).
 \end{equation}
-If only a support interval is defensible, use a uniform distribution and state that no central value is imposed. If a parameter is strictly positive and multiplicative, such as leakage or administrative cost, a lognormal distribution may be used only after reporting its median and 90 percent interval. Bounded shares must be truncated to their natural support.
+With only a defensible support interval, use a uniform distribution and state that no central value is imposed. A lognormal is allowed only for strictly positive multiplicative parameters, such as leakage or administrative cost, after reporting its median and 90 percent interval. Bounded shares are truncated to their natural support.
 
-Dependence across parameters should not be ignored by default. The baseline reporting protocol reports an independence specification together with a scenario-consistent dependence specification. The latter may impose positive dependence between preparedness, adoption, and fiscal capacity, and negative dependence between informality and both adoption and fiscal capturability. Unless an empirical correlation matrix is available, the correlation values are scenario assumptions, not estimates.
+Both independence and scenario-consistent dependence specifications are reported. Without an empirical correlation matrix, correlations are scenario assumptions, not estimates; Appendix \ref{app:uncertainty_module} gives the dependence structure.
 
 \subsection{Data construction rules}
 
-Observed variables should be constructed as follows:
-\begin{itemize}
-    \item Fiscal capacity: tax revenue, non-tax revenue, grants, social contributions, and revenue composition from the UNU-WIDER Government Revenue Dataset \citep{unu2025grd}; use central/general government consistently.
-    \item Informality: informal employment as a share of total employment from ILOSTAT where available, supplemented by shadow-economy or informality studies only when official labour measures are missing \citep{ilostat2026informal,medina2018shadow,worldbank2021informality}.
-    \item Social protection: coverage, adequacy, expenditure, beneficiary information, and program categories from ASPIRE where available \citep{worldbank2026aspire}.
-    \item Poverty lines and poverty gaps: World Bank Poverty and Inequality Platform or national poverty lines, with PPP and local-currency concepts kept separate \citep{worldbank2026pip}.
-    \item AI preparedness: IMF AI Preparedness Index and its four components; do not reinterpret the index as invention leadership \citep{cazzaniga2024genai}.
-    \item AI exposure: occupation- or sector-level exposure harmonized to national employment or value-added shares. Productive exposure and displacement exposure must be reported as separate variables.
-    \item Digital and skills gap: construct $Gap_{i,t}$ from ITU and World Bank digital indicators excluded from AIPI, and document the normalization to $[0,1]$.
-    \item Primary-balance correction: obtain $PB^0_{i,t}$ and $PB^{stab}_{i,t}$ for $s^{PB}_{i,t}$ from the IMF WEO and debt-sustainability analysis.
-    \item External translation frontier: document the benchmark economies and year used to construct $S^{frontier}_{s,t}$, which remains fixed within each threshold inversion, and state that the benchmark set matches the population underlying the scenario shock $\phi_s$ (population consistency).
-\end{itemize}
+Observed variables are constructed from declared primary sources: GRD, ILOSTAT, ASPIRE, PIP or national poverty lines, AIPI, ITU and World Bank indicators excluded from AIPI, and WEO/DSA. Appendix \ref{app:calibration_ledger} gives the complete construction rules. Executed choices are recorded in the calibration registry and the Results data section.
 
 \subsection{Calibration audit trail}
 
@@ -997,25 +945,9 @@ This audit trail is not optional. It is what makes the framework reusable when f
 \subsection{Threshold-based rather than point-estimate reporting}
 
 The empirical section reports continuous threshold objects before any categorical labels:
-\begin{enumerate}
-    \item $V^{gross}$: baseline accounting-fiscal feasibility index.
-    \item $GAP^{gross}=fs^{eff}-c^{gross}$: absolute fiscal gap as a share of no-AI counterfactual GDP.
-    \item $RGAP^{gross}=V^{gross}-1$: relative distance to the structural threshold.
-    \item $g^*$: required AI-induced growth for each policy.
-    \item $MFC^*$: required marginal fiscal conversion for each policy.
-    \item $\phi^*$ and $T^*$: required base AI shock and translation factor.
-    \item $\tau^{AI,*}$: required AI-rent capture under simplified regimes.
-    \item $q^*$: required productive-adoption rate under the adoption-adjusted shock.
-    \item $PB^0-PB^{stab}$: distance from the debt-stabilizing primary-balance guardrail.
-    \item $\pi(\xi)$ and $\pi^{DC}(\xi)$: Monte Carlo probabilities of crossing the accounting and debt-consistent thresholds under alternative buffers.
-\end{enumerate}
+$V^{gross}$, the baseline accounting-fiscal index; $GAP^{gross}=fs^{eff}-c^{gross}$, the absolute GDP-share gap; $RGAP^{gross}=V^{gross}-1$, the relative structural gap; $g^*$, required AI-induced growth; $MFC^*$, required marginal fiscal conversion; $\phi^*$ and $T^*$, required base shock and translation; $\tau^{AI,*}$, required AI-rent capture; $q^*$, required productive adoption; $PB^0-PB^{stab}$, distance from the debt guardrail; and $\pi(\xi)$ and $\pi^{DC}(\xi)$, accounting and debt-consistent crossing probabilities.
 
-This makes the framework robust even if AI forecasts change. Future evidence changes parameter values, not the logic of the frontier. The visual classification may use the baseline 10 and 25 percent bands, but the main conclusions should be checked for
-\begin{equation}
-    \xi\in\{0,0.05,0.10,0.25,0.50\}
-    \quad\text{and}\quad
-    \bar{\pi}\in\{0.50,0.75,0.90\}.
-\end{equation}
+This makes the framework robust even if AI forecasts change. Future evidence changes parameter values, not the logic of the frontier. Visual classification may use the baseline 10 and 25 percent bands, but conclusions are checked over the $\xi$ grid declared in Section \ref{sec:thresholds} and $\bar{\pi}\in\{0.50,0.75,0.90\}$.
 
 
 
@@ -1054,8 +986,7 @@ $(1+\xi)c^{gross}_{i,p,t}+s^{PB}_{i,t}>fs^{eff}_{i,p,s,r,t}$ & Debt-consistent g
 \bottomrule
 \end{longtable}
 
-The last two rows are threshold failures reported as diagnostic labels. Only rows tied to exogenous supports---the adoption ceiling, tax-rate bounds, and scenario support---are impossibilities through a margin in the sense of Section \ref{subsec:infeasibility_impossibility}.
-The model should not hide these diagnostics behind a continuous feasibility score. A full UBI may fail because the AI shock is too small, adoption is too low, fiscal capture is historically extreme, the tax instrument is implausible, or the gross policy cost is too large. These are different failures with different policy meanings.
+The last two rows are threshold failures; only exogenous adoption, tax-rate, and scenario supports define impossibility through a margin under Section \ref{subsec:infeasibility_impossibility}. These diagnostics must not be hidden by a continuous score: a full UBI may fail because the shock is too small, adoption is too low, capture is historically extreme, the tax instrument is implausible, or gross cost is too large. Each failure has a distinct policy meaning.
 
 \subsection{Impossibility score}\label{subsec:impossibility_score}
 
@@ -1117,7 +1048,7 @@ For threshold inversions, define the stricter computability indicator
     \ \tilde E^{prod,(m)}>0\}.
 \end{split}
 \end{equation}
-Draws with $R^{req,gross,(m)}\leq0$ are trivially covered on the fixed-cost margin (administrative savings exceed the buffered policy cost plus fixed deductions) and are classified as requirement-already-covered rather than inverted. The share of requirement-already-covered draws is reported separately: such draws are trivially feasible on the fixed-cost margin, so their exclusion from threshold computability must not be read as fragility of the cell when interpreting $\pi^{threshold|basic}$. For AI-rent-tax threshold inversions, distinguish effective and statutory rate computability:
+Draws with $R^{req,gross,(m)}\leq0$ are requirement-already-covered on the fixed-cost margin, not inverted. Their separately reported share is trivially feasible there, so exclusion from threshold computability is not fragility in $\pi^{threshold|basic}$. AI-rent thresholds distinguish effective and statutory computability:
 \begin{align}
     Valid^{AIrent,eff,(m)}
     &=\mathbf{1}\{g^{AI,level,(m)}>0,\ \lambda^{AI,(m)}>0\},\\
@@ -1139,7 +1070,7 @@ Then define support validity as
     \ FloorDriven^{(m)}=0\}.
 \end{split}
 \end{equation}
-A draw with $q^{prod,*}=0$ that is not floor-driven represents an adoption margin already satisfied and is support-valid; floor artifacts are excluded by the separate condition $FloorDriven^{(m)}=0$. The AI-rent condition uses the effective bound $\bar\tau^{AI,eff}=\bar\tau^{AI}\chi^{AI}$: it subsumes the statutory check, since $\tau^{AI,eff,*}\leq\bar\tau^{AI}\chi^{AI}$ implies $\tau^{AI,*}\leq\bar\tau^{AI}$ when $\chi^{AI}>0$, and it correctly classifies the AI-rent-capture-impossible case $\chi^{AI}=0$ with $\tau^{AI,eff,*}>0$ as a support violation.
+A non-floor-driven $q^{prod,*}=0$ means the adoption margin is already satisfied and support-valid. The effective AI-rent bound $\bar\tau^{AI,eff}=\bar\tau^{AI}\chi^{AI}$ subsumes the statutory check: $\tau^{AI,eff,*}\leq\bar\tau^{AI}\chi^{AI}$ implies $\tau^{AI,*}\leq\bar\tau^{AI}$ when $\chi^{AI}>0$, while $\chi^{AI}=0$ with $\tau^{AI,eff,*}>0$ is a support violation.
 The validity shares describe the chain from all draws to basic arithmetic validity, threshold computability, and bounded-support validity:
 \begin{align}
     \pi^{basic}&=\frac{1}{M}\sum_{m=1}^{M}Valid^{basic,(m)},\\
@@ -1154,7 +1085,7 @@ The bounded-support impossibility share is reported conditionally on threshold c
     =1-\frac{\sum_m Valid^{support,(m)}}{\sum_m Valid^{threshold,(m)}}
     \quad\text{if }\sum_m Valid^{threshold,(m)}>0,
 \end{equation}
-while $1-\pi^{basic}$ is reported separately as a denominator-invalid share and $\pi^{support|basic}$ is retained as an aggregate reporting object. Draws with $g^{AI}=0$ remain basic-valid when $c^{gross}>0$ and enter feasibility probabilities as non-crossing outcomes. Draws with $c^{gross,(m)}\leq0$ are denominator-invalid: they are excluded from $\widehat{\pi}^{basic}$ by construction and enter the all-draw probability with a zero crossing indicator by convention. Feasibility probabilities should be reported for all draws, basic-valid draws, and support-valid draws. If the all-draw probability is high but the support-valid probability is low, the apparent feasibility relies on non-computability or support violations, distinguished by the intermediate layer.
+while $1-\pi^{basic}$ is the denominator-invalid share and $\pi^{support|basic}$ remains aggregate reporting. Draws with $g^{AI}=0$ and $c^{gross}>0$ are basic-valid non-crossings; $c^{gross,(m)}\leq0$ draws are denominator-invalid, excluded from $\widehat{\pi}^{basic}$ but retained in all-draw probability with zero crossing. Report all-, basic-valid-, and support-valid-draw probabilities. High all-draw but low support-valid probability signals non-computability or support violations, separated by the intermediate layer.
 
 \subsection{Temporal placebo}
 
@@ -1174,11 +1105,11 @@ The placebo shock is then
 \begin{equation}
     g^{ICT,placebo}_{i,t}=\phi^{ICT,placebo}_{t}T^{ICT}_{i,t},
 \end{equation}
-where $\phi^{ICT,placebo}$ is an ordinary ICT or digitalization productivity analogue, not a GenAI shock. It is anchored to documented growth-accounting ICT contribution estimates for the placebo years, and the comparability default is $\beta_{ICT}=\beta$ and $\gamma_{ICT}=\gamma$. A strong warning flag is raised if the pre-GenAI ICT placebo produces broad feasibility of AI-funded UBI/PEN/GMI policies under the same fiscal thresholds:
+where $\phi^{ICT,placebo}$ is a documented growth-accounting ICT/digitalization analogue, not a GenAI shock, with comparability defaults $\beta_{ICT}=\beta$ and $\gamma_{ICT}=\gamma$. A strong flag marks broad pre-GenAI placebo feasibility of AI-funded UBI/PEN/GMI under the same thresholds:
 \begin{equation}
     PlaceboFail^{ICT}_{i,p,t}=\mathbf{1}\{V^{gross,ICT}_{i,p,t}\geq1\ \text{for broad policy cells in pre-GenAI years}\}.
 \end{equation}
-This test asks whether the framework is merely relabeling ordinary digitalization, ordinary growth, or ordinary revenue buoyancy as AI fiscal space. It is a diagnostic falsification check, not a causal treatment-effect design. The ICT placebo has a known-outcome benchmark: digitalization in 2010--2018 did not in fact finance universal social protection anywhere in the region, so broad placebo feasibility contradicts an observed historical outcome, not merely a prior. For the test to be valid, the placebo must run the full pipeline with era-consistent inputs: historical fiscal-capture distributions, historical policy costs, and historical informality, not the translation block alone.
+The test asks whether ordinary digitalization, growth, or buoyancy is being relabelled as AI fiscal space; it is diagnostic, not causal. Its known-outcome benchmark is that digitalization in 2010--2018 financed universal social protection nowhere in the region, so broad feasibility contradicts history, not merely a prior. Validity requires the full era-consistent pipeline---historical capture distributions, policy costs, and informality---not translation alone.
 
 \subsection{Sectoral negative controls}
 
@@ -1230,18 +1161,15 @@ The symbol $\lambda^{AI}$ is reserved for AI-rent share. The symbol $\lambda_q$ 
 
 Let $\Theta^{(m)}$ denote draw $m$ of the uncertain-input vector. The full vector must state which variables are observed and fixed and which are stochastic. The implementation must choose one fiscal-conversion mode and one adoption mode for a given run.
 
-In an observed-adoption mode, $q^{prod}$ is drawn from observed adoption or measurement-error distributions and $A,I,Gap$ are controls/descriptors. In the baseline anchored simulated-adoption mode, $A,I,Gap,\lambda_q,\nu_A,\nu_I,\nu_G$, and the target moment $q^{use,target}_{i,t_0}$ are primitives; $\mu_{i,s,t_0}$ is derived by logit inversion and is not interpreted as an independently identified structural coefficient. In a structural-intercept robustness mode, a common or hierarchical intercept is drawn directly and the target-matching inversion is not used. In all simulated-adoption modes, $q^{use}$ and $q^{prod}$ are derived endogenously and $q^{prod}$ is not drawn independently.
+Observed-adoption mode draws $q^{prod}$ from adoption or measurement-error distributions and treats $A,I,Gap$ as controls. Anchored simulated-adoption mode takes $A,I,Gap,\lambda_q,\nu_A,\nu_I,\nu_G,q^{use,target}_{i,t_0}$ as primitives; logit-inverted $\mu_{i,s,t_0}$ is not an independently identified structural coefficient. Structural-intercept robustness instead draws a common or hierarchical intercept without target inversion. Simulated-adoption modes derive $q^{use}$ and $q^{prod}$ endogenously and never draw $q^{prod}$ independently.
 
-In the channel-based fiscal mode, gross fiscal capture is derived from tax-base channels and is not drawn independently. If thresholds vary the AI shock, adoption, or translation support, the implementation must declare whether channel weights are frozen at the realized scenario or recomputed endogenously. Frozen-weight thresholds may use the closed-form formulas in the main text; endogenous channel thresholds must solve Equation \eqref{eq:channel_revenue_function_v24} directly. The complete mode-specific uncertainty vectors are specified in Appendix \ref{app:uncertainty_module}: channel mode derives $MFC^{gross,(m)}$ from its primitives, while historical reduced-form mode draws gross fiscal capture directly. The fully decomposed AI-rent parameterization $\tau^{AI}$, $\chi^{AI,dom}$, $\psi^{shift,tech}$, $\chi^{AI,compliance}$, and $\chi^{AI,enforce}$ in that appendix is the complete primitive set, with $\tau^{AI,eff}=\tau^{AI}\chi^{AI}$ as the derived composite.
-Capturability elasticities $\rho_j$ have no equation in the historical reduced-form mode and are therefore not primitives of $\Theta_{hist}$. Under the labelled alternative conventions, the corresponding parameters are added to the declared vector and recorded in the audit trail: $\psi^{K,rate}$ for rate-side profit shifting and $\epsilon^{ero,j}$ for the behavioral-erosion companion of reform regimes.
-Channel rates may be reported descriptively in the historical reduced-form mode, but they are not simultaneously used to build $MFC^{gross}$. The Monte Carlo specification must also declare whether adoption is observed or simulated; $q^{prod}$ is a primitive only in observed-adoption mode. The baseline stochastic vector draws fixed GDP-share costs and marginal-equivalent deductions with each cost component assigned to exactly one margin, according to the declared convention. Nominal $AC$, $TR$, and $Leak$ objects are derived from GDP when needed; they are not drawn independently from normalized objects in the same simulation.
+Channel mode derives gross capture from tax bases rather than drawing it. Threshold runs declare frozen versus endogenous weights; only the former use closed forms, while the latter solve Equation \eqref{eq:channel_revenue_function_v24}. Appendix \ref{app:uncertainty_module} gives both mode vectors and the complete AI-rent primitives $\tau^{AI},\chi^{AI,dom},\psi^{shift,tech},\chi^{AI,compliance},\chi^{AI,enforce}$, with derived $\tau^{AI,eff}=\tau^{AI}\chi^{AI}$; historical reduced-form mode instead draws gross capture.
+Capturability elasticities $\rho_j$ are outside $\Theta_{hist}$. Labelled alternatives add their parameters to the audit trail: $\psi^{K,rate}$ for rate-side shifting and $\epsilon^{ero,j}$ for behavioral erosion.
+Historical-mode channel rates may be descriptive but do not also construct $MFC^{gross}$. The run declares observed or simulated adoption; only observed-adoption mode treats $q^{prod}$ as primitive. Fixed GDP-share costs and marginal-equivalent deductions each occupy one margin. Nominal $AC$, $TR$, and $Leak$ are derived from GDP, never drawn independently alongside normalized objects.
 
 For each draw, effective fiscal space is computed directly from net marginal gross capture and fixed costs; when $g^{AI,level,(m)}>0$, the per-unit object $MFC^{eff,(m)}=fs^{eff,(m)}/g^{AI,level,(m)}$ is derived rather than drawn. The complete draw-level specification is in Appendix \ref{app:uncertainty_module}.
 A draw with $fs^{eff,(m)}<0$ is not invalid. It is an economically meaningful failure draw: administrative costs, transition costs, and leakage exceed gross AI-generated fiscal space. Such draws remain in the all-draw feasibility probability and lower the crossing probability.
-Arithmetic/basic validity requires $c^{gross,(m)}>0$.
-Draws with $g^{AI,level,(m)}=0$ are included as non-crossing economic draws in $\widehat{\pi}(\xi)$ and $\widehat{\pi}^{basic}(\xi)$; they are excluded only from threshold-ratio inversions that require division by a positive AI-induced level gain.
-Growth and translation/adoption thresholds condition on the single computability indicator $Valid^{threshold,(m)}$ defined in Equation \eqref{eq:valid_threshold_operational_v25}; the growth threshold uses only the subset of conditions it needs, but the bundled indicator is the conservative reporting standard.
-If $\widetilde{MFC}^{gross,(m)}\leq0$ with a positive required-revenue target, the draw is a valid economic failure draw but its growth, adoption, and translation thresholds are reported as non-positive-net-capture infeasible rather than divided through. AI-rent effective-rate thresholds condition on $Valid^{AIrent,eff}$; statutory-rate thresholds condition on $Valid^{AIrent,stat}$.
+Arithmetic, computability, support, numerical-floor, and failure semantics follow the canonical conservative reporting chain in Section \ref{subsec:impossibility_score}.
 The gross feasibility ratio is $V^{gross,(m)}=fs^{eff,(m)}/c^{gross,(m)}$. The net ratio $V^{net,(m)}=fs^{eff,(m)}/c^{net,(m)}$ is computed only for draws with $c^{net,(m)}>0$.
 If $c^{net,(m)}=0$, the draw is classified as already covered by existing spending on the net-cost margin. $V^{gross}$ remains the baseline reporting object.
 
@@ -1268,7 +1196,7 @@ Placebo and negative-control outputs are required tables, not optional prose. Th
 
 \section{Empirical Design and Minimum Pilot Application}\label{sec:empirical_design}
 
-The empirical application is deliberately small: Peru as the primary case, with Chile, Colombia, and Mexico as comparators. The purpose is not to claim regional representativeness. The purpose is to show that the framework can be populated with real country data, that the same equations work across different fiscal and institutional settings, and that the feasibility result is driven by transparent observed inputs rather than by hidden assumptions.
+The deliberately small application uses Peru as primary case and Chile, Colombia, and Mexico as comparators. It does not claim regional representativeness; it shows that common equations can use observed data across fiscal and institutional settings and that feasibility is driven by transparent rather than hidden inputs.
 
 \subsection{Pilot country sample}
 
@@ -1289,39 +1217,19 @@ Mexico & Large economy with deeper productive integration, low tax-to-GDP ratio 
 \end{tabular}
 \end{table}
 
-Three of the four pilot countries are upper-middle-income economies, while Chile is classified by the World Bank as high income. The pilot therefore spans informality and fiscal capacity within the middle-to-high band but does not probe the low-income, low-capacity corner where impossibility diagnostics bind most; a low-income application is the natural second deployment of the framework.
+Three pilot countries are upper-middle-income and Chile is high income. The sample spans informality and fiscal capacity only within this middle-to-high band, not the low-income, low-capacity corner where impossibility may bind most; a low-income case is the natural next application.
 
 \subsection{Observed pilot anchors}
 
-The pilot uses $t_0=2024$ as its harmonization year. If a variable is observed in 2024, the 2024 value is used. If the closest available observation is earlier, it is carried forward and flagged as carried-forward. If a newer value such as 2026 is used, the table must either update all macro anchors to a 2026 version or mark the cell as a non-harmonized source-specific robustness value. Baseline cross-country comparisons should not silently mix source years.
+The harmonization year is $t_0=2024$: for a 2024 observation, use the 2024 value; carry earlier values forward with a flag. A newer value such as 2026 requires either all macro anchors updated to 2026 or a non-harmonized source-specific robustness flag. Baseline comparisons must not silently mix years.
 
 The preliminary seed values in the methodological draft have been superseded by the official observed anchors constructed by the reproducibility pipeline and reported in Table \ref{tab:results_anchors} in the results section. Those official anchors draw on GRD, OECD Revenue Statistics, WDI, AIPI, and national informality sources, under the harmonization rules above \citep{imf2024aipi,worldbank2026wdi,oecd2025revenue,oecd2025peru,worldbank2026humancapital,inechile2025ene,dane2026informalidad,inegi2024enoe}.
 
 \subsection{Policy instruments and cost equations}
 
-For each country $i$ and policy $p$, the annual policy cost as a share of the no-AI counterfactual GDP $Y^0_{i,t}$ is $c_{i,p,t}$. The minimum pilot application reports five instruments:
+For each country $i$ and policy $p$, the annual policy-cost ratio $c_{i,p,t}$ divides the nominal equations in Section \ref{sec:policy_costs} by no-AI GDP $Y^0_{i,t}$. Required data are older population and pension benefit for PEN; eligible population and poverty line for MUT/PBI; household-income distribution and minimum line for GMI; and total population for UBI.
 
-{\small
-\begin{longtable}{p{0.18\textwidth}p{0.50\textwidth}p{0.20\textwidth}}
-\caption{Policy-cost equations for the pilot application}\label{tab:policy_cost_equations}\\
-\toprule
-Instrument & Cost equation & Data requirement \\
-\midrule
-\endfirsthead
-\toprule
-Instrument & Cost equation & Data requirement \\
-\midrule
-\endhead
-Universal social pension & \(c^{PEN,0}_{i,t}=B^{PEN}_{i,t}Pop^{a\geq a^*}_{i,t}/Y^0_{i,t}\) & Elderly population, benefit level, no-AI GDP \\
-Minimum universal transfer & \(c^{MUT,0}_{i,t}=\eta_{MUT}PL_{i,t}N^{MUT}_{i,t}/Y^0_{i,t}\) & Eligible population, poverty line, no-AI GDP \\
-Guaranteed minimum income & \(\begin{aligned}[t] c^{GMI,0}_{i,t}&=\frac{\chi_{GMI}}{Y^0_{i,t}}\\[-0.15em]&\times\sum_h w_{h,i,t}n_{h,i,t}\max\{0,z_{i,t}-y^{pc}_{h,i,t}\}\end{aligned}\) & Household income distribution, poverty or minimum-income line \\
-Partial basic income & \(c^{PBI,0}_{i,t}=\eta_{PBI}PL_{i,t}N^{PBI}_{i,t}/Y^0_{i,t}\) & Eligible population, poverty line, no-AI GDP \\
-Full UBI benchmark & \(c^{UBI,0}_{i,t}=\eta_{UBI}PL_{i,t}Pop_{i,t}/Y^0_{i,t}\) & Population, poverty-line benchmark, no-AI GDP \\
-\bottomrule
-\end{longtable}
-}
-
-ASPIRE is the preferred source for existing social protection expenditure, coverage, adequacy, and administrative concepts \citep{worldbank2026aspire}. PIP, SEDLAC, and national household surveys are the preferred sources for poverty lines, poverty gaps, and household-income distributions. A full UBI is retained only as a benchmark. The paper should expect universal social pensions, targeted or guaranteed minimum income instruments, and partial basic income instruments to cross feasibility thresholds before a full UBI benchmark, with the GMI ranking subject to the ideal-targeting caveat of Section \ref{sec:policy_costs}.
+ASPIRE supplies existing expenditure and coverage; PIP, SEDLAC, and national surveys supply poverty lines and gaps, with detail in Appendix \ref{app:calibration_ledger}. A full UBI is retained only as a benchmark. The paper should expect universal social pensions, targeted or guaranteed minimum income instruments, and partial basic income instruments to cross feasibility thresholds before a full UBI benchmark, with the GMI ranking subject to the ideal-targeting caveat of Section \ref{sec:policy_costs}.
 
 \subsection{AI exposure, adoption, and fiscal conversion in the pilot}
 
@@ -1331,11 +1239,7 @@ The official tables report, for every country-policy-scenario-regime cell,
     \left(A_i,E^{prod}_i,q^{prod}_{i,s,t},I_i,MFC^{gross}_{i,s,r,t},fs^{eff}_{i,p,s,r,t},c_{i,p,t},V_{i,p,s,r,t}\right).
 \end{equation}
 The pilot's fiscal-conversion mode is declared once: all $V$ columns are computed in the channel-based mode, which represents reform regimes natively, while the historical gross-capture distribution enters through the plausibility flag and through a labelled historical reduced-form robustness run; the two modes are never mixed inside one cell. Results from this design are reported in Section \ref{sec:empirical_results}.
-
-\subsection{Implementation sequence}
-
 The sequence was implemented in full in the tagged reproducibility package described in the data and code availability statement, and its outputs are reported in Section \ref{sec:empirical_results}.
-
 This empirical design is intentionally modular. If a reader disagrees with the AI shock, adoption speed, tax-base channel, or policy-cost benchmark, the framework allows that block to be replaced without changing the threshold logic.
 
 \subsection{Expected qualitative pattern}\label{sec:expected}
@@ -1357,9 +1261,7 @@ This section reports the official results of the pilot application to Peru, Chil
 and Mexico. All numbers are generated by the tagged reproducibility package described in the
 data and code availability statement; no value in this section is transcribed by hand, and
 every table is read directly from the verified output of the pipeline. The narrative follows
-the pre-registered reporting order: policy costs, AI-induced fiscal space, feasibility
-ratios, historical plausibility, debt guardrails, Monte Carlo uncertainty, threshold
-inversions with required persistence horizons, diagnostics, and limits.
+the pre-registered reporting order of the subsections below.
 
 \subsection{Data, snapshot, and calibration}\label{subsec:results_data}
 
@@ -1380,15 +1282,14 @@ Table~\ref{tab:results_primary_spec} the frozen primary specification.
 \subsection{Policy costs}\label{subsec:results_costs}
 
 Table~\ref{tab:results_policy_costs} reports gross annual costs at the 2024 anchor and at
-the 2034 endpoint under the demographic-projection convention. Three features matter for
-everything that follows. First, the cost gradient across instruments spans two orders of
+the 2034 endpoint under the demographic-projection convention. The cost gradient across instruments spans two orders of
 magnitude: gap-based guaranteed minimum income is the cheapest instrument where poverty gaps
 are small (about $0.15$ percent of GDP in Chile under ideal targeting), while the full UBI
-benchmark reaches roughly a fifth of GDP in Peru. Second, the expected cost ordering across
+benchmark reaches roughly a fifth of GDP in Peru. The expected cost ordering across
 instruments is not universal: Chile's universal pension guarantee is several times more
 expensive than its poverty gap, which reverses the ex-ante ordering of
 Section~\ref{sec:expected} for that country and illustrates that instrument rankings are a
-country-structure outcome rather than a design constant. Third, ageing raises age-conditioned
+country-structure outcome rather than a design constant. Ageing raises age-conditioned
 costs materially by the endpoint, which the demographic-ratio convention captures without
 projecting monetary levels. For the primary case, the guaranteed-minimum-income cost was
 additionally validated in a microdata-strong extension using the ENAHO 2024 household survey
@@ -1422,8 +1323,7 @@ macroeconomic literature and are not forecasts.
 
 \subsection{Historical plausibility and debt guardrails}\label{subsec:results_plausibility}
 
-The channel-based capture rates that generate the baseline results are themselves
-historically ordinary: constructed marginal capture lies below each country's median
+Baseline channel-based capture rates are historically ordinary: constructed marginal capture lies below each country's median
 historical capture, so no baseline result relies on fiscally unusual behavior. The
 discipline binds on the \emph{required} side. Table~\ref{tab:results_plausibility} reports
 the classification of required captures against each country's historical distribution,
@@ -1431,11 +1331,11 @@ with bootstrap confidence intervals on the percentile boundaries. Only one requi
 the moderate scenario lies inside historical experience: Chile's guaranteed minimum income,
 whose required capture of roughly $0.17$ is classified as fiscally ordinary, with a
 borderline flag reflecting proximity to the confidence band. Every other requirement is
-outside historical support, in most cases by multiples of the ninetieth percentile. Peru's
-universal pension at stress is the instructive marginal case: its required capture of
+outside historical support, in most cases by multiples of the ninetieth percentile. At stress, Peru's
+universal pension is the marginal case: its required capture of
 $0.305$ exceeds the ninetieth percentile of $0.297$ but falls inside that percentile's
 bootstrap interval, and is reported as extreme with an explicit borderline flag rather than
-as a clean classification. These class assignments are invariant to the historical window:
+as a clean classification. Class assignments are invariant to the historical window:
 recomputing the percentiles on post-2010, post-2015, and pandemic-excluded samples changes
 no classification, and only adds borderline flags where the shorter samples widen the
 confidence bands.
@@ -1452,25 +1352,23 @@ Section~\ref{subsec:results_inversions} make explicit.
 
 \subsection{Monte Carlo feasibility probabilities}\label{subsec:results_mc}
 
-Table~\ref{tab:results_mc} propagates the registered parameter uncertainty through the headline
-cells and reports crossing probabilities on the frozen buffer grid, under the three
-pre-registered denominators (all draws, arithmetically valid draws, and support-valid
-draws) and with convergence verified on a ladder of draw sizes; the full 480-cell grid is
+Table~\ref{tab:results_mc} reports headline-cell crossing probabilities on the frozen buffer
+grid under the three pre-registered denominators (all draws, arithmetically valid draws, and
+support-valid draws), with convergence verified across draw sizes; the full 480-cell grid is
 provided in the reproducibility package.
-Under the moderate scenario the probabilistic results confirm the deterministic ones with
-near-certainty: crossing probabilities are indistinguishable from zero for every instrument
+Under the moderate scenario the probabilities confirm the deterministic results: crossing
+probabilities are indistinguishable from zero for every instrument
 and country. Under the stress support, Chile's guaranteed minimum income crosses with
 probability above $0.97$ in every regime while passing the debt guardrail; Peru's universal
 pension crosses with probability between roughly $0.6$ and $0.8$ depending on the regime,
 but its debt-consistent crossing probability is below one percent, which is what the
-fragile classification records. Three robustness properties of these probabilities deserve
-emphasis. First, they are insensitive to the declared institutional-dependence structure:
+fragile classification records. These probabilities are insensitive to the declared institutional-dependence structure:
 imposing the signed rank-dependence at intensities between $0.3$ and $0.8$, under either a
 one-factor or a pairwise implementation, trims stress probabilities by two to four
-percentage points and never moves any result across a decision threshold. Second, the
+percentage points and never moves any result across a decision threshold. The
 driver ranking is stable across methods: the scenario shock dominates everywhere, followed
 by the adoption anchor and the frontier-exposure calibration, with rent-capture parameters
-entering only in the reform regimes that activate them. Third, the labelled historical
+entering only in the reform regimes that activate them. The labelled historical
 reduced-form robustness mode is systematically more optimistic than the channel mode ---
 for Chile's mid-scenario minimum income it yields crossing probabilities in the $0.7$ to
 $0.9$ range where the channel mode yields effectively zero --- which quantifies how much of
@@ -1479,10 +1377,10 @@ the optimism in reduced-form reasoning the channel accounting disciplines away.
 \input{tables/table7_monte_carlo}
 \subsection{Threshold inversions and required persistence horizons}\label{subsec:results_inversions}
 
-Because the baseline does not cross, the informative objects are the inversions: what any
-country would need for crossing. Table~\ref{tab:results_inversions} reports the headline cells'
-required AI growth, required capture, and adoption-side requirements with their impossibility
-flags; the full 960-row grid across both requirement bases is provided in the reproducibility package.
+Because the baseline does not cross, the inversions show what each country would need.
+Table~\ref{tab:results_inversions} reports headline required AI growth, capture, adoption-side
+requirements, and impossibility flags; the reproducibility package contains the full 960-row
+grid across both requirement bases.
 The structural finding is that the binding margin at moderate scenarios is translation, not
 taxation. For every country-policy pair in the moderate support, the required translation
 factor exceeds one --- no attainable level of domestic adoption would suffice, because the
@@ -1492,7 +1390,7 @@ cannot bridge the gap either: required effective rent-capture rates exceed any d
 statutory bound by an order of magnitude, so reform regimes relax but do not remove the
 constraint.
 
-Table~\ref{tab:results_h_star} translates the same requirements into time, using the
+Table~\ref{tab:results_h_star} translates the requirements into time, using the
 required persistence horizon of Section~\ref{subsec:h_star_inversion}. Under the disruptive
 support, Chile's guaranteed minimum income would require six years of scenario persistence
 in the status quo and five under combined reform, with debt-consistency adding nothing
@@ -1503,7 +1401,7 @@ accounting basis, but debt-consistency doubles the requirement to seventeen to t
 years. Colombia's pension and Mexico's minimum income reach the threshold only under
 thirteen to twenty-one years of disruptive persistence, and in both cases the
 debt-consistent horizon is censored: it exceeds the twenty-five-year cap. Every other
-combination is censored on both bases. The Monte Carlo layer sharpens the same message:
+combination is censored on both bases. Monte Carlo gives the same message:
 the probability that Chile's stress-scenario minimum income crosses within a decade is
 $0.98$, while the corresponding probability for the moderate scenario is zero. The
 feasibility frontier, the historical-plausibility classes, and the persistence horizons are
@@ -1515,26 +1413,26 @@ communicable.
 
 \subsection{Diagnostics and falsification}\label{subsec:results_diagnostics}
 
-The temporal placebo is the central credibility test and it passes: running the complete
-pipeline on the 2010--2018 digitalization wave with era-consistent inputs --- an ICT
+The central credibility test, the temporal placebo, passes: running the complete pipeline
+on the 2010--2018 digitalization wave with era-consistent inputs --- an ICT
 productivity shock disciplined to $0.3$--$0.6$ percent annually, 2010 connectivity anchors,
 and pre-2009 historical percentiles --- produces no crossing anywhere, with a maximum
 feasibility ratio of $0.75$. The framework does not fabricate feasibility from a
 technological wave that, as a matter of record, did not finance universal social protection.
-The sectoral negative control behaves almost as sharply, and its one exception is reported
-as a declared failure rather than repaired: substituting displacement-only exposure for
+The sectoral negative control has one exception, reported as a declared failure rather than
+repaired: substituting displacement-only exposure for
 productive exposure collapses feasibility by exactly the exposure ratio, confirming the
 mechanism, yet Chile's stress-scenario minimum income still crosses. Channel ablation
 corroborates the reading that this cell is overdetermined --- it survives switching off any
 single fiscal channel --- so its conditional label carries an explicit caveat: at the
 disruptive support, that crossing is driven by the scale of the shock relative to a very
-small policy cost, not by the productive-exposure mechanics. The remaining diagnostics
-support the baseline reading. Leave-one-source-out reruns leave headline classifications
+small policy cost, not by the productive-exposure mechanics. Other diagnostics support the
+baseline. Leave-one-source-out reruns leave headline classifications
 unchanged where alternative sources exist. The labor channel carries the largest share of
 fiscal capture everywhere, and Peru's fragile crossing requires the labor and consumption
 channels jointly. Reform-regime crossings are not rent-dependent: removing AI-rent taxation
 lowers Peru's stress-reform ratio from $1.40$ to $1.27$ without changing its status.
-Finally, the adoption-side informality ablation relaxes the adoption ceiling by up to
+The adoption-side informality ablation relaxes the adoption ceiling by up to
 $0.34$ without changing any feasibility outcome, because current adoption anchors sit far
 below the ceiling: in this design and at these adoption levels, informality binds through
 the fiscal side embedded in observed effective rates rather than through the adoption
@@ -1544,12 +1442,11 @@ margin. Full diagnostic tables are reported in the appendix.
 Section~\ref{sec:expected} recorded the qualitative pattern this framework expected before
 any official run, and the pre-registration discipline requires adjudicating against that
 record rather than around it. Table~\ref{tab:results_adjudication} reports the verdicts.
-Two hypotheses hold cleanly. Fiscal regimes matter materially (H4): reform regimes change
+Fiscal regimes matter materially (H4): reform regimes change
 feasibility ratios and required horizons throughout, and every regime-dependent result
 survives its mandatory behavioral-erosion companion. The fragility discipline also holds
 (H5): no official crossing relies on historically extreme capture, and the one borderline
-case is flagged as such rather than absorbed. Two hypotheses receive a mixed verdict, and
-the mixtures are informative. The cost gradient (H1) governs within countries --- cheaper
+case is flagged as such rather than absorbed. The cost gradient (H1) governs within countries --- cheaper
 instruments cross first everywhere --- but the instrument ordering is not universal across
 countries: Chile's guaranteed minimum income is far cheaper than its universal pension
 guarantee, reversing the expected ranking and confirming that instrument hierarchies are
@@ -1557,7 +1454,7 @@ country-structure outcomes. The informality hypothesis (H3) is supported on the 
 margin, which is embedded in observed effective rates, but the adoption-side channel is
 inert at current adoption levels: ablating informality from the adoption ceiling relaxes
 the ceiling substantially without changing any feasibility outcome, because adoption
-anchors sit far below it. Finally, the exposure hypothesis (H2) is recorded as not testable
+anchors sit far below it. The exposure hypothesis (H2) is recorded as not testable
 across countries by design, because the pilot uses a common regional productive-exposure
 anchor; within-design it is a maintained property, not a finding, and testing it requires
 the country-specific occupational exposure measures discussed under limitations.
@@ -1566,12 +1463,13 @@ the country-specific occupational exposure measures discussed under limitations.
 
 \subsection{Limitations of the empirical application}\label{subsec:results_limitations}
 
-The empirical results inherit every maintained assumption of the framework, and the most
-consequential ones deserve explicit restatement alongside the bias ledger reported in the
+The results inherit every maintained assumption, and the most consequential ones deserve
+restatement alongside the bias ledger reported in the
 appendix. First, the guaranteed-minimum-income results use the ideal-targeting aggregate,
 which is a mechanical lower bound on cost; the loaded companion with the declared targeting
-factor is reported throughout, and a microdata-based estimate remains the natural upgrade
-before journal submission. Second, productive exposure uses a common regional anchor, which
+factor is reported throughout, and the microdata validations of Section~\ref{subsec:results_costs} bracket
+(Peru) and reproduce (Chile) the official grouped-data cost without changing any
+classification. Second, productive exposure uses a common regional anchor, which
 is why cross-country exposure differences are maintained rather than tested. Third, the
 frozen-trajectory convention is conservative on the translation margin: the declared
 conservative variant with a zero initial adoption stock eliminates the stress crossings,
@@ -1631,6 +1529,12 @@ This appendix formalizes the robustness checks behind the AI-shock block. The ba
 
 \subsection{Normalization of input variables}
 
+The preparedness reconstruction from the AIPI's four dimensions is
+\begin{equation}
+    A_{i,t}=\left(D_{i,t}^{w_D}H_{i,t}^{w_H}R_{i,t}^{w_R}G_{i,t}^{w_G}\right)^{1/(w_D+w_H+w_R+w_G)},
+\end{equation}
+Here $D$ is digital infrastructure, $H$ human capital and labour-market policy readiness, $R$ innovation and economic integration, and $G$ regulation and ethics. Geometric aggregation makes a severe bottleneck reduce absorptive capacity even when another dimension is strong; reconstructed and published AIPI values need not coincide. These symbols are local: elsewhere $D_{s,t}$ is diffusion, $H$ an accumulation horizon, and $R$ denotes revenue objects.
+
 All AI-shock inputs must be transformed to a common $[0,1]$ scale before aggregation. The simplest transformation is min--max normalization:
 \begin{equation}
     X^{MM}_{i,t}=\frac{X_{i,t}-\min_i X_{i,t}}{\max_i X_{i,t}-\min_i X_{i,t}}.
@@ -1641,6 +1545,20 @@ This expression is used only when $\max_iX_{i,t}>\min_iX_{i,t}$. If all observat
     X^{frontier}_{i,t}&=\min\left\{1,\frac{X_{i,t}}{X^{frontier}_t}\right\}.
 \end{align}
 The frontier reference is preferred to the maximum because it is less sensitive to a single outlier when constructed from an external benchmark set. For the baseline AI-translation factor, $X^{frontier}_t$ must be external to the pilot emerging-economy sample and should represent a high-preparedness, high-adoption, high-exposure benchmark. An internal pilot-sample percentile is a relative-position diagnostic, not an absolute translation benchmark. Single-country pilots must not use min--max or percentile-rank normalizations for threshold construction; they must use external-frontier normalization. Share-valued inputs that enter the translation score directly, $E^{prod}$ and $q^{prod}$, are already measured on the natural $[0,1]$ scale and enter $S$ in natural units: the only frontier normalization in the baseline translation factor is the score-level division by $S^{frontier}_{s,t}$ in Equation \eqref{eq:T_ndc_main_v10}. The input-level normalizations of this subsection apply to index-type inputs such as the preparedness dimensions and $Gap$. Applying an input-level frontier normalization to $E^{prod}$ or $q^{prod}$ and then dividing the score by $S^{frontier}$ would discount the same distance to the frontier twice and is not admissible.
+
+\subsection{Exposure construction from occupational and sectoral maps}
+
+When both maps are available, productive exposure is constructed as
+\begin{align}
+    E^{occ,prod}_{i,t}&=\sum_o \omega^{emp}_{i,o,t}e^{prod}_o,\\
+    E^{sec,prod}_{i,t}&=\sum_j \omega^{va}_{i,j,t}e^{prod}_j,
+\end{align}
+and combined by
+\begin{equation}
+    E^{prod}_{i,t}=\varpi E^{occ,prod}_{i,t}+(1-\varpi)E^{sec,prod}_{i,t},
+    \qquad \varpi\in[0,1].
+\end{equation}
+Employment weights the occupational map and value added the sectoral map; $\varpi$ selects their convex combination.
 
 \subsection{Technical floor}
 
@@ -2339,16 +2257,21 @@ Preparedness and exposure thresholds are reported as stress tests only. If $q^{p
 
 \subsection{Impossibility diagnostics}
 
-The threshold module reports realized ratios, support-headroom ratios, and gaps separately:
-\begin{align}
-    D^{MFC,gross,real}&=\frac{MFC^{gross}}{MFC^{gross,*}},
-    &D^{q,real}&=\frac{q^{prod}}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,\\
-    H^q&=\frac{\bar q_i}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,
-    &Gap^q&=q^{prod,*}-\bar q_i.
+The threshold module reports realized coverage, support headroom, and absolute gaps separately. Realized coverage is
+\begin{align}\label{eq:distance_ratios_main_v19}
+    D^{g,real}&=\frac{g^{AI}}{g^{AI,*}},
+    &D^{MFC,gross,real}&=\frac{MFC^{gross}}{MFC^{gross,*}},\\
+    D^{q,real}&=\frac{q^{prod}}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,
+    &D^{AI,eff,real}&=\frac{\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
 \end{align}
-If an effective conversion ratio is reported, it is labelled $D^{MFC,eff,real}=MFC^{eff}/MFC^{eff,*}$ and treated as derived reporting, not as the baseline fiscal-capture plausibility metric.
-If $q^{prod,*}=0$, neither $D^{q,real}$ nor $H^q$ is reported. The cell is classified as adoption-margin already satisfied only if feasibility does not rely on the numerical floor and the zero-adoption/zero-exposure gate is not violated; otherwise it is labelled floor-driven or non-substantive and is not counted as adoption-feasible.
-Use realized ratios only with other realized ratios, and support-headroom ratios only with other support ceilings. Use $Gap^q$ only as an absolute excess over the country-specific feasible adoption ceiling.
+Support headroom is
+\begin{align}\label{eq:headroom_ratios_main_v19}
+    H^g&=\frac{g^{AI,max}}{g^{AI,*}},
+    &H^q&=\frac{\bar q_i}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,\\
+    H^{AI,eff}&=\frac{\bar\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
+\end{align}
+Values above one mean that the realized value or support ceiling covers the requirement within its family. The effective AI-rent bound combines the statutory cap and capturability, $\bar\tau^{AI,eff}_{i,s,r,t}=\bar\tau^{AI}_{i,r,t}\chi^{AI}_{i,s,r,t}$. Realized and headroom families are never pooled into one cross-margin ranking. A derived effective-conversion distance must be separately labelled $D^{MFC,eff,real}=MFC^{eff}/MFC^{eff,*}$ and used only for derived reporting; gross realized capture remains the baseline plausibility metric because historical capture is gross.
+If $q^{prod,*}=0$, neither $D^{q,real}$ nor $H^q$ is reported. Adoption-margin already satisfied requires feasibility without reliance on the numerical floor and without violating the zero-adoption/zero-exposure gate; otherwise the cell is floor-driven or non-substantive and not adoption-feasible. If $0<q^{prod,*}\leq\bar q_i$, support is sufficient; if $q^{prod,*}>\bar q_i$, the ceiling fails. The absolute excess $Gap^q=q^{prod,*}-\bar q_i$ is reported as a gap, never a distance ratio.
 
 
 For accumulated-horizon implementations, the scenario-supported maximum AI level gain is
@@ -2554,6 +2477,21 @@ $\xi$, $\bar\pi$ & Prudential buffer and probability label & $\xi\in\{0,0.05,0.1
 \end{longtable}
 \normalsize
 
+\subsection{Data construction rules}
+
+Observed variables should be constructed as follows:
+\begin{itemize}
+    \item Fiscal capacity: tax revenue, non-tax revenue, grants, social contributions, and revenue composition from the UNU-WIDER Government Revenue Dataset \citep{unu2025grd}; use central/general government consistently.
+    \item Informality: informal employment as a share of total employment from ILOSTAT where available, supplemented by shadow-economy or informality studies only when official labour measures are missing \citep{ilostat2026informal,medina2018shadow,worldbank2021informality}.
+    \item Social protection: coverage, adequacy, expenditure, beneficiary information, and program categories from ASPIRE where available \citep{worldbank2026aspire}.
+    \item Poverty lines and poverty gaps: World Bank Poverty and Inequality Platform or national poverty lines, with PPP and local-currency concepts kept separate \citep{worldbank2026pip}.
+    \item AI preparedness: IMF AI Preparedness Index and its four components; do not reinterpret the index as invention leadership \citep{cazzaniga2024genai}.
+    \item AI exposure: occupation- or sector-level exposure harmonized to national employment or value-added shares. Productive exposure and displacement exposure must be reported as separate variables.
+    \item Digital and skills gap: construct $Gap_{i,t}$ from ITU and World Bank digital indicators excluded from AIPI, and document the normalization to $[0,1]$.
+    \item Primary-balance correction: obtain $PB^0_{i,t}$ and $PB^{stab}_{i,t}$ for $s^{PB}_{i,t}$ from the IMF WEO and debt-sustainability analysis.
+    \item External translation frontier: document the benchmark economies and year used to construct $S^{frontier}_{s,t}$, which remains fixed within each threshold inversion, and state that the benchmark set matches the population underlying the scenario shock $\phi_s$ (population consistency).
+\end{itemize}
+
 \subsection{Maintained economic assumptions and bias directions}
 
 The accounting frontier rests on maintained assumptions stated throughout the paper. They are consolidated here with their bias direction: conservative assumptions understate feasibility, optimistic ones overstate it.
@@ -2702,6 +2640,11 @@ International Monetary Fund. (2024).
 \newblock AI Preparedness Index (AIPI).
 \newblock IMF DataMapper dataset and documentation.
 
+\bibitem[Ito(2026)]{ito2026ubi}
+Ito, S. (2026).
+\newblock Feasibility of Universal Basic Income (UBI) in the Age of AI: A Comprehensive Simulation with a 16-Parameter Model.
+\newblock \emph{SSRN Working Paper 6170447}.
+
 \bibitem[Karabarbounis and Neiman(2014)]{karabarbounis2014global}
 Karabarbounis, L. and Neiman, B. (2014).
 \newblock The global decline of the labor share.
@@ -2733,6 +2676,11 @@ Medina, L. and Schneider, F. (2018).
 Morris, M. D. (1991).
 \newblock Factorial sampling plans for preliminary computational experiments.
 \newblock \emph{Technometrics}, 33(2), 161--174. DOI: 10.1080/00401706.1991.10484804.
+
+\bibitem[Nayebi(2025)]{nayebi2025threshold}
+Nayebi, A. (2025).
+\newblock An AI Capability Threshold for Rent-Funded Universal Basic Income in an AI-Automated Economy.
+\newblock \emph{arXiv:2505.18687}.
 
 \bibitem[Noy and Zhang(2023)]{noy2023experimental}
 Noy, S. and Zhang, W. (2023).

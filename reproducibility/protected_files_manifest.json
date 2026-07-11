@@ -14,6 +14,10 @@
       "sha256": "a3d22e685c5f37a967d6d34c54579da05a35b27ce8ae33e8ee0094d24289b767"
     },
     {
+      "path": "paper/main.tex",
+      "sha256": "d811ad14a4deca6686ff49e9c0ec899dd748d0587d05b2c87cdfed506c51529d"
+    },
+    {
       "path": "reports/calibrated_parameter_registry_baseline-official-v3.csv",
       "sha256": "8cf76fbda2a83c60c042c78a752b94c2c1c64a7083718dff222313b81378e15c"
     },
