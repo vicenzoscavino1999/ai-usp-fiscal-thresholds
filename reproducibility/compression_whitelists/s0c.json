@@ -1,0 +1,30 @@
+{
+  "type": "deletion-scaffolding",
+  "note": "La vacuidad era el contrato esperado; solo se registran los dos artefactos pre-autorizados de compuestos con guion, en body y document.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "scenario:high",
+      "delta": -1,
+      "justification": "artefacto de compuesto con guion (cf. S-0a)"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:low",
+      "delta": -1,
+      "justification": "artefacto de compuesto con guion (cf. S-0a)"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:high",
+      "delta": -1,
+      "justification": "artefacto de compuesto con guion (cf. S-0a)"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:low",
+      "delta": -1,
+      "justification": "artefacto de compuesto con guion (cf. S-0a)"
+    }
+  ]
+}

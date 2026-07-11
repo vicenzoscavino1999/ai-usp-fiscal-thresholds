@@ -1100,18 +1100,6 @@ If a positive feasibility result depends on a single source or a single fiscal c
 
 \section{Robustness Strategy}\label{sec:robustness}
 
-\subsection{Robust-decision logic}
-
-The framework reports thresholds, not a single headline forecast. A result is robust only if it survives variation in AI productivity, productive adoption, fiscal capture, informality, leakage, program cost, and debt guardrails.
-
-\subsection{Types of uncertainty}
-
-The implementation separates four uncertainty layers: scenario uncertainty, structural uncertainty, parameter uncertainty, and data uncertainty. Scenario uncertainty is handled by $\phi^{Y,nom}_s$ and fiscal regime $r$. Structural uncertainty is handled by alternative formulas. Parameter uncertainty is handled by Monte Carlo draws. Data uncertainty is handled by reporting observed-source alternatives and harmonized-data alternatives.
-
-\subsection{Specification robustness}
-
-Specification checks include effective versus gross fiscal conversion, gross-cost versus net-cost policy denominators, debt-consistent versus non-debt thresholds, no-AI-rent-tax regimes, high-leakage regimes, and no-formalization regimes.
-
 \subsection{Parameter-grid robustness}
 
 The deterministic grid includes
@@ -1155,10 +1143,6 @@ Report Spearman rank correlations, one-at-a-time tornado ranges, and grouped blo
 \subsection{Numerical precision and reproducibility}
 
 The replication package should publish the country-year dataset, parameter matrix, random seed, draw count, distributional supports, cleaning rules, and exact code used to generate tables. Simulations should be rerun with at least two seeds or with convergence diagnostics for the main crossing probabilities.
-
-\subsection{Placebo and negative-control checks}
-
-Placebo and negative-control outputs are required tables, not optional prose. They include the temporal placebo, low-exposure sector negative controls, leave-one-source-out results, and channel ablations.
 
 \section{Empirical Design and Minimum Pilot Application}\label{sec:empirical_design}
 
