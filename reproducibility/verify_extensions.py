@@ -199,6 +199,7 @@ def verify_table_reexport() -> ComparisonCount:
         for name in (
             "table4_vgross_baseline.tex",
             "table5_threshold_inversion.tex",
+            "table6_historical_plausibility.tex",
             "table7_monte_carlo.tex",
         )
     )
@@ -241,10 +242,10 @@ def verify_table_reexport() -> ComparisonCount:
         git_status = "empty"
     print(
         "EXTENSION PASS paper-table-reexport: "
-        f"files=3 idempotent=True source={'committed_targets' if preexisting else 'fresh_two_pass'} "
+        f"files={len(targets)} idempotent=True source={'committed_targets' if preexisting else 'fresh_two_pass'} "
         f"git_diff={git_status}"
     )
-    return ComparisonCount(files=3)
+    return ComparisonCount(files=len(targets))
 
 
 def verify_extensions() -> ComparisonCount:

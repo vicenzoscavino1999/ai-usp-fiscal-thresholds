@@ -1,0 +1,42 @@
+{
+  "type": "prose-correction",
+  "note": "S-1b corrige tres defectos de procedencia y escenario verificados contra los artefactos oficiales.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\ref{tab:results_inversions}",
+      "delta": 1,
+      "justification": "D-1: puntero aprobado a las columnas de clase y borderline de Table 5"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:stress",
+      "delta": -1,
+      "justification": "D-2: Peru 0.305 pertenece al escenario moderado, no a stress"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "D-2: condicionante moderado corregido contra la inversion oficial"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{tab:results_inversions}",
+      "delta": 1,
+      "justification": "D-1: puntero aprobado a las columnas de clase y borderline de Table 5"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": -1,
+      "justification": "D-2: Peru 0.305 pertenece al escenario moderado, no a stress"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "D-2: condicionante moderado corregido contra la inversion oficial"
+    }
+  ]
+}

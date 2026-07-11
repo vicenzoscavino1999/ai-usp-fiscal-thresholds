@@ -41,6 +41,30 @@ TABLE5_FIELDS = [
     "historical_total_revenue_class",
     "flags",
 ]
+TABLE5_HEADERS = [
+    "country",
+    "policy variant",
+    "scenario",
+    "regime",
+    "basis",
+    "g required",
+    "MFC required",
+    "q required",
+    "tax class",
+    "tax border",
+    "total-revenue class",
+    "flags",
+]
+TABLE6_FIELDS = [
+    "country_id",
+    "scenario_id",
+    "regime_id",
+    "mfc_gross",
+    "tax_class",
+    "tax_borderline",
+    "total_revenue_class",
+    "total_revenue_borderline",
+]
 TABLE7_FIELDS = [
     "country_id",
     "policy_variant_id",
@@ -152,8 +176,11 @@ def latex_escape(value: str) -> str:
     return text
 
 
-def header_lines(fields: list[str], continued_caption: str) -> list[str]:
-    header = " & ".join(latex_escape(field) for field in fields) + r" \\"
+def header_lines(fields: list[str], continued_caption: str, headers: list[str] | None = None) -> list[str]:
+    labels = fields if headers is None else headers
+    if len(labels) != len(fields):
+        raise AssertionError("header label count does not match table field count")
+    header = " & ".join(latex_escape(label) for label in labels) + r" \\"
     return [
         r"\toprule",
         header,
@@ -169,6 +196,20 @@ def header_lines(fields: list[str], continued_caption: str) -> list[str]:
 
 def latex_rows(rows: Iterable[dict[str, str]], fields: list[str]) -> list[str]:
     return [" & ".join(latex_escape(row[field]) for field in fields) + r" \\" for row in rows]
+
+
+def display_round(
+    rows: Iterable[dict[str, str]], decimal_fields: set[str], decimal_places: int
+) -> list[dict[str, str]]:
+    """Round only the printed representation; source-row assertions use full precision."""
+    rendered: list[dict[str, str]] = []
+    for row in rows:
+        output = dict(row)
+        for field in decimal_fields:
+            if output[field]:
+                output[field] = f"{float(output[field]):.{decimal_places}f}"
+        rendered.append(output)
+    return rendered
 
 
 def write_table4(rows: list[dict[str, str]]) -> None:
@@ -226,10 +267,11 @@ def write_table5(rows: list[dict[str, str]]) -> None:
         r">{\raggedright\arraybackslash}p{0.13\linewidth}",
         r">{\raggedright\arraybackslash}p{0.16\linewidth}",
     ]
+    printed_rows = display_round(rows, {"g_ai_required", "mfc_required_gross", "q_prod_required"}, 4)
     lines = [
         r"\begin{landscape}",
-        r"\fontsize{6}{7.2}\selectfont",
-        r"\setlength{\tabcolsep}{1.5pt}",
+        r"\fontsize{5}{6}\selectfont",
+        r"\setlength{\tabcolsep}{2pt}",
         r"\setlength{\LTleft}{0pt}",
         r"\setlength{\LTright}{0pt}",
         r"\let\tableunderscore\_",
@@ -238,20 +280,62 @@ def write_table5(rows: list[dict[str, str]]) -> None:
         *columns,
         r"@{}}",
         rf"\caption{{{caption}}}\label{{tab:results_inversions}}\\",
-        *header_lines(TABLE5_FIELDS, caption + " (continued)"),
+        *header_lines(TABLE5_FIELDS, caption + " (continued)", TABLE5_HEADERS),
         rf"\multicolumn{{{len(TABLE5_FIELDS)}}}{{l}}{{\textit{{Panel A: all countries, moderate scenario, r0, baseline requirement}}}} \\",
         r"\midrule",
-        *latex_rows(rows[:20], TABLE5_FIELDS),
+        *latex_rows(printed_rows[:20], TABLE5_FIELDS),
         r"\midrule",
         rf"\multicolumn{{{len(TABLE5_FIELDS)}}}{{l}}{{\textit{{Panel B: cited stress crossing cells}}}} \\",
         r"\midrule",
-        *latex_rows(rows[20:], TABLE5_FIELDS),
+        *latex_rows(printed_rows[20:], TABLE5_FIELDS),
         r"\bottomrule",
         r"\end{longtable}",
         r"\end{landscape}",
         "",
     ]
     (TARGET_DIR / "table5_threshold_inversion.tex").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_table6(rows: list[dict[str, str]]) -> None:
+    caption = (
+        "Historical plausibility of constructed channel-based captures. "
+        "Headline rows; constant provenance fields and the full 80-row grid in the Online Appendix "
+        "and the reproducibility package."
+    )
+    columns = [
+        r">{\raggedright\arraybackslash}p{0.055\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.065\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.05\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.11\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.19\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.09\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.22\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.10\linewidth}",
+    ]
+    lines = [
+        r"\begin{landscape}",
+        r"\fontsize{7}{8.4}\selectfont",
+        r"\setlength{\tabcolsep}{1.8pt}",
+        r"\let\tableunderscore\_",
+        r"\renewcommand{\_}{\tableunderscore\allowbreak}",
+        r"\begin{longtable}{@{}",
+        *columns,
+        r"@{}}",
+        rf"\caption{{{caption}}}\label{{tab:results_plausibility}}\\",
+        *header_lines(TABLE6_FIELDS, caption + " (continued)"),
+        rf"\multicolumn{{{len(TABLE6_FIELDS)}}}{{l}}{{\textit{{Panel A: moderate scenario, all countries and regimes}}}} \\",
+        r"\midrule",
+        *latex_rows(rows[:20], TABLE6_FIELDS),
+        r"\midrule",
+        rf"\multicolumn{{{len(TABLE6_FIELDS)}}}{{l}}{{\textit{{Panel B: low, high, and stress scenarios at r0}}}} \\",
+        r"\midrule",
+        *latex_rows(rows[20:], TABLE6_FIELDS),
+        r"\bottomrule",
+        r"\end{longtable}",
+        r"\end{landscape}",
+        "",
+    ]
+    (TARGET_DIR / "table6_historical_plausibility.tex").write_text("\n".join(lines), encoding="utf-8")
 
 
 def write_table7(rows: list[dict[str, str]]) -> None:
@@ -283,6 +367,7 @@ def main() -> int:
         for row in table5_source_all
         if Decimal(row["xi"]) == Decimal("0.10")
     ]
+    table6_source = read_csv_fields(SOURCE_DIR / "table6_historical_plausibility.csv", TABLE6_FIELDS)
     table7_source = read_csv("table7_monte_carlo.csv", TABLE7_FIELDS)
 
     if len(table4_source) != 480:
@@ -364,6 +449,27 @@ def main() -> int:
     ] != "True":
         raise AssertionError("table5: Peru PEN moderate r0 tax class/borderline is missing or changed")
 
+    if len(table6_source) != 80:
+        raise AssertionError(f"table6: expected complete 80-row source, found {len(table6_source)}")
+    table6_index = row_index(table6_source, ["country_id", "scenario_id", "regime_id"])
+    # Constructed channel-based captures are policy-invariant within a
+    # country-scenario-regime cell. Keep the complete moderate block and one
+    # r0 row for each remaining scenario-country combination.
+    table6_moderate_keys = [(country, "mid", regime) for country in COUNTRIES for regime in REGIMES]
+    table6_other_r0_keys = [
+        (country, scenario, "r0")
+        for scenario in ("low", "high", "stress")
+        for country in COUNTRIES
+    ]
+    table6_rows = select_rows(
+        table6_index,
+        [*table6_moderate_keys, *table6_other_r0_keys],
+        table6_source,
+        "table6",
+    )
+    if len(table6_moderate_keys) != 20 or len(table6_other_r0_keys) != 12 or len(table6_rows) != 32:
+        raise AssertionError(f"table6: expected 20 moderate + 12 other-r0 = 32 rows, found {len(table6_rows)}")
+
     table7_index = row_index(table7_source, ["country_id", "policy_variant_id", "scenario_id", "regime_id"])
     table7_keys = [
         (country, variant, scenario, regime)
@@ -382,6 +488,7 @@ def main() -> int:
 
     write_table4(table4_rows)
     write_table5(table5_rows)
+    write_table6(table6_rows)
     write_table7(table7_rows)
 
     print("PASS table4_source_count=480")
@@ -397,6 +504,11 @@ def main() -> int:
     print("PASS table5_row_identity=28")
     print("PASS table5_results_literals=0.17,0.305")
     print("PASS table5_per_pen_tax_extreme_borderline_visible=True")
+    print("PASS table6_source_count=80")
+    print("PASS table6_count=32")
+    print("PASS table6_moderate_rows=20")
+    print("PASS table6_low_high_stress_r0_rows=12")
+    print("PASS table6_row_identity=32")
     print("PASS table7_count=20")
     print("PASS table7_row_identity=20")
     print("PASS table7_already_minimal=True")
