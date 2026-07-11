@@ -211,7 +211,7 @@ The cost side holds recipient behavior fixed: labor-supply responses to transfer
 
 \section{Constructing AI Growth Shocks}\label{sec:ai_shocks}
 
-The construction of $g^{AI}_{i,s,t}$ is treated as a calibrated scenario-based \emph{level} increment in the fiscal base relative to a no-AI counterfactual, not as a one-year flow that is mechanically compared with a permanent annual policy cost. This distinction is essential because the social-protection costs below are annual recurring costs. The framework separates the externally disciplined AI productivity scenario from the country-specific translation of that scenario into a domestic, fiscal-base-compatible level effect. This separation is the core protection against overclaiming: optimism about frontier AI capabilities enters through $\phi^{Y,nom}_s$ after unit bridging and, when needed, accumulation into a level effect, while country readiness, exposure, adoption, informality, and digital constraints enter through $T_{i,s,t}$.
+The calibrated $g^{AI}_{i,s,t}$ is a scenario-based \emph{level} increment in the fiscal base relative to a no-AI counterfactual, not a one-year flow compared mechanically with a recurring annual policy cost. The framework separates an externally disciplined AI productivity scenario, bridged into $\phi^{Y,nom}_s$ and accumulated when needed, from its country-specific translation through readiness, exposure, adoption, informality, and digital constraints in $T_{i,s,t}$.
 
 \subsection{Numerically closed AI-productivity scenario ladder}\label{subsec:phi_ladder_main}
 
@@ -224,7 +224,7 @@ The nominal fiscal-base-compatible shock is then
 \begin{equation}
     \phi^{Y,nom}_s=(1+\phi^Y_s)(1+\pi^{AI,Y}_s)-1,
 \end{equation}
-or, for small rates, $\phi^{Y,nom}_s\approx \phi^Y_s+\pi^{AI,Y}_s$. The exact expression is multiplicative; the approximation is not described as log-additive. The term $\pi^{AI,Y}_s$ may be negative if AI reduces relative prices; its sign enters through the nominal bridge rather than being imposed as an assumption. Within all fiscal-space equations, the only admissible AI shock is $\phi^{Y,nom}_s$ or an explicitly real counterpart matched to a real historical fiscal-capture anchor. Raw TFP or labour-productivity estimates are never inserted directly into fiscal-space equations. The nominal bridge is admissible only when historical fiscal-capture anchors and policy costs are measured in nominal terms for the same endpoint horizon. If benefit rules, poverty-line benchmarks, or eligibility costs are price-indexed, the baseline either uses a real GDP-equivalent AI shock with real fiscal-capture anchors or projects policy costs onto the same nominal horizon. AI-related price effects are never interpreted as real fiscal capacity by themselves. AI gains realized as non-market output or zero-price services are outside GDP and therefore outside the fiscal base; this is conceptually distinct from informality, which is non-taxed GDP, and it biases the frontier conservatively. The scenario supports are strictly positive in source units; because $\pi^{AI,Y}_s$ may be negative, $\phi^{Y,nom}_s$ is nonetheless not guaranteed to be positive draw by draw. Draws with $\phi^{Y,nom}_s\leq0$ are retained as economic failure draws in all-draw feasibility probabilities and are excluded only from threshold inversions, which condition on $\phi^{Y,nom}_s>0$ (Section \ref{subsec:impossibility_score}). A persistently negative aggregate AI effect, as contemplated in parts of the task-based literature, would only reduce $fs^{eff}$ further, so reported frontiers are upper bounds along that margin.
+or, for small rates, $\phi^{Y,nom}_s\approx \phi^Y_s+\pi^{AI,Y}_s$. The exact expression is multiplicative, not log-additive, and $\pi^{AI,Y}_s$ may be negative. The nominal bridge is admissible only when fiscal-capture anchors and policy costs are nominal and share the endpoint horizon. For price-indexed benefits, poverty lines, or eligibility costs, the baseline instead pairs a real GDP-equivalent shock with real capture anchors or projects costs to that nominal horizon; price effects alone are never real fiscal capacity. Non-market or zero-price AI output lies outside GDP and the fiscal base, distinct from informality, biasing the frontier conservatively. Although source-unit supports are positive, draws with $\phi^{Y,nom}_s\leq0$ remain economic failure draws in all-draw probabilities and are excluded only from inversions conditional on $\phi^{Y,nom}_s>0$ (Section \ref{subsec:impossibility_score}). A persistently negative aggregate effect would reduce $fs^{eff}$ further, so the reported frontiers are upper bounds on that margin.
 
 When the literature reports annual growth increments over a horizon, the recurring-cost comparison uses the induced level difference relative to a no-AI counterfactual. In the static one-period notation this object is written compactly as
 \begin{equation}
@@ -234,7 +234,7 @@ If annual model-ready shocks are accumulated over horizon $H$, the level object 
 \begin{equation}
     g^{AI,level}_{i,s,H}=\prod_{\tau=1}^{H}\left(1+\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}\right)-1.
 \end{equation}
-For compactness, later equations write $g^{AI}_{i,s,t}$ for this fiscal-base-compatible level object unless the annual increment is explicitly being discussed. The official tables use the accumulated level object $g^{AI,level}$ under the frozen 2024 anchor trajectory; the static one-period approximation appears only where it is explicitly labelled. The recurring-cost comparison is an endpoint annual-flow comparison: the AI-induced level gain at horizon $H$ is interpreted as the permanent annual fiscal-base increment available at the endpoint year, and policy costs are measured or projected for that same endpoint year. This endpoint convention embeds a persistence assumption: the AI-induced level gain must persist at least as long as the recurring policy obligation. Two departures matter economically. If competition dissipates AI rents over time, the level gain may persist while its composition shifts from taxable profits toward lower prices and consumer surplus, reducing long-run marginal fiscal capture even at constant $g^{AI}$; this composition risk makes the baseline optimistic about long-run capture and motivates the labor-share and channel-composition robustness checks. If instead AI accelerates innovation, gains compound and the level convention is conservative. A present-value comparison, reported only as robustness and never mixed with the baseline annual-flow threshold, partially spans both cases. For accumulated-horizon implementations, threshold inversion is performed on the level equation
+Later equations write $g^{AI}_{i,s,t}$ for this fiscal-base-compatible level object unless discussing the annual increment. Official tables use accumulated $g^{AI,level}$ under the frozen 2024 anchor; any static one-period approximation is explicitly labelled. The recurring-cost test compares the endpoint annual fiscal-base increment with policy costs measured or projected for that endpoint, assuming the gain persists at least as long as the obligation. A shift from taxable rents toward lower prices and consumer surplus could reduce long-run capture even at constant $g^{AI}$, making the baseline optimistic about composition; innovation-driven compounding instead makes the level convention conservative. Present-value comparisons are robustness only and are never mixed with the baseline annual-flow threshold. Accumulated-horizon inversion uses
 \begin{equation}\label{eq:accumulated_threshold_condition_v22}
     \widetilde{MFC}^{gross}_{i,s,r,t}\left[\prod_{\tau=1}^{H}\left(1+\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}\right)-1\right]
     \geq R^{req,gross}_{i,p,s,r,t}(\xi).
@@ -260,12 +260,9 @@ $g^{AI,level}_{i,s,H}$ & AI-induced level gain relative to the no-AI counterfact
 \bottomrule
 \end{tabular}
 \end{table}
-\noindent The implementation must never set $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}$ directly: the translation factor is always applied, and the one-period object $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}T_{i,s,t}$ is admissible only when the calculation is explicitly labelled as a one-period static approximation. In the baseline recurring-cost comparison, $g^{AI}$ denotes the level object, not the raw annual increment.
+\noindent The implementation must never set $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}$ directly: the translation factor is always applied, and $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}T_{i,s,t}$ is admissible only as an explicitly labelled one-period static approximation. Baseline recurring-cost comparisons use the level object, not the raw annual increment. In particular, a high labour-productivity input is reported after applying $\kappa^{LP\to Y}$ and the nominal bridge, never as the source-unit value.
 
-The model assigns a GDP-equivalent support only after this bridge has been applied:
-\begin{equation}
-    \phi^Y_s\in\{\phi^{low,Y},\phi^{mid,Y},\phi^{high,Y},\phi^{stress,Y}\}.
-\end{equation}
+Only after bridging does the model assign the low, mid, high, or stress GDP-equivalent support listed in Table \ref{tab:phi_numerical_closure}.
 Because historical fiscal-capture anchors are usually constructed from nominal revenue and nominal GDP, the baseline fiscal-space implementation must use $\phi^{Y,nom}_s$ and the induced $g^{AI,level}$, or reconstruct the fiscal-capture anchor in real terms with explicit revenue and GDP deflators. Results that multiply a raw real/TFP/labour-productivity AI shock by a nominal historical capture distribution are reported only as heuristic plausibility checks, not as baseline fiscal-space estimates. For compactness, later formulas write $\phi_s$ only as shorthand for the baseline-compatible object $\phi^{Y,nom}_s$.
 
 Micro-level productivity experiments discipline plausibility in exposed tasks but do not directly identify aggregate TFP, GDP, or nominal fiscal-base effects. For example, \citet{noy2023experimental} estimate large effects for professional writing tasks, and \citet{brynjolfsson2023generative} estimate productivity gains in customer support. Those studies justify allowing positive task-level productivity gains, but they are not used as direct macro-growth estimates.
@@ -287,13 +284,11 @@ Disruptive stress, $\phi^{stress}$ & $[0.0100,0.0200]$ & GDP/TFP-equivalent stre
 \bottomrule
 \end{longtable}
 
-The preferred stochastic assignment is bounded PERT on the source-unit raw shock, followed by explicit conversion:
-\begin{align}
-    \phi^{raw}_{s,u}&\sim \mathrm{PERT}(a_s,m_s,b_s),\\
-    \phi^Y_s&=\kappa^{u\to Y}_s\phi^{raw}_{s,u},\\
-    \phi^{Y,nom}_s&=(1+\phi^Y_s)(1+\pi^{AI,Y}_s)-1.
-\end{align}
-Here $a_s$ and $b_s$ are the source-unit bounds in Table \ref{tab:phi_numerical_closure}; they are not automatically bounds for $\phi^{Y,nom}_s$ unless the table explicitly states that the support has already been converted. The modal value $m_s$ is the midpoint unless the empirical application has a source-specific central estimate.
+The preferred stochastic assignment applies bounded PERT to the source-unit shock:
+\begin{equation}
+    \phi^{raw}_{s,u}\sim \mathrm{PERT}(a_s,m_s,b_s).
+\end{equation}
+Conversion then follows the bridges above; $a_s$ and $b_s$ are the table's source-unit bounds, and $m_s$ is their midpoint unless a source-specific central estimate is available.
 
 For transparent non-stochastic reporting, the deterministic scenario values are
 \begin{equation}
@@ -305,48 +300,33 @@ For transparent non-stochastic reporting, the deterministic scenario values are
     \qquad
     \bar\phi^{stress}=0.015.
 \end{equation}
-If $\phi^{high,LP}$ is used in a GDP- or TFP-equivalent specification, the reported value is $\kappa^{LP\to Y}\bar\phi^{high,LP}$, not $\bar\phi^{high,LP}$ itself. Within fiscal-space equations this value must also be expressed as $\phi^{Y,nom}_s$ or matched to a real historical fiscal-capture anchor.
-
 \subsection{Country translation factor}\label{subsec:translation_factor_main}
 
 The static country-specific level shock is
 \begin{equation}
     g^{AI,level}_{i,s,t}=\phi^{Y,nom}_s T_{i,s,t},
 \end{equation}
-where $T_{i,s,t}\in[0,1]$ measures how much of the baseline-compatible nominal GDP-equivalent AI-productivity scenario can plausibly be translated into a domestic fiscal-base level gain. Unless a dynamic horizon is explicitly used, $g^{AI}_{i,s,t}$ below denotes this $g^{AI,level}_{i,s,t}$ object. The translation factor is built from three distinct objects:
+where $T_{i,s,t}\in[0,1]$ is the share of the baseline-compatible nominal GDP-equivalent scenario translated into a domestic fiscal-base level gain. Unless a dynamic horizon is explicit, $g^{AI}_{i,s,t}$ below denotes this level object. Translation uses three distinct inputs:
 \begin{itemize}
     \item $E^{prod}_{i,t}$: productive AI exposure, or the share of tasks, occupations, or sectors where AI can plausibly raise output or efficiency.
     \item $A_{i,t}$: AI preparedness or absorptive capacity, including digital infrastructure, human capital and labour-market policies, innovation and economic integration, and regulation and ethics.
     \item $q^{prod}_{i,s,t}$: realized productive adoption, meaning AI use that has been integrated into production processes rather than merely accessed or tested.
 \end{itemize}
-The IMF AI Preparedness Index is the preferred source for $A_{i,t}$ because it is explicitly designed to compare AI adoption preparedness across countries using digital infrastructure, human capital and labour-market policies, innovation/economic integration, and regulation/ethics indicators \citep{imf2024aipi,cazzaniga2024genai}. For Latin America and the Caribbean, the World Bank--ILO ranges of Section \ref{subsec:prod_disp_exposure_main} show that productive exposure is well below total exposure \citep{worldbankilo2024lacgenai}. Therefore the baseline uses the productivity-enhancing component for $E^{prod}$ and sends automation exposure to the labour-share/displacement block.
+The IMF AI Preparedness Index (AIPI) supplies $A_{i,t}$ consistently across countries \citep{imf2024aipi,cazzaniga2024genai}. World Bank--ILO ranges show that productive exposure in Latin America and the Caribbean is well below total exposure \citep{worldbankilo2024lacgenai}; the baseline therefore assigns the productivity-enhancing component to $E^{prod}$ and automation exposure to the labour-share/displacement block (Section \ref{subsec:prod_disp_exposure_main}).
 
-If occupation-level and sector-level measures are available, productive exposure is computed as
-\begin{align}
-    E^{occ,prod}_{i,t}&=\sum_o \omega^{emp}_{i,o,t}e^{prod}_o,\\
-    E^{sec,prod}_{i,t}&=\sum_j \omega^{va}_{i,j,t}e^{prod}_j,
-\end{align}
-and combined as
-\begin{equation}
-    E^{prod}_{i,t}=\varpi E^{occ,prod}_{i,t}+(1-\varpi)E^{sec,prod}_{i,t},
-    \qquad \varpi\in[0,1].
-\end{equation}
+Where occupational and sectoral maps exist, $E^{prod}$ is their convex combination (weight $\varpi$), with occupational exposure weighted by employment and sectoral exposure by value added (Appendix \ref{app:ai_shock_module}); the pilot uses the regional fallback below.
 When the application is restricted to Latin America and lacks country-specific task maps, the fallback support is
 \begin{equation}
     E^{prod}_{i,t}\in[0.08,0.14],
 \end{equation}
 interpreted as a regional support for productivity-enhancing GenAI exposure, not as total exposure. Total exposure $[0.26,0.38]$ is reported only as a broad-exposure robustness check, and full-automation exposure $[0.02,0.05]$ is used only in the labour-displacement channel.
 
-Preparedness can either be read directly from the IMF AIPI or reconstructed from its dimensions:
-\begin{equation}
-    A_{i,t}=\left(D_{i,t}^{w_D}H_{i,t}^{w_H}R_{i,t}^{w_R}G_{i,t}^{w_G}\right)^{1/(w_D+w_H+w_R+w_G)},
-\end{equation}
-where $D$ is digital infrastructure, $H$ is human capital and labour-market policy readiness, $R$ is innovation and economic integration, and $G$ is regulation and ethics. The geometric aggregation is preferred because a severe bottleneck in one dimension should reduce absorptive capacity even when another dimension is strong. A reconstructed index need not coincide numerically with the published AIPI value. The implementation adopts the published AIPI index values consistently across countries and labels that convention; the reconstruction equation remains a documented alternative. The dimension symbols $D$, $H$, $R$, and $G$ are local to this reconstruction equation; elsewhere in the paper $D_{s,t}$ denotes the dynamic diffusion path, $H$ an accumulation horizon, and $R$ revenue objects.
+The implementation adopts published AIPI values consistently across countries; Appendix \ref{app:ai_shock_module} documents reconstruction from its four dimensions.
 
 
 \subsection{Calibrable logistic adoption module}\label{subsec:logistic_adoption_main}
 
-The framework distinguishes AI access, AI use, and productive AI adoption. Access means that firms or workers can technically reach AI tools. Use means that they use those tools in some tasks. Productive adoption means that use is integrated into output-producing processes in a way that plausibly affects productivity. This distinction matters because micro-level productivity gains do not automatically become macroeconomic productivity gains.
+The framework distinguishes technical access, task-level use, and productive adoption integrated into output processes; micro productivity gains need not become macro gains.
 
 The baseline use equation is
 \begin{equation}\label{eq:q_use_logistic_main_v10}
@@ -379,33 +359,28 @@ The preferred country translation factor separates productive exposure from prod
 \begin{equation}\label{eq:S_ndc_main_v10}
     S^{NDC}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde E^{prod}_{i,t})^{\beta}(\tilde q^{prod,num}_{i,s,t})^{\gamma},
 \end{equation}
-where $NDC$ denotes no-double-counting and $\tilde E^{prod}_{i,t}$ and $\tilde q^{prod,num}_{i,s,t}$ are the floor-regularized inputs $\tilde X=\epsilon+(1-\epsilon)X$ defined in Appendix \ref{app:ai_shock_module}. The full score
-\begin{equation}\label{eq:S_full_main_v10}
-    S^{full}_{i,s,t}=\mathbf{1}\{q^{prod}_{i,s,t}>0,\ E^{prod}_{i,t}>0\}(\tilde A_{i,t})^{\alpha}(\tilde E^{prod}_{i,t})^{\beta}(\tilde q^{prod,num}_{i,s,t})^{\gamma}
-\end{equation}
-is not the baseline if $q^{prod}$ is simulated from preparedness. It is a robustness specification, or a valid alternative only when $q^{prod}$ is independently observed from adoption data rather than generated from $A$ or $E^{prod}$.
+where $NDC$ denotes no-double-counting and $\tilde E^{prod}_{i,t}$ and $\tilde q^{prod,num}_{i,s,t}$ are the floor-regularized inputs $\tilde X=\epsilon+(1-\epsilon)X$ defined in Appendix \ref{app:ai_shock_module}. The full score with direct preparedness is a labelled robustness specification, valid only when $q^{prod}$ is independently observed from adoption data rather than generated from $A$ or $E^{prod}$ (Appendix \ref{app:ai_shock_module}).
 
 The baseline translation factor is
 \begin{equation}\label{eq:T_ndc_main_v10}
     T_{i,s,t}=\min\left\{1,\frac{S^{NDC}_{i,s,t}}{S^{frontier}_{s,t}}\right\}.
 \end{equation}
 Because $S^{NDC}$ contains the substantive-adoption indicator, $q^{prod}_{i,s,t}\leq0$ implies $S^{NDC}_{i,s,t}=0$, $T_{i,s,t}=0$, and therefore $g^{AI}_{i,s,t}=0$ in the static implementation.
-The term $S^{frontier}_{s,t}$ is an external frontier benchmark for the scenario-year, calibrated from high-preparedness, high-exposure, high-adoption benchmark economies or an explicitly documented frontier sample. It is not computed as the internal percentile of the emerging-economy pilot sample, because an internal regional percentile could assign $T\approx1$ to the strongest country in a weak sample and thereby overstate absolute AI translation capacity. When threshold inversions solve for $q^{prod,*}$, $E^{prod,*}$, or $T^*$, this reference value is held fixed with respect to the country-policy cell being inverted. This avoids circularity in which the threshold changes the normalization constant it is trying to cross. If a within-sample percentile is reported, it is labelled as a relative-index robustness check rather than the baseline AI-translation factor. A population-consistency convention applies: because $T=1$ means the country translates the scenario like the benchmark set, the benchmark economies defining $S^{frontier}_{s,t}$ must be the population for which $\phi_s$ was estimated. If $\phi_s$ is an average-advanced-economy estimate, $S^{frontier}$ is calibrated on that same average set, not on the top performer; using a stricter benchmark than the estimation population double-discounts adoption and must be labelled as an additional conservative wedge.
+$S^{frontier}_{s,t}$ is an external scenario-year benchmark from high-preparedness, high-exposure, high-adoption economies, never an internal pilot percentile that could assign $T\approx1$ within a weak sample. It remains fixed when inversions solve for $q^{prod,*}$, $E^{prod,*}$, or $T^*$, avoiding circular normalization. Any within-sample percentile is labelled only as a relative-index robustness check. Because $T=1$ denotes benchmark-like translation, population consistency requires the benchmark to match the population underlying $\phi_s$: an average-advanced-economy estimate uses that average set, not its top performer; a stricter benchmark double-discounts adoption and must be labelled as an additional conservative wedge.
 
 \subsection{Productive exposure versus displacement exposure}\label{subsec:prod_disp_exposure_main}
 
-The model separates productivity-enhancing exposure from labor-displacement exposure. The variables $E^{prod}_{i,t}$, $E^{disp}_{i,t}$, and $E^{total}_{i,t}$ denote conceptually distinct exposure measures, not interchangeable labels. In applications,
+Productivity-enhancing, labor-displacement, and total exposure are distinct, not interchangeable:
 \begin{equation}
     E^{prod}_{i,t}\leq E^{total}_{i,t},\qquad E^{disp}_{i,t}\leq E^{total}_{i,t}.
 \end{equation}
-If the empirical source defines the productive and displacement categories as non-overlapping, the additional restriction $E^{prod}_{i,t}+E^{disp}_{i,t}\leq E^{total}_{i,t}$ is imposed. If the categories may overlap, the overlap is documented rather than forced to zero.
-For Latin America, the World Bank--ILO evidence provides a useful regional anchor: total GenAI exposure is approximately $26$--$38$ percent of employment, productivity-transforming exposure is approximately $8$--$14$ percent, and automation risk is approximately $2$--$5$ percent \citep{worldbankilo2024lacgenai}. The baseline therefore initializes
+For source-defined non-overlapping categories, $E^{prod}_{i,t}+E^{disp}_{i,t}\leq E^{total}_{i,t}$ is imposed; otherwise overlap is documented, not forced to zero. World Bank--ILO evidence anchors Latin American total exposure at approximately $26$--$38$ percent of employment, productivity-transforming exposure at $8$--$14$ percent, and automation risk at $2$--$5$ percent \citep{worldbankilo2024lacgenai}. The baseline initializes
 \begin{equation}
     E^{prod}_{i,t}\in[0.08,0.14],\qquad
     E^{disp}_{i,t}\in[0.02,0.05],\qquad
     E^{total}_{i,t}\in[0.26,0.38],
 \end{equation}
-for the Latin American pilot unless better country-sector data are available. In the labor-share module, $E^{auto}$ maps to $E^{disp}$ when only aggregate automation-risk data are available, and $E^{aug}$ maps to $E^{prod}$ when only productivity-enhancing exposure is available. If finer task-level measures exist, $E^{auto}$ and $E^{aug}$ are estimated separately.
+unless better country-sector data exist. In the labor-share module, $E^{auto}$ maps to $E^{disp}$ with aggregate automation-risk data and $E^{aug}$ to $E^{prod}$ with productivity-enhancing data; finer task maps estimate them separately.
 
 \section{Labor-Share Channel}\label{sec:labor_share}
 
@@ -1631,6 +1606,12 @@ This appendix formalizes the robustness checks behind the AI-shock block. The ba
 
 \subsection{Normalization of input variables}
 
+The preparedness reconstruction from the AIPI's four dimensions is
+\begin{equation}
+    A_{i,t}=\left(D_{i,t}^{w_D}H_{i,t}^{w_H}R_{i,t}^{w_R}G_{i,t}^{w_G}\right)^{1/(w_D+w_H+w_R+w_G)},
+\end{equation}
+Here $D$ is digital infrastructure, $H$ human capital and labour-market policy readiness, $R$ innovation and economic integration, and $G$ regulation and ethics. Geometric aggregation makes a severe bottleneck reduce absorptive capacity even when another dimension is strong; reconstructed and published AIPI values need not coincide. These symbols are local: elsewhere $D_{s,t}$ is diffusion, $H$ an accumulation horizon, and $R$ denotes revenue objects.
+
 All AI-shock inputs must be transformed to a common $[0,1]$ scale before aggregation. The simplest transformation is min--max normalization:
 \begin{equation}
     X^{MM}_{i,t}=\frac{X_{i,t}-\min_i X_{i,t}}{\max_i X_{i,t}-\min_i X_{i,t}}.
@@ -1641,6 +1622,20 @@ This expression is used only when $\max_iX_{i,t}>\min_iX_{i,t}$. If all observat
     X^{frontier}_{i,t}&=\min\left\{1,\frac{X_{i,t}}{X^{frontier}_t}\right\}.
 \end{align}
 The frontier reference is preferred to the maximum because it is less sensitive to a single outlier when constructed from an external benchmark set. For the baseline AI-translation factor, $X^{frontier}_t$ must be external to the pilot emerging-economy sample and should represent a high-preparedness, high-adoption, high-exposure benchmark. An internal pilot-sample percentile is a relative-position diagnostic, not an absolute translation benchmark. Single-country pilots must not use min--max or percentile-rank normalizations for threshold construction; they must use external-frontier normalization. Share-valued inputs that enter the translation score directly, $E^{prod}$ and $q^{prod}$, are already measured on the natural $[0,1]$ scale and enter $S$ in natural units: the only frontier normalization in the baseline translation factor is the score-level division by $S^{frontier}_{s,t}$ in Equation \eqref{eq:T_ndc_main_v10}. The input-level normalizations of this subsection apply to index-type inputs such as the preparedness dimensions and $Gap$. Applying an input-level frontier normalization to $E^{prod}$ or $q^{prod}$ and then dividing the score by $S^{frontier}$ would discount the same distance to the frontier twice and is not admissible.
+
+\subsection{Exposure construction from occupational and sectoral maps}
+
+When both maps are available, productive exposure is constructed as
+\begin{align}
+    E^{occ,prod}_{i,t}&=\sum_o \omega^{emp}_{i,o,t}e^{prod}_o,\\
+    E^{sec,prod}_{i,t}&=\sum_j \omega^{va}_{i,j,t}e^{prod}_j,
+\end{align}
+and combined by
+\begin{equation}
+    E^{prod}_{i,t}=\varpi E^{occ,prod}_{i,t}+(1-\varpi)E^{sec,prod}_{i,t},
+    \qquad \varpi\in[0,1].
+\end{equation}
+Employment weights the occupational map and value added the sectoral map; $\varpi$ selects their convex combination.
 
 \subsection{Technical floor}
 
