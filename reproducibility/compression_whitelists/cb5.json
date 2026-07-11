@@ -1,0 +1,112 @@
+{
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\label{tab:policy_cost_equations}",
+      "delta": -1,
+      "justification": "E1 removes the duplicated Design longtable after V1 confirmed that its label had no references anywhere in the document."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:calibration_ledger}",
+      "delta": 1,
+      "justification": "E3 replaces duplicated source detail with the approved pointer to the complete data-construction rules in Appendix H."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "justification": "E1 points Design to the canonical nominal policy-cost equations retained unchanged in the Policy Costs section."
+    },
+    {
+      "scope": "body",
+      "token": "number:-0",
+      "delta": -1,
+      "justification": "A LaTeX negative vertical-spacing literal from the removed GMI longtable cell disappeared with that duplicated table; it is formatting, not an economic value."
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -11,
+      "justification": "Superscript-zero ratio labels, a duplicated max-at-zero term, and table-formatting zeros were removed with the five duplicate ratio equations; the canonical nominal equations and no-AI denominator rule remain."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.18",
+      "delta": -1,
+      "justification": "Column-width formatting literal removed with the duplicated policy-cost longtable."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.20",
+      "delta": -1,
+      "justification": "Column-width formatting literal removed with the duplicated policy-cost longtable."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.50",
+      "delta": -1,
+      "justification": "Column-width formatting literal removed with the duplicated policy-cost longtable."
+    },
+    {
+      "scope": "body",
+      "token": "sign:\\geq",
+      "delta": -1,
+      "justification": "The duplicated elderly-age eligibility symbol moved out with the ratio table; it remains unchanged in the canonical pension-cost equation."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{tab:policy_cost_equations}",
+      "delta": -1,
+      "justification": "Document-level removal of the unreferenced duplicate policy-cost table label under E1."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:calibration_ledger}",
+      "delta": 1,
+      "justification": "Document-level E3 pointer to the detailed source and construction rules in Appendix H."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "justification": "Document-level E1 pointer to the canonical nominal policy-cost equations."
+    },
+    {
+      "scope": "document",
+      "token": "number:-0",
+      "delta": -1,
+      "justification": "Document-level removal of a LaTeX cell-spacing literal with the duplicate longtable."
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -11,
+      "justification": "Document-level removal of duplicated ratio superscripts, max-at-zero, and formatting zeros from the deleted longtable; no canonical economic quantity changed."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.18",
+      "delta": -1,
+      "justification": "Document-level removal of a longtable column-width literal."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.20",
+      "delta": -1,
+      "justification": "Document-level removal of a longtable column-width literal."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.50",
+      "delta": -1,
+      "justification": "Document-level removal of a longtable column-width literal."
+    },
+    {
+      "scope": "document",
+      "token": "sign:\\geq",
+      "delta": -1,
+      "justification": "Document-level removal of the duplicated age-eligibility sign; the canonical nominal equation is unchanged."
+    }
+  ]
+}

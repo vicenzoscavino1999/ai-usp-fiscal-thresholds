@@ -119,8 +119,7 @@ The core mechanism is
 \begin{equation}
 AI \rightarrow adoption \rightarrow productivity \rightarrow income distribution \rightarrow fiscal space \rightarrow social protection.
 \end{equation}
-The chain is deliberately one-directional: the framework does not model feedback from social protection to adoption or productivity (for example through human capital, entrepreneurship, or labor-supply responses). This is a maintained assumption of the static accounting frontier, not an empirical claim.
-Five frictions mediate this chain: limited digital preparedness, uneven exposure, labor-share displacement, informality, and weak fiscal capacity.
+The deliberately one-directional chain omits feedback from protection to adoption or productivity through human capital, entrepreneurship, or labor supply; this is a maintained static-frontier assumption, not an empirical claim. Five frictions intervene: limited digital preparedness, uneven exposure, labor-share displacement, informality, and weak fiscal capacity.
 
 The paper's key conceptual distinction is between \emph{technical exposure} and \emph{fiscal feasibility}. A country can be highly exposed to AI but fiscally unable to finance broad social protection. Conversely, a country with moderate exposure but strong tax capacity and low informality may cross policy thresholds sooner.
 
@@ -156,18 +155,18 @@ and the baseline gross cost ratio is
 \begin{equation}
     c^{gross,0}_{i,p,t}=\frac{C^{gross}_{i,p,t}}{Y^0_{i,t}}.
 \end{equation}
-For notational economy, $c^{gross}_{i,p,t}$ denotes $c^{gross,0}_{i,p,t}$ unless a post-AI denominator is explicitly stated. A post-AI robustness version may be reported as $c^{gross,AI}_{i,p,s,t}=C^{gross}_{i,p,t}/Y^{AI}_{i,s,t}$, where $Y^{AI}_{i,s,t}$ is the post-AI GDP level defined in Section \ref{sec:ai_shocks}, but it is not the baseline denominator. If part of the spending is already covered by existing social protection budgets, define
+Unless stated otherwise, $c^{gross}_{i,p,t}$ denotes $c^{gross,0}_{i,p,t}$. The post-AI-denominator version $c^{gross,AI}_{i,p,s,t}=C^{gross}_{i,p,t}/Y^{AI}_{i,s,t}$, using Section \ref{sec:ai_shocks}, is robustness only. With existing social-protection spending, define
 \begin{equation}
     C^{net}_{i,p,t}=\max\{0,C^{gross}_{i,p,t}-C^{exist}_{i,p,t}\},
     \qquad
     c^{net,0}_{i,p,t}=\frac{C^{net}_{i,p,t}}{Y^0_{i,t}}.
 \end{equation}
-$C^{exist}$ may include only substitutable, non-contributory social protection spending: contributory pensions and benefits protected by acquired rights cannot be redirected and are excluded from the offset.
-The gross cost is not net of first-round fiscal recycling: transfer recipients spend part of the benefit on VAT-taxable consumption, so the net fiscal cost is below $c^{gross}$. Symmetry with the induced-consumption channel admits the labelled first-round extension
+$C^{exist}$ includes only substitutable non-contributory spending; contributory pensions and acquired-right benefits cannot be redirected and are excluded.
+The gross cost is not net of first-round fiscal recycling: transfer recipients spend part of the benefit on VAT-taxable consumption, so the net fiscal cost is below $c^{gross}$. The labelled first-round extension is
 \begin{equation}\label{eq:first_round_benefit_recycling_e5}
     c^{recyc}_{i,p,r,t}=c^{gross}_{i,p,t}\left[1-mpc^{ben}_i(1-m^M_i)(1-exempt^C_{i,t})\tau^{C,eff}_{i,r,t}\right],
 \end{equation}
-where $mpc^{ben}$ is the recipients' marginal propensity to consume. The baseline omits recycling, which biases feasibility conservatively; if the extension is used, it must be reported as a labelled variant and the same convention applied to all instruments. Because transfer recipients are concentrated at the bottom of the consumption distribution, where exempt staples and informal purchases dominate, economy-wide values of $exempt^C$ and $\tau^{C,eff}$ overstate first-round recovery; the import-content margin works in the opposite direction, since staple-heavy recipient baskets are typically more domestic than average consumption, so an economy-wide $m^M$ overstates recipients' import leakage and understates recovery. The variant should therefore use recipient-basket parameters where available; with economy-wide parameters it is read as an approximate upper bound on recycling, driven by the exemption and effective-rate margins. Equation \eqref{eq:first_round_benefit_recycling_e5} is written under the base-side exemption convention: if consumption exemptions are instead embedded in $\tau^{C,eff}$, the $(1-exempt^C_{i,t})$ multiplier is omitted, following the same assignment rule as the induced-consumption channel in Section \ref{sec:fiscal_conversion}.
+where $mpc^{ben}$ is recipients' marginal propensity to consume. The baseline omits recycling, which biases feasibility conservatively; if the extension is used, it must be reported as a labelled variant and the same convention applied to all instruments. With economy-wide parameters, it is an approximate upper bound because recipient baskets are more exempt or informal and more domestic than average. Greater domestic content works oppositely through lower import leakage, so exemption and effective-rate margins drive that upper-bound reading. Equation \eqref{eq:first_round_benefit_recycling_e5} uses the base-side exemption convention; if exemptions instead enter $\tau^{C,eff}$, omit $(1-exempt^C_{i,t})$ under the assignment rule of Section \ref{sec:fiscal_conversion}.
 For readability, $c^{net}_{i,p,t}$ denotes the no-AI-denominator net-cost ratio unless otherwise stated. The corresponding ratios are
 \begin{equation}
     V^{gross}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{c^{gross}_{i,p,t}},
@@ -204,9 +203,9 @@ The corresponding gross-cost rules are
     C^{PBI,gross}_{i,t} &= \eta_{PBI}PL_{i,t}N^{PBI}_{i,t},\\
     C^{UBI,gross}_{i,t} &= \eta_{UBI}PL_{i,t}Pop_{i,t}.
 \end{align}
-Here $PL_{i,t}$ is a poverty-line benchmark, $z_{i,t}$ is a per-capita minimum-income threshold, $y^{pc}_{h,i,t}$ is per-capita household income or consumption, $n_{h,i,t}$ is household size, $w_{h,i,t}$ is a household survey weight, and $\chi_{GMI}\in(0,1]$ is the share of the poverty gap closed by the guaranteed minimum income. If the implementation uses household-level rather than per-capita objects, the equivalent rule is $\chi_{GMI}\sum_h w_h\max\{0,z^H_h-y^H_h\}$. The unit of $z$ and $y$ must therefore be matched before computing the GMI cost. Benefit levels, poverty-line benchmarks, and minimum-income thresholds are expressed at annual frequency before entering the cost ratios. The full UBI benchmark should be interpreted as a fiscal stress test, not as the default policy.
+Here $PL_{i,t}$ is the poverty-line benchmark; $z_{i,t}$ the per-capita minimum-income threshold; $y^{pc}_{h,i,t}$ household income or consumption per capita; $n_{h,i,t}$ household size; $w_{h,i,t}$ survey weight; and $\chi_{GMI}\in(0,1]$ the poverty-gap share closed. With household-level objects, the equivalent rule is $\chi_{GMI}\sum_h w_h\max\{0,z^H_h-y^H_h\}$. Units of $z$ and $y$ must match before computing GMI cost; benefit levels and poverty or minimum-income thresholds enter the ratios annually. Full UBI is a fiscal stress test, not the default policy.
 
-The GMI cost equation prices the aggregate poverty gap and therefore embeds three idealized assumptions: exact identification of poor households (no inclusion or exclusion errors), perfect benefit tapering to each household's gap, and no behavioral response of incomes to the transfer. Full gap-filling imposes an implicit 100 percent marginal tax rate below $z$, the strongest incentive distortion in the policy menu, under which households may reduce or underreport income to qualify, endogenously widening the measured gap. A labelled targeting-and-behavior loading factor $\theta^{target}\geq1$ defines the robustness object $C^{GMI,load}=\theta^{target}C^{GMI,gross}$; cross-instrument comparisons must report it alongside the ideal-targeting baseline, because universal-instrument costs contain no such idealization and the GMI-before-UBI ranking is otherwise partly mechanical.
+The GMI equation prices the aggregate poverty gap under three idealizations: exact identification of poor households (no inclusion or exclusion errors), perfect tapering to each household's gap, and no income response. Full gap-filling implies a 100 percent marginal tax rate below $z$; households may reduce or underreport income, widening the gap. The labelled loading $\theta^{target}\geq1$ defines $C^{GMI,load}=\theta^{target}C^{GMI,gross}$ and must be reported alongside ideal targeting, because universal costs lack this idealization and the GMI-before-UBI ranking is partly mechanical.
 The cost side holds recipient behavior fixed: labor-supply responses to transfers (small in the cash-transfer evidence, in either direction) and local price effects of large transfers in poor areas are outside the accounting frontier \citep{gentilini2020ubi,oecd2017basicincome}.
 
 \section{Constructing AI Growth Shocks}\label{sec:ai_shocks}
@@ -1185,7 +1184,7 @@ Placebo and negative-control outputs are required tables, not optional prose. Th
 
 \section{Empirical Design and Minimum Pilot Application}\label{sec:empirical_design}
 
-The empirical application is deliberately small: Peru as the primary case, with Chile, Colombia, and Mexico as comparators. The purpose is not to claim regional representativeness. The purpose is to show that the framework can be populated with real country data, that the same equations work across different fiscal and institutional settings, and that the feasibility result is driven by transparent observed inputs rather than by hidden assumptions.
+The deliberately small application uses Peru as primary case and Chile, Colombia, and Mexico as comparators. It does not claim regional representativeness; it shows that common equations can use observed data across fiscal and institutional settings and that feasibility is driven by transparent rather than hidden inputs.
 
 \subsection{Pilot country sample}
 
@@ -1206,39 +1205,19 @@ Mexico & Large economy with deeper productive integration, low tax-to-GDP ratio 
 \end{tabular}
 \end{table}
 
-Three of the four pilot countries are upper-middle-income economies, while Chile is classified by the World Bank as high income. The pilot therefore spans informality and fiscal capacity within the middle-to-high band but does not probe the low-income, low-capacity corner where impossibility diagnostics bind most; a low-income application is the natural second deployment of the framework.
+Three pilot countries are upper-middle-income and Chile is high income. The sample spans informality and fiscal capacity only within this middle-to-high band, not the low-income, low-capacity corner where impossibility may bind most; a low-income case is the natural next application.
 
 \subsection{Observed pilot anchors}
 
-The pilot uses $t_0=2024$ as its harmonization year. If a variable is observed in 2024, the 2024 value is used. If the closest available observation is earlier, it is carried forward and flagged as carried-forward. If a newer value such as 2026 is used, the table must either update all macro anchors to a 2026 version or mark the cell as a non-harmonized source-specific robustness value. Baseline cross-country comparisons should not silently mix source years.
+The harmonization year is $t_0=2024$: for a 2024 observation, use the 2024 value; carry earlier values forward with a flag. A newer value such as 2026 requires either all macro anchors updated to 2026 or a non-harmonized source-specific robustness flag. Baseline comparisons must not silently mix years.
 
 The preliminary seed values in the methodological draft have been superseded by the official observed anchors constructed by the reproducibility pipeline and reported in Table \ref{tab:results_anchors} in the results section. Those official anchors draw on GRD, OECD Revenue Statistics, WDI, AIPI, and national informality sources, under the harmonization rules above \citep{imf2024aipi,worldbank2026wdi,oecd2025revenue,oecd2025peru,worldbank2026humancapital,inechile2025ene,dane2026informalidad,inegi2024enoe}.
 
 \subsection{Policy instruments and cost equations}
 
-For each country $i$ and policy $p$, the annual policy cost as a share of the no-AI counterfactual GDP $Y^0_{i,t}$ is $c_{i,p,t}$. The minimum pilot application reports five instruments:
+For each country $i$ and policy $p$, the annual policy-cost ratio $c_{i,p,t}$ divides the nominal equations in Section \ref{sec:policy_costs} by no-AI GDP $Y^0_{i,t}$. Required data are older population and pension benefit for PEN; eligible population and poverty line for MUT/PBI; household-income distribution and minimum line for GMI; and total population for UBI.
 
-{\small
-\begin{longtable}{p{0.18\textwidth}p{0.50\textwidth}p{0.20\textwidth}}
-\caption{Policy-cost equations for the pilot application}\label{tab:policy_cost_equations}\\
-\toprule
-Instrument & Cost equation & Data requirement \\
-\midrule
-\endfirsthead
-\toprule
-Instrument & Cost equation & Data requirement \\
-\midrule
-\endhead
-Universal social pension & \(c^{PEN,0}_{i,t}=B^{PEN}_{i,t}Pop^{a\geq a^*}_{i,t}/Y^0_{i,t}\) & Elderly population, benefit level, no-AI GDP \\
-Minimum universal transfer & \(c^{MUT,0}_{i,t}=\eta_{MUT}PL_{i,t}N^{MUT}_{i,t}/Y^0_{i,t}\) & Eligible population, poverty line, no-AI GDP \\
-Guaranteed minimum income & \(\begin{aligned}[t] c^{GMI,0}_{i,t}&=\frac{\chi_{GMI}}{Y^0_{i,t}}\\[-0.15em]&\times\sum_h w_{h,i,t}n_{h,i,t}\max\{0,z_{i,t}-y^{pc}_{h,i,t}\}\end{aligned}\) & Household income distribution, poverty or minimum-income line \\
-Partial basic income & \(c^{PBI,0}_{i,t}=\eta_{PBI}PL_{i,t}N^{PBI}_{i,t}/Y^0_{i,t}\) & Eligible population, poverty line, no-AI GDP \\
-Full UBI benchmark & \(c^{UBI,0}_{i,t}=\eta_{UBI}PL_{i,t}Pop_{i,t}/Y^0_{i,t}\) & Population, poverty-line benchmark, no-AI GDP \\
-\bottomrule
-\end{longtable}
-}
-
-ASPIRE is the preferred source for existing social protection expenditure, coverage, adequacy, and administrative concepts \citep{worldbank2026aspire}. PIP, SEDLAC, and national household surveys are the preferred sources for poverty lines, poverty gaps, and household-income distributions. A full UBI is retained only as a benchmark. The paper should expect universal social pensions, targeted or guaranteed minimum income instruments, and partial basic income instruments to cross feasibility thresholds before a full UBI benchmark, with the GMI ranking subject to the ideal-targeting caveat of Section \ref{sec:policy_costs}.
+ASPIRE supplies existing expenditure and coverage; PIP, SEDLAC, and national surveys supply poverty lines and gaps, with detail in Appendix \ref{app:calibration_ledger}. A full UBI is retained only as a benchmark. The paper should expect universal social pensions, targeted or guaranteed minimum income instruments, and partial basic income instruments to cross feasibility thresholds before a full UBI benchmark, with the GMI ranking subject to the ideal-targeting caveat of Section \ref{sec:policy_costs}.
 
 \subsection{AI exposure, adoption, and fiscal conversion in the pilot}
 
@@ -1248,11 +1227,7 @@ The official tables report, for every country-policy-scenario-regime cell,
     \left(A_i,E^{prod}_i,q^{prod}_{i,s,t},I_i,MFC^{gross}_{i,s,r,t},fs^{eff}_{i,p,s,r,t},c_{i,p,t},V_{i,p,s,r,t}\right).
 \end{equation}
 The pilot's fiscal-conversion mode is declared once: all $V$ columns are computed in the channel-based mode, which represents reform regimes natively, while the historical gross-capture distribution enters through the plausibility flag and through a labelled historical reduced-form robustness run; the two modes are never mixed inside one cell. Results from this design are reported in Section \ref{sec:empirical_results}.
-
-\subsection{Implementation sequence}
-
 The sequence was implemented in full in the tagged reproducibility package described in the data and code availability statement, and its outputs are reported in Section \ref{sec:empirical_results}.
-
 This empirical design is intentionally modular. If a reader disagrees with the AI shock, adoption speed, tax-base channel, or policy-cost benchmark, the framework allows that block to be replaced without changing the threshold logic.
 
 \subsection{Expected qualitative pattern}\label{sec:expected}
