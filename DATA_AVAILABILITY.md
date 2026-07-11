@@ -53,8 +53,30 @@ request; it is a successful availability check, not a partial source record.
 | 14 | **UN WPP 2024**. The exact bulk file <https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz> returned HTTP 206. | `scripts/14_download_wpp_projections.py --countries PER,CHL,COL,MEX --start-year 2024 --end-year 2035 --raw-root data/raw_snapshots/v1.0.1-official-4c --overwrite` | WPP 2024 materials and the [Population Data Portal API](https://population.un.org/dataportalapi/index.html) identify CC BY 3.0 IGO. | `raw_redistributable` | `data/raw_snapshots/v1.0.1-official-4c/wpp/wpp_projections.parquet`; restart at anchor build. The full bulk need not be duplicated in Zenodo. | M1; 115,104 B |
 | 15 | **Ookla Speedtest Open Data**. The [AWS registry record](https://registry.opendata.aws/speedtest-global-performance/) returned HTTP 200. M1 records exact fixed/mobile tile URLs for 2024Q4 and 2026Q1. Country polygons come from [Natural Earth](https://www.naturalearthdata.com/about/terms-of-use/), which is public domain. | `scripts/15_download_ookla.py --countries PER,CHL,COL,MEX --year 2024 --quarter 4 --period-start 2024-10-01 --raw-root data/raw_snapshots/v1.0.1-official-4c --overwrite` | The AWS record confirms CC BY-NC-SA 4.0. Redistribution and adaptations are non-commercial and share-alike; attribution is required. | `derived_only` | Include `data/raw_snapshots/v1.0.1-official-4c/ookla/ookla_speedtest.parquet`, `data/model_inputs/digital_gap_anchor.parquet`, and `reports/gap_index_baseline-official-v1.csv`, all with the Ookla caveat. Exclude four tile caches and the local boundary copy. Restart at anchor build. | M1; public 38,683 B; withheld cache/reference 1,081,825,287 B (1.01 GiB) |
 | 16 | **UN SNA labor share (`robustness-lsraw-v1`)**. Eight exact UNdata requests combine country codes `604/152/170/484` with groups `401` (compensation) and `101` (GDP); a representative request returned HTTP 200. | `scripts/16_download_un_sna_labor_share.py` with its default `--output-dir data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share` and M2 manifest path. | [UNdata conditions](https://data.un.org/Host.aspx?Content=UNdataUse) say data and metadata may be copied, duplicated, and further distributed when UNdata is cited. | `raw_redistributable` | Include `data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/un_sna_labor_share_raw.parquet`; the eight ZIPs are legally redistributable but unnecessary. Restart with `python scripts/run_ls_raw_robustness_extension.py`. | M2; parquet 12,748 B; complete local source snapshot 194,134 B |
-| 17 | **INEI ENAHO 2024 Sumaria (`robustness-gmimicro-per-v1`)**. <https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip> returned HTTP 206 without login. | `scripts/17_download_enaho_sumaria.py` with its default output directory and M3 manifest path. | The official portal provides a direct public download, but no source-specific page explicitly authorizing redistribution of the microdata file was located. General INEI interactive-service terms do not settle this question. `license_check_pending`. | `derived_only` | Include only `data/raw_snapshots/robustness-gmimicro-per-v1/enaho_sumaria/enaho_sumaria_2024_required_variables.parquet`, metadata, and aggregate extension reports; exclude ZIP and DTA. Restart with `python scripts/run_gmi_microdata_robustness_extension.py`; from scratch, the script re-downloads and verifies the hashes in M3. | M3; public 596,893 B; raw ZIP+DTA 37,154,738 B |
-| 18 | **MDSF CASEN 2024 (`robustness-gmimicro-chl-v1`)**. <https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav> returned HTTP 206 without login. | `scripts/18_download_casen_2024.py` with its default output directory and M4 manifest path. | The [MDSF FAQ](https://observatorio.ministeriodesarrollosocial.gob.cl/preguntas-frecuentes) calls anonymized CASEN files public, free downloads and permits research use with attribution. It does not explicitly grant redistribution of the raw `.sav`; `license_check_pending` for redistribution. | `derived_only` | Include only `data/raw_snapshots/robustness-gmimicro-chl-v1/casen_2024/casen_2024_gmi_required_variables.parquet`, metadata, and aggregate extension reports; exclude `.sav` and codebook. Restart with `python scripts/run_gmi_microdata_chl_robustness_extension.py`; from scratch, the fetch script verifies M4 hashes. | M4; public 3,576,424 B; raw SAV+codebook 749,898,052 B (715.16 MiB) |
+| 17 | **INEI ENAHO 2024 Sumaria (`robustness-gmimicro-per-v1`)**. <https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip> returned HTTP 206 without login. | `scripts/17_download_enaho_sumaria.py` with its default output directory and M3 manifest path. | The [INEI Microdatos portal](https://proyectos.inei.gob.pe/microdatos/index.htm) says it "pone a disposición del público en general el sistema de Microdatos." The [national open-data record for ENAHO 2024](https://datosabiertos.gob.pe/dataset/encuesta-nacional-de-hogares-enaho-2024-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-%E2%80%93) states `Open Data Commons Open Database License (ODbL)`, but lists only a sample CSV, not the Module 34 ZIP used here. The INEI portal and the DL 604/DS 043-2001-PCM confidentiality framework do not explicitly extend that redistribution license to this exact binary. `license_check_pending` remains. | `derived_only` | Do not publish the row-level required-variable parquet while the license scope remains unconfirmed. Publish aggregate validation/cost/class-change reports, the fetch and runner scripts, URL, and M3 hashes. From scratch, run `scripts/17_download_enaho_sumaria.py`, then `scripts/run_gmi_microdata_robustness_extension.py`; operationally the runner starts from the derived parquet without the ZIP or DTA. | M3; public aggregate payload only; local derived parquet 596,893 B; raw ZIP+DTA 37,154,738 B |
+| 18 | **MDSF CASEN 2024 (`robustness-gmimicro-chl-v1`)**. <https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav> returned HTTP 206 without login. | `scripts/18_download_casen_2024.py` with its default output directory and M4 manifest path. | The official [2024 note of use](https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/Nota_uso_bases_de_datos_Casen_2024.pdf) states that the databases are published through Observatorio Social and BIDAT and that identifying information is excluded. [BIDAT's terms](https://bidat.gob.cl/terminos-de-uso) expressly allow: "Compartir — copiar y redistribuir el material en cualquier medio o formato para cualquier propósito, incluso comercialmente," under CC BY 4.0 with attribution and change notice. | `raw_redistributable`; the archive selects the smaller derived extract | Include `data/raw_snapshots/robustness-gmimicro-chl-v1/casen_2024/casen_2024_gmi_required_variables.parquet`, metadata, and aggregate extension reports under CC BY 4.0; exclude the `.sav` and codebook for size, not legal restriction. Restart with `python scripts/run_gmi_microdata_chl_robustness_extension.py`; the runner needs only the derived parquet. | M4; public 3,576,424 B; omitted raw SAV+codebook 749,898,052 B (715.16 MiB) |
+
+## Portal-independence insurance
+
+The frozen hashes, not a provider's current filename, identify the inputs used
+by the published extensions. If a portal later returns a file with a different
+hash, it is a different version: retain it separately, record the retrieval
+date and source URL, compare it with the frozen file, and never overwrite the
+published snapshot in place.
+
+| Source | Primary and alternative retrieval pages | Frozen raw verification anchor | Archived pages saved 2026-07-11 |
+|---|---|---|---|
+| ENAHO 2024 Sumaria | Binary: <https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip>. Primary portal: <https://proyectos.inei.gob.pe/microdatos/index.htm>. Query alternative: <https://proyectos.inei.gob.pe/microdatos/Consulta_por_Encuesta.asp?CU=19558%2F>. National catalog alternative: [ENAHO 2024](https://datosabiertos.gob.pe/dataset/encuesta-nacional-de-hogares-enaho-2024-instituto-nacional-de-estad%C3%ADstica-e-inform%C3%A1tica-%E2%80%93). | M3: ZIP `5ee98dad87810d42d7e252401d8366feac2fbce151c7af986d9644a40952567c`, 15,935,617 B; extracted DTA `491066f6049b0debc542739ea379e66e8eac8912162e31c5628114aae3c4592d`, 21,219,121 B. | [Portal](https://web.archive.org/web/20260711200041/https://proyectos.inei.gob.pe/microdatos/index.htm); [query page](https://web.archive.org/web/20260711200118/https://proyectos.inei.gob.pe/microdatos/Consulta_por_Encuesta.asp?CU=19558%2F). Saving the national-catalog page failed with Wayback HTTP 523; its live URL remains recorded. |
+| CASEN 2024 | Binary: <https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav>. Primary page: <https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-2024>. BIDAT alternatives: <https://bidat.gob.cl/catalogo-de-datos> and dataset `105286d9-10a8-410a-b060-a335f3168a46`. | M4: SAV `ac2d48b5c0b17f6e9c9744dd55853d1021248e2d985d173871338abfe3c8758f`, 749,656,107 B; codebook `c78453bb68ca55cd0201d5421c14a6fee80028e40b6ece639e6a5c6c8b7d4f74`, 241,945 B. Derived extract: `8be9a199edda2c9490482d4cd1cf9a3817bd4fe8bc93dcf7563854862ebe8ab1`, 3,576,424 B. | [Observatorio page](https://web.archive.org/web/20260711195912/https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-2024); [BIDAT catalog](https://web.archive.org/web/20260711200310/https://bidat.gob.cl/catalogo-de-datos); [dataset route](https://web.archive.org/web/20260711200025/https://bidat.gob.cl/details/ficha/dataset/105286d9-10a8-410a-b060-a335f3168a46/catalogo-datos); [BIDAT terms](https://web.archive.org/web/20260711200343/https://bidat.gob.cl/terminos-de-uso). |
+| SEDLAC | Primary English page: <https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/>. Spanish alternative: <https://www.cedlas.econo.unlp.edu.ar/wp/estadisticas/sedlac/>. | M1 records `manual_pending`: no source file, size, or SHA-256 was frozen. A future file is not part of the official snapshot until registered and hashed through script 12. | [English download page](https://web.archive.org/web/20260711200152/https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/). |
+
+The baseline is portal-independent once the lightweight official snapshot is
+restored: start with `make build-from-frozen-dataset`. The LS-raw and CASEN
+extensions start directly from their archived derived parquets and independent
+runners. The ENAHO runner also starts from its derived parquet without the raw
+ZIP/DTA, but that extract is not placed in the public archive until the exact
+Module 34 redistribution terms are confirmed; a third party can recreate it
+from the direct public URL and M3 recipe without contacting the author.
 
 ## How to fully reproduce from scratch
 
@@ -82,10 +104,11 @@ request; it is a successful availability check, not a partial source record.
 6. Run `make reproduce-deterministic`, `make reproduce-full`, and `make verify`
    according to `README.md`. These commands consume the frozen snapshot and do
    not contact data providers.
-7. For robustness inputs, either restore the three derived parquets and verify
-   M2-M4, or run scripts `16`-`18`. UN SNA and ENAHO download directly. CASEN is
-   a large direct download. Then run the three extension runners named in rows
-   16-18 and `python reproducibility/verify_extensions.py`.
+7. For robustness inputs, restore the archived UN SNA and CASEN derived
+   parquets and verify M2/M4. Until ENAHO redistribution is confirmed, run
+   script `17` once to recreate its required-variable parquet and verify M3.
+   Then run the three extension runners named in rows 16-18 and
+   `python reproducibility/verify_extensions.py`.
 8. For `instructions_only` or withheld raw inputs, retain the downloaded file
    outside the public repository and compare its SHA-256 with the relevant
    manifest before processing. A mismatch means a provider revision, not the
@@ -97,43 +120,40 @@ The proposed release payload contains:
 
 - the source scripts, environment lock files, four snapshot manifests, and each
   source `metadata.json`;
-- the 14 available filtered parquets from M1 (SEDLAC has none), plus the three
-  robustness parquets in M2-M4: 17 parquet files totaling 48,459,456 bytes
-  (46.21 MiB);
+- the 14 available filtered parquets from M1 (SEDLAC has none), plus the UN SNA
+  and CASEN robustness parquets: 16 parquet files totaling 47,862,563 bytes
+  (45.65 MiB);
 - `metadata/manual_source_registry.yml`, the generated model-input anchors,
   canonical outputs, reports, and extension amendment records;
 - the aggregate `gap_index` artifacts and the GRD four-country contrast parquet
   under their source-specific non-commercial/share-alike notices;
-- the column-reduced ENAHO and CASEN required-variable parquets, not the 37.15
-  MiB and 715.16 MiB source microdata payloads; and
+- the column-reduced CASEN required-variable parquet, not its 715.16 MiB source
+  payload; ENAHO contributes aggregate validation/cost/class-change reports,
+  scripts, URLs, and M3 hashes while its exact redistribution scope is pending;
+  and
 - instructions and recorded hashes for SEDLAC, GRD source workbooks, Ookla tile
   caches, ENAHO source files, and CASEN source files.
 
 With those files, a stranger starts the official run at
-`make build-from-frozen-dataset` and the three extensions at their respective
-runner scripts. Reconstructing the source layer remains possible from public
-URLs or the GRD form without asking the author.
+`make build-from-frozen-dataset`, the LS-raw and CASEN extensions at their
+runner scripts, and ENAHO by executing its public fetch script once before its
+runner. Reconstructing the source layer requires no contact with the author.
 
-## License-policy findings and proposed clarifications
+## License-policy closure
 
 1. The Ookla check is closed: the live AWS registry still states CC BY-NC-SA
    4.0. The existing `LICENSE-DATA` decision not to redistribute raw tiles and
    to archive the derived `gap_index` with attribution and the license caveat is
    consistent with the source terms.
-2. GRD's filtered `grd_revenue.parquet` qualifies operationally as the derived
-   contrast table contemplated by `LICENSE-DATA`. It must not be silently
-   relicensed as CC BY 4.0; attach UNU-WIDER attribution, DOI, and the website's
-   CC BY-NC-SA 3.0 IGO condition.
-3. Publishing selected files below `data/raw_snapshots/` conflicts textually
-   with the blanket `LICENSE-DATA` bullet "Raw files under `data/`" even when
-   those files are filtered parquets that the reproducibility plan calls the
-   lightweight snapshot. Proposed later clarification: distinguish
-   redistributable filtered snapshot parquets from withheld provider downloads.
-   This document does not edit `LICENSE-DATA`.
-4. The planned ENAHO and CASEN required-variable parquets are row-level,
-   column-reduced public-use extracts, not aggregate statistics. Before Zenodo,
-   obtain or locate an explicit official redistribution statement. If that
-   check remains pending, archive only aggregate GMI-cost outputs plus scripts,
-   URLs, and hashes; reproduction still requires no author contact.
-5. `license_check_pending` remains for SEDLAC, ENAHO, and CASEN. No other row
-   was left pending on the verification date.
+2. `LICENSE-DATA` now labels `grd_revenue.parquet` CC BY-NC-SA 3.0 IGO,
+   retaining UNU-WIDER attribution, DOI, and share-alike instead of applying
+   the package's generic CC BY 4.0 notice.
+3. `LICENSE-DATA` now distinguishes redistributable filtered extracts and
+   derived artifacts enumerated here from withheld provider source files under
+   `data/`.
+4. CASEN redistribution is confirmed by the BIDAT CC BY 4.0 terms and its
+   required-variable extract is archivable. ENAHO remains under the explicit
+   microdata fallback: aggregate outputs, scripts, URL, and hashes only until
+   the exact Module 34 redistribution scope is confirmed.
+5. `license_check_pending` remains only for SEDLAC and ENAHO. CASEN is closed;
+   no other row was pending on the verification date.

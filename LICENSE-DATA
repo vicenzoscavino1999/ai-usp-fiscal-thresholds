@@ -7,9 +7,13 @@ condition.
 
 ## Not Redistributed
 
-- Raw files under `data/`.
+- Provider source files under `data/`, except for the extracts and derived
+  artifacts explicitly enumerated in `DATA_AVAILABILITY.md` under "What the
+  public archive contains". Each redistributed item remains under the
+  source-specific license stated in its matrix row.
 - Local DuckDB files under `db/`.
-- Restricted or manually downloaded microdata.
+- Restricted or manually downloaded microdata, subject to the microdata rule
+  below.
 - Author-held raw GRD Excel files.
 - Ookla Speedtest raw tile/cache data.
 
@@ -20,8 +24,17 @@ UNU-WIDER GRD 2025 is registered as an author-held manual source and cited as:
 UNU-WIDER (2025). UNU-WIDER Government Revenue Dataset. Version 2025. Helsinki:
 UNU-WIDER. https://doi.org/10.35188/UNU-WIDER/GRD-2025
 
-Derived contrast tables may be archived with citation. Raw Excel files are not
+The derived contrast table `grd_revenue.parquet` may be archived with citation
+under CC BY-NC-SA 3.0 IGO, inheriting UNU-WIDER's share-alike condition. It is
+not covered by the package's generic CC-BY-4.0 notice. Raw Excel files are not
 redistributed by this repository.
+
+## Microdata Extracts
+
+Required-variable extracts from ENAHO 2024 and CASEN 2024 are publicly archived
+only when their redistribution terms have been confirmed and cited in
+`DATA_AVAILABILITY.md`. Otherwise, the public archive contains only aggregate
+outputs, download scripts, source URLs, and verification SHA-256 hashes.
 
 ## Ookla Speedtest Open Data
 
