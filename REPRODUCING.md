@@ -99,7 +99,9 @@ These canonical Docker lines are captured Make outputs, not examples:
 The cheap contracts were recaptured on 2026-07-11 with the direct Windows
 PowerShell recipes listed under Non-Canonical Platforms. These are the current
 local outputs; they supplement, but do not replace, the digest-pinned Docker
-evidence above:
+evidence above. The protected-file count rose from 14 to 15 between the two
+captures because `paper/main.tex` entered the freeze manifest at the
+post-compression swap (commit `0bb450a`); no other manifest entry changed:
 
 | Direct Windows command | Captured final line | Measured wall time |
 | --- | --- | ---: |
