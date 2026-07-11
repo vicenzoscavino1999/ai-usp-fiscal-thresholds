@@ -1,0 +1,142 @@
+{
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:0.6",
+      "delta": 1,
+      "justification": "Resultado copiado literalmente de Empirical Results: limite inferior de la probabilidad de cruce de la pension universal de Peru bajo stress."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.8",
+      "delta": 1,
+      "justification": "Resultado copiado literalmente de Empirical Results: limite superior de la probabilidad de cruce de la pension universal de Peru bajo stress."
+    },
+    {
+      "scope": "body",
+      "token": "number:0.97",
+      "delta": 1,
+      "justification": "Resultado copiado literalmente de Empirical Results: probabilidad de cruce de la renta minima garantizada de Chile bajo stress."
+    },
+    {
+      "scope": "body",
+      "token": "number:16",
+      "delta": 1,
+      "justification": "Metadato aprobado de Ito (2026): descripcion del modelo de 16 parametros en la nueva subseccion de posicionamiento."
+    },
+    {
+      "scope": "body",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "Etiqueta copiada literalmente de Empirical Results para los horizontes de persistencia de Colombia y Mexico."
+    },
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": 3,
+      "justification": "Tres menciones de framing copiadas de Empirical Results: no cruces, probabilidades y restriccion de traduccion bajo el escenario moderado."
+    },
+    {
+      "scope": "body",
+      "token": "scenario:stress",
+      "delta": 1,
+      "justification": "Etiqueta copiada literalmente de Empirical Results para las probabilidades titulares bajo stress."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:16",
+      "delta": 1,
+      "justification": "Metadato aprobado del titulo bibliografico de Ito: 16-Parameter Model."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:2025",
+      "delta": 2,
+      "justification": "Ano aprobado de Nayebi, presente en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:2026",
+      "delta": 2,
+      "justification": "Ano aprobado de Ito, presente en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:2505.18687",
+      "delta": 1,
+      "justification": "Identificador arXiv aprobado para Nayebi (2025)."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:6170447",
+      "delta": 1,
+      "justification": "Identificador SSRN aprobado para Ito (2026)."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.6",
+      "delta": 1,
+      "justification": "Delta documental del resultado de probabilidad de Peru copiado de Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.8",
+      "delta": 1,
+      "justification": "Delta documental del resultado de probabilidad de Peru copiado de Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "number:0.97",
+      "delta": 1,
+      "justification": "Delta documental del resultado de probabilidad de Chile copiado de Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "number:16",
+      "delta": 2,
+      "justification": "Metadato de Ito presente una vez en el posicionamiento y una vez en el bibitem."
+    },
+    {
+      "scope": "document",
+      "token": "number:2025",
+      "delta": 2,
+      "justification": "Ano de Nayebi en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "document",
+      "token": "number:2026",
+      "delta": 2,
+      "justification": "Ano de Ito en la etiqueta bibliografica y en la linea de autor."
+    },
+    {
+      "scope": "document",
+      "token": "number:2505.18687",
+      "delta": 1,
+      "justification": "Identificador arXiv aprobado para Nayebi."
+    },
+    {
+      "scope": "document",
+      "token": "number:6170447",
+      "delta": 1,
+      "justification": "Identificador SSRN aprobado para Ito."
+    },
+    {
+      "scope": "document",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "Etiqueta de Results copiada al framing de horizontes."
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": 4,
+      "justification": "Tres copias en Introduccion y una en el abstract, todas consistentes con Empirical Results."
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": 2,
+      "justification": "Una copia en Introduccion y una en el abstract, ambas consistentes con Empirical Results."
+    }
+  ]
+}

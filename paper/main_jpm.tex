@@ -52,7 +52,7 @@
 \maketitle
 
 \begin{abstract}
-This paper does not forecast whether artificial intelligence (AI) will finance a universal basic income (UBI). It develops a calibrated threshold-accounting framework to identify the threshold combinations of AI-induced productivity, productive adoption, fiscal capture, informality reduction, labor-share allocation, and policy cost under which universal or semi-universal social protection instruments become accounting-fiscally feasible in emerging economies. The framework compares universal social pensions, minimum universal transfers, guaranteed minimum income, partial basic income, and a full UBI benchmark. Its methodological contribution is a set of transparent equations for constructing AI shocks, converting those shocks into tax-base channels, adjusting for institutional frictions without double counting informality, and deriving policy-specific thresholds for growth, adoption, fiscal capture, and required persistence horizons. The paper separates observed variables from literature-disciplined scenario parameters and from unobserved structural parameters that require sensitivity analysis or Monte Carlo simulation. It also introduces impossibility diagnostics, temporal placebos, sectoral negative controls, leave-one-source-out ablations, Monte Carlo feasibility distributions, and global sensitivity diagnostics. The value of the framework is therefore not a point forecast but a falsifiable and reusable frontier that can be recalibrated as better evidence on AI productivity, adoption, labor-share effects, and fiscal capture becomes available.
+This paper develops a pre-registered threshold-accounting framework that converts AI productivity scenarios into fiscal space and asks when universal or semi-universal social protection becomes accounting-fiscally feasible in emerging economies. In its pilot application to Peru, Chile, Colombia, and Mexico, no instrument is feasible under moderate scenarios; under stress scenarios only Chile's guaranteed minimum income crosses robustly while satisfying a debt guardrail. The binding margin is the translation of global AI capability into domestic adoption, not taxation. The framework returns required-persistence horizons and falsifiable diagnostics that policy-makers can recalibrate as evidence accumulates.
 \end{abstract}
 
 \noindent \textbf{Keywords:} artificial intelligence, fiscal space, universal social protection, universal basic income, informality, fiscal capacity, labor share, emerging economies, Latin America.\\
@@ -65,11 +65,11 @@ This paper does not forecast whether artificial intelligence (AI) will finance a
 
 \section{Introduction}
 
-The rapid diffusion of artificial intelligence (AI), especially generative AI, has reopened a classic question in political economy: if technology raises productivity while weakening the employment-income link for some workers, can social protection be redesigned so that technological gains are broadly shared? In public debate, this question is often reduced to whether AI will finance a universal basic income. That version is too strong. It mixes an uncertain technological forecast, a fiscal conclusion, and a specific policy instrument.
+The rapid diffusion of artificial intelligence (AI), especially generative AI, has reopened a classic political-economy question: if technology raises productivity while weakening the employment-income link, can social protection spread the gains? Public debate often reduces this to whether AI will finance a universal basic income, conflating an uncertain technological forecast, a fiscal conclusion, and one policy instrument.
 
-This paper proposes a narrower and more defensible research question: under what combinations of AI-induced growth, adoption, exposure, labor-share pressure, informality, and fiscal capacity do universal or semi-universal social protection instruments become baseline accounting-fiscally feasible in emerging economies? The aim is not to predict that AI will finance a full UBI. The aim is to build a threshold methodology that shows which instruments become feasible first under explicit assumptions.
+This paper asks when combinations of AI-induced growth, adoption, exposure, labor-share pressure, informality, and fiscal capacity make universal or semi-universal social protection baseline accounting-fiscally feasible in emerging economies. It does not predict that AI will finance a full UBI; its threshold method shows which instruments become feasible first under explicit assumptions.
 
-The distinction matters for three reasons. First, macroeconomic estimates of AI productivity gains remain uncertain. A conservative task-based approach implies modest aggregate effects when the affected task share or cost savings are limited \citep{acemoglu2024simple}. A micro-to-macro approach by the OECD estimates annual aggregate total-factor productivity gains from AI of about 0.25 to 0.6 percentage points over a ten-year horizon under its main assumptions \citep{filippucci2024miracle}. Second, exposure is not adoption. Countries with high occupational exposure may not obtain high productivity gains if they lack digital infrastructure, human capital, firm capabilities, or regulatory readiness. The IMF AI Preparedness Index explicitly combines digital infrastructure, innovation and economic integration, human capital and labor market policies, and regulation and ethics \citep{cazzaniga2024genai}. Third, even if AI raises output, fiscal capacity determines whether governments can convert output gains into usable revenue. High informality, limited tax capacity, and weak tax systems can block the conversion of technological gains into social protection \citep{gaspar2016tax}.
+Three gaps motivate the question. Macroeconomic estimates are uncertain: conservative task-based evidence implies modest effects, while OECD micro-to-macro estimates imply annual aggregate TFP gains of 0.25 to 0.6 percentage points over a ten-year horizon \citep{acemoglu2024simple,filippucci2024miracle}. Exposure is not adoption: high occupational exposure may not yield high productivity gains without digital infrastructure, human capital, firm capabilities, and regulatory readiness, as the IMF AI Preparedness Index makes explicit \citep{cazzaniga2024genai}. Fiscal capacity is the final bottleneck: high informality, limited tax capacity, and weak tax systems can block the conversion of output gains into social protection \citep{gaspar2016tax}.
 
 The central object is a country-policy-scenario feasibility condition. For country $i$, policy instrument $p$, fiscal regime $r$, and AI scenario $s$, the framework asks whether effective additional fiscal space is at least as large as the annual cost of the policy:
 \begin{equation}
@@ -81,7 +81,15 @@ where all terms are expressed as shares of the no-AI counterfactual GDP $Y^0_{i,
 \end{equation}
 The policy crosses the structural accounting threshold when $V_{i,p,s,r,t}\geq 1$.
 
-The contribution is methodological. The paper develops: (i) a disciplined construction of AI shocks from exposure, preparedness, adoption, and base productivity scenarios; (ii) a fiscal conversion block that separates labor-, consumption-, and capital/profit-base capture, AI-rent capture, and administrative and transition frictions; (iii) a labor-share block that distinguishes productivity gains from their distribution between labor and capital; (iv) explicit thresholds for growth, adoption, and fiscal capture; and (v) a robustness protocol that prevents the results from depending on arbitrary single-number assumptions.
+The paper makes four contributions. First, it unifies required growth, adoption, fiscal capture, and persistence $H^*$ in one accounting backbone. Second, it separates productivity, adoption, distribution, and fiscal capture while assigning informality once. Third, it yields structural results beyond the four countries: instrument ordering is a country-structure outcome, and translation can bind before taxation. Fourth, it produces a falsifiable pre-registered frontier with impossibility and placebo diagnostics rather than a point forecast.
+
+Under the moderate scenario, no instrument in any country reaches the accounting threshold in any fiscal regime, and crossing probabilities are indistinguishable from zero for every instrument and country. Under the stress support, Chile's guaranteed minimum income crosses with probability above $0.97$ in every regime while passing the debt guardrail; Peru's universal pension crosses with probability between roughly $0.6$ and $0.8$ depending on the regime, but its debt-consistent crossing probability is below one percent, which is what the fragile classification records. Chile's guaranteed minimum income requires six years of scenario persistence in the status quo and five under combined reform. Debt-consistency raises Peru's requirement to seventeen to twenty-two years; Colombia's pension and Mexico's minimum income require thirteen to twenty-one years of disruptive persistence, and their debt-consistent horizons exceed the twenty-five-year cap.
+
+The binding margin at moderate scenarios is translation, not taxation. For every country-policy pair in the moderate support, the required translation factor exceeds one, so no attainable level of domestic adoption would suffice. Required effective rent-capture rates also exceed any declared or statutory bound by an order of magnitude.
+
+For policy-makers, the framework indicates which instrument to evaluate first within their country structure, which observable conditions to monitor --- scenario persistence, historical capture, and the debt guardrail --- and when new evidence warrants rerunning the frontier.
+
+These are baseline accounting-fiscal feasibility results under declared scenario supports, not a general-equilibrium forecast or prediction that AI will finance UBI. A crossing is a conditional threshold, not political, administrative, or long-run fiscal feasibility.
 
 \section{Related Literature and Positioning}\label{sec:literature}
 
@@ -112,6 +120,10 @@ A fourth literature studies how fiscal policy should adapt to generative AI. \ci
 \subsection{Universal basic income and social protection}
 
 A fifth literature studies UBI and social protection design. \citet{gentilini2020ubi} emphasize that UBI must be analyzed as a specific transfer architecture, not as a generic promise of technological abundance. \citet{oecd2017basicincome} show that replacing benefit systems with a basic income involves difficult fiscal and distributional tradeoffs. This paper therefore compares a menu of instruments instead of treating full UBI as the only relevant policy.
+
+\subsection{Positioning relative to AI-UBI feasibility models}
+
+\citet{nayebi2025threshold} derives an AI-capability threshold at which rents finance UBI in a Solow--Zeira model calibrated to the United States. The threshold logic is related, but the setting is an advanced economy, the financing side is limited to rents, and the model considers one instrument without fiscal-capacity or informality structure. \citet{ito2026ubi} simulates UBI feasibility for Japan with a 16-parameter model and dynamic social-security offsets. It is likewise a feasibility simulation, but for one advanced country and one instrument, without a pre-registered falsification protocol. This paper instead studies emerging economies, compares five instruments, models channel-specific fiscal conversion with informality discipline, inverts thresholds including required-persistence horizons, and implements a falsifiable pre-registered pipeline.
 
 \section{Conceptual Mechanism}\label{sec:conceptual}
 
@@ -2628,6 +2640,11 @@ International Monetary Fund. (2024).
 \newblock AI Preparedness Index (AIPI).
 \newblock IMF DataMapper dataset and documentation.
 
+\bibitem[Ito(2026)]{ito2026ubi}
+Ito, S. (2026).
+\newblock Feasibility of Universal Basic Income (UBI) in the Age of AI: A Comprehensive Simulation with a 16-Parameter Model.
+\newblock \emph{SSRN Working Paper 6170447}.
+
 \bibitem[Karabarbounis and Neiman(2014)]{karabarbounis2014global}
 Karabarbounis, L. and Neiman, B. (2014).
 \newblock The global decline of the labor share.
@@ -2659,6 +2676,11 @@ Medina, L. and Schneider, F. (2018).
 Morris, M. D. (1991).
 \newblock Factorial sampling plans for preliminary computational experiments.
 \newblock \emph{Technometrics}, 33(2), 161--174. DOI: 10.1080/00401706.1991.10484804.
+
+\bibitem[Nayebi(2025)]{nayebi2025threshold}
+Nayebi, A. (2025).
+\newblock An AI Capability Threshold for Rent-Funded Universal Basic Income in an AI-Automated Economy.
+\newblock \emph{arXiv:2505.18687}.
 
 \bibitem[Noy and Zhang(2023)]{noy2023experimental}
 Noy, S. and Zhang, W. (2023).
