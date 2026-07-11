@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\ref{subsec:phi_ladder_main}",
+      "delta": 2,
+      "justification": "Two explicit pointers replace duplicated nominal/real unit rules in the fiscal-calibration and historical-plausibility sections; the canonical rule remains in Section 5."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{subsec:phi_ladder_main}",
+      "delta": 2,
+      "justification": "Document-level reflection of the two deliberate cross-references added while consolidating the nominal/real unit convention at its canonical Section 5 location."
+    }
+  ]
+}
