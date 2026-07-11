@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\ref{subsec:results_costs}",
+      "delta": 1,
+      "justification": "Fix A aprobado por el autor: referencia cruzada a la subsección de validaciones microdato"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{subsec:results_costs}",
+      "delta": 1,
+      "justification": "Fix A aprobado por el autor: referencia cruzada a la subsección de validaciones microdato"
+    }
+  ]
+}
