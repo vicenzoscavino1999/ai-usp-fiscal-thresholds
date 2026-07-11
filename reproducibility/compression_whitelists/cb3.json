@@ -1,0 +1,124 @@
+{
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:floor_driven_operational_v25}",
+      "delta": -1,
+      "justification": "The duplicated equation-level floor-driven restatement was removed under E2; the body retains the required pointer to the canonical subsection, while the operational equation remains unchanged there."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:fs_gross_eff_v21}",
+      "delta": 1,
+      "justification": "E6 folds an unlabelled duplicate fiscal-space display into prose and points to the existing canonical fiscal-space equation."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:distance_ratios_main_v19}",
+      "delta": -1,
+      "justification": "The complete realized-distance align and its intact label moved from the body to Appendix F under E1."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:headroom_ratios_main_v19}",
+      "delta": -1,
+      "justification": "The complete support-headroom align and its intact label moved from the body to Appendix F under E1."
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:threshold_module}",
+      "delta": 1,
+      "justification": "The compressed body now points explicitly to Appendix F for the consolidated D/H definitions and use rules."
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -8,
+      "justification": "Structural zero literals moved with the D/H conditions or were removed from the duplicated floor-driven definition; all canonical support and floor conditions remain."
+    },
+    {
+      "scope": "body",
+      "token": "sign:>",
+      "delta": -5,
+      "justification": "Positive-support guards moved with the ratio family to Appendix F, while repeated floor-driven guards were consolidated at their canonical definition."
+    },
+    {
+      "scope": "appendix",
+      "token": "command:\\label{eq:distance_ratios_main_v19}",
+      "delta": 1,
+      "justification": "Destination-side record of the intact realized-distance label moved to Appendix F."
+    },
+    {
+      "scope": "appendix",
+      "token": "command:\\label{eq:headroom_ratios_main_v19}",
+      "delta": 1,
+      "justification": "Destination-side record of the intact support-headroom label moved to Appendix F."
+    },
+    {
+      "scope": "appendix",
+      "token": "number:0",
+      "delta": 3,
+      "justification": "Structural zero conditions accompanying the complete D/H family are now stated in Appendix F."
+    },
+    {
+      "scope": "appendix",
+      "token": "sign:<",
+      "delta": 1,
+      "justification": "Appendix F now states the approved lower side of the adoption-support dichotomy explicitly."
+    },
+    {
+      "scope": "appendix",
+      "token": "sign:>",
+      "delta": 3,
+      "justification": "Positive-support guards from the complete D/H family moved into Appendix F."
+    },
+    {
+      "scope": "appendix",
+      "token": "sign:\\leq",
+      "delta": 1,
+      "justification": "Appendix F now states the approved upper side of the adoption-support dichotomy explicitly."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:floor_driven_operational_v25}",
+      "delta": -1,
+      "justification": "Document-level removal of one duplicated floor-driven equation pointer; the canonical equation and subsection pointer remain."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:fs_gross_eff_v21}",
+      "delta": 1,
+      "justification": "Document-level pointer introduced by folding the duplicate unlabelled fiscal-space display under E6."
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{app:threshold_module}",
+      "delta": 1,
+      "justification": "Document-level pointer to the new canonical location of the complete distance/headroom family."
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -5,
+      "justification": "Net removal of duplicated structural-zero restatements during floor-driven and ratio-rule consolidation; no economic value changed."
+    },
+    {
+      "scope": "document",
+      "token": "sign:<",
+      "delta": 1,
+      "justification": "The support dichotomy is retained in the body and now also stated in the consolidated Appendix F rules."
+    },
+    {
+      "scope": "document",
+      "token": "sign:>",
+      "delta": -2,
+      "justification": "Net removal of repeated floor-driven positivity guards; canonical support guards remain in Appendix F and Proposition 3."
+    },
+    {
+      "scope": "document",
+      "token": "sign:\\leq",
+      "delta": 1,
+      "justification": "The support dichotomy is retained in the body and now also stated in the consolidated Appendix F rules."
+    }
+  ]
+}

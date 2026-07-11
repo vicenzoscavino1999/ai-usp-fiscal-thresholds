@@ -658,7 +658,7 @@ The structural accounting threshold is $V^{gross}=1$. A net-cost version,
 \begin{equation}\label{eq:Vnet_main_v10}
     V^{net}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{c^{net}_{i,p,t}},\qquad c^{net}_{i,p,t}>0,
 \end{equation}
-is reported only as robustness when existing spending offsets are measured and the net incremental cost is strictly positive. If $c^{net}=0$, the policy is reported as already covered by existing spending and $V^{net}$ is not computed. To preserve backward readability, $V$ without superscript denotes $V^{gross}$ unless explicitly stated otherwise.
+is robustness only when measured spending offsets leave a strictly positive net incremental cost. If $c^{net}=0$, existing spending already covers the policy and $V^{net}$ is not computed. Without a superscript, $V$ denotes $V^{gross}$.
 
 Define the absolute and relative gaps as
 \begin{equation}
@@ -673,15 +673,11 @@ A prudential buffer $\xi\geq0$ requires
 \begin{equation}\label{eq:prudential_main_v10}
     fs^{eff}_{i,p,s,r,t}\geq(1+\xi)c^{gross}_{i,p,t}.
 \end{equation}
-The standard grid is
-\begin{equation}
-    \xi\in\{0,0.05,0.10,0.25,0.50\}.
-\end{equation}
-These values are reporting margins under deep uncertainty, not structural constants.
+The standard grid $\xi\in\{0,0.05,0.10,0.25,0.50\}$ defines reporting margins under deep uncertainty, not structural constants.
 
 \subsection{Debt-stabilizing primary-balance guardrail}
 
-Let $PB^0_{i,t}$ be the baseline primary balance and $PB^{stab}_{i,t}$ the debt-stabilizing primary balance, both as shares of GDP. When $s^{PB}$ enters the guardrail below alongside $Y^0$-denominated objects, the distinction between observed-GDP and counterfactual-GDP shares is second-order and the implementation may treat $s^{PB}$ as a share of $Y^0$. The required primary-balance correction is
+Let $PB^0_{i,t}$ and $PB^{stab}_{i,t}$ be baseline and debt-stabilizing primary balances as GDP shares. Alongside $Y^0$-denominated objects, the observed- versus counterfactual-GDP denominator difference is second-order, so $s^{PB}$ may be treated as a share of $Y^0$. The required correction is
 \begin{equation}\label{eq:spb_main_v10}
     s^{PB}_{i,t}=\max\{0,PB^{stab}_{i,t}-PB^0_{i,t}\}.
 \end{equation}
@@ -689,8 +685,8 @@ The debt-consistent prudential guardrail is
 \begin{equation}\label{eq:debt_requirement_main_v10}
     fs^{eff}_{i,p,s,r,t}\geq (1+\xi)c^{gross}_{i,p,t}+s^{PB}_{i,t}.
 \end{equation}
-This condition is not the primary marginal self-financing benchmark. The primary benchmark asks whether the AI-induced fiscal space finances the incremental policy cost, $fs^{eff}\geq(1+\xi)c^{gross}$. The debt-consistent version asks a stronger prudential question: whether the same marginal fiscal space also covers the first-order primary-balance correction needed to satisfy a debt-stabilization guardrail. It should therefore be reported as a strong/debt-consistent layer, not as evidence that a policy fails to autofinance marginally. A stricter version with a buffer on both terms can be reported as an ultra-conservative robustness check, but it is not the baseline guardrail.
-Because $PB^{stab}$ is evaluated at baseline growth, the guardrail ignores that the AI scenario itself improves debt dynamics through higher nominal growth; the debt-consistent layer is therefore conservative by construction. A separate timing caveat applies: feasibility is an endpoint-year condition, so the crossing year is not a launch year. If a policy is launched before the endpoint, the years in which the accumulated level gain is still below its endpoint value generate transition deficits that neither the accounting threshold nor the first-order guardrail capture. Financing an early launch requires transition financing outside the framework, and implementations that report launch scenarios must state this explicitly. The required persistence horizon $H^{*}$ of Section~\ref{subsec:h_star_inversion} makes the endpoint timing explicit without converting it into a forecast.
+This is not the primary marginal self-financing benchmark, which asks whether $fs^{eff}\geq(1+\xi)c^{gross}$. The debt-consistent layer asks whether that space also covers the first-order primary-balance correction and must be reported as a strong/debt-consistent test, not as marginal autofinancing failure. Buffering both terms is an ultra-conservative labelled robustness check, never the baseline guardrail.
+Because $PB^{stab}$ uses baseline growth, it ignores improved debt dynamics from AI-driven nominal growth and is conservative by construction. The timing caveat remains: feasibility is an endpoint condition, so a crossing year is not a launch year. Earlier launch creates transition deficits while accumulated gains remain below their endpoint, outside both the accounting threshold and first-order guardrail. Early launch requires transition financing outside the framework, and launch scenarios must state this explicitly. The required persistence horizon $H^{*}$ in Section~\ref{subsec:h_star_inversion} exposes this timing without becoming a forecast.
 
 Define
 \begin{equation}\label{eq:Rreq_main_v10}
@@ -719,11 +715,11 @@ The minimum AI-induced level-gain threshold exists only when net marginal gross 
     Valid^{g*,gross}_{i,p,s,r,t}(\xi)
     =\mathbf{1}\left\{\widetilde{MFC}^{gross}_{i,s,r,t}>0,\ R^{req,gross}_{i,p,s,r,t}(\xi)>0\right\}.
 \end{equation}
-For valid cells, the closed-form inversions for $g^{AI,*}$, $MFC^{gross,*}$, and $T^{*,static}$ are stated jointly in Proposition \ref{prop:unified_inversion}. In endogenous channel-based mode, the growth threshold is instead the smallest feasible $g\geq0$ satisfying
+For valid cells, Proposition \ref{prop:unified_inversion} gives the closed-form $g^{AI,*}$, $MFC^{gross,*}$, and $T^{*,static}$. With endogenous channels, the growth threshold is instead the smallest feasible $g\geq0$ satisfying
 \begin{equation}\label{eq:gstar_channel_root_v24}
     fs^{eff,ch}_{i,p,s,r,t}(g)\geq R^{req}_{i,p,t}(\xi),
 \end{equation}
-with $R^{req,DC}$ used for the debt-consistent version and $fs^{eff,ch}(g)-\Omega^{res}$ used if the residual stress-test penalty is activated.
+using $R^{req,DC}$ for debt consistency and $fs^{eff,ch}(g)-\Omega^{res}$ when the residual stress penalty is active.
 If $g^{AI}\leq0$ and the required revenue is positive, no finite gross-capture threshold exists. For reporting only, the derived effective per-unit threshold is
 \begin{equation}\label{eq:mfcstar_eff_main_v17}
     MFC^{eff,*}_{i,p,s,r,t}(\xi)=\frac{R^{req}_{i,p,t}(\xi)}{g^{AI}_{i,s,t}},
@@ -746,21 +742,8 @@ The baseline frontier is written in terms of the net marginal gross-capture obje
     \mathcal{F}^{\widetilde{MFC}}_{i,p,s,r,t}(\xi)=
     \left\{(g,\widetilde M):g\geq0,\ \widetilde M g\geq R^{req,gross}_{i,p,s,r,t}(\xi)\right\}.
 \end{equation}
-Here $\widetilde M$ denotes $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$. Equivalently, the required gross capture before marginal-equivalent deductions is $MFC^{gross,*}=R^{req,gross}/g+ac^{ME}+tr^{ME}+leak^{ME}$. This is a reduced-form or frozen-weight frontier. If channel weights are recomputed as $g$ varies, the frontier is the nonlinear set $\{g:fs^{eff,ch}(g)\geq R^{req}\}$ rather than a rectangular hyperbola in $(g,\widetilde M)$. The debt-consistent frontier replaces $R^{req,gross}$ with $R^{req,gross,DC}$. Distance diagnostics are separated into realized coverage ratios and support-headroom ratios. Realized coverage ratios compare realized inputs with required inputs:
-\begin{align}\label{eq:distance_ratios_main_v19}
-    D^{g,real}&=\frac{g^{AI}}{g^{AI,*}},
-    &D^{MFC,gross,real}&=\frac{MFC^{gross}}{MFC^{gross,*}},\\
-    D^{q,real}&=\frac{q^{prod}}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,
-    &D^{AI,eff,real}&=\frac{\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
-\end{align}
-Support-headroom ratios compare the feasible upper support with the required input:
-\begin{align}\label{eq:headroom_ratios_main_v19}
-    H^g&=\frac{g^{AI,max}}{g^{AI,*}},
-    &H^q&=\frac{\bar q_i}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,\\
-    H^{AI,eff}&=\frac{\bar\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
-\end{align}
-Values above one indicate that the realized value or support ceiling exceeds the required value within the corresponding family. The effective AI-rent bound is the statutory cap combined with capturability, $\bar\tau^{AI,eff}_{i,s,r,t}=\bar\tau^{AI}_{i,r,t}\chi^{AI}_{i,s,r,t}$. Realized ratios and support-headroom ratios are not pooled into a single cross-margin ranking. If a derived effective-conversion distance is reported, it must be labelled separately as $D^{MFC,eff,real}=MFC^{eff}/MFC^{eff,*}$ and used only as a derived reporting object. The baseline fiscal-capture plausibility metric remains the gross realized ratio because historical capture is calibrated on gross revenue.
-If $q^{prod,*}=0$, $D^{q,real}$ and $H^q$ are not computed. The cell is labelled as adoption-margin already satisfied only if the crossing is not generated solely by the numerical floor. Throughout the paper, floor-driven has the unique operational definition in Section \ref{subsec:impossibility_score}, Equation \eqref{eq:floor_driven_operational_v25}: $q^{prod,*}=0$, $\epsilon>0$, and the crossing fails when $\epsilon=0$. If $0<q^{prod,*}\leq\bar q_i$, the adoption support is sufficient; if $q^{prod,*}>\bar q_i$, the country-specific adoption ceiling fails. If an absolute excess is reported, it is labeled as a gap, not a distance ratio; for example $Gap^q=q^{prod,*}-\bar q_i$.
+Here $\widetilde M$ denotes $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$. This is a reduced-form or frozen-weight frontier; with weights recomputed as $g$ varies, it becomes the nonlinear set $\{g:fs^{eff,ch}(g)\geq R^{req}\}$ rather than a rectangular hyperbola in $(g,\widetilde M)$. The debt-consistent version substitutes $R^{req,gross,DC}$ for $R^{req,gross}$. Distance diagnostics comprise realized-coverage and support-headroom ratio families, which are never pooled; Appendix \ref{app:threshold_module} gives their complete definitions and use rules.
+For adoption, $0<q^{prod,*}\leq\bar q_i$ means support is sufficient, whereas $q^{prod,*}>\bar q_i$ means the country ceiling fails; an absolute excess is a gap, not a ratio. Zero-threshold and floor-driven cases follow the unique operational definition in Section \ref{subsec:impossibility_score}.
 
 \subsection{Monte Carlo feasibility probability}
 
@@ -773,13 +756,7 @@ The support-valid version conditions on support-valid and no-impossibility draws
 
 \section{Theoretical Results: A Single Feasibility Backbone}\label{sec:theory}
 
-The framework is modular, but all feasibility thresholds are transformations of one accounting backbone. Under the preferred generalized gross-capture convention,
-\begin{equation}
-    fs^{eff}_{i,p,s,r,t}=\widetilde{MFC}^{gross}_{i,s,r,t}g^{AI}_{i,s,t}-ac^{net,fix}_{i,p,s,r,t}-tr^{ann}_{i,s,r,t}-leak^{fix}_{i,s,r,t},
-    \qquad
-    g^{AI}_{i,s,t}=g^{AI,level}_{i,s,t}.
-\end{equation}
-The baseline gross-cost feasibility condition is
+All feasibility thresholds transform the accounting backbone in Equation \eqref{eq:fs_gross_eff_v21}, under the preferred generalized gross-capture convention and with $g^{AI}_{i,s,t}=g^{AI,level}_{i,s,t}$. The baseline gross-cost condition is
 \begin{equation}\label{eq:backbone_inequality_v17}
     g^{AI}_{i,s,t}\widetilde{MFC}^{gross}_{i,s,r,t}\geq R^{req,gross}_{i,p,s,r,t}(\xi).
 \end{equation}
@@ -2330,16 +2307,21 @@ Preparedness and exposure thresholds are reported as stress tests only. If $q^{p
 
 \subsection{Impossibility diagnostics}
 
-The threshold module reports realized ratios, support-headroom ratios, and gaps separately:
-\begin{align}
-    D^{MFC,gross,real}&=\frac{MFC^{gross}}{MFC^{gross,*}},
-    &D^{q,real}&=\frac{q^{prod}}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,\\
-    H^q&=\frac{\bar q_i}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,
-    &Gap^q&=q^{prod,*}-\bar q_i.
+The threshold module reports realized coverage, support headroom, and absolute gaps separately. Realized coverage is
+\begin{align}\label{eq:distance_ratios_main_v19}
+    D^{g,real}&=\frac{g^{AI}}{g^{AI,*}},
+    &D^{MFC,gross,real}&=\frac{MFC^{gross}}{MFC^{gross,*}},\\
+    D^{q,real}&=\frac{q^{prod}}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,
+    &D^{AI,eff,real}&=\frac{\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
 \end{align}
-If an effective conversion ratio is reported, it is labelled $D^{MFC,eff,real}=MFC^{eff}/MFC^{eff,*}$ and treated as derived reporting, not as the baseline fiscal-capture plausibility metric.
-If $q^{prod,*}=0$, neither $D^{q,real}$ nor $H^q$ is reported. The cell is classified as adoption-margin already satisfied only if feasibility does not rely on the numerical floor and the zero-adoption/zero-exposure gate is not violated; otherwise it is labelled floor-driven or non-substantive and is not counted as adoption-feasible.
-Use realized ratios only with other realized ratios, and support-headroom ratios only with other support ceilings. Use $Gap^q$ only as an absolute excess over the country-specific feasible adoption ceiling.
+Support headroom is
+\begin{align}\label{eq:headroom_ratios_main_v19}
+    H^g&=\frac{g^{AI,max}}{g^{AI,*}},
+    &H^q&=\frac{\bar q_i}{q^{prod,*}}\quad\text{if }q^{prod,*}>0,\\
+    H^{AI,eff}&=\frac{\bar\tau^{AI,eff}}{\tau^{AI,eff,*}}\quad\text{if }\tau^{AI,eff,*}>0.
+\end{align}
+Values above one mean that the realized value or support ceiling covers the requirement within its family. The effective AI-rent bound combines the statutory cap and capturability, $\bar\tau^{AI,eff}_{i,s,r,t}=\bar\tau^{AI}_{i,r,t}\chi^{AI}_{i,s,r,t}$. Realized and headroom families are never pooled into one cross-margin ranking. A derived effective-conversion distance must be separately labelled $D^{MFC,eff,real}=MFC^{eff}/MFC^{eff,*}$ and used only for derived reporting; gross realized capture remains the baseline plausibility metric because historical capture is gross.
+If $q^{prod,*}=0$, neither $D^{q,real}$ nor $H^q$ is reported. Adoption-margin already satisfied requires feasibility without reliance on the numerical floor and without violating the zero-adoption/zero-exposure gate; otherwise the cell is floor-driven or non-substantive and not adoption-feasible. If $0<q^{prod,*}\leq\bar q_i$, support is sufficient; if $q^{prod,*}>\bar q_i$, the ceiling fails. The absolute excess $Gap^q=q^{prod,*}-\bar q_i$ is reported as a gap, never a distance ratio.
 
 
 For accumulated-horizon implementations, the scenario-supported maximum AI level gain is
