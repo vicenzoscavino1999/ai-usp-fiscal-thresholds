@@ -1,0 +1,78 @@
+{
+  "type": "deletion-dedup",
+  "note": "S-0a colapsa redundancia en Conclusion; whitelist corregida tras adjudicacion de Claude.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:3.9",
+      "delta": -1,
+      "justification": "deletion-dedup: permanece en Results (L1316)"
+    },
+    {
+      "scope": "body",
+      "token": "number:5.8",
+      "delta": -1,
+      "justification": "deletion-dedup: permanece en Results (L1316)"
+    },
+    {
+      "scope": "body",
+      "token": "number:75",
+      "delta": -1,
+      "justification": "deletion-dedup: tokenizacion de \\approx0.75 del original; el valor permanece en Results como 0.75 (L1420)"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": -1,
+      "justification": "compresion aprobada E2; condicionante persiste (\"moderate-scenario gap\") y en Results"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:stress",
+      "delta": -1,
+      "justification": "compresion aprobada E2; condicionante persiste (\"under stress scenarios\", \"disruptive stress persistence\")"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:empirical_results}",
+      "delta": 1,
+      "justification": "puntero anadido en el texto E2 aprobado por el autor"
+    },
+    {
+      "scope": "document",
+      "token": "number:3.9",
+      "delta": -1,
+      "justification": "deletion-dedup: permanece en Results (L1316)"
+    },
+    {
+      "scope": "document",
+      "token": "number:5.8",
+      "delta": -1,
+      "justification": "deletion-dedup: permanece en Results (L1316)"
+    },
+    {
+      "scope": "document",
+      "token": "number:75",
+      "delta": -1,
+      "justification": "deletion-dedup: tokenizacion de \\approx0.75 del original; el valor permanece en Results como 0.75 (L1420)"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": -1,
+      "justification": "compresion aprobada E2; condicionante persiste (\"moderate-scenario gap\") y en Results"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": -1,
+      "justification": "compresion aprobada E2; condicionante persiste (\"under stress scenarios\", \"disruptive stress persistence\")"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:empirical_results}",
+      "delta": 1,
+      "justification": "puntero anadido en el texto E2 aprobado por el autor"
+    }
+  ]
+}
