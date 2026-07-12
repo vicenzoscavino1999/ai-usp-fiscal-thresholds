@@ -1,0 +1,72 @@
+{
+  "type": "venue-specific-jpm-conformance",
+  "note": "E-1a localiza cambios formales JPM, traslada el status preexistente y agrega ocho referencias dataset aprobadas; no autoriza deltas economicos.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:7.1",
+      "delta": 1,
+      "justification": "traslado del Status block desde la portada a Data and code availability; tag etapa-7.1 preservado"
+    },
+    {
+      "scope": "body",
+      "token": "number:256",
+      "delta": 1,
+      "justification": "descripcion aprobada de los manifiestos SHA-256 en Data and code availability"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.01",
+      "delta": 1,
+      "justification": "referencias dataset nuevas aprobadas: version PWT 10.01"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.34894",
+      "delta": 1,
+      "justification": "referencias dataset nuevas aprobadas: DOI PWT"
+    },
+    {
+      "scope": "document",
+      "token": "number:2021",
+      "delta": 2,
+      "justification": "referencias dataset nuevas aprobadas: etiqueta y entrada PWT"
+    },
+    {
+      "scope": "document",
+      "token": "number:2024",
+      "delta": 14,
+      "justification": "referencias dataset nuevas aprobadas: etiquetas, entradas y titulos ENAHO, CASEN, Ookla y WPP"
+    },
+    {
+      "scope": "document",
+      "token": "number:256",
+      "delta": 1,
+      "justification": "descripcion aprobada de los manifiestos SHA-256 en Data and code availability"
+    },
+    {
+      "scope": "document",
+      "token": "number:3.0",
+      "delta": -1,
+      "justification": "title page JPM: se elimina la version interna y se conserva solo July 2026"
+    },
+    {
+      "scope": "document",
+      "token": "number:34",
+      "delta": 1,
+      "justification": "referencias dataset nuevas aprobadas: modulo 34 de ENAHO"
+    },
+    {
+      "scope": "document",
+      "token": "number:9",
+      "delta": -1,
+      "justification": "title page JPM: se elimina el dia de la fecha interna y se conserva July 2026"
+    },
+    {
+      "scope": "document",
+      "token": "number:966",
+      "delta": 1,
+      "justification": "referencias dataset nuevas aprobadas: codigo de encuesta ENAHO en el endpoint verificado"
+    }
+  ]
+}

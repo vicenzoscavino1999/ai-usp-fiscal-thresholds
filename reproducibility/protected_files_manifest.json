@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-07-10T21:57:23.826159+00:00",
-  "generated_from_commit": "d268ef076644a30ebe9a28f8b16ab664f2cb3d34",
+  "generated_at_utc": "2026-07-12T02:12:49.744565+00:00",
+  "generated_from_commit": "eb5f7e6a2b9aac72dfd5b47b0e386201d472e101",
   "scope_note": "Tracked frozen specification and official comparators consumed by post-baseline extensions; author-held runtime mirrors under data/, db/, and results/ are outside this standalone manifest.",
   "hash_mode": "sha256 of bytes; CRLF is normalized to LF for declared text suffixes",
   "protected_files": [
@@ -15,11 +15,11 @@
     },
     {
       "path": "paper/main.tex",
-      "sha256": "1aa1b63bca8bf89f7dd3509a458e04da025914873d3b2070d284dee74ce74b20"
+      "sha256": "45b19048ec87cdd4f6412f1481978ef0f7b6247cb50e148208383437379e1138"
     },
     {
       "path": "paper/supplementary_appendix.tex",
-      "sha256": "7bea7af7e0ff9cb6cf763287da3db6c00ffff671d9064df60b1e72922a31f963"
+      "sha256": "a94dd8fb572f4ebcf5df4a9867d47b510488db0b994009b1141f873402155cef"
     },
     {
       "path": "reports/calibrated_parameter_registry_baseline-official-v3.csv",
