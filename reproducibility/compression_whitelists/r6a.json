@@ -1,0 +1,30 @@
+{
+  "type": "journal-vocabulary-and-signature-consolidation",
+  "note": "R-6a changes audit-process vocabulary to journal prose, consolidates Results signatures, and removes only the two printed grid-size counts authorized by the author; no other numeric, scenario, sign, label, or reference deltas are allowed.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:480",
+      "delta": -2,
+      "justification": "M6 approved: full 480-cell grid references simplified to complete grid"
+    },
+    {
+      "scope": "body",
+      "token": "number:960",
+      "delta": -1,
+      "justification": "M6 approved: full 960-row grid reference simplified to complete grid across both requirement bases"
+    },
+    {
+      "scope": "document",
+      "token": "number:480",
+      "delta": -2,
+      "justification": "M6 approved: full 480-cell grid references simplified to complete grid"
+    },
+    {
+      "scope": "document",
+      "token": "number:960",
+      "delta": -1,
+      "justification": "M6 approved: full 960-row grid reference simplified to complete grid across both requirement bases"
+    }
+  ]
+}

@@ -105,7 +105,7 @@ with
 \begin{equation}
     \epsilon\in\{0,0.01,0.05\}.
 \end{equation}
-For low but positive interior adoption, the floor also creates a level distortion: with $\epsilon=0.05$, a small $q^{prod}$ is inflated proportionally by the transformation. The grid therefore includes $\epsilon=0$, which is the preferred option whenever threshold inversion is numerically stable. The official implementation freezes the numerical floor at $\epsilon=10^{-9}$ for support checks and de-flooring, the numerically stabilized version of the preferred grid point $\epsilon=0$, with the logit-inversion floor frozen at $\epsilon_\mu=10^{-6}$.
+For low but positive interior adoption, the floor also creates a level distortion: with $\epsilon=0.05$, a small $q^{prod}$ is inflated proportionally by the transformation. The grid therefore includes $\epsilon=0$, which is the preferred option whenever threshold inversion is numerically stable. The baseline implementation fixes the numerical floor at $\epsilon=10^{-9}$ for support checks and de-flooring, the numerically stabilized version of the preferred grid point $\epsilon=0$, with the logit-inversion floor fixed at $\epsilon_\mu=10^{-6}$.
 The floor is a numerical regularization device, not a substantive claim that every country has positive AI capability in all dimensions. The implementation therefore separates the numerical object $\tilde q^{prod,num}=\epsilon+(1-\epsilon)q^{prod}$ from the substantive adoption object $q^{prod}$ and the substantive exposure object $E^{prod}$. The floor is never allowed to create translation or fiscal space by itself. In every translation score, multiplicative or additive, zero substantive adoption or zero substantive productive exposure is imposed as a hard gate:
 \begin{equation}\label{eq:q_zero_gate_v21}
     q^{prod}_{i,s,t}\leq0\ \text{or}\ E^{prod}_{i,t}\leq0\quad\Longrightarrow\quad
@@ -186,7 +186,7 @@ This extension changes the annual path of the shock but does not alter the centr
 
 \subsection{Robustness menu}
 
-The framework's robustness menu spans the following dimensions; the officially executed subset and its outputs are recorded in the pre-registered plans and the robustness summary of the reproducibility package:
+The framework's robustness menu spans the following dimensions; the executed subset and its outputs are recorded in the prespecified plans and the robustness summary of the replication package:
 \begin{longtable}{p{0.25\textwidth}p{0.62\textwidth}}
 \caption{AI-shock robustness dimensions}\label{tab:ai_shock_robustness}\\
 \toprule
@@ -286,7 +286,7 @@ The preferred empirical input is an adjusted labor share. In economies with subs
 \begin{equation}
     LS^{raw}_{i,t}=\frac{\text{Compensation of employees}_{i,t}}{Y^0_{i,t}},
 \end{equation}
-plus an adjusted measure $LS^{adj}_{i,t}$ when mixed-income imputations are available. The main results state the version used: the country-specific PWT labor share, recorded in the calibration registry; ranking stability under raw versus adjusted measures was tested in a labelled post-baseline robustness extension using the raw UN SNA compensation-of-employees share as the alternative input, with effective rates re-derived consistently: policy rankings and country-policy classifications are unchanged across the full grid, and the only cell-level effect is that Peru's most marginal stress-scenario pension crossing, in the status quo regime, falls just below the accounting threshold ($V^{gross}$ from $1.02$ to $0.98$), quantifying the fragility already flagged (amendment registry, reproducibility package).
+plus an adjusted measure $LS^{adj}_{i,t}$ when mixed-income imputations are available. The main results state the version used: the country-specific PWT labor share, recorded in the calibration registry; ranking stability under raw versus adjusted measures was tested in a labelled post-baseline robustness extension using the raw UN SNA compensation-of-employees share as the alternative input, with effective rates re-derived consistently: policy rankings and country-policy classifications are unchanged across the full grid, and the only cell-level effect is that Peru's most marginal stress-scenario pension crossing, in the status quo regime, falls just below the accounting threshold ($V^{gross}$ from $1.02$ to $0.98$), quantifying the fragility already flagged (amendment registry, replication package).
 
 \subsection{Automation, augmentation, and reskilling scenarios}
 
@@ -429,7 +429,7 @@ This appendix formalizes the fiscal conversion block in Section \ref{sec:fiscal_
 
 \subsection{Nested specifications and no double counting}
 
-The framework defines three nested fiscal-conversion specifications; the channel specification is the operative official mode:
+The framework defines three nested fiscal-conversion specifications; the channel specification is the operative baseline mode:
 \begin{longtable}{p{0.25\textwidth}p{0.39\textwidth}p{0.24\textwidth}}
 \caption{Nested fiscal conversion specifications}\label{tab:fiscal_nested_specs}\\
 \toprule
@@ -624,7 +624,7 @@ The central reporting object remains $V^{gross}=fs^{eff}/c^{gross}$, with $V^{ne
 
 \subsection{Historical fiscal-capture implementation details}
 
-The historical plausibility check is implemented as a separate data object in the reproducibility package. For each country-year, the replication file stores nominal GDP, tax revenue, total revenue, non-resource revenue where available, and government level. The preferred window is 2000--latest available year, with robustness windows 2010--latest and 2015--latest. Cleaning rules follow Section \ref{sec:historical_plausibility}. The historical output reports, for each country,
+The historical plausibility check is implemented as a separate data object in the replication package. For each country-year, the replication file stores nominal GDP, tax revenue, total revenue, non-resource revenue where available, and government level. The preferred window is 2000--latest available year, with robustness windows 2010--latest and 2015--latest. Cleaning rules follow Section \ref{sec:historical_plausibility}. The historical output reports, for each country,
 \begin{equation}
     \{P10,P25,P50,P75,P90\}\left(MFC^{hist,gross,+}_i\right),
     \qquad
@@ -694,7 +694,7 @@ Labor channel, base-side alternative & No rate-side labor-informality penalty & 
 Residual penalty $\Omega^{res}$ & Stress test only & Used only for frictions not included in channel-specific rates \\
 \bottomrule
 \end{longtable}
-The official implementation derives effective fiscal rates from observed revenue composition, so no additional informality penalty is applied to them, consistent with the observed-effective-rate row of Table \ref{tab:no_double_counting_informality}.
+The baseline implementation derives effective fiscal rates from observed revenue composition, so no additional informality penalty is applied to them, consistent with the observed-effective-rate row of Table \ref{tab:no_double_counting_informality}.
 Legal consumption exemptions and consumption informality overlap empirically: informal purchases concentrate in exempt staples. To avoid discounting the same untaxed consumption twice, $exempt^C$ must be measured on the formal consumption basket, or $I^C$ on the taxable basket, and the calibration registry states which convention is used. A parallel overlap applies to the capital channel: mixed income and informal-business income already excluded from the taxable base through $\chi^{Kbase}$ must not be penalized again through $I^{F,marg}$. Under the baseline, $\chi^{Kbase}$ is a composition filter selecting the profit-type components of the non-labor residual, while $I^{F,marg}$ is a compliance filter on firms inside that taxable-profit perimeter; the calibration registry states that $I^{F,marg}$ is measured on the perimeter-consistent firm population, or assigns the informal-business margin to one side only.
 
 \subsection{Informality in adoption versus fiscal capture}
@@ -738,7 +738,7 @@ If the threshold uses gross fiscal conversion, the required gross revenue includ
 \end{equation}
 The implementation must not add $ac^{net,fix}$, $tr^{ann}$, or $leak^{fix}$ to a threshold that already uses $MFC^{eff}$. It must also not add $ac^{ME}$, $tr^{ME}$, or $leak^{ME}$ to $R^{req,gross}$, because those terms are already embedded in $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$. If $\Omega^{res}$ is activated, it enters only as a stress-test penalty: either use $fs^{eff,res}=fs^{eff}-\Omega^{res}$ or add $\Omega^{res}$ to the required-revenue object, but not both.
 
-The closed-form threshold formulas in this appendix are valid for the historical reduced-form mode or for channel-based calculations in which $\omega^j$, $\lambda^{AI}$, and $\widetilde{MFC}^{gross}$ are frozen at the evaluated scenario. If the channel bases $\Delta B^{j,tax}$ are recomputed as $g^{AI}$, $T$, or $q^{prod}$ changes, the implementation solves the threshold directly from $fs^{eff,ch}(\cdot)$ in Equation \eqref{eq:channel_revenue_function_v24}.
+The closed-form threshold formulas in this appendix are valid for the historical reduced-form mode or for channel-based calculations in which $\omega^j$, $\lambda^{AI}$, and $\widetilde{MFC}^{gross}$ are held fixed at the evaluated scenario. If the channel bases $\Delta B^{j,tax}$ are recomputed as $g^{AI}$, $T$, or $q^{prod}$ changes, the implementation solves the threshold directly from $fs^{eff,ch}(\cdot)$ in Equation \eqref{eq:channel_revenue_function_v24}.
 
 \subsection{Minimum AI-rent capture threshold}
 
@@ -952,7 +952,7 @@ If the Monte Carlo imposes dependence, Sobol indices are reported only in an ind
 
 \subsection{Deterministic stress tests}
 
-The deterministic stress menu spans low AI productivity, slow adoption, weak fiscal capture, high informality, high administrative cost, high leakage, no AI-rent tax, no formalization effect, and no labor augmentation; the executed stress and ablation outputs are recorded in the reproducibility package.
+The deterministic stress menu spans low AI productivity, slow adoption, weak fiscal capture, high informality, high administrative cost, high leakage, no AI-rent tax, no formalization effect, and no labor augmentation; the executed stress and ablation outputs are recorded in the replication package.
 
 \subsection{Ablation, placebo, and negative-control outputs}
 
@@ -983,7 +983,7 @@ Input & Definition and unit & Baseline assignment & Uncertainty treatment & Prim
 \endhead
 $Y_{i,t}$, $Pop_{i,t}$, $N_{i,p,t}$ & GDP, population, and eligible population for policy $p$ & Observed country-year values; keep nominal and PPP versions separate & Fixed in baseline; measurement-error check if data are interpolated & World Bank PIP/WDI; national accounts \\
 $c^{gross,0}_{i,p,t}$, $c^{net,0}_{i,p,t}$ & Annual gross or net policy cost as share of no-AI counterfactual GDP $Y^0_{i,t}$ & Construct from benefit rule $B_{i,p,t}$ and eligible population; subtract existing spending only in the net-cost specification; post-AI denominators are robustness only & Low/central/high benefit rules; no mixing gross and net cost & ASPIRE, PIP, national budgets, \citet{gentilini2020ubi} \\
-$\eta_{MUT},\eta_{PBI},\eta_{UBI},\chi_{GMI},B^{PEN},\theta^{target}$ & Benefit-rule parameters, pension benefit level, and GMI targeting-and-behavior loading & Indicative support $[0.25,1.00]$ for poverty-line fractions and gap coverage, including $B^{PEN}/PL$; $\theta^{target}\in[1.0,1.5]$ for labelled GMI robustness; finalized in the official calibration registry (reproducibility package, appendix\_i files) & Low/central/high grid or bounded PERT within declared support & PIP, ASPIRE, and national benefit rules \\
+$\eta_{MUT},\eta_{PBI},\eta_{UBI},\chi_{GMI},B^{PEN},\theta^{target}$ & Benefit-rule parameters, pension benefit level, and GMI targeting-and-behavior loading & Indicative support $[0.25,1.00]$ for poverty-line fractions and gap coverage, including $B^{PEN}/PL$; $\theta^{target}\in[1.0,1.5]$ for labelled GMI robustness; finalized in the baseline calibration registry (replication package, appendix\_i files) & Low/central/high grid or bounded PERT within declared support & PIP, ASPIRE, and national benefit rules \\
 $\phi^{raw}_{s,u}$, $\phi^{Y,nom}_s$, $g^{AI,level}$ & Raw source-unit AI shock, nominal GDP-equivalent annual bridge, and accumulated level shock used against recurring costs & Draw raw support from Table \ref{tab:phi_numerical_closure}; convert through $\kappa^{u\to Y}$ and $\pi^{AI,Y}$; accumulate before feasibility comparison & Bounded PERT on raw support; bridge uncertainty reported separately; triangular/uniform only robustness & \citet{acemoglu2024simple}, \citet{filippucci2024miracle}, \citet{oecd2025g7} \\
 $A_{i,t}$ & AI preparedness, normalized $[0,1]$ & IMF AIPI or documented reconstruction from its four dimensions: digital infrastructure, human capital and labour-market policies, innovation/economic integration, regulation/ethics & Fixed observed index plus normalization robustness; avoid using as causal estimate & \citet{imf2024aipi,cazzaniga2024genai} \\
 $Gap_{i,t}$ & Digital and skills gap, normalized to $[0,1]$ & Construct only from indicators excluded from AIPI & Fixed observed index plus normalization robustness & ITU and World Bank digital indicators \\
@@ -994,7 +994,7 @@ $\lambda_q$ & Productive-adoption lag parameter & Baseline grid $\{0.15,0.30,0.5
 $\nu_A,\nu_I,\nu_G,q^{use,target}$ & Logistic adoption coefficients and anchored adoption moment & Calibrate the anchored simulated-adoption mode in Appendix \ref{app:adoption_module} & Grid or bounded PERT with declared support & Appendix \ref{app:adoption_module}; diffusion literature; national ICT/firm surveys or World Bank technology adoption surveys for the target moment \\
 $S^{frontier}_{s,t}$ & External translation benchmark & Document the frontier-economy set and benchmark year & Fixed within each threshold inversion; alternative external sets as robustness & External frontier sample; Appendix \ref{app:ai_shock_module} \\
 $\alpha,\beta,\gamma$ & Elasticities in the translation factor & $\beta=\gamma=1$ baseline; $\alpha=0$ under the no-double-counting baseline ($\alpha=1$ only in full-score robustness; see Appendix \ref{app:ai_shock_module} elasticity grid) & Grid $\{0.5,1,1.5,2\}$ for active elasticities and global sensitivity & Model discipline; no direct causal claim \\
-$RST_{i,t}$, $\delta_s,\psi_s,\zeta_s,\lambda_{LS}$ & Reskilling/task-reinstatement capacity in $[0,1]$ plus labor-share automation, augmentation, mitigation, and partial-adjustment parameters & Indicative provisional grids $\delta_s,\psi_s,\zeta_s\in\{0.25,0.50,1.00\}$ and $\lambda_{LS}\in\{0.25,0.50,1.00\}$; enforce $\zeta_sRST\leq\delta_s$ outside augmentation-dominant robustness; finalized in the official calibration registry (reproducibility package, appendix\_i files) & Low/central/high grid for scenario parameters; $RST\in[0,1]$ from declared proxy; bounded PERT only after pilot supports are declared & \citet{acemoglu2018race,acemoglu2019automation}; active labour-market policy spending, training participation (ILOSTAT), or residualized human-capital component of AIPI; calibrated scenario discipline \\
+$RST_{i,t}$, $\delta_s,\psi_s,\zeta_s,\lambda_{LS}$ & Reskilling/task-reinstatement capacity in $[0,1]$ plus labor-share automation, augmentation, mitigation, and partial-adjustment parameters & Indicative provisional grids $\delta_s,\psi_s,\zeta_s\in\{0.25,0.50,1.00\}$ and $\lambda_{LS}\in\{0.25,0.50,1.00\}$; enforce $\zeta_sRST\leq\delta_s$ outside augmentation-dominant robustness; finalized in the baseline calibration registry (replication package, appendix\_i files) & Low/central/high grid for scenario parameters; $RST\in[0,1]$ from declared proxy; bounded PERT only after pilot supports are declared & \citet{acemoglu2018race,acemoglu2019automation}; active labour-market policy spending, training participation (ILOSTAT), or residualized human-capital component of AIPI; calibrated scenario discipline \\
 $MFC^{gross}_{i,s,r,t}$ & Gross marginal fiscal capture of AI-induced output before administrative costs, transition costs, and leakage & Construct from channel model or draw from historical gross-capture distribution, but not both in the same run & Channel-mode derived object or historical-mode stochastic object; report mode explicitly & UNU-WIDER GRD; \citet{brollo2024fiscal}; IMF fiscal-space guidance \\
 $MFC^{eff}_{i,p,s,r,t}$ & Derived reporting object after subtracting $ac$, $tr$, and $leak$ from fiscal space & Compute only as $MFC^{eff}=fs^{eff}/g^{AI}$ when $g^{AI}>0$; not drawn as an independent primitive & Report for interpretation; do not use for gross historical plausibility checks & Derived from $MFC^{gross}$, $g^{AI}$, $ac$, $tr$, and $leak$ \\
 $\tau^{L,fisc,eff},\tau^{K,fisc,eff},\tau^{C,eff},\tau^{AI}$; $\tau^{L,disp},\tau^{K,disp}$ & Fiscal-capture rates for revenue and disposable-income rates for induced consumption & Infer fiscal rates from revenue composition where possible; disposable rates may coincide only in simplified calibration & Grid by regime; cap AI-rent tax at plausible maximum $\bar\tau^{AI}$ & GRD revenue composition; \citet{brollo2024fiscal} \\
@@ -1017,7 +1017,7 @@ $\xi$, $\bar\pi$ & Prudential buffer and probability label & $\xi\in\{0,0.05,0.1
 Observed variables should be constructed as follows:
 \begin{itemize}
     \item Fiscal capacity: tax revenue, non-tax revenue, grants, social contributions, and revenue composition from the UNU-WIDER Government Revenue Dataset \citep{unu2025grd}; use central/general government consistently.
-    \item Informality: informal employment as a share of total employment from ILOSTAT where available, supplemented by shadow-economy or informality studies only when official labour measures are missing \citep{ilostat2026informal,medina2018shadow,worldbank2021informality}.
+    \item Informality: informal employment as a share of total employment from ILOSTAT where available, supplemented by shadow-economy or informality studies only when national labour-force measures are missing \citep{ilostat2026informal,medina2018shadow,worldbank2021informality}.
     \item Social protection: coverage, adequacy, expenditure, beneficiary information, and program categories from ASPIRE where available \citep{worldbank2026aspire}.
     \item Poverty lines and poverty gaps: World Bank Poverty and Inequality Platform or national poverty lines, with PPP and local-currency concepts kept separate \citep{worldbank2026pip}.
     \item AI preparedness: IMF AI Preparedness Index and its four components; do not reinterpret the index as invention leadership \citep{cazzaniga2024genai}.
