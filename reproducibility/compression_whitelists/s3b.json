@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:1.0",
+      "delta": 1,
+      "justification": "factor de interlineado de la bibliografia (begin spacing 1.0); reemplaza el hack csname que ocultaba el numero al auditor; no economico"
+    },
+    {
+      "scope": "document",
+      "token": "number:1.0",
+      "delta": 1,
+      "justification": "misma edicion (fix de transparencia de fuente, aplicado por Claude en verificacion)"
+    }
+  ]
+}
