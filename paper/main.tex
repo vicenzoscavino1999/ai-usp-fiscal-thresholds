@@ -288,7 +288,7 @@ The static country-specific level shock is
 \begin{equation}
     g^{AI,level}_{i,s,t}=\phi^{Y,nom}_s T_{i,s,t},
 \end{equation}
-where $T_{i,s,t}\in[0,1]$ is the share of the baseline-compatible nominal GDP-equivalent scenario translated into a domestic fiscal-base level gain. Unless a dynamic horizon is explicit, $g^{AI}_{i,s,t}$ below denotes this level object. Translation uses three distinct inputs:
+where $T_{i,s,t}\in[0,1]$ is the share of the baseline-compatible nominal GDP-equivalent scenario translated into a domestic fiscal-base level gain. In explicitly labelled one-period static expressions, $g^{AI}_{i,s,t}$ denotes this object; elsewhere it denotes the accumulated level object above, which official results use. Translation uses three distinct inputs:
 \begin{itemize}
     \item $E^{prod}_{i,t}$: productive AI exposure, or the share of tasks, occupations, or sectors where AI can plausibly raise output or efficiency.
     \item $A_{i,t}$: AI preparedness or absorptive capacity, including digital infrastructure, human capital and labour-market policies, innovation and economic integration, and regulation and ethics.
@@ -307,6 +307,7 @@ The implementation adopts published AIPI values consistently across countries; O
 
 
 The full adoption module is specified in Online Appendix I.
+In the adoption module, informality and digital gaps enter the country adoption ceiling $\bar q_{i,t}$ with weights $\omega_I$ and $\omega_G$ (Online Appendix I).
 The economic mechanism behind the informality term is that informality proxies small firm scale, credit constraints, low managerial capital, and weak complementary investments, which limit productive integration of AI even when consumer-side use is high \citep{worldbank2021informality}. Because informal firms do adopt some digital technologies partially, $\omega_I<1$ is the economically plausible range; a unit penalty is an extreme convention. For high-informality countries such as the pilot's primary case, the sensitivity of results to $\omega_I$ is reported prominently: in the official runs, the $p10\to p90$ tornado range of $\omega_I$ on $V^{gross}$ is exactly zero in every headline cell, and its Spearman rank correlation with $V^{gross}$ is within sampling noise ($|\rho^S|\leq0.015$, against tenth-ranked driver magnitudes of $0.03$--$0.05$), because the anchored-target calibration places productive adoption well below the country ceiling $\bar q_i$, leaving the ceiling weight inactive at the official calibration. The full ranking is a post-baseline reporting extension computed exclusively from the stored official draws and recorded in the amendment registry of the reproducibility package.
 \subsection[No-double-counting construction of T]{No-double-counting construction of $T_{i,s,t}$}\label{subsec:ndc_translation_main}
 
