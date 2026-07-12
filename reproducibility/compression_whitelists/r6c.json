@@ -1,0 +1,420 @@
+{
+  "type": "uncited-main-bibliography-pruning",
+  "note": "R-6c moves the running title outside the title, reflows four equations without audited-token changes, and removes 14 body-uncited bibitems whose cited copies remain in the supplement. Only the exact document-scope bibliography metadata below are authorized.",
+  "entries": [
+    {
+      "scope": "document",
+      "token": "number:-174",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:-227",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:-245",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:-275",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:-280",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:-3",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:-32",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:-388",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:00",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:00270",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:003355304772839588",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:00401706.1991",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.1016",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.1080",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.1097",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.1162",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.1257",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.1287",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.2307",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.5089",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:10484804",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:119",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:1268522",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:15",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:15.5",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:161",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:1626",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:17",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:18",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:1969",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:1979",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:1991",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2",
+      "delta": -3,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:20",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2001",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2003",
+      "delta": -4,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2004",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2008",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2010",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2013",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2017",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2018",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:2026",
+      "delta": -4,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:21",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:215",
+      "delta": -2,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:239",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:249",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:271",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:3",
+      "delta": -3,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:31",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:31.2",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:33",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:383",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:4754",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:5",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:55",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:6",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:9701",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "number:9781484338636.001",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:1--3",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:161--174",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:215--227",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:239--245",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:249--275",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:271--280",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:3--32",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    },
+    {
+      "scope": "document",
+      "token": "range:383--388",
+      "delta": -1,
+      "justification": "F3 approved: numeric metadata from 14 uncited main-text bibitems removed; each key remains in the supplement bibliography"
+    }
+  ]
+}

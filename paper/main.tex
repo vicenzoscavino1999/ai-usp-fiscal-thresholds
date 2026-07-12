@@ -44,13 +44,15 @@
 \newcommand{\AI}{AI}
 \newcommand{\Prob}{\Pr}
 
-\title{AI, Fiscal Space, and Universal Social Protection in Emerging Economies:\\[0.2em]A Robust Accounting-Fiscal Threshold Framework\\[0.6em]\large Running title: AI, Fiscal Space, and Social Protection}
+\title{AI, Fiscal Space, and Universal Social Protection in Emerging Economies:\\[0.2em]A Robust Accounting-Fiscal Threshold Framework}
 \author{Vicenzo Scavino\thanks{Corresponding author. Email: u201919346@upc.edu.pe}}
 \affil{Independent Researcher, Lima, Peru}
 \date{July 2026}
 
 \begin{document}
 \maketitle
+
+\begin{center}\small Running title: AI, Fiscal Space, and Social Protection\end{center}
 
 \begin{abstract}
 This paper develops a pre-registered threshold-accounting framework that converts AI productivity scenarios into fiscal space and asks when universal or semi-universal social protection becomes accounting-fiscally feasible in emerging economies. In its pilot application to Peru, Chile, Colombia, and Mexico, no instrument is feasible under moderate scenarios; under stress scenarios only Chile's guaranteed minimum income crosses robustly while satisfying a debt guardrail. The binding margin at moderate scenarios is the translation of global AI capability into domestic adoption, not taxation. The framework returns required-persistence horizons and falsifiable diagnostics, and can be recalibrated as evidence accumulates.
@@ -444,8 +446,16 @@ where $\Delta B^{j,tax}$ is the additional taxable base associated with channel 
 The preferred gross marginal fiscal conversion is
 \begin{equation}\label{eq:omega_k_net_v16}
     \omega^{K,net}_{i,s,t}=\begin{cases}
-    \max\{0,\omega^K_{i,s,t}-\lambda^{AI,Kbase}_{i,s,t}\}, & \text{if AI rents are treated as a subset of the capital/profit base},\\
-    \omega^K_{i,s,t}, & \text{if AI rents are additional to the measured capital/profit base}.
+    \max\{0,\omega^K_{i,s,t}-\lambda^{AI,Kbase}_{i,s,t}\}, &
+    \begin{aligned}
+    &\text{if AI rents are treated as a subset}\\
+    &\text{of the capital/profit base},
+    \end{aligned}\\
+    \omega^K_{i,s,t}, &
+    \begin{aligned}
+    &\text{if AI rents are additional to the}\\
+    &\text{measured capital/profit base}.
+    \end{aligned}
     \end{cases}
 \end{equation}
 Under the subset convention, the implementation verifies $\lambda^{AI,Kbase}_{i,s,t}\leq\omega^K_{i,s,t}$. If this condition is violated, the draw is labelled convention-inconsistent and reported; it is not silently truncated. The $\max\{0,\cdot\}$ operator is retained only as a numerical safeguard.
@@ -813,11 +823,11 @@ For threshold inversions, define the stricter computability indicator
 \begin{split}
     Valid^{threshold,(m)}=\mathbf{1}\{&c^{gross,(m)}>0,
     \ R^{req,gross,(m)}>0,
-    \ g^{AI,level,(m)}>0,
-    \ \widetilde{MFC}^{gross,(m)}>0,
-    \ \phi^{Y,nom,(m)}>0,\\
-    &\gamma^{(m)}>0,
-    \ S^{frontier,(m)}>0,
+    \ g^{AI,level,(m)}>0,\\
+    &\widetilde{MFC}^{gross,(m)}>0,
+    \ \phi^{Y,nom,(m)}>0,
+    \ \gamma^{(m)}>0,\\
+    &S^{frontier,(m)}>0,
     \ E^{prod,(m)}>0,
     \ \tilde E^{prod,(m)}>0\}.
 \end{split}
@@ -837,10 +847,10 @@ Then define support validity as
 \begin{equation}
 \begin{split}
     Valid^{support,(m)}=\mathbf{1}\{&Valid^{threshold,(m)}=1,
-    \ q^{prod,*,(m)}\leq\bar q^{(m)},
-    \ q^{use,*,(m)}\leq\bar q^{(m)},\\
-    &\left(\lambda^{AI,(m)}=0\ \text{or}\ \tau^{AI,eff,*,(m)}\leq\bar\tau^{AI,eff,(m)}\right),
-    \ g^{AI,*,(m)}\leq g^{AI,max,(m)},
+    \ q^{prod,*,(m)}\leq\bar q^{(m)},\\
+    &q^{use,*,(m)}\leq\bar q^{(m)},\\
+    &\left(\lambda^{AI,(m)}=0\ \text{or}\ \tau^{AI,eff,*,(m)}\leq\bar\tau^{AI,eff,(m)}\right),\\
+    &g^{AI,*,(m)}\leq g^{AI,max,(m)},
     \ FloorDriven^{(m)}=0\}.
 \end{split}
 \end{equation}
@@ -869,9 +879,12 @@ the 2024 structure fixed, for how many years would the annual increment
 $\phi^{Y,nom}_{s}T_{i,s}$ have to persist before the accumulated level gain covers the
 buffered requirement? The required persistence horizon is
 \begin{equation}\label{eq:h_star_inversion}
-    H^{*}_{i,p,s,r}(\xi)=\min\left\{H\in\mathbb{N}:\;
-    \widetilde{MFC}^{gross}_{i,s,r}\left[(1+\phi^{Y,nom}_{s}T_{i,s})^{H}-1\right]
-    -F^{fix}_{i,p,s,r}\;\geq\;(1+\xi)\,c^{gross}_{i,p}(2024+H)\right\},
+    H^{*}_{i,p,s,r}(\xi)=\min\left\{
+    \begin{aligned}
+    H\in\mathbb{N}:\;&\widetilde{MFC}^{gross}_{i,s,r}\left[(1+\phi^{Y,nom}_{s}T_{i,s})^{H}-1\right]\\
+    &-F^{fix}_{i,p,s,r}\;\geq\;(1+\xi)\,c^{gross}_{i,p}(2024+H)
+    \end{aligned}
+    \right\},
 \end{equation}
 where $F^{fix}_{i,p,s,r}$ collects the fixed-cost terms $ac^{net,fix}_{i,p,s,r,t}+tr^{ann}_{i,s,r,t}+leak^{fix}_{i,s,r,t}$ of Equation \eqref{eq:fs_gross_eff_v21}, and $c^{gross}_{i,p}(2024+H)$ carries the projected demographic eligibility ratio of the
 evaluation year for age-conditioned instruments and is constant for gap-based instruments,
@@ -1261,21 +1274,6 @@ Acemoglu, D. and Restrepo, P. (2019)
 \newblock \emph{Journal of Economic Perspectives} 33(2): 3--30. DOI: 10.1257/jep.33.2.3.
 
 
-\bibitem[Athey and Imbens(2017)]{athey2017state}
-Athey, S. and Imbens, G.W. (2017)
-\newblock The state of applied econometrics: Causality and policy evaluation.
-\newblock \emph{Journal of Economic Perspectives} 31(2): 3--32. DOI: 10.1257/jep.31.2.3.
-
-\bibitem[Bass(1969)]{bass1969newproduct}
-Bass, F.M. (1969)
-\newblock A new product growth for model consumer durables.
-\newblock \emph{Management Science} 15(5): 215--227. DOI: 10.1287/mnsc.15.5.215.
-
-\bibitem[Bertrand, Duflo and Mullainathan(2004)]{bertrand2004trust}
-Bertrand, M., Duflo, E., and Mullainathan, S. (2004)
-\newblock How much should we trust differences-in-differences estimates?
-\newblock \emph{Quarterly Journal of Economics} 119(1): 249--275. DOI: 10.1162/003355304772839588.
-
 \bibitem[Brollo et al.(2024)]{brollo2024fiscal}
 Brollo, F., Dabla-Norris, E., de Mooij, R., Garcia-Macia, D., Hanappi, T., Liu, L., and Nguyen, A.D.M. (2024)
 \newblock Broadening the gains from generative AI: The role of fiscal policies.
@@ -1341,11 +1339,6 @@ Gollin, D. (2002)
 \newblock Getting income shares right.
 \newblock \emph{Journal of Political Economy} 110(2): 458--474. DOI: 10.1086/338747.
 
-\bibitem[ILOSTAT(2026)]{ilostat2026informal}
-ILOSTAT (2026)
-\newblock Informal employment rate.
-\newblock International Labour Organization statistical snapshot and database, accessed June 2026.
-
 \bibitem[INEGI(2024)]{inegi2024enoe}
 Instituto Nacional de Estadistica y Geografia (2024)
 \newblock Encuesta Nacional de Ocupacion y Empleo, segundo trimestre de 2024.
@@ -1387,37 +1380,12 @@ Lara, F. and Oliver, X. (2026)
 \newblock Basic income reduces poverty and inequality: Are there costs in terms of efficiency?
 \newblock \emph{Journal of Policy Modeling} 48(1): 23--42.
 
-\bibitem[Lempert, Popper and Bankes(2003)]{lempert2003shaping}
-Lempert, R.J., Popper, S.W., and Bankes, S.C. (2003)
-\newblock \emph{Shaping the Next One Hundred Years: New Methods for Quantitative, Long-Term Policy Analysis}.
-\newblock RAND Corporation, MR-1626-RPC.
 
-
-
-\bibitem[Lipsitch, Tchetgen Tchetgen and Cohen(2010)]{lipsitch2010negative}
-Lipsitch, M., Tchetgen Tchetgen, E., and Cohen, T. (2010)
-\newblock Negative controls: A tool for detecting confounding and bias in observational studies.
-\newblock \emph{Epidemiology} 21(3): 383--388. DOI: 10.1097/EDE.0b013e3181d61eeb.
-
-\bibitem[McKay, Beckman and Conover(1979)]{mckay1979lhs}
-McKay, M.D., Beckman, R.J., and Conover, W.J. (1979)
-\newblock A comparison of three methods for selecting values of input variables in the analysis of output from a computer code.
-\newblock \emph{Technometrics} 21(2): 239--245. DOI: 10.2307/1268522.
-
-\bibitem[Medina and Schneider(2018)]{medina2018shadow}
-Medina, L. and Schneider, F. (2018)
-\newblock Shadow economies around the world: What did we learn over the last 20 years?
-\newblock \emph{IMF Working Paper 18/17}. DOI: 10.5089/9781484338636.001.
 
 \bibitem[MDSF(2024)]{mdsf2024casen}
 [dataset] Ministerio de Desarrollo Social y Familia (2024)
 \newblock Encuesta de Caracterizacion Socioeconomica Nacional 2024.
 \newblock \url{https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav}.
-
-\bibitem[Morris(1991)]{morris1991factorial}
-Morris, M.D. (1991)
-\newblock Factorial sampling plans for preliminary computational experiments.
-\newblock \emph{Technometrics} 33(2): 161--174. DOI: 10.1080/00401706.1991.10484804.
 
 \bibitem[Nayebi(2025)]{nayebi2025threshold}
 Nayebi, A. (2025)
@@ -1449,28 +1417,6 @@ OECD, ECLAC, CIAT, and IDB (2025)
 \newblock Speedtest Open Data, 2024 Q4.
 \newblock \url{https://registry.opendata.aws/speedtest-global-performance/}.
 
-\bibitem[RAND Corporation(2013)]{rand2013rdm}
-RAND Corporation (2013)
-\newblock Making good decisions without predictions: Robust Decision Making for planning under deep uncertainty.
-\newblock RAND Research Highlights, RB-9701.
-
-
-\bibitem[Rogers(2003)]{rogers2003diffusion}
-Rogers, E.M. (2003)
-\newblock \emph{Diffusion of Innovations}, 5th ed.
-\newblock Free Press.
-
-
-
-\bibitem[Saltelli et al.(2008)]{saltelli2008global}
-Saltelli, A., Ratto, M., Andres, T., Campolongo, F., Cariboni, J., Gatelli, D., Saisana, M., and Tarantola, S. (2008)
-\newblock \emph{Global Sensitivity Analysis: The Primer}.
-\newblock Wiley.
-
-\bibitem[Sobol(2001)]{sobol2001global}
-Sobol, I.M. (2001)
-\newblock Global sensitivity indices for nonlinear mathematical models and their Monte Carlo estimates.
-\newblock \emph{Mathematics and Computers in Simulation} 55(1--3): 271--280. DOI: 10.1016/S0378-4754(00)00270-6.
 
 \bibitem[UNU-WIDER(2025)]{unu2025grd}
 [dataset] UNU-WIDER (2025)
@@ -1487,11 +1433,6 @@ World Bank (2021)
 \newblock \emph{The Long Shadow of Informality: Challenges and Policies}.
 \newblock Washington, DC: World Bank. DOI: 10.1596/978-1-4648-1753-3.
 
-
-\bibitem[World Bank(2026a)]{worldbank2026aspire}
-World Bank (2026a)
-\newblock ASPIRE: The Atlas of Social Protection Indicators of Resilience and Equity.
-\newblock Social protection and labor indicators, accessed June 2026.
 
 \bibitem[World Bank(2026b)]{worldbank2026pip}
 [dataset] World Bank (2026b)
