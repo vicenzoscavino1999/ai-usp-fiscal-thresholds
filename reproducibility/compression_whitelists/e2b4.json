@@ -1,0 +1,18 @@
+{
+  "type": "precision-and-deduplication",
+  "note": "E-2/B4 introduce lambda AI-Kbase, restaura la propiedad de los pesos y deduplica la convencion AI-rent; no autoriza otros deltas.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -1,
+      "justification": "F3 aprobado: se elimina el max{0,...} duplicado en prosa; persiste en la ecuacion canonica"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -1,
+      "justification": "F3 aprobado: se elimina el max{0,...} duplicado en prosa; persiste en la ecuacion canonica"
+    }
+  ]
+}
