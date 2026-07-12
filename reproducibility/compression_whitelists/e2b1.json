@@ -1,0 +1,12 @@
+{
+  "type": "precision-correction",
+  "note": "E-2/B1 corrige precision en abstract y el puntero post-split de adopcion; no autoriza otros deltas.",
+  "entries": [
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "F1 aprobado: el binding margin del abstract queda condicionado a escenarios moderados"
+    }
+  ]
+}
