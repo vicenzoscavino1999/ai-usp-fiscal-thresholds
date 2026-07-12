@@ -1,0 +1,90 @@
+{
+  "type": "section-reframing-pwc-move-and-economic-interpretation",
+  "note": "R-6b moves the complete PWC block byte-identically to the supplement and adds the author-approved economic-interpretation paragraph; these exact deltas were adjudicated by Claude after the raw G9 run.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:pwc_index_v22}",
+      "delta": -1,
+      "justification": "T2 approved: PWC equation moved byte-identically to the supplement; zero incoming references"
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -2,
+      "justification": "T2 approved: complete PWC display and explanatory paragraph moved byte-identically"
+    },
+    {
+      "scope": "body",
+      "token": "number:1",
+      "delta": -4,
+      "justification": "T2 approved: complete PWC display and explanatory paragraph moved byte-identically"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:low",
+      "delta": -1,
+      "justification": "T2 approved: low preparedness wording travels with the byte-identical PWC explanatory paragraph"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "T3f approved: economic-interpretation conditioning verified against Results"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "T3f approved: economic-interpretation conditioning verified against Results"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:stress",
+      "delta": 2,
+      "justification": "T3f approved: economic-interpretation conditioning verified against Results"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{eq:pwc_index_v22}",
+      "delta": -1,
+      "justification": "T2 approved: PWC equation moved byte-identically to the supplement; zero incoming references"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -2,
+      "justification": "T2 approved: complete PWC display and explanatory paragraph moved byte-identically"
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": -4,
+      "justification": "T2 approved: complete PWC display and explanatory paragraph moved byte-identically"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:low",
+      "delta": -1,
+      "justification": "T2 approved: low preparedness wording travels with the byte-identical PWC explanatory paragraph"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "T3f approved: economic-interpretation conditioning verified against Results"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "T3f approved: economic-interpretation conditioning verified against Results"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": 2,
+      "justification": "T3f approved: economic-interpretation conditioning verified against Results"
+    }
+  ]
+}

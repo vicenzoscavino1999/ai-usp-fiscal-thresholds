@@ -823,6 +823,16 @@ Under the frozen-weight convention, each required threshold is increasing in pol
 
 Every threshold table should state whether it uses gross or effective fiscal conversion, gross or net policy cost, debt-consistent or non-debt requirements, and whether the adoption score is no-double-counting or full-score robustness.
 
+\subsection{Pressure-without-capacity diagnostic}
+
+The main text refers to the following optional ranking diagnostic.
+
+The optional pressure-without-capacity diagnostic is defined as
+\begin{equation}\label{eq:pwc_index_v22}
+    PWC_{i,p,s,r,t}=E^{disp}_{i,t}(1-A_{i,t})I^L_{i,t}\max\{0,1-V^{gross}_{i,p,s,r,t}\},
+\end{equation}
+where $E^{disp}$ captures displacement exposure, $(1-A)$ captures low preparedness, $I^L$ captures labour informality, and $\max\{0,1-V^{gross}\}$ captures uncovered fiscal distance. The index is a ranking diagnostic only; it is not a feasibility threshold and is not added to the fiscal-space equation.
+
 
 \section{Uncertainty Propagation and Robustness Module}\label{app:uncertainty_module}
 
