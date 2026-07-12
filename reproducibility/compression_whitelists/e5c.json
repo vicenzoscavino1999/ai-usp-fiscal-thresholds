@@ -1,0 +1,90 @@
+{
+  "type": "conceptual-deduplication-and-subsection-fusion",
+  "note": "E-5c removes three unreferenced equation labels while preserving their canonical definitions in Sections 3 and 4, adds two section pointers, and removes only the structural c_net>0 display tokens declared by the author.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:Vgross_main_v10}",
+      "delta": -1,
+      "justification": "R1 approved: redundant Vgross display removed; canonical definition remains in Section 3"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:Vnet_main_v10}",
+      "delta": -1,
+      "justification": "R1 approved: redundant Vnet display removed; canonical definition remains in Section 4"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{eq:prudential_main_v10}",
+      "delta": -1,
+      "justification": "R1 approved: prudential inequality moved inline"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:conceptual}",
+      "delta": 1,
+      "justification": "R1 approved: pointer to canonical Vgross definition"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "justification": "R1 approved: pointer to canonical Vnet definition"
+    },
+    {
+      "scope": "body",
+      "token": "number:0",
+      "delta": -1,
+      "justification": "R1 approved: structural token from deleted c_net>0 display; c_net=0 prose remains"
+    },
+    {
+      "scope": "body",
+      "token": "sign:>",
+      "delta": -1,
+      "justification": "R1 approved: structural token from deleted c_net>0 display"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{eq:Vgross_main_v10}",
+      "delta": -1,
+      "justification": "R1 approved: redundant Vgross display removed; canonical definition remains in Section 3"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{eq:Vnet_main_v10}",
+      "delta": -1,
+      "justification": "R1 approved: redundant Vnet display removed; canonical definition remains in Section 4"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{eq:prudential_main_v10}",
+      "delta": -1,
+      "justification": "R1 approved: prudential inequality moved inline"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:conceptual}",
+      "delta": 1,
+      "justification": "R1 approved: pointer to canonical Vgross definition"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "justification": "R1 approved: pointer to canonical Vnet definition"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -1,
+      "justification": "R1 approved: structural token from deleted c_net>0 display; c_net=0 prose remains"
+    },
+    {
+      "scope": "document",
+      "token": "sign:>",
+      "delta": -1,
+      "justification": "R1 approved: structural token from deleted c_net>0 display"
+    }
+  ]
+}

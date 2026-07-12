@@ -544,17 +544,9 @@ The comparison labels whether feasibility requires ordinary, demanding, or histo
 
 \section{Feasibility Thresholds and Fiscal Guardrails}\label{sec:thresholds}
 
-\subsection{Structural accounting threshold}
+\subsection{Accounting threshold and prudential buffers}
 
-The model's primary conservative feasibility object is
-\begin{equation}\label{eq:Vgross_main_v10}
-    V^{gross}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{c^{gross}_{i,p,t}}.
-\end{equation}
-The structural accounting threshold is $V^{gross}=1$. A net-cost version,
-\begin{equation}\label{eq:Vnet_main_v10}
-    V^{net}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{c^{net}_{i,p,t}},\qquad c^{net}_{i,p,t}>0,
-\end{equation}
-is robustness only when measured spending offsets leave a strictly positive net incremental cost. If $c^{net}=0$, existing spending already covers the policy and $V^{net}$ is not computed. Without a superscript, $V$ denotes $V^{gross}$.
+The model's primary conservative feasibility object is the index $V^{gross}_{i,p,s,r,t}=fs^{eff}_{i,p,s,r,t}/c^{gross}_{i,p,t}$ defined in Section \ref{sec:conceptual}, with structural threshold $V^{gross}=1$. The net-cost version $V^{net}$ of Section \ref{sec:policy_costs} is robustness only when measured spending offsets leave a strictly positive net incremental cost; if $c^{net}=0$, existing spending already covers the policy and $V^{net}$ is not computed. Without a superscript, $V$ denotes $V^{gross}$.
 
 Define the absolute and relative gaps as
 \begin{equation}
@@ -563,13 +555,7 @@ Define the absolute and relative gaps as
     RGAP^{gross}_{i,p,s,r,t}=V^{gross}_{i,p,s,r,t}-1.
 \end{equation}
 
-\subsection{Prudential buffers}
-
-A prudential buffer $\xi\geq0$ requires
-\begin{equation}\label{eq:prudential_main_v10}
-    fs^{eff}_{i,p,s,r,t}\geq(1+\xi)c^{gross}_{i,p,t}.
-\end{equation}
-The standard grid $\xi\in\{0,0.05,0.10,0.25,0.50\}$ defines reporting margins under deep uncertainty, not structural constants.
+A prudential buffer $\xi\geq0$ tightens the requirement to $fs^{eff}_{i,p,s,r,t}\geq(1+\xi)c^{gross}_{i,p,t}$; the standard grid $\xi\in\{0,0.05,0.10,0.25,0.50\}$ defines reporting margins under deep uncertainty, not structural constants.
 
 \subsection{Debt-stabilizing primary-balance guardrail}
 
@@ -631,8 +617,6 @@ The baseline frontier is written in terms of the net marginal gross-capture obje
 \end{equation}
 Here $\widetilde M$ denotes $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$. This is a reduced-form or frozen-weight frontier; with weights recomputed as $g$ varies, it becomes the nonlinear set $\{g:fs^{eff,ch}(g)\geq R^{req}\}$ rather than a rectangular hyperbola in $(g,\widetilde M)$. The debt-consistent version substitutes $R^{req,gross,DC}$ for $R^{req,gross}$. Distance diagnostics comprise realized-coverage and support-headroom ratio families, which are never pooled; Online Appendix F gives their complete definitions and use rules.
 For adoption, $0<q^{prod,*}\leq\bar q_i$ means support is sufficient, whereas $q^{prod,*}>\bar q_i$ means the country ceiling fails; an absolute excess is a gap, not a ratio. Zero-threshold and floor-driven cases follow the unique operational definition in Section \ref{subsec:impossibility_score}.
-
-\subsection{Monte Carlo feasibility probability}
 
 For simulated draws indexed by $m$, the crossing probability is
 \begin{equation}\label{eq:mc_prob_main_v10}
@@ -718,6 +702,8 @@ The classes are mutually interpretable even when they overlap empirically. Obser
 
 A result is baseline only if it uses no $\Theta^{stress}$ and is robust over the declared $\Theta^{calib}$ supports. Because calibrated inputs enter every run, the label means robustness over their supports, not their absence. Results requiring $\Theta^{stress}$ are stress feasibility.
 
+The required parameter-reporting standard is in the master calibration matrix in Online Appendix H. The machine-readable country-parameter registry, including values, supports, sources, and approval status, is provided in the reproducibility package's \texttt{appendix\_i} calibration-registry files.
+
 \subsection{Unit discipline}
 
 All fiscal variables are expressed as shares of the no-AI counterfactual GDP denominator $Y^0$ unless stated otherwise. Policy cost, effective fiscal space, fixed administrative costs, fixed transition costs, fixed leakage, and revenue gains are therefore dimensionless ratios. Marginal-equivalent administrative, transition, or leakage terms are rates per unit of the AI shock and enter through $\widetilde{MFC}^{gross}$. The AI shock from the literature must be reported in its source unit and then converted through the mandatory chain
@@ -730,10 +716,6 @@ Micro studies such as \citet{noy2023experimental} and \citet{brynjolfsson2023gen
 
 The externally disciplined scenario supports and deterministic closures are reported in Table \ref{tab:phi_numerical_closure}. These objects are reported across the paper and the reproducibility package: the source-unit raw supports in Table \ref{tab:phi_numerical_closure}; the scenario bridges $\kappa^{u\to Y}$ and nominal adjustments $\pi^{AI,Y}$ in the calibration registry; the post-bridge nominal supports in the primary-specification table of Section \ref{sec:empirical_results}; and the per-cell accumulated level objects $g^{AI,level}$ in the run traces.
 A result may be called ``baseline feasible'' only if it holds after converting conservative or moderate TFP-equivalent raw supports into model-ready $\phi^{Y,nom}$ and then into $g^{AI,level}$. A result that requires the high G7 frontier case must be labelled ``frontier feasible.'' A result that requires the disruptive support must be labelled ``stress feasible'' and not interpreted as a forecast.
-
-\subsection{Master calibration matrix}
-
-The required parameter-reporting standard is in the master calibration matrix in Online Appendix H. The machine-readable country-parameter registry, including values, supports, sources, and approval status, is provided in the reproducibility package's \texttt{appendix\_i} calibration-registry files.
 
 \subsection{Fiscal-conversion modes}
 
