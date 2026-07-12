@@ -1,4 +1,4 @@
-"""Reexporta las tablas impresas 4, 5 y 7 desde los CSVs oficiales.
+"""Reexporta las tablas impresas 4, 5, 5b, 6 y 7 desde los CSVs oficiales.
 
 Se ejecuta DESPUÉS de finalize_phase_b; sustituye los .tex truncados head-N por
 selecciones diseñadas; valores idénticos a los CSVs oficiales; cambio de formato
@@ -76,6 +76,45 @@ TABLE7_FIELDS = [
     "v_p50",
     "v_p95",
     "converged_flag",
+]
+TABLE5B_FIELDS = [
+    "country_id",
+    "policy_id",
+    "policy_variant_id",
+    "gmi_version",
+    "scenario_id",
+    "regime_id",
+    "h_star_baseline",
+    "h_star_status_baseline",
+    "h_star_debt_consistent",
+    "h_star_status_debt_consistent",
+    "prob_h_star_le_10",
+    "prob_h_star_le_25",
+    "note",
+]
+TABLE5B_PRINT_FIELDS = [
+    "country_id",
+    "policy_id",
+    "policy_variant_id",
+    "gmi_version",
+    "scenario_id",
+    "regime_id",
+    "h_star_baseline",
+    "h_star_debt_consistent",
+    "prob_h_star_le_10",
+    "prob_h_star_le_25",
+]
+TABLE5B_HEADERS = [
+    r"\shortstack{country\\id}",
+    r"\shortstack{policy\\id}",
+    r"\shortstack{policy\\variant}",
+    r"\shortstack{GMI\\version}",
+    "scenario",
+    "regime",
+    r"\shortstack{$H^*$\\baseline}",
+    r"\shortstack{$H^*$\\debt}",
+    r"\shortstack{$\Pr(H^*\leq10)$}",
+    r"\shortstack{$\Pr(H^*\leq25)$}",
 ]
 
 COUNTRIES = ["PER", "CHL", "COL", "MEX"]
@@ -356,6 +395,50 @@ def write_table7(rows: list[dict[str, str]]) -> None:
     (TARGET_DIR / "table7_monte_carlo.tex").write_text("\n".join(lines), encoding="utf-8")
 
 
+def write_table5b(rows: list[dict[str, str]]) -> None:
+    caption = (
+        r"Time to threshold $H^*$ (post-baseline extension). Both status fields are "
+        r"\texttt{crosses\_within\_cap} in all four data rows; the common note is ``$H^*$ "
+        r"censored at 25 years; values are conditional years of frozen scenario persistence, "
+        r"not calendar forecasts.''"
+    )
+    columns = [
+        r">{\raggedright\arraybackslash}p{0.06\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.055\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.17\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.14\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.07\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.055\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.075\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.075\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.105\linewidth}",
+        r">{\raggedright\arraybackslash}p{0.105\linewidth}",
+    ]
+    lines = [
+        r"\begingroup",
+        r"\let\tableunderscore\_",
+        r"\renewcommand{\_}{\tableunderscore\allowbreak}",
+        r"\begin{table}[!htbp]",
+        r"\centering",
+        rf"\caption{{{caption}}}\label{{tab:results_h_star}}",
+        r"\fontsize{7}{8.4}\selectfont",
+        r"\setlength{\tabcolsep}{1.5pt}",
+        r"\begin{tabular}{@{}",
+        *columns,
+        r"@{}}",
+        r"\toprule",
+        " & ".join(TABLE5B_HEADERS) + r" \\",
+        r"\midrule",
+        *latex_rows(rows, TABLE5B_PRINT_FIELDS),
+        r"\bottomrule",
+        r"\end{tabular}",
+        r"\end{table}",
+        r"\endgroup",
+        "",
+    ]
+    (TARGET_DIR / "table5b_time_to_threshold.tex").write_text("\n".join(lines), encoding="utf-8")
+
+
 def main() -> int:
     table4_source = read_csv("table4_vgross_baseline.csv", TABLE4_FIELDS)
     table5_source_all = read_csv_fields(
@@ -369,6 +452,7 @@ def main() -> int:
     ]
     table6_source = read_csv_fields(SOURCE_DIR / "table6_historical_plausibility.csv", TABLE6_FIELDS)
     table7_source = read_csv("table7_monte_carlo.csv", TABLE7_FIELDS)
+    table5b_source = read_csv("table5b_time_to_threshold.csv", TABLE5B_FIELDS)
 
     if len(table4_source) != 480:
         raise AssertionError(f"table4: expected 480 source rows, found {len(table4_source)}")
@@ -486,10 +570,20 @@ def main() -> int:
     for literal in ("0.98", "0.6", "0.8"):
         assert_literal_present(table7_rows, "prob_v_ge_1", literal, "table7")
 
+    if len(table5b_source) != 4:
+        raise AssertionError(f"table5b: expected 4 data rows plus header, found {len(table5b_source)}")
+    if {row["h_star_status_baseline"] for row in table5b_source} != {"crosses_within_cap"}:
+        raise AssertionError("table5b: baseline status is not constant crosses_within_cap")
+    if {row["h_star_status_debt_consistent"] for row in table5b_source} != {"crosses_within_cap"}:
+        raise AssertionError("table5b: debt-consistent status is not constant crosses_within_cap")
+    if len({row["note"] for row in table5b_source}) != 1:
+        raise AssertionError("table5b: note is not constant across source rows")
+
     write_table4(table4_rows)
     write_table5(table5_rows)
     write_table6(table6_rows)
     write_table7(table7_rows)
+    write_table5b(table5b_source)
 
     print("PASS table4_source_count=480")
     print("PASS table4_count=35")
@@ -513,6 +607,11 @@ def main() -> int:
     print("PASS table7_row_identity=20")
     print("PASS table7_already_minimal=True")
     print("PASS table7_results_literals=0.97_bound,0.98,0.6,0.8")
+    print("PASS table5b_csv_lines=5")
+    print("PASS table5b_data_rows=4")
+    print("PASS table5b_row_identity=4")
+    print("PASS table5b_constant_status_and_note_fields_moved_to_caption=True")
+    print("PASS table5b_numeric_values_unrounded=True")
     print("PASS source_csvs_unchanged=True")
     print("SUCCESS designed paper-table re-export completed without recomputation")
     return 0

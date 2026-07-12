@@ -199,6 +199,7 @@ def verify_table_reexport() -> ComparisonCount:
         for name in (
             "table4_vgross_baseline.tex",
             "table5_threshold_inversion.tex",
+            "table5b_time_to_threshold.tex",
             "table6_historical_plausibility.tex",
             "table7_monte_carlo.tex",
         )
