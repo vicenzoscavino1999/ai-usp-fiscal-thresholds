@@ -15,11 +15,11 @@
     },
     {
       "path": "paper/main.tex",
-      "sha256": "93f385327a6adc733c71210279373cc73e49c133c6eebfa212ab47a02fe438e8"
+      "sha256": "74b2f9d8b65ebe28212e61a2877caadb9edee3e9652a083bd71e578474eb03b9"
     },
     {
       "path": "paper/supplementary_appendix.tex",
-      "sha256": "83806bdea0868a6000ac110b1ebf75beb033a134be899428c8aec184e39727fd"
+      "sha256": "7bea7af7e0ff9cb6cf763287da3db6c00ffff671d9064df60b1e72922a31f963"
     },
     {
       "path": "reports/calibrated_parameter_registry_baseline-official-v3.csv",
