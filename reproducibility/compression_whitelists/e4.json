@@ -1,0 +1,90 @@
+{
+  "type": "literature-dialogue-and-jpm-bibitems",
+  "note": "E-4 adds the author-approved JPM literature paragraph and two alphabetized bibliography entries; no other numeric or technical deltas are authorized.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:10.61",
+      "delta": 1,
+      "justification": "F1 approved: reported GDP cost from Caamal-Olvera et al. (2022)"
+    },
+    {
+      "scope": "document",
+      "token": "number:-1093",
+      "delta": 1,
+      "justification": "F2 approved: tokenizer component of new JPM page range 1077--1093"
+    },
+    {
+      "scope": "document",
+      "token": "number:-42",
+      "delta": 1,
+      "justification": "F2 approved: tokenizer component of new JPM page range 23--42"
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": 1,
+      "justification": "F2 approved: issue number in Lara and Oliver (2026)"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.61",
+      "delta": 1,
+      "justification": "F1 approved: reported GDP cost from Caamal-Olvera et al. (2022)"
+    },
+    {
+      "scope": "document",
+      "token": "number:1077",
+      "delta": 1,
+      "justification": "F2 approved: first page of Caamal-Olvera et al. (2022)"
+    },
+    {
+      "scope": "document",
+      "token": "number:2022",
+      "delta": 2,
+      "justification": "F2 approved: year appears in the Caamal-Olvera bibitem label and entry"
+    },
+    {
+      "scope": "document",
+      "token": "number:2026",
+      "delta": 2,
+      "justification": "F2 approved: year appears in the Lara and Oliver bibitem label and entry"
+    },
+    {
+      "scope": "document",
+      "token": "number:23",
+      "delta": 1,
+      "justification": "F2 approved: first page of Lara and Oliver (2026)"
+    },
+    {
+      "scope": "document",
+      "token": "number:44",
+      "delta": 1,
+      "justification": "F2 approved: journal volume for Caamal-Olvera et al. (2022)"
+    },
+    {
+      "scope": "document",
+      "token": "number:48",
+      "delta": 1,
+      "justification": "F2 approved: journal volume for Lara and Oliver (2026)"
+    },
+    {
+      "scope": "document",
+      "token": "number:5",
+      "delta": 1,
+      "justification": "F2 approved: issue number in Caamal-Olvera et al. (2022)"
+    },
+    {
+      "scope": "document",
+      "token": "range:1077--1093",
+      "delta": 1,
+      "justification": "F2 approved: JPM page range for Caamal-Olvera et al. (2022)"
+    },
+    {
+      "scope": "document",
+      "token": "range:23--42",
+      "delta": 1,
+      "justification": "F2 approved: JPM page range for Lara and Oliver (2026)"
+    }
+  ]
+}
