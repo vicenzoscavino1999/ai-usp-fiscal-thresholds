@@ -1,0 +1,18 @@
+{
+  "type": "mathematical-precision-and-executed-language",
+  "note": "E-2/B6 corrige la forma cerrada de H*, glosa F^fix y convierte la reproducibilidad a lenguaje ejecutado; no autoriza otros deltas.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:fs_gross_eff_v21}",
+      "delta": 1,
+      "justification": "F2 aprobado: referencia a la ecuacion que define los terminos de F^fix"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\eqref{eq:fs_gross_eff_v21}",
+      "delta": 1,
+      "justification": "F2 aprobado: referencia a la ecuacion que define los terminos de F^fix"
+    }
+  ]
+}

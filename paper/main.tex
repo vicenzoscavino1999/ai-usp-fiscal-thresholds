@@ -859,11 +859,11 @@ buffered requirement? The required persistence horizon is
     \widetilde{MFC}^{gross}_{i,s,r}\left[(1+\phi^{Y,nom}_{s}T_{i,s})^{H}-1\right]
     -F^{fix}_{i,p,s,r}\;\geq\;(1+\xi)\,c^{gross}_{i,p}(2024+H)\right\},
 \end{equation}
-where $c^{gross}_{i,p}(2024+H)$ carries the projected demographic eligibility ratio of the
+where $F^{fix}_{i,p,s,r}$ collects the fixed-cost terms $ac^{net,fix}_{i,p,s,r,t}+tr^{ann}_{i,s,r,t}+leak^{fix}_{i,s,r,t}$ of Equation \eqref{eq:fs_gross_eff_v21}, and $c^{gross}_{i,p}(2024+H)$ carries the projected demographic eligibility ratio of the
 evaluation year for age-conditioned instruments and is constant for gap-based instruments,
 consistent with the endpoint cost convention. The debt-consistent analogue adds
 $s^{PB+}_{i}$ to the requirement. When $c^{gross}$ is constant in $H$, the closed form is
-$H^{*}=\lceil \ln(1+R^{req}/\widetilde{MFC}^{gross})/\ln(1+\phi^{Y,nom}T)\rceil$.
+$H^{*}=\lceil \ln\!\left(1+(R^{req}+F^{fix})/\widetilde{MFC}^{gross}\right)/\ln(1+\phi^{Y,nom}T)\rceil$.
 
 Three conventions discipline this statistic. First, $H^{*}$ is a requirement, not a
 forecast: it states the number of years of scenario persistence that would be needed,
@@ -898,7 +898,7 @@ Monte Carlo details are in Online Appendix I.
 
 \subsection{Numerical precision and reproducibility}
 
-The replication package should publish the country-year dataset, parameter matrix, random seed, draw count, distributional supports, cleaning rules, and exact code used to generate tables. Simulations should be rerun with at least two seeds or with convergence diagnostics for the main crossing probabilities.
+The replication package publishes the country-year dataset, parameter matrix, random seed, draw count, distributional supports, cleaning rules, and exact code used to generate tables, enumerated item by item in the package's \texttt{REPRODUCING.md}. Crossing-probability convergence is verified on a ladder of draw sizes, with seeded repeatability checks.
 
 \section{Empirical Design and Minimum Pilot Application}\label{sec:empirical_design}
 
