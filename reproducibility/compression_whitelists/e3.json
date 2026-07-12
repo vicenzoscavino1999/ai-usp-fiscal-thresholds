@@ -1,0 +1,162 @@
+{
+  "type": "narrative-roadmap-cross-references",
+  "note": "E-3 adds the 13 author-approved Introduction roadmap references; no economic, numeric, scenario, sign, label, or appendix token changes are authorized.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:ai_shocks}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:claims}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:conceptual}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:conclusion}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:empirical_design}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:empirical_results}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:historical_plausibility}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:impossibility_falsification}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:literature}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:parameters}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:theory}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:ai_shocks}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:claims}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:conceptual}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:conclusion}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:empirical_design}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:empirical_results}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:historical_plausibility}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:impossibility_falsification}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:literature}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:parameters}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:theory}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": 1,
+      "justification": "F1 approved: Introduction roadmap"
+    }
+  ]
+}
