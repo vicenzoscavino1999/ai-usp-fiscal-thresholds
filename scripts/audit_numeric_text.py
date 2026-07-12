@@ -24,6 +24,7 @@ from typing import Iterable
 ROOT = Path(__file__).resolve().parents[1]
 INTRODUCTION = r"\section{Introduction}"
 APPENDIX = r"\appendix"
+BIBLIOGRAPHY = r"\begin{thebibliography}"
 
 COMMAND_PATTERN = re.compile(r"\\(?:eqref|ref|label)\{[^{}]+\}")
 HORIZON_PATTERN = re.compile(
@@ -100,7 +101,18 @@ def read_source(spec: str) -> str:
 def split_scopes(text: str) -> dict[str, str]:
     body_start = text.find(INTRODUCTION)
     appendix_start = text.find(APPENDIX)
-    if body_start < 0 or appendix_start < 0 or appendix_start <= body_start:
+    if body_start < 0:
+        raise ValueError("could not locate Introduction/body boundary")
+    if appendix_start < 0:
+        bibliography_start = text.find(BIBLIOGRAPHY, body_start)
+        if bibliography_start < 0:
+            raise ValueError("could not locate appendix or bibliography body boundary")
+        return {
+            "body": text[body_start:bibliography_start],
+            "appendix": "",
+            "document": text,
+        }
+    if appendix_start <= body_start:
         raise ValueError("could not locate Introduction/body and appendix boundaries")
     return {
         "body": text[body_start:appendix_start],
