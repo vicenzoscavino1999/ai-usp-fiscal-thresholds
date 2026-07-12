@@ -1,0 +1,84 @@
+{
+  "type": "appendix-split",
+  "note": "S-2 autoriza solo la retirada de los 36 punteros del cuerpo al apendice separado. El exodo de los scopes appendix/document queda deliberadamente sin whitelist y se verifica por identidad SHA-256 del bloque movido.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:channel_revenue_function_v24}",
+      "delta": -3,
+      "justification": "tres punteros convertidos a la funcion de ingresos en Online Appendix D"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\eqref{eq:labor_informality_base_side_v25}",
+      "delta": -1,
+      "justification": "puntero convertido a la regla laboral base-side en Online Appendix C"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:adoption_module}",
+      "delta": -1,
+      "justification": "puntero convertido a Online Appendix B"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:ai_shock_module}",
+      "delta": -4,
+      "justification": "cuatro punteros convertidos a Online Appendix A"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:calibration_ledger}",
+      "delta": -4,
+      "justification": "cuatro punteros convertidos a Online Appendix H, incluidos matriz y ledger"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:fiscal_conversion_module}",
+      "delta": -6,
+      "justification": "seis punteros convertidos a Online Appendix D"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:informality_module}",
+      "delta": -1,
+      "justification": "puntero convertido a Online Appendix E"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:labor_share_module}",
+      "delta": -3,
+      "justification": "tres punteros convertidos a Online Appendix C"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:threshold_module}",
+      "delta": -4,
+      "justification": "cuatro punteros convertidos a Online Appendix F"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{app:uncertainty_module}",
+      "delta": -6,
+      "justification": "seis punteros convertidos a Online Appendix G"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{subsec:adoption_threshold_existence}",
+      "delta": -1,
+      "justification": "puntero convertido a las condiciones de existencia en Online Appendix F"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{tab:maintained_assumptions_bias}",
+      "delta": -1,
+      "justification": "puntero convertido al assumption ledger en Online Appendix H"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{tab:master_calibration_matrix}",
+      "delta": -1,
+      "justification": "puntero convertido a la master calibration matrix en Online Appendix H"
+    }
+  ]
+}

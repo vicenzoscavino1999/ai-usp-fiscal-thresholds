@@ -15,7 +15,11 @@
     },
     {
       "path": "paper/main.tex",
-      "sha256": "b57f90a8805f4cf6de5ea789f37c4792f0f2905c6c6ce85c1a360b1beee989cf"
+      "sha256": "93f385327a6adc733c71210279373cc73e49c133c6eebfa212ab47a02fe438e8"
+    },
+    {
+      "path": "paper/supplementary_appendix.tex",
+      "sha256": "83806bdea0868a6000ac110b1ebf75beb033a134be899428c8aec184e39727fd"
     },
     {
       "path": "reports/calibrated_parameter_registry_baseline-official-v3.csv",
