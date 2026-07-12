@@ -263,7 +263,7 @@ The debt-consistent accumulated-horizon version replaces $R^{req,gross}_{i,p,s,r
     \frac{\left(1+R^{req,gross}_{i,p,s,r,t}(\xi)/\widetilde{MFC}^{gross}_{i,s,r,t}\right)^{1/H}-1}{\phi^{Y,nom}_{s}},
 \end{equation}
 with non-constant paths solved numerically from Equation \eqref{eq:accumulated_threshold_condition_v22}; the debt-consistent analogue again replaces $R^{req,gross}$ with $R^{req,gross,DC}$.
-AI-shock object definitions and their admissible uses are tabulated in Online Appendix I. The implementation must never set $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}$ directly: the translation factor is always applied, and $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}T_{i,s,t}$ is admissible only as an explicitly labelled one-period static approximation. Baseline recurring-cost comparisons use the level object, not the raw annual increment. In particular, a high labour-productivity input is reported after applying $\kappa^{LP\to Y}$ and the nominal bridge, never as the source-unit value.
+AI-shock object definitions and their admissible uses are tabulated in Online Appendix I. The translation factor is always applied: $g^{AI}_{i,s,t}$ is never set to $\phi^{Y,nom}_{s,t}$ directly, and $g^{AI}_{i,s,t}=\phi^{Y,nom}_{s,t}T_{i,s,t}$ is admissible only as an explicitly labelled one-period static approximation. Baseline recurring-cost comparisons use the level object, not the raw annual increment. In particular, a high labour-productivity input is reported after applying $\kappa^{LP\to Y}$ and the nominal bridge, never as the source-unit value.
 
 Only after bridging does the model assign the low, mid, high, or stress GDP-equivalent support listed in Table \ref{tab:phi_numerical_closure}.
 Because historical fiscal-capture anchors are usually constructed from nominal revenue and nominal GDP, the baseline fiscal-space implementation must use $\phi^{Y,nom}_s$ and the induced $g^{AI,level}$, or reconstruct the fiscal-capture anchor in real terms with explicit revenue and GDP deflators. Results that multiply a raw real/TFP/labour-productivity AI shock by a nominal historical capture distribution are reported only as heuristic plausibility checks, not as baseline fiscal-space estimates. For compactness, later formulas write $\phi_s$ only as shorthand for the baseline-compatible object $\phi^{Y,nom}_s$.
@@ -452,9 +452,9 @@ Under the subset convention, the implementation verifies $\lambda^{AI,Kbase}_{i,
     +\lambda^{AI}_{i,s,t}\tau^{AI,eff}_{i,s,r,t}.
 \end{equation}
 Effective fiscal rates $\tau^{j,fisc,eff}$ already include rate-side compliance, informality, exemption, and capturability adjustments; base-side adjustments such as consumption exemptions inside $\Delta C^{AI,taxable}$ are not embedded again. Equation \eqref{eq:mfc_gross_channel_v10} therefore applies no additional $\chi^j$; with statutory or normative rates, the Online Appendix first constructs $\tau^{j,fisc,eff}=\tau^{j,base}\chi^j$. The $\omega^L$, $\omega^K$, and $\omega^C$ objects are tax-base response ratios, not probability weights, and need not sum to one. A negative robustness-channel response is reported as a negative base contribution, never hidden by renormalization.
-Labor informality is assigned to exactly one side of the labor channel. The rate-side convention is the baseline, consistent with the convention that $\tau^{eff}$ already includes informality: $\omega^L$ is constructed from gross $\Delta W^{AI}$ and $\chi^L=(1-I^{L,marg})^{\rho_L}$ enters once inside $\tau^{L,fisc,eff}$. Under the alternative base-side convention, $\omega^L$ is constructed from $\Delta W^{taxable}$ under the base-side labor rule in Online Appendix C, and $\tau^{L,fisc,eff}$ must not include $\chi^L$. The base-side and rate-side penalties are never applied together.
+Labor informality is assigned to exactly one side of the labor channel. The rate-side convention is the baseline, consistent with the convention that $\tau^{eff}$ already includes informality: $\omega^L$ is constructed from gross $\Delta W^{AI}$ and $\chi^L=(1-I^{L,marg})^{\rho_L}$ enters once inside $\tau^{L,fisc,eff}$. Under the alternative base-side convention, $\omega^L$ is constructed from $\Delta W^{taxable}$ under the base-side labor rule in Online Appendix C, and $\tau^{L,fisc,eff}$ then excludes $\chi^L$. The base-side and rate-side penalties are never applied together.
 
-A key implementation convention is required here. Equation \eqref{eq:mfc_gross_channel_v10} is a realized-scenario marginal-conversion object. In the historical reduced-form mode, $MFC^{gross}$ is drawn directly and is fixed when solving threshold inversions. In the channel-based mode, however, some exposure ratios $\omega^j$ may themselves be functions of the AI shock because $\omega^j=(\Delta B^{j,tax}/Y^0)/g^{AI}$. Therefore the compact product $MFC^{gross}g^{AI}$ is exact at the evaluated scenario, but closed-form inversions that vary $g^{AI}$ are valid only under a frozen-weight convention. When channel weights are recomputed as the shock varies, the implementation solves thresholds from the channel-revenue function in Online Appendix D.
+Equation \eqref{eq:mfc_gross_channel_v10} is a realized-scenario marginal-conversion object. In the historical reduced-form mode, $MFC^{gross}$ is drawn directly and is fixed when solving threshold inversions. In the channel-based mode, however, some exposure ratios $\omega^j$ may themselves be functions of the AI shock because $\omega^j=(\Delta B^{j,tax}/Y^0)/g^{AI}$. Therefore the compact product $MFC^{gross}g^{AI}$ is exact at the evaluated scenario, but closed-form inversions that vary $g^{AI}$ are valid only under a frozen-weight convention. When channel weights are recomputed as the shock varies, the implementation solves thresholds from the channel-revenue function in Online Appendix D.
 
 Each simulation must declare one AI-rent convention --- subset or additional --- applied through Equation \eqref{eq:omega_k_net_v16}; the unit-compatible rescaling rule is in Online Appendix D.
 
@@ -476,13 +476,13 @@ An optional residual-friction penalty $\Omega^{res}_{i,s,r,t}\geq0$ is used only
 \begin{equation}\label{eq:omega_res_stress_v17}
     fs^{eff,res}_{i,p,s,r,t}=fs^{eff}_{i,p,s,r,t}-\Omega^{res}_{i,s,r,t}.
 \end{equation}
-This term must never be used as a second leakage penalty for the same mechanism. The equivalent threshold rule is given in Online Appendix F.
+This term is never a second leakage penalty for the same mechanism. The equivalent threshold rule is given in Online Appendix F.
 
 When a per-unit effective conversion rate is useful for reporting, it is derived as
 \begin{equation}\label{eq:mfc_eff_v17}
     MFC^{eff}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{g^{AI}_{i,s,t}}
 \end{equation}
-provided $g^{AI}_{i,s,t}>0$. The implementation must not draw $MFC^{eff}$ independently or subtract the same costs inside both $MFC^{eff}$ and $fs^{eff}$. In simulations, $fs^{eff}$ is the primary object because it avoids unstable division by very small $g^{AI}$ values.
+provided $g^{AI}_{i,s,t}>0$. $MFC^{eff}$ is never drawn independently, and the same costs are never subtracted inside both $MFC^{eff}$ and $fs^{eff}$. In simulations, $fs^{eff}$ is the primary object because it avoids unstable division by very small $g^{AI}$ values.
 
 \begin{table}[H]
 \centering
@@ -514,7 +514,7 @@ Fiscal regimes are indexed by $r$:
     \item $r=3$: AI-rent capture - explicit taxation of digital or AI-specific rents.
     \item $r=4$: combined reform - compliance gains, base broadening, and AI-rent capture.
 \end{itemize}
-The regime index changes $\tau^{j,fisc,eff}$, $\tau^{AI,eff}$, $ac^{net,fix}$, $tr^{ann}$, $leak^{fix}$, $ac^{ME}$, $tr^{ME}$, and $leak^{ME}$, but the scenario rent share $\lambda^{AI}_{i,s,t}$ has no $r$ index and regimes do not alter the AI shock. Base broadening acts on legal base-side margins: because exemptions and ordinary shifting enter $\Delta C^{AI,taxable}$ through $(1-exempt^C)$ and $\Delta\Pi^{AI,dom}$ through $\psi^{shift}$, regimes $r\geq2$ index $exempt^C_{i,r,t}$ and $\psi^{shift}_{i,s,r,t}$, inherited by $\omega^C$ and $\omega^K$; alternatively, a labelled rate-side convention acts through $\chi^j$. The same margin must never operate on both sides. Gains for $r\geq1$ are mechanical upper bounds because the baseline omits behavioral responses of evasion, avoidance, and relocation, especially for mobile AI rents. Every headline result relying on $r\geq1$ therefore requires the behavioral-erosion companion for $B^{j,taxable}$ in Online Appendix D; omitting it overstates reform payoffs relative to the conservative discipline used elsewhere. Fiscal-reform optimism must remain separate from technology optimism.
+The regime index changes $\tau^{j,fisc,eff}$, $\tau^{AI,eff}$, $ac^{net,fix}$, $tr^{ann}$, $leak^{fix}$, $ac^{ME}$, $tr^{ME}$, and $leak^{ME}$, but the scenario rent share $\lambda^{AI}_{i,s,t}$ has no $r$ index and regimes do not alter the AI shock. Base broadening acts on legal base-side margins: because exemptions and ordinary shifting enter $\Delta C^{AI,taxable}$ through $(1-exempt^C)$ and $\Delta\Pi^{AI,dom}$ through $\psi^{shift}$, regimes $r\geq2$ index $exempt^C_{i,r,t}$ and $\psi^{shift}_{i,s,r,t}$, inherited by $\omega^C$ and $\omega^K$; alternatively, a labelled rate-side convention acts through $\chi^j$. The same margin never operates on both sides. Gains for $r\geq1$ are mechanical upper bounds because the baseline omits behavioral responses of evasion, avoidance, and relocation, especially for mobile AI rents. Every headline result relying on $r\geq1$ therefore requires the behavioral-erosion companion for $B^{j,taxable}$ in Online Appendix D; omitting it overstates reform payoffs relative to the conservative discipline used elsewhere. Fiscal-reform optimism is kept separate from technology optimism.
 
 The observed fiscal anchors that discipline $MFC^{gross}$ and the country-specific calibration rule are in Online Appendix I.
 
@@ -720,7 +720,7 @@ A result is baseline only if it uses no $\Theta^{stress}$ and is robust over the
 
 \subsection{Unit discipline}
 
-All fiscal variables are expressed as shares of the no-AI counterfactual GDP denominator $Y^0$ unless stated otherwise. Policy cost, effective fiscal space, fixed administrative costs, fixed transition costs, fixed leakage, and revenue gains must therefore be dimensionless ratios. Marginal-equivalent administrative, transition, or leakage terms are rates per unit of the AI shock and enter through $\widetilde{MFC}^{gross}$. The AI shock from the literature must be reported in its source unit and then converted through the mandatory chain
+All fiscal variables are expressed as shares of the no-AI counterfactual GDP denominator $Y^0$ unless stated otherwise. Policy cost, effective fiscal space, fixed administrative costs, fixed transition costs, fixed leakage, and revenue gains are therefore dimensionless ratios. Marginal-equivalent administrative, transition, or leakage terms are rates per unit of the AI shock and enter through $\widetilde{MFC}^{gross}$. The AI shock from the literature must be reported in its source unit and then converted through the mandatory chain
 \begin{equation}
     \phi^{raw}_{s,u}\rightarrow \phi^Y_s=\kappa^{u\to Y}_s\phi^{raw}_{s,u}\rightarrow \phi^{Y,nom}_s\rightarrow g^{AI,level}_{i,s,H}.
 \end{equation}
@@ -737,7 +737,7 @@ The required parameter-reporting standard is in the master calibration matrix in
 
 \subsection{Fiscal-conversion modes}
 
-Two mutually exclusive modes obtain $MFC^{gross}$: channel mode derives it from effective rates and base-exposure weights; historical reduced-form mode draws it from the historical gross-capture distribution. A run must not treat both channel rates and independent $MFC^{gross}$ as primitives. If both are reported, one is the operative specification and the other a diagnostic decomposition. The distributional-assignment, data-construction, and audit-trail rules are in Online Appendix I.
+Two mutually exclusive modes obtain $MFC^{gross}$: channel mode derives it from effective rates and base-exposure weights; historical reduced-form mode draws it from the historical gross-capture distribution. No run treats both channel rates and an independent $MFC^{gross}$ as primitives. If both are reported, one is the operative specification and the other a diagnostic decomposition. The distributional-assignment, data-construction, and audit-trail rules are in Online Appendix I.
 
 \subsection{Threshold-based rather than point-estimate reporting}
 
@@ -800,7 +800,7 @@ $(1+\xi)c^{gross}_{i,p,t}+s^{PB}_{i,t}>fs^{eff}_{i,p,s,r,t}$ & Debt-consistent g
 \bottomrule
 \end{longtable}
 
-The last two rows are threshold failures; only exogenous adoption, tax-rate, and scenario supports define impossibility through a margin under Section \ref{subsec:infeasibility_impossibility}. These diagnostics must not be hidden by a continuous score: a full UBI may fail because the shock is too small, adoption is too low, capture is historically extreme, the tax instrument is implausible, or gross cost is too large. Each failure has a distinct policy meaning.
+The last two rows are threshold failures; only exogenous adoption, tax-rate, and scenario supports define impossibility through a margin under Section \ref{subsec:infeasibility_impossibility}. These diagnostics are never collapsed into a single continuous score: a full UBI may fail because the shock is too small, adoption is too low, capture is historically extreme, the tax instrument is implausible, or gross cost is too large. Each failure has a distinct policy meaning.
 
 \subsection{Impossibility score}\label{subsec:impossibility_score}
 
@@ -930,7 +930,7 @@ Three pilot countries are upper-middle-income and Chile is high income. The samp
 
 \subsection{Observed pilot anchors}
 
-The harmonization year is $t_0=2024$: for a 2024 observation, use the 2024 value; carry earlier values forward with a flag. A newer value such as 2026 requires either all macro anchors updated to 2026 or a non-harmonized source-specific robustness flag. Baseline comparisons must not silently mix years.
+The harmonization year is $t_0=2024$: for a 2024 observation, the 2024 value is used; earlier values are carried forward with a flag. A newer value such as 2026 requires either all macro anchors updated to 2026 or a non-harmonized source-specific robustness flag. Baseline comparisons never silently mix years.
 
 The preliminary seed values in the methodological draft have been superseded by the official observed anchors constructed by the reproducibility pipeline and reported in Table \ref{tab:results_anchors} in the results section. Those official anchors draw on GRD, OECD Revenue Statistics, WDI, AIPI, and national informality sources, under the harmonization rules above \citep{imf2024aipi,worldbank2026wdi,oecd2025revenue,oecd2025peru,worldbank2026humancapital,inechile2025ene,dane2026informalidad,inegi2024enoe}.
 
