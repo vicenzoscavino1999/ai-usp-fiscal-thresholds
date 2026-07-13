@@ -1,0 +1,12 @@
+{
+  "type": "review-block-4-followup-endpoint-kappa",
+  "note": "Documents the 2024-anchor/2034-endpoint cost convention (P1, G9-neutral in main) and reframes kappa^{LP->Y}=LS_i as a deliberate conservative attenuation rather than a units identity (P2, supplement Appendix A).",
+  "entries": [
+    {"scope":"appendix","token":"number:1","delta":1,"justification":"P2 adds the constant-employment pure units bridge kappa^{LP->Y}=1"},
+    {"scope":"appendix","token":"scenario:conservative","delta":2,"justification":"P2 'deliberate conservative attenuation' and 'more conservative'; accounting-convention label, not the conservative adoption scenario"},
+    {"scope":"appendix","token":"scenario:high","delta":1,"justification":"P2 'makes the high support more conservative' refers to the attenuated high labour-productivity scenario"},
+    {"scope":"document","token":"number:1","delta":1,"justification":"P2 adds the constant-employment pure units bridge kappa^{LP->Y}=1"},
+    {"scope":"document","token":"scenario:conservative","delta":2,"justification":"P2 'deliberate conservative attenuation' and 'more conservative'; accounting-convention label, not the conservative adoption scenario"},
+    {"scope":"document","token":"scenario:high","delta":1,"justification":"P2 'makes the high support more conservative' refers to the attenuated high labour-productivity scenario"}
+  ]
+}
