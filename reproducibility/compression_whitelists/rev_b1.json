@@ -1,0 +1,30 @@
+{
+  "type": "review-block-1-precision",
+  "note": "REV-B1 corrects the conditional-crossing description, reports the verified moderate channel-based probability ceiling, and aligns informality, scope, citation, and prespecification wording.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:2.4",
+      "delta": 2,
+      "justification": "intro and Monte Carlo Results report the verified maximum channel-based moderate crossing probability"
+    },
+    {
+      "scope": "body",
+      "token": "percent:2.4 percent",
+      "delta": 2,
+      "justification": "intro and Monte Carlo Results report the verified maximum channel-based moderate crossing probability"
+    },
+    {
+      "scope": "document",
+      "token": "number:2.4",
+      "delta": 2,
+      "justification": "intro and Monte Carlo Results report the verified maximum channel-based moderate crossing probability"
+    },
+    {
+      "scope": "document",
+      "token": "percent:2.4 percent",
+      "delta": 2,
+      "justification": "intro and Monte Carlo Results report the verified maximum channel-based moderate crossing probability"
+    }
+  ]
+}

@@ -56,7 +56,7 @@
 \begin{center}\small Running title: AI, Fiscal Space, and Social Protection\end{center}
 
 \begin{abstract}
-This paper develops a pre-registered threshold-accounting framework that converts AI productivity scenarios into fiscal space and asks when universal or semi-universal social protection becomes accounting-fiscally feasible in emerging economies. In its pilot application to Peru, Chile, Colombia, and Mexico, no instrument is feasible under moderate scenarios; under stress scenarios only Chile's guaranteed minimum income crosses robustly while satisfying a debt guardrail. The binding margin at moderate scenarios is the translation of global AI capability into domestic adoption, not taxation. The framework returns required-persistence horizons and falsifiable diagnostics, and can be recalibrated as evidence accumulates.
+This paper develops a prespecified threshold-accounting framework that converts AI productivity scenarios into fiscal space and asks when universal, categorical, or targeted social protection becomes accounting-fiscally feasible in emerging economies. In its pilot application to Peru, Chile, Colombia, and Mexico, no instrument is feasible under moderate scenarios; under stress scenarios only Chile's guaranteed minimum income crosses conditionally while satisfying a debt guardrail. The binding margin at moderate scenarios is the translation of global AI capability into domestic adoption, not taxation. The framework returns required-persistence horizons and falsifiable diagnostics, and can be recalibrated as evidence accumulates.
 \end{abstract}
 
 \noindent \textbf{Keywords:} artificial intelligence, fiscal space, universal social protection, universal basic income, informality, fiscal capacity, labor share, emerging economies, Latin America.\\
@@ -68,9 +68,9 @@ This paper develops a pre-registered threshold-accounting framework that convert
 
 The rapid diffusion of artificial intelligence (AI), especially generative AI, has reopened a classic political-economy question: if technology raises productivity while weakening the employment-income link, can social protection spread the gains? Public debate often reduces this to whether AI will finance a universal basic income, conflating an uncertain technological forecast, a fiscal conclusion, and one policy instrument.
 
-This paper asks when combinations of AI-induced growth, adoption, exposure, labor-share pressure, informality, and fiscal capacity make universal or semi-universal social protection baseline accounting-fiscally feasible in emerging economies. It does not predict that AI will finance a full UBI; its threshold method shows which instruments become feasible first under explicit assumptions.
+This paper asks when combinations of AI-induced growth, adoption, exposure, labor-share pressure, informality, and fiscal capacity make universal, categorical, or targeted social protection baseline accounting-fiscally feasible in emerging economies. It does not predict that AI will finance a full UBI; its threshold method shows which instruments become feasible first under explicit assumptions.
 
-Three facts motivate the question. Macroeconomic estimates are uncertain: conservative task-based evidence implies modest effects, while OECD micro-to-macro estimates imply annual aggregate TFP gains of 0.25 to 0.6 percentage points over a ten-year horizon \citep{acemoglu2024simple,filippucci2024miracle}. Exposure is not adoption: high occupational exposure may not yield high productivity gains without digital infrastructure, human capital, firm capabilities, and regulatory readiness, as the IMF AI Preparedness Index makes explicit \citep{cazzaniga2024genai}. Fiscal capacity is the final bottleneck: high informality, limited tax capacity, and weak tax systems can block the conversion of output gains into social protection \citep{gaspar2016tax}.
+Three facts motivate the question. Macroeconomic estimates are uncertain: conservative task-based evidence implies modest effects \citep{acemoglu2024simple}, while OECD micro-to-macro estimates imply annual aggregate TFP gains of 0.25 to 0.6 percentage points over a ten-year horizon \citep{filippucci2024miracle}. Exposure is not adoption: high occupational exposure may not yield high productivity gains without digital infrastructure, human capital, firm capabilities, and regulatory readiness, as the IMF AI Preparedness Index makes explicit \citep{cazzaniga2024genai}. Fiscal capacity is the final link in the transmission chain: high informality, limited tax capacity, and weak tax systems can block the conversion of output gains into social protection \citep{gaspar2016tax}.
 
 The central object is a country-policy-scenario feasibility condition. For country $i$, policy instrument $p$, fiscal regime $r$, and AI scenario $s$, the framework asks whether effective additional fiscal space is at least as large as the annual cost of the policy:
 \begin{equation}
@@ -82,9 +82,9 @@ where all terms are expressed as shares of the no-AI counterfactual GDP $Y^0_{i,
 \end{equation}
 The policy crosses the structural accounting threshold when $V_{i,p,s,r,t}\geq 1$.
 
-The paper makes four contributions. First, it unifies required growth, adoption, fiscal capture, and persistence $H^*$ in one accounting backbone. Second, it separates productivity, adoption, distribution, and fiscal capture while assigning informality once. Third, it yields structural results beyond the four countries: instrument ordering is a country-structure outcome, and translation can bind before taxation. Fourth, it produces a falsifiable pre-registered frontier with impossibility and placebo diagnostics rather than a point forecast.
+The paper makes four contributions. First, it unifies required growth, adoption, fiscal capture, and persistence $H^*$ in one accounting backbone. Second, it separates productivity, adoption, distribution, and fiscal capture while assigning each informality mechanism once within its channel to avoid double counting. Third, it yields structural results beyond the four countries: instrument ordering is a country-structure outcome, and translation can bind before taxation. Fourth, it produces a falsifiable prespecified frontier with impossibility and placebo diagnostics rather than a point forecast.
 
-Under the moderate scenario, no instrument in any country reaches the accounting threshold in any fiscal regime, and channel-based crossing probabilities are indistinguishable from zero for every instrument and country. Under the disruptive stress support, Chile's guaranteed minimum income crosses with probability above $0.97$ in every regime while passing the debt guardrail; Peru's universal pension crosses on an accounting basis, but its debt-consistent crossing probability is below one percent and the crossing is classified as fragile. Under the same support, Chile's guaranteed minimum income requires six years of scenario persistence in the status quo and five under combined reform. Debt-consistency doubles Peru's requirement to seventeen to twenty-two years; Colombia's pension and Mexico's minimum income require thirteen to twenty-one years of disruptive persistence, and their debt-consistent horizons exceed the twenty-five-year cap.
+Under the moderate scenario, no instrument in any country reaches the accounting threshold in any fiscal regime, and channel-based crossing probabilities remain below 2.4 percent in every cell. Under the disruptive stress support, Chile's guaranteed minimum income crosses with probability above $0.97$ in every regime while passing the debt guardrail; Peru's universal pension crosses on an accounting basis, but its debt-consistent crossing probability is below one percent and the crossing is classified as fragile. Under the same support, Chile's guaranteed minimum income requires six years of scenario persistence in the status quo and five under combined reform. Debt-consistency doubles Peru's requirement to seventeen to twenty-two years; Colombia's pension and Mexico's minimum income require thirteen to twenty-one years of disruptive persistence, and their debt-consistent horizons exceed the twenty-five-year cap.
 
 The binding margin at moderate scenarios is translation, not taxation. For every country-policy pair in the moderate support, the required translation factor exceeds one, so no attainable level of domestic adoption would suffice. Required effective rent-capture rates also exceed any declared or statutory bound by an order of magnitude.
 
@@ -336,7 +336,7 @@ interpreted as a regional support for productivity-enhancing GenAI exposure, not
 The implementation adopts published AIPI values consistently across countries; Online Appendix A documents reconstruction from its four dimensions.
 
 
-The full adoption module is specified in Online Appendix B; in it, informality and digital gaps enter the country adoption ceiling $\bar q_{i,t}$ with weights $\omega_I$ and $\omega_G$. The economic mechanism behind the informality term is that informality proxies small firm scale, credit constraints, low managerial capital, and weak complementary investments, which limit productive integration of AI even when consumer-side use is high \citep{worldbank2021informality}. Because informal firms do adopt some digital technologies partially, $\omega_I<1$ is the economically plausible range; a unit penalty is an extreme convention. For high-informality countries such as the pilot's primary case, the sensitivity of results to $\omega_I$ is reported prominently. In the baseline runs, the $p10\to p90$ tornado range of $\omega_I$ on $V^{gross}$ is exactly zero in every headline cell, and its Spearman rank correlation with $V^{gross}$ is within sampling noise ($|\rho^S|\leq0.015$, against tenth-ranked driver magnitudes of $0.03$--$0.05$), because the anchored-target calibration places productive adoption well below the country ceiling $\bar q_i$, leaving the ceiling weight inactive at the baseline calibration. The full ranking, added after the pre-registered baseline, is computed exclusively from the stored baseline draws and recorded in the replication package.
+The full adoption module is specified in Online Appendix B; in it, informality and digital gaps enter the country adoption ceiling $\bar q_{i,t}$ with weights $\omega_I$ and $\omega_G$. The economic mechanism behind the informality term is that informality proxies small firm scale, credit constraints, low managerial capital, and weak complementary investments, which limit productive integration of AI even when consumer-side use is high \citep{worldbank2021informality}. Because informal firms do adopt some digital technologies partially, $\omega_I<1$ is the economically plausible range; a unit penalty is an extreme convention. For high-informality countries such as the pilot's primary case, the sensitivity of results to $\omega_I$ is reported prominently. In the baseline runs, the $p10\to p90$ tornado range of $\omega_I$ on $V^{gross}$ is exactly zero in every headline cell, and its Spearman rank correlation with $V^{gross}$ is within sampling noise ($|\rho^S|\leq0.015$, against tenth-ranked driver magnitudes of $0.03$--$0.05$), because the anchored-target calibration places productive adoption well below the country ceiling $\bar q_i$, leaving the ceiling weight inactive at the baseline calibration. The full ranking, added after the prespecified baseline, is computed exclusively from the stored baseline draws and recorded in the replication package.
 \subsection[No-double-counting construction of T]{No-double-counting construction of $T_{i,s,t}$}\label{subsec:ndc_translation_main}
 
 The preferred country translation factor separates productive exposure from productive adoption without reusing the same information twice. Under the baseline convention, $E^{prod}$ enters the translation score, while $q^{prod}$ is calibrated from preparedness and frictions, not from $E^{prod}$. Define
@@ -973,7 +973,7 @@ This empirical design is intentionally modular. If a reader disagrees with the A
 
 \subsubsection{Expected qualitative pattern}\label{sec:expected}
 
-Before empirical implementation, the pre-registered hypotheses are:
+Before empirical implementation, the prespecified hypotheses are:
 \begin{itemize}
     \item \textbf{H1 (cost gradient).} Lower-gross-cost instruments should cross the threshold before higher-cost ones, and the full UBI benchmark is likely to require implausibly high AI growth or fiscal capture; it is treated as a fiscal stress benchmark rather than a recommended baseline policy. The guaranteed minimum income comparison is subject to the ideal-targeting caveat of Section \ref{sec:policy_costs}: its early crossing partly reflects the poverty-gap costing convention and must be re-examined under the $\theta^{target}$ loading.
     \item \textbf{H2 (preparedness and productive adoption over total exposure).} Total AI exposure should not proxy productivity; the operative channel is productive exposure combined with productive adoption, so economies with stronger preparedness and weaker institutional friction should generate more domestic translation. Where the productive-exposure input uses the common regional fallback support, cross-country variation in translation is a construction property rather than a testable finding, and H2 is testable only where country-specific exposure measures exist.
@@ -1087,8 +1087,7 @@ Section~\ref{subsec:results_inversions} make explicit.
 \subsection{Monte Carlo feasibility probabilities}\label{subsec:results_mc}
 
 Under the moderate scenario the channel-based probabilities confirm the deterministic results: crossing
-probabilities are indistinguishable from zero for every instrument
-and country. Table~\ref{tab:results_mc} reports headline-cell crossing probabilities on the
+probabilities remain below 2.4 percent in every cell. Table~\ref{tab:results_mc} reports headline-cell crossing probabilities on the
 prespecified buffer grid, with convergence verified across draw sizes; the three prespecified
 denominators (all draws, arithmetically valid draws, and support-valid draws) and the complete
 grid are provided in the replication package. Under the stress support, Chile's guaranteed minimum income crosses with
@@ -1200,7 +1199,7 @@ Three readings organize these results. Chile's conditional crossing reflects the
 The contribution is deliberately narrow. The paper does not forecast whether AI will finance
 UBI; it provides a calibrated threshold-accounting framework that identifies the combinations
 of AI productivity, productive adoption, fiscal capture, informality reduction, labor-share
-allocation, and policy cost under which universal or semi-universal social protection
+allocation, and policy cost under which universal, categorical, or targeted social protection
 instruments become accounting-fiscally feasible in emerging economies. This is the scope
 condition of the analysis: the object is a feasibility frontier, not a prediction of future
 revenue.
@@ -1233,7 +1232,7 @@ the framework. Fifth, the pure-layering convention sets existing-program offsets
 so the net-cost specification is conservative by construction. Sixth, all headline
 crossings are conditional on the disruptive support, which is deliberately beyond the
 baseline macroeconomic literature; the
-required persistence horizon was added after the pre-registered baseline as a derived
+required persistence horizon was added after the prespecified baseline as a derived
 statistic.
 
 \subsection{What the results do not establish}
@@ -1260,7 +1259,7 @@ This paper is the first concrete step of a longer research path, and it owes muc
 
 \section*{Data and code availability}
 
-This article is the empirical version of the framework. All results were generated by the replication package (tags fase-B and etapa-7.1), and the primary specification was frozen under a pre-registration hash before any baseline run. The horizon-inversion statistic H* was added post-baseline as a derived reporting statistic through a declared amendment recorded in the amendment registry; it introduced no parameter and altered no pre-registered result.
+This article is the empirical version of the framework. All results were generated by the replication package (tags fase-B and etapa-7.1), and the primary specification was frozen under a specification hash before any baseline run. The horizon-inversion statistic H* was added post-baseline as a derived reporting statistic through a declared amendment recorded in the amendment registry; it introduced no parameter and altered no prespecified result.
 
 The repository contains the complete replication code and hash-verified snapshots with SHA-256 manifests. \texttt{REPRODUCING.md} documents the reproduction workflow, and \texttt{DATA\_AVAILABILITY.md} records source-specific licenses and redistribution decisions. The package will be archived with a persistent identifier upon publication.
 
