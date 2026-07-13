@@ -1,0 +1,30 @@
+{
+  "type": "review-block-2-literature-positioning",
+  "note": "REV-B2 corrects scenario interpretation, the current-regime mechanism, and literature-positioning characterizations.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "the disruptive support, rather than the high-frontier case, is identified as the diagnostic stress test"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:high",
+      "delta": 1,
+      "justification": "tokenizer false positive from the approved high-income comparator classification"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "the disruptive support, rather than the high-frontier case, is identified as the diagnostic stress test"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:high",
+      "delta": 1,
+      "justification": "tokenizer false positive from the approved high-income comparator classification"
+    }
+  ]
+}
