@@ -1,0 +1,114 @@
+{
+  "type": "supplement-deaudit-style-and-sensitivity-subsection-merge",
+  "note": "R-7c2 applies the exact approved lexical renames and merges the duplicate Global sensitivity and stress tests subsection into Global sensitivity analysis. The stress token changes with the removed duplicate heading; the remaining deltas are the exact token inventory of the McKay et al. (1979) bibitem adjudicated for removal after S13 left it uncited.",
+  "entries": [
+    {
+      "scope": "appendix",
+      "token": "scenario:stress",
+      "delta": -1,
+      "justification": "S13 approved: stress token removed with the duplicate Global sensitivity and stress tests subsection heading"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": -1,
+      "justification": "S13 approved: stress token removed with the duplicate Global sensitivity and stress tests subsection heading"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:-245",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:10.2307",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:1268522",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:1979",
+      "delta": -2,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:2",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:21",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:239",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "appendix",
+      "token": "range:239--245",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "number:-245",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "number:10.2307",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "number:1268522",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "number:1979",
+      "delta": -2,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "number:2",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "number:21",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "number:239",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    },
+    {
+      "scope": "document",
+      "token": "range:239--245",
+      "delta": -1,
+      "justification": "bibitem huerfano por S13, eliminacion adjudicada"
+    }
+  ]
+}

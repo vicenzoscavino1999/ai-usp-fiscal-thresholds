@@ -69,7 +69,7 @@ Let $\phi^{raw}_{s,u}$ denote the raw AI shock reported by a source under unit $
 \begin{equation}
     \phi^Y_s=\kappa^{u\to Y}_s\phi^{raw}_{s,u},\qquad 0<\kappa^{u\to Y}_s\leq 1\ \text{(baseline convention)}.
 \end{equation}
-For $u=Y$, the bridge is the identity, $\kappa^{Y\to Y}=1$. For $u=LP$, $\kappa^{LP\to Y}\leq1$ reflects that GDP gains cannot exceed labour-productivity gains unless employment rises. For $u=TFP$, standard growth accounting implies amplification through capital deepening ($\Delta\ln Y=\Delta\ln TFP/(1-\alpha_K)>\Delta\ln TFP$); the baseline restriction $\kappa^{TFP\to Y}\leq1$ is therefore a deliberate conservative convention that excludes induced capital accumulation from the fiscal-base shock. A capital-deepening robustness bridge $\kappa^{TFP\to Y}\in[1,1/(1-\alpha_K)]$ may be reported separately and must be labelled as such.
+For $u=Y$, the bridge is the identity, $\kappa^{Y\to Y}=1$. For $u=LP$, $\kappa^{LP\to Y}\leq1$ reflects that GDP gains cannot exceed labour-productivity gains unless employment rises. For $u=TFP$, standard growth accounting implies amplification through capital deepening ($\Delta\ln Y=\Delta\ln TFP/(1-\alpha_K)>\Delta\ln TFP$); the baseline restriction $\kappa^{TFP\to Y}\leq1$ is therefore a deliberate conservative convention that excludes induced capital accumulation from the fiscal-base shock. A capital-deepening robustness bridge $\kappa^{TFP\to Y}\in[1,1/(1-\alpha_K)]$ may be reported separately, labelled as such.
 The nominal fiscal-base-compatible shock is then
 \begin{equation}
     \phi^{Y,nom}_s=(1+\phi^Y_s)(1+\pi^{AI,Y}_s)-1,
@@ -78,7 +78,7 @@ or, for small rates, $\phi^{Y,nom}_s\approx \phi^Y_s+\pi^{AI,Y}_s$. The exact ex
 
 \begin{table}[H]
 \centering
-\caption{Mandatory AI-shock objects and admissible use}
+\caption{AI-shock objects and their roles}
 \label{tab:ai_shock_objects_v17}
 \small
 \begin{tabular}{p{0.25\textwidth}p{0.48\textwidth}p{0.18\textwidth}}
@@ -221,9 +221,9 @@ where
 and $D_{s,t}=1$ in the static implementation.
 This extension changes the annual path of the shock but does not alter the central accounting-fiscal threshold logic.
 
-\subsection{Robustness menu}
+\subsection{Alternative specifications}
 
-The framework's robustness menu spans the following dimensions; the executed subset and its outputs are recorded in the prespecified plans and the robustness summary of the replication package:
+The framework's alternative specifications span the following dimensions; the executed subset and its outputs are recorded in the prespecified plans and the robustness summary of the replication package:
 \begin{longtable}{p{0.25\textwidth}p{0.62\textwidth}}
 \caption{AI-shock robustness dimensions}\label{tab:ai_shock_robustness}\\
 \toprule
@@ -618,7 +618,7 @@ The implementation separates administrative flow costs, annualized one-off trans
     ac^{net,fix}_{i,p,s,r,t}&=ac^{new,fix}_{i,p,s,r,t}-ac^{exist,sav}_{i,p,t}.
 \end{split}
 \end{equation}
-The administrative-savings term is included only when the gross or net policy-cost object does not already include administrative expenditure from the replaced program. If $C^{exist}$ already includes both transfer spending and administrative spending, $ac^{exist,sav}$ is set to zero to avoid double counting. A scenario-pairing rule also applies: administrative savings presuppose that the replaced programs are actually terminated, which is the same replacement interpretation that defines $C^{exist}$ on the cost side. Pure-layering implementations, in which the new instrument is added on top of existing programs, must set $ac^{exist,sav}=0$. If $V^{gross}$ is reported with $ac^{exist,sav}>0$, the combination must be labelled a conservative hybrid: the numerator credits replacement administrative savings while the gross-cost denominator does not credit the replaced transfer budget.
+The administrative-savings term is included only when the gross or net policy-cost object does not already include administrative expenditure from the replaced program. If $C^{exist}$ already includes both transfer spending and administrative spending, $ac^{exist,sav}$ is set to zero to avoid double counting. A scenario-pairing rule also applies: administrative savings presuppose that the replaced programs are actually terminated, which is the same replacement interpretation that defines $C^{exist}$ on the cost side. Pure-layering implementations, in which the new instrument is added on top of existing programs, must set $ac^{exist,sav}=0$. If $V^{gross}$ is reported with $ac^{exist,sav}>0$, the combination is labelled a conservative hybrid: the numerator credits replacement administrative savings while the gross-cost denominator does not credit the replaced transfer budget.
 Per-beneficiary administrative costs are systematically ordered: means-tested instruments exceed categorical instruments, which exceed universal instruments. Pilot implementations must not apply a uniform administrative-cost ratio across instruments, since that would compound the ideal-targeting bias in the GMI comparison.
 
 Transition expenditure is compared with recurring annual policy costs only after annualization. Let $tr^{oneoff}_{i,s,r,t}=TR^{oneoff}_{i,s,r,t}/Y^0_{i,t}$ denote an implementation stock cost and $tr^{rec}_{i,s,r,t}$ any recurring transition-management cost. For horizon $H^{tr}$ and discount or financing rate $r^{tr}$, define
@@ -662,7 +662,7 @@ Behavioral taxable-base erosion can be modeled as
 \begin{equation}
     B^{j,taxable}=B^j(1-\epsilon^{ero,j}\tau^j),
 \end{equation}
-where $\epsilon^{ero,j}$ captures avoidance, relocation, deductions, or reporting responses not already embedded in the baseline capital-base chain. The erosion elasticities $\epsilon^{ero,j}$ are calibrated structural parameters in the sense of Section \ref{sec:parameters}: they carry no preferred point value, are varied over a declared grid or bounded support recorded in the calibration audit trail, and must satisfy $\epsilon^{ero,j}\tau^j<1$ so that taxable bases remain positive.
+where $\epsilon^{ero,j}$ captures avoidance, relocation, deductions, or reporting responses not already embedded in the baseline capital-base chain. The erosion elasticities $\epsilon^{ero,j}$ are calibrated structural parameters in the sense of Section \ref{sec:parameters}: they carry no preferred point value, are varied over a declared grid or bounded support recorded in the archived calibration record, and must satisfy $\epsilon^{ero,j}\tau^j<1$ so that taxable bases remain positive.
 This extension is the mandatory robustness companion for reform-regime results ($r\geq1$).
 
 \subsection{Fiscal-conversion parameter grid}
@@ -966,7 +966,7 @@ The static object $g^{AI,max}_{s,t}=\phi^{Y,nom,max}_sD_{s,t}T^{max}$ is used on
 
 Under the frozen-weight convention, each required threshold is increasing in policy cost and decreasing in the realized values of the other margins: fiscal capture for $g^{AI,*}$; exposure and adoption for thresholds that operate through $T$; and the productivity scenario for $MFC^{gross,*}$. A threshold does not depend on its own realized value. These comparative statics are algebraic and should be reported as threshold movements rather than causal estimates.
 
-\subsection{Reporting protocol}
+\subsection{Reported threshold statistics}
 
 Every threshold table should state whether it uses gross or effective fiscal conversion, gross or net policy cost, debt-consistent or non-debt requirements, and whether the adoption score is no-double-counting or full-score robustness.
 
@@ -994,7 +994,7 @@ Let $\Theta^{(m)}$ denote draw $m$ of the uncertain-input vector. The full vecto
 Observed-adoption mode draws $q^{prod}$ from adoption or measurement-error distributions and treats $A,I,Gap$ as controls. Anchored simulated-adoption mode takes $A,I,Gap,\lambda_q,\nu_A,\nu_I,\nu_G,q^{use,target}_{i,t_0}$ as primitives; logit-inverted $\mu_{i,s,t_0}$ is not an independently identified structural coefficient. Structural-intercept robustness instead draws a common or hierarchical intercept without target inversion. Simulated-adoption modes derive $q^{use}$ and $q^{prod}$ endogenously and never draw $q^{prod}$ independently.
 
 Channel mode derives gross capture from tax bases rather than drawing it. Threshold runs declare frozen versus endogenous weights; only the former use closed forms, while the latter solve the channel-revenue function in Online Appendix D. Online Appendix G gives both mode vectors and the complete AI-rent primitives $\tau^{AI},\chi^{AI,dom},\psi^{shift,tech},\chi^{AI,compliance},\chi^{AI,enforce}$, with derived $\tau^{AI,eff}=\tau^{AI}\chi^{AI}$; historical reduced-form mode instead draws gross capture.
-Capturability elasticities $\rho_j$ are outside $\Theta_{hist}$. Labelled alternatives add their parameters to the audit trail: $\psi^{K,rate}$ for rate-side shifting and $\epsilon^{ero,j}$ for behavioral erosion.
+Capturability elasticities $\rho_j$ are outside $\Theta_{hist}$. Labelled alternatives add their parameters to the archived calibration record: $\psi^{K,rate}$ for rate-side shifting and $\epsilon^{ero,j}$ for behavioral erosion.
 Historical-mode channel rates may be descriptive but do not also construct $MFC^{gross}$. The run declares observed or simulated adoption; only observed-adoption mode treats $q^{prod}$ as primitive. Fixed GDP-share costs and marginal-equivalent deductions each occupy one margin. Nominal $AC$, $TR$, and $Leak$ are derived from GDP, never drawn independently alongside normalized objects.
 
 For each draw, effective fiscal space is computed directly from net marginal gross capture and fixed costs; when $g^{AI,level,(m)}>0$, the per-unit object $MFC^{eff,(m)}=fs^{eff,(m)}/g^{AI,level,(m)}$ is derived rather than drawn. The complete draw-level specification is in Online Appendix G.
@@ -1132,10 +1132,7 @@ A tornado chart varies one input at a time between low and high values. Where in
     S^T_j=1-\frac{Var_{\theta_{-j}}(E[V\mid\theta_{-j}])}{Var(V)}.
 \end{equation}
 If the Monte Carlo imposes dependence, Sobol indices are reported only in an independent diagnostic run or with a dependence-aware method.
-
-\subsection{Global sensitivity and stress tests}
-
-Report Spearman rank correlations, one-at-a-time tornado ranges, and grouped block sensitivity for AI productivity, adoption, fiscal capture, informality, leakage, and cost \citep{mckay1979lhs,morris1991factorial,saltelli2008global,sobol2001global}. Classical Sobol indices are reserved for independent-input diagnostic runs or dependence-aware sensitivity methods; Online Appendix G gives the full formulas and protocol.
+The implementation also reports grouped block sensitivity over the AI-productivity, adoption, fiscal-capture, informality, leakage, and cost blocks.
 
 % S3-SPAN-M10-END
 
@@ -1211,11 +1208,11 @@ The following matrix is the minimum reporting standard for the empirical applica
 \begin{longtable}{p{0.14\textwidth}p{0.22\textwidth}p{0.25\textwidth}p{0.20\textwidth}p{0.11\textwidth}}
 \caption{Master parameter-assignment and calibration matrix}\label{tab:master_calibration_matrix}\\
 \toprule
-Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source discipline \\
+Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source and construction \\
 \midrule
 \endfirsthead
 \toprule
-Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source discipline \\
+Input & Definition and unit & Baseline assignment & Uncertainty treatment & Primary source and construction \\
 \midrule
 \endhead
 $Y_{i,t}$, $Pop_{i,t}$, $N_{i,p,t}$ & GDP, population, and eligible population for policy $p$ & Observed country-year values; keep nominal and PPP versions separate & Fixed in baseline; measurement-error check if data are interpolated & World Bank PIP/WDI; national accounts \\
@@ -1240,7 +1237,7 @@ $mpc^W,mpc^{\Pi},mpc^R,mpc^{ben},m^M,exempt^C,\theta^{R,dom},\tau^{R,disp}$ & In
 $\lambda^{AI},\chi^{AI,dom},\psi^{shift,tech},\chi^{AI,compliance},\chi^{AI,enforce}$ & AI-rent share and capturability components in $[0,1]$ & Zero AI-rent channel in the status quo through $\tau^{AI}=0$ unless such an instrument already exists; bounded shares in positive scenarios & Bounded scenario grid or PERT & Fiscal law, international taxation, and Appendix \ref{app:fiscal_conversion_module} \\
 $I^L_{i,t}, I^F_{i,t}, I^C_{i,t}$ & Labour, firm, and consumption-base informality & Use source-specific measures where available; do not collapse all frictions into one informal-economy scalar unless data force it & Fixed observed value; marginal informality $I^{j,marg}$ preferred when sectoral AI-shock weights exist, aggregate $I^j$ as declared fallback & ILOSTAT; \citet{worldbank2021informality,medina2018shadow} \\
 $\rho_L,\rho_K,\rho_C,\rho_E,\rho_\psi$ & Elasticities for capturability, exemptions, and rate-side profit shifting & No preferred point value without estimation; $\rho_E$ and $\rho_\psi$ active only in their labelled conventions & Grid $\{0.5,1,1.5,2\}$; report sensitivity and Spearman/Sobol diagnostics & Calibrated structural parameters \\
-$\epsilon^{ero,j}$ & Behavioral taxable-base erosion elasticities by channel & Zero only in the mechanical upper-bound reading of reform regimes; mandatory companion for $r\geq1$ results, with $\epsilon^{ero,j}\tau^j<1$ & Declared grid or bounded PERT; recorded in the calibration audit trail & Tax avoidance and evasion elasticity literature; Appendix \ref{app:fiscal_conversion_module} \\
+$\epsilon^{ero,j}$ & Behavioral taxable-base erosion elasticities by channel & Zero only in the mechanical upper-bound reading of reform regimes; paired specification for $r\geq1$ results, with $\epsilon^{ero,j}\tau^j<1$ & Declared grid or bounded PERT; recorded in the archived calibration record & Tax avoidance and evasion elasticity literature; Appendix \ref{app:fiscal_conversion_module} \\
 $ac^{net,fix},tr^{ann},leak^{fix}$ & Fixed administrative, transition, and residual leakage costs as GDP-normalized ratios & Subtract from fiscal space after the AI shock is converted into revenue & Bounded PERT supports; triangular only as robustness & ASPIRE expenditure concepts; IMF fiscal policy; GRD \\
 $ac^{ME},tr^{ME},leak^{ME}$ & Marginal-equivalent deductions per unit of AI-induced output & Enter only through $\widetilde{MFC}^{gross}=MFC^{gross}-ac^{ME}-tr^{ME}-leak^{ME}$ & Bounded PERT or zero in baseline if costs are fixed & IMF fiscal policy; implementation stress tests \\
 $\Omega^{res},s^{PB}$ & Residual stress penalty and primary-balance correction & $\Omega^{res}=0$ in the baseline; derive $s^{PB}$ from baseline and debt-stabilizing primary balances & Positive stress grid for $\Omega^{res}$; WEO/DSA scenarios for $s^{PB}$ & IMF WEO and debt-sustainability analysis \\
@@ -1296,7 +1293,7 @@ Observed variables should be constructed as follows:
     \item External translation frontier: document the benchmark economies and year used to construct $S^{frontier}_{s,t}$, which remains fixed within each threshold inversion, and state that the benchmark set matches the population underlying the scenario shock $\phi_s$ (population consistency).
 \end{itemize}
 
-\subsection{Calibration audit trail}
+\subsection{Archived calibration record}
 
 Each empirical table should be accompanied by a machine-readable calibration file with the following fields:
 \begin{equation}
@@ -1305,7 +1302,7 @@ Each empirical table should be accompanied by a machine-readable calibration fil
     \{\text{support, distribution, dependence block, scenario class}\}.
 \end{gathered}
 \end{equation}
-This audit trail is not optional. It is what makes the framework reusable when future AI productivity estimates, adoption measures, or fiscal datasets change.
+This archived record is what makes the framework reusable when future AI productivity estimates, adoption measures, or fiscal datasets change.
 
 % S3-SPAN-M8-END
 
@@ -1474,11 +1471,6 @@ Lempert, R.J., Popper, S.W., and Bankes, S.C. (2003)
 Lipsitch, M., Tchetgen Tchetgen, E., and Cohen, T. (2010)
 \newblock Negative controls: A tool for detecting confounding and bias in observational studies.
 \newblock \emph{Epidemiology} 21(3): 383--388. DOI: 10.1097/EDE.0b013e3181d61eeb.
-
-\bibitem[McKay, Beckman and Conover(1979)]{mckay1979lhs}
-McKay, M.D., Beckman, R.J., and Conover, W.J. (1979)
-\newblock A comparison of three methods for selecting values of input variables in the analysis of output from a computer code.
-\newblock \emph{Technometrics} 21(2): 239--245. DOI: 10.2307/1268522.
 
 \bibitem[Medina and Schneider(2018)]{medina2018shadow}
 Medina, L. and Schneider, F. (2018)
