@@ -158,7 +158,7 @@ fiscal space must cross.
 The framework rests on a single transmission mechanism.
 The core mechanism is
 \begin{equation}
-\text{AI} \rightarrow \text{adoption} \rightarrow \text{productivity} \rightarrow \text{income distribution} \rightarrow \text{fiscal space} \rightarrow \text{social protection}.
+\text{AI} \rightarrow \text{adoption} \rightarrow \text{productivity} \rightarrow \text{factor-income allocation between labor and capital} \rightarrow \text{fiscal space} \rightarrow \text{social protection}.
 \end{equation}
 The deliberately one-directional chain omits feedback from protection to adoption or productivity through human capital, entrepreneurship, or labor supply; this is a maintained static-frontier assumption, not an empirical claim. Five frictions intervene: limited digital preparedness, uneven exposure, labor-share displacement, informality, and weak fiscal capacity.
 
@@ -169,7 +169,7 @@ For country $i$, policy $p$, scenario $s$, fiscal regime $r$, and year $t$, poli
 \begin{equation}
     fs^{eff}_{i,p,s,r,t}\geq c_{i,p,t}.
 \end{equation}
-Here $fs^{eff}$ is the fiscal space available to policy $p$: AI-generated revenue after the modeled deductions, including the policy's own net administrative burden. That burden may be negative when the programs replaced by $p$ are administratively more costly than the new instrument; in that case, $fs^{eff}$ exceeds revenue induced purely by AI.
+Here $fs^{eff}$ is the fiscal space available to policy $p$: AI-generated revenue after the modeled deductions, including the policy's own net administrative burden. That burden may be negative when the programs replaced by $p$ are administratively more costly than the new instrument; in that case, $fs^{eff}$ exceeds revenue induced purely by AI. To avoid double counting, the net-cost subtraction of an existing program (Section \ref{sec:policy_costs}) and any administrative-savings credit for the same program in $fs^{eff}$ are never applied jointly; the baseline uses the pure-layering convention that sets both offsets to zero, and any combined use is reported as a labelled conservative hybrid.
 This condition means only that the modeled AI-related fiscal-space channel covers the annual accounting cost of the policy. It does not imply welfare optimality, political feasibility, administrative feasibility, the absence of general-equilibrium effects, or long-run fiscal sustainability by itself. This narrower interpretation is deliberate because the IMF defines fiscal space as a multidimensional concept: the ability to raise spending or lower taxes without endangering market access and debt sustainability \citep{imf2016fiscalspace}. The framework therefore treats accounting coverage as a first-stage screen, not as a full fiscal-space assessment.
 \end{definition}
 
@@ -196,7 +196,7 @@ and the baseline gross cost ratio is
 \begin{equation}
     c^{gross,0}_{i,p,t}=\frac{C^{gross}_{i,p,t}}{Y^0_{i,t}}.
 \end{equation}
-Unless stated otherwise, $c^{gross}_{i,p,t}$ denotes $c^{gross,0}_{i,p,t}$. The post-AI-denominator version $c^{gross,AI}_{i,p,s,t}=C^{gross}_{i,p,t}/Y^{AI}_{i,s,t}$, using Section \ref{sec:ai_shocks}, is robustness only. With existing social-protection spending, define
+Unless stated otherwise, $c^{gross}_{i,p,t}$ denotes $c^{gross,0}_{i,p,t}$. The product form $C^{gross}_{i,p,t}=B_{i,p,t}N_{i,p,t}$ is the uniform-benefit case; the general expression sums unit-specific benefits, $C^{gross}_{i,p,t}=\sum_{u\in\mathcal{U}_{i,p,t}}w_u B_{u,i,p,t}$, with $B_{i,p,t}$ read as the mean benefit when unit benefits vary, as for the household-specific gaps of the guaranteed minimum income. The post-AI-denominator version $c^{gross,AI}_{i,p,s,t}=C^{gross}_{i,p,t}/Y^{AI}_{i,s,t}$, using Section \ref{sec:ai_shocks}, is robustness only. With existing social-protection spending, define
 \begin{equation}
     C^{net}_{i,p,t}=\max\{0,C^{gross}_{i,p,t}-C^{exist}_{i,p,t}\},
     \qquad
@@ -207,7 +207,7 @@ The gross cost is not net of first-round fiscal recycling: transfer recipients s
 \begin{equation}\label{eq:first_round_benefit_recycling_e5}
     c^{recyc}_{i,p,r,t}=c^{gross}_{i,p,t}\left[1-mpc^{ben}_i(1-m^M_i)(1-exempt^C_{i,t})\tau^{C,eff}_{i,r,t}\right],
 \end{equation}
-where $mpc^{ben}$ is recipients' marginal propensity to consume. The baseline omits recycling, which biases feasibility conservatively; if the extension is used, it is reported as a labelled variant, with the same convention applied to all instruments. With economy-wide parameters, the implied recycling offset is an approximate upper bound because recipient baskets are more exempt or informal and more domestic than average. Greater domestic content works oppositely through lower import leakage, so exemption and effective-rate margins drive that upper-bound reading. Equation \eqref{eq:first_round_benefit_recycling_e5} uses the base-side exemption convention; if exemptions instead enter $\tau^{C,eff}$, omit $(1-exempt^C_{i,t})$ under the assignment rule of Section \ref{sec:fiscal_conversion}.
+where $mpc^{ben}$ is recipients' marginal propensity to consume, $m^M_i$ the import content of recipient spending, $exempt^C_{i,t}$ the VAT-exempt consumption share, and $\tau^{C,eff}_{i,r,t}$ the effective consumption-tax rate under regime $r$. The baseline omits recycling, which biases feasibility conservatively; if the extension is used, it is reported as a labelled variant, with the same convention applied to all instruments. With economy-wide parameters, the implied recycling offset is an approximate upper bound because recipient baskets are more exempt or informal and more domestic than average. Greater domestic content works oppositely through lower import leakage, so exemption and effective-rate margins drive that upper-bound reading. Equation \eqref{eq:first_round_benefit_recycling_e5} uses the base-side exemption convention; if exemptions instead enter $\tau^{C,eff}$, omit $(1-exempt^C_{i,t})$ under the assignment rule of Section \ref{sec:fiscal_conversion}.
 For readability, $c^{net}_{i,p,t}$ denotes the no-AI-denominator net-cost ratio unless otherwise stated. The corresponding ratios are
 \begin{equation}
     V^{gross}_{i,p,s,r,t}=\frac{fs^{eff}_{i,p,s,r,t}}{c^{gross}_{i,p,t}},
@@ -244,10 +244,10 @@ The corresponding gross-cost rules are
     C^{PBI,gross}_{i,t} &= \eta_{PBI}PL_{i,t}N^{PBI}_{i,t},\\
     C^{UBI,gross}_{i,t} &= \eta_{UBI}PL_{i,t}Pop_{i,t}.
 \end{align}
-Here $PL_{i,t}$ is the poverty-line benchmark; $z_{i,t}$ the per-capita minimum-income threshold; $y^{pc}_{h,i,t}$ household income or consumption per capita; $n_{h,i,t}$ household size; $w_{h,i,t}$ survey weight; and $\chi_{GMI}\in(0,1]$ the poverty-gap share closed. With household-level objects, the equivalent rule is $\chi_{GMI}\sum_h w_h\max\{0,z^H_h-y^H_h\}$. Units of $z$ and $y$ must match before computing GMI cost; benefit levels and poverty or minimum-income thresholds enter the ratios annually. Full UBI is a fiscal stress test, not the default policy.
+Here $PL_{i,t}$ is the poverty-line benchmark; $z_{i,t}$ the per-capita minimum-income threshold; $y^{pc}_{h,i,t}$ household income or consumption per capita; $n_{h,i,t}$ household size; $w_{h,i,t}$ the household expansion weight; and $\chi_{GMI}\in(0,1]$ the poverty-gap share closed. With household-level objects, the equivalent rule is $\chi_{GMI}\sum_h w_h\max\{0,z^H_h-y^H_h\}$, with $z^H_h=n_h z$ and $y^H_h=n_h y^{pc}_h$. Units of $z$ and $y$ must match before computing GMI cost; benefit levels and poverty or minimum-income thresholds enter the ratios annually. Full UBI is a fiscal stress test, not the default policy.
 
-The GMI equation prices the aggregate poverty gap under three idealizations: exact identification of poor households (no inclusion or exclusion errors), perfect tapering to each household's gap, and no income response. Full gap-filling implies a 100 percent marginal tax rate below $z$; households may reduce or underreport income, widening the gap. The labelled loading $\theta^{target}\geq1$ defines $C^{GMI,load}=\theta^{target}C^{GMI,gross}$ and is reported alongside ideal targeting, because universal costs lack this idealization and the GMI-before-UBI ranking is partly mechanical.
-The cost side holds recipient behavior fixed: labor-supply responses to transfers (small in the cash-transfer evidence, in either direction) and local price effects of large transfers in poor areas are outside the accounting frontier \citep{gentilini2020ubi,oecd2017basicincome}.
+The GMI equation prices the aggregate poverty gap under three idealizations: exact identification of poor households (no inclusion or exclusion errors), perfect tapering to each household's gap, and no income response. Full gap-filling implies a 100 percent marginal tax rate below $z$; households may reduce or underreport income, widening the gap. The labelled loading $\theta^{target}\geq1$ defines $C^{GMI,load}=\theta^{target}C^{GMI,gross}$ and is reported alongside ideal targeting, because universal costs lack this idealization and the GMI-before-UBI ranking is partly mechanical. This loading captures cost-increasing targeting frictions---inclusion errors, imperfect tapering, and income responses---but not exclusion of eligible poor households, which instead lowers observed cost while the instrument fails its coverage objective and is therefore a separate, non-costed failure.
+The baseline also holds the household income distribution and the GMI poverty gap fixed at their pre-AI values: AI-induced changes in household eligibility and poverty gaps lie outside the accounting frontier, their direction is ambiguous, and they are examined through cost sensitivity rather than modeled here. The cost side likewise holds recipient behavior fixed: labor-supply responses to transfers (small in the cash-transfer evidence, though that evidence is largely from partial transfers and its external validity to a full guaranteed-minimum schedule is limited) and local price effects of large transfers in poor areas are outside the accounting frontier \citep{gentilini2020ubi,oecd2017basicincome}.
 
 Having established what must be financed, the framework next constructs the AI-induced domestic output gain that could finance it.
 
@@ -1014,7 +1014,7 @@ minimum income is the cheapest instrument where poverty gaps are small (about $0
 of GDP in Chile under ideal targeting), while the full UBI benchmark reaches roughly a fifth
 of GDP in Peru. Table~\ref{tab:results_policy_costs} reports gross annual costs at the 2024
 anchor and at the 2034 endpoint under the demographic-projection convention. The expected cost ordering across
-instruments is not universal: Chile's universal pension guarantee is several times more
+instruments is not universal: Chile's universal social pension is several times more
 expensive than its poverty gap, which reverses the ex-ante ordering of
 Section~\ref{sec:expected} for that country and illustrates that instrument rankings are a
 country-structure outcome rather than a design constant. Ageing raises age-conditioned
@@ -1177,8 +1177,8 @@ before any baseline run. The fragility discipline also holds
 (H5): no reported crossing relies on historically extreme capture, and the one borderline
 case is flagged as such rather than absorbed. The cost gradient (H1) governs within countries --- cheaper
 instruments cross first everywhere --- but the instrument ordering is not universal across
-countries: Chile's guaranteed minimum income is far cheaper than its universal pension
-guarantee, reversing the expected ranking and confirming that instrument hierarchies are
+countries: Chile's guaranteed minimum income is far cheaper than its universal social pension,
+reversing the expected ranking and confirming that instrument hierarchies are
 country-structure outcomes. The informality hypothesis (H3) is supported on the fiscal
 margin, which is embedded in observed effective rates, but the adoption-side channel is
 inert at current adoption levels: ablating informality from the adoption ceiling relaxes
@@ -1305,8 +1305,8 @@ Brollo, F., Dabla-Norris, E., de Mooij, R., Garcia-Macia, D., Hanappi, T., Liu, 
 \newblock Broadening the gains from generative AI: The role of fiscal policies.
 \newblock \emph{IMF Staff Discussion Note 2024/002}. DOI: 10.5089/9798400277177.006.
 
-\bibitem[Browne and Immervoll(2017)]{oecd2017basicincome}
-Browne, J. and Immervoll, H. (2017)
+\bibitem[Browne and Immervoll(2018)]{oecd2017basicincome}
+Browne, J. and Immervoll, H. (2018)
 \newblock Mechanics of replacing benefit systems with a basic income: Comparative results from a microsimulation approach.
 \newblock \emph{OECD Social, Employment and Migration Working Papers No. 201}. DOI: 10.1787/ec38a279-en.
 

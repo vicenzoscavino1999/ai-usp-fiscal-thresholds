@@ -1,0 +1,12 @@
+{
+  "type": "review-block-3-analytical-framework",
+  "note": "REV-B3 clarifies the factor-income chain, GMI fixed-distribution/exclusion scope, the general cost formula, the no-double-counting rule, symbol definitions, pension naming, and the OECD working-paper year.",
+  "entries": [
+    {"scope":"body","token":"command:\\ref{sec:policy_costs}","delta":1,"justification":"E2 no-double-counting rule cross-references the policy-cost section where net cost is defined"},
+    {"scope":"body","token":"scenario:conservative","delta":1,"justification":"E2 labelled conservative hybrid; tokenizer false positive from the accounting label, not the conservative adoption scenario"},
+    {"scope":"document","token":"command:\\ref{sec:policy_costs}","delta":1,"justification":"E2 no-double-counting rule cross-references the policy-cost section where net cost is defined"},
+    {"scope":"document","token":"scenario:conservative","delta":1,"justification":"E2 labelled conservative hybrid; tokenizer false positive from the accounting label, not the conservative adoption scenario"},
+    {"scope":"document","token":"number:2018","delta":2,"justification":"E9 OECD Working Paper No. 201 (DOI 10.1787/ec38a279-en) is dated 2018"},
+    {"scope":"document","token":"number:2017","delta":-2,"justification":"E9 removes the incorrect 2017 year for the OECD working paper (2017 is the journal version, different DOI)"}
+  ]
+}
