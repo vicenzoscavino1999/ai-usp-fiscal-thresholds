@@ -73,6 +73,15 @@ artifacts. Paths are relative to the repository root.
    artifact to its CSV and LaTeX outputs; the rendered inputs are tracked under
    `paper/tables/`.
 
+   The split manuscript renders the core result tables (4--7) twice: a compact version in the
+   main text (`table{4,5,6,7}_*.tex`) and a full-grid version in the online supplement
+   (`table{4,5,6,7}_supp_full.tex`). Both sets live under `paper/tables/` and are drawn from
+   the same manifest-cataloged source CSVs (`table4_vgross_baseline.csv`,
+   `table5_threshold_inversion.csv`, `table6_historical_plausibility.csv`,
+   `table7_monte_carlo.csv`); the `_supp_full` renderings extend the row coverage but introduce
+   no new data object. `table8_final_classification` is a replication-package artifact catalogued
+   in the manifest and not printed in the manuscript.
+
 The additional requirement of at least two seeds or convergence diagnostics is
 satisfied by the convergence arm. The 5,000/10,000/25,000/50,000-draw ladder and
 its `delta_from_previous`, `convergence_tolerance`, and `converged_flag` fields are
