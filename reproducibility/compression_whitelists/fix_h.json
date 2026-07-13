@@ -1,0 +1,42 @@
+{
+  "type": "preregistered-hypothesis-label-alignment",
+  "note": "FIX-H aligns the ex-ante hypothesis list with frozen H1-H5 and the results adjudication. Entries are the exact extract_tokens deltas reproduced before editing.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "scenario:high",
+      "delta": 1,
+      "justification": "net lexical delta from the approved H1-H5 list and retained pressure-without-capacity prediction"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": -1,
+      "justification": "old moderate-increase wording is replaced by the frozen H4 fiscal-regime hypothesis"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:stress",
+      "delta": 1,
+      "justification": "H1 explicitly identifies UBI as the fiscal stress benchmark defined by the frozen pre-registration"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:high",
+      "delta": 1,
+      "justification": "net lexical delta from the approved H1-H5 list and retained pressure-without-capacity prediction"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": -1,
+      "justification": "old moderate-increase wording is replaced by the frozen H4 fiscal-regime hypothesis"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": 1,
+      "justification": "H1 explicitly identifies UBI as the fiscal stress benchmark defined by the frozen pre-registration"
+    }
+  ]
+}
