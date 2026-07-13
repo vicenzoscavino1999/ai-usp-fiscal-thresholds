@@ -1,0 +1,150 @@
+{
+  "type": "structural-releveling",
+  "note": "R-7a autoriza exclusivamente los punteros sustituidos en el roadmap y los dos labels y punteros de las secciones paraguas.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "command:\\label{sec:analytical_framework}",
+      "delta": 1,
+      "justification": "A1 aprobado: label de la nueva seccion paraguas Analytical Framework"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{sec:empirical_application}",
+      "delta": 1,
+      "justification": "A2 aprobado: label de la nueva seccion paraguas Empirical Application"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:ai_shocks}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:analytical_framework}",
+      "delta": 1,
+      "justification": "E aprobado: puntero al nuevo paraguas Analytical Framework"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:conceptual}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:empirical_application}",
+      "delta": 1,
+      "justification": "E aprobado: puntero al nuevo paraguas Empirical Application"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:empirical_design}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:historical_plausibility}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:impossibility_falsification}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:parameters}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{sec:analytical_framework}",
+      "delta": 1,
+      "justification": "A1 aprobado: label de la nueva seccion paraguas Analytical Framework"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{sec:empirical_application}",
+      "delta": 1,
+      "justification": "A2 aprobado: label de la nueva seccion paraguas Empirical Application"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:ai_shocks}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:analytical_framework}",
+      "delta": 1,
+      "justification": "E aprobado: puntero al nuevo paraguas Analytical Framework"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:conceptual}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:empirical_application}",
+      "delta": 1,
+      "justification": "E aprobado: puntero al nuevo paraguas Empirical Application"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:empirical_design}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:historical_plausibility}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:impossibility_falsification}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:parameters}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:policy_costs}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{sec:thresholds}",
+      "delta": -1,
+      "justification": "E aprobado: puntero detallado eliminado del roadmap"
+    }
+  ]
+}
