@@ -6,6 +6,7 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{pdflscape}
@@ -1042,9 +1043,16 @@ are concentrated and instructive: Chile's guaranteed minimum income crosses in e
 including the status quo, and passes the debt guardrail with feasibility ratios between
 $2.6$ and $5.8$ across the loaded- and ideal-targeting variants ($3.9$--$5.8$ under ideal
 targeting; $2.6$--$3.9$ under the loaded companion); Peru's universal social pension crosses only marginally ($V$ between $1.0$
-and $1.4$), fails the debt guardrail in every regime, and its most marginal crossing (status quo regime, $V=1.02$) does not survive the raw labor-share robustness extension of Online Appendix C, falling to $V=0.98$. All stress-support results are conditional on a scenario deliberately beyond the baseline macroeconomic literature.
+and $1.4$), fails the debt guardrail in every regime, and its most marginal crossing (status quo regime, $V=1.02$) does not survive the raw labor-share robustness extension of Online Appendix C, falling to $V=0.98$. All stress-support results are conditional on a scenario deliberately beyond the baseline macroeconomic literature. Figure~\ref{fig:feasibility_heatmap} maps the full country-by-instrument grid across scenario supports.
 
 \input{tables/table4_vgross_baseline}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/headline_feasibility.pdf}
+\caption{Gross-cost feasibility ratio $V^{gross}$ under the status-quo fiscal regime. Each cell reports $V^{gross}=fs^{eff}/c^{gross}$ for the 2024 primary channel-based calibration, by country, policy instrument, and AI-scenario support. The structural accounting threshold is $V^{gross}=1$ (black-outlined cells cross it); beige marks a marginal crossing ($1\leq V^{gross}<1.10$) and red a crossing that clears the 10 percent prudential buffer ($V^{gross}\geq1.10$). Negative values indicate that fixed administrative, transition, and residual-leakage deductions exceed gross AI-induced revenue. The high-frontier input is a separately bridged labor-productivity scenario and need not rank monotonically above the moderate TFP scenario. The disruptive support is a diagnostic stress test, not a forecast. GMI denotes guaranteed minimum income; the loaded-targeting variant applies the declared targeting-cost loading.}
+\label{fig:feasibility_heatmap}
+\end{figure}
 
 \subsection{Historical plausibility and debt guardrails}\label{subsec:results_plausibility}
 

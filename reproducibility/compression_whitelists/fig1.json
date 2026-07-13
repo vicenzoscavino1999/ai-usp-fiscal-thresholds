@@ -1,0 +1,174 @@
+{
+  "type": "headline-feasibility-figure",
+  "note": "FIG-1 adds the reproducible headline gross-cost feasibility heatmap and its Results reference.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:1",
+      "delta": 2,
+      "justification": "figure caption states the structural threshold and marginal-crossing interval"
+    },
+    {
+      "scope": "body",
+      "token": "number:1.10",
+      "delta": 1,
+      "justification": "figure caption states the prudential-buffer threshold"
+    },
+    {
+      "scope": "body",
+      "token": "number:10",
+      "delta": 2,
+      "justification": "figure caption states the ten-percent prudential buffer in text and threshold notation"
+    },
+    {
+      "scope": "body",
+      "token": "number:2024",
+      "delta": 1,
+      "justification": "figure caption identifies the primary calibration year"
+    },
+    {
+      "scope": "body",
+      "token": "percent:10 percent",
+      "delta": 1,
+      "justification": "figure caption names the prudential buffer"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "figure caption identifies the disruptive support"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:high",
+      "delta": 1,
+      "justification": "figure caption identifies the high-frontier input"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "figure caption explains the high-versus-moderate ordering"
+    },
+    {
+      "scope": "body",
+      "token": "scenario:stress",
+      "delta": 1,
+      "justification": "figure caption identifies the diagnostic stress test"
+    },
+    {
+      "scope": "body",
+      "token": "sign:<",
+      "delta": 1,
+      "justification": "figure caption defines the marginal-crossing interval"
+    },
+    {
+      "scope": "body",
+      "token": "sign:\\geq",
+      "delta": 1,
+      "justification": "figure caption defines the prudential-buffer crossing"
+    },
+    {
+      "scope": "body",
+      "token": "sign:\\leq",
+      "delta": 1,
+      "justification": "figure caption defines the marginal-crossing interval"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\ref{fig:feasibility_heatmap}",
+      "delta": 1,
+      "justification": "Results text points to the new headline figure"
+    },
+    {
+      "scope": "body",
+      "token": "command:\\label{fig:feasibility_heatmap}",
+      "delta": 1,
+      "justification": "new headline figure receives its declared label"
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": 2,
+      "justification": "figure caption states the structural threshold and marginal-crossing interval"
+    },
+    {
+      "scope": "document",
+      "token": "number:1.10",
+      "delta": 1,
+      "justification": "figure caption states the prudential-buffer threshold"
+    },
+    {
+      "scope": "document",
+      "token": "number:10",
+      "delta": 2,
+      "justification": "figure caption states the ten-percent prudential buffer in text and threshold notation"
+    },
+    {
+      "scope": "document",
+      "token": "number:2024",
+      "delta": 1,
+      "justification": "figure caption identifies the primary calibration year"
+    },
+    {
+      "scope": "document",
+      "token": "percent:10 percent",
+      "delta": 1,
+      "justification": "figure caption names the prudential buffer"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:disruptive",
+      "delta": 1,
+      "justification": "figure caption identifies the disruptive support"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:high",
+      "delta": 1,
+      "justification": "figure caption identifies the high-frontier input"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "figure caption explains the high-versus-moderate ordering"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:stress",
+      "delta": 1,
+      "justification": "figure caption identifies the diagnostic stress test"
+    },
+    {
+      "scope": "document",
+      "token": "sign:<",
+      "delta": 1,
+      "justification": "figure caption defines the marginal-crossing interval"
+    },
+    {
+      "scope": "document",
+      "token": "sign:\\geq",
+      "delta": 1,
+      "justification": "figure caption defines the prudential-buffer crossing"
+    },
+    {
+      "scope": "document",
+      "token": "sign:\\leq",
+      "delta": 1,
+      "justification": "figure caption defines the marginal-crossing interval"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\ref{fig:feasibility_heatmap}",
+      "delta": 1,
+      "justification": "Results text points to the new headline figure"
+    },
+    {
+      "scope": "document",
+      "token": "command:\\label{fig:feasibility_heatmap}",
+      "delta": 1,
+      "justification": "new headline figure receives its declared label"
+    }
+  ]
+}
