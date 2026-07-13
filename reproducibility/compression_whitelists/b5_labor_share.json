@@ -1,0 +1,8 @@
+{
+  "type": "review-block-5-labor-share-channel",
+  "note": "Corrects the psi=0 neutrality claim and discloses the net-augmentation baseline (E1); clarifies the replication-output decomposition (E3, G9-neutral).",
+  "entries": [
+    {"scope":"body","token":"scenario:low","delta":-1,"justification":"E1 rephrases the incorrect 'Low-psi cells approach neutrality'; the removed 'Low' referred to low-augmentation cells, not the low AI-productivity scenario"},
+    {"scope":"document","token":"scenario:low","delta":-1,"justification":"E1 rephrases the incorrect 'Low-psi cells approach neutrality'; the removed 'Low' referred to low-augmentation cells, not the low AI-productivity scenario"}
+  ]
+}
