@@ -75,7 +75,7 @@ hash.
 
 ## Folder Structure
 
-- `src/ai_usp/`: certified deterministic mechanics.
+- `src/ai_usp/`: deterministic mechanics.
 - `scripts/`: ingestion, anchor builders, calibration, runners, closure exports.
 - `reproducibility/`: run harness, schemas, tolerances, snapshot manifests, reference outputs.
 - `reproducibility/reference/`: versioned official reference CSVs and hashes.
@@ -114,4 +114,4 @@ attribution and the license caveat.
 Author-approved calibration rows are materialized before result generation.
 The primary specification hash is stored in `PRIMARY_SPEC_HASH.txt`; pre-flight
 warns if it differs from the checked-out plan 02. Closing-stage commits are
-tagged and pushed with their tags (`fase-A`, `etapa-*`, `fase-B`).
+tagged at each milestone.

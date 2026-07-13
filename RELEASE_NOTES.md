@@ -1,11 +1,10 @@
-# Draft Release Notes: fase-B
+# Release Notes --- v1.1.0
 
 ## Scope
 
-Phase B release candidate for the AI-USP fiscal thresholds reproduction package.
-This tag closes the deterministic official grid, Monte Carlo Tier B, robustness,
-diagnostics/falsification, paper-table exports, and minimum publication
-documentation.
+Reproduction package for the AI-USP fiscal thresholds paper. This release provides the
+deterministic official grid, the Monte Carlo tiers, robustness runs, diagnostics and
+falsification, the paper-table exports, and the reproduction documentation.
 
 ## Included
 
@@ -36,12 +35,10 @@ documentation.
 
 ## Not Included
 
-- Public Zenodo deposition.
-- Public release visibility change.
 - GMI microdata-strong variant.
 - Country-specific productive-exposure estimates.
 
-## Validation Before Tag
+## Validation
 
 - `python -m pytest -q`
 - `python reproducibility/verify.py`
