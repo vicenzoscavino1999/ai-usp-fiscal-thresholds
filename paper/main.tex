@@ -722,7 +722,7 @@ study design with its ex ante hypotheses.
 
 \subsection{Calibration and Uncertainty}\label{sec:parameters}
 
-The main credibility threat is arbitrary calibration. Parameter assignment is therefore treated as a transparent, documented procedure rather than a set of discretionary point assumptions. Every input must be classified, sourced, transformed, bounded, and linked to an uncertainty treatment before it enters the feasibility frontier.
+The main credibility threat is arbitrary calibration. Parameter assignment is therefore treated as a transparent, documented procedure rather than a set of discretionary point assumptions. Each input is classified, sourced, transformed, bounded, and linked to an uncertainty treatment before it enters the feasibility frontier.
 
 \subsubsection{Parameter classes and their roles}
 
@@ -736,7 +736,7 @@ The classes are mutually interpretable even when they overlap empirically. Obser
 
 A result is baseline only if it uses no $\Theta^{stress}$ and is robust over the declared $\Theta^{calib}$ supports. Because calibrated inputs enter every run, the label means robustness over their supports, not their absence. Results requiring $\Theta^{stress}$ are stress feasibility.
 
-The machine-readable country-parameter registry, including values, supports, sources, and approval status, is provided in the replication package's \texttt{appendix\_i} calibration-registry files.
+The machine-readable country-parameter registry, including values, supports, and sources, is available in the replication materials.
 
 \subsubsection{Unit discipline}
 
@@ -748,7 +748,7 @@ Micro studies such as \citet{noy2023experimental} and \citet{brynjolfsson2023gen
 
 \subsubsection{AI-productivity scenario ladder}
 
-The externally disciplined scenario supports and deterministic closures are reported in Table \ref{tab:phi_numerical_closure}. These objects are reported across the paper and the replication package: the source-unit raw supports in Table \ref{tab:phi_numerical_closure}; the scenario bridges $\kappa^{u\to Y}$ and nominal adjustments $\pi^{AI,Y}$ in the calibration registry; the post-bridge nominal supports in the primary-specification table of Section \ref{sec:empirical_results}; and the per-cell accumulated level objects $g^{AI,level}$ in the run traces.
+The externally disciplined scenario supports and deterministic closures are reported in Table \ref{tab:phi_numerical_closure}. These objects are reported across the paper and the replication package: the source-unit raw supports in Table \ref{tab:phi_numerical_closure}; the scenario bridges $\kappa^{u\to Y}$ and nominal adjustments $\pi^{AI,Y}$ in the calibration registry; the post-bridge nominal supports in the primary-specification table of Section \ref{sec:empirical_results}; and the per-cell accumulated level objects $g^{AI,level}$ in the replication materials.
 A result may be called ``baseline feasible'' only if it holds after converting conservative or moderate TFP-equivalent raw supports into model-ready $\phi^{Y,nom}$ and then into $g^{AI,level}$. A result that requires the high G7 frontier case is labelled ``frontier feasible''; a result that requires the disruptive support is labelled ``stress feasible'' rather than interpreted as a forecast.
 
 \subsubsection{Fiscal-conversion modes}
@@ -1145,10 +1145,7 @@ productivity shock disciplined to $0.3$--$0.6$ percent annually, 2010 connectivi
 and pre-2009 historical percentiles --- produces no crossing anywhere, with a maximum
 feasibility ratio of $0.75$. The framework does not fabricate feasibility from a
 technological wave that, as a matter of record, did not finance universal social protection.
-The exposure-substitution negative control has one exception, reported as a declared failure rather than
-repaired: substituting displacement-only exposure for
-productive exposure collapses feasibility by exactly the exposure ratio, confirming the
-mechanism, yet Chile's stress-scenario minimum income still crosses. Channel ablation
+The exposure-substitution negative control has one exception: substituting displacement-only exposure for productive exposure reduces feasibility in proportion to the exposure ratio but does not eliminate Chile's stress-scenario minimum income crossing. Channel ablation
 corroborates the reading that this cell is overdetermined --- it survives switching off any
 single fiscal channel --- so its conditional label carries an explicit caveat: at the
 disruptive support, that crossing is driven by the scale of the shock relative to a very
