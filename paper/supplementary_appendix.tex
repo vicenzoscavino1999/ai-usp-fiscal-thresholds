@@ -1247,7 +1247,7 @@ $RST_{i,t}$, $\delta_s,\psi_s,\zeta_s,$\newline $\lambda_{LS}$ & Reskilling/task
 $MFC^{gross}_{i,s,r,t}$ & Gross marginal fiscal capture of AI-induced output before administrative costs, transition costs, and leakage & Construct from channel model or draw from historical gross-capture distribution, but not both in the same run & Channel-mode derived object or historical-mode stochastic object; report mode explicitly & UNU-WIDER GRD; \citet{brollo2024fiscal}; IMF fiscal-space guidance \\
 $MFC^{eff}_{i,p,s,r,t}$ & Derived reporting object after subtracting $ac$, $tr$, and $leak$ from fiscal space & Compute only as $MFC^{eff}=fs^{eff}/g^{AI}$ when $g^{AI}>0$; not drawn as an independent primitive & Report for interpretation; do not use for gross historical plausibility checks & Derived from $MFC^{gross}$, $g^{AI}$, $ac$, $tr$, and $leak$ \\
 $\tau^{L,fisc,eff},\tau^{K,fisc,eff},$\newline $\tau^{C,eff},\tau^{AI};$\newline $\tau^{L,disp},\tau^{K,disp}$ & Fiscal-capture rates for revenue and disposable-income rates for induced consumption & Infer fiscal rates from revenue composition where possible; disposable rates may coincide only in simplified calibration & Grid by regime; cap AI-rent tax at plausible maximum $\bar\tau^{AI}$ & GRD revenue composition; \citet{brollo2024fiscal} \\
-$\chi^{Kbase},\chi^{dom},\psi^{shift};$\newline $\psi^{K,rate}$ & Capital-base chain parameters, each in $[0,1]$; $\psi^{K,rate}$ is the rate-side shifting parameter, active only under the labelled rate-side convention with $\psi^{shift}=0$ & Construct the taxable domestic post-shifting capital base without double counting & Bounded PERT on low/central/high supports & National accounts and profit-shifting literature \\
+$\chi^{Kbase},\chi^{dom},\psi^{shift};$\newline $\psi^{K,rate}$ & Capital-base chain parameters, each in $[0,1]$; $\psi^{K,rate}$ is the rate-side shifting parameter, active only under the labelled rate-side convention with $\psi^{shift}=0$ & Construct the taxable domestic post-shifting capital base without double counting & Bounded PERT on low/central/high supports & National accounts and the profit-shifting literature \citep{beer2020international} \\
 $mpc^W,mpc^{\Pi},mpc^R,$\newline $mpc^{ben},m^M,exempt^C,$\newline $\theta^{R,dom},\tau^{R,disp}$ & Induced-consumption shares and rates, each in $[0,1]$; $mpc^{ben}$ active only in the labelled first-round recycling variant & Calibrate disposable-income pass-through, domestic routing, imports, and exemptions consistently & Bounded PERT or declared grid & Household surveys, national accounts, and VAT rules \\
 $\lambda^{AI},\chi^{AI,dom},$\newline $\psi^{shift,tech},$\newline $\chi^{AI,compliance},$\newline $\chi^{AI,enforce}$ & AI-rent share and capturability components in $[0,1]$ & Zero AI-rent channel in the status quo through $\tau^{AI}=0$ unless such an instrument already exists; bounded shares in positive scenarios & Bounded scenario grid or PERT & Fiscal law, international taxation, and Appendix \ref{app:fiscal_conversion_module} \\
 $I^L_{i,t}, I^F_{i,t}, I^C_{i,t}$ & Labour, firm, and consumption-base informality & Use source-specific measures where available; do not collapse all frictions into one informal-economy scalar unless data force it & Fixed observed value; marginal informality $I^{j,marg}$ preferred when sectoral AI-shock weights exist, aggregate $I^j$ as declared fallback & ILOSTAT; \citet{worldbank2021informality,medina2018shadow} \\
@@ -1425,6 +1425,11 @@ Athey, S. and Imbens, G.W. (2017)
 Bass, F.M. (1969)
 \newblock A new product growth for model consumer durables.
 \newblock \emph{Management Science} 15(5): 215--227. DOI: 10.1287/mnsc.15.5.215.
+
+\bibitem[Beer, de Mooij and Liu(2020)]{beer2020international}
+Beer, S., de Mooij, R. and Liu, L. (2020)
+\newblock International corporate tax avoidance: A review of the channels, magnitudes, and blind spots.
+\newblock \emph{Journal of Economic Surveys} 34(3): 660--688. DOI: 10.1111/joes.12305.
 
 \bibitem[Bertrand, Duflo and Mullainathan(2004)]{bertrand2004trust}
 Bertrand, M., Duflo, E., and Mullainathan, S. (2004)

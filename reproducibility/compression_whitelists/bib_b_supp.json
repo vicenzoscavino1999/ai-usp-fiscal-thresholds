@@ -1,0 +1,22 @@
+{
+  "type": "verified-cited-reference-addition-supplement",
+  "note": "BIB-B adds the cited Beer et al. profit-shifting reference to the supplement calibration table and bibliography.",
+  "entries": [
+    {"scope":"appendix","token":"number:-688","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"appendix","token":"number:10.1111","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"appendix","token":"number:12305","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"appendix","token":"number:2020","delta":2,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"appendix","token":"number:3","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"appendix","token":"number:34","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"appendix","token":"number:660","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"appendix","token":"range:660--688","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"number:-688","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"number:10.1111","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"number:12305","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"number:2020","delta":2,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"number:3","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"number:34","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"number:660","delta":1,"justification":"verified Beer et al. bibitem addition"},
+    {"scope":"document","token":"range:660--688","delta":1,"justification":"verified Beer et al. bibitem addition"}
+  ]
+}
