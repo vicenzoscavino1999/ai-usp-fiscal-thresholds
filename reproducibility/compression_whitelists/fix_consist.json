@@ -1,0 +1,18 @@
+{
+  "type": "channel-based-claim-scope-and-conclusion-precision",
+  "note": "FIX-CONSIST qualifies primary no-crossing claims as channel-based and reframes the conclusion. The sole audited delta is the predeclared moderate-scenario qualifier.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "approved conclusion wording identifies the binding margin at moderate scenarios"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:moderate",
+      "delta": 1,
+      "justification": "approved conclusion wording identifies the binding margin at moderate scenarios"
+    }
+  ]
+}
