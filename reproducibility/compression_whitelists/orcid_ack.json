@@ -1,0 +1,30 @@
+{
+  "type": "author-orcid-and-acknowledgments",
+  "note": "ORCID-ACK adds the verified author ORCID in front matter and a zero-token acknowledgments section.",
+  "entries": [
+    {
+      "scope": "document",
+      "token": "number:0009",
+      "delta": 2,
+      "justification": "ORCID segment appears in the hyperlink URL and visible text"
+    },
+    {
+      "scope": "document",
+      "token": "number:0000",
+      "delta": 2,
+      "justification": "ORCID segment appears in the hyperlink URL and visible text"
+    },
+    {
+      "scope": "document",
+      "token": "number:2472",
+      "delta": 2,
+      "justification": "ORCID segment appears in the hyperlink URL and visible text"
+    },
+    {
+      "scope": "document",
+      "token": "number:9785",
+      "delta": 2,
+      "justification": "ORCID segment appears in the hyperlink URL and visible text"
+    }
+  ]
+}
