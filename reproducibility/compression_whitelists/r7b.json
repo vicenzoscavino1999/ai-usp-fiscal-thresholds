@@ -1,0 +1,30 @@
+{
+  "type": "journal-style-precision",
+  "note": "R-7b autoriza solo la salida del intervalo 0.6--0.8 de la Introduccion; la formulacion completa permanece en Monte Carlo Results.",
+  "entries": [
+    {
+      "scope": "body",
+      "token": "number:0.6",
+      "delta": -1,
+      "justification": "E2 aprobado: el extremo inferior del intervalo sale de la Introduccion y permanece en Monte Carlo Results"
+    },
+    {
+      "scope": "body",
+      "token": "number:0.8",
+      "delta": -1,
+      "justification": "E2 aprobado: el extremo superior del intervalo sale de la Introduccion y permanece en Monte Carlo Results"
+    },
+    {
+      "scope": "document",
+      "token": "number:0.6",
+      "delta": -1,
+      "justification": "E2 aprobado: el extremo inferior del intervalo sale de la Introduccion y permanece en Monte Carlo Results"
+    },
+    {
+      "scope": "document",
+      "token": "number:0.8",
+      "delta": -1,
+      "justification": "E2 aprobado: el extremo superior del intervalo sale de la Introduccion y permanece en Monte Carlo Results"
+    }
+  ]
+}
