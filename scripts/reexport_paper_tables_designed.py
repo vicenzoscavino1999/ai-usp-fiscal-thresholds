@@ -1,4 +1,4 @@
-"""Reexporta las tablas impresas 4, 5, 5b, 6 y 7 desde los CSVs oficiales.
+"""Reexporta las tablas impresas 1--7 y 5b desde los CSVs oficiales.
 
 Se ejecuta DESPUÉS de finalize_phase_b; sustituye los .tex truncados head-N por
 selecciones diseñadas; valores idénticos a los CSVs oficiales; cambio de formato
@@ -18,6 +18,43 @@ SOURCE_DIR = ROOT / "reports" / "paper_tables"
 REPORTS_DIR = ROOT / "reports"
 TARGET_DIR = ROOT / "paper" / "tables"
 
+TABLE1_FIELDS = [
+    "country_id",
+    "year",
+    "gdp_nominal_lcu",
+    "gdp_nominal_usd",
+    "cpi_index",
+    "tax_revenue_gdp",
+    "total_revenue_gdp",
+    "gross_debt_gdp",
+    "pb_stabilizing_gdp",
+    "nominal_interest_rate",
+    "gap_index",
+    "coverage_lte_wimax_pct",
+    "speed_fixed_download_mbps",
+    "speed_mobile_download_mbps",
+    "A_aipi_total",
+    "E_prod",
+    "Gap_excluded_indicators",
+    "I_adopt_informality",
+    "q_use_target",
+]
+TABLE2_FIELDS = [
+    "country_id",
+    "policy_id",
+    "policy_variant_id",
+    "gmi_version",
+    "cost_gross_gdp",
+    "cost_net_gdp",
+    "endpoint_cost_rule",
+]
+TABLE3_FIELDS = [
+    "block",
+    "id",
+    "phi_y_nominal_min",
+    "phi_y_nominal_max",
+    "description",
+]
 TABLE4_FIELDS = [
     "country_id",
     "policy_variant_id",
@@ -133,6 +170,7 @@ HEADLINE_POLICIES = [
 HEADLINE_SCENARIOS = ["mid", "stress"]
 REQUIREMENT_BASES = ["baseline", "debt_consistent"]
 CAPTION_SUFFIX = "Headline cells; the full grid is provided in the Online Appendix and the reproducibility package."
+COUNTRY_LABELS = {"CHL": "Chile", "COL": "Colombia", "MEX": "Mexico", "PER": "Peru"}
 
 
 def read_csv(name: str, expected_fields: list[str]) -> list[dict[str, str]]:
@@ -249,6 +287,148 @@ def display_round(
                 output[field] = f"{float(output[field]):.{decimal_places}f}"
         rendered.append(output)
     return rendered
+
+
+def decimal_text(value: str, places: int, scale: Decimal = Decimal("1")) -> str:
+    quantum = Decimal(1).scaleb(-places)
+    return f"{(Decimal(value) * scale).quantize(quantum, rounding=ROUND_HALF_UP):.{places}f}"
+
+
+def write_table1(rows: list[dict[str, str]]) -> None:
+    caption = (
+        "Observed 2024 country anchors. GDP is in USD billions; fiscal ratios, "
+        "informality, and adoption are percentages. The complete anchor matrix is "
+        "provided in the replication package."
+    )
+    lines = [
+        r"\begingroup",
+        r"\begin{table}[!htbp]",
+        r"\centering",
+        rf"\caption{{{caption}}}\label{{tab:results_anchors}}",
+        r"\fontsize{7.2}{8.6}\selectfont",
+        r"\setlength{\tabcolsep}{2.4pt}",
+        r"\begin{tabular}{@{}lrrrrrrrr@{}}",
+        r"\toprule",
+        r"Country & \shortstack{GDP\\(USD bn)} & \shortstack{Tax rev.\\(\% GDP)} & \shortstack{Total rev.\\(\% GDP)} & \shortstack{Debt\\(\% GDP)} & AIPI & \shortstack{Digital\\gap} & \shortstack{Informality\\(\%)} & \shortstack{Adoption\\target (\%)} \\",
+        r"\midrule",
+    ]
+    for row in rows:
+        rendered = [
+            COUNTRY_LABELS[row["country_id"]],
+            decimal_text(row["gdp_nominal_usd"], 1, Decimal("0.000000001")),
+            decimal_text(row["tax_revenue_gdp"], 1),
+            decimal_text(row["total_revenue_gdp"], 1),
+            decimal_text(row["gross_debt_gdp"], 1),
+            decimal_text(row["A_aipi_total"], 3),
+            decimal_text(row["Gap_excluded_indicators"], 3),
+            decimal_text(row["I_adopt_informality"], 1, Decimal("100")),
+            decimal_text(row["q_use_target"], 1, Decimal("100")),
+        ]
+        lines.append(" & ".join(latex_escape(value) for value in rendered) + r" \\")
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\end{tabular}",
+            r"\end{table}",
+            r"\endgroup",
+            "",
+        ]
+    )
+    (TARGET_DIR / "table1_anchors.tex").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_table2(rows: list[dict[str, str]]) -> None:
+    caption = (
+        "Gross annual policy costs at the 2024 anchor. GMI rows report ideal and loaded "
+        "targeting separately; net costs equal gross costs under the pure-layering baseline."
+    )
+    lines = [
+        r"\begingroup",
+        r"\singlespacing",
+        r"\fontsize{8}{9.6}\selectfont",
+        r"\setlength{\tabcolsep}{3pt}",
+        r"\begin{longtable}{@{}p{0.12\linewidth}p{0.12\linewidth}p{0.13\linewidth}r p{0.36\linewidth}@{}}",
+        rf"\caption{{{caption}}}\label{{tab:results_policy_costs}}\\",
+        r"\toprule",
+        r"Country & Instrument & Variant & \shortstack{Gross cost\\(\% GDP)} & Endpoint convention \\",
+        r"\midrule",
+        r"\endfirsthead",
+        rf"\caption[]{{{caption} (continued)}}\\",
+        r"\toprule",
+        r"Country & Instrument & Variant & \shortstack{Gross cost\\(\% GDP)} & Endpoint convention \\",
+        r"\midrule",
+        r"\endhead",
+    ]
+    for row in rows:
+        if row["gmi_version"] == "GMI_ideal_aggregate":
+            variant = "Ideal"
+        elif row["gmi_version"] == "GMI_loaded_aggregate":
+            variant = "Loaded"
+        else:
+            variant = "--"
+        rule = row["endpoint_cost_rule"]
+        if rule.startswith("GMI fixed aggregate"):
+            endpoint = "Fixed aggregate cost"
+        elif rule.startswith("Colombia PEN"):
+            endpoint = "WPP sex- and age-specific eligibility"
+        else:
+            endpoint = "WPP eligible-share ratio"
+        rendered = [
+            COUNTRY_LABELS[row["country_id"]],
+            row["policy_id"],
+            variant,
+            decimal_text(row["cost_gross_gdp"], 4, Decimal("100")),
+            endpoint,
+        ]
+        lines.append(" & ".join(latex_escape(value) for value in rendered) + r" \\")
+    lines.extend([r"\bottomrule", r"\end{longtable}", r"\endgroup", ""])
+    (TARGET_DIR / "table2_policy_costs.tex").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_table3(rows: list[dict[str, str]]) -> None:
+    caption = "Primary AI scenarios and fiscal regimes."
+    scenario_rows = {row["id"]: row for row in rows if row["block"] == "scenario"}
+    regime_rows = {row["id"]: row for row in rows if row["block"] == "regime"}
+    scenario_labels = {"low": "Low", "mid": "Moderate", "high": "High", "stress": "Disruptive stress"}
+    paired: list[tuple[str, str, str, str]] = []
+    for index, regime in enumerate(REGIMES):
+        scenario = ("low", "mid", "high", "stress")[index] if index < 4 else None
+        if scenario is None:
+            scenario_label = ""
+            support = ""
+        else:
+            row = scenario_rows[scenario]
+            low = decimal_text(row["phi_y_nominal_min"], 3, Decimal("100"))
+            high = decimal_text(row["phi_y_nominal_max"], 3, Decimal("100"))
+            support = low if low == high else f"{low}--{high}"
+            scenario_label = scenario_labels[scenario]
+        match = regime_rows[regime]["description"].rsplit("=", 1)[-1]
+        paired.append((scenario_label, support, regime, decimal_text(match, 2, Decimal("100"))))
+    lines = [
+        r"\begingroup",
+        r"\begin{table}[!htbp]",
+        r"\centering",
+        rf"\caption{{{caption}}}\label{{tab:results_primary_spec}}",
+        r"\small",
+        r"\setlength{\tabcolsep}{7pt}",
+        r"\begin{tabular}{@{}lr@{\hspace{3em}}lr@{}}",
+        r"\toprule",
+        r"Scenario & \shortstack{Annual AI shock\\(\% of GDP)} & Regime & \shortstack{Median $MFC^{gross}$\\(\%)} \\",
+        r"\midrule",
+    ]
+    for row in paired:
+        lines.append(" & ".join(latex_escape(value) for value in row) + r" \\")
+    lines.extend(
+        [
+            r"\bottomrule",
+            r"\multicolumn{4}{@{}p{0.88\linewidth}@{}}{\footnotesize The high scenario reports the country range after the source-unit and nominal-output bridges; other scenarios are point supports.} \\",
+            r"\end{tabular}",
+            r"\end{table}",
+            r"\endgroup",
+            "",
+        ]
+    )
+    (TARGET_DIR / "table3_primary_specification.tex").write_text("\n".join(lines), encoding="utf-8")
 
 
 def write_table4(rows: list[dict[str, str]]) -> None:
@@ -440,6 +620,9 @@ def write_table5b(rows: list[dict[str, str]]) -> None:
 
 
 def main() -> int:
+    table1_source = read_csv("table1_anchors.csv", TABLE1_FIELDS)
+    table2_source = read_csv("table2_policy_costs.csv", TABLE2_FIELDS)
+    table3_source = read_csv("table3_primary_specification.csv", TABLE3_FIELDS)
     table4_source = read_csv("table4_vgross_baseline.csv", TABLE4_FIELDS)
     table5_source_all = read_csv_fields(
         REPORTS_DIR / "threshold_inversion_result_baseline-official-v2.csv",
@@ -453,6 +636,21 @@ def main() -> int:
     table6_source = read_csv_fields(SOURCE_DIR / "table6_historical_plausibility.csv", TABLE6_FIELDS)
     table7_source = read_csv("table7_monte_carlo.csv", TABLE7_FIELDS)
     table5b_source = read_csv("table5b_time_to_threshold.csv", TABLE5B_FIELDS)
+
+    if len(table1_source) != 4 or {row["country_id"] for row in table1_source} != set(COUNTRIES):
+        raise AssertionError("table1: expected one anchor row for each of four countries")
+    if {row["year"] for row in table1_source} != {"2024"}:
+        raise AssertionError("table1: expected all anchors at 2024")
+    if len(table2_source) != 24:
+        raise AssertionError(f"table2: expected 24 source rows, found {len(table2_source)}")
+    if any(row["cost_gross_gdp"] != row["cost_net_gdp"] for row in table2_source):
+        raise AssertionError("table2: compact pure-layering note is invalid because gross and net costs differ")
+    if len(table3_source) != 9:
+        raise AssertionError(f"table3: expected 9 source rows, found {len(table3_source)}")
+    if {row["id"] for row in table3_source if row["block"] == "scenario"} != {"low", "mid", "high", "stress"}:
+        raise AssertionError("table3: scenario vocabulary changed")
+    if {row["id"] for row in table3_source if row["block"] == "regime"} != set(REGIMES):
+        raise AssertionError("table3: regime vocabulary changed")
 
     if len(table4_source) != 480:
         raise AssertionError(f"table4: expected 480 source rows, found {len(table4_source)}")
@@ -579,12 +777,21 @@ def main() -> int:
     if len({row["note"] for row in table5b_source}) != 1:
         raise AssertionError("table5b: note is not constant across source rows")
 
+    write_table1(table1_source)
+    write_table2(table2_source)
+    write_table3(table3_source)
     write_table4(table4_rows)
     write_table5(table5_rows)
     write_table6(table6_rows)
     write_table7(table7_rows)
     write_table5b(table5b_source)
 
+    print("PASS table1_source_count=4")
+    print("PASS table1_selected_anchor_columns=9")
+    print("PASS table2_source_count=24")
+    print("PASS table2_gross_equals_net_pure_layering=True")
+    print("PASS table3_source_count=9")
+    print("PASS table3_scenario_regime_panels=True")
     print("PASS table4_source_count=480")
     print("PASS table4_count=35")
     print("PASS table4_moderate_r0_primary_rows=20")

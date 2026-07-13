@@ -197,6 +197,9 @@ def verify_table_reexport() -> ComparisonCount:
     targets = tuple(
         ROOT / "paper" / "tables" / name
         for name in (
+            "table1_anchors.tex",
+            "table2_policy_costs.tex",
+            "table3_primary_specification.tex",
             "table4_vgross_baseline.tex",
             "table5_threshold_inversion.tex",
             "table5b_time_to_threshold.tex",

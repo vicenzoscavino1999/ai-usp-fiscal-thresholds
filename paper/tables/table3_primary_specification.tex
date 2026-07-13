@@ -1,20 +1,20 @@
+\begingroup
 \begin{table}[!htbp]
 \centering
-\caption{Table 3. Primary AI scenarios and fiscal regimes}
-\label{tab:results_primary_spec}
-\begin{tabular}{lllll}
+\caption{Primary AI scenarios and fiscal regimes.}\label{tab:results_primary_spec}
+\small
+\setlength{\tabcolsep}{7pt}
+\begin{tabular}{@{}lr@{\hspace{3em}}lr@{}}
 \toprule
-block & id & phi\_y\_nominal\_min & phi\_y\_nominal\_max & description \\
+Scenario & \shortstack{Annual AI shock\\(\% of GDP)} & Regime & \shortstack{Median $MFC^{gross}$\\(\%)} \\
 \midrule
-scenario & low & 0.0004999999999999 & 0.0004999999999999 & AI shock after bridge and pi\_AI\_Y \\
-scenario & mid & 0.00425 & 0.00425 & AI shock after bridge and pi\_AI\_Y \\
-scenario & high & 0.0030622412413359 & 0.0042092965841293 & AI shock after bridge and pi\_AI\_Y \\
-scenario & stress & 0.0149999999999999 & 0.0149999999999999 & AI shock after bridge and pi\_AI\_Y \\
-regime & r0 &  &  & Fiscal regime; median MFCgross=0.0892 \\
-regime & r1 &  &  & Fiscal regime; median MFCgross=0.0939 \\
-regime & r2 &  &  & Fiscal regime; median MFCgross=0.0982 \\
-regime & r3 &  &  & Fiscal regime; median MFCgross=0.0872 \\
-regime & r4 &  &  & Fiscal regime; median MFCgross=0.1093 \\
+Low & 0.050 & r0 & 8.92 \\
+Moderate & 0.425 & r1 & 9.39 \\
+High & 0.306--0.421 & r2 & 9.82 \\
+Disruptive stress & 1.500 & r3 & 8.72 \\
+ &  & r4 & 10.93 \\
 \bottomrule
+\multicolumn{4}{@{}p{0.88\linewidth}@{}}{\footnotesize The high scenario reports the country range after the source-unit and nominal-output bridges; other scenarios are point supports.} \\
 \end{tabular}
 \end{table}
+\endgroup
