@@ -1,0 +1,54 @@
+{
+  "type": "diagnostic-protocol-result-alignment",
+  "note": "FIX-NC replaces the unexecuted sectoral low-exposure formula with the executed exposure-substitution negative control. The four entries are the exact token deltas reproduced with extract_tokens before editing.",
+  "entries": [
+    {
+      "scope": "appendix",
+      "token": "number:0",
+      "delta": -1,
+      "justification": "unexecuted T^{NC}=0 diagnostic removed when protocol text is aligned to the executed exposure-substitution test"
+    },
+    {
+      "scope": "appendix",
+      "token": "number:1",
+      "delta": -1,
+      "justification": "unexecuted sector-weight normalization removed with the sectoral negative-control formula"
+    },
+    {
+      "scope": "appendix",
+      "token": "scenario:high",
+      "delta": -1,
+      "justification": "net lexical delta from replacing the unexecuted sectoral diagnostic with the executed exposure-substitution test"
+    },
+    {
+      "scope": "appendix",
+      "token": "scenario:low",
+      "delta": -3,
+      "justification": "low-exposure sector references removed with the unexecuted sectoral diagnostic"
+    },
+    {
+      "scope": "document",
+      "token": "number:0",
+      "delta": -1,
+      "justification": "unexecuted T^{NC}=0 diagnostic removed when protocol text is aligned to the executed exposure-substitution test"
+    },
+    {
+      "scope": "document",
+      "token": "number:1",
+      "delta": -1,
+      "justification": "unexecuted sector-weight normalization removed with the sectoral negative-control formula"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:high",
+      "delta": -1,
+      "justification": "net lexical delta from replacing the unexecuted sectoral diagnostic with the executed exposure-substitution test"
+    },
+    {
+      "scope": "document",
+      "token": "scenario:low",
+      "delta": -3,
+      "justification": "low-exposure sector references removed with the unexecuted sectoral diagnostic"
+    }
+  ]
+}

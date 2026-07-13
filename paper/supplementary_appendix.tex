@@ -1168,14 +1168,22 @@ where $\phi^{ICT,placebo}$ is a documented growth-accounting ICT/digitalization 
 \end{equation}
 The test asks whether ordinary digitalization, growth, or buoyancy is being relabelled as AI fiscal space; it is diagnostic, not causal. Its known-outcome benchmark is that digitalization in 2010--2018 financed universal social protection nowhere in the region, so broad feasibility contradicts history, not merely a prior. Validity requires the full era-consistent pipeline---historical capture distributions, policy costs, and informality---not translation alone.
 
-\subsection{Sectoral negative controls}
+\subsection{Exposure-substitution negative control}
 
-For sectors with very low AI exposure, the translation score should be low. Let $\mathcal{K}^{NC}$ be a set of low-exposure sectors. A negative-control diagnostic reports
+This negative control replaces the productive-exposure input with the non-productive
+automation-risk (displacement) exposure and asks whether feasibility survives. Substituting the
+automation-risk support $E^{auto}$ for productive exposure $E^{prod}$ rescales the baseline
+feasibility ratio by the exposure ratio,
 \begin{equation}
-    T^{NC}_{i,s,t}=\sum_{k\in\mathcal{K}^{NC}}\omega^{NC}_{i,k,t}T_{i,k,s,t}.
+    V^{NC}_{i,p,s,r,t}=V^{gross}_{i,p,s,r,t}\,\frac{E^{auto}_{i,t}}{E^{prod}_{i,t}},
 \end{equation}
-The weights $\omega^{NC}_{i,k,t}$ are employment or value-added shares within the negative-control set and satisfy $\sum_{k\in\mathcal{K}^{NC}}\omega^{NC}_{i,k,t}=1$.
-The expectation is not that $T^{NC}=0$, but that it remains substantially below the country aggregate in scenarios where the aggregate is driven by high-exposure sectors. If negative-control sectors generate high translation scores, the exposure/adoption construction is too permissive. These placebo and negative-control diagnostics are diagnostic stress tests, not substitutes for a causal treatment-effect design \citep{bertrand2004trust,athey2017state,lipsitch2010negative}.
+so the mechanical collapse is proportional to $E^{auto}/E^{prod}$. The diagnostic passes when
+no headline crossing survives the substitution; a crossing that survives is driven by the scale
+of the shock relative to a small policy cost rather than by the productive-exposure mechanism,
+and is flagged with that caveat. If a non-productive exposure input still generated a high
+feasibility ratio, the exposure and adoption construction would be too permissive. These
+placebo and negative-control diagnostics are diagnostic stress tests, not substitutes for a
+causal treatment-effect design \citep{bertrand2004trust,athey2017state,lipsitch2010negative}.
 
 \subsection{Leave-one-source-out and channel-ablation protocol}
 
@@ -1193,7 +1201,7 @@ If a positive feasibility result depends on a single source or a single fiscal c
 
 \subsection{Ablation, placebo, and negative-control outputs}
 
-The replication package includes temporal placebo, sectoral negative-control, leave-one-source-out, and channel-ablation outputs.
+The replication package includes temporal placebo, exposure-substitution negative-control, leave-one-source-out, and channel-ablation outputs.
 
 \subsection{Numerical convergence and reproducibility}
 
