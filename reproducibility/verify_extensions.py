@@ -252,15 +252,45 @@ def verify_table_reexport() -> ComparisonCount:
     return ComparisonCount(files=len(targets))
 
 
-def verify_extensions() -> ComparisonCount:
+def enaho_restricted_input_present() -> bool:
+    """ENAHO required-variables microdata (GMI-micro-PER) is author-held and not
+    redistributable; the public package omits it. True only when it is present."""
+    return any(gmi_per.SNAPSHOT_DIR.glob("*required_variables.parquet"))
+
+
+def verify_extensions(require_restricted: bool = False) -> ComparisonCount:
     inputs = mc.load_inputs(ROOT)
     total = ComparisonCount()
-    for verifier in (verify_omega, verify_ls_raw, verify_gmi_per, verify_gmi_chl):
+    verified = 0
+    for verifier in (verify_omega, verify_ls_raw, verify_gmi_chl):
         total.add(verifier(inputs))
+        verified += 1
     total.add(verify_table_reexport())
+    verified += 1
+    # GMI-micro-PER recomputes from ENAHO microdata, which is author-held and not
+    # redistributable. The public package omits it, so this extension is skipped
+    # unless the input is present (or --require-restricted forces a failure).
+    if enaho_restricted_input_present():
+        total.add(verify_gmi_per(inputs))
+        verified += 1
+        enaho_status = "verified"
+    elif require_restricted:
+        raise ExtensionVerifyError(
+            "GMI-micro-PER requires the ENAHO required-variables microdata, which is absent. "
+            "Fetch it (free from INEI) with `python scripts/17_download_enaho_sumaria.py`, "
+            "or run `make reproduce-public` to skip this restricted extension."
+        )
+    else:
+        enaho_status = "skipped"
+        print(
+            "EXTENSION SKIPPED (restricted, non-redistributable input absent): GMI-micro-PER "
+            "-- ENAHO microdata is author-held; fetch with `python scripts/17_download_enaho_sumaria.py` "
+            "then `make reproduce-restricted` to include it."
+        )
     print("VOLATILE COLUMNS EXCLUDED: " + ", ".join(VOLATILE_COLUMNS))
     print(
-        f"EXTENSIONS VERIFY PASS: 5 extensions, {total.files} committed files, "
+        f"EXTENSIONS VERIFY PASS: {verified} extensions verified (GMI-micro-PER {enaho_status}), "
+        f"{total.files} committed files, "
         f"{total.stable_columns} stable columns, {total.numeric_values} numeric comparisons"
     )
     return total
@@ -268,9 +298,15 @@ def verify_extensions() -> ComparisonCount:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.parse_args()
+    parser.add_argument(
+        "--require-restricted",
+        action="store_true",
+        help="Fail if the restricted, author-held ENAHO extension input is absent "
+        "(default: skip it and pass on the public extensions).",
+    )
+    args = parser.parse_args()
     try:
-        verify_extensions()
+        verify_extensions(require_restricted=args.require_restricted)
     except (ExtensionVerifyError, FileNotFoundError, RuntimeError, ValueError) as exc:
         print(f"EXTENSIONS VERIFY FAIL: {exc}", file=sys.stderr)
         return 1

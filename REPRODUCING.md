@@ -7,6 +7,18 @@ the direct Windows commands on 2026-07-11. `DATA_AVAILABILITY.md` states which
 inputs may be redistributed, which derived artifacts enter the public archive,
 and how to re-obtain and hash-check inputs that are not redistributed.
 
+## Reproduction paths
+
+- `make reproduce-public` --- full reproduction from the public package (Zenodo
+  bundle or public snapshot). Skips the ENAHO-based GMI-micro-PER extension,
+  whose microdata is not redistributable.
+- `make reproduce-restricted` --- adds the ENAHO GMI validation; first fetch
+  ENAHO (free from INEI) with `python scripts/17_download_enaho_sumaria.py`.
+
+Everything except the ENAHO GMI microdata validation reproduces from the public
+package. The Zenodo archive is self-contained (includes the public snapshot); a
+bare `git clone` requires rebuilding the public snapshot from source.
+
 ## One Command
 
 The canonical environment is the digest-pinned Docker image. From the repository

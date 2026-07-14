@@ -2,9 +2,14 @@ DATASET_VERSION ?= v1.0.1-official-4c
 PARAMETER_SET_ID ?= baseline-official-v2
 RUN_LABEL ?= official
 
-.PHONY: reproduce build-from-frozen-dataset run verify verify-freeze verify-extensions reproduce-extensions figures test check reproduce-deterministic reproduce-full run-diagnostics check-env determinism-check
+.PHONY: reproduce reproduce-public reproduce-restricted build-from-frozen-dataset run verify verify-freeze verify-extensions verify-extensions-all reproduce-extensions figures test check reproduce-deterministic reproduce-full run-diagnostics check-env determinism-check
 
-reproduce: reproduce-full verify-freeze verify-extensions
+reproduce: reproduce-full verify-freeze verify-extensions-all   # author-side: requires the restricted ENAHO input
+
+reproduce-public: reproduce-full verify-freeze verify-extensions   # public path: skips the non-redistributable ENAHO extension
+
+reproduce-restricted:              # adds the ENAHO-based GMI validation (first: python scripts/17_download_enaho_sumaria.py)
+	python reproducibility/verify_extensions.py --require-restricted
 
 build-from-frozen-dataset:
 	python scripts/build_anchors_from_snapshot.py --dataset-version $(DATASET_VERSION) --strict-gates
@@ -20,6 +25,9 @@ verify-freeze:
 
 verify-extensions:
 	python reproducibility/verify_extensions.py
+
+verify-extensions-all:
+	python reproducibility/verify_extensions.py --require-restricted
 
 reproduce-extensions:
 	python reproducibility/reproduce_extensions.py
