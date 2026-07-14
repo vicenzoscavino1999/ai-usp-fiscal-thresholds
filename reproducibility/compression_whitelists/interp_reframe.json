@@ -1,0 +1,8 @@
+{
+  "type": "review-interpretation-reframe",
+  "note": "F1 reconciles the translation/adoption policy implication with the saturated-adoption result; F2 registered->prespecified; F3 clarifies model-implied crossing frequencies.",
+  "entries": [
+    {"scope":"body","token":"scenario:moderate","delta":1,"justification":"F1 adds 'Under the moderate scenarios' to qualify the policy implication"},
+    {"scope":"document","token":"scenario:moderate","delta":1,"justification":"F1 adds 'Under the moderate scenarios' to qualify the policy implication"}
+  ]
+}
