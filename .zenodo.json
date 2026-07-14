@@ -1,36 +1,16 @@
 {
   "title": "Code and data for: AI, Fiscal Space, and Universal Social Protection in Emerging Economies",
   "creators": [
-    {
-      "name": "Scavino, Vicenzo",
-      "affiliation": "Independent researcher"
-    }
+    { "name": "Scavino, Vicenzo", "affiliation": "Independent researcher" }
   ],
-  "description": "Release-candidate reproduction package for a calibrated accounting-fiscal threshold framework computing AI-induced effective fiscal space, gross-cost feasibility ratios, threshold inversions, historical fiscal-capture plausibility, Monte Carlo crossing probabilities, falsification diagnostics, and paper-ready tables for Peru, Chile, Colombia, and Mexico.",
+  "description": "Reproduction package for a calibrated accounting-fiscal threshold framework computing AI-induced effective fiscal space, gross-cost feasibility ratios, threshold inversions, historical fiscal-capture plausibility, Monte Carlo crossing probabilities, falsification diagnostics, and paper-ready tables for Peru, Chile, Colombia, and Mexico.",
   "license": "MIT",
   "upload_type": "software",
-  "version": "1.0.0-fase-B-rc",
-  "doi": "10.5281/zenodo.TBD",
+  "version": "1.1.0",
+  "doi": "10.5281/zenodo.21348535",
   "keywords": [
-    "artificial intelligence",
-    "fiscal space",
-    "universal social protection",
-    "universal basic income",
-    "informality",
-    "fiscal capacity",
-    "labor share",
-    "emerging economies",
-    "Latin America",
-    "Monte Carlo",
-    "reproducibility",
-    "threshold analysis"
-  ],
-  "related_identifiers": [
-    {
-      "identifier": "10.5281/zenodo.TBD",
-      "relation": "isSupplementTo",
-      "scheme": "doi"
-    }
-  ],
-  "notes": "DOI is a placeholder. Do not publish Zenodo until the author approves the manuscript and deposition."
+    "artificial intelligence", "fiscal space", "universal social protection", "universal basic income",
+    "informality", "fiscal capacity", "labor share", "emerging economies", "Latin America",
+    "Monte Carlo", "reproducibility", "threshold analysis"
+  ]
 }

@@ -1,5 +1,7 @@
 # Release Notes --- v1.1.0
 
+**Zenodo archive:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
+
 ## Scope
 
 Reproduction package for the AI-USP fiscal thresholds paper. This release provides the

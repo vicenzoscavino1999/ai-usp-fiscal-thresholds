@@ -4,6 +4,8 @@ Reproduction package for a calibrated accounting-fiscal threshold framework on
 AI-induced fiscal space and universal or categorical social protection in Peru,
 Chile, Colombia, and Mexico.
 
+**Archived replication package:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
+
 Current status: the official pipeline is complete, five registered post-baseline
 extensions are implemented, and paper v3 is in submission preparation. The
 official data snapshot is `v1.0.1-official-4c`; the deterministic grid remains

@@ -1,0 +1,10 @@
+{
+  "type": "zenodo-doi-insertion",
+  "note": "Inserts reserved Zenodo DOI 10.5281/zenodo.21348535 into the data-availability statement.",
+  "entries": [
+    {"scope":"body","token":"number:10.5281","delta":1,"justification":"Zenodo DOI prefix in the archived-package URL"},
+    {"scope":"body","token":"number:21348535","delta":1,"justification":"Zenodo deposition id in the archived-package DOI"},
+    {"scope":"document","token":"number:10.5281","delta":1,"justification":"Zenodo DOI prefix in the archived-package URL"},
+    {"scope":"document","token":"number:21348535","delta":1,"justification":"Zenodo deposition id in the archived-package DOI"}
+  ]
+}

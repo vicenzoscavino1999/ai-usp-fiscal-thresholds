@@ -6,9 +6,9 @@ authors:
   - family-names: "Scavino"
     given-names: "Vicenzo"
     affiliation: "Independent researcher"
-version: "1.0.0-fase-B-rc"
-doi: "10.5281/zenodo.TBD"
-date-released: "2026-07-09"
+version: "1.1.0"
+doi: "10.5281/zenodo.21348535"
+date-released: "2026-07-13"
 license: "MIT"
 repository-code: "https://github.com/vicenzoscavino1999/ai-usp-fiscal-thresholds"
 keywords:
