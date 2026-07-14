@@ -1,0 +1,8 @@
+{
+  "type": "redundancy-cuts",
+  "note": "Removes two near-literal duplications (C1, C2) and the redundant Sixth limitation (C5); the disruptive caveat and H* post-baseline note are retained elsewhere.",
+  "entries": [
+    {"scope":"body","token":"scenario:disruptive","delta":-1,"justification":"C5 deletes the Sixth limitation; its disruptive-support caveat is retained in the results text and the figure caption"},
+    {"scope":"document","token":"scenario:disruptive","delta":-1,"justification":"C5 deletes the Sixth limitation; its disruptive-support caveat is retained in the results text and the figure caption"}
+  ]
+}

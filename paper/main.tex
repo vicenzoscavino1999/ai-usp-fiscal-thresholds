@@ -711,8 +711,6 @@ Solve the feasibility inequality for $\tilde q^{prod,num}$ holding $S^{frontier}
 \end{proof}
 Feasibility is weakly increasing in $\phi$, $T$, and $g^{AI}$ when $\widetilde{MFC}^{gross}\geq0$, weakly decreasing in the AI shock when $\widetilde{MFC}^{gross}<0$, weakly increasing in $MFC^{gross}$, and weakly decreasing in $c^{gross}$ and $\xi$; monotonicity through $T=\min\{1,S/S^{frontier}\}$ flattens at saturation. Draws with $\phi^{Y,nom}_s<0$ are retained as economic failure draws with reversed derivative signs, never as crossings. Hard-support violations define impossibility through a margin (Table \ref{tab:impossibility_diagnostics_v10}); a required capture above $P90(MFC^{hist,gross,+}_i)$ is a historical plausibility flag, not a support violation.
 
-The substantive implication is precise: disagreement about the size of the AI shock changes $\phi_s$; disagreement about diffusion changes $T$; disagreement about tax institutions changes $MFC^{gross}$ and the net fiscal-space deductions; disagreement about gross versus net program cost changes $c^{gross}$ or $c^{net}$; and debt prudence changes $s^{PB}$.
-
 These inversions show not only whether an instrument crosses, but which technological, fiscal, or temporal margin prevents it from crossing.
 
 \section{Empirical Application to Four Latin American Economies}\label{sec:empirical_application}
@@ -745,8 +743,6 @@ All fiscal variables are expressed as shares of the no-AI counterfactual GDP den
 \begin{equation}
     \phi^{raw}_{s,u}\rightarrow \phi^Y_s=\kappa^{u\to Y}_s\phi^{raw}_{s,u}\rightarrow \phi^{Y,nom}_s\rightarrow g^{AI,level}_{i,s,H}.
 \end{equation}
-Micro studies such as \citet{noy2023experimental} and \citet{brynjolfsson2023generative} discipline the plausibility of productivity effects in exposed tasks, but they do not directly identify aggregate GDP growth or a recurring fiscal-base level increment.
-
 \subsubsection{AI-productivity scenario ladder}
 
 The externally disciplined scenario supports and deterministic closures are reported in Table \ref{tab:phi_numerical_closure}. These objects are reported across the paper and the replication package: the source-unit raw supports in Table \ref{tab:phi_numerical_closure}; the scenario bridges $\kappa^{u\to Y}$ and nominal adjustments $\pi^{AI,Y}$ in the calibration registry; the post-bridge nominal supports in the primary-specification table of Section \ref{sec:empirical_results}; and the per-cell accumulated level objects $g^{AI,level}$ in the replication materials.
@@ -1224,11 +1220,7 @@ deliberately does not model. Fourth, a crossing year is not a launch year: the p
 horizons of Table~\ref{tab:results_h_star} state when accumulated gains would cover
 steady-state costs, and financing any earlier launch requires transition resources outside
 the framework. Fifth, the pure-layering convention sets existing-program offsets to zero,
-so the net-cost specification is conservative by construction. Sixth, all headline
-crossings are conditional on the disruptive support, which is deliberately beyond the
-baseline macroeconomic literature; the
-required persistence horizon was added after the prespecified baseline as a derived
-statistic.
+so the net-cost specification is conservative by construction.
 
 \subsection{What the results do not establish}
 
