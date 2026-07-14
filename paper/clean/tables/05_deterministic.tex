@@ -1,0 +1,23 @@
+\begin{table}[H]
+\centering
+\small
+\begin{singlespace}
+\caption{Selected deterministic outcomes and the debt guardrail}
+\label{tab:deterministic_results_clean}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash}p{0.16\textwidth}r >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+\toprule
+Scope or cell & Reported regime & $V^{gross}$ & Result class \\
+\midrule
+All low/mid/high cells & Best of 360 cells & 0.177 & No accounting crossing \\
+Chile, GMI ideal, stress & r0 & 3.90 & Feasible, including debt guardrail \\
+Chile, GMI loaded, stress & r0 & 2.60 & Feasible, including debt guardrail \\
+Peru, social pension, stress & r0--r4 & 1.02--1.42 & Accounting crossing; debt guardrail fails \\
+Colombia, best cell (PEN, stress) & r4 & 0.91 & No accounting crossing \\
+Mexico, best cell (GMI ideal, stress) & r4 & 0.80 & No accounting crossing \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.94\textwidth}\footnotesize
+\emph{Note:} Accounting crossings use the structural threshold $V\geq1$; Figure~\ref{fig:headline_feasibility_clean} separately identifies cells that also reach $V\geq1.10$. Stress is a diagnostic scenario, not a forecast.
+\end{minipage}
+\end{singlespace}
+\end{table}

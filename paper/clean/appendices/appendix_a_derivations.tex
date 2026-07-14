@@ -1,0 +1,70 @@
+\section{Derivations}\label{app:derivations}
+
+Let the AI-induced annual increment at date $\tau$ be
+$x_{i,s,\tau}=\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}$. Starting from the no-AI
+counterfactual level $Y_i^0$, compounding gives
+\begin{equation}
+  Y^{AI}_{i,s,H}
+  =Y_i^0\prod_{\tau=1}^{H}(1+x_{i,s,\tau}),
+  \qquad
+  g^{AI}_{i,s,H}
+  =\frac{Y^{AI}_{i,s,H}-Y_i^0}{Y_i^0}
+  =\prod_{\tau=1}^{H}
+    \left(1+\phi^{Y,nom}_{s,\tau}T_{i,s,\tau}\right)-1.
+  \label{eq:accumulated_gain_derivation}
+\end{equation}
+When the annual scenario and domestic translation are constant over the
+horizon, this reduces to
+$g^{AI}=(1+\phi^{Y,nom}T)^H-1$.
+
+Suppress indices and write
+$\widetilde M=MFC^{gross}-D^{ME}$. Substituting
+$fs^{eff}=\widetilde M g^{AI}-F^{fix}$ into the buffered accounting
+condition yields
+\begin{align}
+  fs^{eff}&\geq(1+\xi)c^{gross}
+  \nonumber\\
+  \Longleftrightarrow\quad
+  \widetilde M g^{AI}
+    &\geq(1+\xi)c^{gross}+F^{fix}
+     \equiv\mathcal R(\xi).
+  \label{eq:accounting_requirement_derivation}
+\end{align}
+The debt guardrail adds the inherited primary-balance gap to the same
+requirement:
+\begin{equation}
+  \widetilde M g^{AI}
+  \geq \mathcal R(\xi)+s^{PB}
+  \equiv \mathcal R^{DC}(\xi).
+  \label{eq:debt_requirement_derivation}
+\end{equation}
+Thus fixed deductions enter the requirement once, while marginal-equivalent
+deductions enter the capture rate once. The corresponding unbuffered ratio is
+$V^{gross}=(\widetilde M g^{AI}-F^{fix})/c^{gross}$; setting $V^{gross}=1$
+is Equation~\eqref{eq:accounting_requirement_derivation} at $\xi=0$.
+
+Let $\mathcal Q$ denote either $\mathcal R$ or $\mathcal R^{DC}$. At the
+boundary $\widetilde M g^{AI}=\mathcal Q$, direct rearrangement gives
+\begin{align}
+  g^{AI,*}
+    &=\frac{\mathcal Q}{\widetilde M},
+  &
+  MFC^{gross,*}
+    &=\frac{\mathcal Q}{g^{AI}}+D^{ME}.
+  \label{eq:gain_capture_derivation}
+\end{align}
+For a constant annual scenario and fixed domestic structure, substituting
+$g^{AI}=(1+\phi^{Y,nom}T)^H-1$ and solving the same boundary for translation
+gives
+\begin{equation}
+  T^{req,H}
+  =\frac{\left(1+\mathcal Q/\widetilde M\right)^{1/H}-1}
+          {\phi^{Y,nom}}.
+  \label{eq:translation_requirement_derivation}
+\end{equation}
+These closed forms require $g^{AI}>0$, $\widetilde M>0$, and
+$\phi^{Y,nom}>0$ for the corresponding inversion. A non-positive denominator
+does not produce a finite positive crossing. Replacing $\mathcal R$ with
+$\mathcal R^{DC}$ gives the debt-consistent inversion without changing the
+algebra. If channel weights or endpoint costs are recomputed as the inverted
+quantity changes, the boundary is instead solved numerically.

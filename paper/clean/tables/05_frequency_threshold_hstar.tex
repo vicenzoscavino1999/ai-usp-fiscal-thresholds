@@ -1,0 +1,48 @@
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{singlespace}
+\caption{Crossing frequencies, threshold requirements, and persistence horizons}
+\label{tab:frequency_threshold_hstar_clean}
+\textit{Panel A. Model-implied crossing frequencies across calibrated draws}\\[0.2em]
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.48\textwidth}rr@{}}
+\toprule
+Mode and cell & Accounting (\%) & Debt-consistent (\%) \\
+\midrule
+Primary channel MC, maximum over low/mid/high & 2.36 & 2.36 \\
+Factor-dependence modes, maximum over low/mid/high & 4.44 & 4.44 \\
+Historical reduced form, Chile GMI ideal, mid r0 & 66.06--91.76 & 66.06--91.76 \\
+Historical reduced form, Chile GMI loaded, mid r0 & 55.78--85.10 & 55.78--85.10 \\
+Primary channel MC, Chile GMI, stress r0--r4 & 94.78--99.98 & 94.78--99.98 \\
+Primary channel MC, Peru PEN, stress r0--r4 & 41.02--80.50 & 0.02--2.48 \\
+\bottomrule
+\end{tabular}
+\\[0.7em]\textit{Panel B. Buffered mid-scenario inversions under r4}\\[0.2em]
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Country and instrument & $g^{AI,*}$ (\%) & $MFC^{gross,*}$ (\%) & $T^{req,H}$ & $\tau^{AI,req}$ (\%) \\
+\midrule
+Chile, GMI ideal & 4.75 & 16.72 & 1.09 & 202.46 \\
+Peru, social pension & 7.53 & 30.31 & 1.71 & 671.42 \\
+Colombia, social pension & 10.62 & 45.23 & 2.39 & 1149.88 \\
+Mexico, GMI ideal & 12.55 & 52.38 & 2.80 & 1364.07 \\
+Mexico, GMI loaded & 17.31 & 72.23 & 3.79 & 2025.71 \\
+\bottomrule
+\end{tabular}
+\\[0.7em]\textit{Panel C. Required persistence $H^*$ under stress, $\xi=0.10$}\\[0.2em]
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.47\textwidth}rr@{}}
+\toprule
+Country and instrument & Accounting $H^*$ & Debt-consistent $H^*$ \\
+\midrule
+Chile, GMI ideal (r0 / r4) & 6 / 5 & 6 / 5 \\
+Peru, social pension (r0--r4) & 8--11 & 17--22 \\
+Colombia, social pension (r0--r4) & 13--19 & >25 \\
+Mexico, GMI ideal (r0--r4) & 13--16 & >25 \\
+Mexico, GMI loaded (r0--r4) & 17--21 & >25 \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.94\textwidth}\footnotesize
+\emph{Note:} Frequencies use \texttt{prob\_basis=all\_draw}. Historical reduced-form modes are alternative capture specifications available only under r0. Panel B reports accounting inversions at $\xi=0.10$; $g^{AI,*}$ is an accumulated gain. $H^*$ is a post-baseline derived extension and is censored after 25 years.
+\end{minipage}
+\end{singlespace}
+\end{table}

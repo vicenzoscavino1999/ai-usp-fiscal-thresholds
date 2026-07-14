@@ -1,0 +1,96 @@
+\section{Empirical Design}\label{sec:design}
+
+The accounting objects in Section~\ref{sec:framework} are taken to data through a calibrated empirical-simulation design. The unit of analysis is a country--policy--AI-scenario--fiscal-regime cell. This structure holds the technological scenario apart from the fiscal regime, so that changes in domestic translation, policy cost, and public capture can be read separately without treating their contrasts as causal estimates. It also permits joint shortfalls: a cell may require both more domestic translation and more fiscal capture than the calibrated supports allow. The design therefore does not assign failure to a single margin by construction. The primary channel construction and calibrated supports were prespecified.
+
+\subsection{Country anchors and data}\label{subsec:country_data_clean}
+
+The application covers Peru, Chile, Colombia, and Mexico. All four economies use a common 2024 harmonization anchor, a ten-year accumulation horizon, and a 2034 endpoint. Structural inputs are held at their harmonized anchor values over the accumulation period; the endpoint exception is the eligible-population share used to price demographically defined programs. Earlier observations needed for slow-moving anchors are carried to the common year with their provenance retained in the replication package.\footnote{The archived package is available at \url{https://doi.org/10.5281/zenodo.21348535}.}
+
+The macro-fiscal block combines WDI national accounts and population data, OECD Revenue Statistics and IMF fiscal series, and the UNU-WIDER Government Revenue Dataset for historical comparison. PIP supplies the aggregate poverty measures. UN World Population Prospects supplies endpoint demographic shares; PWT supplies the labor-share anchor; IMF AIPI, ITU, and Ookla supply preparedness and digital-access inputs; and national official sources determine social-pension rules \citep{worldbank2026wdi,worldbank2026pip,oecd2025revenue,unu2025grd,unwpp2024,pwt1001,imf2024aipi,itu2026datahub,ookla2024speedtest}. Table~\ref{tab:country_data_clean} distinguishes the official aggregate grid from the household-data extensions.
+
+The common year makes the cross-country accounting comparable but does not turn the sample into a regional panel. The four economies were chosen to span different combinations of preparedness, informality, social-policy architecture, and fiscal capacity; the application is deliberately comparative rather than representative of Latin America. Fiscal variables are aligned to a consistent government concept within country. Historical revenue capture remains an external plausibility benchmark, while the channel-based construction in Equation~\eqref{eq:mfc_clean} supplies the primary regime comparisons.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Country and household-data coverage}
+\label{tab:country_data_clean}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.54\textwidth}@{}}
+\toprule
+Country & Design anchor & Household-data role \\
+\midrule
+Peru & 2024 harmonized inputs & Aggregate PIP cost in the official grid; ENAHO 2024 GMI extension. \\
+Chile & 2024 harmonized inputs & Aggregate PIP cost in the official grid; CASEN 2024 GMI extension. \\
+Colombia & 2024 harmonized inputs & Aggregate inputs; no household-microdata extension in the archived design. \\
+Mexico & 2024 harmonized inputs & Aggregate inputs; no household-microdata extension in the archived design. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The household surveys are validation extensions rather than inputs to the official four-country grid. The Peru extension uses the ENAHO 2024 Sumaria file \citep{inei2024enaho}. Its row-level microdata are treated as restricted for redistribution: the public replication package provides retrieval instructions, code, hashes, and aggregate outputs, but does not redistribute the source file. The Chile extension analogously uses CASEN 2024 \citep{mdsf2024casen}. Official comparisons therefore retain aggregate GMI costs, with the survey estimates serving as separately identified validation extensions.
+
+\subsection{Policy instruments and endpoint costs}\label{subsec:policy_costs_clean}
+
+Five policy concepts are priced under the common gross-cost denominator in Equation~\eqref{eq:policy_cost_clean}: a social pension (PEN), a minimum universal transfer (MUT), a guaranteed minimum income (GMI), a partial basic income for adults (PBI), and a full universal basic income benchmark (UBI). PEN preserves each country's official eligibility and benefit schedule. MUT supplies a low common transfer benchmark; GMI closes an aggregate poverty gap; PBI supplies a partial adult grant; and UBI is retained as the fiscally demanding universal benchmark.
+
+The five concepts generate six reported cost rows because GMI is priced twice. \nolinkurl{GMI_ideal_aggregate} applies ideal targeting to the grouped PIP poverty gap and is therefore a mechanical lower-cost case. \nolinkurl{GMI_loaded_aggregate} applies the fixed targeting-cost loading to the same aggregate gap. Carrying both variants into every comparison prevents a favorable targeting convention from standing in for the instrument itself. These are two aggregate-cost variants, not two household microsimulations.
+
+Costs and AI-induced fiscal space are evaluated at the same endpoint and against the same no-AI GDP denominator. For instruments whose eligibility is demographic, the 2024 gross-cost ratio is scaled to 2034 by the policy-specific WPP eligible-share ratio,
+\begin{equation}
+  c^{gross}_{i,p,2034}
+  =c^{gross}_{i,p,2024}
+   \frac{e^{WPP}_{i,p,2034}}{e_{i,p,2024}}.
+  \label{eq:endpoint_cost_clean}
+\end{equation}
+The eligible-share definition follows the policy rule, including the sex- and age-specific schedule for Colombia's pension. For aggregate GMI, the primary design freezes the poverty distribution, so $c^{gross}_{i,GMI,2034}=c^{gross}_{i,GMI,2024}$. Appendix~\ref{app:conventions} records, once, the treatment of existing spending, administrative costs, informality, and AI rents.
+
+This pricing convention treats each instrument as a recurring annual commitment at the endpoint. The gross-cost comparison does not presume that an existing program can be discontinued or that transfer spending immediately returns as tax revenue. Policy-specific administration, transition, and leakage terms enter the fiscal-space side of the comparison defined in Section~\ref{sec:framework}. Net-cost and alternative implementation assumptions remain sensitivity exercises, so the primary ranking reflects program scale rather than an assumed financing offset.
+
+\subsection{AI scenarios and fiscal regimes}\label{subsec:scenarios_regimes_clean}
+
+The four AI scenarios enter only after the source unit has been bridged to the annual nominal-GDP-equivalent object used in Equation~\eqref{eq:level_gain_clean}. Table~\ref{tab:scenario_inputs_clean} reports the deterministic model-ready inputs. Low and moderate are TFP-equivalent cases. High begins as a frontier labor-productivity input \citep{oecd2025g7}, so its country-specific labor-productivity-to-GDP bridge places the final input between 0.306 and 0.421 percent per year. It consequently lies below the 0.425 percent moderate input for all four economies after the bridge. The labels identify source cases, not an imposed ordinal ranking after conversion. The disruptive 1.5 percent case is a diagnostic stress test deliberately outside the macroeconomic literature used to discipline the lower cases; it is not a forecast.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Annual model-ready AI scenario inputs}
+\label{tab:scenario_inputs_clean}
+\begin{tabular}{@{}l>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.48\textwidth}@{}}
+\toprule
+Scenario & $\phi^{Y,nom}$ (percent) & Interpretation \\
+\midrule
+Low & 0.050 & Low TFP-equivalent case. \\
+Moderate (mid) & 0.425 & Central TFP-equivalent case. \\
+Frontier input (high) & 0.306--0.421 & Labor-productivity frontier after the country bridge. \\
+Disruptive (stress) & 1.500 & Diagnostic stress case, not a forecast. \\
+\bottomrule
+\end{tabular}
+\begin{minipage}{0.94\textwidth}\footnotesize
+\emph{Note:} Scenario labels denote source cases, not an ordinal ranking of the model-ready input; after the labor-productivity-to-GDP bridge, the frontier (high) input lies below the moderate TFP-equivalent input in all four economies.
+\end{minipage}
+\end{table}
+
+Fiscal regimes change marginal capture, not the technological scenario. \texttt{r0} holds observed effective rates at the status quo. \texttt{r1} represents improved compliance, and \texttt{r2} broadens tax bases. \texttt{r3} introduces explicit tax treatment of AI rents: the rents are separated from the ordinary capital base and assigned a lower effective rate, with the behavioral-erosion companion. \texttt{r4} combines the reform margins. This construction does not mechanically raise total marginal capture; in the evaluated calibration, median $MFC^{gross}$ is lower under \texttt{r3} than under \texttt{r0}. The reform cases operate through channel-specific effective rates and the corresponding base margins, and all are paired with behavioral erosion that reduces the taxable base as effective rates rise. This makes the mechanical reform case an upper comparison while leaving the AI gain itself unchanged. Because scenario and regime are crossed rather than bundled, the threshold inversions can reveal whether neither frontier translation nor stronger fiscal capture is sufficient in a given cell.
+
+\subsection{Calibrated uncertainty and crossing frequencies}\label{subsec:uncertainty_clean}
+
+Unobserved primitives with specified lower, central, and upper values receive bounded PERT distributions; a degenerate support is treated as fixed. The simulation draws primitives for the scenario, domestic translation, policy cost, and fiscal-conversion channels, then derives $T$, $g^{AI}$, $MFC^{gross}$, and $V^{gross}$. Drawing primitives rather than those derived objects preserves the accounting links across modules within each realization. The primary grid uses 5,000 draws per cell. Selected baseline cells are rerun at 10,000, 25,000, and 50,000 draws to assess numerical convergence. Independent blocks provide the transparent primary specification, while signed rank-correlated institutional-factor designs test dependence among preparedness, informality, adoption, exposure, and fiscal bases.
+
+For prudential margin $\xi$, the reported quantity is
+\begin{equation}
+  \widehat{\pi}_{i,p,s,r}(\xi)
+  =\frac{1}{M}\sum_{m=1}^{M}
+   \mathbf{1}\!\left\{V^{gross,(m)}_{i,p,s,r}\geq1+\xi\right\}.
+  \label{eq:crossing_frequency_clean}
+\end{equation}
+The quantity $\widehat{\pi}$ is interpreted as a model-implied crossing frequency across calibrated draws, not as a predictive probability. It is conditional on the selected parameter supports, distributional forms, and dependence assumptions. More draws reduce simulation error relative to that calibrated distribution; they do not establish correspondence with realized uncertainty.
+
+\subsection{Diagnostic and robustness strategy}\label{subsec:diagnostics_design_clean}
+
+The ICT-era temporal placebo provides the falsification exercise: it reanchors the reduced-form calculation to 2010--2018 using the recorded digital-access proxy, historical fiscal capture, and era-proximate policy-cost anchors, testing whether ordinary digitalization is mechanically relabeled as fiscal space. The reduced-form exposure-rescaling diagnostic then substitutes automation-risk exposure for productive exposure at the ratio level,
+\begin{equation}
+  V^{NC}_{i,p,s,r}
+  =V^{gross}_{i,p,s,r}\frac{E^{auto}_{i}}{E^{prod}_{i}}.
+  \label{eq:negative_control_clean}
+\end{equation}
+This operation does not re-estimate $T$ by sector. It follows the diagnostic logic of negative controls but, because it only rescales $V$, is not a complete negative-control design and supplies no causal estimand \citep{lipsitch2010negative}. Channel leave-one-out exercises remove each fiscal-conversion channel in turn, with companion checks for AI-rent capture and adoption-side informality. A limited leave-one-source-out check replaces the OECD revenue anchor with the comparable GRD measure where a like-for-like general-government alternative exists; source-unique inputs are reported as unavailable rather than imputed. Appendix~\ref{app:robustness_design} summarizes these operations. The next section reports their results alongside the threshold, debt, persistence, and crossing-frequency evidence.

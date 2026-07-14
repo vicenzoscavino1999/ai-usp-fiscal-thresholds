@@ -1,0 +1,7 @@
+Highlights
+
+- A common threshold test compares AI fiscal space across countries and policies.
+- No deterministic non-stress crossing: translation and capture jointly fall short.
+- Only diagnostic disruption produces crossings in the evaluated grid.
+- Chile's GMI passes the debt screen; Peru's pension crossing does not.
+- Persistence separates long-horizon upside from near-term budget resources.
