@@ -987,19 +987,17 @@ These are hypotheses, not results.
 \section{Empirical Results}\label{sec:empirical_results}
 
 This section reports the main results of the pilot application to Peru, Chile, Colombia,
-and Mexico. All results are generated directly by the replication code described in the
-data and code availability statement; no value in this section is transcribed by hand.
+and Mexico. All tables and figures in this section are generated from the archived replication package.
 
 \subsection{Data, snapshot, and calibration}\label{subsec:results_data}
 
-The empirical base is a hash-verified snapshot of public sources (World Bank WDI and
+The empirical base is a snapshot of public sources (World Bank WDI and
 PIP, OECD Revenue Statistics, IMF WEO and AIPI, ILOSTAT, PWT, ITU, Ookla, UN WPP, and the
 UNU-WIDER GRD as a contrast series), harmonized to the 2024 anchor year. The digital-access
 gap is constructed exclusively from indicators verified to be outside the IMF AI Preparedness
 Index (mobile-network coverage and median connection speeds), which enforces the
 no-double-counting rule of Section~\ref{subsec:ndc_translation_main} by construction. All
-calibrated parameters were registered and source-disciplined before the baseline runs; the
-full assignment is reported in the master calibration matrix in the
+calibrated parameters were fixed before the baseline runs; the full source assignment is reported in the master calibration matrix in the
 appendix. Table~\ref{tab:results_anchors} reports the observed country anchors and
 Table~\ref{tab:results_primary_spec} the prespecified primary specification.
 The underlying datasets are cited as data references \citep{unu2025grd,unwpp2024,pwt1001,worldbank2026pip,worldbank2026wdi,inei2024enaho,mdsf2024casen,ookla2024speedtest}.
@@ -1145,12 +1143,11 @@ communicable.
 
 \subsection{Validation: placebo, negative controls, and ablations}\label{subsec:results_diagnostics}
 
-The central credibility test, the temporal placebo, passes: running the complete pipeline
+The central credibility test, the temporal placebo, passes: applying the framework
 on the 2010--2018 digitalization wave with era-consistent inputs --- an ICT
 productivity shock disciplined to $0.3$--$0.6$ percent annually, 2010 connectivity anchors,
 and pre-2009 historical percentiles --- produces no crossing anywhere, with a maximum
-feasibility ratio of $0.75$. The framework does not fabricate feasibility from a
-technological wave that, as a matter of record, did not finance universal social protection.
+feasibility ratio of $0.75$. The framework therefore does not classify an ordinary digitalization wave, which did not historically finance universal social protection, as a source of fiscal feasibility.
 The exposure-substitution negative control has one exception: substituting displacement-only exposure for productive exposure reduces feasibility in proportion to the exposure ratio but does not eliminate Chile's stress-scenario minimum income crossing. Channel ablation
 corroborates the reading that this cell is overdetermined --- it survives switching off any
 single fiscal channel --- so its conditional label carries an explicit caveat: at the
@@ -1195,8 +1192,7 @@ Three readings organize these results. Chile's conditional crossing reflects the
 
 \section{Interpretation and Limitations}\label{sec:claims}
 
-The contribution is deliberately narrow. The paper does not forecast whether AI will finance
-UBI; it provides a calibrated threshold-accounting framework that identifies the combinations
+The paper estimates feasibility frontiers rather than future AI revenues. It provides a calibrated threshold-accounting framework that identifies the combinations
 of AI productivity, productive adoption, fiscal capture, informality reduction, labor-share
 allocation, and policy cost under which universal, categorical, or targeted social protection
 instruments become accounting-fiscally feasible in emerging economies. This is the scope
@@ -1236,7 +1232,7 @@ statistic.
 
 \subsection{What the results do not establish}
 
-These results do not establish that AI will finance a full UBI, that a given transfer is politically optimal, that implementation capacity exists, or that the model estimates actual future revenues. Stress-test scenarios are not forecasts. Baseline accounting-fiscal feasibility is not equivalent to welfare optimality, political feasibility, administrative feasibility, or a full debt-sustainability assessment. A result that fails placebo, negative-control, or leave-one-source-out diagnostics should not be presented as robust even if its point estimate satisfies $V\geq1$. Symmetrically, a finding of infeasibility must not be read as evidence that AI gains are small. Because part of the welfare gain from AI accrues as consumer surplus through lower prices and free services, which is outside the fiscal base, the framework measures taxable-income feasibility, not welfare. Infeasibility can coexist with large welfare gains that are simply hard to tax.
+These results do not establish that AI will finance a full UBI, that a given transfer is politically optimal, that implementation capacity exists, or that the model estimates actual future revenues. Baseline accounting-fiscal feasibility is not equivalent to welfare optimality, political feasibility, administrative feasibility, or a full debt-sustainability assessment. A result that fails the placebo, negative-control, or leave-one-source-out diagnostics is not treated as robust even when $V\geq1$; symmetrically, infeasibility does not imply that AI gains are small. Because part of the welfare gain from AI accrues as consumer surplus through lower prices and free services, which is outside the fiscal base, the framework measures taxable-income feasibility, not welfare. Infeasibility can coexist with large welfare gains that are simply hard to tax.
 
 \section{Conclusion}\label{sec:conclusion}
 
@@ -1244,7 +1240,7 @@ No instrument is robustly feasible under the primary specification. The most fav
 
 These answers come from a calibrated, falsifiable threshold framework, applied to Peru, Chile, Colombia, and Mexico in an ex ante registered design. The framework separates the technological, distributional, and fiscal links of the chain, so that disagreement about any one link can be located and recalibrated without discarding the method.
 
-The era-consistent ICT placebo for 2010--2018 does not relabel ordinary digitalization as AI fiscal space. The exposure-substitution negative control produced the expected mechanical collapse when productive exposure is replaced by automation risk; the survival of Chile's GMI under stress reveals overdetermination by the scale of the shock relative to program cost, and it is reported explicitly as a caveat, not as favourable evidence.
+The era-consistent ICT placebo for 2010--2018 does not relabel ordinary digitalization as AI fiscal space. The exposure-substitution negative control produced the expected mechanical collapse when productive exposure is replaced by automation risk; the survival of Chile's GMI under stress reflects the low cost of the targeted instrument relative to the disruptive shock rather than AI exposure as such.
 
 The central contribution remains a reusable threshold method. A reader who disputes the AI shock changes $\phi_s$; who disputes diffusion changes $T$; who disputes tax institutions changes $MFC^{gross}$; who disputes program design changes $c^{gross}$ --- and the same equations return revised frontiers. Two readings survive every specification: the binding margin at moderate scenarios is domestic translation rather than tax capacity, with fiscal design governing the magnitude and debt-consistency of the feasible set once the shock is large enough; and every crossing reported here is a requirement statement about what would have to persist, not a forecast that it will.
 
@@ -1258,9 +1254,9 @@ This paper is the first concrete step of a longer research path, and it owes muc
 
 \section*{Data and code availability}
 
-This article is the empirical version of the framework. All results were generated by the replication package (tags fase-B and etapa-7.1), and the primary specification was frozen under a specification hash before any baseline run. The horizon-inversion statistic H* was added post-baseline as a derived reporting statistic through a declared amendment recorded in the amendment registry; it introduced no parameter and altered no prespecified result.
+All results were generated from the archived replication package, and the primary specification was fixed before any baseline run. The horizon-inversion statistic $H^*$ was introduced after the baseline as a derived reporting measure; it changes no calibrated parameter and no baseline classification.
 
-The repository contains the complete replication code and hash-verified snapshots with SHA-256 manifests. \texttt{REPRODUCING.md} documents the reproduction workflow, and \texttt{DATA\_AVAILABILITY.md} records source-specific licenses and redistribution decisions. The package will be archived with a persistent identifier upon publication.
+The repository contains the complete replication code and snapshots with SHA-256 manifests. \texttt{REPRODUCING.md} documents the reproduction workflow, and \texttt{DATA\_AVAILABILITY.md} records source-specific licenses and redistribution decisions. The package will be archived with a persistent identifier upon publication.
 
 \section*{Declaration of competing interest}
 

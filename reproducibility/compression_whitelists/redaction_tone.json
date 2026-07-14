@@ -1,0 +1,14 @@
+{
+  "type": "review-tone-and-jargon",
+  "note": "Reduces defensive repetition (D1-D3) and removes internal project-management jargon (J1-J6). No number or result changes.",
+  "entries": [
+    {"scope":"body","token":"number:7.1","delta":-1,"justification":"J1 removes the internal stage tag etapa-7.1 from the data-availability statement"},
+    {"scope":"body","token":"scenario:stress","delta":-1,"justification":"D2 removes the redundant 'Stress-test scenarios are not forecasts' (scope still stated in the figure caption and conclusion)"},
+    {"scope":"body","token":"scenario:disruptive","delta":1,"justification":"D3 reframes the Chile caveat economically ('relative to the disruptive shock')"},
+    {"scope":"body","token":"scenario:low","delta":1,"justification":"D3 'the low cost of the targeted instrument'; tokenizer false positive from 'low cost', not the low AI scenario"},
+    {"scope":"document","token":"number:7.1","delta":-1,"justification":"J1 removes the internal stage tag etapa-7.1 from the data-availability statement"},
+    {"scope":"document","token":"scenario:stress","delta":-1,"justification":"D2 removes the redundant 'Stress-test scenarios are not forecasts' (scope still stated in the figure caption and conclusion)"},
+    {"scope":"document","token":"scenario:disruptive","delta":1,"justification":"D3 reframes the Chile caveat economically ('relative to the disruptive shock')"},
+    {"scope":"document","token":"scenario:low","delta":1,"justification":"D3 'the low cost of the targeted instrument'; tokenizer false positive from 'low cost', not the low AI scenario"}
+  ]
+}
