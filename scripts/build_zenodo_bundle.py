@@ -24,6 +24,7 @@ DEFAULT_OUTPUT = ROOT / "dist" / f"zenodo_bundle_v{DEFAULT_VERSION}.zip"
 ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 
 LF_NORMALIZED_PATHS = {"02_ESD_AI_USP_v6.md"}
+BYTE_CONTRACT_PREFIXES = ("reproducibility/reference/", "reproducibility/snapshot/")
 EXCLUDED_TRACKED_PREFIXES = ("paper/clean/",)
 FORBIDDEN_SUFFIXES = {".bat", ".cmd", ".com", ".dll", ".dta", ".exe", ".msi", ".ps1", ".sav", ".sh"}
 FORBIDDEN_PARTS = {".git", "__pycache__", ".pytest_cache", "cache"}
@@ -182,13 +183,16 @@ def validate_policy(files: Iterable[str]) -> None:
 
 
 def archive_bytes(relative: str, *, tracked: bool) -> bytes:
-    if tracked:
+    byte_contract = any(relative.startswith(prefix) for prefix in BYTE_CONTRACT_PREFIXES)
+    if tracked and not byte_contract:
         # Read the committed blob instead of the checked-out representation.
         # This prevents Windows checkout line-ending conversion from changing
-        # a bundle built from the same commit, while retaining historical blob
-        # bytes in checksum-governed snapshot/reference trees.
+        # a bundle built from the same commit.
         payload = subprocess.check_output(["git", "cat-file", "blob", f"HEAD:{relative}"], cwd=ROOT)
     else:
+        # Snapshot/reference files predate the line-ending policy and their
+        # published checksum contracts apply to the binary-marked checkout
+        # bytes.  .gitattributes prevents platform conversion for these trees.
         payload = (ROOT / relative).read_bytes()
     # The primary spec's declared governance hash is explicitly LF-based.
     if relative in LF_NORMALIZED_PATHS:
@@ -227,8 +231,14 @@ def build(output: Path, version: str, *, allow_dirty: bool = False) -> dict[str,
         "bundle_version": version,
         "source_commit": git_output("rev-parse", "HEAD"),
         "top_level_directory": TOP_LEVEL,
-        "tracked_file_source": "exact blobs from the declared HEAD commit",
-        "line_endings": "committed bytes preserved; primary specification normalized to LF",
+        "tracked_file_source": (
+            "exact blobs from the declared HEAD commit, except binary-marked historical "
+            "snapshot/reference checksum-contract bytes"
+        ),
+        "line_endings": (
+            "committed bytes preserved; binary-marked snapshot/reference checksum contracts "
+            "preserved from checkout; primary specification normalized to LF"
+        ),
         "public_reproduction_scope": "all registered public paths; ENAHO row-level microdata excluded",
         "files": file_manifest,
     }
