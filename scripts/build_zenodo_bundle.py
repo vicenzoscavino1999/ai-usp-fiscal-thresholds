@@ -1,9 +1,9 @@
 """Build the curated, deterministic public Zenodo reproduction bundle.
 
 The Git repository intentionally ignores runtime data.  A release ZIP therefore
-cannot be made safely with a generic archiver: this builder starts from tracked
-files, adds only the redistributable frozen inputs required by the public path,
-normalizes text to LF, and rejects restricted/raw executable payloads.
+cannot be made safely with a generic archiver: this builder reads tracked files
+from the exact HEAD commit, adds only the redistributable frozen inputs required
+by the public path, and rejects restricted/raw executable payloads.
 """
 
 from __future__ import annotations
@@ -126,8 +126,8 @@ def add_manifest_sources(
                     )
 
 
-def curated_files() -> set[str]:
-    files = tracked_files()
+def curated_files(tracked: set[str] | None = None) -> set[str]:
+    files = set(tracked if tracked is not None else tracked_files())
     add_model_inputs(files)
 
     # Complete public baseline: filtered/derived parquets plus every source
@@ -181,12 +181,16 @@ def validate_policy(files: Iterable[str]) -> None:
             raise ValueError(f"ENAHO row-level payload must not be redistributed: {relative}")
 
 
-def archive_bytes(relative: str) -> bytes:
-    path = ROOT / relative
-    payload = path.read_bytes()
-    # Snapshot/reference manifests participate in byte-for-byte checksum
-    # contracts, so preserve repository bytes generally. The primary spec is
-    # the sole exception: its declared governance hash is explicitly LF-based.
+def archive_bytes(relative: str, *, tracked: bool) -> bytes:
+    if tracked:
+        # Read the committed blob instead of the checked-out representation.
+        # This prevents Windows checkout line-ending conversion from changing
+        # a bundle built from the same commit, while retaining historical blob
+        # bytes in checksum-governed snapshot/reference trees.
+        payload = subprocess.check_output(["git", "cat-file", "blob", f"HEAD:{relative}"], cwd=ROOT)
+    else:
+        payload = (ROOT / relative).read_bytes()
+    # The primary spec's declared governance hash is explicitly LF-based.
     if relative in LF_NORMALIZED_PATHS:
         payload = payload.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
     return payload
@@ -210,9 +214,10 @@ def build(output: Path, version: str, *, allow_dirty: bool = False) -> dict[str,
     if not allow_dirty and not tracked_tree_is_clean():
         raise RuntimeError("Refusing to build from modified tracked files; commit the release fixes or pass --allow-dirty")
 
-    files = sorted(curated_files())
+    tracked = tracked_files()
+    files = sorted(curated_files(tracked))
     validate_policy(files)
-    payloads = {relative: archive_bytes(relative) for relative in files}
+    payloads = {relative: archive_bytes(relative, tracked=relative in tracked) for relative in files}
     file_manifest = {
         relative: {"sha256": sha256_bytes(payload), "size": len(payload)}
         for relative, payload in payloads.items()
@@ -222,7 +227,8 @@ def build(output: Path, version: str, *, allow_dirty: bool = False) -> dict[str,
         "bundle_version": version,
         "source_commit": git_output("rev-parse", "HEAD"),
         "top_level_directory": TOP_LEVEL,
-        "line_endings": "source bytes preserved; primary specification normalized to LF",
+        "tracked_file_source": "exact blobs from the declared HEAD commit",
+        "line_endings": "committed bytes preserved; primary specification normalized to LF",
         "public_reproduction_scope": "all registered public paths; ENAHO row-level microdata excluded",
         "files": file_manifest,
     }
