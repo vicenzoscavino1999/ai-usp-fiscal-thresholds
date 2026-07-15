@@ -95,9 +95,10 @@ python scripts\verify_zenodo_bundle.py dist\zenodo_bundle_v1.1.1-rc1.zip
 ```
 
 The builder verifies frozen input hashes, excludes provider raw payloads and
-ENAHO row-level microdata, normalizes text to LF, and writes a per-file
-`BUNDLE_MANIFEST.json`. The verifier checks that manifest, unsafe paths,
-symlinks, executable payloads, and the canonical primary-specification hash.
+ENAHO row-level microdata, normalizes the primary specification to canonical LF,
+preserves byte-hashed snapshot/reference manifests exactly, and writes a
+per-file `BUNDLE_MANIFEST.json`. The verifier checks that manifest, unsafe
+paths, symlinks, executable payloads, and the primary-specification hash.
 
 ## Folder Structure
 

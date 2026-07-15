@@ -23,28 +23,7 @@ DEFAULT_VERSION = "1.1.1-rc1"
 DEFAULT_OUTPUT = ROOT / "dist" / f"zenodo_bundle_v{DEFAULT_VERSION}.zip"
 ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 
-TEXT_SUFFIXES = {
-    ".bib",
-    ".cff",
-    ".csv",
-    ".json",
-    ".md",
-    ".py",
-    ".tex",
-    ".toml",
-    ".txt",
-    ".yaml",
-    ".yml",
-}
-TEXT_FILENAMES = {
-    ".dockerignore",
-    ".gitattributes",
-    ".gitignore",
-    "Dockerfile",
-    "LICENSE",
-    "LICENSE-DATA",
-    "Makefile",
-}
+LF_NORMALIZED_PATHS = {"02_ESD_AI_USP_v6.md"}
 EXCLUDED_TRACKED_PREFIXES = ("paper/clean/",)
 FORBIDDEN_SUFFIXES = {".bat", ".cmd", ".com", ".dll", ".dta", ".exe", ".msi", ".ps1", ".sav", ".sh"}
 FORBIDDEN_PARTS = {".git", "__pycache__", ".pytest_cache", "cache"}
@@ -205,7 +184,10 @@ def validate_policy(files: Iterable[str]) -> None:
 def archive_bytes(relative: str) -> bytes:
     path = ROOT / relative
     payload = path.read_bytes()
-    if path.suffix.lower() in TEXT_SUFFIXES or path.name in TEXT_FILENAMES:
+    # Snapshot/reference manifests participate in byte-for-byte checksum
+    # contracts, so preserve repository bytes generally. The primary spec is
+    # the sole exception: its declared governance hash is explicitly LF-based.
+    if relative in LF_NORMALIZED_PATHS:
         payload = payload.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
     return payload
 
@@ -240,7 +222,7 @@ def build(output: Path, version: str, *, allow_dirty: bool = False) -> dict[str,
         "bundle_version": version,
         "source_commit": git_output("rev-parse", "HEAD"),
         "top_level_directory": TOP_LEVEL,
-        "text_line_endings": "LF",
+        "line_endings": "source bytes preserved; primary specification normalized to LF",
         "public_reproduction_scope": "all registered public paths; ENAHO row-level microdata excluded",
         "files": file_manifest,
     }

@@ -9,3 +9,8 @@
 *.xlsx binary
 *.sav binary
 *.dta binary
+
+# These trees participate in byte-for-byte checksum contracts. Do not let a
+# checkout policy rewrite their historical line endings.
+reproducibility/reference/** binary
+reproducibility/snapshot/** binary
