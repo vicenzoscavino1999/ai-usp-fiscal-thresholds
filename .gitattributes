@@ -14,3 +14,8 @@
 # checkout policy rewrite their historical line endings.
 reproducibility/reference/** binary
 reproducibility/snapshot/** binary
+
+# These two frozen blobs remain LF in Git. Materialize their historical CRLF
+# byte contracts on every platform without changing the protected blobs.
+reproducibility/reference/country_policy_classification_final.csv text eol=crlf
+reproducibility/reference/monte_carlo_result.csv text eol=crlf

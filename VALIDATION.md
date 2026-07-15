@@ -1,7 +1,7 @@
 # Release Validation
 
 This document records the release-level verification of the public replication
-package `v1.1.1-rc1`. It reports the final supported state only; reproduction
+package `v1.1.1`. It reports the final supported state only; reproduction
 instructions are maintained separately in `REPRODUCING.md`.
 
 ## Validation Environment

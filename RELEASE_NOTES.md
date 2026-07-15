@@ -1,4 +1,4 @@
-# Release Notes — v1.1.1-rc1
+# Release Notes — v1.1.1
 
 **Related Zenodo record:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
 

@@ -19,7 +19,7 @@ from typing import Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
 TOP_LEVEL = "ai-usp-fiscal-thresholds"
-DEFAULT_VERSION = "1.1.1-rc1"
+DEFAULT_VERSION = "1.1.1"
 DEFAULT_OUTPUT = ROOT / "dist" / f"zenodo_bundle_v{DEFAULT_VERSION}.zip"
 ZIP_TIMESTAMP = (1980, 1, 1, 0, 0, 0)
 

@@ -1,7 +1,7 @@
 DATASET_VERSION ?= v1.0.1-official-4c
 PARAMETER_SET_ID ?= baseline-official-v2
 RUN_LABEL ?= official
-BUNDLE ?= dist/zenodo_bundle_v1.1.1-rc1.zip
+BUNDLE ?= dist/zenodo_bundle_v1.1.1.zip
 
 .PHONY: reproduce reproduce-public reproduce-restricted build-from-frozen-dataset run verify verify-freeze verify-extensions verify-extensions-all reproduce-extensions figures test check reproduce-deterministic reproduce-full run-diagnostics check-env determinism-check bundle-public verify-bundle
 

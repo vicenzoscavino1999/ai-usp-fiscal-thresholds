@@ -90,7 +90,7 @@ not use a generic recursive archiver:
 
 ```powershell
 python scripts\build_zenodo_bundle.py
-python scripts\verify_zenodo_bundle.py dist\zenodo_bundle_v1.1.1-rc1.zip
+python scripts\verify_zenodo_bundle.py dist\zenodo_bundle_v1.1.1.zip
 ```
 
 The builder verifies frozen input hashes, excludes provider raw payloads and
