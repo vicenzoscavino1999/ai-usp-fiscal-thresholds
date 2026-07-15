@@ -3,7 +3,9 @@ data/
 db/
 results/
 figures/
-paper/
+paper/clean/
+dist/
+cleanroom/
 *.pdf
 __pycache__/
 *.pyc

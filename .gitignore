@@ -16,6 +16,8 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .venv/
+dist/
+cleanroom/
 CLAUDE.md
 *.prompt
 *.notes

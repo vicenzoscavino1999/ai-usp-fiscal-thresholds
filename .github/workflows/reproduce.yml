@@ -27,7 +27,7 @@ jobs:
       - name: Verify frozen specification and protected tracked files
         run: python reproducibility/verify_freeze.py
 
-      - name: Unit and contract tests
+      - name: Unit and contract tests with clean-checkout fixtures
         run: python -m pytest -q
 
       - name: Verify archived reference contract

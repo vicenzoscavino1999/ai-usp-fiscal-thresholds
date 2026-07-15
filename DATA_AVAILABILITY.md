@@ -78,6 +78,11 @@ ZIP/DTA, but that extract is not placed in the public archive until the exact
 Module 34 redistribution terms are confirmed; a third party can recreate it
 from the direct public URL and M3 recipe without contacting the author.
 
+The public release also contains the WPP 2024 medium-variant projection filtered
+to 2024--2050 under `v1.1.0-official-4c/wpp/`. This small post-baseline extension
+is required only by H*; its parquet hash is frozen in the v1.1 manifest. It does
+not replace or recalibrate the v1.0.1 baseline.
+
 ## How to fully reproduce from scratch
 
 1. Check out the tagged release and create the pinned environment described in
@@ -101,9 +106,9 @@ from the direct public URL and M3 recipe without contacting the author.
    `python scripts/build_anchors_from_snapshot.py --dataset-version
    v1.0.1-official-4c --strict-gates`). This is the earliest author-independent
    restart point for the official pipeline.
-6. Run `make reproduce-deterministic`, `make reproduce-full`, and `make verify`
-   according to `README.md`. These commands consume the frozen snapshot and do
-   not contact data providers.
+6. From the curated public ZIP, run `make reproduce-public`. It verifies the
+   pristine freeze, runs the complete baseline plus H*, verifies all 30 reference
+   files, and checks the public extensions without contacting data providers.
 7. For robustness inputs, restore the archived UN SNA and CASEN derived
    parquets and verify M2/M4. Until ENAHO redistribution is confirmed, run
    script `17` once to recreate its required-variable parquet and verify M3.
@@ -118,26 +123,28 @@ from the direct public URL and M3 recipe without contacting the author.
 
 The proposed release payload contains:
 
-- the source scripts, environment lock files, four snapshot manifests, and each
-  source `metadata.json`;
-- the 14 available filtered parquets from M1 (SEDLAC has none), plus the UN SNA
-  and CASEN robustness parquets: 16 parquet files totaling 47,862,563 bytes
-  (45.65 MiB);
+- the source scripts, environment lock files, snapshot manifests, and each
+  public source `metadata.json`;
+- the 14 available filtered parquets from M1 (SEDLAC has none), the UN SNA and
+  CASEN robustness parquets, and the extended WPP v1.1 parquet: 17 parquets
+  totaling 48,105,063 bytes (45.88 MiB);
 - `metadata/manual_source_registry.yml`, the generated model-input anchors,
   canonical outputs, reports, and extension amendment records;
 - the aggregate `gap_index` artifacts and the GRD four-country contrast parquet
   under their source-specific non-commercial/share-alike notices;
-- the column-reduced CASEN required-variable parquet, not its 715.16 MiB source
-  payload; ENAHO contributes aggregate validation/cost/class-change reports,
-  scripts, URLs, and M3 hashes while its exact redistribution scope is pending;
+- the column-reduced CASEN required-variable parquet and metadata, not its
+  715.16 MiB source payload; ENAHO contributes metadata, aggregate
+  validation/cost/class-change reports, scripts, URLs, and M3 hashes while its
+  exact redistribution scope is pending;
   and
 - instructions and recorded hashes for SEDLAC, GRD source workbooks, Ookla tile
   caches, ENAHO source files, and CASEN source files.
 
-With those files, a stranger starts the official run at
-`make build-from-frozen-dataset`, the LS-raw and CASEN extensions at their
-runner scripts, and ENAHO by executing its public fetch script once before its
-runner. Reconstructing the source layer requires no contact with the author.
+With those files, a stranger runs `make reproduce-public` directly. The command
+builds the database and runtime results from the bundled inputs, then verifies
+LS-raw and CASEN. ENAHO remains a separate restricted arm that starts by running
+its public fetch script. Reconstructing either source layer requires no contact
+with the author.
 
 ## License-policy closure
 

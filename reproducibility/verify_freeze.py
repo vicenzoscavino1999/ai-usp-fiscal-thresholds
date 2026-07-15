@@ -23,6 +23,8 @@ SPEC_HASH_PATH = ROOT / "PRIMARY_SPEC_HASH.txt"
 DEFAULT_PROTECTED_FILES = (
     "02_ESD_AI_USP_v6.md",
     "PRIMARY_SPEC_HASH.txt",
+    "paper/main.tex",
+    "paper/supplementary_appendix.tex",
     "reports/calibrated_parameter_registry_baseline-official-v3.csv",
     "reports/country_policy_classification_final_baseline-official-v3.csv",
     "reports/driver_ranking_baseline-official-v3.csv",
@@ -161,7 +163,10 @@ def verify_freeze() -> bool:
         return False
     manifest: dict[str, Any] = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
 
-    actual_spec = sha256_file(SPEC_PATH)
+    # PRIMARY_SPEC_HASH is defined over the canonical LF representation. Use
+    # the same cross-platform normalization as the protected-file manifest so
+    # a CRLF checkout or ZIP extraction cannot produce a false freeze failure.
+    actual_spec = sha256_protected_file(SPEC_PATH)
     declared_spec = declared_spec_hash()
     spec_ok = actual_spec == declared_spec
     print(

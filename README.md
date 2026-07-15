@@ -18,8 +18,12 @@ official data snapshot is `v1.0.1-official-4c`; the deterministic grid remains
 - Python 3.12.x.
 - Docker 27+ for the canonical clean-run recipe.
 - GNU Make in Docker or locally. Windows users can run the direct Python commands.
-- Local author-held `data/` and `db/` folders for full reproduction. They are
-  intentionally ignored by Git.
+- The curated Zenodo ZIP includes every redistributable input required by
+  `make reproduce-public`; `db/`, `results/`, and `figures/` are created at run
+  time. A bare Git checkout intentionally omits `data/` and must restore the
+  public snapshot first.
+- Only the optional ENAHO microdata validation requires a separately obtained,
+  non-redistributed input.
 
 Install locally:
 
@@ -40,12 +44,14 @@ docker run --rm `
   -v "${PWD}\reports:/app/reports" `
   -v "${PWD}\figures:/app/figures" `
   ai-usp-fiscal-thresholds `
-  sh -lc "make reproduce-full"
+  sh -lc "make reproduce-public"
 ```
 
 The Dockerfile is pinned to `python:3.12.4-slim` by digest. `make
-reproduce-full` runs Tier A+B, deterministic robustness, diagnostics, Phase B
-closure exports, and `verify.py`.
+reproduce-public` first verifies the pristine freeze, then runs Tier A+B,
+deterministic robustness, diagnostics, Phase B closure, H*, reference
+verification, and all public extension checks. It does not contact data
+providers.
 
 ## Local Commands
 
@@ -62,11 +68,14 @@ make test
 Direct Windows recipe:
 
 ```powershell
+python reproducibility\verify_freeze.py
 python reproducibility\run_all.py --tier B --run-label official --parameter-set-id baseline-official-v2 --dataset-version v1.0.1-official-4c
 python scripts\run_deterministic_robustness_6a.py
 python scripts\run_diagnostics_6b.py
 python scripts\finalize_phase_b.py
+python scripts\run_h_star_extension_7_1.py
 python reproducibility\verify.py
+python reproducibility\verify_extensions.py
 python -m pytest -q
 ```
 
@@ -74,6 +83,21 @@ python -m pytest -q
 `reproducibility/reference/`, enforces schemas, rejects missing/extra rows or
 columns, checks NaN/type violations, and verifies the frozen snapshot manifest
 hash.
+
+## Building the Public Bundle
+
+The public ZIP is built from tracked files plus an explicit data allowlist; do
+not use a generic recursive archiver:
+
+```powershell
+python scripts\build_zenodo_bundle.py
+python scripts\verify_zenodo_bundle.py dist\zenodo_bundle_v1.1.1-rc1.zip
+```
+
+The builder verifies frozen input hashes, excludes provider raw payloads and
+ENAHO row-level microdata, normalizes text to LF, and writes a per-file
+`BUNDLE_MANIFEST.json`. The verifier checks that manifest, unsafe paths,
+symlinks, executable payloads, and the canonical primary-specification hash.
 
 ## Folder Structure
 
@@ -86,7 +110,9 @@ hash.
 - `figures/`: local generated figures; mirrored under `reports/figures/` for review.
 - `tests/`: unit, regression, schema, verifier, and closure tests.
 - `metadata/`: conventions and manual source registry notes.
-- `data/`, `db/`: author-held local inputs and DuckDB, ignored by Git.
+- `data/`: ignored by Git; curated redistributable snapshots are added only to
+  the release ZIP. Restricted provider payloads remain local.
+- `db/`: generated DuckDB runtime state, ignored by Git.
 
 ## Data Policy
 
