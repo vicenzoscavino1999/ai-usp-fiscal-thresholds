@@ -2,7 +2,12 @@ from pathlib import Path
 
 import pandas as pd
 
-from scripts.run_h_star_extension_7_1 import REPORTING_CAP_YEARS, find_h_star
+from scripts.run_h_star_extension_7_1 import (
+    AMENDMENT_CREATED_AT_UTC,
+    REPORTING_CAP_YEARS,
+    amendment_registry,
+    find_h_star,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -61,6 +66,9 @@ def test_h_star_minimal_crossing_condition():
 
 
 def test_h_star_outputs_if_present():
+    registry = amendment_registry()
+    assert registry.loc[0, "created_at_utc"] == AMENDMENT_CREATED_AT_UTC
+
     hstar_path = ROOT / "results" / "official" / "h_star_result.csv"
     mc_path = ROOT / "results" / "official" / "monte_carlo_result.csv"
     if not hstar_path.exists() or not mc_path.exists():

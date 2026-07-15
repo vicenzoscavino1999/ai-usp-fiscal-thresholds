@@ -40,6 +40,10 @@ MODEL_VERSION = "deterministic-engine-v1_hstar-extension"
 PARAMETER_SET_ID = "baseline-official-v3"
 SOURCE_DATASET_VERSION = "v1.0.1-official-4c"
 HSTAR_DATASET_VERSION = "v1.1.0-official-4c"
+# This is the creation time of the registered post-baseline amendment, not the
+# time at which a third party happens to reproduce it.  Keeping it immutable
+# makes the amendment registry idempotent and byte-reproducible.
+AMENDMENT_CREATED_AT_UTC = "2026-07-09T18:43:43.900708+00:00"
 REPORTING_CAP_YEARS = 25
 XI_REPORTING = 0.10
 XI_GRID = (0.0, 0.05, 0.10, 0.25, 0.50)
@@ -614,7 +618,7 @@ def amendment_registry() -> pd.DataFrame:
                 "convention_note": CONVENTION_NOTE,
                 "parameter_set_id": PARAMETER_SET_ID,
                 "dataset_version": HSTAR_DATASET_VERSION,
-                "created_at_utc": datetime.now(timezone.utc).isoformat(),
+                "created_at_utc": AMENDMENT_CREATED_AT_UTC,
             }
         ]
     )
