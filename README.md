@@ -4,14 +4,13 @@ Reproduction package for a calibrated accounting-fiscal threshold framework on
 AI-induced fiscal space and universal or categorical social protection in Peru,
 Chile, Colombia, and Mexico.
 
-**Archived replication package:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
+**Related Zenodo record:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
 
-Current status: the official pipeline is complete, five registered post-baseline
-extensions are implemented, and paper v3 is in submission preparation. The
-official data snapshot is `v1.0.1-official-4c`; the deterministic grid remains
-`baseline-official-v2`, while uncertainty and diagnostics use
-`baseline-official-v3`. See `REPRODUCING.md` for reviewer commands and
-`REPRODUCIBILITY_STATUS.md` for the current operational inventory.
+The official public pipeline is complete. The baseline snapshot is
+`v1.0.1-official-4c`, the deterministic grid uses `baseline-official-v2`, and
+uncertainty and diagnostics use `baseline-official-v3`. See `REPRODUCING.md` for
+reviewer commands, `REPRODUCIBILITY_STATUS.md` for scope, and `VALIDATION.md` for
+the release verification matrix.
 
 ## Requirements
 
@@ -48,7 +47,7 @@ docker run --rm `
 ```
 
 The Dockerfile is pinned to `python:3.12.4-slim` by digest. `make
-reproduce-public` first verifies the pristine freeze, then runs Tier A+B,
+reproduce-public` first checks the pristine freeze, then runs Tier A+B,
 deterministic robustness, diagnostics, Phase B closure, H*, reference
 verification, and all public extension checks. It does not contact data
 providers.
@@ -106,7 +105,7 @@ paths, symlinks, executable payloads, and the primary-specification hash.
 - `scripts/`: ingestion, anchor builders, calibration, runners, closure exports.
 - `reproducibility/`: run harness, schemas, tolerances, snapshot manifests, reference outputs.
 - `reproducibility/reference/`: versioned official reference CSVs and hashes.
-- `reports/`: versioned audit reports, calibration exports, paper-table mirror.
+- `reports/`: versioned validation reports, calibration exports, paper-table mirror.
 - `results/`: local runtime outputs, including `results/paper_tables/`.
 - `figures/`: local generated figures; mirrored under `reports/figures/` for review.
 - `tests/`: unit, regression, schema, verifier, and closure tests.
@@ -117,7 +116,7 @@ paths, symlinks, executable payloads, and the primary-specification hash.
 
 ## Data Policy
 
-The package stores snapshot manifests and derived audit artifacts, not all raw
+The package stores snapshot manifests and derived validation artifacts, not all raw
 inputs. `data/`, `db/`, `results/`, and `figures/` are ignored runtime folders.
 Restricted microdata and author-downloaded raw files are not redistributed.
 GRD 2025 is registered with the official UNU-WIDER citation and DOI. Ookla

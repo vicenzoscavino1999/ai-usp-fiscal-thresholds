@@ -125,11 +125,11 @@ a paper-results shortcut.
 
 ## 14. Data and Licenses
 
-The package versions manifests, metadata, derived audit outputs, and reference
+The package versions manifests, metadata, derived validation outputs, and reference
 tables. It does not redistribute all raw data. GRD is cited as UNU-WIDER GRD
 2025. Ookla raw data is not redistributed because the source is CC BY-NC-SA 4.0;
 the derived gap index is archived with attribution and license notes. Restricted
-microdata and national-source manual files remain author-held.
+microdata and national-source manual files are not redistributed.
 
 ## 15. Informality Mechanisms
 

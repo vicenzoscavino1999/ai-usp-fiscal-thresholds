@@ -1,47 +1,41 @@
-# Release Notes --- v1.1.0
+# Release Notes — v1.1.1-rc1
 
-**Zenodo archive:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
+**Related Zenodo record:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
 
 ## Scope
 
-Reproduction package for the AI-USP fiscal thresholds paper. This release provides the
-deterministic official grid, the Monte Carlo tiers, robustness runs, diagnostics and
-falsification, the paper-table exports, and the reproduction documentation.
+This release candidate provides the complete public replication path for the
+AI-USP fiscal-threshold framework: deterministic results, Monte Carlo analysis,
+robustness specifications, diagnostics, H*, publication tables and automated
+verification.
 
 ## Included
 
-- Official four-country deterministic Tier A reference.
-- Monte Carlo independent and correlated modes for `baseline-official-v3`.
-- Deterministic robustness Exp. 6 and review fixes.
-- Tier D diagnostics: placebo ICT, negative controls, leave-one-source-out,
-  channel ablation, no-rent capture, high leakage, Sobol/Saltelli.
-- New Phase B informality adoption-only ablation for H3.
-- Final H1-H5 hypothesis adjudication.
-- Paper tables and appendices A-K as CSV and booktabs LaTeX.
-- Vgross heatmaps by country.
-- Digest-pinned Dockerfile, GitHub Actions smoke workflow, pre-commit
-  large-file guard, and data-license policy.
+- Four-country official baseline snapshot and model inputs.
+- WPP 2024 medium-variant projection through 2050 for H*.
+- Independent and correlated Monte Carlo modes and convergence diagnostics.
+- Deterministic robustness, placebo and falsification specifications.
+- H* results, manual-check inputs and registered amendment metadata.
+- Public omega-I, UN SNA labor-share and CASEN extension inputs.
+- CSV and LaTeX publication tables with idempotent reexport checks.
+- Digest-pinned Docker environment and hash-locked Python dependencies.
+- Per-file bundle manifest and archive-safety verifier.
 
-## Key Result Notes
+## Restricted Supplement
 
-- H1: `MIXED`; broad high-cost gradient holds, but strict instrument ordering
-  does not.
-- H2: `NOT_TESTABLE`; country-specific `E_prod` is not available.
-- H3: `MIXED`; adoption-only informal-ablation changes `q_bar` but not
-  `q_prod` or `V` under the frozen target/intercept convention.
-- H4: `HOLDS`; fiscal regimes materially affect feasibility.
-- H5: `HOLDS`; extreme fiscal-capture requirements are not used for robust
-  feasibility claims.
-- D2 negative control: mechanical collapse occurs, but CHL GMI stress survives;
-  CHL GMI remains conditional and caveated, not robust.
+The public archive excludes ENAHO row-level microdata pending an unambiguous
+redistribution basis for the exact required-variable extract. Reviewers may
+obtain the source independently and run the registered restricted verification.
 
-## Not Included
+## Verification
 
-- GMI microdata-strong variant.
-- Country-specific productive-exposure estimates.
+The supported validation commands are:
 
-## Validation
+```text
+make reproduce-public
+python reproducibility/verify.py
+python reproducibility/verify_extensions.py
+python -m pytest -q
+```
 
-- `python -m pytest -q`
-- `python reproducibility/verify.py`
-- Docker build and `make reproduce-full` with local author-held `data/` and `db/`
+The complete release matrix and scope notes are provided in `VALIDATION.md`.
