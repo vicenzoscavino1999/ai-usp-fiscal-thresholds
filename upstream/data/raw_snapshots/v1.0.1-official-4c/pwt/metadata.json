@@ -1,0 +1,18 @@
+{
+  "source_id": "PWT_10_01",
+  "download_date": "2026-07-08T22:25:54.714811+00:00",
+  "source_url": "https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/QT5BCC",
+  "script_name": "08_download_pwt.py",
+  "script_version": "0.1.0-stage1",
+  "status": "ok",
+  "query_or_endpoint": "https://dataverse.nl/api/access/datafile/354098",
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "all",
+  "raw_file_hash": "7605dbb97cffa9e56739efbbad7587785edf8e0409ec058d3e3d6e692ba15cad",
+  "notes": "PWT 10.01 Stata .dta via DataverseNL API."
+}

@@ -1,0 +1,379 @@
+{
+  "summary": {
+    "status": "PASS",
+    "checks": 92,
+    "max_between_seed": 0.008279999999999954,
+    "max_within_seed": 0.006300000000000083,
+    "all_checks_passed": true
+  },
+  "checks": [
+    {
+      "check": "MC_20261114_independent.csv:shape",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:finite",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:support",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:quantile_order",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:bounds:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:bounds:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:bounds:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:bounds:Fmax_p05",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:bounds:Fmax_p50",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_independent.csv:bounds:Fmax_p95",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:shape",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:finite",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:support",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:quantile_order",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:bounds:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:bounds:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:bounds:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:bounds:Fmax_p05",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:bounds:Fmax_p50",
+      "passed": true
+    },
+    {
+      "check": "MC_20261114_rank_factor_nominal.csv:bounds:Fmax_p95",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:shape",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:finite",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:support",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:quantile_order",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:bounds:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:bounds:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:bounds:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:bounds:Fmax_p05",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:bounds:Fmax_p50",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_independent.csv:bounds:Fmax_p95",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:shape",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:finite",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:support",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:quantile_order",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:bounds:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:bounds:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:bounds:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:bounds:Fmax_p05",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:bounds:Fmax_p50",
+      "passed": true
+    },
+    {
+      "check": "MC_20261215_rank_factor_nominal.csv:bounds:Fmax_p95",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:shape",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:finite",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:support",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:quantile_order",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:bounds:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:bounds:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:bounds:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:bounds:Fmax_p05",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:bounds:Fmax_p50",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_independent.csv:bounds:Fmax_p95",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:shape",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:finite",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:support",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:quantile_order",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:bounds:recurring_author_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:bounds:registered_leakage_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:bounds:nonnegative_frontier_frequency",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:bounds:Fmax_p05",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:bounds:Fmax_p50",
+      "passed": true
+    },
+    {
+      "check": "MC_20261316_rank_factor_nominal.csv:bounds:Fmax_p95",
+      "passed": true
+    },
+    {
+      "check": "six_full_experiments",
+      "passed": true
+    },
+    {
+      "check": "seeds_keys:independent:20261114:20261215",
+      "passed": true
+    },
+    {
+      "check": "seeds_keys:independent:20261114:20261316",
+      "passed": true
+    },
+    {
+      "check": "seeds_keys:independent:20261215:20261316",
+      "passed": true
+    },
+    {
+      "check": "seeds_keys:rank_factor_nominal:20261114:20261215",
+      "passed": true
+    },
+    {
+      "check": "seeds_keys:rank_factor_nominal:20261114:20261316",
+      "passed": true
+    },
+    {
+      "check": "seeds_keys:rank_factor_nominal:20261215:20261316",
+      "passed": true
+    },
+    {
+      "check": "reported_convergence_recomputed",
+      "passed": true
+    },
+    {
+      "check": "predeclared_frequency_threshold",
+      "passed": true
+    },
+    {
+      "check": "low_exposure_root_independent_formula",
+      "passed": true
+    },
+    {
+      "check": "low_exposure_survival_consistent_with_threshold",
+      "passed": true
+    },
+    {
+      "check": "diagnostic_keys_unique",
+      "passed": true
+    },
+    {
+      "check": "diagnostic_budget_identity",
+      "passed": true
+    },
+    {
+      "check": "diagnostic_classification_identity",
+      "passed": true
+    }
+  ]
+}

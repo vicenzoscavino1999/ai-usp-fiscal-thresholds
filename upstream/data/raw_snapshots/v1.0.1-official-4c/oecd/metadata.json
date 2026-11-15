@@ -1,0 +1,33 @@
+{
+  "source_id": "OECD_REVSTAT_LAC",
+  "download_date": "2026-07-08T22:20:05.375692+00:00",
+  "source_url": "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC",
+  "script_name": "04_download_oecd_revenue.py",
+  "script_version": "0.1.1-stage1",
+  "status": "ok",
+  "query_or_endpoint": [
+    "https://sdmx.oecd.org/public/rest/dataflow/OECD.CTP.TPS/DSD_REV_COMP_LAC@DF_RSLAC/1.1?references=all",
+    "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/PER......",
+    "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/CHL......",
+    "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/COL......",
+    "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/MEX......"
+  ],
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "all",
+  "raw_file_hash": "3d43d8792dfaaf9872e163c19e2d40d1ee102201a1d303375a1e6a7389683b3a",
+  "sdmx_dimensions": [
+    "REF_AREA",
+    "MEASURE",
+    "SECTOR",
+    "STANDARD_REVENUE",
+    "CTRY_SPECIFIC_REVENUE",
+    "UNIT_MEASURE",
+    "FREQ"
+  ],
+  "notes": "OECD Revenue Statistics LAC via SDMX; structure request precedes PER-filtered CSV data query."
+}

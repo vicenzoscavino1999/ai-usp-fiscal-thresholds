@@ -1,0 +1,23 @@
+{
+  "source_id": "ILOSTAT",
+  "download_date": "2026-07-08T22:25:47.966886+00:00",
+  "source_url": "https://rplumber.ilo.org/data/ref_area",
+  "script_name": "07_download_ilostat.py",
+  "script_version": "0.1.0-stage1",
+  "status": "ok",
+  "query_or_endpoint": [
+    "https://rplumber.ilo.org/data/ref_area?id=PER_A&format=.csv.gz",
+    "https://rplumber.ilo.org/data/ref_area?id=CHL_A&format=.csv.gz",
+    "https://rplumber.ilo.org/data/ref_area?id=COL_A&format=.csv.gz",
+    "https://rplumber.ilo.org/data/ref_area?id=MEX_A&format=.csv.gz"
+  ],
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "all annual",
+  "raw_file_hash": "dcf2324ae32927ef95eca62e2fa27879e1f4b7bc5aee97957302d29497a6b218",
+  "notes": "ILOSTAT bulk ref_area annual files. classif1/classif2 are mapped only when prefixes identify age, sector, or occupation."
+}

@@ -1,0 +1,15 @@
+{
+  "date_lima": "2026-11-14",
+  "source": "Official portals viewed through web",
+  "pages": [
+    {
+      "url": "https://proyectos.inei.gob.pe/microdatos/",
+      "observed": "INEI microdata portal provides survey databases and documentation."
+    },
+    {
+      "url": "https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-2024",
+      "observed": "CASEN 2024 page lists SPSS, Stata, R and codebook downloads."
+    }
+  ],
+  "limitation": "Original payloads used in this run are frozen local files from July 2026; current download payload hashes were not measured."
+}

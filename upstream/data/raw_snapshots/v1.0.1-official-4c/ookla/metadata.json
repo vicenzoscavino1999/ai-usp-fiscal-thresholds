@@ -1,0 +1,82 @@
+{
+  "source_id": "OOKLA_SPEEDTEST_OPEN_DATA",
+  "download_date": "2026-07-08T22:32:31.423457+00:00",
+  "source_url": "https://registry.opendata.aws/speedtest-global-performance/",
+  "script_name": "15_download_ookla.py",
+  "script_version": "0.1.0-stage4a",
+  "status": "ok",
+  "query_or_endpoint": [
+    "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson",
+    "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=fixed/year=2024/quarter=4/2024-10-01_performance_fixed_tiles.parquet",
+    "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=fixed/year=2026/quarter=1/2026-01-01_performance_fixed_tiles.parquet",
+    "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=mobile/year=2024/quarter=4/2024-10-01_performance_mobile_tiles.parquet",
+    "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=mobile/year=2026/quarter=1/2026-01-01_performance_mobile_tiles.parquet"
+  ],
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "benchmark_country_filter": [
+    "AUT",
+    "BEL",
+    "CZE",
+    "DNK",
+    "EST",
+    "FIN",
+    "FRA",
+    "DEU",
+    "GRC",
+    "HUN",
+    "IRL",
+    "ITA",
+    "LVA",
+    "LTU",
+    "LUX",
+    "NLD",
+    "NOR",
+    "POL",
+    "PRT",
+    "SVK",
+    "SVN",
+    "ESP",
+    "SWE",
+    "TUR"
+  ],
+  "year_filter": "2024Q4",
+  "raw_file_hash": "54d98535cfa828ea5750868a5770471d54f8334b58e940863408d23e5a05de8b",
+  "download_file_hashes": {
+    "natural_earth": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+    "ookla_fixed_2024q4": "993729631e0963e95f1a569ae06e9283f93192b52061cd0c22563628956f1d14",
+    "ookla_fixed_2026q1": "532a70d4adcec26d79d8438889c5da82a292cf7b4d2ef4285f2c8e5d57005e75",
+    "ookla_mobile_2024q4": "08dfbbb3abf765a9524ad0b002769f04f880b3fe1502452a819f4decb6b02b60",
+    "ookla_mobile_2026q1": "aeb2a6402b29f4e06563771947a2b7c911b1f1be9571bc84b6ba4398ae5c2651",
+    "ookla_speedtest_parquet": "54d98535cfa828ea5750868a5770471d54f8334b58e940863408d23e5a05de8b"
+  },
+  "latest_available_period_detected": {
+    "fixed": {
+      "year": 2026,
+      "quarter": 1,
+      "period_start": "2026-01-01",
+      "key": "parquet/performance/type=fixed/year=2026/quarter=1/2026-01-01_performance_fixed_tiles.parquet"
+    },
+    "mobile": {
+      "year": 2026,
+      "quarter": 1,
+      "period_start": "2026-01-01",
+      "key": "parquet/performance/type=mobile/year=2026/quarter=1/2026-01-01_performance_mobile_tiles.parquet"
+    }
+  },
+  "license_notes": "Ookla Open Data is published under CC BY-NC-SA 4.0. Internal snapshot use is OK for calibration review; public archiving of raw tile cache is deferred. The derived gap_index can be archived with attribution and license note.",
+  "normalization_inputs": {
+    "official_gap_components": [
+      "fixed download median Mbps",
+      "mobile download median Mbps"
+    ],
+    "aggregation_method": "country polygon contains tile centroid; test-weighted median of tile avg_d_kbps",
+    "normalization_scope": "relative_to_frontier_benchmark_set",
+    "gap_anchor_period": "2024Q4"
+  },
+  "notes": "Country-level speed anchors derived from AWS Ookla parquet tiles. The official Gap uses the 2024Q4 anchor period; the latest available period is also downloaded and aggregated for source completeness. Older full history is not downloaded because it is not cheap."
+}

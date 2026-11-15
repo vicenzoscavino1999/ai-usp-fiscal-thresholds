@@ -1,0 +1,7 @@
+metric,max_between_seed_range,cells_over_002,worst_cell
+recurring_author_frequency,0.007920000000000038,0.0,CHL|mid|r4|GMI:GMI_loaded_aggregate|B0|reference
+registered_leakage_frequency,0.007940000000000003,0.0,CHL|mid|r4|GMI:GMI_loaded_aggregate|B0|reference
+nonnegative_frontier_frequency,0.006179999999999963,0.0,CHL|high|r3|GMI:GMI_loaded_aggregate|B0|uniform
+Fmax_p05,7.171356530616402e-05,,COL|stress|r4|UBI|B0|possible
+Fmax_p50,8.207552504806495e-05,,CHL|stress|r3|GMI:GMI_ideal_aggregate|B0|possible
+Fmax_p95,0.00015750416217702456,,MEX|stress|r1|PBI|B2|possible

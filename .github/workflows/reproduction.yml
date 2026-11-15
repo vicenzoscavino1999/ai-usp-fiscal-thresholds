@@ -1,0 +1,94 @@
+name: JPM V2 source integrity and optional complete reproduction
+'on':
+  workflow_dispatch:
+    inputs:
+      complete:
+        description: Run the complete study and survey reconstruction
+        required: false
+        default: false
+        type: boolean
+      frozen_input_tag:
+        description: Private repositories only; temporary frozen-survey transport tag
+        required: false
+        type: string
+  pull_request:
+  push:
+    branches: [main, master, 'release/**']
+permissions:
+  contents: read
+concurrency:
+  group: jpm-reproduction-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: true
+jobs:
+  package-integrity:
+    name: Package integrity (not complete reproduction)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify a clean source export
+        run: python3 -B ci/check_release.py --destination "$RUNNER_TEMP/jpm-source" --report "$RUNNER_TEMP/package-evidence/PACKAGE_CHECK.json"
+      - name: Build pinned environment
+        run: docker build --platform linux/amd64 -t jpm-release-check .
+      - name: Test document integration, calibration selection and release claims
+        run: |
+          docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges --user "$(id -u):$(id -g)" --tmpfs /tmp:rw,nosuid,nodev,size=536870912 --mount "type=bind,source=$RUNNER_TEMP/jpm-source,target=/app,readonly" --mount "type=bind,source=$RUNNER_TEMP/package-evidence,target=/evidence" --workdir /app -e PYTHONPATH=/app jpm-release-check python -B -m pytest tests/test_package.py tests/test_frontier_selection.py tests/test_release_status.py -q -p no:cacheprovider --junitxml=/evidence/PACKAGE_TESTS.xml
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: package-integrity-${{ github.run_id }}
+          path: ${{ runner.temp }}/package-evidence/
+          retention-days: 14
+  complete-reproduction:
+    name: Complete offline study and raw-survey reconstruction
+    if: github.event_name == 'workflow_dispatch' && inputs.complete
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Retrieve originals through private transport when requested
+        if: inputs.frozen_input_tag != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          INPUT_TAG: ${{ inputs.frozen_input_tag }}
+          REPOSITORY_PRIVATE: ${{ github.event.repository.private }}
+        run: |
+          test "$REPOSITORY_PRIVATE" = true || { echo 'Frozen-survey transport is restricted to private repositories.'; exit 1; }
+          gh release download "$INPUT_TAG" --repo "$GITHUB_REPOSITORY" --pattern survey-originals.zip --dir "$RUNNER_TEMP/input-transfer"
+          python3 - <<'PY'
+          import hashlib,json,os,zipfile
+          from pathlib import Path
+          temp=Path(os.environ['RUNNER_TEMP']);raw=temp/'frozen-surveys';raw.mkdir()
+          archive=temp/'input-transfer/survey-originals.zip'
+          specs=json.loads(Path('surveys/INPUT_CONTRACT.json').read_text())['countries']
+          with zipfile.ZipFile(archive) as z:
+              expected={s['raw_relative'] for s in specs.values()}
+              assert len(z.namelist())==len(expected) and set(z.namelist())==expected,'Unexpected transport inventory'
+              for country,s in specs.items():
+                  target=(raw/s['raw_relative']).resolve()
+                  assert target.is_relative_to(raw.resolve())
+                  z.extract(s['raw_relative'],raw)
+                  with target.open('rb') as f:digest=hashlib.file_digest(f,'sha256').hexdigest()
+                  assert digest==s['raw_sha256'],country+' differs from frozen input'
+                  print(json.dumps({'country':country,'sha256':digest,'status':'FROZEN_HASH_VERIFIED'}))
+          PY
+      - name: Reconstruct complete study and run all tests
+        env:
+          INPUT_TAG: ${{ inputs.frozen_input_tag }}
+        run: |
+          if [ -n "$INPUT_TAG" ]; then
+            python3 -B ci/run_ci.py --workdir "$RUNNER_TEMP/jpm-ci" --raw-root "$RUNNER_TEMP/frozen-surveys"
+          else
+            python3 -B ci/run_ci.py --workdir "$RUNNER_TEMP/jpm-ci"
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: jpm-verification-${{ github.run_id }}
+          path: ${{ runner.temp }}/jpm-ci/evidence/
+          if-no-files-found: warn
+          retention-days: 14

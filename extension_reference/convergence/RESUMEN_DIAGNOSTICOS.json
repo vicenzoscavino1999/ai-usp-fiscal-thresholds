@@ -1,0 +1,21 @@
+{
+  "execution_status": "PASS",
+  "algebra_checks": 1280,
+  "all_checks_passed": true,
+  "distinct_policy_cells": 480,
+  "diagnostic_rows": 5280,
+  "zero_AI_anchor": "PASS",
+  "all_taxes_zero": "PASS",
+  "low_exposure_no_headline_B2_crossing": "FAIL",
+  "low_exposure_surviving_headline_B2": 1,
+  "aggregate_source_countries": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "aggregate_source_class_changes": 0,
+  "full_Tier_D_status": "PARTIAL_NOT_CERTIFIED",
+  "elapsed_seconds": 20.38258982699999,
+  "scientific_equations_changed": false
+}

@@ -1,0 +1,6618 @@
+{
+  "version": 5,
+  "expected_artifacts": 88,
+  "fixed_seed": {
+    "atol": 1e-10,
+    "rtol": 1e-08
+  },
+  "between_seed_frequency_limit": 0.02,
+  "artifacts": [
+    {
+      "generated": "extensions/convergence/resultados/ANALISIS_CONTROL_EXPOSICION.json",
+      "reference": "extension_reference/convergence/ANALISIS_CONTROL_EXPOSICION.json",
+      "sha256": "123e72af02b05d6ef0b2e5dc23a0671ad5b85b311e46ed972b1db13b9b91b1b7",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/convergence/resultados/CALIBRACION_TOLERANCIAS_PROPUESTA.csv",
+      "reference": "extension_reference/convergence/CALIBRACION_TOLERANCIAS_PROPUESTA.csv",
+      "sha256": "6dd362ad52aa3f5800a068be996c15d9aa0d1956d1fac7e890a98367922da169",
+      "format": "csv",
+      "schema": {
+        "rows": 12,
+        "primary_key": [
+          "dependency",
+          "metric"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "rank_factor_nominal"
+            ]
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "observed_max": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "historical_factor": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mechanical_proposal_atol": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "auto_applied": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "role": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/CHECKS.json",
+      "reference": "extension_reference/convergence/CHECKS.json",
+      "sha256": "31e8d47d7f6783dae29b2856c898297fa45ef79a0da2f5346237de5ffbca2dcd",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/convergence/resultados/CHECKS_DIAGNOSTICOS.json",
+      "reference": "extension_reference/convergence/CHECKS_DIAGNOSTICOS.json",
+      "sha256": "f36ea0034fca3aaf9271ad140d48ae2205e73f3ee637acd3c1f47f83ef4c5baf",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/convergence/resultados/CHILE_EMPAREJADO_TRES_SEMILLAS.csv",
+      "reference": "extension_reference/convergence/CHILE_EMPAREJADO_TRES_SEMILLAS.csv",
+      "sha256": "95320c6941fbf2e30757b79b85c8499a1e2060b6d444dbabb3a94f28130c73a0",
+      "format": "csv",
+      "schema": {
+        "rows": 144,
+        "primary_key": [
+          "seed",
+          "rule",
+          "mode",
+          "n",
+          "timing"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "timing": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B2"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/COBERTURA_CONTRASTE_GRD.csv",
+      "reference": "extension_reference/convergence/COBERTURA_CONTRASTE_GRD.csv",
+      "sha256": "086b9cdc1c20de3dca0037fe7087123221d371ac689e4fd20994f6970683fca9",
+      "format": "csv",
+      "schema": {
+        "rows": 4,
+        "primary_key": [
+          "country_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "matched_year": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "ratio_grd_oecd": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "total_candidate_rows": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "excluded_missing_or_implausible": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "latest_unique_value_pairs": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "grd_tax_including_sc_gdp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "oecd_tax_including_sc_gdp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "role": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/CONVERGENCIA_POR_TAMANO.csv",
+      "reference": "extension_reference/convergence/CONVERGENCIA_POR_TAMANO.csv",
+      "sha256": "fe08d5f9320e0b293a2e3cd54c72d3bd393b0c0569d9ed8ff3091c5a8b6b0dcf",
+      "format": "csv",
+      "schema": {
+        "rows": 108,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "n_a",
+          "n_b",
+          "metric"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "rank_factor_nominal"
+            ]
+          },
+          "n_a": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n_b": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_abs_difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "over_001": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "exact",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "over_002": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "exact",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "worst_cell": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/CORRELACIONES_REALIZADAS.csv",
+      "reference": "extension_reference/convergence/CORRELACIONES_REALIZADAS.csv",
+      "sha256": "9cc581eaf420a07576cd607c13f27d16f701f8528e64f9796d0cbd8971e5d90f",
+      "format": "csv",
+      "schema": {
+        "rows": 180,
+        "primary_key": [
+          "seed",
+          "country_id",
+          "variable_a",
+          "variable_b"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "variable_a": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "variable_b": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "realized_spearman": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "latent_correlation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/DIAGNOSTICOS_ACTUALES_480.csv",
+      "reference": "extension_reference/convergence/DIAGNOSTICOS_ACTUALES_480.csv",
+      "sha256": "ea1ed7716f474e867cbec2befc349314b0acb739b68cac33c1a945811d230112",
+      "format": "csv",
+      "schema": {
+        "rows": 5280,
+        "primary_key": [
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "diagnostic"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "diagnostic": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "headline": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "revenue": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "revenue_change": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "spb": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_B2": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "margin_B2": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "covers_B2": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "baseline_margin_B2": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "baseline_covers_B2": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "low_exposure_g": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "tolerant",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "classification_changed": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_rank": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "baseline_country_rank": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rank_change": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/DIAGNOSTICOS_SIETE_CASOS.csv",
+      "reference": "extension_reference/convergence/DIAGNOSTICOS_SIETE_CASOS.csv",
+      "sha256": "c7f9bb53dba9c23dc235addaf33634e4b80d3299be145e619fb2959df68064d1",
+      "format": "csv",
+      "schema": {
+        "rows": 77,
+        "primary_key": [
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "diagnostic"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "diagnostic": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "headline": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "revenue": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "revenue_change": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "spb": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_B2": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "margin_B2": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "covers_B2": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "baseline_margin_B2": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "baseline_covers_B2": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "low_exposure_g": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "tolerant",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "classification_changed": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_rank": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "baseline_country_rank": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rank_change": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/DISPERSION_ENTRE_SEMILLAS.csv",
+      "reference": "extension_reference/convergence/DISPERSION_ENTRE_SEMILLAS.csv",
+      "sha256": "5b0405e1d5fd05822407a81672f64780909e4b1ba9810c6da43644727e6179c2",
+      "format": "csv",
+      "schema": {
+        "rows": 12,
+        "primary_key": [
+          "dependency",
+          "metric"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "rank_factor_nominal"
+            ]
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_between_seed_range": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "over_001": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "exact",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "over_002": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "exact",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "worst_cell": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/DRIVERS_SPEARMAN.csv",
+      "reference": "extension_reference/convergence/DRIVERS_SPEARMAN.csv",
+      "sha256": "fbad46474fac72c472f89a05445ad4229f19b48b0ecf7c74e7e9df639aafad93",
+      "format": "csv",
+      "schema": {
+        "rows": 1122,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "parameter"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "rank_factor_nominal"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "parameter": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "name": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "spearman": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "rank": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/ESTABILIDAD_DRIVERS.csv",
+      "reference": "extension_reference/convergence/ESTABILIDAD_DRIVERS.csv",
+      "sha256": "32ad30869c4c3501ec81727658808d3b9101233975ac7def7d2a25ef9157467d",
+      "format": "csv",
+      "schema": {
+        "rows": 42,
+        "primary_key": [
+          "seed_a",
+          "seed_b",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "rank_factor_nominal"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "seed_a": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "seed_b": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "top3_overlap": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "top3_identical": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_rank_change": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/FRECUENCIAS_SIETE_CASOS.csv",
+      "reference": "extension_reference/convergence/FRECUENCIAS_SIETE_CASOS.csv",
+      "sha256": "52f235c179d91a616cbb22780098caf2e8384125e7d93458f55e4e95163a1ba9",
+      "format": "csv",
+      "schema": {
+        "rows": 42,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "rank_factor_nominal"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "reference"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/GUARD_BASELINE_5000.csv",
+      "reference": "extension_reference/convergence/GUARD_BASELINE_5000.csv",
+      "sha256": "6f17bbcdaf360a9f26c5f143af99f31d59c624ed2a294ffe739dcd76e0c89f14",
+      "format": "csv",
+      "schema": {
+        "rows": 4320,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent_guard"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/MC_20261114_independent.csv",
+      "reference": "extension_reference/convergence/MC_20261114_independent.csv",
+      "sha256": "e3d65630065080214ebffacdcfcf76611630e21e4a46ff803dc151c608db2c93",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/MC_20261114_rank_factor_nominal.csv",
+      "reference": "extension_reference/convergence/MC_20261114_rank_factor_nominal.csv",
+      "sha256": "24a34612cda45408ab4cfcea3ae53ffd0b5e65adf66b4ae4c821d64bb70564af",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "rank_factor_nominal"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/MC_20261215_independent.csv",
+      "reference": "extension_reference/convergence/MC_20261215_independent.csv",
+      "sha256": "806e03233b7f19abd939478aeaa953e37a8d93c5897b77d4c1c86bc90c225789",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/MC_20261215_rank_factor_nominal.csv",
+      "reference": "extension_reference/convergence/MC_20261215_rank_factor_nominal.csv",
+      "sha256": "0542cb7d1de77314fe171286682ae9be1f13e902866336538868b3770341676b",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "rank_factor_nominal"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/MC_20261316_independent.csv",
+      "reference": "extension_reference/convergence/MC_20261316_independent.csv",
+      "sha256": "f4e2db465e7d7406d9282a0bee70802b251f3433ccf1c25cdc08e8275e417b3b",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/MC_20261316_rank_factor_nominal.csv",
+      "reference": "extension_reference/convergence/MC_20261316_rank_factor_nominal.csv",
+      "sha256": "94c93c784ea866be68b30c9042daaa6e8b8568367da363db07c0b98b86600664",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "rank_factor_nominal"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/PRESERVACION_MARGINALES.csv",
+      "reference": "extension_reference/convergence/PRESERVACION_MARGINALES.csv",
+      "sha256": "a62216242f8cf98ddda7c549cccad8c0395482803b1967552b9d805105e1538c",
+      "format": "csv",
+      "schema": {
+        "rows": 72,
+        "primary_key": [
+          "seed",
+          "country_id",
+          "n",
+          "parameter"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "parameter": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "exact_sorted_equality": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "is_constant": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "latent_rho": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "psd_min_eigenvalue": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/RESUMEN_DIAGNOSTICOS.csv",
+      "reference": "extension_reference/convergence/RESUMEN_DIAGNOSTICOS.csv",
+      "sha256": "7a48ee4702e90628eea663ad3f91215249a13a4280ff7f293c99fdc856dda29f",
+      "format": "csv",
+      "schema": {
+        "rows": 22,
+        "primary_key": [
+          "diagnostic",
+          "scope"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "diagnostic": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "scope": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "cells": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings_B2": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "changed_class": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_abs_rank_change": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/RESUMEN_DIAGNOSTICOS.json",
+      "reference": "extension_reference/convergence/RESUMEN_DIAGNOSTICOS.json",
+      "sha256": "9e060b395ed9687c933a4a9eaa87df51bb1e44dd711e6249fe5d01980ac6b99f",
+      "format": "json",
+      "ignored_runtime_pointers": [
+        "$.elapsed_seconds"
+      ]
+    },
+    {
+      "generated": "extensions/convergence/resultados/RESUMEN_MC.json",
+      "reference": "extension_reference/convergence/RESUMEN_MC.json",
+      "sha256": "ddfecf543c03a0290c0d80c223027c364b6af90f08ac9a0963533cedc8f5ef9f",
+      "format": "json",
+      "ignored_runtime_pointers": [
+        "$.elapsed_seconds"
+      ]
+    },
+    {
+      "generated": "extensions/convergence/resultados/SENSIBILIDAD_DEPENDENCIA.csv",
+      "reference": "extension_reference/convergence/SENSIBILIDAD_DEPENDENCIA.csv",
+      "sha256": "f809ab244bb9f6c3a76ea193983c5d295b30b80c41b103a471ca1db9d762bbbc",
+      "format": "csv",
+      "schema": {
+        "rows": 9,
+        "primary_key": [
+          "seed",
+          "metric"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_abs_difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "signed_difference_at_max": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "worst_cell": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/convergence/resultados/VALIDACION_ADAPTADOR.json",
+      "reference": "extension_reference/convergence/VALIDACION_ADAPTADOR.json",
+      "sha256": "e43c3b439727b3eddc91975d0417e0293172ff0e7ebb2ab7d14c9c1a4b6e2a15",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/convergence/resultados/VERIFICACION_SEPARADA.json",
+      "reference": "extension_reference/convergence/VERIFICACION_SEPARADA.json",
+      "sha256": "5c4dd166ed685d2647d86e5549f41db65767222052e7fdf99dd5a39a23e81e74",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/paired/resultados/ATRIBUCIONES_20261114.csv",
+      "reference": "extension_reference/paired/ATRIBUCIONES_20261114.csv",
+      "sha256": "ae7a69d7e4eeaf97217db13878d039652e62b7b06eb795d92e80c5db93fc7b6e",
+      "format": "csv",
+      "schema": {
+        "rows": 84,
+        "primary_key": [
+          "seed",
+          "n",
+          "metric",
+          "change"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "case": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "change": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "allocation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "min_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "initial": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "final": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/ATRIBUCIONES_20261215.csv",
+      "reference": "extension_reference/paired/ATRIBUCIONES_20261215.csv",
+      "sha256": "7f35852bfeb356f728c0a9496d9132513e9e781803f76f013fa5e2e26488cc7e",
+      "format": "csv",
+      "schema": {
+        "rows": 84,
+        "primary_key": [
+          "seed",
+          "n",
+          "metric",
+          "change"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "case": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "change": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "allocation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "min_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "initial": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "final": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/ATRIBUCIONES_20261316.csv",
+      "reference": "extension_reference/paired/ATRIBUCIONES_20261316.csv",
+      "sha256": "d4e23c8899db3fb7f975a89c31be53fae8212ab1f085dcc0749153153e35898a",
+      "format": "csv",
+      "schema": {
+        "rows": 84,
+        "primary_key": [
+          "seed",
+          "n",
+          "metric",
+          "change"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "case": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "change": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "allocation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "min_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "initial": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "final": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/ATRIBUCIONES_TRES_SEMILLAS.csv",
+      "reference": "extension_reference/paired/ATRIBUCIONES_TRES_SEMILLAS.csv",
+      "sha256": "5159be28743b2183a02f8e588d3ab23e6d303151dac9255dd5b27fc1636139e7",
+      "format": "csv",
+      "schema": {
+        "rows": 252,
+        "primary_key": [
+          "seed",
+          "n",
+          "metric",
+          "change"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "case": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "change": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "allocation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "min_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max_order_marginal": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "initial": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "final": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/CHECKS_EJECUCION.json",
+      "reference": "extension_reference/paired/CHECKS_EJECUCION.json",
+      "sha256": "e6228a616b4b061ad23d5833cae157b4f6cfee7ce9cff8c3dcd987970c268560",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/paired/resultados/COMPARADORES_20261114.csv",
+      "reference": "extension_reference/paired/COMPARADORES_20261114.csv",
+      "sha256": "4d17c718c5119785f2798074606d389c57af752565ba85c34f4ed611c58e388b",
+      "format": "csv",
+      "schema": {
+        "rows": 248,
+        "primary_key": [
+          "seed",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "grd_tax_gross_common_nonresource",
+              "grd_tax_mixture",
+              "grd_tax_nonresource",
+              "grd_total_revenue_gross_common_nonresource",
+              "grd_total_revenue_mixture",
+              "grd_total_revenue_nonresource",
+              "hist_tax_common_grd_years",
+              "hist_tax_mixture",
+              "hist_tax_mixture_2010plus",
+              "hist_tax_mixture_2015plus",
+              "hist_tax_mixture_empirical",
+              "hist_tax_mixture_min_g_1pct",
+              "hist_tax_mixture_min_g_2pct",
+              "hist_tax_mixture_no2008_09",
+              "hist_tax_mixture_no2020_21",
+              "hist_tax_mixture_no_winsor",
+              "hist_tax_positive",
+              "hist_total_revenue_common_grd_years",
+              "hist_total_revenue_mixture",
+              "hist_total_revenue_mixture_2010plus",
+              "hist_total_revenue_mixture_2015plus",
+              "hist_total_revenue_mixture_empirical",
+              "hist_total_revenue_mixture_min_g_1pct",
+              "hist_total_revenue_mixture_min_g_2pct",
+              "hist_total_revenue_mixture_no2008_09",
+              "hist_total_revenue_mixture_no2020_21",
+              "hist_total_revenue_mixture_no_winsor",
+              "hist_total_revenue_positive",
+              "possible_bound",
+              "reference",
+              "uniform_bound"
+            ]
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B2"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_low": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_high": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p10": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p90": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/COMPARADORES_20261215.csv",
+      "reference": "extension_reference/paired/COMPARADORES_20261215.csv",
+      "sha256": "1bca9f73a4c81a66ae842b2652261657ad394ad86c06ffec830d0477ce4fde6f",
+      "format": "csv",
+      "schema": {
+        "rows": 248,
+        "primary_key": [
+          "seed",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "grd_tax_gross_common_nonresource",
+              "grd_tax_mixture",
+              "grd_tax_nonresource",
+              "grd_total_revenue_gross_common_nonresource",
+              "grd_total_revenue_mixture",
+              "grd_total_revenue_nonresource",
+              "hist_tax_common_grd_years",
+              "hist_tax_mixture",
+              "hist_tax_mixture_2010plus",
+              "hist_tax_mixture_2015plus",
+              "hist_tax_mixture_empirical",
+              "hist_tax_mixture_min_g_1pct",
+              "hist_tax_mixture_min_g_2pct",
+              "hist_tax_mixture_no2008_09",
+              "hist_tax_mixture_no2020_21",
+              "hist_tax_mixture_no_winsor",
+              "hist_tax_positive",
+              "hist_total_revenue_common_grd_years",
+              "hist_total_revenue_mixture",
+              "hist_total_revenue_mixture_2010plus",
+              "hist_total_revenue_mixture_2015plus",
+              "hist_total_revenue_mixture_empirical",
+              "hist_total_revenue_mixture_min_g_1pct",
+              "hist_total_revenue_mixture_min_g_2pct",
+              "hist_total_revenue_mixture_no2008_09",
+              "hist_total_revenue_mixture_no2020_21",
+              "hist_total_revenue_mixture_no_winsor",
+              "hist_total_revenue_positive",
+              "possible_bound",
+              "reference",
+              "uniform_bound"
+            ]
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B2"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_low": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_high": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p10": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p90": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/COMPARADORES_20261316.csv",
+      "reference": "extension_reference/paired/COMPARADORES_20261316.csv",
+      "sha256": "b5743f6083e1d6178c559876045b5fc5518e1c0cd043528851cfb0046bbc7354",
+      "format": "csv",
+      "schema": {
+        "rows": 248,
+        "primary_key": [
+          "seed",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "grd_tax_gross_common_nonresource",
+              "grd_tax_mixture",
+              "grd_tax_nonresource",
+              "grd_total_revenue_gross_common_nonresource",
+              "grd_total_revenue_mixture",
+              "grd_total_revenue_nonresource",
+              "hist_tax_common_grd_years",
+              "hist_tax_mixture",
+              "hist_tax_mixture_2010plus",
+              "hist_tax_mixture_2015plus",
+              "hist_tax_mixture_empirical",
+              "hist_tax_mixture_min_g_1pct",
+              "hist_tax_mixture_min_g_2pct",
+              "hist_tax_mixture_no2008_09",
+              "hist_tax_mixture_no2020_21",
+              "hist_tax_mixture_no_winsor",
+              "hist_tax_positive",
+              "hist_total_revenue_common_grd_years",
+              "hist_total_revenue_mixture",
+              "hist_total_revenue_mixture_2010plus",
+              "hist_total_revenue_mixture_2015plus",
+              "hist_total_revenue_mixture_empirical",
+              "hist_total_revenue_mixture_min_g_1pct",
+              "hist_total_revenue_mixture_min_g_2pct",
+              "hist_total_revenue_mixture_no2008_09",
+              "hist_total_revenue_mixture_no2020_21",
+              "hist_total_revenue_mixture_no_winsor",
+              "hist_total_revenue_positive",
+              "possible_bound",
+              "reference",
+              "uniform_bound"
+            ]
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B2"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_low": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_high": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p10": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p90": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/COMPARADORES_TRES_SEMILLAS.csv",
+      "reference": "extension_reference/paired/COMPARADORES_TRES_SEMILLAS.csv",
+      "sha256": "0a40313fb865a7bcc6098a7dc6c5601911ebd0bacfdd9854ade753450adf4220",
+      "format": "csv",
+      "schema": {
+        "rows": 744,
+        "primary_key": [
+          "seed",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "grd_tax_gross_common_nonresource",
+              "grd_tax_mixture",
+              "grd_tax_nonresource",
+              "grd_total_revenue_gross_common_nonresource",
+              "grd_total_revenue_mixture",
+              "grd_total_revenue_nonresource",
+              "hist_tax_common_grd_years",
+              "hist_tax_mixture",
+              "hist_tax_mixture_2010plus",
+              "hist_tax_mixture_2015plus",
+              "hist_tax_mixture_empirical",
+              "hist_tax_mixture_min_g_1pct",
+              "hist_tax_mixture_min_g_2pct",
+              "hist_tax_mixture_no2008_09",
+              "hist_tax_mixture_no2020_21",
+              "hist_tax_mixture_no_winsor",
+              "hist_tax_positive",
+              "hist_total_revenue_common_grd_years",
+              "hist_total_revenue_mixture",
+              "hist_total_revenue_mixture_2010plus",
+              "hist_total_revenue_mixture_2015plus",
+              "hist_total_revenue_mixture_empirical",
+              "hist_total_revenue_mixture_min_g_1pct",
+              "hist_total_revenue_mixture_min_g_2pct",
+              "hist_total_revenue_mixture_no2008_09",
+              "hist_total_revenue_mixture_no2020_21",
+              "hist_total_revenue_mixture_no_winsor",
+              "hist_total_revenue_positive",
+              "possible_bound",
+              "reference",
+              "uniform_bound"
+            ]
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B2"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_low": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_high": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p10": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p90": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/CONSTANTES_CHILE.json",
+      "reference": "extension_reference/paired/CONSTANTES_CHILE.json",
+      "sha256": "09a9806fcb901319a59bc738e3ab7879b7f76eab97884bbc8ce8e81e4066263a",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/paired/resultados/CONVERGENCIA_ESCALERA.csv",
+      "reference": "extension_reference/paired/CONVERGENCIA_ESCALERA.csv",
+      "sha256": "90166414aca77e17ec3d2acf2922734e549ff58c59ee7a7845ebbb1a61613109",
+      "format": "csv",
+      "schema": {
+        "rows": 1710,
+        "primary_key": [
+          "seed",
+          "n_from",
+          "n_to",
+          "family",
+          "key"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "family": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n_from": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n_to": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "key": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "absolute_difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "passes_002": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/DISPERSION_ATRIBUCIONES.csv",
+      "reference": "extension_reference/paired/DISPERSION_ATRIBUCIONES.csv",
+      "sha256": "96dd301502e434b4721515dd3e0110a3bb053dc0f35cc2d8a0bd72551dab0ebb",
+      "format": "csv",
+      "schema": {
+        "rows": 21,
+        "primary_key": [
+          "metric",
+          "change"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "change": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "min_allocation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max_allocation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "between_seed_range": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "sign_stable": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "unit": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/DISPERSION_ENTRE_SEMILLAS.csv",
+      "reference": "extension_reference/paired/DISPERSION_ENTRE_SEMILLAS.csv",
+      "sha256": "1c61c86353351ccaaaa80ff3360ef4da96bc4e7966cba3ac913b18ded0bd67ee",
+      "format": "csv",
+      "schema": {
+        "rows": 190,
+        "primary_key": [
+          "family",
+          "key"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "family": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "key": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "min_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "between_seed_range": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "passes_002": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/GUARDA_SEMILLA_ORIGINAL.json",
+      "reference": "extension_reference/paired/GUARDA_SEMILLA_ORIGINAL.json",
+      "sha256": "50633a4383cb26cd1275a6706dc827403b01ee7ff426d844823566a589ac0432",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/paired/resultados/HASHES_VECTORES_CAPTURA.csv",
+      "reference": "extension_reference/paired/HASHES_VECTORES_CAPTURA.csv",
+      "sha256": "f4b492460b239c0e1f6ef45f7a5444146c5a062f84b9b7725e00d2df268a8306",
+      "format": "csv",
+      "schema": {
+        "rows": 93,
+        "primary_key": [
+          "seed",
+          "mode",
+          "n",
+          "vector"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "grd_tax_gross_common_nonresource",
+              "grd_tax_mixture",
+              "grd_tax_nonresource",
+              "grd_total_revenue_gross_common_nonresource",
+              "grd_total_revenue_mixture",
+              "grd_total_revenue_nonresource",
+              "hist_tax_common_grd_years",
+              "hist_tax_mixture",
+              "hist_tax_mixture_2010plus",
+              "hist_tax_mixture_2015plus",
+              "hist_tax_mixture_empirical",
+              "hist_tax_mixture_min_g_1pct",
+              "hist_tax_mixture_min_g_2pct",
+              "hist_tax_mixture_no2008_09",
+              "hist_tax_mixture_no2020_21",
+              "hist_tax_mixture_no_winsor",
+              "hist_tax_positive",
+              "hist_total_revenue_common_grd_years",
+              "hist_total_revenue_mixture",
+              "hist_total_revenue_mixture_2010plus",
+              "hist_total_revenue_mixture_2015plus",
+              "hist_total_revenue_mixture_empirical",
+              "hist_total_revenue_mixture_min_g_1pct",
+              "hist_total_revenue_mixture_min_g_2pct",
+              "hist_total_revenue_mixture_no2008_09",
+              "hist_total_revenue_mixture_no2020_21",
+              "hist_total_revenue_mixture_no_winsor",
+              "hist_total_revenue_positive",
+              "possible_bound",
+              "reference",
+              "uniform_bound"
+            ]
+          },
+          "vector": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "sha256": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/MASA_NEGATIVA_CONSERVADA.csv",
+      "reference": "extension_reference/paired/MASA_NEGATIVA_CONSERVADA.csv",
+      "sha256": "d1e019c71acf61396be6e1e7427095f24eff4932fb239c35b673cdf4172ddacb",
+      "format": "csv",
+      "schema": {
+        "rows": 84,
+        "primary_key": [
+          "seed",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "grd_tax_gross_common_nonresource",
+              "grd_tax_mixture",
+              "grd_tax_nonresource",
+              "grd_total_revenue_gross_common_nonresource",
+              "grd_total_revenue_mixture",
+              "grd_total_revenue_nonresource",
+              "hist_tax_common_grd_years",
+              "hist_tax_mixture",
+              "hist_tax_mixture_2010plus",
+              "hist_tax_mixture_2015plus",
+              "hist_tax_mixture_empirical",
+              "hist_tax_mixture_min_g_1pct",
+              "hist_tax_mixture_min_g_2pct",
+              "hist_tax_mixture_no2008_09",
+              "hist_tax_mixture_no2020_21",
+              "hist_tax_mixture_no_winsor",
+              "hist_tax_positive",
+              "hist_total_revenue_common_grd_years",
+              "hist_total_revenue_mixture",
+              "hist_total_revenue_mixture_2010plus",
+              "hist_total_revenue_mixture_2015plus",
+              "hist_total_revenue_mixture_empirical",
+              "hist_total_revenue_mixture_min_g_1pct",
+              "hist_total_revenue_mixture_min_g_2pct",
+              "hist_total_revenue_mixture_no2008_09",
+              "hist_total_revenue_mixture_no2020_21",
+              "hist_total_revenue_mixture_no_winsor",
+              "hist_total_revenue_positive"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "negative_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "zero_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "positive_only": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "empirical_resampling": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_negative_mass": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/PRIMITIVAS_20261114.parquet",
+      "reference": "extension_reference/paired/PRIMITIVAS_20261114.parquet",
+      "sha256": "b24539829f3d2c70b0468df1af3cfdd52a06c42dfadfba426af63594f74f05eb",
+      "format": "parquet",
+      "schema": {
+        "rows": 50000,
+        "primary_key": [],
+        "row_matching": "registered_row_order",
+        "key_nullable": [],
+        "columns": {
+          "draw_id": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "g": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "dw": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "dn": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_equivalent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "original_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "current_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "u": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "uneg": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "uyear": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "chi_Kbase": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "chi_dom": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "psi_shift": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_L_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_K_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_R_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_W": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_Pi": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_R": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "m_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "theta_R_dom": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "exempt_C": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "lambda_ai": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "lambda_ai_kbase": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        },
+        "row_order_reason": "Registered shared draw ordinal for primitive reconstruction; no exported draw ID. Preserve full order."
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/PRIMITIVAS_20261215.parquet",
+      "reference": "extension_reference/paired/PRIMITIVAS_20261215.parquet",
+      "sha256": "0229a91720d984afdf4770be953a564ab661918e7a4c9482fad7129606a09b2a",
+      "format": "parquet",
+      "schema": {
+        "rows": 50000,
+        "primary_key": [],
+        "row_matching": "registered_row_order",
+        "key_nullable": [],
+        "columns": {
+          "draw_id": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "g": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "dw": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "dn": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_equivalent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "original_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "current_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "u": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "uneg": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "uyear": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "chi_Kbase": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "chi_dom": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "psi_shift": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_L_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_K_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_R_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_W": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_Pi": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_R": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "m_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "theta_R_dom": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "exempt_C": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "lambda_ai": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "lambda_ai_kbase": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        },
+        "row_order_reason": "Registered shared draw ordinal for primitive reconstruction; no exported draw ID. Preserve full order."
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/PRIMITIVAS_20261316.parquet",
+      "reference": "extension_reference/paired/PRIMITIVAS_20261316.parquet",
+      "sha256": "eeb5fcc859a03858dfc0844160e3fcad4c35006ab4d90e5bd4b4e191fe3ec0c7",
+      "format": "parquet",
+      "schema": {
+        "rows": 50000,
+        "primary_key": [],
+        "row_matching": "registered_row_order",
+        "key_nullable": [],
+        "columns": {
+          "draw_id": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "g": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "dw": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "dn": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_equivalent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "original_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "current_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "u": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "uneg": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "uyear": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "chi_Kbase": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "chi_dom": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "psi_shift": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_L_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_K_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "tau_R_disp": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_W": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_Pi": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mpc_R": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "m_M": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "theta_R_dom": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "exempt_C": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "lambda_ai": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "lambda_ai_kbase": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        },
+        "row_order_reason": "Registered shared draw ordinal for primitive reconstruction; no exported draw ID. Preserve full order."
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/PUENTE_20261114.csv",
+      "reference": "extension_reference/paired/PUENTE_20261114.csv",
+      "sha256": "456776c7425ca1bd0eebe356ce0c90191b0eab9a6de546f712d9726ee943ca1e",
+      "format": "csv",
+      "schema": {
+        "rows": 512,
+        "primary_key": [
+          "seed",
+          "n",
+          "mask"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mask": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "B2_frequency_percent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_p50_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "balance_mean_pp_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_mean": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/PUENTE_20261215.csv",
+      "reference": "extension_reference/paired/PUENTE_20261215.csv",
+      "sha256": "3c38a102708da34b25b39c029357c1fe428313845d024f54678a276f8f6a4bd6",
+      "format": "csv",
+      "schema": {
+        "rows": 512,
+        "primary_key": [
+          "seed",
+          "n",
+          "mask"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mask": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "B2_frequency_percent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_p50_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "balance_mean_pp_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_mean": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/PUENTE_20261316.csv",
+      "reference": "extension_reference/paired/PUENTE_20261316.csv",
+      "sha256": "ab6878be059ed5983d5a790909503b2a584048f7b5983f02dd32ace5403779b8",
+      "format": "csv",
+      "schema": {
+        "rows": 512,
+        "primary_key": [
+          "seed",
+          "n",
+          "mask"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mask": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "B2_frequency_percent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_p50_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "balance_mean_pp_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_mean": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/PUENTE_TRES_SEMILLAS.csv",
+      "reference": "extension_reference/paired/PUENTE_TRES_SEMILLAS.csv",
+      "sha256": "a3b729c9699ec733b59c063580fca36a505f5e8f66f5c9c9ddd484be6de1e9fc",
+      "format": "csv",
+      "schema": {
+        "rows": 1536,
+        "primary_key": [
+          "seed",
+          "n",
+          "mask"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mask": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "B2_frequency_percent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_p50_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "balance_mean_pp_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_mean": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/RANGOS_ATRIBUCIONES.csv",
+      "reference": "extension_reference/paired/RANGOS_ATRIBUCIONES.csv",
+      "sha256": "d9aa8990c1ac4db5fc82c7c1186b82c9b9ebded7f212f02d3e453090190f09bc",
+      "format": "csv",
+      "schema": {
+        "rows": 21,
+        "primary_key": [
+          "seed",
+          "change"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "change": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "allocation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "rank_by_allocation": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/RESUMEN_EJECUCION.json",
+      "reference": "extension_reference/paired/RESUMEN_EJECUCION.json",
+      "sha256": "78499dbe0b161551c24e55910bcc9c7a1903623eaf897de805dfe9daa0b3a5fb",
+      "format": "json",
+      "ignored_runtime_pointers": [
+        "$.elapsed_seconds"
+      ]
+    },
+    {
+      "generated": "extensions/paired/resultados/SECUENCIA_TRES_SEMILLAS.csv",
+      "reference": "extension_reference/paired/SECUENCIA_TRES_SEMILLAS.csv",
+      "sha256": "8dac393b2aec8058ae72b1055641463ad5f20d2d70895a92bf59f8373fa7f930",
+      "format": "csv",
+      "schema": {
+        "rows": 96,
+        "primary_key": [
+          "seed",
+          "n",
+          "mask"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mask": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "B2_frequency_percent": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "R_p50_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "balance_mean_pp_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_mean_percent_GDP": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_mean": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/TABLA5_TRES_SEMILLAS.csv",
+      "reference": "extension_reference/paired/TABLA5_TRES_SEMILLAS.csv",
+      "sha256": "13d1ad6f587de9ecc7431ba14772d93c6c95d45cde9cde22b177301353e0b409",
+      "format": "csv",
+      "schema": {
+        "rows": 18,
+        "primary_key": [
+          "seed",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "hist_tax_mixture",
+              "hist_total_revenue_mixture",
+              "reference"
+            ]
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B2"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_low": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mc95_high": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p10": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "M_p90": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/paired/resultados/VERIFICACION_SEPARADA.json",
+      "reference": "extension_reference/paired/VERIFICACION_SEPARADA.json",
+      "sha256": "3013c3469e1a1168131efb696be67af393e4db4221472d027106fb82a20868e8",
+      "format": "json",
+      "ignored_runtime_pointers": [
+        "$.summary.elapsed_seconds"
+      ]
+    },
+    {
+      "generated": "extensions/stress/resultados/CACHE_INDEPENDIENTE_20261114.json",
+      "reference": "extension_reference/stress/CACHE_INDEPENDIENTE_20261114.json",
+      "sha256": "1a524ef5fbc0f882d8e579d9b05581328e3200d1084fbaadeea3b8a46a80254a",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/stress/resultados/CACHE_INDEPENDIENTE_20261215.json",
+      "reference": "extension_reference/stress/CACHE_INDEPENDIENTE_20261215.json",
+      "sha256": "78d2d0063e8ecde12276bc10e2285c97a7acc33656702abe04bfd7a7bc60be32",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/stress/resultados/CACHE_INDEPENDIENTE_20261316.json",
+      "reference": "extension_reference/stress/CACHE_INDEPENDIENTE_20261316.json",
+      "sha256": "03a2b5201eb188f09ef1d783e6dbc985772abde998d3ea871aaaa7b518bc7473",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/stress/resultados/CHECKS_EJECUCION.json",
+      "reference": "extension_reference/stress/CHECKS_EJECUCION.json",
+      "sha256": "541ca93843b096ca8ffc78ecc479ce7464d9bd07a7e6f8c07450a51a9005405f",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/stress/resultados/CONVERGENCIA_ESCALERA.csv",
+      "reference": "extension_reference/stress/CONVERGENCIA_ESCALERA.csv",
+      "sha256": "54e2ddba37aa3d6a6c1b16283ce9ce3cb3ff0596e6947d51891c8e0ddfaeef8d",
+      "format": "csv",
+      "schema": {
+        "rows": 54,
+        "primary_key": [
+          "seed",
+          "n_from",
+          "n_to",
+          "metric"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n_from": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n_to": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_abs_difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "cells_over_002": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "exact",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "worst_cell": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/CORRELACIONES_REALIZADAS.csv",
+      "reference": "extension_reference/stress/CORRELACIONES_REALIZADAS.csv",
+      "sha256": "7ad3489da56f9b9a55add5cd84dce75ffedad9e718b7fc08812103423a0570fc",
+      "format": "csv",
+      "schema": {
+        "rows": 180,
+        "primary_key": [
+          "seed",
+          "country_id",
+          "variable_a",
+          "variable_b"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "variable_a": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "variable_b": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "latent_correlation": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "realized_spearman": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/DECILES_FACTOR_SIETE_CASOS.csv",
+      "reference": "extension_reference/stress/DECILES_FACTOR_SIETE_CASOS.csv",
+      "sha256": "5ce98305e8eb5f9b5a04ff86dff6d81f4020193a5f21601940ee8389b51d326a",
+      "format": "csv",
+      "schema": {
+        "rows": 42,
+        "primary_key": [
+          "seed",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "n",
+          "stratum"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "stratum": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "factor_min": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "factor_max": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "role": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/DIFERENCIAS_CELDA_ENTRE_DEPENDENCIAS.csv",
+      "reference": "extension_reference/stress/DIFERENCIAS_CELDA_ENTRE_DEPENDENCIAS.csv",
+      "sha256": "0c465f20c66530b8ef551e445ee4284fbbf8f54d8ae7610f0499c94de77e1386",
+      "format": "csv",
+      "schema": {
+        "rows": 25920,
+        "primary_key": [
+          "seed",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "comparison"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "comparison": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/DISPERSION_ENTRE_SEMILLAS.csv",
+      "reference": "extension_reference/stress/DISPERSION_ENTRE_SEMILLAS.csv",
+      "sha256": "525efabfbc91d0299301c1d0e1a059866b3d9ea27cf5138fdc8c2d2868943f7e",
+      "format": "csv",
+      "schema": {
+        "rows": 6,
+        "primary_key": [
+          "metric"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_between_seed_range": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "cells_over_002": {
+            "type": "number",
+            "nullable": true,
+            "comparison": "exact",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change."
+          },
+          "worst_cell": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/DRIVERS_ENTRE_DEPENDENCIAS.csv",
+      "reference": "extension_reference/stress/DRIVERS_ENTRE_DEPENDENCIAS.csv",
+      "sha256": "e092c4814155762ab118347c415497e6c755c69f6a22d8cd9fabba2c7628a63f",
+      "format": "csv",
+      "schema": {
+        "rows": 42,
+        "primary_key": [
+          "seed",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "comparison"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "comparison": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "top3_overlap": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "stress_top3": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "comparison_top3": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/DRIVERS_ESTRES.csv",
+      "reference": "extension_reference/stress/DRIVERS_ESTRES.csv",
+      "sha256": "17f0b5bee41f45aaf11ce0f40f95f581c56291712644eac6a8a2ebd0192da6ae",
+      "format": "csv",
+      "schema": {
+        "rows": 561,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "parameter"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "institutional_block_factor_rho08"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "parameter": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "name": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "spearman": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "rank": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/ESTABILIDAD_DRIVERS.csv",
+      "reference": "extension_reference/stress/ESTABILIDAD_DRIVERS.csv",
+      "sha256": "7a4a1709d57eafd631eccbf66161364812e5c4d54a6f38b78269a3d701aea0ed",
+      "format": "csv",
+      "schema": {
+        "rows": 21,
+        "primary_key": [
+          "seed_a",
+          "seed_b",
+          "country_id",
+          "scenario_id",
+          "regime_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "seed_a": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "seed_b": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "top3_overlap": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "top3_identical": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_rank_change": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/MC_ESTRES_20261114.csv",
+      "reference": "extension_reference/stress/MC_ESTRES_20261114.csv",
+      "sha256": "9b8bf30dd096820b6d0cd9ad15f7d3203e509be29bf4bced327b24b07b431ae6",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "institutional_block_factor_rho08"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/MC_ESTRES_20261215.csv",
+      "reference": "extension_reference/stress/MC_ESTRES_20261215.csv",
+      "sha256": "b12b4692c1cf128d88807ed37a65575d09155871a504625ecb1091d589263fa2",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "institutional_block_factor_rho08"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/MC_ESTRES_20261316.csv",
+      "reference": "extension_reference/stress/MC_ESTRES_20261316.csv",
+      "sha256": "a8cad31c2c07c18e357272602e93a6ed46e628df7ec4386bd181a0df1fd18e20",
+      "format": "csv",
+      "schema": {
+        "rows": 17280,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "institutional_block_factor_rho08"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/MC_ESTRES_TRES_SEMILLAS.csv",
+      "reference": "extension_reference/stress/MC_ESTRES_TRES_SEMILLAS.csv",
+      "sha256": "8ca4260be2eda9637c25a16ad28c74ee8ae247dcea162d07b295bcbee99beec9",
+      "format": "csv",
+      "schema": {
+        "rows": 51840,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "institutional_block_factor_rho08"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B0",
+              "B1",
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/PRESERVACION_MARGINALES.csv",
+      "reference": "extension_reference/stress/PRESERVACION_MARGINALES.csv",
+      "sha256": "bee451ebb550cd697b7c4e2bee68f3a2ef846e7cc83c8000cfa43e6dc8f9c0ca",
+      "format": "csv",
+      "schema": {
+        "rows": 72,
+        "primary_key": [
+          "seed",
+          "country_id",
+          "n",
+          "parameter"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "parameter": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "before_sha256": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "after_sha256": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "sorted_sha256": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "sorted_exact": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "constant": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "latent_rho": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/RESUMEN_DECILES_FACTOR.csv",
+      "reference": "extension_reference/stress/RESUMEN_DECILES_FACTOR.csv",
+      "sha256": "d739319757674cecfed56024dcce5e3dcd761f97706589aa87d11298c08cf225",
+      "format": "csv",
+      "schema": {
+        "rows": 14,
+        "primary_key": [
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "stratum"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "stratum": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "min": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/RESUMEN_EJECUCION.json",
+      "reference": "extension_reference/stress/RESUMEN_EJECUCION.json",
+      "sha256": "1dd00f837d9c5629f4e5e68817f62c5e386e86b56db5b98d603953e9a5d6d62b",
+      "format": "json",
+      "ignored_runtime_pointers": [
+        "$.elapsed_seconds"
+      ]
+    },
+    {
+      "generated": "extensions/stress/resultados/RESUMEN_INTERPRETACION.json",
+      "reference": "extension_reference/stress/RESUMEN_INTERPRETACION.json",
+      "sha256": "f2f36d559d68b28a04fbddbf25e367ccb82b9ec24c77931061a0b53df2bd7c53",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    },
+    {
+      "generated": "extensions/stress/resultados/RESUMEN_SIETE_CASOS.csv",
+      "reference": "extension_reference/stress/RESUMEN_SIETE_CASOS.csv",
+      "sha256": "29ff81a55d250b476a6050b4bc57d97d5829cd125b7dec0c485470a374bcf9bb",
+      "format": "csv",
+      "schema": {
+        "rows": 21,
+        "primary_key": [
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "institutional_block_factor_rho08",
+              "rank_factor_nominal"
+            ]
+          },
+          "min": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "max": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "mean": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/SENSIBILIDAD_ENTRE_DEPENDENCIAS.csv",
+      "reference": "extension_reference/stress/SENSIBILIDAD_ENTRE_DEPENDENCIAS.csv",
+      "sha256": "3573860905a3ba626456b0a934310bb9ceeef7aaeb4f605cfc47f4f1c5722005",
+      "format": "csv",
+      "schema": {
+        "rows": 36,
+        "primary_key": [
+          "seed",
+          "metric",
+          "comparison"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "comparison": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "metric": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "max_abs_difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "signed_difference_at_max": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "worst_cell": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/SIETE_CASOS_TRES_DEPENDENCIAS.csv",
+      "reference": "extension_reference/stress/SIETE_CASOS_TRES_DEPENDENCIAS.csv",
+      "sha256": "feff7f3a159fcfe5620a3463aabbf0a9b11e591b5a57725d7d2a4a0a2ace4b13",
+      "format": "csv",
+      "schema": {
+        "rows": 189,
+        "primary_key": [
+          "seed",
+          "dependency",
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "rule",
+          "mode",
+          "n"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "seed": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "dependency": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "independent",
+              "institutional_block_factor_rho08",
+              "rank_factor_nominal"
+            ]
+          },
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "rule": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "B2"
+            ]
+          },
+          "mode": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "possible",
+              "reference",
+              "uniform"
+            ]
+          },
+          "n": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "valid": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_p05": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p50": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_p95": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "nonnegative_frontier_count": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonnegative_frontier_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "recurring_author_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "recurring_author_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "registered_leakage_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "registered_leakage_frequency": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/stress/resultados/VERIFICACION_SEPARADA.json",
+      "reference": "extension_reference/stress/VERIFICACION_SEPARADA.json",
+      "sha256": "855851c4df9543175ca5e62b6b3e9dea79d95a97786124f37bd1f5f7429afee1",
+      "format": "json",
+      "ignored_runtime_pointers": [
+        "$.summary.elapsed_seconds"
+      ]
+    },
+    {
+      "generated": "extensions/scope/resultados/ADJUDICACION_H1_H5_V2.csv",
+      "reference": "extension_reference/scope/ADJUDICACION_H1_H5_V2.csv",
+      "sha256": "84fd63f734f0d146c698bea47a081f4eec4cf81a3cfd7a633f715ad62bab25b9",
+      "format": "csv",
+      "schema": {
+        "rows": 5,
+        "primary_key": [
+          "hypothesis_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "hypothesis_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "H1",
+              "H2",
+              "H3",
+              "H4",
+              "H5"
+            ]
+          },
+          "legacy_statement": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "legacy_verdict": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "v2_verdict": {
+            "type": "string",
+            "nullable": true,
+            "comparison": "exact",
+            "null_policy": "exact_reference_mask",
+            "null_reason": "Declared nonapplicable diagnostic/quantile threshold, zero-denominator statistic or retired H5 verdict; mask cannot change.",
+            "allowed": [
+              "HOLDS",
+              "MIXED",
+              "NOT_TESTABLE"
+            ]
+          },
+          "assessment_status": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "ASSESSED_CONDITIONALLY",
+              "NOT_IDENTIFIED_AS_TWO_CHANNEL_CLAIM",
+              "NOT_IDENTIFIED_IN_CURRENT_DESIGN",
+              "RETIRED_LEGACY_CLASSIFICATION_RULE"
+            ]
+          },
+          "confirmatory_status": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "evidence_summary": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "evidence_files": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "amendment_reason": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/scope/resultados/CLASIFICACION_COBERTURA_V2_480.csv",
+      "reference": "extension_reference/scope/CLASIFICACION_COBERTURA_V2_480.csv",
+      "sha256": "030a73ae24c198d8691caab9479edc4f8c3c4eee3ffee807ca67446d2f43266a",
+      "format": "csv",
+      "schema": {
+        "rows": 480,
+        "primary_key": [
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id",
+          "scope"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "policy_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "H": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "benefits": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "F_recurring_author": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "spb": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "Fmax_B2_reference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "margin_B2_reference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "covers_B2_reference": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_B2_uniform": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "margin_B2_uniform": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "covers_B2_uniform": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "Fmax_B2_possible": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "margin_B2_possible": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "covers_B2_possible": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "coverage_class": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "no_crossing_within_declared_domain",
+              "possible_not_uniform",
+              "uniform_within_declared_domain"
+            ]
+          },
+          "reference_class": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "scenario_role": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "scope": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/scope/resultados/COBERTURA_PAIS_VARIANTE_24.csv",
+      "reference": "extension_reference/scope/COBERTURA_PAIS_VARIANTE_24.csv",
+      "sha256": "a9e1e2d4d38b49a6ac1aa677af232ab556562fac39772cccd2275a2b10bd8f25",
+      "format": "csv",
+      "schema": {
+        "rows": 24,
+        "primary_key": [
+          "country_id",
+          "policy_variant_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "disruptive_stress_cells": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "disruptive_stress_reference_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "disruptive_stress_uniform_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "disruptive_stress_possible_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonstress_cells": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonstress_reference_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonstress_uniform_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "nonstress_possible_crossings": {
+            "type": "integer",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "interpretation": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/scope/resultados/H1_MONOTONICIDAD_COMPROMISO.csv",
+      "reference": "extension_reference/scope/H1_MONOTONICIDAD_COMPROMISO.csv",
+      "sha256": "b9446b8dfc59ae35ce24a8f11122283d7f48d5f884b199bea4d74cc92d3fb259",
+      "format": "csv",
+      "schema": {
+        "rows": 1200,
+        "primary_key": [
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_a",
+          "policy_b"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_a": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "policy_b": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "commitment_a": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "commitment_b": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "margin_difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "commitment_difference": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "identity_error": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/scope/resultados/H1_ORDEN_NOMINAL_POLITICAS.csv",
+      "reference": "extension_reference/scope/H1_ORDEN_NOMINAL_POLITICAS.csv",
+      "sha256": "70ec786fc8c8a74af46617e85f96b710f77be2c5c5774250b4c9b2270069fe4d",
+      "format": "csv",
+      "schema": {
+        "rows": 160,
+        "primary_key": [
+          "country_id",
+          "regime_id",
+          "gmi_variant",
+          "expected_cheaper",
+          "expected_dearer"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "gmi_variant": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "expected_cheaper": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "expected_dearer": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "benefit_cost_a": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefit_cost_b": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "benefit_order_holds": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "commitment_a": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "commitment_b": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/scope/resultados/H3_MARGEN_ADOPCION_80.csv",
+      "reference": "extension_reference/scope/H3_MARGEN_ADOPCION_80.csv",
+      "sha256": "5010789b3077b150f0a137bf4b98c9b0f92f68628a783b71ad470cae747bc9e5",
+      "format": "csv",
+      "schema": {
+        "rows": 80,
+        "primary_key": [
+          "country_id",
+          "scenario_id",
+          "regime_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r0",
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "informality_original": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "q_bar_original": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "q_bar_without_informality": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "q_original": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "q_without_informality": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "g_original": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "g_without_informality": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "revenue_original": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "revenue_without_informality": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "fiscal_counterfactual_identified": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "revenue_change": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/scope/resultados/H4_COMPARACION_REGIMENES_384.csv",
+      "reference": "extension_reference/scope/H4_COMPARACION_REGIMENES_384.csv",
+      "sha256": "2bb89b2af703643d05f867e8857d4d893fd1c5bb99bbf5b9209d76fe195ebaef",
+      "format": "csv",
+      "schema": {
+        "rows": 384,
+        "primary_key": [
+          "country_id",
+          "scenario_id",
+          "regime_id",
+          "policy_variant_id"
+        ],
+        "row_matching": "key",
+        "key_nullable": [],
+        "columns": {
+          "country_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "CHL",
+              "COL",
+              "MEX",
+              "PER"
+            ]
+          },
+          "scenario_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "high",
+              "low",
+              "mid",
+              "stress"
+            ]
+          },
+          "regime_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact",
+            "allowed": [
+              "r1",
+              "r2",
+              "r3",
+              "r4"
+            ]
+          },
+          "policy_variant_id": {
+            "type": "string",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "margin_B2_r0": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "margin_B2_regime": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "delta_margin": {
+            "type": "number",
+            "nullable": false,
+            "comparison": "tolerant"
+          },
+          "r0_crosses": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "regime_crosses": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "gained_crossing": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          },
+          "lost_crossing": {
+            "type": "boolean",
+            "nullable": false,
+            "comparison": "exact"
+          }
+        }
+      }
+    },
+    {
+      "generated": "extensions/scope/resultados/VERIFICACION_DERIVACIONES.json",
+      "reference": "extension_reference/scope/VERIFICACION_DERIVACIONES.json",
+      "sha256": "a2a7497f5c8035f204961fa870954dba48941cfc8714c5c17a5826c159dd203b",
+      "format": "json",
+      "ignored_runtime_pointers": []
+    }
+  ],
+  "additional_outputs": [
+    "extensions/paired/resultados/FUNCIONES_REUTILIZADAS.json",
+    "extensions/stress/resultados/FUNCIONES_REUTILIZADAS.json",
+    "extensions/scope/resultados/SCIENTIFIC_FINDINGS.json"
+  ],
+  "additional_output_policy": "Function reuse provenance checked against actual source SHA256; scientific disclosure checked against regenerated diagnostic and frozen scope decisions.",
+  "scientific_outcomes_not_execution": "D_LOW_EXPOSURE remains FAIL_RETAINED; H1 MIXED, H2/H3 NOT_TESTABLE, H4 HOLDS, H5 retired with explicit null.",
+  "reference_policy": "Expected results inaccessible to scientific stages. No scientific output copied into execution folders.",
+  "reference_revision": "r9: explicit 24-country comparable Eurostat population and equal-country AIPI benchmark; independently checked calibration, draw hashes, fiscal identities, decomposition, financing and document cells; fresh CI required."
+}

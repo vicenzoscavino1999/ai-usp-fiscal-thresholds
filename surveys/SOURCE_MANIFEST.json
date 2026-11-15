@@ -1,0 +1,28 @@
+{
+  "scope": "Integrated survey module; no individual records. Scientific anchors exclude only declared build metadata values.",
+  "files": {
+    "acquire_surveys.py": "9d3e2a403dc654b849b485a2b211485776988df2a3b8c2c8e843391af515aa2b",
+    "ADQUISICION.md": "d084346b8f4448dadc7eb82cf3321ad6e54d137d3594b888f06242438ac13a92",
+    "core_identity.py": "a16a1e16da626170cc84eeb8515c2bad961d4776dc5380035660489703dffa09",
+    "DATA_NOTICE.md": "6635329e711c6f232b6e68dfc271ff8774170d23c3d94273c514a6ebda3d9818",
+    "historical_scripts/17_download_enaho_sumaria.py": "7cf19107d201d65a1eb0f137c1305c72794366c6b5c20c356425f8a8278d0d47",
+    "historical_scripts/18_download_casen_2024.py": "23a91f7c631bb3a65ba5def2931162200b2ad07e9d08526bf281aa7f7007f47e",
+    "historical_scripts/run_gmi_microdata_chl_robustness_extension.py": "15a87c201fad23ffd32ddc5098e1bc2528700ccd53b0ec8564cfa5703a1c823a",
+    "historical_scripts/run_gmi_microdata_robustness_extension.py": "b18173a926e997ca957bee9c0cb11744982846b51654097699577329ea2c23f6",
+    "INPUT_CONTRACT.json": "ec5d505e3a3964a9b83d4ea91152ded0ec3c230a2bc8aafc6dcbe31bfd04c196",
+    "LICENSE": "9f77a4c2dc75ad7305648641ebe1018152a1fced760b7d4dac85bf91dcc9f8a9",
+    "metadata/CHL.json": "0353a3253e7a7776a51b07f1b3d3df1ab9d2be0353162c587e722d886f537de8",
+    "metadata/PER.json": "323724330e06e550d691cd75e021ca3f6e46d6d4870f368c3dfa5f9f1608453c",
+    "metadata/PORTALES_CONSULTADOS.json": "56f3ce80f9cfa1f7a072f48806b63a6000a0d0cfb56a30f6796bc98656e552fa",
+    "METHODS.md": "9261a7bbadf545a3add69c088390c2fb0564eb31c9867faf106e266ad5e06458",
+    "README.md": "284605ff0a21b32244c8ec0aeedf6e92a1d3725e0cff865c2e54d4157cf0be0d",
+    "reference/gmimicro_chl_casen_validation_2024.csv": "aec61e5631b756fb37cf69f5da0eed238362a1d2e6d25363c05a3367c21fdbcb",
+    "reference/gmimicro_chl_cost_comparison_baseline-official-v3.csv": "7f7f075dd1d3a0dec6b7d6c3c9bd90b3601ebbefa0d98e54322972b0d6319bcc",
+    "reference/gmimicro_cost_comparison_baseline-official-v3.csv": "42be0996ff7b3067b45a4f7ebad3592a9990abed06bc2668eaff06d41ee237f4",
+    "reference/gmimicro_enaho_validation_2024.csv": "9daf07fa6b2c44d0832376890be594c98692c03a3d70a6f4d9e5469b507eb5cd",
+    "reproduce_surveys.py": "eff5fc2a62da1611abf6230245850b52eb9e96d031b0100f3eacaf6b972191d6",
+    "requirements-lock.txt": "cb03f694292ebefe612f475776b359505bd3e63b269879d285ecd66e84e6bf18",
+    "requirements-windows-supplement.txt": "6d5a5638ed5fd291f1e75d251714c7760e508e8117190142f753c37a8ed36e97",
+    "tests/test_surveys.py": "53dc86fb73458fe8e2f92563c1284b83bd627e217ae9526fddf8659c19ae968d"
+  }
+}

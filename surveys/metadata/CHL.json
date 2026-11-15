@@ -1,0 +1,63 @@
+{
+  "carried_forward_to_2024": false,
+  "codebook_url": "https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/Libro_de_codigos_Casen_2024.xlsx",
+  "column_projection": [
+    "folio",
+    "id_persona",
+    "hogar",
+    "ytotcorh",
+    "ypchtotcor",
+    "ymonecorh",
+    "yae",
+    "nae",
+    "numper",
+    "expr",
+    "lp",
+    "li",
+    "pobreza",
+    "no_arrienda"
+  ],
+  "country_filter": [
+    "CHL"
+  ],
+  "download_date": "2026-07-10T20:38:19.385765+00:00",
+  "file_hashes": {
+    "Libro_de_codigos_Casen_2024.xlsx": "c78453bb68ca55cd0201d5421c14a6fee80028e40b6ece639e6a5c6c8b7d4f74",
+    "casen_2024.sav": "ac2d48b5c0b17f6e9c9744dd55853d1021248e2d985d173871338abfe3c8758f",
+    "casen_2024_gmi_required_variables.parquet": "8be9a199edda2c9490482d4cd1cf9a3817bd4fe8bc93dcf7563854862ebe8ab1"
+  },
+  "format_choice": "SPSS selected because pyreadstat.read_sav(usecols=...) projects 14 required columns; the RData endpoint is gzip-transferred but expands to about 1.55 GB and pyreadr does not project columns during object loading.",
+  "households": 78654,
+  "http": {
+    "codebook": {
+      "content_length_header": "241945",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "downloaded_bytes": 241945,
+      "http_status": 200
+    },
+    "data": {
+      "content_length_header": "749656107",
+      "content_type": "text/plain; charset=UTF-8",
+      "downloaded_bytes": 749656107,
+      "http_status": 206,
+      "range_workers": 8
+    }
+  },
+  "method": "direct_spss_anonymous",
+  "normalized_rows": 218367,
+  "notes": "New CASEN 2024 input for a labelled post-baseline Chile GMI microdata robustness extension. It is isolated from every official baseline snapshot.",
+  "parsing_library": "pyreadstat 1.3.1",
+  "portal_url": "https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-2024",
+  "raw_file_hash": "ac2d48b5c0b17f6e9c9744dd55853d1021248e2d985d173871338abfe3c8758f",
+  "script_name": "18_download_casen_2024.py",
+  "script_version": "1.0.0-post-baseline-extension",
+  "snapshot_id": "robustness-gmimicro-chl-v1",
+  "source_columns_documented": 877,
+  "parsed_columns": 14,
+  "source_id": "MDSF_CASEN_2024",
+  "source_rows": 218367,
+  "source_url": "https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav",
+  "status": "ok",
+  "survey_year": 2024,
+  "target_year": 2024
+}

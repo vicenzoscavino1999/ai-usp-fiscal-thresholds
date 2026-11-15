@@ -1,23 +1,7 @@
-FROM python:3.12.4-slim@sha256:a3e58f9399353be051735f09be0316bfdeab571a5c6a24fd78b92df85bcb2d85
-
-ENV PYTHONHASHSEED=0
-ENV OMP_NUM_THREADS=1
-ENV MKL_NUM_THREADS=1
-ENV OPENBLAS_NUM_THREADS=1
-
+FROM python:3.12.10-slim@sha256:fd95fa221297a88e1cf49c55ec1828edd7c5a428187e67b5d1805692d11588db
+ENV PYTHONHASHSEED=0 PYTHONDONTWRITEBYTECODE=1 PYTHONNOUSERSITE=1 PYTHONUTF8=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 MPLBACKEND=Agg NPY_DISABLE_CPU_FEATURES=X86_V4
+WORKDIR /opt/jpm
+COPY requirements-lock.txt ./
+RUN python -m pip install --require-hashes --no-deps --no-cache-dir -r requirements-lock.txt && python -m pip check
 WORKDIR /app
-
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends make \
-    && rm -rf /var/lib/apt/lists/*
-
-COPY requirements-lock.txt pyproject.toml README.md ./
-COPY src/ ./src/
-
-RUN python -m pip install --upgrade pip \
-    && pip install --require-hashes -r requirements-lock.txt \
-    && pip install --no-deps -e .
-
-COPY . .
-
-CMD ["make", "check-env"]
+CMD ["python", "-X", "utf8", "-u", "reproduce_complete.py", "--raw-root", "/raw"]

@@ -1,0 +1,25 @@
+country_id,policy_variant_id,disruptive_stress_cells,disruptive_stress_reference_crossings,disruptive_stress_uniform_crossings,disruptive_stress_possible_crossings,nonstress_cells,nonstress_reference_crossings,nonstress_uniform_crossings,nonstress_possible_crossings,interpretation
+PER,PEN,5,0,0,2,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+PER,GMI:GMI_ideal_aggregate,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+PER,GMI:GMI_loaded_aggregate,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+PER,MUT,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+PER,PBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+PER,UBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+CHL,PEN,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+CHL,GMI:GMI_ideal_aggregate,5,5,5,5,15,4,0,10,counts within evaluated menu; variants retained; no legacy robust/fragile label
+CHL,GMI:GMI_loaded_aggregate,5,5,5,5,15,0,0,8,counts within evaluated menu; variants retained; no legacy robust/fragile label
+CHL,MUT,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+CHL,PBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+CHL,UBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+COL,PEN,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+COL,GMI:GMI_ideal_aggregate,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+COL,GMI:GMI_loaded_aggregate,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+COL,MUT,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+COL,PBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+COL,UBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+MEX,PEN,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+MEX,GMI:GMI_ideal_aggregate,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+MEX,GMI:GMI_loaded_aggregate,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+MEX,MUT,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+MEX,PBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label
+MEX,UBI,5,0,0,0,15,0,0,0,counts within evaluated menu; variants retained; no legacy robust/fragile label

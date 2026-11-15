@@ -1,0 +1,13 @@
+dependency,metric,observed_max,historical_factor,mechanical_proposal_atol,auto_applied,role
+independent,recurring_author_frequency,0.007120000000000015,10,0.07120000000000015,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+independent,registered_leakage_frequency,0.007440000000000002,10,0.07440000000000002,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+independent,nonnegative_frontier_frequency,0.007980000000000015,10,0.07980000000000015,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+independent,Fmax_p05,6.845282571671385e-05,10,0.0006845282571671385,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+independent,Fmax_p50,0.0001014240808532782,10,0.001014240808532782,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+independent,Fmax_p95,0.00011969008650217217,10,0.0011969008650217217,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+rank_factor_nominal,recurring_author_frequency,0.008279999999999954,10,0.08279999999999954,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+rank_factor_nominal,registered_leakage_frequency,0.008240000000000025,10,0.08240000000000025,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+rank_factor_nominal,nonnegative_frontier_frequency,0.008179999999999965,10,0.08179999999999965,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+rank_factor_nominal,Fmax_p05,0.00010189705724569093,10,0.0010189705724569093,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+rank_factor_nominal,Fmax_p50,6.912050403268602e-05,10,0.0006912050403268602,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance
+rank_factor_nominal,Fmax_p95,0.00013929676692660438,10,0.0013929676692660438,False,empirical three-seed proposal; not scientific acceptance or fixed-seed tolerance

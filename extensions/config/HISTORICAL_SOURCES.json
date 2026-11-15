@@ -1,0 +1,32 @@
+[
+  {
+    "original": "plan de reproduccion/REPRODUCIBILITY_PLAN.md",
+    "packaged": "extensions/config/history/0_REPRODUCIBILITY_PLAN.md",
+    "sha256": "5855cba6ba8501746d64c23cae790ec2a6c9f9319900caa6cda7825111c5f091"
+  },
+  {
+    "original": "repo/ai-usp-fiscal-thresholds/REPRODUCIBILITY_PLAN.md",
+    "packaged": "extensions/config/history/1_REPRODUCIBILITY_PLAN.md",
+    "sha256": "df1de660203357de5a750047c227d0cbdc7bb4b384568a750c7b3b3721022c47"
+  },
+  {
+    "original": "plan de diseño/02_ESD_AI_USP_v6.md",
+    "packaged": "extensions/config/history/2_02_ESD_AI_USP_v6.md",
+    "sha256": "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81"
+  },
+  {
+    "original": "repo/ai-usp-fiscal-thresholds/PRIMARY_SPEC_HASH.txt",
+    "packaged": "extensions/config/history/3_PRIMARY_SPEC_HASH.txt",
+    "sha256": "d4c16a88cad2c8d1bd48e641942a3d78878510288b0da036d4b550f706a19a05"
+  },
+  {
+    "original": "repo/ai-usp-fiscal-thresholds/reports/hypothesis_adjudication.csv",
+    "packaged": "extensions/config/history/4_hypothesis_adjudication.csv",
+    "sha256": "6cd14e0cc12329eb60acfb0b345c30051a59161f55f348b975002fb2485962df"
+  },
+  {
+    "original": "revision_jpm_v2/paso_07m/ADENDA_REPRODUCCION.md",
+    "packaged": "extensions/config/history/5_ADENDA_REPRODUCCION.md",
+    "sha256": "6eb36f62fc75a776f8ef711a89b42cbe552ff1da43cb648e9d221b3a5d65edee"
+  }
+]

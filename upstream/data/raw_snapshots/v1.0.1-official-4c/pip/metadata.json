@@ -1,0 +1,31 @@
+{
+  "source_id": "PIP",
+  "download_date": "2026-07-08T22:13:47.751268+00:00",
+  "source_url": "https://api.worldbank.org/pip/v1/pip",
+  "script_name": "02_download_pip.py",
+  "script_version": "0.1.0-stage1",
+  "status": "ok",
+  "query_or_endpoint": [
+    "https://api.worldbank.org/pip/v1/pip?country=PER&povline=3.00&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=PER&povline=4.20&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=PER&povline=8.30&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=CHL&povline=3.00&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=CHL&povline=4.20&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=CHL&povline=8.30&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=COL&povline=3.00&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=COL&povline=4.20&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=COL&povline=8.30&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=MEX&povline=3.00&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=MEX&povline=4.20&format=json",
+    "https://api.worldbank.org/pip/v1/pip?country=MEX&povline=8.30&format=json"
+  ],
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "all",
+  "raw_file_hash": "bfede6d6a6773cd920d4f39fbb68821da09038808425c3b47854acdbe9ced4d6",
+  "notes": "PIP REST pull preserving unit/currency/periodicity/ppp fields required by Plan 01 section 13.4."
+}

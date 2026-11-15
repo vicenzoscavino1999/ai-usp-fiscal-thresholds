@@ -1,0 +1,13 @@
+{
+  "source_id": "IMF_AIPI_DATA360",
+  "download_date": "2026-07-08T22:26:30.771950+00:00",
+  "source_url": "https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI",
+  "script_name": "10_download_aipi.py",
+  "script_version": "0.1.0-stage1",
+  "status": "ok",
+  "query_or_endpoint": "https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI",
+  "country_filter": "ALL",
+  "year_filter": "all",
+  "raw_file_hash": "bc4b322197f7d752d5b1a841646be204428cf2693fcef09b5e1d5229b2a2d0fd",
+  "notes": "Downloaded all AIPI economies as required for frontier benchmark. --countries was accepted (['PER', 'CHL', 'COL', 'MEX']) but not used to filter AIPI."
+}

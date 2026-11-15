@@ -1,0 +1,5 @@
+timing,domain,cells,B0_reference,B2_reference,B0_uniform,B0_possible,B2_uniform,B2_possible,B2_possible_extreme
+annual_equivalent,nonstress,360,1,1,0,12,0,12,12
+endpoint_without_setup_obligation,nonstress,360,5,4,0,18,0,18,18
+annual_equivalent,stress,120,23,10,15,27,10,12,12
+endpoint_without_setup_obligation,stress,120,24,10,16,27,10,12,12

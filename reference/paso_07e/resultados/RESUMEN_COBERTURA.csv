@@ -1,0 +1,3 @@
+domain,cells,B0_reference,B1_reference,B2_reference,B2_uniform,B2_possible
+nonstress,360,5,4,4,0,18
+stress,120,24,23,10,10,12

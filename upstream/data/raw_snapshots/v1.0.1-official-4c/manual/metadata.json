@@ -1,0 +1,19 @@
+{
+  "source_id": "MANUAL_SOURCE_REGISTRY",
+  "download_date": "2026-07-08T23:28:21.356254+00:00",
+  "source_url": "Plan 01 Appendix A.2-A.5",
+  "query_or_endpoint": "metadata\\manual_source_registry.yml",
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "not_applicable",
+  "raw_file_hash": "bb195f06b3eb0786a15892c6bd0e9adcba5f0b561645cbdba3e6eb00b8aea173",
+  "script_name": "12_register_manual_sources.py",
+  "script_version": "0.1.2-stage1",
+  "status": "ok",
+  "manual_pending_count": 3,
+  "notes": "Created metadata/manual_source_registry.yml and mirrored it as parquet for the snapshot manifest."
+}

@@ -1,0 +1,5122 @@
+[
+  {
+    "check": "capture_vs_channels:PER:low:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:low:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:low:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:low:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:low:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:low:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:low:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:low:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:low:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:low:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:low:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:low:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:low:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:low:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:low:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:low:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:low:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:low:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:low:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:low:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:high:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:high:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:high:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:high:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:high:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:high:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:high:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:high:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:high:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:high:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:high:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:high:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:high:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:high:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:high:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:high:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:high:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:high:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:high:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:high:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:PER:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:PER:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:PER:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:PER:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:PER|stress|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:PER|stress|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:CHL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:CHL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:CHL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:CHL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:CHL|stress|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:CHL|stress|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:low:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:low:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:low:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:low:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:low:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:high:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:high:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:high:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:high:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:high:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:COL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:COL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:COL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:COL:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:COL|stress|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:COL|stress|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:low:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:low:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:low:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:low:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:low:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:low:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:low:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:low:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:low:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:low:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:low:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:low:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:low:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:low:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:low:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:low:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:low:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:low:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:low:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:low:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|low|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:mid:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:mid:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:mid:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:mid:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:mid:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|mid|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:high:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:high:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:high:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:high:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:high:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:high:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:high:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:high:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:high:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:high:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:high:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:high:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:high:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:high:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:high:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:high:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:high:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:high:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:high:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:high:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|high|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:stress:r0",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r0|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r0|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r0|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r0|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r0|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r0|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:stress:r1",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r1|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r1|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r1|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r1|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r1|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r1|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:stress:r2",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r2|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r2|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r2|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r2|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r2|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r2|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:stress:r3",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r3|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r3|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r3|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r3|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r3|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r3|UBI",
+    "passed": true
+  },
+  {
+    "check": "capture_vs_channels:MEX:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "joint_no_AI:MEX:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "all_taxes_zero:MEX:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "no_AI_channel_feedback:MEX:stress:r4",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r4|PEN",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r4|GMI:GMI_ideal_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r4|GMI:GMI_loaded_aggregate",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r4|MUT",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r4|PBI",
+    "passed": true
+  },
+  {
+    "check": "baseline_frontier:MEX|stress|r4|UBI",
+    "passed": true
+  },
+  {
+    "check": "leakage_monotonic:MEX|stress|r4|UBI",
+    "passed": true
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "source_id": "NATIONAL_PER_BCRP",
+  "download_date": "2026-07-08T22:26:33.272577+00:00",
+  "source_url": "https://estadisticas.bcrp.gob.pe/estadisticas/series/api",
+  "script_name": "11_download_national_sources.py",
+  "script_version": "0.1.1-stage1",
+  "status": "ok",
+  "query_or_endpoint": [
+    "https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PM10103FA-PM04863AA-PM05776FA-PM05848FA-PM05846FA-PM05876FA/json/1990/2025",
+    "https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN03112FQ-PN03432FQ/json/1990-1/2026-1"
+  ],
+  "country_filter": [
+    "PER"
+  ],
+  "year_filter": {
+    "annual": "1990-2025",
+    "quarterly": "1990Q1-2026Q1"
+  },
+  "raw_file_hash": "9ebc72fb5cffc423c4dd9a7470543432924898b707dc8e28e5a9228ad710fbc7",
+  "bcrp_series_codes": {
+    "annual": [
+      "PM10103FA",
+      "PM04863AA",
+      "PM05776FA",
+      "PM05848FA",
+      "PM05846FA",
+      "PM05876FA"
+    ],
+    "quarterly": [
+      "PN03112FQ",
+      "PN03432FQ"
+    ]
+  },
+  "manual_registered_sources": [
+    {
+      "source_id": "SUNAT_PER",
+      "source_url": "https://www.sunat.gob.pe/estadisticasestudios/",
+      "status": "manual_pending",
+      "instructions": "Download SUNAT statistical Excel tables manually and register file hash before use."
+    }
+  ],
+  "notes": "BCRPData API implemented for Peru macro-fiscal contrast series; SUNAT Excel tables are manual_registered."
+}

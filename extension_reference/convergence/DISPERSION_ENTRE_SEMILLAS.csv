@@ -1,0 +1,13 @@
+dependency,metric,max_between_seed_range,over_001,over_002,worst_cell
+independent,recurring_author_frequency,0.007120000000000015,0.0,0.0,CHL|high|r4|GMI:GMI_ideal_aggregate|B0|reference
+independent,registered_leakage_frequency,0.007440000000000002,0.0,0.0,CHL|high|r1|GMI:GMI_loaded_aggregate|B0|possible
+independent,nonnegative_frontier_frequency,0.007980000000000015,0.0,0.0,PER|high|r4|PEN|B0|possible
+independent,Fmax_p05,6.845282571671385e-05,,,MEX|stress|r4|UBI|B0|possible
+independent,Fmax_p50,0.0001014240808532782,,,CHL|stress|r2|GMI:GMI_loaded_aggregate|B1|possible
+independent,Fmax_p95,0.00011969008650217217,,,PER|stress|r1|UBI|B0|possible
+rank_factor_nominal,recurring_author_frequency,0.008279999999999954,0.0,0.0,CHL|high|r1|GMI:GMI_ideal_aggregate|B1|possible
+rank_factor_nominal,registered_leakage_frequency,0.008240000000000025,0.0,0.0,CHL|high|r2|GMI:GMI_loaded_aggregate|B1|possible
+rank_factor_nominal,nonnegative_frontier_frequency,0.008179999999999965,0.0,0.0,CHL|high|r3|GMI:GMI_loaded_aggregate|B0|uniform
+rank_factor_nominal,Fmax_p05,0.00010189705724569093,,,CHL|stress|r4|PBI|B0|possible
+rank_factor_nominal,Fmax_p50,6.912050403268602e-05,,,CHL|stress|r4|GMI:GMI_ideal_aggregate|B0|possible
+rank_factor_nominal,Fmax_p95,0.00013929676692660438,,,CHL|stress|r4|MUT|B0|possible

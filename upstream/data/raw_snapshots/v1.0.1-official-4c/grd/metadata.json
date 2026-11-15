@@ -1,0 +1,148 @@
+{
+  "source_id": "GRD",
+  "download_date": "2026-07-08T23:28:21.343255+00:00",
+  "source_url": "https://www.wider.unu.edu/database/government-revenue-dataset",
+  "query_or_endpoint": "Manual author download from UNU-WIDER GRD 2025 form",
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "1980-2023",
+  "script_name": "12_register_manual_sources.py",
+  "script_version": "0.1.2-stage1",
+  "status": "ok",
+  "version": "2025",
+  "raw_file_hash": "fa363c5b4211ed24c4975023aa438fbcb69b657d5b93d3342c461cbf34969368",
+  "download_file_hashes": {
+    "UNUWIDERGRD_2025_Central.xlsx": "76b5e7bdc40cf514c8fece9fd42f9658dcf6452d5d09b4c718976172095711d8",
+    "UNUWIDERGRD_2025_General.xlsx": "97f74af1b19efc80fd29f8743176466e4a619b44dbe9cbfbbff83c1c361d1b17",
+    "GRD_User_Guide_2025.pdf": "59ae449c7dbd4e710b6baa477ee73b79227c9c695ef2e93916edff3e898b28a3",
+    "grd_revenue.parquet": "fa363c5b4211ed24c4975023aa438fbcb69b657d5b93d3342c461cbf34969368"
+  },
+  "raw_file_hashes": {
+    "UNUWIDERGRD_2025_Central.xlsx": "76b5e7bdc40cf514c8fece9fd42f9658dcf6452d5d09b4c718976172095711d8",
+    "UNUWIDERGRD_2025_General.xlsx": "97f74af1b19efc80fd29f8743176466e4a619b44dbe9cbfbbff83c1c361d1b17",
+    "GRD_User_Guide_2025.pdf": "59ae449c7dbd4e710b6baa477ee73b79227c9c695ef2e93916edff3e898b28a3",
+    "grd_revenue.parquet": "fa363c5b4211ed24c4975023aa438fbcb69b657d5b93d3342c461cbf34969368"
+  },
+  "source_files": [
+    "UNUWIDERGRD_2025_Central.xlsx",
+    "UNUWIDERGRD_2025_General.xlsx",
+    "GRD_User_Guide_2025.pdf",
+    "grd_revenue.parquet"
+  ],
+  "official_citation": "UNU-WIDER (2025). UNU-WIDER Government Revenue Dataset. Version 2025. Helsinki: UNU-WIDER. https://doi.org/10.35188/UNU-WIDER/GRD-2025",
+  "doi": "https://doi.org/10.35188/UNU-WIDER/GRD-2025",
+  "license_notes": "Manual author download after UNU-WIDER form completion; observe UNU-WIDER GRD terms for redistribution.",
+  "mapping_notes": {
+    "guide_file": "GRD_User_Guide_2025.pdf",
+    "guide_basis": "GRD User Guide 2025 says most users are advised to rely on revenue and tax figures exclusive of social contributions due to completeness and comparability.",
+    "canonical_total_revenue": "Total Revenue / Excluding Grants / Ex SC",
+    "canonical_tax_revenue": "Taxes / Excluding SC",
+    "unit_rows": {
+      "LCU": "lcu_mn",
+      "PCTGDP": "gdp_ratio"
+    }
+  },
+  "row_counts_by_country_level_unit": [
+    {
+      "country_id": "CHL",
+      "government_level": "central_government",
+      "unit": "gdp_ratio",
+      "rows": 43
+    },
+    {
+      "country_id": "CHL",
+      "government_level": "central_government",
+      "unit": "lcu_mn",
+      "rows": 43
+    },
+    {
+      "country_id": "CHL",
+      "government_level": "general_government",
+      "unit": "gdp_ratio",
+      "rows": 44
+    },
+    {
+      "country_id": "CHL",
+      "government_level": "general_government",
+      "unit": "lcu_mn",
+      "rows": 44
+    },
+    {
+      "country_id": "COL",
+      "government_level": "central_government",
+      "unit": "gdp_ratio",
+      "rows": 44
+    },
+    {
+      "country_id": "COL",
+      "government_level": "central_government",
+      "unit": "lcu_mn",
+      "rows": 44
+    },
+    {
+      "country_id": "COL",
+      "government_level": "general_government",
+      "unit": "gdp_ratio",
+      "rows": 44
+    },
+    {
+      "country_id": "COL",
+      "government_level": "general_government",
+      "unit": "lcu_mn",
+      "rows": 44
+    },
+    {
+      "country_id": "MEX",
+      "government_level": "central_government",
+      "unit": "gdp_ratio",
+      "rows": 44
+    },
+    {
+      "country_id": "MEX",
+      "government_level": "central_government",
+      "unit": "lcu_mn",
+      "rows": 44
+    },
+    {
+      "country_id": "MEX",
+      "government_level": "general_government",
+      "unit": "gdp_ratio",
+      "rows": 44
+    },
+    {
+      "country_id": "MEX",
+      "government_level": "general_government",
+      "unit": "lcu_mn",
+      "rows": 44
+    },
+    {
+      "country_id": "PER",
+      "government_level": "central_government",
+      "unit": "gdp_ratio",
+      "rows": 43
+    },
+    {
+      "country_id": "PER",
+      "government_level": "central_government",
+      "unit": "lcu_mn",
+      "rows": 43
+    },
+    {
+      "country_id": "PER",
+      "government_level": "general_government",
+      "unit": "gdp_ratio",
+      "rows": 33
+    },
+    {
+      "country_id": "PER",
+      "government_level": "general_government",
+      "unit": "lcu_mn",
+      "rows": 33
+    }
+  ],
+  "notes": "UNU-WIDER GRD 2025 manually registered by author; central and general workbooks converted to one filtered parquet retaining government_level."
+}

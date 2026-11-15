@@ -1,0 +1,37 @@
+{
+  "source_id": "FRONTIER_BENCHMARK",
+  "download_date": "2026-07-08T22:26:39.784175+00:00",
+  "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON",
+  "script_name": "13_download_frontier_benchmark.py",
+  "script_version": "0.1.1-stage1",
+  "status": "ok",
+  "query_or_endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON",
+  "country_filter": "EU_BENCHMARK_ECONOMIES_ALL",
+  "declared_pilot_countries": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": [
+    "2021",
+    "2023",
+    "2024",
+    "2025"
+  ],
+  "raw_file_hash": "b6586917666c71aac55176386ee995a03451d2fe5ba6f945578ce7e25f778937",
+  "input_completeness_checks": {
+    "aipi_country_filter": "ALL",
+    "aipi_n_countries": 175,
+    "itu_country_filter": "ALL",
+    "itu_n_countries": 281
+  },
+  "manual_registered_sources": [
+    {
+      "source_id": "FRONTIER_NON_EU_AI_ADOPTION_USA",
+      "status": "manual_pending",
+      "notes": "Non-EU benchmarks such as USA remain registered manual inputs; benchmark-set selection is deferred to Phase 1 calibration."
+    }
+  ],
+  "notes": "Captured Eurostat isoc_eb_ai adoption_proxy inputs. No benchmark set is selected here; Phase 1 calibration chooses the benchmark population."
+}

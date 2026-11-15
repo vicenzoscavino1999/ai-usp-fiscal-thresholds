@@ -1,145 +1,18 @@
-# AI-USP Fiscal Thresholds
+# AI, Fiscal Space and Social Protection — replication package 2.0.0
 
-Reproduction package for a calibrated accounting-fiscal threshold framework on
-AI-induced fiscal space and universal or categorical social protection in Peru,
-Chile, Colombia, and Mexico.
+Code and data supporting the revised scenario-based study of Peru, Chile, Colombia and Mexico. The package reconstructs fiscal receipts, recurring-cost frontiers, transition financing, sensitivity analyses and the separate ENAHO/CASEN household-cost comparisons.
 
-**Related Zenodo record:** DOI [10.5281/zenodo.21348535](https://doi.org/10.5281/zenodo.21348535)
+- **Version DOI:** [10.5281/zenodo.24257720](https://doi.org/10.5281/zenodo.24257720).
+- **All versions:** [10.5281/zenodo.21348534](https://doi.org/10.5281/zenodo.21348534).
+- **Start here:** [four-step reproduction guide](REPRODUCING_JPM_V2.md).
+- [Main manuscript](revision_jpm_v2/paso_07l/evidencia/MANUSCRITO_JPM_V2.docx): 25 pages; [technical supplement](revision_jpm_v2/paso_07l/evidencia/SUPLEMENTO_TECNICO_JPM_V2.docx): 16 pages.
+- [Data availability](DATA_AVAILABILITY.md), [survey acquisition](surveys/ADQUISICION.md), [source notices](THIRD_PARTY_NOTICES.md) and [CI](CI.md).
+- [Release notes](CHANGELOG.md), [citation](CITATION.cff) and [verification scope](release/VERIFICATION.md).
 
-The official public pipeline is complete. The baseline snapshot is
-`v1.0.1-official-4c`, the deterministic grid uses `baseline-official-v2`, and
-uncertainty and diagnostics use `baseline-official-v3`. See `REPRODUCING.md` for
-reviewer commands, `REPRODUCIBILITY_STATUS.md` for scope, and `VALIDATION.md` for
-the release verification matrix.
+The complete result is `run_logs/COMPARISON_COMPLETE.json`: PASS requires 77 core outputs, 88 extension outputs, four survey tables, 164 documentary cells and the figure comparison. PASS means that the stated results were reproduced, including mixed and adverse scientific findings. It does not mean every hypothesis was supported.
 
-## Requirements
+The frozen aggregate inputs are included. Original ENAHO/CASEN files must be obtained separately and match the hashes in `surveys/INPUT_CONTRACT.json`; individual survey records are not redistributed. No calculated working outputs are preloaded. Files in `reference/` and equivalent reference directories are comparison targets.
 
-- Python 3.12.x.
-- Docker 27+ for the canonical clean-run recipe.
-- GNU Make in Docker or locally. Windows users can run the direct Python commands.
-- The curated Zenodo ZIP includes every redistributable input required by
-  `make reproduce-public`; `db/`, `results/`, and `figures/` are created at run
-  time. A bare Git checkout intentionally omits `data/` and must restore the
-  public snapshot first.
-- Only the optional ENAHO microdata validation requires a separately obtained,
-  non-redistributed input.
+Version 2.0.0 uses the scientifically verified r9 calculation. Changes made for deposit concern availability statements, release metadata, documentation and publication checks. The r9 verification record is preserved in `release/BASELINE_VERIFICATION.json`; final release-run evidence is supplied as separate release assets, identified by source-manifest hash. `RELEASE_STATUS.json` records the immutable pre-publication package state. Historical scientific-scope fields named `v2_release_ready` do not certify archive publication or journal acceptance.
 
-Install locally:
-
-```powershell
-python -m pip install --upgrade pip
-pip install --require-hashes -r requirements-lock.txt
-pip install --no-deps -e .
-```
-
-## Canonical Docker Run
-
-```powershell
-docker build -t ai-usp-fiscal-thresholds .
-docker run --rm `
-  -v "${PWD}\data:/app/data" `
-  -v "${PWD}\db:/app/db" `
-  -v "${PWD}\results:/app/results" `
-  -v "${PWD}\reports:/app/reports" `
-  -v "${PWD}\figures:/app/figures" `
-  ai-usp-fiscal-thresholds `
-  sh -lc "make reproduce-public"
-```
-
-The Dockerfile is pinned to `python:3.12.4-slim` by digest. `make
-reproduce-public` first checks the pristine freeze, then runs Tier A+B,
-deterministic robustness, diagnostics, Phase B closure, H*, reference
-verification, and all public extension checks. It does not contact data
-providers.
-
-## Local Commands
-
-With Make:
-
-```powershell
-make reproduce-deterministic
-make reproduce-full
-make run-diagnostics
-make verify
-make test
-```
-
-Direct Windows recipe:
-
-```powershell
-python reproducibility\verify_freeze.py
-python reproducibility\run_all.py --tier B --run-label official --parameter-set-id baseline-official-v2 --dataset-version v1.0.1-official-4c
-python scripts\run_deterministic_robustness_6a.py
-python scripts\run_diagnostics_6b.py
-python scripts\finalize_phase_b.py
-python scripts\run_h_star_extension_7_1.py
-python reproducibility\verify.py
-python reproducibility\verify_extensions.py
-python -m pytest -q
-```
-
-`verify.py` compares `results/official/` against
-`reproducibility/reference/`, enforces schemas, rejects missing/extra rows or
-columns, checks NaN/type violations, and verifies the frozen snapshot manifest
-hash.
-
-## Building the Public Bundle
-
-The public ZIP is built from tracked files plus an explicit data allowlist; do
-not use a generic recursive archiver:
-
-```powershell
-python scripts\build_zenodo_bundle.py
-python scripts\verify_zenodo_bundle.py dist\zenodo_bundle_v1.1.1.zip
-```
-
-The builder verifies frozen input hashes, excludes provider raw payloads and
-ENAHO row-level microdata, normalizes the primary specification to canonical LF,
-preserves byte-hashed snapshot/reference manifests exactly, and writes a
-per-file `BUNDLE_MANIFEST.json`. The verifier checks that manifest, unsafe
-paths, symlinks, executable payloads, and the primary-specification hash.
-
-## Folder Structure
-
-- `src/ai_usp/`: deterministic mechanics.
-- `scripts/`: ingestion, anchor builders, calibration, runners, closure exports.
-- `reproducibility/`: run harness, schemas, tolerances, snapshot manifests, reference outputs.
-- `reproducibility/reference/`: versioned official reference CSVs and hashes.
-- `reports/`: versioned validation reports, calibration exports, paper-table mirror.
-- `results/`: local runtime outputs, including `results/paper_tables/`.
-- `figures/`: local generated figures; mirrored under `reports/figures/` for review.
-- `tests/`: unit, regression, schema, verifier, and closure tests.
-- `metadata/`: conventions and manual source registry notes.
-- `data/`: ignored by Git; curated redistributable snapshots are added only to
-  the release ZIP. Restricted provider payloads remain local.
-- `db/`: generated DuckDB runtime state, ignored by Git.
-
-## Data Policy
-
-The package stores snapshot manifests and derived validation artifacts, not all raw
-inputs. `data/`, `db/`, `results/`, and `figures/` are ignored runtime folders.
-Restricted microdata and author-downloaded raw files are not redistributed.
-GRD 2025 is registered with the official UNU-WIDER citation and DOI. Ookla
-Speedtest raw data is treated under CC BY-NC-SA 4.0: raw tiles are not
-redistributed in this package; the derived `gap_index` is archived with
-attribution and the license caveat.
-
-## Paper Artifact Map
-
-| Paper element | Code | Output | Verification |
-| --- | --- | --- | --- |
-| Feasibility ratio `Vgross` | `src/ai_usp/fiscal_space.py` | `fiscal_space_result.csv` | `verify.py`, `test_cost_monotonicity` |
-| Threshold inversion | `src/ai_usp/thresholds.py` | `threshold_inversion_result.csv` | `test_frozen_weight_inversion` |
-| Historical plausibility | `src/ai_usp/historical.py` | `historical_plausibility_result.csv` | `test_historical_class` |
-| Monte Carlo probabilities | `scripts/run_official_monte_carlo.py` | `monte_carlo_result.csv` | Tier B tolerances, `test_determinism_mc` |
-| Placebo ICT and controls | `scripts/run_diagnostics_6b.py` | `diagnostic_*_result.csv` | `test_diagnostics_6b` |
-| Informality ablation H3 | `scripts/finalize_phase_b.py` | `informality_adoption_ablation_result.csv` | `test_phase_b_closure` |
-| Paper tables/figures | `scripts/finalize_phase_b.py` | `results/paper_tables/`, `figures/` | final `verify.py` + pytest |
-| Hypothesis H1-H5 | `scripts/finalize_phase_b.py` | `hypothesis_adjudication.csv` | schema-locked by `verify.py` |
-
-## Governance
-
-Author-approved calibration rows are materialized before result generation.
-The primary specification hash is stored in `PRIMARY_SPEC_HASH.txt`; pre-flight
-warns if it differs from the checked-out plan 02. Closing-stage commits are
-tagged at each milestone.
+Code is MIT-licensed. Data retain the file-level conditions in `LICENSE-DATA` and `provenance_public/FILE_RIGHTS.json`; these include source-specific noncommercial and share-alike terms. The accompanying manuscripts retain the author's copyright.

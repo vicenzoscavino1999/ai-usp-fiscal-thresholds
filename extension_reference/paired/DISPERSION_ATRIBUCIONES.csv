@@ -1,0 +1,22 @@
+metric,change,min_allocation,max_allocation,between_seed_range,sign_stable,unit
+B2_frequency_percent,IVA_destino,9.330833333333334,9.6226,0.29176666666666584,True,percentage points of conditional frequency
+B2_frequency_percent,asignacion_PIT,-0.09020000000000045,-0.07933333333333359,0.010866666666666858,True,percentage points of conditional frequency
+B2_frequency_percent,base_CIT_relativa,7.149466666666667,7.311133333333334,0.16166666666666707,True,percentage points of conditional frequency
+B2_frequency_percent,consumo_disponible,1.5093666666666667,1.5403333333333333,0.030966666666666587,True,percentage points of conditional frequency
+B2_frequency_percent,instalacion_separada,7.0609666666666655,7.253166666666669,0.19220000000000326,True,percentage points of conditional frequency
+B2_frequency_percent,renta_IA_ordinaria,0.9334999999999998,0.9467,0.013200000000000212,True,percentage points of conditional frequency
+B2_frequency_percent,respuesta_normalizada,0.0,0.0,0.0,True,percentage points of conditional frequency
+R_mean_percent_GDP,IVA_destino,0.06864264260650044,0.06890757114697865,0.00026492854047821535,True,percentage points of counterfactual GDP
+R_mean_percent_GDP,asignacion_PIT,-0.0008489474996432408,-0.0008465586380443702,2.3888615988705694e-06,True,percentage points of counterfactual GDP
+R_mean_percent_GDP,base_CIT_relativa,0.050586738314228295,0.05080566457823582,0.0002189262640075254,True,percentage points of counterfactual GDP
+R_mean_percent_GDP,consumo_disponible,0.0097831246423037,0.009833750552717124,5.062591041342379e-05,True,percentage points of counterfactual GDP
+R_mean_percent_GDP,instalacion_separada,0.0,0.0,0.0,True,percentage points of counterfactual GDP
+R_mean_percent_GDP,renta_IA_ordinaria,0.006594770400268768,0.00661994114233262,2.517074206385278e-05,True,percentage points of counterfactual GDP
+R_mean_percent_GDP,respuesta_normalizada,0.0,0.0,0.0,True,percentage points of counterfactual GDP
+balance_mean_pp_GDP,IVA_destino,0.0686426426065004,0.06890757114697867,0.00026492854047827086,True,percentage points of counterfactual GDP
+balance_mean_pp_GDP,asignacion_PIT,-0.0008489474996431913,-0.000846558638044392,2.388861598799229e-06,True,percentage points of counterfactual GDP
+balance_mean_pp_GDP,base_CIT_relativa,0.050586738314228274,0.05080566457823581,0.00021892626400753235,True,percentage points of counterfactual GDP
+balance_mean_pp_GDP,consumo_disponible,0.009783124642303725,0.009833750552717105,5.062591041338042e-05,True,percentage points of counterfactual GDP
+balance_mean_pp_GDP,instalacion_separada,0.07070607266491952,0.07070607266491953,1.3877787807814457e-17,True,percentage points of counterfactual GDP
+balance_mean_pp_GDP,renta_IA_ordinaria,0.0065947704002687554,0.006619941142332593,2.5170742063837168e-05,True,percentage points of counterfactual GDP
+balance_mean_pp_GDP,respuesta_normalizada,0.0,0.0,0.0,True,percentage points of counterfactual GDP

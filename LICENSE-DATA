@@ -1,50 +1,21 @@
-# Data License and Redistribution Policy
+# Data and document rights
 
-The source code is licensed under MIT. Derived tables, audit reports, figures,
-and paper-ready CSV/LaTeX exports produced by this package are intended for
-release under CC-BY-4.0 unless a source-specific license imposes a stricter
-condition.
+The MIT licence in LICENSE applies to project source code. BFJZ material retains its separate copyright/permission notice in revision_jpm_v2/paso_07d/conciliacion_fiscal_02/fuentes/BFJZ_LICENSE.txt. These notices do not replace data-provider terms or grant rights over third-party publications. Dependencies installed from requirements-lock.txt retain their own licences; this source bundle does not distribute an environment or Docker image.
 
-## Not Redistributed
+Each included source extract retains the terms identified in THIRD_PARTY_NOTICES.md and provenance_public/SOURCE_CATALOG.json. The file-level scope is in provenance_public/FILE_RIGHTS.json. Statistical quantities and unprotected facts are not made proprietary by this notice.
 
-- Provider source files under `data/`, except for the extracts and derived
-  artifacts explicitly enumerated in `DATA_AVAILABILITY.md` under "What the
-  public archive contains". Each redistributed item remains under the
-  source-specific license stated in its matrix row.
-- Local DuckDB files under `db/`.
-- Restricted or manually downloaded microdata, subject to the microdata rule
-  below.
-- Author-held raw GRD Excel files.
-- Ookla Speedtest raw tile/cache data.
+The project's existing policy permits release of its own derived data contribution under CC BY 4.0, except where source conditions require otherwise. This is not an unrestricted CC BY grant over mixed datasets. Adaptations that include licensed ITU, Ookla or GRD material must retain the relevant noncommercial and share-alike conditions, attribution and change notices. Unmodified source components retain their original licences. CC BY-NC-SA 3.0 IGO section 4(b) allows later same-element licences for adaptations; where appropriate CC BY-NC-SA 4.0 may cover a combined adaptation, while original notices and other provider terms remain. No additional rights over underlying data are asserted.
 
-## GRD 2025
+Licence links:
+- CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+- CC BY 3.0 IGO: https://creativecommons.org/licenses/by/3.0/igo/
+- CC BY-NC-SA 3.0 IGO: https://creativecommons.org/licenses/by-nc-sa/3.0/igo/
+- CC BY-NC-SA 4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-UNU-WIDER GRD 2025 is registered as an author-held manual source and cited as:
+IMF statistical data retain IMF data-use terms, including attribution, identification of material transformations and the current requirement to seek permission for potential commercial reuse. OECD, Eurostat, BCRP and UNdata have provider-specific terms. Check the corresponding source notices when reusing their components.
 
-UNU-WIDER (2025). UNU-WIDER Government Revenue Dataset. Version 2025. Helsinki:
-UNU-WIDER. https://doi.org/10.35188/UNU-WIDER/GRD-2025
+Data and metadata are provided as-is. Provider disclaimers, attribution, no-endorsement provisions and applicable third-party notices remain in force. Transformation or aggregation alone does not waive source conditions. A conservative source set in the inventory is an instruction to retain notices, not a finding that every number embodies copyright from every listed provider.
 
-The derived contrast table `grd_revenue.parquet` may be archived with citation
-under CC BY-NC-SA 3.0 IGO, inheriting UNU-WIDER's share-alike condition. It is
-not covered by the package's generic CC-BY-4.0 notice. Raw Excel files are not
-redistributed by this repository.
+Excluded from this source bundle: individual ENAHO/CASEN survey files; SEDLAC numerical payloads; original GRD Excel workbooks and guide; raw Ookla tiles; Natural Earth boundary files; local databases; access tokens. Metadata may refer to historical files without bundling those files.
 
-## Microdata Extracts
-
-Required-variable extracts from ENAHO 2024 and CASEN 2024 are publicly archived
-only when their redistribution terms have been confirmed and cited in
-`DATA_AVAILABILITY.md`. Otherwise, the public archive contains only aggregate
-outputs, download scripts, source URLs, and verification SHA-256 hashes.
-
-## Ookla Speedtest Open Data
-
-Ookla Speedtest open data is under CC BY-NC-SA 4.0. This package records
-internal snapshot use for calibration and cites the source. The raw Ookla data
-are not redistributed in the public package. The derived `gap_index` is archived
-as a transformed calibration artifact with attribution and this license caveat.
-
-## Snapshot Manifests
-
-Snapshot manifests in `reproducibility/snapshot/` contain source metadata,
-hashes, and license notes. They are the reproducibility contract for the frozen
-dataset version, not a redistribution of all raw inputs.
+Manuscripts, full-text extractions and journal submission documents do not receive a public licence through LICENSE or this data notice. The author supplies the accompanying manuscripts and full-text extractions for consultation and verification in this release while retaining their copyright. No licence here allows reproduction of full cited papers, provider websites, logos or trademarks.

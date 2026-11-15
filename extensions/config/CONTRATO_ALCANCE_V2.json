@@ -1,0 +1,300 @@
+{
+  "scope_version": "JPM_V2_SCOPE_1_POST_REVISION_20261114",
+  "adopted_utc": "2026-11-15T02:30:21.627112+00:00",
+  "role": "Explicit operational amendment for the current conditional paper, not a new preregistration and not a certificate that the original plan is complete.",
+  "source_plan_hashes": {
+    "plan de reproduccion/REPRODUCIBILITY_PLAN.md": "5855cba6ba8501746d64c23cae790ec2a6c9f9319900caa6cda7825111c5f091",
+    "repo/ai-usp-fiscal-thresholds/REPRODUCIBILITY_PLAN.md": "df1de660203357de5a750047c227d0cbdc7bb4b384568a750c7b3b3721022c47",
+    "plan de diseño/02_ESD_AI_USP_v6.md": "0080d502a50db430998b56ebc6419ee181c90a1331cd2b650bb25db298523f81",
+    "repo/ai-usp-fiscal-thresholds/PRIMARY_SPEC_HASH.txt": "d4c16a88cad2c8d1bd48e641942a3d78878510288b0da036d4b550f706a19a05",
+    "repo/ai-usp-fiscal-thresholds/reports/hypothesis_adjudication.csv": "6cd14e0cc12329eb60acfb0b345c30051a59161f55f348b975002fb2485962df",
+    "revision_jpm_v2/paso_07m/ADENDA_REPRODUCCION.md": "6eb36f62fc75a776f8ef711a89b42cbe552ff1da43cb648e9d221b3a5d65edee"
+  },
+  "documents": {
+    "main": {
+      "source": "revision_jpm_v2/paso_07k/MANUSCRITO_JPM_V2.docx",
+      "sha256": "f533177e9e5802c5921cd2266f01d3d87557961ad86cf0ff0dafd5930a9b6b94"
+    },
+    "supp": {
+      "source": "revision_jpm_v2/paso_07k/SUPLEMENTO_TECNICO_JPM_V2.docx",
+      "sha256": "783046d8ba27d318c3518d3a388329449ad35be49196e1a1b8346973e99b15bd"
+    }
+  },
+  "existing_r4_contract_unchanged": true,
+  "legacy_plan_complete": false,
+  "v2_release_ready": false,
+  "fixed_seed": {
+    "atol": 1e-10,
+    "rtol": 1e-08,
+    "exact_counts": true,
+    "unexpected_null_inf_duplicate_missing_output": "FAIL"
+  },
+  "between_seed": {
+    "seeds": [
+      20261114,
+      20261215,
+      20261316
+    ],
+    "sizes": [
+      5000,
+      10000,
+      25000,
+      50000
+    ],
+    "frequency_abs_threshold": 0.02,
+    "comparisons": [
+      "25000_to_50000_within_seed",
+      "max_minus_min_between_seeds_at_50000"
+    ],
+    "all_draw_denominator": true,
+    "factor10_empirical_proposal_applied": false,
+    "quantiles": "report drift in GDP units; no unregistered economic acceptance bound",
+    "attribution": "report between-seed percentage-point drift, preserve arithmetic efficiency and inspect any change affecting interpretation"
+  },
+  "stress_extension": {
+    "model": "same reconciled V2",
+    "mode": "institutional_block_factor_rho08",
+    "latent_rho": 0.8,
+    "empirical_correlation_claim": false,
+    "countries_independent_blocks": true,
+    "variables": [
+      "q_use_target",
+      "A_aipi_total",
+      "E_prod",
+      "chi_Kbase",
+      "Gap_excluded_indicators",
+      "I_adopt_informality"
+    ],
+    "signs": [
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    "rng": "SeedSequence([seed,8001,country_index])",
+    "country_order": [
+      "PER",
+      "CHL",
+      "COL",
+      "MEX"
+    ],
+    "marginal_rule": "exact sorted equality to corresponding complete independent 50000 cache; constants stay constant",
+    "not_equivalent_to_all_historical_modes": true
+  },
+  "paired_extension": {
+    "baseline_seed_guard": "exact published 50000 counts before running other seeds",
+    "history_rng": "retain SeedSequence([seed,741]) and all original inverse-CDF/resampling rules",
+    "same_gain_draws_across_mappings": true,
+    "historical_inputs": "frozen distributions, keep negative observations and mixtures",
+    "bridge_groups": "same seven groups, 128 masks; no new grouping",
+    "unknown_coefficients_randomized": false
+  },
+  "scientific_outcomes": {
+    "execution_success_is_not_hypothesis_support": true,
+    "known_adverse_diagnostic": "D_LOW_EXPOSURE",
+    "expected_current_outcome": "FAIL_RETAINED",
+    "must_disclose": true,
+    "cannot_claim_all_diagnostics_support_expectations": true,
+    "cannot_use_old_PASS_as_current_evidence": true
+  },
+  "hypotheses_schema": {
+    "required_ids": [
+      "H1",
+      "H2",
+      "H3",
+      "H4",
+      "H5"
+    ],
+    "allowed_verdict": [
+      "HOLDS",
+      "VIOLATED",
+      "MIXED",
+      "NOT_TESTABLE"
+    ],
+    "nullable_verdict_only_when": "assessment_status == RETIRED_LEGACY_CLASSIFICATION_RULE and amendment_reason nonempty",
+    "confirmatory_status": "POST_REVISION_CONDITIONAL_ASSESSMENT_NOT_NEW_PREREGISTRATION"
+  },
+  "coverage_schema": {
+    "expected_rows": 480,
+    "key": [
+      "country_id",
+      "scenario_id",
+      "regime_id",
+      "policy_variant_id"
+    ],
+    "H": 10,
+    "rule": "B2",
+    "cost": "recurring_author",
+    "domain_classes": [
+      "uniform_within_declared_domain",
+      "possible_not_uniform",
+      "no_crossing_within_declared_domain"
+    ],
+    "country_variant_summary_rows": 24,
+    "no_automatic_legacy_robustness_labels": true
+  },
+  "requirements": [
+    {
+      "id": "CORE",
+      "decision": "RETAIN",
+      "status": "REPRODUCED",
+      "object": "77 salidas, 28 etapas, 164 celdas, figura, núcleo y financiación",
+      "reason": "Se conservan pruebas numéricas, hashes, esquema y cierre documental.",
+      "reentry_or_gate": "Siempre obligatorio"
+    },
+    {
+      "id": "B_INDEPENDENT",
+      "decision": "RETAIN",
+      "status": "EXECUTED_PASS",
+      "object": "Convergencia independiente y nominal: tres semillas, cuatro tamaños",
+      "reason": "La evidencia de convergencia anterior permanece; requiere integración pública.",
+      "reentry_or_gate": "Siempre obligatorio para frecuencias actuales"
+    },
+    {
+      "id": "B_STRESS",
+      "decision": "ADAPT",
+      "status": "PENDING_EXECUTION",
+      "object": "Estrés de dependencia por bloque institucional",
+      "reason": "Mantener el bloque de seis primitivos; factor común más intenso, sin modificar marginales ni añadir distribuciones de coeficientes desconocidos.",
+      "reentry_or_gate": "Obligatorio antes del cierre numérico V2"
+    },
+    {
+      "id": "B_MATCHED_HISTORY",
+      "decision": "ADAPT",
+      "status": "PENDING_EXECUTION",
+      "object": "Comparadores históricos de la tabla 5",
+      "reason": "La convergencia anterior cubrió la captura conciliada; faltan las capturas históricas publicadas bajo tres semillas.",
+      "reentry_or_gate": "Obligatorio por M_T5"
+    },
+    {
+      "id": "B_BRIDGE",
+      "decision": "ADAPT",
+      "status": "PENDING_EXECUTION",
+      "object": "Puente y atribuciones Monte Carlo S3–S4",
+      "reason": "La repetición exacta ya pasó; falta dispersión entre semillas del puente completo y de sus atribuciones.",
+      "reentry_or_gate": "Obligatorio por S_T3 y S_T4"
+    },
+    {
+      "id": "B_INTEGRATION",
+      "decision": "RETAIN",
+      "status": "PENDING_INTEGRATION",
+      "object": "Reglas de tolerancia y diagnósticos de semillas",
+      "reason": "Igual semilla: conteos exactos y flotantes r4. Entre semillas: prueba de estabilidad separada 0,02; no tolerancia 8,36 pp para aceptar cifras del artículo.",
+      "reentry_or_gate": "Obligatorio para paquete V2"
+    },
+    {
+      "id": "B_DRIVERS",
+      "decision": "ADAPT",
+      "status": "EXECUTED_PASS_WITH_SCOPE",
+      "object": "Spearman de frontera B2",
+      "reason": "Retener estabilidad dentro de cada dependencia y publicar el cambio entre dependencias.",
+      "reentry_or_gate": "Reabrir si se afirma ranking global o causal"
+    },
+    {
+      "id": "B_SOBOL_TORNADO",
+      "decision": "ARCHIVE_NOT_V2_REQUIREMENT",
+      "status": "NOT_EXECUTED_FOR_V2",
+      "object": "Sobol y gráfico tornado del estimando V anterior",
+      "reason": "V2 no afirma una descomposición global de varianza ni un orden causal. Spearman y sensibilidades de costo/financiación satisfacen las afirmaciones vigentes; esto no vuelve Sobol matemáticamente imposible.",
+      "reentry_or_gate": "Obligatorio si se introduce un claim de contribuciones globales de varianza o ranking universal"
+    },
+    {
+      "id": "D_ANCHORS",
+      "decision": "RETAIN",
+      "status": "EXECUTED_PASS",
+      "object": "Ancla conjunta q=g=0 y eliminación total de impuestos",
+      "reason": "Son restricciones del sistema actual.",
+      "reentry_or_gate": "Siempre obligatorio"
+    },
+    {
+      "id": "D_LOW_EXPOSURE",
+      "decision": "RETAIN",
+      "status": "EXECUTED_SCIENTIFIC_FAIL_DISCLOSED",
+      "object": "Exposición baja: expectativa de cero cruces refutada",
+      "reason": "Guardar FAIL, siete cruces stress/uno titular y su comprobación por umbral. Reproducir el FAIL no convierte la expectativa en válida.",
+      "reentry_or_gate": "Prohibido afirmar que el control eliminó todos los cruces"
+    },
+    {
+      "id": "D_ABLATION",
+      "decision": "ADAPT",
+      "status": "EXECUTED_REPORTED",
+      "object": "Eliminación de canales, rentas IA y fugas",
+      "reason": "Recalcular ingreso disponible e IVA y conservar cambios de clase; no sustraer canales brutos sin retroalimentación.",
+      "reentry_or_gate": "Siempre obligatorio para este diagnóstico"
+    },
+    {
+      "id": "D_GRD",
+      "decision": "ADAPT",
+      "status": "EXECUTED_PARTIAL_SOURCE_CONTRAST",
+      "object": "Contraste agregado GRD/OECD",
+      "reason": "No llamarlo eliminación completa de OECD; composición y año de contraste permanecen declarados.",
+      "reentry_or_gate": "Reabrir si se afirma independencia completa de fuente fiscal"
+    },
+    {
+      "id": "D_FULL_LOSO",
+      "decision": "ARCHIVE_NOT_V2_REQUIREMENT",
+      "status": "NOT_ESTABLISHED",
+      "object": "Eliminación completa de WDI/PIP/AIPI",
+      "reason": "Sin reemplazos comparables completos en el snapshot y sin claim de independencia de fuentes en el Word. Excluir del alcance obligatorio V2 no acredita un PASS de LOSO.",
+      "reentry_or_gate": "Obligatorio antes de afirmar robustez a cualquier fuente o causalidad de índices"
+    },
+    {
+      "id": "D_ICT",
+      "decision": "ARCHIVE_NOT_V2_REQUIREMENT",
+      "status": "NOT_ESTABLISHED",
+      "object": "Placebo TIC completo 2010–2018",
+      "reason": "El código previo usa otra captura/proxies; no se cuenta como backtest vigente. V2 no afirma predicción histórica o validación causal.",
+      "reentry_or_gate": "Obligatorio si se pretende una prueba temporal predictiva o inferir que todo shock alternativo carece de financiación"
+    },
+    {
+      "id": "D_FORMALIZATION",
+      "decision": "NOT_TRIGGERED",
+      "status": "NO_ENDOGENOUS_CLAIM",
+      "object": "No formalización e informalización espejo",
+      "reason": "V2 no simula una tasa de formalización endógena causada por IA. Se conserva el análisis acotado de adopción e informalidad.",
+      "reentry_or_gate": "Obligatorio si se activa formalización endógena"
+    },
+    {
+      "id": "H_RECORD",
+      "decision": "ADAPT",
+      "status": "GENERATED",
+      "object": "Registro H1–H5 y clases actuales",
+      "reason": "Preservar cinco entradas históricas, nuevo estado confirmatorio y motivo de H5 vacío. Clasificar 480 celdas por dominio y conservar 24 variantes, sin probabilidad 0,75 ni etiquetas robustas heredadas.",
+      "reentry_or_gate": "Siempre obligatorio como registro de enmienda"
+    },
+    {
+      "id": "PUBLIC_PROVENANCE",
+      "decision": "RETAIN",
+      "status": "PENDING_RELEASE",
+      "object": "Fuentes, licencias, datos restringidos y mapa público",
+      "reason": "Manifiesto de procedencia/licencias y alcance microdatos; no redistribuir el extracto ENAHO.",
+      "reentry_or_gate": "Obligatorio antes de publicar"
+    },
+    {
+      "id": "EDITORIAL_FINAL",
+      "decision": "RETAIN",
+      "status": "PENDING_FINAL_REVIEW",
+      "object": "Afirmaciones científicas y presentación final",
+      "reason": "Mantener resultados adversos en documentación científica; evitar relato de auditoría interna en paper. Verificar narrativa, paginación y disponibilidad definitivas.",
+      "reentry_or_gate": "Obligatorio antes de enviar"
+    },
+    {
+      "id": "RELEASE",
+      "decision": "RETAIN",
+      "status": "PENDING_RELEASE",
+      "object": "Paquete Docker, integración y CI",
+      "reason": "Reconstruir todo desde cero e incluir esquemas/pruebas de las salidas añadidas; Zenodo sólo después.",
+      "reentry_or_gate": "Obligatorio antes de publicar"
+    }
+  ],
+  "next_order": [
+    "B_MATCHED_HISTORY + B_BRIDGE",
+    "B_STRESS",
+    "B_INTEGRATION + H_RECORD + scientific diagnostic disclosure",
+    "PUBLIC_PROVENANCE + EDITORIAL_FINAL + RELEASE",
+    "Zenodo version and submission after final readiness checks"
+  ],
+  "reopen_scope_when": "a scientific equation, calibration, source, manuscript claim, or declared diagnostic expectation changes; do not simply regenerate hashes"
+}

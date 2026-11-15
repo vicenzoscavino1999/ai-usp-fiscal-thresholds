@@ -1,0 +1,38 @@
+{
+  "source_id": "ITU_DATAHUB_WDI_FALLBACK",
+  "download_date": "2026-07-08T22:26:29.025966+00:00",
+  "source_url": "https://api.worldbank.org/v2",
+  "script_name": "09_download_itu.py",
+  "script_version": "0.2.0-stage4a",
+  "status": "ok",
+  "query_or_endpoint": [
+    "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+    "https://api.worldbank.org/v2/country/all/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+    "https://api.worldbank.org/v2/country/all/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+    "https://api.worldbank.org/v2/country/all/indicator/IT.NET.SECR.P6?format=json&per_page=20000",
+    "https://api.datahub.itu.int/v2/data/download/byid/100095/iscollection/true"
+  ],
+  "country_filter": "ALL",
+  "declared_pilot_countries": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "all",
+  "raw_file_hash": "6e26a4e386bf67f438541aa81393b50f0761599b2caa0d5f450bfee0c16f5f89",
+  "n_countries": 281,
+  "itu_datahub_coverage": {
+    "status": "ok",
+    "collection_url": "https://api.datahub.itu.int/v2/data/download/byid/100095/iscollection/true",
+    "zip_sha256": "91e8abdfd8733944fc48c04359f3db5dfddf0567e00965c58890f0a831a34daa",
+    "csv_member": "population-coverage-by-mobile-network-technology_1783549583556.csv",
+    "series": {
+      "194": "ITU_COVERAGE_MOBILE_CELLULAR",
+      "430": "ITU_COVERAGE_AT_LEAST_3G",
+      "19306": "ITU_COVERAGE_LTE_WIMAX"
+    },
+    "aipi_exclusion_verification": "AIPI Note digital-infrastructure component list includes internet users, fixed telephone, mobile subscribers, broadband subscriptions, wireless broadband, cost of internet access, secure servers and e-commerce/public-service proxies; it does not list mobile-network coverage technology series."
+  },
+  "notes": "Plan 01 rule keeps frontier/benchmark inputs unfiltered. This script captures all economies even when --countries is passed. ITU DataHub coverage series are the official excluded digital Gap inputs; legacy WDI fallback rows are retained only for audit/frontier context."
+}

@@ -1,0 +1,20 @@
+contract_version: 4
+policy: Preserve the tested r3 tolerance. Do not silently relax it. B_fixed_seed is
+  repeatability, not between-seed convergence. C_reconstructed applies only to derived
+  tables; raw Tier C hashes are exact.
+profiles:
+  A:
+    atol: 1.0e-10
+    rtol: 1.0e-08
+  B_fixed_seed:
+    atol: 1.0e-10
+    rtol: 1.0e-08
+  C_reconstructed:
+    atol: 1.0e-10
+    rtol: 1.0e-08
+between_seed_B:
+  status: pending_calibration
+  enabled: false
+tier_D:
+  status: pending_applicability_review
+  enabled: false

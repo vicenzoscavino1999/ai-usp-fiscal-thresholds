@@ -1,0 +1,96 @@
+{
+  "contract_scope_version": "JPM_V2_SCOPE_1_POST_REVISION_20261114",
+  "contract_sha256": "ac71845bf316812fa6a1fe58f131938bba7477042823dbb8b51f98d41969d16c",
+  "requirements": {
+    "CORE": "PASS",
+    "B_INDEPENDENT": "PASS",
+    "B_MATCHED_HISTORY": "PASS",
+    "B_BRIDGE": "PASS",
+    "B_STRESS": "PASS",
+    "H_RECORD": "PASS",
+    "B_INTEGRATION": "PASS",
+    "PUBLIC_PROVENANCE": "SOURCE_NOTICES_INTEGRATED",
+    "EDITORIAL_FINAL": "CURRENT_DOCUMENTS_INTEGRATED",
+    "RELEASE": "PREPARED_FOR_ARCHIVE_FINAL_VERIFICATION_REQUIRED",
+    "PACKAGE_INTEGRATION": "PASS",
+    "SURVEY_COMPARATORS": "FROZEN_ORIGINALS_RECONSTRUCTION_PASS_BASELINE"
+  },
+  "integration_status": "CURRENT_DOCUMENTS_AND_SOURCE_NOTICES_INTEGRATED",
+  "scientific_outcomes": {
+    "D_LOW_EXPOSURE": "FAIL_RETAINED",
+    "H1": "MIXED",
+    "H2": "NOT_TESTABLE",
+    "H3": "NOT_TESTABLE",
+    "H4": "HOLDS",
+    "H5": "RETIRED_LEGACY_CLASSIFICATION_RULE"
+  },
+  "legacy_plan_complete": false,
+  "v2_release_ready": true,
+  "next_requirement": "FINAL_PACKAGE_VERIFICATION_AND_ARCHIVE_PUBLICATION",
+  "editorial_note": "Only availability statements changed after the verified scientific baseline. Archive publication and journal submission are separate.",
+  "evidence": "run_logs/COMPARISON_COMPLETE.json",
+  "public_provenance": {
+    "review_complete": true,
+    "notices_prepared": true,
+    "notices_integrated": true,
+    "checks_passed": 37,
+    "pending": "No blanket data licence: source-specific conditions and author manuscript copyright are retained."
+  },
+  "editorial_final": {
+    "review_complete": true,
+    "current_documents": "extensions/config/DOCUMENT_MAP.json",
+    "pages": {
+      "main": 25,
+      "supp": 16
+    },
+    "visual_pages_reviewed": 41,
+    "micro_comparison_status": "RAW_SURVEY_RECONSTRUCTION_VERIFIED_MODULE_INTEGRATED",
+    "public_integration_pending": false,
+    "supplement_polish": {
+      "status": "COMPLETE",
+      "passes": 2,
+      "paragraphs_edited": 11,
+      "pages": 16,
+      "evidence": "Scientific contents are unchanged from r9; final availability statements cite the reserved version DOI. Word pages remain 25 and 16."
+    }
+  },
+  "clean_reproduction_of_this_candidate": false,
+  "published": false,
+  "current_candidate": "2.0.0",
+  "package_integration": {
+    "status": "RELEASE_SOURCE_PREPARED",
+    "current_inventory": "provenance_public/FILE_RIGHTS.json"
+  },
+  "survey_reconstruction": {
+    "status": "COMPLETE",
+    "module": "surveys",
+    "microdata_reexecuted": true,
+    "raw_included_in_distribution": false,
+    "main_manuscript_changed": false,
+    "integrated_in_final_candidate": true
+  },
+  "status_note": "Immutable pre-publication package state. Final run evidence is distributed separately and matched by source-manifest hash.",
+  "calibration_revision": {
+    "scope": "ILOSTAT both-sexes age-15+ selection before latest year, up to 2024",
+    "version_note": "CALIBRATION_REVISION_R8.md",
+    "raw_snapshot_changed": false
+  },
+  "benchmark_revision": {
+    "version_note": "BENCHMARK_REVISION_R9.md",
+    "population": "24 unique country observations; E_AI_TANY, GE10, C10-S951_X_K, PC_ENT, A, 2024",
+    "raw_snapshot_changed": false,
+    "independent_calibration_and_math_checks": "PASS",
+    "fresh_complete_ci_required": false
+  },
+  "version": "2.0.0",
+  "distribution_stage": "PREPARED_FOR_ARCHIVE",
+  "version_doi": "10.5281/zenodo.24257720",
+  "concept_doi": "10.5281/zenodo.21348534",
+  "scientific_baseline": {
+    "commit": "ec433684d0aeed36e99322d45c9752fdfcb7c4a1",
+    "verification": "release/BASELINE_VERIFICATION.json",
+    "protected_files": "release/SCIENTIFIC_BASELINE.json",
+    "complete_reproduction": "PASS_LOCAL_AND_REMOTE",
+    "tests_per_environment": 151
+  }
+}

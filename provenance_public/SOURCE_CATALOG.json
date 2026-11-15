@@ -1,0 +1,929 @@
+{
+  "checked_at": "2026-11-15T03:52:01.074420+00:00",
+  "sources": {
+    "WDI": {
+      "source_id": "WDI",
+      "title": "World Development Indicators",
+      "license_or_terms": "CC-BY-4.0",
+      "terms_urls": [
+        "https://data.worldbank.org/summary-terms-of-use",
+        "https://datacatalog.worldbank.org/search/dataset/0037712/world-development-indicators"
+      ],
+      "conditions": "Attribute World Bank and indicator providers; identify changes; retain indicator-specific notices. All 23 included indicators have License_Type CC BY-4.0 in checked API metadata.",
+      "attribution": "World Bank, World Development Indicators; underlying providers listed in WDI_INDICATOR_LICENSES.json.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "evidence_method_override": "Official catalog plus saved per-indicator API metadata",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/wdi/metadata.json",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/wdi/wdi_country_year.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/wdi/metadata.json",
+          "download_date": "2026-07-08T22:11:21.840347+00:00",
+          "source_url": "https://api.worldbank.org/v2",
+          "query_or_endpoint": [
+            "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.CN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.KN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.65UP.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/SP.POP.1564.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/FP.CPI.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/NY.GDP.DEFL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/PA.NUS.FCRF?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/PA.NUS.PRVT.PP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/PA.NUS.PPP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/NE.IMP.GNFS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/NE.CON.TOTL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/GC.REV.XGRT.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/IT.NET.SECR.P6?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/EG.ELC.ACCS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/PER/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.CN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.KN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.65UP.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/SP.POP.1564.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/FP.CPI.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NY.GDP.DEFL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/PA.NUS.FCRF?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/PA.NUS.PRVT.PP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/PA.NUS.PPP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NE.IMP.GNFS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/NE.CON.TOTL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/GC.REV.XGRT.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/IT.NET.SECR.P6?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/EG.ELC.ACCS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/CHL/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NY.GDP.MKTP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NY.GDP.MKTP.CN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NY.GDP.MKTP.KN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/SP.POP.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/SP.POP.65UP.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/SP.POP.1564.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/FP.CPI.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NY.GDP.DEFL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/PA.NUS.FCRF?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/PA.NUS.PRVT.PP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/PA.NUS.PPP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NE.IMP.GNFS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/NE.CON.TOTL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/GC.REV.XGRT.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/IT.NET.SECR.P6?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/EG.ELC.ACCS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/COL/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NY.GDP.MKTP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NY.GDP.MKTP.CN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NY.GDP.MKTP.KN?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NY.GDP.PCAP.CD?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/SP.POP.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/SP.POP.65UP.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/SP.POP.1564.TO.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/FP.CPI.TOTL?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NY.GDP.DEFL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.FCRF?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.PRVT.PP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.PPP?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NE.IMP.GNFS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/NE.CON.TOTL.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/GC.REV.XGRT.GD.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/IT.NET.SECR.P6?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/EG.ELC.ACCS.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/MEX/indicator/GB.XPD.RSDV.GD.ZS?format=json&per_page=20000"
+          ],
+          "historical_acquisition_script": "01_download_wdi.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "WDI API pull for Plan 01 raw_wdi_indicator.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "4066dd7a625618cc0117f2a49a60e00db51aec0f518f977b8bcd1e75e0c6d3be"
+        }
+      ]
+    },
+    "PIP": {
+      "source_id": "PIP",
+      "title": "Poverty and Inequality Platform",
+      "license_or_terms": "CC-BY-4.0",
+      "terms_urls": [
+        "https://datacatalog.worldbank.org/search/dataset/0038020/poverty-and-equity-database-poverty-and-inequality-platform",
+        "https://data.worldbank.org/summary-terms-of-use"
+      ],
+      "conditions": "Attribute World Bank PIP and underlying survey source where identified; mark transformations. Included data are country aggregates, not survey records.",
+      "attribution": "World Bank, Poverty and Inequality Platform (PIP).",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/pip/metadata.json",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/pip/pip_poverty.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/pip/metadata.json",
+          "download_date": "2026-07-08T22:13:47.751268+00:00",
+          "source_url": "https://api.worldbank.org/pip/v1/pip",
+          "query_or_endpoint": [
+            "https://api.worldbank.org/pip/v1/pip?country=PER&povline=3.00&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=PER&povline=4.20&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=PER&povline=8.30&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=CHL&povline=3.00&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=CHL&povline=4.20&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=CHL&povline=8.30&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=COL&povline=3.00&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=COL&povline=4.20&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=COL&povline=8.30&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=MEX&povline=3.00&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=MEX&povline=4.20&format=json",
+            "https://api.worldbank.org/pip/v1/pip?country=MEX&povline=8.30&format=json"
+          ],
+          "historical_acquisition_script": "02_download_pip.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "PIP REST pull preserving unit/currency/periodicity/ppp fields required by Plan 01 section 13.4.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "bfede6d6a6773cd920d4f39fbb68821da09038808425c3b47854acdbe9ced4d6"
+        }
+      ]
+    },
+    "OECD_REVSTAT_LAC": {
+      "source_id": "OECD_REVSTAT_LAC",
+      "title": "Revenue Statistics in Latin America and the Caribbean",
+      "license_or_terms": "OECD data terms",
+      "terms_urls": [
+        "https://www.oecd.org/en/about/terms-conditions.html"
+      ],
+      "conditions": "Data section allows extraction, adaptation and redistribution including commercial use, with acknowledgement and terms communicated to downstream users; retain any third-party exceptions. Do not substitute the separate written-content policy.",
+      "attribution": "OECD, Revenue Statistics in Latin America and the Caribbean, SDMX DSD_REV_COMP_LAC@DF_RSLAC.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/oecd/metadata.json",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/oecd/oecd_revenue.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/oecd/metadata.json",
+          "download_date": "2026-07-08T22:20:05.375692+00:00",
+          "source_url": "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC",
+          "query_or_endpoint": [
+            "https://sdmx.oecd.org/public/rest/dataflow/OECD.CTP.TPS/DSD_REV_COMP_LAC@DF_RSLAC/1.1?references=all",
+            "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/PER......",
+            "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/CHL......",
+            "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/COL......",
+            "https://sdmx.oecd.org/public/rest/data/OECD.CTP.TPS,DSD_REV_COMP_LAC@DF_RSLAC/MEX......"
+          ],
+          "historical_acquisition_script": "04_download_oecd_revenue.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "OECD Revenue Statistics LAC via SDMX; structure request precedes PER-filtered CSV data query.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "3d43d8792dfaaf9872e163c19e2d40d1ee102201a1d303375a1e6a7389683b3a"
+        }
+      ]
+    },
+    "GRD": {
+      "source_id": "GRD",
+      "title": "Government Revenue Dataset 2025",
+      "license_or_terms": "CC-BY-NC-SA-3.0-IGO",
+      "terms_urls": [
+        "https://www.wider.unu.edu/about/copyright",
+        "https://www.wider.unu.edu/database/data-and-resources-grd",
+        "https://creativecommons.org/licenses/by-nc-sa/3.0/igo/"
+      ],
+      "conditions": "Noncommercial reuse, attribution, indication of changes and share-alike. Filtered central/general-government extract included; original Excel workbooks and guide are excluded.",
+      "attribution": "UNU-WIDER (2025). UNU-WIDER Government Revenue Dataset. Version 2025. Helsinki: UNU-WIDER. https://doi.org/10.35188/UNU-WIDER/GRD-2025",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/grd/grd_revenue.parquet",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/grd/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/grd/metadata.json",
+          "download_date": "2026-07-08T23:28:21.343255+00:00",
+          "source_url": "https://www.wider.unu.edu/database/government-revenue-dataset",
+          "query_or_endpoint": "Manual author download from UNU-WIDER GRD 2025 form",
+          "historical_acquisition_script": "12_register_manual_sources.py",
+          "script_in_r5": false,
+          "source_version": "2025",
+          "transform_notes": "UNU-WIDER GRD 2025 manually registered by author; central and general workbooks converted to one filtered parquet retaining government_level.",
+          "original_download_hashes": {
+            "UNUWIDERGRD_2025_Central.xlsx": "76b5e7bdc40cf514c8fece9fd42f9658dcf6452d5d09b4c718976172095711d8",
+            "UNUWIDERGRD_2025_General.xlsx": "97f74af1b19efc80fd29f8743176466e4a619b44dbe9cbfbbff83c1c361d1b17",
+            "GRD_User_Guide_2025.pdf": "59ae449c7dbd4e710b6baa477ee73b79227c9c695ef2e93916edff3e898b28a3",
+            "grd_revenue.parquet": "fa363c5b4211ed24c4975023aa438fbcb69b657d5b93d3342c461cbf34969368"
+          },
+          "snapshot_payload_sha256": "fa363c5b4211ed24c4975023aa438fbcb69b657d5b93d3342c461cbf34969368"
+        }
+      ]
+    },
+    "IMF_WEO_GFS": {
+      "source_id": "IMF_WEO_GFS",
+      "title": "IMF DataMapper WEO and Fiscal Monitor series",
+      "license_or_terms": "IMF statistical data terms",
+      "terms_urls": [
+        "https://www.imf.org/en/About/copyright-and-terms"
+      ],
+      "conditions": "Accurate IMF attribution, explicit material transformations and communication of terms. Current terms direct potential commercial reuse to IMF permission. No claim of a CC licence. Fiscal series use Fiscal Monitor aliases, not an unqualified WEO/GFS bulk extract.",
+      "attribution": "International Monetary Fund, WEO / Fiscal Monitor data via IMF DataMapper, https://www.imf.org/external/datamapper/.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/imf/imf_fiscal_macro.parquet",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/imf/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/imf/metadata.json",
+          "download_date": "2026-07-08T22:20:30.718335+00:00",
+          "source_url": "https://www.imf.org/external/datamapper/api/v1",
+          "query_or_endpoint": [
+            "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/PER",
+            "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/CHL",
+            "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/COL",
+            "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/MEX",
+            "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/PER",
+            "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/CHL",
+            "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/COL",
+            "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/MEX",
+            "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/PER",
+            "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/CHL",
+            "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/COL",
+            "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/MEX",
+            "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/PER",
+            "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/CHL",
+            "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/COL",
+            "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/MEX",
+            "https://www.imf.org/external/datamapper/api/v1/NGDPD/PER",
+            "https://www.imf.org/external/datamapper/api/v1/NGDPD/CHL",
+            "https://www.imf.org/external/datamapper/api/v1/NGDPD/COL",
+            "https://www.imf.org/external/datamapper/api/v1/NGDPD/MEX",
+            "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/PER",
+            "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/CHL",
+            "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/COL",
+            "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/MEX",
+            "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/PER",
+            "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/CHL",
+            "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/COL",
+            "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/MEX"
+          ],
+          "historical_acquisition_script": "06_download_imf_weo_gfs.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "IMF DataMapper API pull using browser User-Agent; response filtered explicitly to requested ISO3 countries. Fiscal Monitor DataMapper aliases are used where the requested WEO-style codes are not exposed in the public indicator catalog.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "f5668875a25ce88fe2a1021e8ab740b7dcd20c09870f59ac3ff3a3c9c37f6089"
+        }
+      ]
+    },
+    "ILOSTAT": {
+      "source_id": "ILOSTAT",
+      "title": "ILOSTAT annual country aggregates",
+      "license_or_terms": "CC-BY-4.0",
+      "terms_urls": [
+        "https://www.ilo.org/rights-and-permissions",
+        "https://ilostat.github.io/Rilostat/"
+      ],
+      "conditions": "ILO data/metadata published from 3 May 2023 are CC BY 4.0 unless otherwise indicated. Credit ILO and mark adaptations. This does not license restricted partner microdata; none are included.",
+      "attribution": "International Labour Organization, ILOSTAT, annual country aggregate statistics.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/ilostat/ilostat_labor.parquet",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/ilostat/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/ilostat/metadata.json",
+          "download_date": "2026-07-08T22:25:47.966886+00:00",
+          "source_url": "https://rplumber.ilo.org/data/ref_area",
+          "query_or_endpoint": [
+            "https://rplumber.ilo.org/data/ref_area?id=PER_A&format=.csv.gz",
+            "https://rplumber.ilo.org/data/ref_area?id=CHL_A&format=.csv.gz",
+            "https://rplumber.ilo.org/data/ref_area?id=COL_A&format=.csv.gz",
+            "https://rplumber.ilo.org/data/ref_area?id=MEX_A&format=.csv.gz"
+          ],
+          "historical_acquisition_script": "07_download_ilostat.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "ILOSTAT bulk ref_area annual files. classif1/classif2 are mapped only when prefixes identify age, sector, or occupation.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "dcf2324ae32927ef95eca62e2fa27879e1f4b7bc5aee97957302d29497a6b218"
+        }
+      ]
+    },
+    "PWT_10_01": {
+      "source_id": "PWT_10_01",
+      "title": "Penn World Table 10.01",
+      "license_or_terms": "CC-BY-4.0",
+      "terms_urls": [
+        "https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt1001?lang=en"
+      ],
+      "conditions": "Credit PWT authors and version; identify the four-country extraction and transformations.",
+      "attribution": "Feenstra, R. C., Inklaar, R. and Timmer, M. P. (2015), The Next Generation of the Penn World Table, American Economic Review 105(10):3150–3182. PWT 10.01: https://doi.org/10.34894/QT5BCC.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/pwt/metadata.json",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/pwt/pwt_country_year.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/pwt/metadata.json",
+          "download_date": "2026-07-08T22:25:54.714811+00:00",
+          "source_url": "https://dataverse.nl/dataset.xhtml?persistentId=doi:10.34894/QT5BCC",
+          "query_or_endpoint": "https://dataverse.nl/api/access/datafile/354098",
+          "historical_acquisition_script": "08_download_pwt.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "PWT 10.01 Stata .dta via DataverseNL API.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "7605dbb97cffa9e56739efbbad7587785edf8e0409ec058d3e3d6e692ba15cad"
+        }
+      ]
+    },
+    "ITU_DATAHUB_WDI_FALLBACK": {
+      "source_id": "ITU_DATAHUB_WDI_FALLBACK",
+      "title": "ITU coverage and WDI fallback rows",
+      "license_or_terms": "Mixed: ITU CC-BY-NC-SA-3.0-IGO; WDI CC-BY-4.0",
+      "terms_urls": [
+        "https://datahub.itu.int/about/",
+        "https://creativecommons.org/licenses/by-nc-sa/3.0/igo/",
+        "https://data.worldbank.org/summary-terms-of-use"
+      ],
+      "conditions": "ITU_* coverage rows retain noncommercial/share-alike and attribution terms. Other rows retain WDI indicator terms. Do not label the whole parquet CC BY. Include access date and no endorsement; derived coverage/speed Gap retains source conditions.",
+      "attribution": "International Telecommunication Union, ITU DataHub, https://datahub.itu.int/; World Bank WDI for explicitly labelled fallback rows.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "evidence_access_note": "Official indexed DataHub terms available; direct page open returned 403.",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/itu/itu_digital.parquet",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/itu/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/itu/metadata.json",
+          "download_date": "2026-07-08T22:26:29.025966+00:00",
+          "source_url": "https://api.worldbank.org/v2",
+          "query_or_endpoint": [
+            "https://api.worldbank.org/v2/country/all/indicator/IT.NET.USER.ZS?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/all/indicator/IT.CEL.SETS.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/all/indicator/IT.NET.BBND.P2?format=json&per_page=20000",
+            "https://api.worldbank.org/v2/country/all/indicator/IT.NET.SECR.P6?format=json&per_page=20000",
+            "https://api.datahub.itu.int/v2/data/download/byid/100095/iscollection/true"
+          ],
+          "historical_acquisition_script": "09_download_itu.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "Plan 01 rule keeps frontier/benchmark inputs unfiltered. This script captures all economies even when --countries is passed. ITU DataHub coverage series are the official excluded digital Gap inputs; legacy WDI fallback rows are retained only for audit/frontier context.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "6e26a4e386bf67f438541aa81393b50f0761599b2caa0d5f450bfee0c16f5f89"
+        }
+      ]
+    },
+    "IMF_AIPI_DATA360": {
+      "source_id": "IMF_AIPI_DATA360",
+      "title": "AI Preparedness Index, IMF via World Bank Data360",
+      "license_or_terms": "IMF statistical data terms; World Bank third-party conditions",
+      "terms_urls": [
+        "https://www.imf.org/en/About/copyright-and-terms",
+        "https://data.worldbank.org/summary-terms-of-use"
+      ],
+      "conditions": "Identify IMF as origin and Data360 as distributor; preserve IMF terms, not a blanket World Bank CC licence. Material transforms must be identified; commercial reuse follows IMF permission condition.",
+      "attribution": "International Monetary Fund, AI Preparedness Index, retrieved through World Bank Data360 (IMF_AI).",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/imf_aipi/aipi.parquet",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/imf_aipi/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/imf_aipi/metadata.json",
+          "download_date": "2026-07-08T22:26:30.771950+00:00",
+          "source_url": "https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI",
+          "query_or_endpoint": "https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI",
+          "historical_acquisition_script": "10_download_aipi.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "Downloaded all AIPI economies as required for frontier benchmark. --countries was accepted (['PER', 'CHL', 'COL', 'MEX']) but not used to filter AIPI.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "bc4b322197f7d752d5b1a841646be204428cf2693fcef09b5e1d5229b2a2d0fd"
+        }
+      ]
+    },
+    "NATIONAL_PER_BCRP": {
+      "source_id": "NATIONAL_PER_BCRP",
+      "title": "BCRPData national contrast series",
+      "license_or_terms": "BCRPData attribution terms",
+      "terms_urls": [
+        "https://estadisticas.bcrp.gob.pe/estadisticas/series/ayuda/condiciones-de-uso"
+      ],
+      "conditions": "BCRP permits full or partial reproduction with source citation. Keep originating institution attribution for third-party series; do not imply endorsement.",
+      "attribution": "Banco Central de Reserva del Perú, BCRPData, https://estadisticas.bcrp.gob.pe/estadisticas/series/.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/national/metadata.json",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/national/national_per_bcrp.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/national/metadata.json",
+          "download_date": "2026-07-08T22:26:33.272577+00:00",
+          "source_url": "https://estadisticas.bcrp.gob.pe/estadisticas/series/api",
+          "query_or_endpoint": [
+            "https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PM10103FA-PM04863AA-PM05776FA-PM05848FA-PM05846FA-PM05876FA/json/1990/2025",
+            "https://estadisticas.bcrp.gob.pe/estadisticas/series/api/PN03112FQ-PN03432FQ/json/1990-1/2026-1"
+          ],
+          "historical_acquisition_script": "11_download_national_sources.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "BCRPData API implemented for Peru macro-fiscal contrast series; SUNAT Excel tables are manual_registered.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "9ebc72fb5cffc423c4dd9a7470543432924898b707dc8e28e5a9228ad710fbc7"
+        }
+      ]
+    },
+    "FRONTIER_BENCHMARK": {
+      "source_id": "FRONTIER_BENCHMARK",
+      "title": "Eurostat enterprise AI adoption isoc_eb_ai",
+      "license_or_terms": "Eurostat statistical-data reuse terms",
+      "terms_urls": [
+        "https://ec.europa.eu/eurostat/help/copyright-notice"
+      ],
+      "conditions": "Acknowledge Eurostat, identify changes and retain third-party exceptions. Statistical-data reuse is governed by the stated EU reuse policy; do not confuse with copyright in publications.",
+      "attribution": "Eurostat, isoc_eb_ai, AI use by enterprises; project-selected benchmark economies.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/frontier/frontier_benchmark.parquet",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/frontier/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/frontier/metadata.json",
+          "download_date": "2026-07-08T22:26:39.784175+00:00",
+          "source_url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON",
+          "query_or_endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/isoc_eb_ai?format=JSON",
+          "historical_acquisition_script": "13_download_frontier_benchmark.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "Captured Eurostat isoc_eb_ai adoption_proxy inputs. No benchmark set is selected here; Phase 1 calibration chooses the benchmark population.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "b6586917666c71aac55176386ee995a03451d2fe5ba6f945578ce7e25f778937"
+        }
+      ]
+    },
+    "UN_WPP": {
+      "source_id": "UN_WPP",
+      "title": "World Population Prospects 2024",
+      "license_or_terms": "CC-BY-3.0-IGO",
+      "terms_urls": [
+        "https://population.un.org/dataportalapi/index.html",
+        "https://population.un.org/wpp/",
+        "https://creativecommons.org/licenses/by/3.0/igo/"
+      ],
+      "conditions": "Attribute UN DESA Population Division, revision and variant; identify extraction and aggregations. Single-age/sex country population counts are aggregate statistics.",
+      "attribution": "United Nations, Department of Economic and Social Affairs, Population Division (2024). World Population Prospects 2024, medium variant, single-age/sex population projections.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "evidence_access_note": "Licence shown in official Data Portal API indexed page; WPP 2024 bulk file identified by frozen metadata.",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/wpp/metadata.json",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/wpp/wpp_projections.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/wpp/metadata.json",
+          "download_date": "2026-07-08T22:26:59.203302+00:00",
+          "source_url": "https://population.un.org/wpp/",
+          "query_or_endpoint": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz",
+          "historical_acquisition_script": "14_download_wpp_projections.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "UN WPP 2024 bulk CSV, Standard Projections, single-age/sex, medium variant. No five-year age groups or 65+/15-64/18+ aggregates are constructed in raw ingest.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "0d8b8046088ec3db0b9b413da3c9e5231e9efa7d8f80d202f29e3ed36b59ea9a"
+        }
+      ]
+    },
+    "OOKLA_SPEEDTEST_OPEN_DATA": {
+      "source_id": "OOKLA_SPEEDTEST_OPEN_DATA",
+      "title": "Ookla Speedtest global performance",
+      "license_or_terms": "CC-BY-NC-SA-4.0",
+      "terms_urls": [
+        "https://registry.opendata.aws/speedtest-global-performance/",
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      ],
+      "conditions": "Noncommercial reuse, attribution, changes and share-alike. Country aggregates remain subject to source terms. Raw tiles are excluded. Apply conditions also to relevant derived data, not only to a file named gap_index.",
+      "attribution": "Ookla, Speedtest Global Performance / Speedtest by Ookla Global Fixed and Mobile Network Performance Maps, 2024 Q4 and 2026 Q1; 2024 Q4 used for the baseline Gap.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/ookla/metadata.json",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/ookla/ookla_speedtest.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/ookla/metadata.json",
+          "download_date": "2026-07-08T22:32:31.423457+00:00",
+          "source_url": "https://registry.opendata.aws/speedtest-global-performance/",
+          "query_or_endpoint": [
+            "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson",
+            "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=fixed/year=2024/quarter=4/2024-10-01_performance_fixed_tiles.parquet",
+            "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=fixed/year=2026/quarter=1/2026-01-01_performance_fixed_tiles.parquet",
+            "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=mobile/year=2024/quarter=4/2024-10-01_performance_mobile_tiles.parquet",
+            "https://ookla-open-data.s3.amazonaws.com/parquet/performance/type=mobile/year=2026/quarter=1/2026-01-01_performance_mobile_tiles.parquet"
+          ],
+          "historical_acquisition_script": "15_download_ookla.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "Country-level speed anchors derived from AWS Ookla parquet tiles. The official Gap uses the 2024Q4 anchor period; the latest available period is also downloaded and aggregated for source completeness. Older full history is not downloaded because it is not cheap.",
+          "original_download_hashes": {
+            "natural_earth": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+            "ookla_fixed_2024q4": "993729631e0963e95f1a569ae06e9283f93192b52061cd0c22563628956f1d14",
+            "ookla_fixed_2026q1": "532a70d4adcec26d79d8438889c5da82a292cf7b4d2ef4285f2c8e5d57005e75",
+            "ookla_mobile_2024q4": "08dfbbb3abf765a9524ad0b002769f04f880b3fe1502452a819f4decb6b02b60",
+            "ookla_mobile_2026q1": "aeb2a6402b29f4e06563771947a2b7c911b1f1be9571bc84b6ba4398ae5c2651",
+            "ookla_speedtest_parquet": "54d98535cfa828ea5750868a5770471d54f8334b58e940863408d23e5a05de8b"
+          },
+          "snapshot_payload_sha256": "54d98535cfa828ea5750868a5770471d54f8334b58e940863408d23e5a05de8b"
+        }
+      ]
+    },
+    "UN_SNA": {
+      "source_id": "UN_SNA",
+      "title": "UNdata System of National Accounts",
+      "license_or_terms": "UNdata use terms",
+      "terms_urls": [
+        "https://data.un.org/Host.aspx?Content=UNdataUse"
+      ],
+      "conditions": "Data and metadata may be copied and distributed with reference to UNdata. Identify filtering and the compensation/GDP calculation; preserve originating national-statistics attribution.",
+      "attribution": "United Nations Statistics Division, UNdata SNA, compensation of employees (D.1), Table 4.1/group 401, and GDP at market prices (B.1*g), group 101.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "included_files": [
+        "upstream/data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/metadata.json",
+        "upstream/data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/un_sna_labor_share_raw.parquet"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/robustness-lsraw-v1/un_sna_labor_share/metadata.json",
+          "download_date": "2026-07-10T17:54:23.063341+00:00",
+          "source_url": "https://data.un.org/Data.aspx?d=SNA&f=group_code%3A401",
+          "query_or_endpoint": [
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A604%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A604%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A152%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A152%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A170%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A170%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A484%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+            "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A484%3Bgroup_code%3A101&DataMartId=SNA&Format=csv"
+          ],
+          "historical_acquisition_script": "16_download_un_sna_labor_share.py",
+          "script_in_r5": false,
+          "source_version": "robustness-lsraw-v1",
+          "transform_notes": "New input series for the declared LS raw-vs-adjusted robustness extension. It is isolated from every official baseline snapshot.",
+          "original_download_hashes": {
+            "UNdata_SNA_CHL_group_101.zip": "dbfa02aa528bfa88e0453d647bfa7172512a74133d0fe26697001de9a264fda2",
+            "UNdata_SNA_CHL_group_401.zip": "257b05100536aefa5f7bef7aecfc5d32ae8b8d00dcfaee8c6051a396dded6a71",
+            "UNdata_SNA_COL_group_101.zip": "8852321b95ab0dcf3cdea6222940c64d71722872171b782e7a077b67ecc3acc2",
+            "UNdata_SNA_COL_group_401.zip": "0c5bec95d9472f2a8f348d628bbd992c49521c97589baacd31e7501a5b42e12d",
+            "UNdata_SNA_MEX_group_101.zip": "4265c7320add93711a05a21d8f0bde9ddbf581e5b6dc463f4d85099fe6a6e60e",
+            "UNdata_SNA_MEX_group_401.zip": "0e66c6489615f897f7de0d424702db039161f96212141f42b5e714da708c6eb8",
+            "UNdata_SNA_PER_group_101.zip": "70c5a9bbe69e9aa328835c4515eb30ef927618a8d8424a4c70ea14fa0ea9bf63",
+            "UNdata_SNA_PER_group_401.zip": "7ae1df712202fc4bc0d529976ccde65694ba4026f3f879efd14a02d30df0aac9",
+            "un_sna_labor_share_raw.parquet": "619656bc9d1989fa12f76ec96bd236fa36d280b3e90c1d1b6e535f9b5a2c2ada"
+          },
+          "snapshot_payload_sha256": "619656bc9d1989fa12f76ec96bd236fa36d280b3e90c1d1b6e535f9b5a2c2ada"
+        }
+      ]
+    },
+    "NATURAL_EARTH": {
+      "source_id": "NATURAL_EARTH",
+      "title": "Natural Earth country boundaries",
+      "license_or_terms": "Public domain",
+      "terms_urls": [
+        "https://www.naturalearthdata.com/about/terms-of-use/"
+      ],
+      "conditions": "Boundary data were used upstream for country aggregation; geometry is not included in this package.",
+      "attribution": "Made with Natural Earth.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "upstream method only; no boundary file",
+      "included_files": [],
+      "snapshots": []
+    },
+    "MANUAL_SOURCE_REGISTRY": {
+      "source_id": "MANUAL_SOURCE_REGISTRY",
+      "title": "Manual source registration",
+      "license_or_terms": "Project-authored metadata",
+      "terms_urls": [],
+      "conditions": "The registry contains descriptions and URLs, not permission grants or proof that all listed datasets were acquired.",
+      "attribution": "Project source registry.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "metadata only",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/manual/manual_source_registry.parquet",
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/manual/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/manual/metadata.json",
+          "download_date": "2026-07-08T23:28:21.356254+00:00",
+          "source_url": "Plan 01 Appendix A.2-A.5",
+          "query_or_endpoint": "metadata\\manual_source_registry.yml",
+          "historical_acquisition_script": "12_register_manual_sources.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "Created metadata/manual_source_registry.yml and mirrored it as parquet for the snapshot manifest.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": "bb195f06b3eb0786a15892c6bd0e9adcba5f0b561645cbdba3e6eb00b8aea173"
+        }
+      ]
+    },
+    "SEDLAC": {
+      "source_id": "SEDLAC",
+      "title": "CEDLAS / World Bank SEDLAC",
+      "license_or_terms": "Redistribution not established for a payload",
+      "terms_urls": [
+        "https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/"
+      ],
+      "conditions": "Only acquisition-status metadata are included. No SEDLAC numerical payload is distributed or required by the current reconstruction. Exclude any newly added payload until its terms are established.",
+      "attribution": "CEDLAS and World Bank, SEDLAC.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "metadata only",
+      "decision": "EXCLUDE_PAYLOAD",
+      "included_files": [
+        "upstream/data/raw_snapshots/v1.0.1-official-4c/sedlac/metadata.json"
+      ],
+      "snapshots": [
+        {
+          "metadata_path": "upstream/data/raw_snapshots/v1.0.1-official-4c/sedlac/metadata.json",
+          "download_date": "2026-07-08T22:13:47.900266+00:00",
+          "source_url": "https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/",
+          "query_or_endpoint": "manual download: CEDLAS SEDLAC statistics Excel files",
+          "historical_acquisition_script": "03_download_sedlac.py",
+          "script_in_r5": false,
+          "source_version": "v1.0.1-official-4c",
+          "transform_notes": "SEDLAC/CEDLAS has no public API for this pull; registered as manual_pending, not as a pipeline failure.",
+          "original_download_hashes": {},
+          "snapshot_payload_sha256": null
+        }
+      ]
+    },
+    "MIDIS_PENSION65": {
+      "source_id": "MIDIS_PENSION65",
+      "title": "Peru Pensión 65, 2024",
+      "license_or_terms": "Cited factual parameter; no source publication redistributed",
+      "terms_urls": [
+        "https://www.gob.pe/institucion/pension65/noticias/1002406-pension-65-usuarios-empiezan-a-cobrar-en-los-24-departamentos-del-pais-a-traves-de-3-modalidades"
+      ],
+      "conditions": "Only stated amounts/eligibility conventions and citation are used, not article text, images or provider databases. No general licence over the provider website is asserted. S/250 bimonthly; model annualizes to S/1500.",
+      "attribution": "Peru Pensión 65, 2024. https://www.gob.pe/institucion/pension65/noticias/1002406-pension-65-usuarios-empiezan-a-cobrar-en-los-24-departamentos-del-pais-a-traves-de-3-modalidades",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "cited scalar/method",
+      "evidence_access_note": "Frozen source citation inspected in build_official_4c_anchors.py; supplementary official 2024 links added for Peru/Colombia; scientific values unchanged.",
+      "included_files": [],
+      "snapshots": []
+    },
+    "SP_CHILE_PGU_2024": {
+      "source_id": "SP_CHILE_PGU_2024",
+      "title": "Chile PGU, 2024",
+      "license_or_terms": "Cited factual parameter; no source publication redistributed",
+      "terms_urls": [
+        "https://www.spensiones.cl/portal/institucional/594/w3-article-15857.html"
+      ],
+      "conditions": "Only stated amounts/eligibility conventions and citation are used, not article text, images or provider databases. No general licence over the provider website is asserted. CLP214296 monthly from February 2024; model annualizes by 12.",
+      "attribution": "Chile PGU, 2024. https://www.spensiones.cl/portal/institucional/594/w3-article-15857.html",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "cited scalar/method",
+      "evidence_access_note": "Frozen source citation inspected in build_official_4c_anchors.py; supplementary official 2024 links added for Peru/Colombia; scientific values unchanged.",
+      "included_files": [],
+      "snapshots": []
+    },
+    "PROSPERIDAD_SOCIAL_COLOMBIA_MAYOR_2024": {
+      "source_id": "PROSPERIDAD_SOCIAL_COLOMBIA_MAYOR_2024",
+      "title": "Colombia Mayor, 2024",
+      "license_or_terms": "Cited factual parameter; no source publication redistributed",
+      "terms_urls": [
+        "https://prosperidadsocial.gov.co/Noticias/colombia-mayor-prosperidad-social-aumenta-el-monto-de-la-transferencia-para-mayores-de-80-anos/"
+      ],
+      "conditions": "Only stated amounts/eligibility conventions and citation are used, not article text, images or provider databases. No general licence over the provider website is asserted. COP80000 / COP225000 by age; model applies the declared annualized reference, not actual calendar-year disbursements.",
+      "attribution": "Colombia Mayor, 2024. https://prosperidadsocial.gov.co/Noticias/colombia-mayor-prosperidad-social-aumenta-el-monto-de-la-transferencia-para-mayores-de-80-anos/",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "cited scalar/method",
+      "evidence_access_note": "Frozen source citation inspected in build_official_4c_anchors.py; supplementary official 2024 links added for Peru/Colombia; scientific values unchanged.",
+      "included_files": [],
+      "snapshots": []
+    },
+    "BIENESTAR_MEXICO_ADULTOS_MAYORES_2024": {
+      "source_id": "BIENESTAR_MEXICO_ADULTOS_MAYORES_2024",
+      "title": "Mexico Pensión Bienestar, 2024",
+      "license_or_terms": "Cited factual parameter; no source publication redistributed",
+      "terms_urls": [
+        "https://www.gob.mx/bienestar/prensa/2024-inicia-con-aumentos-a-pensiones-de-bienestar-anuncia-ariadna-montiel?idiom=es"
+      ],
+      "conditions": "Only stated amounts/eligibility conventions and citation are used, not article text, images or provider databases. No general licence over the provider website is asserted. MXN6000 bimonthly; model annualizes by six.",
+      "attribution": "Mexico Pensión Bienestar, 2024. https://www.gob.mx/bienestar/prensa/2024-inicia-con-aumentos-a-pensiones-de-bienestar-anuncia-ariadna-montiel?idiom=es",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "cited scalar/method",
+      "evidence_access_note": "Frozen source citation inspected in build_official_4c_anchors.py; supplementary official 2024 links added for Peru/Colombia; scientific values unchanged.",
+      "included_files": [],
+      "snapshots": []
+    },
+    "IMF_AIPI_NOTE_COMPONENTS": {
+      "source_id": "IMF_AIPI_NOTE_COMPONENTS",
+      "title": "AIPI component documentation",
+      "license_or_terms": "Citation only",
+      "terms_urls": [
+        "https://www.imf.org/external/datamapper/AIPINote.pdf"
+      ],
+      "conditions": "Used to document excluded indicators. The IMF note PDF is not bundled and is not relicensed.",
+      "attribution": "IMF, AI Preparedness Index component note.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "citation only",
+      "included_files": [],
+      "snapshots": []
+    },
+    "AUTHOR_MODEL": {
+      "source_id": "AUTHOR_MODEL",
+      "title": "Author model, scenarios and methodological conventions",
+      "license_or_terms": "Project rights; code MIT; data contribution scoped in LICENSE-DATA",
+      "terms_urls": [],
+      "conditions": "Scenario coefficients are project choices documented in registries, not separately downloaded observations. Scientific documents remain subject to a separate publication decision.",
+      "attribution": "Vicenzo Scavino and project documentation.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "project work",
+      "included_files": [],
+      "snapshots": []
+    },
+    "LITERATURE_CONTEXT": {
+      "source_id": "LITERATURE_CONTEXT",
+      "title": "Bibliographic foundations and cited calibration anchors",
+      "license_or_terms": "Citation only; no full third-party papers distributed",
+      "terms_urls": [],
+      "conditions": "Literature identifiers, factual coefficients and the author’s synthesis do not grant rights to reproduce cited articles. Consult the manuscript references and frozen calibration registries.",
+      "attribution": "Authors and titles in the manuscript, supplement and calibration registries.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "citations only",
+      "included_files": [],
+      "snapshots": []
+    },
+    "ENAHO_2024": {
+      "source_id": "ENAHO_2024",
+      "title": "INEI ENAHO 2024 Module 34",
+      "license_or_terms": "Exact extract redistribution not established",
+      "terms_urls": [
+        "https://proyectos.inei.gob.pe/microdatos/"
+      ],
+      "conditions": "Absent from r5; do not infer a Module 34 ZIP licence from the licence of a different open-data sample. Exclude row-level data. Current GMI uses PIP aggregates.",
+      "attribution": "Instituto Nacional de Estadística e Informática, ENAHO 2024.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "absent legacy source",
+      "decision": "EXCLUDE_PAYLOAD",
+      "included_files": [],
+      "snapshots": []
+    },
+    "CASEN_2024": {
+      "source_id": "CASEN_2024",
+      "title": "CASEN 2024",
+      "license_or_terms": "BIDAT CC-BY-4.0 for datasets covered by its terms",
+      "terms_urls": [
+        "https://bidat.gob.cl/terminos-de-uso",
+        "https://bidat.gob.cl/details/ficha/dato/trabajo-casen-2024"
+      ],
+      "conditions": "No CASEN file is included or required by r5. Any future raw extract requires a separate content/scope check; current bundle makes no claim of full microdata reconstruction.",
+      "attribution": "Ministerio de Desarrollo Social y Familia de Chile, CASEN 2024 / BIDAT.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "absent legacy source",
+      "decision": "OUTSIDE_CURRENT_SCOPE",
+      "included_files": [],
+      "snapshots": []
+    },
+    "BFJZ": {
+      "source_id": "BFJZ",
+      "title": "Bachas, Fisher-Post, Jensen and Zucman: factor taxation",
+      "license_or_terms": "MIT repository notice, copyright 2021 Pierre Bachas",
+      "terms_urls": [
+        "https://github.com/pierrebachas/Globalization_Factor_Taxation/blob/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/LICENSE"
+      ],
+      "conditions": "Preserve the supplied copyright and MIT permission notice for the copied code and repository material. Aggregate data and their underlying provider rights are not relabelled as the project’s own data. The frozen repository contains no separate data licence notice among the files inspected.",
+      "attribution": "Bachas, P., Fisher-Post, M., Jensen, A. and Zucman, G., Globalization and Factor Income Taxation, repository commit a1aba1f98ce6e5bd5964be15a61fe772ea77f928.",
+      "checked_at": "2026-11-15T03:52:01.074420+00:00",
+      "evidence_method": "Official provider page reviewed through web search/open",
+      "presence": "two country-year data files and one Stata code file",
+      "evidence_access_note": "Licence fetched through GitHub connector at the exact commit and matched to the historical local licence hash; source README directs users to the aggregate ETR dataset.",
+      "acquisition_record": {
+        "github_commit": "a1aba1f98ce6e5bd5964be15a61fe772ea77f928",
+        "files": [
+          {
+            "file": "BFJZ_globalETR.csv",
+            "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/globalETR_bfjz.csv",
+            "retrieved_utc": "2026-11-14T18:53:39.485381+00:00",
+            "status": 200,
+            "saved": true,
+            "bytes": 1517515,
+            "sha256": "18fa975144e5fe8f857fe52698b0fd8d58d7aba4e0a693b19e7820eb62f35212"
+          },
+          {
+            "file": "BFJZ_pit_alpha.dta",
+            "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/Data_construction/data/misc/rhs/pit_alpha.dta",
+            "retrieved_utc": "2026-11-14T18:53:39.421008+00:00",
+            "status": 200,
+            "saved": true,
+            "bytes": 619362,
+            "sha256": "ae780ef0cf37a3d9e3f091865ff1029ddbd05b4a6c720d59ef44680a4395e61f"
+          },
+          {
+            "file": "BFJZ_README.md",
+            "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/README.md",
+            "retrieved_utc": "2026-11-14T18:53:38.570442+00:00",
+            "status": 200,
+            "saved": true,
+            "bytes": 2047,
+            "sha256": "10f299142eabb6fa7a63a1a26b3841b09b5a90e5a9a348931068f912893b610d"
+          },
+          {
+            "file": "BFJZ_LICENSE.txt",
+            "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/LICENSE",
+            "retrieved_utc": "2026-11-14T18:53:38.586209+00:00",
+            "status": 200,
+            "saved": true,
+            "bytes": 1070,
+            "sha256": "5f0edb1ceb98028bc7a7c4aea7bfc7249c7711b551aff5575e829fa2196b72bc"
+          },
+          {
+            "file": "IMF_AI_FISCAL_2024.pdf",
+            "url": "https://www.imf.org/-/media/files/publications/sdn/2024/english/sdnea2024002.pdf",
+            "retrieved_utc": "2026-11-14T18:53:39.389634+00:00",
+            "status": 403,
+            "saved": false
+          },
+          {
+            "file": "IMF_EXCESS_PROFIT_2022.pdf",
+            "url": "https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2022/english/wpiea2022187-print-pdf.pdf",
+            "retrieved_utc": "2026-11-14T18:53:39.388488+00:00",
+            "status": 403,
+            "saved": false
+          }
+        ]
+      },
+      "code_source_url": "https://github.com/pierrebachas/Globalization_Factor_Taxation/blob/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/Data_construction/do/ETR_4_construction.do",
+      "included_files": [
+        "revision_jpm_v2/paso_07d/conciliacion_fiscal_02/fuentes/BFJZ_ETR_4_construction.do",
+        "revision_jpm_v2/paso_07d/conciliacion_fiscal_02/fuentes/BFJZ_globalETR.csv",
+        "revision_jpm_v2/paso_07d/conciliacion_fiscal_02/fuentes/BFJZ_pit_alpha.dta"
+      ],
+      "snapshots": []
+    }
+  },
+  "aliases": {
+    "ITU_DATAHUB": "ITU_DATAHUB_WDI_FALLBACK",
+    "PLAN_01_02": "AUTHOR_MODEL",
+    "PLAN_02_SEC_7_3": "AUTHOR_MODEL",
+    "AUTHOR_CONVENTION_4A": "AUTHOR_MODEL",
+    "PAPER_ADOPTION_MODULE": "AUTHOR_MODEL",
+    "PAPER_LAC_AUTOMATION_RISK_ANCHOR": "LITERATURE_CONTEXT",
+    "ASPIRE_LITERATURE_ASSUMPTION": "LITERATURE_CONTEXT"
+  }
+}

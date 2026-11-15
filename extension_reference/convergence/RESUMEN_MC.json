@@ -1,0 +1,32 @@
+{
+  "execution_status": "PASS",
+  "frequency_convergence_status": "PASS",
+  "threshold": 0.02,
+  "max_25k_50k_frequency_difference": 0.006300000000000083,
+  "max_between_seed_frequency_range": 0.008279999999999954,
+  "paired_max_25k_50k": 0.0044199999999999795,
+  "paired_max_between_seed_range": 0.009639999999999982,
+  "driver_top3_strong_stability_status": "PASS",
+  "driver_pairs": 42,
+  "driver_top3_identical": 42,
+  "driver_min_top3_overlap": 3,
+  "guard_checks": 659,
+  "all_checks_passed": true,
+  "grid_summary_rows": 103680,
+  "seeds": [
+    20261114,
+    20261215,
+    20261316
+  ],
+  "sizes": [
+    5000,
+    10000,
+    25000,
+    50000
+  ],
+  "elapsed_seconds": 107.881846266,
+  "model_changed": false,
+  "paper_changed": false,
+  "r4_tolerance_changed": false,
+  "unknown_coefficients_sampled": false
+}

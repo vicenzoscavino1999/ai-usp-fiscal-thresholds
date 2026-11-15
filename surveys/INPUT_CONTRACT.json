@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "survey_year": 2024,
+  "raw_files_redistributed": false,
+  "historical_scripts": {
+    "17_download_enaho_sumaria.py": {
+      "sha256": "7cf19107d201d65a1eb0f137c1305c72794366c6b5c20c356425f8a8278d0d47",
+      "matches_current_repository": true
+    },
+    "18_download_casen_2024.py": {
+      "sha256": "23a91f7c631bb3a65ba5def2931162200b2ad07e9d08526bf281aa7f7007f47e",
+      "matches_current_repository": true
+    },
+    "run_gmi_microdata_robustness_extension.py": {
+      "sha256": "b18173a926e997ca957bee9c0cb11744982846b51654097699577329ea2c23f6",
+      "matches_current_repository": true
+    },
+    "run_gmi_microdata_chl_robustness_extension.py": {
+      "sha256": "15a87c201fad23ffd32ddc5098e1bc2528700ccd53b0ec8564cfa5703a1c823a",
+      "matches_current_repository": true
+    }
+  },
+  "countries": {
+    "PER": {
+      "raw_relative": "robustness-gmimicro-per-v1/enaho_sumaria/966-Modulo34.zip",
+      "raw_sha256": "5ee98dad87810d42d7e252401d8366feac2fbce151c7af986d9644a40952567c",
+      "projection_relative": "robustness-gmimicro-per-v1/enaho_sumaria/enaho_sumaria_2024_required_variables.parquet",
+      "projection_sha256": "762717615f316603f4a2ccb155b4f29ce2be68b2f723690fa679737a9bde785c",
+      "metadata": "metadata/PER.json",
+      "expected_rows": 33691,
+      "source_url": "https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip",
+      "portal_url": "https://proyectos.inei.gob.pe/microdatos/",
+      "historical_download_date": "2026-07-10T19:22:40.640597+00:00",
+      "extracted_member": "966-Modulo34/sumaria-2024.dta",
+      "extracted_sha256": "491066f6049b0debc542739ea379e66e8eac8912162e31c5628114aae3c4592d",
+      "calculation_script": "historical_scripts/run_gmi_microdata_robustness_extension.py",
+      "function_sha256": {
+        "validate_enaho": "9c0692c5f8ad1c0d187fee7808c453a3a922f520703e0af0778c27f597a1e80d",
+        "official_inputs": "7b48ce8920be730f3f66ab595c6219a799eaae3ff6a3b715c1affddc7fb2c56f",
+        "aggregate_micro_gap": "32ccecd34e320778528e31fb0f3a4712050842ca1a505cdee10c72d42f135ef9",
+        "build_costs": "88fae6da7476eef0bd4cfe418e3fc21737e242c764712562ea68f2e209554bb3"
+      }
+    },
+    "CHL": {
+      "raw_relative": "robustness-gmimicro-chl-v1/casen_2024/casen_2024.sav",
+      "raw_sha256": "ac2d48b5c0b17f6e9c9744dd55853d1021248e2d985d173871338abfe3c8758f",
+      "projection_relative": "robustness-gmimicro-chl-v1/casen_2024/casen_2024_gmi_required_variables.parquet",
+      "projection_sha256": "8be9a199edda2c9490482d4cd1cf9a3817bd4fe8bc93dcf7563854862ebe8ab1",
+      "metadata": "metadata/CHL.json",
+      "expected_rows": 218367,
+      "source_url": "https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav",
+      "portal_url": "https://observatorio.ministeriodesarrollosocial.gob.cl/encuesta-casen-2024",
+      "historical_download_date": "2026-07-10T20:38:19.385765+00:00",
+      "calculation_script": "historical_scripts/run_gmi_microdata_chl_robustness_extension.py",
+      "function_sha256": {
+        "validate_casen": "453e8b3db5a3812b3134c15f2f5e409cfe4da677c0d0eff499c2001d4d892bf1",
+        "official_inputs": "fd42946c1bcd6b46d7ca92b55979df9c35de68967f433b43caee4afd3a3d96c2",
+        "build_costs": "c144bd93f8d398454b6a67f89f9b1eb6d01dd95875bc11a19b15ca11c9b05411"
+      }
+    }
+  },
+  "core_inputs": {
+    "upstream/data/model_inputs/poverty_distribution_anchor.parquet": "024e3a08f02f1ed77933e01aac64dcc9777bbd768df617c38c15261e9b418140",
+    "upstream/data/model_inputs/macro_anchor.parquet": "94d29407b6f2b07da7c3618de04eafbeafcf830fe3e42ff8abec66301636b4d3",
+    "upstream/data/model_inputs/policy_cost.parquet": "1243f296a63be874a56caeefc3eebf459fd5bf952e5d8c7ae42a1ec3999412fc"
+  },
+  "comparisons": {
+    "PER_cost": {
+      "path": "reference/gmimicro_cost_comparison_baseline-official-v3.csv",
+      "sha256": "42be0996ff7b3067b45a4f7ebad3592a9990abed06bc2668eaff06d41ee237f4",
+      "filename": "gmimicro_cost_comparison_baseline-official-v3.csv"
+    },
+    "PER_validation": {
+      "path": "reference/gmimicro_enaho_validation_2024.csv",
+      "sha256": "9daf07fa6b2c44d0832376890be594c98692c03a3d70a6f4d9e5469b507eb5cd",
+      "filename": "gmimicro_enaho_validation_2024.csv"
+    },
+    "CHL_cost": {
+      "path": "reference/gmimicro_chl_cost_comparison_baseline-official-v3.csv",
+      "sha256": "7f7f075dd1d3a0dec6b7d6c3c9bd90b3601ebbefa0d98e54322972b0d6319bcc",
+      "filename": "gmimicro_chl_cost_comparison_baseline-official-v3.csv"
+    },
+    "CHL_validation": {
+      "path": "reference/gmimicro_chl_casen_validation_2024.csv",
+      "sha256": "aec61e5631b756fb37cf69f5da0eed238362a1d2e6d25363c05a3367c21fdbcb",
+      "filename": "gmimicro_chl_casen_validation_2024.csv"
+    }
+  },
+  "tolerances": {
+    "rtol": 1e-12,
+    "atol": 1e-10
+  },
+  "docker_image": "sha256:62e57073de8aa6cdd1d20061f7fe4b8494cee6bd8b642ec5039de66cbd5ac782",
+  "functions": {
+    "PER": [
+      "official_inputs",
+      "validate_enaho",
+      "aggregate_micro_gap",
+      "build_costs"
+    ],
+    "CHL": [
+      "official_inputs",
+      "validate_casen",
+      "build_costs"
+    ]
+  },
+  "core_semantic_inputs": {
+    "upstream/data/model_inputs/poverty_distribution_anchor.parquet": {
+      "sha256": "afe5a23660aeb91ce9dd1b9c26dde18670399bfaacc90b988220ec5c1122fded",
+      "rows": 4,
+      "columns": 15,
+      "excluded_build_metadata": [
+        "build_id",
+        "created_at"
+      ],
+      "value_columns": [
+        "country_id",
+        "created_by_script",
+        "dataset_version",
+        "harmonization_flag",
+        "mean_income_or_consumption",
+        "poverty_gap",
+        "poverty_headcount",
+        "poverty_line_national_lcu_annual",
+        "poverty_line_ppp_annual",
+        "poverty_line_ppp_daily",
+        "source_year",
+        "welfare_type",
+        "year"
+      ]
+    },
+    "upstream/data/model_inputs/macro_anchor.parquet": {
+      "sha256": "43da66a4731374186065efdefdc479bee8df14048d22e7b5fbab34fd180c5b38",
+      "rows": 100,
+      "columns": 29,
+      "excluded_build_metadata": [
+        "build_id",
+        "created_at"
+      ],
+      "value_columns": [
+        "country_id",
+        "cpi_index",
+        "created_by_script",
+        "dataset_version",
+        "exchange_rate_lcu_per_usd",
+        "final_consumption_gdp_share",
+        "gdp_constant_lcu",
+        "gdp_deflator",
+        "gdp_growth_real",
+        "gdp_nominal_lcu",
+        "gdp_nominal_usd",
+        "gdp_pc_usd",
+        "harmonization_flag",
+        "imports_gdp_share",
+        "population_15_64",
+        "population_15_64_pct",
+        "population_18_plus",
+        "population_65_plus",
+        "population_65_plus_pct",
+        "population_80_plus",
+        "population_colombia_mayor_80_plus",
+        "population_colombia_mayor_rule",
+        "population_total",
+        "population_total_wpp",
+        "ppp_conversion_gdp",
+        "ppp_conversion_private_consumption",
+        "year"
+      ]
+    },
+    "upstream/data/model_inputs/policy_cost.parquet": {
+      "sha256": "7212ae6bd3447e5b625e28107c600c6281e7b03a7ecb3bf914b3469fdae63ebc",
+      "rows": 24,
+      "columns": 21,
+      "excluded_build_metadata": [
+        "build_id"
+      ],
+      "value_columns": [
+        "assumption_id",
+        "benefit_amount_lcu",
+        "chi_gmi",
+        "cost_convention",
+        "country_id",
+        "dataset_version",
+        "eligible_population",
+        "eta_policy",
+        "existing_spending_lcu",
+        "gmi_version",
+        "microdata_used",
+        "parameter_set_id",
+        "policy_cost_gross_gdp",
+        "policy_cost_gross_lcu",
+        "policy_cost_net_gdp",
+        "policy_cost_net_lcu",
+        "policy_id",
+        "policy_parameter_id",
+        "poverty_line_annual_lcu",
+        "year"
+      ]
+    }
+  },
+  "core_input_identity_policy": "Original core_inputs SHA256 values identify the prior verified run. Fresh runs compare all scientific fields and schema through core_semantic_inputs, excluding only build_id and created_at values; row order is immaterial."
+}

@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "scope": "Complete r9 reconstruction of the explicitly selected benchmark, revised scientific results and current documents; public deposit and submission remain separate.",
+  "commit": "ec433684d0aeed36e99322d45c9752fdfcb7c4a1",
+  "remote_run_id": 43748755764,
+  "remote_run_url": "https://github.com/vicenzoscavino1999/ai-usp-jpm-v2-ci/actions/runs/43748755764",
+  "source_manifest_sha256": "d88c74e246836227a2330c979cd29de039c018510ab57a964e1a0fd165e7fb58",
+  "comparisons": [
+    {
+      "environment": "local",
+      "status": "PASS",
+      "core": 77,
+      "extensions": 88,
+      "survey_tables": 4,
+      "document_cells": 164,
+      "figure_pixel_exact": true,
+      "stages": 39,
+      "tests": {
+        "tests": 151,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "raw_source": "provided_frozen_files",
+      "image_id": "sha256:7ac0a4a0266af17cdb099c270eb05fd6de2214dc138c17f7469999c7a6381db9",
+      "source_manifest_sha256": "d88c74e246836227a2330c979cd29de039c018510ab57a964e1a0fd165e7fb58"
+    },
+    {
+      "environment": "github_actions",
+      "status": "PASS",
+      "core": 77,
+      "extensions": 88,
+      "survey_tables": 4,
+      "document_cells": 164,
+      "figure_pixel_exact": true,
+      "stages": 39,
+      "tests": {
+        "tests": 151,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "raw_source": "provided_frozen_files",
+      "image_id": "sha256:4a56dd0d5c69fd3ee186b6cd34ac9f26a1eaad503525b907b3c0cf0ef7d116cf",
+      "source_manifest_sha256": "d88c74e246836227a2330c979cd29de039c018510ab57a964e1a0fd165e7fb58"
+    }
+  ],
+  "fresh_provider_download_verified": false,
+  "benchmark_correction_closed": true,
+  "publication_ready": false,
+  "published": false,
+  "submitted": false,
+  "scientific_outcomes_preserved": {
+    "D_LOW_EXPOSURE": "FAIL_RETAINED",
+    "H1": "MIXED",
+    "H2": "NOT_TESTABLE",
+    "H3": "NOT_TESTABLE",
+    "H4": "HOLDS",
+    "H5": "RETIRED_LEGACY_CLASSIFICATION_RULE"
+  },
+  "numeric_tolerances_relaxed": false,
+  "numeric_runtime": "NPY_DISABLE_CPU_FEATURES=X86_V4",
+  "prior_failed_run": 43746058634,
+  "portability_diagnosis": "PORTABILITY_DIAGNOSIS.json"
+}

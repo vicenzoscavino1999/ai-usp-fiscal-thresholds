@@ -1,0 +1,10 @@
+seed,metric,max_abs_difference,signed_difference_at_max,worst_cell
+20261114,recurring_author_frequency,0.044499999999999984,0.044499999999999984,COL|stress|r2|PEN|B1|uniform
+20261114,registered_leakage_frequency,0.04441999999999999,0.04441999999999999,COL|stress|r2|PEN|B1|uniform
+20261114,nonnegative_frontier_frequency,0.043660000000000004,0.043660000000000004,COL|stress|r0|PEN|B1|uniform
+20261215,recurring_author_frequency,0.044399999999999995,0.044399999999999995,COL|stress|r2|PEN|B1|uniform
+20261215,registered_leakage_frequency,0.04433999999999999,0.04433999999999999,COL|stress|r2|PEN|B1|uniform
+20261215,nonnegative_frontier_frequency,0.04435999999999998,0.04435999999999998,COL|stress|r0|PEN|B1|uniform
+20261316,recurring_author_frequency,0.0456,0.0456,COL|stress|r1|PEN|B0|uniform
+20261316,registered_leakage_frequency,0.04555999999999999,0.04555999999999999,COL|stress|r1|PEN|B0|uniform
+20261316,nonnegative_frontier_frequency,0.044120000000000006,0.044120000000000006,COL|stress|r0|PEN|B1|uniform

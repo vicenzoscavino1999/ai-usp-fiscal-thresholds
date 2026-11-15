@@ -1,0 +1,7507 @@
+contract_version: 4
+schemas:
+  ? paso_03/candidato_corregido/ai-usp-fiscal-thresholds/reports/value_assignment_changes_baseline-official-v3_to_robustness-lsraw-v1.csv
+  : rows: 24
+    row_matching: key
+    primary_key:
+    - country_id
+    - name
+    key_nullable: []
+    columns:
+      parameter_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      baseline_parameter_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      name:
+        type: string
+        nullable: false
+        comparison: exact
+      baseline_value_official:
+        type: number
+        nullable: false
+        comparison: tolerant
+      robustness_value:
+        type: number
+        nullable: false
+        comparison: tolerant
+      delta:
+        type: number
+        nullable: false
+        comparison: tolerant
+      source_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      target_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      carried_forward_to_2024:
+        type: boolean
+        nullable: false
+        comparison: exact
+      source_id:
+        type: string
+        nullable: false
+        comparison: exact
+      source_endpoint_coe:
+        type: string
+        nullable: false
+        comparison: exact
+      source_endpoint_gdp:
+        type: string
+        nullable: false
+        comparison: exact
+      download_date:
+        type: string
+        nullable: false
+        comparison: metadata
+      formula_id:
+        type: string
+        nullable: false
+        comparison: exact
+      robustness_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      notes:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_04/DISTRIBUCIONES_CAPTURA_REGISTRADAS.csv:
+    rows: 28
+    row_matching: key
+    primary_key:
+    - source
+    - variant_id
+    key_nullable: []
+    columns:
+      variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      concept:
+        type: string
+        nullable: false
+        comparison: exact
+      source:
+        type: string
+        nullable: false
+        comparison: exact
+      parent_variant:
+        type: string
+        nullable: false
+        comparison: exact
+      note:
+        type: string
+        nullable: false
+        comparison: exact
+      n_years:
+        type: integer
+        nullable: false
+        comparison: exact
+      first_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      last_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      p_negative:
+        type: number
+        nullable: false
+        comparison: tolerant
+      winsor_01_99:
+        type: boolean
+        nullable: false
+        comparison: exact
+      empirical_resampling:
+        type: boolean
+        nullable: false
+        comparison: exact
+      positive_only:
+        type: boolean
+        nullable: false
+        comparison: exact
+      pos_p10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pos_p50:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pos_p90:
+        type: number
+        nullable: false
+        comparison: tolerant
+      neg_p10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      neg_p50:
+        type: number
+        nullable: false
+        comparison: tolerant
+      neg_p90:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_04/evidencia/MUESTRAS_HISTORICAS_PARA_SORTEO.parquet:
+    rows: 532
+    row_matching: key
+    primary_key:
+    - year
+    - variant_id
+    key_nullable: []
+    columns:
+      variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      raw_capture:
+        type: number
+        nullable: false
+        comparison: tolerant
+      capture_for_draw:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_04/MACROESCENARIOS_CONJUNTOS_40.csv:
+    rows: 40
+    row_matching: key
+    primary_key:
+    - country_id
+    - macro_year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      macro_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      nominal_interest_rate:
+        type: number
+        nullable: false
+        comparison: tolerant
+      nominal_growth_rate:
+        type: number
+        nullable: false
+        comparison: tolerant
+      primary_balance_ratio:
+        type: number
+        nullable: false
+        comparison: tolerant
+      target_debt_ratio_2024:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb_variant:
+        type: number
+        nullable: false
+        comparison: tolerant
+      construction:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/ALCANCE_BFJZ.csv:
+    rows: 4
+    row_matching: key
+    primary_key:
+    - country_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      ETR_first_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      ETR_last_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      ETR_L_last:
+        type: number
+        nullable: false
+        comparison: tolerant
+      ETR_K_last:
+        type: number
+        nullable: false
+        comparison: tolerant
+      PIT_aux_last_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      PIT_aux_K_share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      PIT_threshold_imputed:
+        type: number
+        nullable: false
+        comparison: tolerant
+      use:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/ANCLAS_RECONCILIADAS_2024.csv:
+    rows: 16
+    row_matching: key
+    primary_key:
+    - country_id
+    - year
+    - alpha_PIT_K
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      alpha_PIT_K:
+        type: number
+        nullable: false
+        comparison: exact
+      labor_share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      PIT_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      CIT_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      SSC_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      VAT_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tau_l_aggregate:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tau_k_aggregate:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_original_LK:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_reconstructed_LK:
+        type: number
+        nullable: false
+        comparison: tolerant
+      error:
+        type: number
+        nullable: false
+        comparison: tolerant
+      role:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/BFJZ_4PAISES_HISTORICO.csv:
+    rows: 216
+    row_matching: key
+    primary_key:
+    - country
+    - year
+    key_nullable: []
+    columns:
+      country_name:
+        type: string
+        nullable: false
+        comparison: exact
+      country:
+        type: string
+        nullable: false
+        comparison: exact
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      region:
+        type: string
+        nullable: false
+        comparison: exact
+      wb_inc:
+        type: string
+        nullable: false
+        comparison: exact
+      ndp_usd:
+        type: integer
+        nullable: false
+        comparison: exact
+      ETR_L:
+        type: number
+        nullable: false
+        comparison: tolerant
+      ETR_K:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Tau_L:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Tau_K:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Lsh_ndp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Ksh_ndp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_tax:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_1000:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_1100:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_1200:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_2000:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_4000:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_5000:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pct_6000:
+        type: number
+        nullable: false
+        comparison: tolerant
+      source_tax:
+        type: string
+        nullable: false
+        comparison: exact
+      source_sna:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/BFJZ_PIT_AUXILIAR_4PAISES.csv:
+    rows: 240
+    row_matching: key
+    primary_key:
+    - country
+    - year
+    key_nullable: []
+    columns:
+      country:
+        type: string
+        nullable: false
+        comparison: exact
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      pit_thr:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pit_thr_imputed:
+        type: number
+        nullable: false
+        comparison: tolerant
+      alpha_pit:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/conciliacion_fiscal_02/resultados/CANALES_CONCILIADOS_80.csv:
+    rows: 80
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_IVA_only:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      min_vertex:
+        type: string
+        nullable: false
+        comparison: exact
+      max_vertex:
+        type: string
+        nullable: false
+        comparison: exact
+      relative_corporate_base:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tax_l:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tax_cit:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tax_pit_k:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tax_ai:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tax_vat:
+        type: number
+        nullable: false
+        comparison: tolerant
+      disposable_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      disposable_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      consumption:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/conciliacion_fiscal_02/resultados/CHILE_DETERMINISTA_MODERADO_R0.csv:
+    rows: 2
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - timing
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      timing:
+        type: string
+        nullable: false
+        comparison: exact
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_extreme_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_extreme_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_extreme_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_extreme_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_extreme_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_extreme_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      classification_B2:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/CHILE_EMPAREJADO_50000.csv:
+    rows: 20
+    row_matching: key
+    primary_key:
+    - timing
+    - mode
+    - rule
+    key_nullable: []
+    columns:
+      timing:
+        type: string
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - iva_only
+        - original
+        - possible
+        - reference
+        - uniform
+      rule:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - B0
+        - B2
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+      frequency:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/conciliacion_fiscal_02/resultados/DETERMINISTA_CONCILIADO_960.csv:
+    rows: 960
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - timing
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      timing:
+        type: string
+        nullable: false
+        comparison: exact
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_extreme_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_extreme_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_extreme_low:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_extreme_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      V_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B0_extreme_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B0_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B1_extreme_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B1_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_extreme_high:
+        type: boolean
+        nullable: false
+        comparison: exact
+      F_max_B2_extreme_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      classification_B2:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/MONTE_CARLO_5000_TODAS_CELDAS.csv:
+    rows: 7680
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - timing
+    - mode
+    - rule
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      timing:
+        type: string
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - iva_only
+        - possible
+        - reference
+        - uniform
+      rule:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - B0
+        - B2
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      valid:
+        type: integer
+        nullable: false
+        comparison: exact
+      crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+      frequency_all_draw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      role:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/RESUMEN_DETERMINISTA.csv:
+    rows: 4
+    row_matching: key
+    primary_key:
+    - timing
+    - domain
+    key_nullable: []
+    columns:
+      timing:
+        type: string
+        nullable: false
+        comparison: exact
+      domain:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - nonstress
+        - stress
+      cells:
+        type: integer
+        nullable: false
+        comparison: exact
+      B0_reference:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_reference:
+        type: integer
+        nullable: false
+        comparison: exact
+      B0_uniform:
+        type: integer
+        nullable: false
+        comparison: exact
+      B0_possible:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_uniform:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_possible:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_possible_extreme:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/SOPORTE_MC_80.csv:
+    rows: 80
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      valid:
+        type: integer
+        nullable: false
+        comparison: exact
+      invalid:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07d/conciliacion_fiscal_02/resultados/SORTEOS_CHILE_50000.parquet:
+    rows: 50000
+    row_matching: key
+    primary_key:
+    - draw_id
+    key_nullable: []
+    columns:
+      draw_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_annual_equivalent:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_original:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_iva_only:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/conciliacion_fiscal_02/resultados/SORTEOS_CONCILIADOS_80x5000.parquet:
+    rows: 400000
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - draw_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      draw_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_iva_only:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      leakage_multiplier:
+        type: number
+        nullable: false
+        comparison: tolerant
+      valid:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/CANALES_HORIZONTES_2000.csv:
+    rows: 2000
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - H
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v1:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v2:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v3:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v4:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v5:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v6:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_v7:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v1:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v2:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v3:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v4:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v5:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v6:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_v7:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/costos_transicion_03/resultados/CASOS_CHILE_MODERADO.csv:
+    rows: 2
+    row_matching: key
+    primary_key:
+    - regime_id
+    key_nullable: []
+    columns:
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_star_recurring:
+        type: number
+        nullable: false
+        comparison: exact
+      Fmax_path_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_reference_noAI:
+        type: number
+        nullable: false
+        comparison: tolerant
+      initial_capital_reference_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_return_reference:
+        type: number
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/EFECTO_RECALCULAR_M_EN_H.csv:
+    rows: 480
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      H_frozen_M10_same_recurring_cost:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      H_recomputed_capture:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      changed:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/FRONTERAS_ANUALES_480.csv:
+    rows: 480
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - H
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      annuity_author_comparator:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B0_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B0_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B0_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B0_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B0_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B0_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B0_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B0_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B0_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B1_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B1_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B1_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B1_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B1_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B1_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B1_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B1_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B1_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B2_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B2_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B2_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B2_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/FRONTERAS_MC_5000.csv:
+    rows: 4320
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - mode
+    - rule
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      rule:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - B0
+        - B1
+        - B2
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - possible
+        - reference
+        - uniform
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      Fmax_p05:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_p50:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_p95:
+        type: number
+        nullable: false
+        comparison: tolerant
+      nonnegative_frontier_count:
+        type: integer
+        nullable: false
+        comparison: exact
+      recurring_author_crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+      recurring_author_frequency:
+        type: number
+        nullable: false
+        comparison: tolerant
+      registered_leakage_crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+      registered_leakage_frequency:
+        type: number
+        nullable: false
+        comparison: tolerant
+      interpretation:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/FRONTERAS_TRANSICION.csv:
+    rows: 3840
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - H
+    - replacement
+    - budget
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      budget:
+        type: string
+        nullable: false
+        comparison: exact
+      replacement:
+        type: string
+        nullable: false
+        comparison: exact
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      initial_capital_reference_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      initial_capital_worst_domain_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_reference_noAI:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_reference_withAI:
+        type: number
+        nullable: false
+        comparison: tolerant
+      peak_balance_reference_noAI:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_return_reference:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      H_return_persistent_to_H:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      return_by_H_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/HORIZONTES_RECALCULADOS.csv:
+    rows: 15840
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - mode
+    - rule
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      rule:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - B0
+        - B1
+        - B2
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - possible
+        - reference
+        - uniform
+        - v0
+        - v1
+        - v2
+        - v3
+        - v4
+        - v5
+        - v6
+        - v7
+      H_star_recurring:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      H_persistent_to25:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      crossing_years:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      censored_no_crossing_1_25:
+        type: boolean
+        nullable: false
+        comparison: exact
+      mode_role:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/INVERSAS_RECALCULADAS.csv:
+    rows: 25920
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - mode
+    - rule
+    - cost_treatment
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      rule:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - B0
+        - B1
+        - B2
+      cost_treatment:
+        type: string
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - reference
+        - v0
+        - v1
+        - v2
+        - v3
+        - v4
+        - v5
+        - v6
+        - v7
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      required_revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g_registered:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_intercept:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g_max_T1:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+      T_required_frozen_distribution:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - beyond_scenario_frontier
+        - within_scenario_frontier
+      ai_net_scale:
+        type: number
+        nullable: false
+        comparison: tolerant
+      ai_peak_rate:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tau_ai_required:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      ai_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - covered_without_additional_AI
+        - feasible_net_effective_rate
+        - no_root_in_effective_rate_domain
+      q_required:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      q_derivative_lower_bound:
+        type: number
+        nullable: false
+        comparison: tolerant
+      q_monotonic_certified:
+        type: boolean
+        nullable: false
+        comparison: exact
+      q_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - already_covered_at_registered_value
+        - minimum_increase_certified
+        - minimum_increase_interval_certified
+        - not_reachable_interval_certified
+        - not_reachable_within_declared_domain
+      exposure_required:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      exposure_derivative_lower_bound:
+        type: number
+        nullable: false
+        comparison: tolerant
+      exposure_monotonic_certified:
+        type: boolean
+        nullable: false
+        comparison: exact
+      exposure_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - already_covered_at_registered_value
+        - minimum_increase_certified
+        - not_reachable_within_declared_domain
+      q_use_required_one_step:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      q_use_within_ceiling:
+        type: boolean
+        nullable: false
+        comparison: exact
+      q_intervals:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+  paso_07d/costos_transicion_03/resultados/PRESTAMOS_INSTALACION_3_ANOS.csv:
+    rows: 60
+    row_matching: key
+    primary_key:
+    - country_id
+    - policy_id
+    - year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      interest_scenario:
+        type: number
+        nullable: false
+        comparison: tolerant
+      growth_scenario:
+        type: number
+        nullable: false
+        comparison: tolerant
+      old_equivalent_annuity:
+        type: number
+        nullable: false
+        comparison: tolerant
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      opening_nominal_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      interest_nominal_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      principal_nominal_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      payment_nominal_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      closing_nominal_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      payment_ratio_year:
+        type: number
+        nullable: false
+        comparison: tolerant
+      closing_ratio_year:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/costos_transicion_03/resultados/RESUMEN_ANUAL.csv:
+    rows: 2
+    row_matching: key
+    primary_key:
+    - domain
+    key_nullable: []
+    columns:
+      domain:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - nonstress
+        - stress
+      cells:
+        type: integer
+        nullable: false
+        comparison: exact
+      recurring_B2_reference:
+        type: integer
+        nullable: false
+        comparison: exact
+      recurring_B2_uniform:
+        type: integer
+        nullable: false
+        comparison: exact
+      recurring_B2_possible:
+        type: integer
+        nullable: false
+        comparison: exact
+      equivalent_B2_reference:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07d/costos_transicion_03/resultados/SENDAS_FINANCIACION.parquet:
+    rows: 432000
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - mode
+    - H
+    - replacement
+    - budget
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - reference
+        - v0
+        - v1
+        - v2
+        - v3
+        - v4
+        - v5
+        - v6
+        - v7
+      budget:
+        type: string
+        nullable: false
+        comparison: exact
+      replacement:
+        type: string
+        nullable: false
+        comparison: exact
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      commitments_before_f:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      investment:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      interest:
+        type: number
+        nullable: false
+        comparison: tolerant
+      nominal_growth:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_ratio_noAI:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_ratio_withAI:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path:
+        type: number
+        nullable: false
+        comparison: tolerant
+      initial_capital_gdp0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      net_primary_cost:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/costos_transicion_03/resultados/SENSIBILIDAD_PENSION_COLOMBIA.csv:
+    rows: 60
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - mode
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - COL
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - possible
+        - reference
+        - uniform
+      cost10_recorded:
+        type: number
+        nullable: false
+        comparison: tolerant
+      cost10_harmonized:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_star_recorded:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      H_star_harmonized:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      Fmax10_B2_harmonized:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07d/evidencia/insumos/sorteos.parquet:
+    rows: 50000
+    row_matching: key
+    primary_key:
+    - draw_id
+    key_nullable: []
+    columns:
+      draw_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      g_ai_level:
+        type: number
+        nullable: false
+        comparison: tolerant
+      translation_factor:
+        type: number
+        nullable: false
+        comparison: tolerant
+      phi_y_nominal:
+        type: number
+        nullable: false
+        comparison: tolerant
+      fixed_cost_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      cost_gross_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      primitives_support_valid:
+        type: boolean
+        nullable: false
+        comparison: exact
+      mfc_required_100:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc_required_110:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__structural:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_positive:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_2010plus:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_2015plus:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_no2020_21:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_no2008_09:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_min_g_1pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_min_g_2pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_no_winsor:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_mixture_empirical:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_positive:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_2010plus:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_2015plus:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_no2020_21:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_no2008_09:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_min_g_1pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_min_g_2pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_no_winsor:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_mixture_empirical:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_tax_common_grd_years:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__grd_tax_mixture:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__grd_tax_gross_common_nonresource:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__grd_tax_nonresource:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__hist_total_revenue_common_grd_years:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__grd_total_revenue_mixture:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__grd_total_revenue_gross_common_nonresource:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mfc__grd_total_revenue_nonresource:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07e/resultados/CASOS_PUBLICABLES.csv:
+    rows: 7
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - H
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      annuity_author_comparator:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B0_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B0_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B0_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B0_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B0_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B0_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B0_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B0_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B0_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B1_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B1_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B1_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B1_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B1_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B1_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B1_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B1_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B1_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B2_uniform:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B2_uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax_B2_possible:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      covers_equivalent_B2_possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      R_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+      T_required_frozen_distribution:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - beyond_scenario_frontier
+        - within_scenario_frontier
+      q_required:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      q_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - already_covered_at_registered_value
+        - minimum_increase_certified
+        - not_reachable_interval_certified
+        - not_reachable_within_declared_domain
+      tau_ai_required:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      ai_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - covered_without_additional_AI
+        - feasible_net_effective_rate
+        - no_root_in_effective_rate_domain
+      H_B0:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_B1:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_B2:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      Fmax_path_reference_cash_10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_reference_noAI_cash_10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_return_reference_cash_10:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      initial_capital_reference_gdp0_cash_10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_reference_B2_reserved_10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_reference_noAI_B2_reserved_10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_return_reference_B2_reserved_10:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      initial_capital_reference_gdp0_B2_reserved_10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_reference_cash_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_reference_noAI_cash_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_return_reference_cash_25:
+        type: number
+        nullable: false
+        comparison: exact
+      initial_capital_reference_gdp0_cash_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_path_reference_B2_reserved_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_reference_noAI_B2_reserved_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H_return_reference_B2_reserved_25:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      initial_capital_reference_gdp0_B2_reserved_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+      macro_B2_pass:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07e/resultados/COMPARADORES_CAPTURA_ACTUALIZADOS.csv:
+    rows: 62
+    row_matching: key
+    primary_key:
+    - mode
+    - rule
+    key_nullable: []
+    columns:
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - grd_tax_gross_common_nonresource
+        - grd_tax_mixture
+        - grd_tax_nonresource
+        - grd_total_revenue_gross_common_nonresource
+        - grd_total_revenue_mixture
+        - grd_total_revenue_nonresource
+        - hist_tax_common_grd_years
+        - hist_tax_mixture
+        - hist_tax_mixture_2010plus
+        - hist_tax_mixture_2015plus
+        - hist_tax_mixture_empirical
+        - hist_tax_mixture_min_g_1pct
+        - hist_tax_mixture_min_g_2pct
+        - hist_tax_mixture_no2008_09
+        - hist_tax_mixture_no2020_21
+        - hist_tax_mixture_no_winsor
+        - hist_tax_positive
+        - hist_total_revenue_common_grd_years
+        - hist_total_revenue_mixture
+        - hist_total_revenue_mixture_2010plus
+        - hist_total_revenue_mixture_2015plus
+        - hist_total_revenue_mixture_empirical
+        - hist_total_revenue_mixture_min_g_1pct
+        - hist_total_revenue_mixture_min_g_2pct
+        - hist_total_revenue_mixture_no2008_09
+        - hist_total_revenue_mixture_no2020_21
+        - hist_total_revenue_mixture_no_winsor
+        - hist_total_revenue_positive
+        - possible_bound
+        - reference
+        - uniform_bound
+      rule:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - B0
+        - B2
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+      frequency:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mc95_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mc95_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_p50:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      role:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07e/resultados/MACROESCENARIOS_ACTUALIZADOS_4800.csv:
+    rows: 4800
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - macro_year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      macro_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      spb_variant:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_macro_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_B2_macro_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07e/resultados/RESUMEN_COBERTURA.csv:
+    rows: 2
+    row_matching: key
+    primary_key:
+    - domain
+    key_nullable: []
+    columns:
+      domain:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - nonstress
+        - stress
+      cells:
+        type: integer
+        nullable: false
+        comparison: exact
+      B0_reference:
+        type: integer
+        nullable: false
+        comparison: exact
+      B1_reference:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_reference:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_uniform:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_possible:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07e/resultados/RESUMEN_MACROESCENARIOS.csv:
+    rows: 480
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_pass:
+        type: integer
+        nullable: false
+        comparison: exact
+      Fmax_min:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_max:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07g/bloque_1_matematica/ANUAL_480_RECONCILIADA.csv:
+    rows: 480
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07g/bloque_1_matematica/CAPTURA_MEDIA_MARGINAL_Y_DISTRIBUCION.csv:
+    rows: 720
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - mode
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - reference
+        - v0
+        - v1
+        - v2
+        - v3
+        - v4
+        - v5
+        - v6
+        - v7
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share_prime:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_slope_A:
+        type: number
+        nullable: false
+        comparison: tolerant
+      intercept_B:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_average:
+        type: number
+        nullable: false
+        comparison: tolerant
+      R:
+        type: number
+        nullable: false
+        comparison: tolerant
+      R_no_distribution_shift:
+        type: number
+        nullable: false
+        comparison: tolerant
+      distribution_effect_at_g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      right_limit_old_minus_R_at_zero:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07g/bloque_1_matematica/INVERSAS_GANANCIA_REVISADAS.csv:
+    rows: 25920
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - mode
+    - rule
+    - cost_treatment
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      rule:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - B0
+        - B1
+        - B2
+      cost_treatment:
+        type: string
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - reference
+        - v0
+        - v1
+        - v2
+        - v3
+        - v4
+        - v5
+        - v6
+        - v7
+      required_revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_intercept:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g_max_T1:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+      T_required_frozen_distribution:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gain_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - beyond_scenario_frontier
+        - within_scenario_frontier
+      old_gain_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - beyond_scenario_frontier
+        - within_scenario_frontier
+      revenue_at_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07g/bloque_1_matematica/PARAMETROS_PARTICIPACION_LABORAL.csv:
+    rows: 32
+    row_matching: key
+    primary_key:
+    - country_id
+    - name
+    key_nullable: []
+    columns:
+      parameter_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      name:
+        type: string
+        nullable: false
+        comparison: exact
+      module:
+        type: string
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      policy_id:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      regime_code:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      value_type:
+        type: string
+        nullable: false
+        comparison: exact
+      unit:
+        type: string
+        nullable: false
+        comparison: exact
+      baseline_value:
+        type: number
+        nullable: false
+        comparison: tolerant
+      low_value:
+        type: number
+        nullable: false
+        comparison: tolerant
+      high_value:
+        type: number
+        nullable: false
+        comparison: tolerant
+      support_type:
+        type: string
+        nullable: false
+        comparison: exact
+      source_id:
+        type: string
+        nullable: false
+        comparison: exact
+      formula_id:
+        type: string
+        nullable: false
+        comparison: exact
+      distribution:
+        type: string
+        nullable: false
+        comparison: exact
+      truncation_rule:
+        type: string
+        nullable: false
+        comparison: exact
+      primary_spec_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      robustness_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      stress_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      double_counting_risk:
+        type: string
+        nullable: false
+        comparison: exact
+      double_counting_note:
+        type: string
+        nullable: false
+        comparison: exact
+      audit_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - author_approved
+        - registered
+      notes:
+        type: string
+        nullable: false
+        comparison: exact
+      is_lac_fallback:
+        type: boolean
+        nullable: false
+        comparison: exact
+      assumption_id:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_at:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+      author_approval_date:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      author_approval_note:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+  paso_07g/bloque_2_descomposicion/ATRIBUCION_SOBRE_TODOS_LOS_ORDENES.csv:
+    rows: 42
+    row_matching: key
+    primary_key:
+    - case
+    - metric
+    - change
+    key_nullable: []
+    columns:
+      case:
+        type: string
+        nullable: false
+        comparison: exact
+      metric:
+        type: string
+        nullable: false
+        comparison: exact
+      change:
+        type: string
+        nullable: false
+        comparison: exact
+      allocation:
+        type: number
+        nullable: false
+        comparison: tolerant
+      min_order_marginal:
+        type: number
+        nullable: false
+        comparison: tolerant
+      max_order_marginal:
+        type: number
+        nullable: false
+        comparison: tolerant
+      initial:
+        type: number
+        nullable: false
+        comparison: tolerant
+      final:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07g/bloque_2_descomposicion/CANALES_PUENTE_5120.csv:
+    rows: 5120
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - mask
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      mask:
+        type: integer
+        nullable: false
+        comparison: exact
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07g/bloque_2_descomposicion/PRIMITIVAS_EMPAREJADAS_CHILE.parquet:
+    rows: 50000
+    row_matching: registered_row_order
+    primary_key: []
+    key_nullable: []
+    columns:
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dn:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_equivalent:
+        type: number
+        nullable: false
+        comparison: tolerant
+      original_M:
+        type: number
+        nullable: false
+        comparison: tolerant
+      current_M:
+        type: number
+        nullable: false
+        comparison: tolerant
+      chi_Kbase:
+        type: number
+        nullable: false
+        comparison: tolerant
+      chi_dom:
+        type: number
+        nullable: false
+        comparison: tolerant
+      psi_shift:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tau_L_disp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tau_K_disp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      tau_R_disp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mpc_W:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mpc_Pi:
+        type: number
+        nullable: false
+        comparison: tolerant
+      mpc_R:
+        type: number
+        nullable: false
+        comparison: tolerant
+      m_M:
+        type: number
+        nullable: false
+        comparison: tolerant
+      theta_R_dom:
+        type: number
+        nullable: false
+        comparison: tolerant
+      exempt_C:
+        type: number
+        nullable: false
+        comparison: tolerant
+      lambda_ai:
+        type: number
+        nullable: false
+        comparison: tolerant
+      lambda_ai_kbase:
+        type: number
+        nullable: false
+        comparison: tolerant
+    row_order_reason: Registered draw ordinal; no draw identifier is exported. Preserve
+      the registered random-stream order.
+  paso_07g/bloque_2_descomposicion/PUENTE_CHILE_50000_128.csv:
+    rows: 128
+    row_matching: key
+    primary_key:
+    - mask
+    key_nullable: []
+    columns:
+      mask:
+        type: integer
+        nullable: false
+        comparison: exact
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_frequency_percent:
+        type: number
+        nullable: false
+        comparison: tolerant
+      R_mean_percent_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      R_p50_percent_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_mean_pp_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_mean_percent_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_mean:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07g/bloque_2_descomposicion/PUENTE_DETERMINISTA_61440.csv:
+    rows: 61440
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - mask
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      mask:
+        type: integer
+        nullable: false
+        comparison: exact
+      R:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2_balance:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07g/bloque_2_descomposicion/RESUMEN_PUENTE_DETERMINISTA.csv:
+    rows: 256
+    row_matching: key
+    primary_key:
+    - mask
+    - domain
+    key_nullable: []
+    columns:
+      mask:
+        type: integer
+        nullable: false
+        comparison: exact
+      domain:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - nonstress
+        - stress
+      cells:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07g/bloque_2_descomposicion/SECUENCIA_CHILE.csv:
+    rows: 8
+    row_matching: key
+    primary_key:
+    - mask
+    key_nullable: []
+    columns:
+      mask:
+        type: integer
+        nullable: false
+        comparison: exact
+      n:
+        type: integer
+        nullable: false
+        comparison: exact
+      crossings:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2_frequency_percent:
+        type: number
+        nullable: false
+        comparison: tolerant
+      R_mean_percent_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      R_p50_percent_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_mean_pp_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_mean_percent_GDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M_mean:
+        type: number
+        nullable: false
+        comparison: tolerant
+      step:
+        type: string
+        nullable: false
+        comparison: exact
+      change_frequency_pp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Initial step has no predecessor; exact archived null mask is
+          required.
+  paso_07g/bloque_3_transicion/COMBINACIONES_ILUSTRATIVAS.csv:
+    rows: 168
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - mode
+    - H
+    - budget
+    - path_id
+    - case_id
+    - macro_id
+    - F_factor
+    - I_factor
+    - replacement_period
+    key_nullable: []
+    columns:
+      path_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      case_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      macro_id:
+        type: string
+        nullable: false
+        comparison: exact
+      interest:
+        type: number
+        nullable: false
+        comparison: tolerant
+      growth:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      primary_balance:
+        type: number
+        nullable: false
+        comparison: tolerant
+      target_debt:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_factor:
+        type: number
+        nullable: false
+        comparison: exact
+      I_factor:
+        type: number
+        nullable: false
+        comparison: exact
+      replacement_period:
+        type: integer
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - reference
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      budget:
+        type: string
+        nullable: false
+        comparison: exact
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      I:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      annual_coverage_H:
+        type: boolean
+        nullable: false
+        comparison: exact
+      first_annual_coverage_by_H:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      balance_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      initial_capital_gdp0_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      peak_balance_ratio_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      first_return_by_H:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      persistent_return_to_25:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      no_return_by_H:
+        type: boolean
+        nullable: false
+        comparison: exact
+      ending_balance_positive:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07g/bloque_3_transicion/MACROESCENARIOS_CONJUNTOS_40.csv:
+    rows: 40
+    row_matching: key
+    primary_key:
+    - country_id
+    - macro_year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      macro_year:
+        type: integer
+        nullable: false
+        comparison: exact
+      nominal_interest_rate:
+        type: number
+        nullable: false
+        comparison: tolerant
+      nominal_growth_rate:
+        type: number
+        nullable: false
+        comparison: tolerant
+      primary_balance_ratio:
+        type: number
+        nullable: false
+        comparison: tolerant
+      target_debt_ratio_2024:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb_variant:
+        type: number
+        nullable: false
+        comparison: tolerant
+      construction:
+        type: string
+        nullable: false
+        comparison: exact
+  paso_07g/bloque_3_transicion/RANGOS_DOMINIO_DIAGNOSTICO.csv:
+    rows: 28
+    row_matching: key
+    primary_key:
+    - H
+    - budget
+    - case_id
+    key_nullable: []
+    columns:
+      case_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      budget:
+        type: string
+        nullable: false
+        comparison: exact
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      paths:
+        type: integer
+        nullable: false
+        comparison: exact
+      annual_pass:
+        type: integer
+        nullable: false
+        comparison: exact
+      no_return:
+        type: integer
+        nullable: false
+        comparison: exact
+      balance_min:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_max:
+        type: number
+        nullable: false
+        comparison: tolerant
+      capital_min:
+        type: number
+        nullable: false
+        comparison: tolerant
+      capital_max:
+        type: number
+        nullable: false
+        comparison: tolerant
+      return_min:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      return_max_among_returns:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+  paso_07g/bloque_3_transicion/SENSIBILIDAD_H10_H25.csv:
+    rows: 99792
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - mode
+    - H
+    - budget
+    - path_id
+    - case_id
+    - macro_id
+    - F_factor
+    - I_factor
+    - replacement_period
+    key_nullable: []
+    columns:
+      path_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      case_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      macro_id:
+        type: string
+        nullable: false
+        comparison: exact
+      interest:
+        type: number
+        nullable: false
+        comparison: tolerant
+      growth:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      primary_balance:
+        type: number
+        nullable: false
+        comparison: tolerant
+      target_debt:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_factor:
+        type: number
+        nullable: false
+        comparison: exact
+      I_factor:
+        type: number
+        nullable: false
+        comparison: exact
+      replacement_period:
+        type: integer
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - reference
+        - vertex_0
+        - vertex_1
+        - vertex_2
+        - vertex_3
+        - vertex_4
+        - vertex_5
+        - vertex_6
+        - vertex_7
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      budget:
+        type: string
+        nullable: false
+        comparison: exact
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      I:
+        type: number
+        nullable: false
+        comparison: tolerant
+      H:
+        type: integer
+        nullable: false
+        comparison: exact
+      annual_coverage_H:
+        type: boolean
+        nullable: false
+        comparison: exact
+      first_annual_coverage_by_H:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      balance_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      initial_capital_gdp0_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      peak_balance_ratio_H:
+        type: number
+        nullable: false
+        comparison: tolerant
+      first_return_by_H:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      persistent_return_to_25:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      no_return_by_H:
+        type: boolean
+        nullable: false
+        comparison: exact
+      ending_balance_positive:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07g/bloque_3_transicion/TRAYECTORIAS_COMPLETAS.npz:
+    arrays:
+      revenue:
+        shape:
+        - 49896
+        - 25
+        dtype: float64
+        nullable: false
+      cost:
+        shape:
+        - 49896
+        - 25
+        dtype: float64
+        nullable: false
+      replacement:
+        shape:
+        - 49896
+        - 25
+        dtype: float64
+        nullable: false
+      balance:
+        shape:
+        - 49896
+        - 25
+        dtype: float64
+        nullable: false
+      frontier:
+        shape:
+        - 49896
+        - 25
+        dtype: float64
+        nullable: false
+      capital:
+        shape:
+        - 49896
+        - 25
+        dtype: float64
+        nullable: false
+      benefits:
+        shape:
+        - 49896
+        - 25
+        dtype: float64
+        nullable: false
+  paso_07g/bloque_3_transicion/TRAYECTORIAS_CONFIGURACION.csv:
+    rows: 49896
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - mode
+    - budget
+    - path_id
+    - case_id
+    - macro_id
+    - F_factor
+    - I_factor
+    - replacement_period
+    key_nullable: []
+    columns:
+      path_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      case_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      macro_id:
+        type: string
+        nullable: false
+        comparison: exact
+      interest:
+        type: number
+        nullable: false
+        comparison: tolerant
+      growth:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      primary_balance:
+        type: number
+        nullable: false
+        comparison: tolerant
+      target_debt:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_factor:
+        type: number
+        nullable: false
+        comparison: exact
+      I_factor:
+        type: number
+        nullable: false
+        comparison: exact
+      replacement_period:
+        type: integer
+        nullable: false
+        comparison: exact
+      mode:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - reference
+        - vertex_0
+        - vertex_1
+        - vertex_2
+        - vertex_3
+        - vertex_4
+        - vertex_5
+        - vertex_6
+        - vertex_7
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      budget:
+        type: string
+        nullable: false
+        comparison: exact
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      I:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07g/evidencia/CONTEXTOS_80.json:
+    json_schema:
+      type: array
+      length: 80
+      items:
+        type: object
+        properties:
+          country_id:
+            type: string
+          scenario_id:
+            type: string
+          regime_id:
+            type: string
+          context:
+            type: object
+            properties:
+              prepared:
+                type: object
+                properties:
+                  g:
+                    type: number
+                  dw:
+                    type: number
+                  dn:
+                    type: number
+                  ls:
+                    type: number
+                  pit:
+                    type: number
+                  cit:
+                    type: number
+                  ssc:
+                    type: number
+                  vat_yield:
+                    type: number
+                  relative_base:
+                    type: number
+                  ul:
+                    type: number
+                  uk:
+                    type: number
+                  uc:
+                    type: number
+                  ai:
+                    type: number
+              q:
+                type: number
+              exposure:
+                type: number
+              epsilon:
+                type: number
+              beta:
+                type: number
+              gamma:
+                type: number
+              s_frontier:
+                type: number
+              phi:
+                type: number
+              lambda_ai:
+                type: number
+              tau_ai:
+                type: number
+              erosion_ai:
+                type: number
+              q_bar:
+                type: number
+              epsilon_mu:
+                type: number
+              lambda_q:
+                type: number
+              leak_multiplier:
+                type: number
+              pressure_per_q:
+                type: number
+              reference:
+                type: array
+                length: 3
+                items:
+                  type: number
+    comparison: exact
+  paso_07h/resultados/DISTRIBUCION_CASOS_7.csv:
+    rows: 56
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - flow_id
+    - anchor
+    - pressure_mode
+    - erosion_mode
+    - coefficient_mode
+    key_nullable: []
+    columns:
+      flow_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      pressure_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      erosion_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      coefficient_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pressure:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share_prime:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dn:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_l:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat:
+        type: number
+        nullable: false
+        comparison: tolerant
+      direct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_w_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_n_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M:
+        type: number
+        nullable: false
+        comparison: tolerant
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gap:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07h/resultados/ENVOLVENTES_CASOS_7.csv:
+    rows: 28
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - anchor
+    - domain
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      domain:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - expanded
+        - standard
+      Fmax_min:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_max:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      points:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07h/resultados/ENVOLVENTES_DISTRIBUCION_CAPTURA.csv:
+    rows: 1920
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - anchor
+    - domain
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      domain:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - expanded
+        - standard
+      Fmax_min:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_max:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F:
+        type: number
+        nullable: false
+        comparison: tolerant
+      uniform:
+        type: boolean
+        nullable: false
+        comparison: exact
+      possible:
+        type: boolean
+        nullable: false
+        comparison: exact
+      points:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07h/resultados/FINANCIACION_DISTRIBUCION_56.csv:
+    rows: 56
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - case_id
+    - anchor
+    - pressure_mode
+    key_nullable: []
+    columns:
+      case_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      pressure_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      first_annual:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      first_return:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      capital_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_10:
+        type: number
+        nullable: false
+        comparison: tolerant
+      balance_25:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07h/resultados/FLUJOS_DIAGNOSTICOS.csv:
+    rows: 15200
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - flow_id
+    - anchor
+    - pressure_mode
+    - erosion_mode
+    - coefficient_mode
+    key_nullable: []
+    columns:
+      flow_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      pressure_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      erosion_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      coefficient_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pressure:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share_prime:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dn:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_l:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat:
+        type: number
+        nullable: false
+        comparison: tolerant
+      direct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_w_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_n_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07h/resultados/FRONTERAS_DIAGNOSTICAS.csv:
+    rows: 91200
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - flow_id
+    - anchor
+    - pressure_mode
+    - erosion_mode
+    - coefficient_mode
+    key_nullable: []
+    columns:
+      flow_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      pressure_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      erosion_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      coefficient_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pressure:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share_prime:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dn:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_l:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat:
+        type: number
+        nullable: false
+        comparison: tolerant
+      direct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_w_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_n_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M:
+        type: number
+        nullable: false
+        comparison: tolerant
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gap:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2:
+        type: boolean
+        nullable: false
+        comparison: exact
+  paso_07h/resultados/RESUMEN_CRUCES.csv:
+    rows: 760
+    row_matching: key
+    primary_key:
+    - scenario_id
+    - anchor
+    - pressure_mode
+    - erosion_mode
+    - coefficient_mode
+    key_nullable: []
+    columns:
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      pressure_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      erosion_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      coefficient_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      cells:
+        type: integer
+        nullable: false
+        comparison: exact
+      B2:
+        type: integer
+        nullable: false
+        comparison: exact
+  paso_07h/resultados/RESUMEN_FINANCIACION_7.csv:
+    rows: 7
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_variant_id
+    - case_id
+    key_nullable: []
+    columns:
+      case_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      first_annual_min:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      first_annual_max:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      return_min:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      return_max:
+        type: number
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: No crossing/root within the declared domain or absent associated
+          interval; exact archived null mask is required.
+      censored_paths:
+        type: integer
+        nullable: false
+        comparison: exact
+      capital_min:
+        type: number
+        nullable: false
+        comparison: tolerant
+      capital_max:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07h/resultados/UMBRALES_CALIBRACION_480.csv:
+    rows: 480
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - flow_id
+    - anchor
+    - pressure_mode
+    - erosion_mode
+    - coefficient_mode
+    key_nullable: []
+    columns:
+      flow_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r1
+        - r2
+        - r3
+        - r4
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      pressure_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      erosion_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      coefficient_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pressure:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share_prime:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dn:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_l:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat:
+        type: number
+        nullable: false
+        comparison: tolerant
+      direct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_w_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_n_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M:
+        type: number
+        nullable: false
+        comparison: tolerant
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gap:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2:
+        type: boolean
+        nullable: false
+        comparison: exact
+      required:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w_required_kn_fixed:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n_required_kw_fixed:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_required_kn_half_kw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_multiplier_critical:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_percent_benefit:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_percent_benefit:
+        type: number
+        nullable: false
+        comparison: tolerant
+      additional_revenue_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07h/resultados/UMBRALES_CASOS_7.csv:
+    rows: 7
+    row_matching: key
+    primary_key:
+    - country_id
+    - scenario_id
+    - regime_id
+    - policy_id
+    - policy_variant_id
+    - flow_id
+    - anchor
+    - pressure_mode
+    - erosion_mode
+    - coefficient_mode
+    key_nullable: []
+    columns:
+      flow_id:
+        type: integer
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - mid
+        - stress
+      regime_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - r0
+        - r4
+      anchor:
+        type: string
+        nullable: false
+        comparison: exact
+      pressure_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      erosion_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      coefficient_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      alpha:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      pressure:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      share_prime:
+        type: number
+        nullable: false
+        comparison: tolerant
+      g:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      dn:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_l:
+        type: number
+        nullable: false
+        comparison: tolerant
+      t_n:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat:
+        type: number
+        nullable: false
+        comparison: tolerant
+      direct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_w_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      vat_n_slope:
+        type: number
+        nullable: false
+        comparison: tolerant
+      revenue:
+        type: number
+        nullable: false
+        comparison: tolerant
+      M:
+        type: number
+        nullable: false
+        comparison: tolerant
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      policy_variant_id:
+        type: string
+        nullable: false
+        comparison: exact
+      benefits:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_recurring_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      setup_author:
+        type: number
+        nullable: false
+        comparison: tolerant
+      spb:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_B2_reference:
+        type: number
+        nullable: false
+        comparison: tolerant
+      covers_recurring_B2_reference:
+        type: boolean
+        nullable: false
+        comparison: exact
+      Fmax:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gap:
+        type: number
+        nullable: false
+        comparison: tolerant
+      B2:
+        type: boolean
+        nullable: false
+        comparison: exact
+      required:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_w_required_kn_fixed:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_n_required_kw_fixed:
+        type: number
+        nullable: false
+        comparison: tolerant
+      k_required_kn_half_kw:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_multiplier_critical:
+        type: number
+        nullable: false
+        comparison: tolerant
+      F_percent_benefit:
+        type: number
+        nullable: false
+        comparison: tolerant
+      Fmax_percent_benefit:
+        type: number
+        nullable: false
+        comparison: tolerant
+      additional_revenue_required:
+        type: number
+        nullable: false
+        comparison: tolerant
+  paso_07h/resultados/VERTICES_PRESION_512.csv:
+    rows: 512
+    row_matching: key
+    primary_key:
+    - country_id
+    - vertex
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      vertex:
+        type: integer
+        nullable: false
+        comparison: exact
+      pressure:
+        type: number
+        nullable: false
+        comparison: tolerant
+      lambda_LS:
+        type: number
+        nullable: false
+        comparison: tolerant
+      delta_s:
+        type: number
+        nullable: false
+        comparison: tolerant
+      zeta_s:
+        type: number
+        nullable: false
+        comparison: tolerant
+      RST:
+        type: number
+        nullable: false
+        comparison: tolerant
+      E_auto:
+        type: number
+        nullable: false
+        comparison: tolerant
+      psi_s:
+        type: number
+        nullable: false
+        comparison: tolerant
+      E_aug:
+        type: number
+        nullable: false
+        comparison: tolerant
+  input:debt_guardrail_anchor.parquet:
+    rows: 100
+    row_matching: key
+    primary_key:
+    - country_id
+    - year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      GGR_NGDP:
+        type: number
+        nullable: false
+        comparison: tolerant
+      net_lending_borrowing_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      primary_balance_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gross_debt_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      NGDPD:
+        type: number
+        nullable: false
+        comparison: tolerant
+      NGDP_RPCH:
+        type: number
+        nullable: false
+        comparison: tolerant
+      PCPIPCH:
+        type: number
+        nullable: false
+        comparison: tolerant
+      nominal_growth_rate:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      gross_debt_gdp_lag:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      interest_payments_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      nominal_interest_rate:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      pb_stabilizing_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      pb_gap_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_at:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+  input:digital_gap_anchor.parquet:
+    rows: 4
+    row_matching: key
+    primary_key:
+    - country_id
+    - year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      coverage_mobile_cellular_pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      coverage_3g_pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      coverage_lte_wimax_pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      speed_fixed_download_mbps:
+        type: number
+        nullable: false
+        comparison: tolerant
+      speed_mobile_download_mbps:
+        type: number
+        nullable: false
+        comparison: tolerant
+      coverage_lte_normalized:
+        type: number
+        nullable: false
+        comparison: tolerant
+      speed_fixed_normalized:
+        type: number
+        nullable: false
+        comparison: tolerant
+      speed_mobile_normalized:
+        type: number
+        nullable: false
+        comparison: tolerant
+      connectivity_composite:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gap_index:
+        type: number
+        nullable: false
+        comparison: tolerant
+      normalization_method:
+        type: string
+        nullable: false
+        comparison: exact
+      benchmark_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      benchmark_coverage_lte_pct_mean:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benchmark_speed_fixed_mbps_mean:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benchmark_speed_mobile_mbps_mean:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gap_construction_convention:
+        type: string
+        nullable: false
+        comparison: exact
+      aipi_overlap_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      aipi_exclusion_verification:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_at:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+  input:double_counting_audit.parquet:
+    rows: 4
+    row_matching: key
+    primary_key:
+    - audit_id
+    key_nullable: []
+    columns:
+      audit_id:
+        type: string
+        nullable: false
+        comparison: exact
+      module:
+        type: string
+        nullable: false
+        comparison: exact
+      risk:
+        type: string
+        nullable: false
+        comparison: exact
+      status:
+        type: string
+        nullable: false
+        comparison: exact
+      notes:
+        type: string
+        nullable: false
+        comparison: exact
+      parameter_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+  input:fiscal_anchor.parquet:
+    rows: 100
+    row_matching: key
+    primary_key:
+    - country_id
+    - year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      tax_revenue_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      social_contrib_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      direct_tax_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      indirect_tax_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      cit_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      pit_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      vat_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      total_revenue_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      government_level:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_at:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+  input:frontier_benchmark_anchor.parquet:
+    rows: 24
+    row_matching: key
+    primary_key:
+    - benchmark_country_id
+    - year
+    key_nullable: []
+    columns:
+      benchmark_country_id:
+        type: string
+        nullable: false
+        comparison: exact
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      adoption_proxy:
+        type: number
+        nullable: false
+        comparison: tolerant
+      aipi_total:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benchmark_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      score_convention:
+        type: string
+        nullable: false
+        comparison: exact
+      elasticities_used:
+        type: string
+        nullable: false
+        comparison: exact
+      population_consistency_note:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+    row_order_reason: One explicitly selected comparable observation per country and year.
+  input:grd_revenue_contrast.parquet:
+    rows: 380
+    row_matching: registered_row_order
+    primary_key: []
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      government_level:
+        type: string
+        nullable: false
+        comparison: exact
+      grd_total_revenue_ex_grants_ex_sc_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      grd_tax_excluding_sc_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      grd_tax_including_sc_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      oecd_tax_excluding_sc_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      oecd_tax_including_sc_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      oecd_social_contrib_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      imf_total_revenue_general_government_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      grd_minus_oecd_tax_ex_sc_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      grd_minus_oecd_tax_inc_sc_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      grd_minus_imf_total_revenue_gdp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      tax_comparison_concept:
+        type: string
+        nullable: false
+        comparison: exact
+      comparison_role:
+        type: string
+        nullable: false
+        comparison: exact
+      source_excel_file:
+        type: string
+        nullable: false
+        comparison: exact
+      canonical_mapping_note:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_at:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+    row_order_reason: Frozen construction retains repeated country/year/government
+      observations. Match the archived row ordinal; do not deduplicate or change the
+      model inputs.
+  input:historical_capture_percentiles.parquet:
+    rows: 32
+    row_matching: key
+    primary_key:
+    - country_id
+    - government_level
+    - revenue_concept
+    - percentile_sample
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      government_level:
+        type: string
+        nullable: false
+        comparison: exact
+      revenue_concept:
+        type: string
+        nullable: false
+        comparison: exact
+      percentile_sample:
+        type: string
+        nullable: false
+        comparison: exact
+      p10_mfc_hist_positive:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p25_mfc_hist_positive:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p50_mfc_hist_positive:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p50_ci_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p50_ci_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p75_mfc_hist_positive:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p75_ci_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p75_ci_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p90_mfc_hist_positive:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p90_ci_low:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p90_ci_high:
+        type: number
+        nullable: false
+        comparison: tolerant
+      ci_method:
+        type: string
+        nullable: false
+        comparison: exact
+      n_years_total:
+        type: integer
+        nullable: false
+        comparison: exact
+      n_years_positive:
+        type: integer
+        nullable: false
+        comparison: exact
+      p_negative_capture:
+        type: number
+        nullable: false
+        comparison: tolerant
+      p10_mfc_hist_negative:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      p50_mfc_hist_negative:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      p90_mfc_hist_negative:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      support_warning:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+  input:input_audit_report.parquet:
+    rows: 4
+    row_matching: key
+    primary_key:
+    - audit_id
+    key_nullable: []
+    columns:
+      audit_id:
+        type: string
+        nullable: false
+        comparison: exact
+      module:
+        type: string
+        nullable: false
+        comparison: exact
+      table_name:
+        type: string
+        nullable: false
+        comparison: exact
+      passed:
+        type: boolean
+        nullable: false
+        comparison: exact
+      severity:
+        type: string
+        nullable: false
+        comparison: exact
+      notes:
+        type: string
+        nullable: false
+        comparison: exact
+      parameter_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+  input:macro_anchor.parquet:
+    rows: 100
+    row_matching: key
+    primary_key:
+    - country_id
+    - year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      cpi_index:
+        type: number
+        nullable: false
+        comparison: tolerant
+      exchange_rate_lcu_per_usd:
+        type: number
+        nullable: false
+        comparison: tolerant
+      final_consumption_gdp_share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gdp_constant_lcu:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gdp_deflator:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gdp_growth_real:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gdp_nominal_lcu:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gdp_nominal_usd:
+        type: number
+        nullable: false
+        comparison: tolerant
+      gdp_pc_usd:
+        type: number
+        nullable: false
+        comparison: tolerant
+      imports_gdp_share:
+        type: number
+        nullable: false
+        comparison: tolerant
+      population_15_64_pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      population_65_plus_pct:
+        type: number
+        nullable: false
+        comparison: tolerant
+      population_total:
+        type: number
+        nullable: false
+        comparison: tolerant
+      ppp_conversion_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      ppp_conversion_private_consumption:
+        type: number
+        nullable: false
+        comparison: tolerant
+      population_65_plus:
+        type: number
+        nullable: false
+        comparison: tolerant
+      population_15_64:
+        type: number
+        nullable: false
+        comparison: tolerant
+      population_total_wpp:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      population_80_plus:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      population_18_plus:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      population_colombia_mayor_rule:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      population_colombia_mayor_80_plus:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      harmonization_flag:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_at:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+  input:policy_admin_transition_cost.parquet:
+    rows: 20
+    row_matching: key
+    primary_key:
+    - country_id
+    - policy_id
+    - year
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      scenario_id:
+        type: integer
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      regime_id:
+        type: integer
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      admin_cost_new_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      admin_savings_existing_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      admin_included_in_existing_spending:
+        type: boolean
+        nullable: false
+        comparison: exact
+      layering_mode:
+        type: string
+        nullable: false
+        comparison: exact
+      transition_oneoff_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      transition_recurring_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      transition_horizon_years:
+        type: integer
+        nullable: false
+        comparison: exact
+      transition_discount_rate:
+        type: number
+        nullable: false
+        comparison: exact
+      leakage_fixed_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      source_id:
+        type: string
+        nullable: false
+        comparison: exact
+      assumption_id:
+        type: string
+        nullable: false
+        comparison: exact
+      sensitivity_level:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+  input:policy_cost.parquet:
+    rows: 24
+    row_matching: key
+    primary_key:
+    - country_id
+    - year
+    - policy_parameter_id
+    key_nullable: []
+    columns:
+      country_id:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      policy_id:
+        type: string
+        nullable: false
+        comparison: exact
+      year:
+        type: integer
+        nullable: false
+        comparison: exact
+      eligible_population:
+        type: number
+        nullable: false
+        comparison: tolerant
+      benefit_amount_lcu:
+        type: number
+        nullable: false
+        comparison: tolerant
+      poverty_line_annual_lcu:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      eta_policy:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      chi_gmi:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      policy_cost_gross_lcu:
+        type: number
+        nullable: false
+        comparison: tolerant
+      existing_spending_lcu:
+        type: number
+        nullable: false
+        comparison: tolerant
+      policy_cost_net_lcu:
+        type: number
+        nullable: false
+        comparison: tolerant
+      policy_cost_gross_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      policy_cost_net_gdp:
+        type: number
+        nullable: false
+        comparison: tolerant
+      cost_convention:
+        type: string
+        nullable: false
+        comparison: exact
+      microdata_used:
+        type: boolean
+        nullable: false
+        comparison: exact
+      gmi_version:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      policy_parameter_id:
+        type: string
+        nullable: false
+        comparison: exact
+      assumption_id:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      parameter_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+  input:values.parquet:
+    rows: 457
+    row_matching: key
+    primary_key:
+    - parameter_set_id
+    - name
+    - country_id
+    - scenario_id
+    - policy_id
+    - regime_code
+    key_nullable:
+    - country_id
+    - scenario_id
+    - policy_id
+    - regime_code
+    columns:
+      parameter_set_id:
+        type: string
+        nullable: false
+        comparison: exact
+      name:
+        type: string
+        nullable: false
+        comparison: exact
+      module:
+        type: string
+        nullable: false
+        comparison: exact
+      country_id:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+        allowed:
+        - CHL
+        - COL
+        - MEX
+        - PER
+      scenario_id:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+        allowed:
+        - high
+        - low
+        - mid
+        - stress
+      policy_id:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      regime_code:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      value_type:
+        type: string
+        nullable: false
+        comparison: exact
+      unit:
+        type: string
+        nullable: false
+        comparison: exact
+      baseline_value:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      low_value:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      high_value:
+        type: number
+        nullable: true
+        comparison: tolerant
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      support_type:
+        type: string
+        nullable: false
+        comparison: exact
+      source_id:
+        type: string
+        nullable: false
+        comparison: exact
+      formula_id:
+        type: string
+        nullable: false
+        comparison: exact
+      distribution:
+        type: string
+        nullable: false
+        comparison: exact
+      truncation_rule:
+        type: string
+        nullable: false
+        comparison: exact
+      primary_spec_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      robustness_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      stress_flag:
+        type: boolean
+        nullable: false
+        comparison: exact
+      double_counting_risk:
+        type: string
+        nullable: false
+        comparison: exact
+      double_counting_note:
+        type: string
+        nullable: false
+        comparison: exact
+      audit_status:
+        type: string
+        nullable: false
+        comparison: exact
+        allowed:
+        - author_approved
+        - documented_not_imposed
+        - registered
+      notes:
+        type: string
+        nullable: false
+        comparison: exact
+      is_lac_fallback:
+        type: boolean
+        nullable: false
+        comparison: exact
+      assumption_id:
+        type: string
+        nullable: false
+        comparison: exact
+      dataset_version:
+        type: string
+        nullable: false
+        comparison: exact
+      build_id:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_at:
+        type: string
+        nullable: false
+        comparison: metadata
+      created_by_script:
+        type: string
+        nullable: false
+        comparison: metadata
+      author_approval_date:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+      author_approval_note:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Parameter scope/metadata or nonnumeric configured value; exact
+          archived null mask is required.
+  input:wpp.parquet:
+    rows: 4848
+    row_matching: key
+    primary_key:
+    - ISO3_code
+    - Time
+    - AgeGrp
+    - VarID
+    key_nullable: []
+    columns:
+      SortOrder:
+        type: integer
+        nullable: false
+        comparison: exact
+      LocID:
+        type: integer
+        nullable: false
+        comparison: exact
+      Notes:
+        type: string
+        nullable: true
+        comparison: exact
+        null_policy: same_as_reference
+        null_reason: Unavailable or inapplicable frozen-source observation; exact
+          archived null mask is required.
+      ISO3_code:
+        type: string
+        nullable: false
+        comparison: exact
+      ISO2_code:
+        type: string
+        nullable: false
+        comparison: exact
+      SDMX_code:
+        type: string
+        nullable: false
+        comparison: exact
+      LocTypeID:
+        type: integer
+        nullable: false
+        comparison: exact
+      LocTypeName:
+        type: string
+        nullable: false
+        comparison: exact
+      ParentID:
+        type: integer
+        nullable: false
+        comparison: exact
+      Location:
+        type: string
+        nullable: false
+        comparison: exact
+      VarID:
+        type: integer
+        nullable: false
+        comparison: exact
+      Variant:
+        type: string
+        nullable: false
+        comparison: exact
+      Time:
+        type: integer
+        nullable: false
+        comparison: exact
+      MidPeriod:
+        type: integer
+        nullable: false
+        comparison: exact
+      AgeGrp:
+        type: string
+        nullable: false
+        comparison: exact
+      AgeGrpStart:
+        type: integer
+        nullable: false
+        comparison: exact
+      AgeGrpSpan:
+        type: integer
+        nullable: false
+        comparison: exact
+      PopMale:
+        type: number
+        nullable: false
+        comparison: tolerant
+      PopFemale:
+        type: number
+        nullable: false
+        comparison: tolerant
+      PopTotal:
+        type: number
+        nullable: false
+        comparison: tolerant
+      source_id:
+        type: string
+        nullable: false
+        comparison: exact
+      download_date:
+        type: string
+        nullable: false
+        comparison: metadata

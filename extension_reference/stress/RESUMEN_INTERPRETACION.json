@@ -1,0 +1,47 @@
+{
+  "comparison_rows": 25920,
+  "max_differences": {
+    "independent": {
+      "recurring_author_frequency": 0.06716,
+      "registered_leakage_frequency": 0.06702,
+      "nonnegative_frontier_frequency": 0.06592,
+      "Fmax_p05": 0.0013773311875245053,
+      "Fmax_p50": 8.939591030089969e-05,
+      "Fmax_p95": 0.0026024832257936
+    },
+    "rank_factor_nominal": {
+      "recurring_author_frequency": 0.02353999999999995,
+      "registered_leakage_frequency": 0.02343999999999996,
+      "nonnegative_frontier_frequency": 0.024420000000000025,
+      "Fmax_p05": 0.0005172080039023974,
+      "Fmax_p50": 5.668112047930128e-05,
+      "Fmax_p95": 0.0010183686111928034
+    }
+  },
+  "spearman_abs_min": 0.7809317057338447,
+  "spearman_abs_max": 0.7918111708181965,
+  "spearman_defined": 180,
+  "spearman_total": 180,
+  "constant_vectors": 0,
+  "driver_overlap_by_comparison": {
+    "independent": {
+      "1": 21
+    },
+    "rank_factor_nominal": {
+      "3": 15,
+      "2": 6
+    }
+  },
+  "quantile_within_25k_50k": {
+    "Fmax_p05": 5.121922999098971e-05,
+    "Fmax_p50": 7.250364850267671e-05,
+    "Fmax_p95": 0.0001452379349465
+  },
+  "quantile_between_seed": {
+    "Fmax_p05": 7.171356530616402e-05,
+    "Fmax_p50": 8.207552504806495e-05,
+    "Fmax_p95": 0.000157504162177
+  },
+  "first_step_max_frequency_drift": 0.0159999999999999,
+  "interpretation": "Conditional model frequencies; contrasts include dependence choice and finite Monte Carlo variation, not causal effects or empirical probabilities"
+}

@@ -1,0 +1,772 @@
+{
+  "source": "revision_jpm_v2/paso_07l/evidencia/SUPLEMENTO_TECNICO_JPM_V2.docx",
+  "sha256": "f656d78da422d27e3fc8612920b824c12460ec1903b32129ee6bd85c458ec13b",
+  "paragraphs": [
+    {
+      "paragraph_index": 0,
+      "style": "Title",
+      "text": "Technical supplement on fiscal capture and transition financing",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 1,
+      "style": "Subtitle",
+      "text": "AI revenue and social protection in four Latin American economies",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 2,
+      "style": null,
+      "text": "Vicenzo Scavino",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 3,
+      "style": null,
+      "text": "Annual coverage and recovery of transition financing impose distinct budget conditions. Sections S1–S3 derive these conditions and assess how income allocation, accounting conventions and financing assumptions affect them. Section S4 examines numerical stability and sensitivity; Section S5 explains the calibration choices.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 4,
+      "style": "Heading1",
+      "text": "S1 Factor income and fiscal conversion",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 5,
+      "style": null,
+      "text": "Let σ be logistic. Productive adoption q shifts the initial labour share ℓ according to displacement, augmentation and a reskilling proxy RST:",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 6,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 7,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 8,
+      "style": null,
+      "text": "Eauto and Eaug describe exposure; δs and ψs scale the respective pressures, ζs RST mitigates displacement, and λLS scales adjustment in log odds. The logistic form keeps the labour share bounded as these calibrated pressures vary. Their values define the distribution scenarios below. Income conservation gives:",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 9,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 10,
+      "style": "Heading2",
+      "text": "S1.1 Fiscal intercept and gain threshold",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 11,
+      "style": null,
+      "text": "Let tL and tN be the ordinary fiscal yields applied to labour and non-labour increments, including the regime indices and relative corporate composition. Let v be the regime-adjusted consumption yield and j = λAI τAI max(0, 1−εAI τAI) the additional rent yield per unit of gain. Define:",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 12,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 13,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 14,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 15,
+      "style": null,
+      "text": "For fixed adoption and coefficients, M = R/g = A+B/g is an average conversion ratio for g > 0; its marginal counterpart is ∂R/∂g = A. At g = 0, R = B and M is undefined. At the joint no-AI anchor q = g = 0, ℓ′ = ℓ and both income increments and revenue are zero. Redistribution at positive adoption with zero aggregate gain is a different hypothetical comparison; it is not a receipt booked at the initial financing date.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 16,
+      "style": null,
+      "text": "For A > 0 and required receipts Q, the smallest nonnegative gain is max[0,(Q−B)/A]. If B ≥ Q, zero is attained under the fixed-distribution comparison. Operational inverses recompute adoption and income allocation together. With A ≤ 0, this increasing-gain formula does not apply.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 17,
+      "style": null,
+      "text": "Holding the labour share at ℓ instead changes both slope and intercept. Its full revenue difference is B(1+g). For Chile moderate r0, A = 0.13416128, M = 0.13487092 and B = 0.002183 percent of no-AI GDP. The full distribution effect is about 0.54 percent of reference receipts; the logistic equation is unchanged across the specification bridge.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 18,
+      "style": "Heading2",
+      "text": "S1.2 Calibration inputs",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 19,
+      "style": "Caption",
+      "text": "Table S1 Country inputs to the labour share transformation",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 20,
+      "style": "Note",
+      "text": "Labour shares: PWT 10.01, 2019 carried forward. RST ranks the AIPI human-capital/labour residual on total AIPI internationally; its support is [0,1]. Informality uses ILOSTAT national rates for both sexes aged 15 years and above in 2024. Adoption uses the equal-country mean for 24 economies in Eurostat's 2024 series E_AI_TANY: enterprises with at least ten persons employed, NACE C–J, L–N and 95.1, percent using any AI technology. Targets scale this mean by relative AIPI preparedness (Eurostat, 2025). Sources: parameter register and main article references.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 21,
+      "style": "Caption",
+      "text": "Table S2 Shared calibration inputs",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 22,
+      "style": "Note",
+      "text": "Exposures use regional fallbacks; scales and bounded PERT supports define the author-calibrated scenarios. Section S5 sets out their rationale; the parameter register records their provenance. These supports specify scenario ranges rather than empirical confidence intervals.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 23,
+      "style": "Heading2",
+      "text": "S1.3 Sensitivity to calibration",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 24,
+      "style": null,
+      "text": "The 15 percent PIT reference uses the simplified allocation convention in the Bachas et al. replication code, whose preferred construction adds further adjustments. Setting the allocation to zero or 30 percent at reference spending preserves all 480 annual B2 classifications. The extreme allocation of all PIT to non-labour income removes coverage for Chile moderate r1 ideal GMI; the other 479 classifications remain unchanged. The consumption reference and coefficient domain are defined in Section 4.1 of the main article; they provide a common scenario comparison across countries.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 25,
+      "style": null,
+      "text": "For Chile moderate r4, with α = 0.15 and kN = 0.5kW, annual B2 requires kW ≥ 0.4824 at the other reference inputs. Its recurring cost ceiling is 25.91 percent above assumed F. These margins must be evaluated jointly: the available operating budget depends on the spending response. The administrative comparators in the main article help define what a programme-specific cost estimate should include.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 26,
+      "style": null,
+      "text": "Across the seven registered distribution supports, pressure p ranges from −0.0300 to 0.1775, obtained at the 128 vertices per country. At reference fiscal coefficients, its endpoints yield three to five non-stress B2 crossings, versus four centrally. Chile moderate r4 retains annual coverage under pressure zero and both endpoints. Coverage also holds with the employee-compensation/GDP alternative after recalculating tax denominators and response indices. That alternative tests a different definition and source year from PWT. Holding the other reference financing inputs fixed, these labour contrasts move recovery between years 14 and 15. At the PWT anchor, jointly varying pressure and the standard fiscal coefficient domain gives F ceilings of 0.1241–0.5469 percent of no-AI GDP at year ten. Chile moderate r4 therefore has possible, but not uniform, coverage over this scenario domain.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 27,
+      "style": "Heading1",
+      "text": "S2 Reconciliation on matched inputs",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 28,
+      "style": null,
+      "text": "To explain the change in coverage between specifications, we hold constant 50,000 Chile moderate r0 draws, gains, factor-income allocation, benefits and operating-cost calibration. We first compare the original channel accounting with the reconciled reference, then separate installation from recurring expenditure. Installation remains an initial outlay in the financing account.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 29,
+      "style": "Caption",
+      "text": "Table S3 One sequential route through the specification bridge",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 30,
+      "style": "Note",
+      "text": "GMI ideal benchmark; 50,000 matched draws. The first seven rows use equivalent recurring costs including the three-year installation annuity. The final row excludes that annuity from annual coverage. Frequencies describe conditional draws, not policy success probabilities. Source: matched model calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 31,
+      "style": null,
+      "text": "The initial central conversion is 0.08933850; the final value is 0.13487092. Across 480 central cells, non-stress B2 crossings change from 0/360 to 4/360; stress crossings remain 10/120. These counts are distinct from the matched-draw frequencies above.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 32,
+      "style": "Heading2",
+      "text": "S2.1 Contributions and interactions",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 33,
+      "style": null,
+      "text": "The seven groups are: destination VAT without an import discount; corporate exposure relative to its anchor; ordinary taxation retained on AI rents; 15 percent of PIT allocated to non-labour income; normalised regime responses; spending from actual disposable increments with the reference consumption closure; and separate installation. The consumption group includes removing the former exemption adjustment. The logistic distribution equation and operating-cost calibration are unchanged.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 34,
+      "style": null,
+      "text": "The 128 subsets and all 5,040 orders define an accounting decomposition. Averaging marginal contributions across orders allocates interactions among the seven groups. The resulting attribution depends on that grouping and measures arithmetic contributions rather than causal effects.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 35,
+      "style": "Caption",
+      "text": "Table S4 Allocation of the 26.418 percentage point change",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 36,
+      "style": "Note",
+      "text": "Exact average over orders. Normalisation has no effect in r0 but matters elsewhere. Installation contributes 15.298 points when applied last in Table S3 and 7.1878 points averaged over orders. Both descriptions reconcile the same endpoints. Source: all-subset calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 37,
+      "style": "Heading1",
+      "text": "S3 Joint transition sensitivity",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 38,
+      "style": null,
+      "text": "We cross the seven cases in the main tables with eleven macro vectors per country: ten joint annual observations from 2015–2024 and a diagnostic increasing interest by 2 percentage points and reducing nominal GDP growth by 2 points relative to 2024. The initial primary balance is unchanged in the additional diagnostic. Each vector is maintained over the path, with the 2024 debt target and a recalculated residual primary adjustment.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 39,
+      "style": "Caption",
+      "text": "Table S5 Transition sensitivity domain",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 40,
+      "style": "Note",
+      "text": "The design comprises 49,896 paths and 99,792 horizon observations, with author-defined cost multipliers and replacement intervals. Each replacement uses adjusted installation as a share of contemporaneous no-AI GDP, paid at year end, including the endpoint when applicable.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 41,
+      "style": null,
+      "text": "Holding benefit/GDP, adoption and productivity conventions fixed isolates the financing and primary-reserve effects of nominal growth. Each coefficient combination is maintained along its path; other macroeconomic feedbacks are held outside this comparison.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 42,
+      "style": "Heading2",
+      "text": "S3.1 Financing identities and denominators",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 43,
+      "style": null,
+      "text": "Let counterfactual nominal GDP grow at n from Y0 and initialise the nominal incremental balance D0 = I0Y0. With recurring costs F, investment It and benefits ct expressed as shares of contemporaneous no-AI GDP, the cash ledger obeys:",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 44,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 45,
+      "style": null,
+      "text": "The B2 account replaces ct by 1.1ct+s to reserve resources for the benefit margin and primary adjustment. It measures this appraisal requirement separately from programme cash spending and actual debt issuance. Dividing by Yt gives the balance in the main article. Principal transactions remain outside primary spending, and each replacement enters as a new investment.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 46,
+      "style": null,
+      "text": "For each horizon, the recurring frontier solves the linear equation DH(F) = 0. Minimum initial capital is the largest nonnegative discounted nominal balance, including the initial outlay:",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 47,
+      "style": null,
+      "text": "",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 48,
+      "style": null,
+      "text": "Funds earn the same rate charged on liabilities. Capital is measured against base-year GDP; balances and peak ratios use contemporaneous GDP. We report first recovery and recovery sustained within the 25-year evaluation window, censoring unrecovered paths at its end. Annual coverage evaluates recurring expenditure, with replacement recorded separately as investment.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 49,
+      "style": "Heading2",
+      "text": "S3.2 Outcomes under adverse financing",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 50,
+      "style": "Caption",
+      "text": "Table S6 Recovery and capital at the 25 year horizon",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 51,
+      "style": "Note",
+      "text": "All entries use the illustrative capture reference and B2 reserve. Base: 2024 macro, reference costs, no replacement. Adverse: interest +2 pp, growth −2 pp, F +25%, I +50%, triennial replacement. Capital is percent of 2024 GDP. M: moderate; S: disruptive stress; GMI: ideal. >25 denotes no return within the horizon. Source: joint sensitivity calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 52,
+      "style": null,
+      "text": "For Chile moderate r4, adverse annual coverage moves from year 9 to year 20. Without replacement, the adverse balance remains 4.1357 percent of year-25 GDP and capital reaches 12.9509 percent of base GDP. Triennial replacement increases those values to 5.7445 and 16.1092 percent. The reference recovery year 15 is therefore sensitive to joint financing conditions.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 53,
+      "style": "Heading2",
+      "text": "S3.3 Full diagnostic domain",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 54,
+      "style": "Caption",
+      "text": "Table S7 Range across the joint B2 domain at year 25",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 55,
+      "style": "Note",
+      "text": "Each case has 3,564 combinations: eleven macro vectors, nine F–I combinations, four replacement patterns and nine coefficient paths. Capital is percent of 2024 GDP. The bounds describe required resources across this diagnostic grid, with no confidence level or estimated probability attached. Borrowing capacity requires a separate assessment.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 56,
+      "style": null,
+      "text": "Maintaining each historical state for 25 years evaluates sustained exposure to its financing conditions. Programme appraisal can use these paths to assess documented costs and financing terms. Cash-account and ten-year results accompany the B2 comparison.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 57,
+      "style": "Heading1",
+      "text": "S4 Numerical stability and sensitivity",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 58,
+      "style": null,
+      "text": "Operational inverses use the specified positive search interval, ceiling and smoothing of adoption and exposure. The following exercises separate Monte Carlo variation from sensitivity to the joint input distribution and the accounting channels. Their scope is conditional model behaviour; predictive accuracy and causal reform effects require separate empirical designs.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 59,
+      "style": "Heading2",
+      "text": "S4.1 Sampling and joint assumptions",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 60,
+      "style": null,
+      "text": "Three seeds and nested samples of 5,000, 10,000, 25,000 and 50,000 draws assess numerical stability. Across the evaluated designs, the largest frequency change between 25,000 and 50,000 draws is 0.644 percentage points; the largest between-seed range at 50,000 is 0.964 points. The matched historical comparisons and the seven-group decomposition retain their main frequency ordering and contribution signs.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 61,
+      "style": null,
+      "text": "A common institutional factor pairs higher adoption, preparedness, productive exposure and corporate-base capacity with lower digital gaps and informality. Latent correlation parameters of 0.5 and 0.8 define nominal and stronger dependence scenarios. Reordering preserves each complete marginal sample of 50,000 draws and changes which values occur together. The correlations and their signs are assumed scenario parameters.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 62,
+      "style": null,
+      "text": "Stronger dependence changes conditional frequencies by up to 6.716 percentage points relative to independence and 2.442 points relative to the nominal scenario across the recorded metrics. For Chile moderate GMI, the three-seed B2 range moves from 26.046–26.624 to 30.136–30.466 percent under r0, but from 63.214–63.584 to 60.926–61.410 percent under r4. The ranking of parameter associations also varies with the assumed dependence structure.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 63,
+      "style": "Heading2",
+      "text": "S4.2 Structural and source contrasts",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 64,
+      "style": null,
+      "text": "The joint no-AI anchor q = g = 0 eliminates incremental receipts. At positive productive exposure of 0.035, all four non-stress reference B2 crossings disappear, while seven disruptive-scenario crossings remain. Chile ideal GMI under disruptive r0 has an exposure threshold of approximately 0.03422560. Exposure of 0.035 remains above that threshold, allowing coverage in this stress case.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 65,
+      "style": null,
+      "text": "Removing the labour, capital or VAT channel, with disposable income and consumption recomputed, eliminates the four non-stress reference crossings. Removing only the additional AI-rent levy does not. Scaling aggregate tax anchors with comparable GRD/OECD ratios preserves the 480 B2 classifications. Because this substitution holds tax composition fixed, the result concerns sensitivity to aggregate tax levels.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 66,
+      "style": "Heading2",
+      "text": "S4.3 Reconstruction scope",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 67,
+      "style": null,
+      "text": "Version 2.0.0 of the replication package (Zenodo, DOI 10.5281/zenodo.24257720) reconstructs the aggregate model from frozen country-level inputs, the parameter register and scripts for fiscal conversion, frontiers, financing and sensitivities. The complete runner also reconstructs household-cost comparisons in a separate ENAHO/CASEN module, harmonising income definitions and survey weights. Original survey files must be obtained separately from the providers and match the recorded hashes; individual records are not redistributed. Source notices specify input provenance and reuse terms.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 68,
+      "style": "Heading1",
+      "text": "S5 Calibration rationale",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 69,
+      "style": null,
+      "text": "Complementary investment and responses of taxable income motivate the channels in the main article. Evidence from Norwegian lottery windfalls supports allowing spending responses to differ across households. For the country comparisons, kN = 0.5kW is an illustrative calibration rather than a national empirical estimate.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 70,
+      "style": null,
+      "text": "Composite-indicator research motivates sensitivity to constructed scores and international comparisons (Saisana et al., 2005; Høyland et al., 2012), while alternative definitions affect measured informality in Latin American surveys (Gasparini and Tornarolli, 2007). For these measurement sensitivities, we specify PERT distributions with supports of ±0.05 for index scores and ±0.04 for informality. Their widths are author choices.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 71,
+      "style": null,
+      "text": "Delivery-system costing distinguishes installation, recurring operation and asset renewal. Programme-specific evidence must determine their magnitudes and useful lives. Cash-management research motivates examining payment timing; the resulting capital requirement and recovery year depend on the financing conditions specified in S3.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 72,
+      "style": null,
+      "text": "Decision analysis under deep uncertainty motivates exploring outcomes across plausible futures (Lempert et al., 2003). The joint grid combines interest and growth changes, cost and installation multipliers, replacement intervals and a 10 percent benefit margin. These appraisal choices identify conditions under which a commitment needs additional funding or stronger evidence.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 73,
+      "style": "Heading2",
+      "text": "Supplementary references",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 74,
+      "style": null,
+      "text": "Eurostat (2025) Usage of AI technologies increasing in EU enterprises. 23 January. https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20250123-3.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 75,
+      "style": null,
+      "text": "Gasparini, L. and Tornarolli, L. (2007) Labor informality in Latin America and the Caribbean: Patterns and trends from household survey microdata. CEDLAS Working Paper 46, Universidad Nacional de La Plata. https://sedici.unlp.edu.ar/handle/10915/3605.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 76,
+      "style": null,
+      "text": "Høyland, B., Moene, K., and Willumsen, F. (2012) The tyranny of international index rankings. Journal of Development Economics 97(1): 1–14. DOI: 10.1016/j.jdeveco.2011.01.007.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 77,
+      "style": null,
+      "text": "Lempert, R.J., Popper, S.W., and Bankes, S.C. (2003) Shaping the Next One Hundred Years: New Methods for Quantitative, Long-Term Policy Analysis. RAND, MR-1626-RPC. DOI: 10.7249/MR1626.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 78,
+      "style": null,
+      "text": "Saisana, M., Saltelli, A., and Tarantola, S. (2005) Uncertainty and sensitivity analysis techniques as tools for the quality assessment of composite indicators. Journal of the Royal Statistical Society: Series A 168(2): 307–323. DOI: 10.1111/j.1467-985X.2005.00350.x.",
+      "math_count": 0
+    }
+  ],
+  "tables": [
+    {
+      "table_index": 0,
+      "rows": [
+        [
+          "Country",
+          "Initial share ℓ",
+          "RST proxy"
+        ],
+        [
+          "CHL",
+          "0.439614",
+          "0.500000"
+        ],
+        [
+          "PER",
+          "0.447212",
+          "0.397590"
+        ],
+        [
+          "COL",
+          "0.495211",
+          "0.698795"
+        ],
+        [
+          "MEX",
+          "0.360264",
+          "0.596386"
+        ]
+      ]
+    },
+    {
+      "table_index": 1,
+      "rows": [
+        [
+          "Parameter",
+          "Central",
+          "Support"
+        ],
+        [
+          "Automation exposure",
+          "0.035",
+          "0.020–0.050"
+        ],
+        [
+          "Augmentation exposure",
+          "0.110",
+          "0.080–0.140"
+        ],
+        [
+          "Displacement scale δs",
+          "0.500",
+          "0.250–1.000"
+        ],
+        [
+          "Augmentation scale ψs",
+          "0.500",
+          "0.250–1.000"
+        ],
+        [
+          "Reskilling scale ζs",
+          "0.500",
+          "0.250–1.000"
+        ],
+        [
+          "Adjustment scale λLS",
+          "0.500",
+          "0.250–1.000"
+        ]
+      ]
+    },
+    {
+      "table_index": 2,
+      "rows": [
+        [
+          "Cumulative change",
+          "B2 frequency (%)",
+          "Change (pp)"
+        ],
+        [
+          "Initial specification",
+          "0.020",
+          "—"
+        ],
+        [
+          "VAT at destination",
+          "1.748",
+          "+1.728"
+        ],
+        [
+          "Relative CIT base",
+          "8.050",
+          "+6.302"
+        ],
+        [
+          "Ordinary tax on AI rents",
+          "9.222",
+          "+1.172"
+        ],
+        [
+          "PIT allocation",
+          "9.064",
+          "-0.158"
+        ],
+        [
+          "Normalised response",
+          "9.064",
+          "+0.000"
+        ],
+        [
+          "Disposable consumption",
+          "11.140",
+          "+2.076"
+        ],
+        [
+          "Separate installation",
+          "26.438",
+          "+15.298"
+        ]
+      ]
+    },
+    {
+      "table_index": 3,
+      "rows": [
+        [
+          "Change",
+          "Mean (pp)",
+          "Order range (pp)"
+        ],
+        [
+          "VAT at destination",
+          "+9.5895",
+          "+1.682 to +19.054"
+        ],
+        [
+          "Relative CIT base",
+          "+7.2761",
+          "+1.042 to +14.726"
+        ],
+        [
+          "Ordinary tax on AI rents",
+          "+0.9335",
+          "+0.016 to +2.096"
+        ],
+        [
+          "PIT allocation",
+          "-0.0902",
+          "-0.366 to +0.000"
+        ],
+        [
+          "Normalised response",
+          "+0.0000",
+          "+0.000 to +0.000"
+        ],
+        [
+          "Disposable consumption",
+          "+1.5214",
+          "+0.012 to +3.590"
+        ],
+        [
+          "Separate installation",
+          "+7.1878",
+          "+0.536 to +15.410"
+        ]
+      ]
+    },
+    {
+      "table_index": 4,
+      "rows": [
+        [
+          "Input",
+          "Values"
+        ],
+        [
+          "Recurring costs F",
+          "0.75, 1 and 1.25 × reference"
+        ],
+        [
+          "Initial installation I",
+          "0.5, 1 and 1.5 × reference"
+        ],
+        [
+          "Replacement interval",
+          "None, 2, 3 or 5 years"
+        ],
+        [
+          "Fiscal coefficients",
+          "Reference and eight fixed vertices"
+        ],
+        [
+          "Accounts",
+          "Cash and B2 reserve"
+        ],
+        [
+          "Horizons",
+          "10 and 25 years"
+        ]
+      ]
+    },
+    {
+      "table_index": 5,
+      "rows": [
+        [
+          "Case",
+          "Return yearbase / adverse",
+          "Initial capital (%)base / adverse"
+        ],
+        [
+          "Chile M r0 GMI",
+          "18 / >25",
+          "3.3362 / 22.0188"
+        ],
+        [
+          "Chile M r4 GMI",
+          "15 / >25",
+          "2.3883 / 16.1092"
+        ],
+        [
+          "Chile S r0 GMI",
+          "6 / 14",
+          "0.7489 / 4.5136"
+        ],
+        [
+          "Peru S r0 pension",
+          "25 / >25",
+          "13.0874 / 37.4068"
+        ],
+        [
+          "Peru S r4 pension",
+          "19 / >25",
+          "8.9804 / 27.4859"
+        ],
+        [
+          "Colombia S r4 pension",
+          ">25 / >25",
+          "30.8776 / 63.0305"
+        ],
+        [
+          "Mexico S r4 GMI",
+          ">25 / >25",
+          "40.8822 / 54.1470"
+        ]
+      ]
+    },
+    {
+      "table_index": 6,
+      "rows": [
+        [
+          "Case",
+          "Initial capitalmin–max (%)",
+          "No recoverypaths / total"
+        ],
+        [
+          "Chile M r0 GMI",
+          "1.33–384.21",
+          "2330 / 3564"
+        ],
+        [
+          "Chile M r4 GMI",
+          "1.00–338.82",
+          "1970 / 3564"
+        ],
+        [
+          "Chile S r0 GMI",
+          "0.29–160.93",
+          "486 / 3564"
+        ],
+        [
+          "Peru S r0 pension",
+          "1.19–81.53",
+          "1848 / 3564"
+        ],
+        [
+          "Peru S r4 pension",
+          "0.84–80.17",
+          "1129 / 3564"
+        ],
+        [
+          "Colombia S r4 pension",
+          "2.02–97.31",
+          "1488 / 3564"
+        ],
+        [
+          "Mexico S r4 GMI",
+          "4.07–59.97",
+          "1758 / 3564"
+        ]
+      ]
+    }
+  ],
+  "tracked_insertions": 0,
+  "tracked_deletions": 0
+}

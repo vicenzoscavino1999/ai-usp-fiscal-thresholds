@@ -1,0 +1,15 @@
+country_id,scenario_id,regime_id,policy_variant_id,stratum,min,max
+CHL,mid,r0,GMI:GMI_ideal_aggregate,lower_factor_decile,0.0008,0.0026
+CHL,mid,r0,GMI:GMI_ideal_aggregate,upper_factor_decile,0.8002,0.8072
+CHL,mid,r4,GMI:GMI_ideal_aggregate,lower_factor_decile,0.0792,0.0816
+CHL,mid,r4,GMI:GMI_ideal_aggregate,upper_factor_decile,0.9736,0.9778
+CHL,stress,r0,GMI:GMI_ideal_aggregate,lower_factor_decile,0.9998,1.0
+CHL,stress,r0,GMI:GMI_ideal_aggregate,upper_factor_decile,1.0,1.0
+COL,stress,r4,PEN,lower_factor_decile,0.0,0.0
+COL,stress,r4,PEN,upper_factor_decile,0.0168,0.0192
+MEX,stress,r4,GMI:GMI_ideal_aggregate,lower_factor_decile,0.0,0.0
+MEX,stress,r4,GMI:GMI_ideal_aggregate,upper_factor_decile,0.0,0.0
+PER,stress,r0,PEN,lower_factor_decile,0.0,0.0
+PER,stress,r0,PEN,upper_factor_decile,0.3402,0.3668
+PER,stress,r4,PEN,lower_factor_decile,0.0008,0.0012
+PER,stress,r4,PEN,upper_factor_decile,0.818,0.8306

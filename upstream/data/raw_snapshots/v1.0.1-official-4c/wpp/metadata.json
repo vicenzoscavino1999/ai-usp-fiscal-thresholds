@@ -1,0 +1,33 @@
+{
+  "source_id": "UN_WPP",
+  "download_date": "2026-07-08T22:26:59.203302+00:00",
+  "source_url": "https://population.un.org/wpp/",
+  "script_name": "14_download_wpp_projections.py",
+  "script_version": "0.1.1-stage1",
+  "status": "ok",
+  "query_or_endpoint": "https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz",
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "2024-2035",
+  "raw_file_hash": "0d8b8046088ec3db0b9b413da3c9e5231e9efa7d8f80d202f29e3ed36b59ea9a",
+  "download_file_hash": "31804a296b663716236cd26c46415271cc9386fb3b2be56aff6467ad32283dc8",
+  "filter_applied": {
+    "ISO3_code": [
+      "PER",
+      "CHL",
+      "COL",
+      "MEX"
+    ],
+    "Time": [
+      2024,
+      2035
+    ],
+    "Variant": "Medium",
+    "file": "WPP2024_PopulationBySingleAgeSex_Medium_2024-2100.csv.gz"
+  },
+  "notes": "UN WPP 2024 bulk CSV, Standard Projections, single-age/sex, medium variant. No five-year age groups or 65+/15-64/18+ aggregates are constructed in raw ingest."
+}

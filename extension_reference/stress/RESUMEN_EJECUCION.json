@@ -1,0 +1,32 @@
+{
+  "execution_status": "PASS",
+  "frequency_convergence_status": "PASS",
+  "threshold": 0.02,
+  "max_25k_50k_frequency_difference": 0.006440000000000001,
+  "max_between_seed_frequency_range": 0.007940000000000003,
+  "marginals_exact": true,
+  "marginal_vectors": 72,
+  "driver_top3_status": "PASS",
+  "driver_pairs": 21,
+  "driver_top3_identical": 21,
+  "summary_rows": 51840,
+  "baseline_rows_reproduced": 51840,
+  "checks": 609,
+  "elapsed_seconds": 92.94185557899993,
+  "latent_rho": 0.8,
+  "seeds": [
+    20261114,
+    20261215,
+    20261316
+  ],
+  "sizes": [
+    5000,
+    10000,
+    25000,
+    50000
+  ],
+  "model_changed": false,
+  "paper_changed": false,
+  "unknown_coefficients_randomized": false,
+  "interpretation": "Numerical convergence is distinct from sensitivity across dependence assumptions"
+}

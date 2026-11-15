@@ -1,0 +1,31 @@
+{
+  "execution_status": "PASS",
+  "frequency_convergence_status": "PASS",
+  "frequency_threshold": 0.02,
+  "max_25k_50k_difference": 0.005199999999999982,
+  "max_between_seed_range": 0.007740000000000025,
+  "history_modes": 31,
+  "history_rows": 744,
+  "bridge_rows": 1536,
+  "attribution_rows": 252,
+  "seeds": [
+    20261114,
+    20261215,
+    20261316
+  ],
+  "sizes": [
+    5000,
+    10000,
+    25000,
+    50000
+  ],
+  "headline_capture_order_preserved": true,
+  "attribution_signs_preserved": true,
+  "attribution_ranking_identical": true,
+  "all_guards_passed": true,
+  "guard_checks": 146,
+  "elapsed_seconds": 17.460099372,
+  "model_changed": false,
+  "paper_changed": false,
+  "scope": "B_MATCHED_HISTORY + B_BRIDGE; independent matched sampler; stress block and public integration remain separate"
+}

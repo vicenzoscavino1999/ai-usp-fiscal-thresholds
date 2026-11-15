@@ -1,0 +1,606 @@
+[
+  {
+    "check": "full_support:20261114",
+    "passed": true
+  },
+  {
+    "check": "cost_convention:20261114",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_positive",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_positive",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_tax_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:grd_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:grd_tax_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:grd_tax_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:hist_total_revenue_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:grd_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:grd_total_revenue_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261114:grd_total_revenue_nonresource",
+    "passed": true
+  },
+  {
+    "check": "baseline_gain_exact",
+    "passed": true
+  },
+  {
+    "check": "baseline_original_capture_exact",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_positive",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_positive",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_tax_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:grd_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:grd_tax_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:grd_tax_nonresource",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:hist_total_revenue_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:grd_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:grd_total_revenue_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "baseline_history_vector:grd_total_revenue_nonresource",
+    "passed": true
+  },
+  {
+    "check": "baseline_table5:keys",
+    "passed": true,
+    "rows": 62
+  },
+  {
+    "check": "baseline_table5:n",
+    "passed": true
+  },
+  {
+    "check": "baseline_table5:crossings",
+    "passed": true
+  },
+  {
+    "check": "baseline_table5:frequency",
+    "passed": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "check": "baseline_table5:mc95_low",
+    "passed": true,
+    "max_abs_difference": 1.1102230246251565e-16
+  },
+  {
+    "check": "baseline_table5:mc95_high",
+    "passed": true,
+    "max_abs_difference": 1.1102230246251565e-16
+  },
+  {
+    "check": "baseline_table5:M_p50",
+    "passed": true,
+    "max_abs_difference": 8.326672684688674e-17
+  },
+  {
+    "check": "baseline_table5:F_recurring",
+    "passed": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "check": "baseline_table5:benefits",
+    "passed": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "check": "baseline_bridge:keys",
+    "passed": true,
+    "rows": 128
+  },
+  {
+    "check": "baseline_bridge:n",
+    "passed": true
+  },
+  {
+    "check": "baseline_bridge:crossings",
+    "passed": true
+  },
+  {
+    "check": "baseline_bridge:B2_frequency_percent",
+    "passed": true,
+    "max_abs_difference": 0.0
+  },
+  {
+    "check": "baseline_bridge:R_mean_percent_GDP",
+    "passed": true,
+    "max_abs_difference": 5.551115123125783e-17
+  },
+  {
+    "check": "baseline_bridge:balance_mean_pp_GDP",
+    "passed": true,
+    "max_abs_difference": 9.71445146547012e-17
+  },
+  {
+    "check": "baseline_bridge:R_p50_percent_GDP",
+    "passed": true,
+    "max_abs_difference": 5.551115123125783e-17
+  },
+  {
+    "check": "baseline_bridge:F_mean_percent_GDP",
+    "passed": true,
+    "max_abs_difference": 5.551115123125783e-17
+  },
+  {
+    "check": "baseline_bridge:M_mean",
+    "passed": true,
+    "max_abs_difference": 8.326672684688674e-17
+  },
+  {
+    "check": "baseline_shapley:keys",
+    "passed": true,
+    "rows": 21
+  },
+  {
+    "check": "baseline_shapley:allocation",
+    "passed": true,
+    "max_abs_difference": 1.7763568394002505e-15
+  },
+  {
+    "check": "baseline_shapley:min_order_marginal",
+    "passed": true,
+    "max_abs_difference": 8.326672684688674e-17
+  },
+  {
+    "check": "baseline_shapley:max_order_marginal",
+    "passed": true,
+    "max_abs_difference": 4.440892098500626e-16
+  },
+  {
+    "check": "baseline_shapley:initial",
+    "passed": true,
+    "max_abs_difference": 5.551115123125783e-17
+  },
+  {
+    "check": "baseline_shapley:final",
+    "passed": true,
+    "max_abs_difference": 3.469446951953614e-17
+  },
+  {
+    "check": "full_support:20261215",
+    "passed": true
+  },
+  {
+    "check": "cost_convention:20261215",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_positive",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_positive",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_tax_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:grd_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:grd_tax_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:grd_tax_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:hist_total_revenue_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:grd_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:grd_total_revenue_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261215:grd_total_revenue_nonresource",
+    "passed": true
+  },
+  {
+    "check": "constants:20261215",
+    "passed": true
+  },
+  {
+    "check": "full_support:20261316",
+    "passed": true
+  },
+  {
+    "check": "cost_convention:20261316",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_positive",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_positive",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_2010plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_2015plus",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_no2020_21",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_no2008_09",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_min_g_1pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_min_g_2pct",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_no_winsor",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_mixture_empirical",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_tax_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:grd_tax_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:grd_tax_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:grd_tax_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:hist_total_revenue_common_grd_years",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:grd_total_revenue_mixture",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:grd_total_revenue_gross_common_nonresource",
+    "passed": true
+  },
+  {
+    "check": "finite_history:20261316:grd_total_revenue_nonresource",
+    "passed": true
+  },
+  {
+    "check": "constants:20261316",
+    "passed": true
+  }
+]

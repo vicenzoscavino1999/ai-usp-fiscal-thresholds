@@ -1,0 +1,189 @@
+{
+  "scope": "Current Word links to core and separately reconstructed survey outputs.",
+  "links": [
+    {
+      "path": "extensions/SCIENTIFIC_SCOPE.md",
+      "kind": "packaged_source"
+    },
+    {
+      "path": "extensions/convergence/resultados/ANALISIS_CONTROL_EXPOSICION.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "extensions/convergence/resultados/RESUMEN_DIAGNOSTICOS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "extensions/convergence/resultados/RESUMEN_MC.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "extensions/paired/resultados/RESUMEN_EJECUCION.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "extensions/stress/resultados/RESUMEN_EJECUCION.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "extensions/stress/resultados/RESUMEN_INTERPRETACION.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "extensions/stress/resultados/RESUMEN_SIETE_CASOS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/conciliacion_fiscal_02/resultados/ANCLAS_RECONCILIADAS_2024.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/conciliacion_fiscal_02/resultados/CANALES_CONCILIADOS_80.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/costos_transicion_03/resultados/FRONTERAS_ANUALES_480.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/costos_transicion_03/resultados/FRONTERAS_MC_5000.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/costos_transicion_03/resultados/FRONTERAS_TRANSICION.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/costos_transicion_03/resultados/INVERSAS_RECALCULADAS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/costos_transicion_03/resultados/SENDAS_FINANCIACION.parquet",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/costos_transicion_03/resultados/SENSIBILIDAD_PENSION_COLOMBIA.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07d/evidencia/insumos/values.parquet",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07e/resultados/CASOS_PUBLICABLES.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07e/resultados/COMPARADORES_CAPTURA_ACTUALIZADOS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07e/resultados/MACROESCENARIOS_ACTUALIZADOS_4800.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07e/resultados/RESUMEN_COBERTURA.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07e/resultados/RESUMEN_MACROESCENARIOS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_1_matematica/CAPTURA_MEDIA_MARGINAL_Y_DISTRIBUCION.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_1_matematica/PARAMETROS_PARTICIPACION_LABORAL.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_2_descomposicion/ATRIBUCION_SOBRE_TODOS_LOS_ORDENES.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_2_descomposicion/PUENTE_CHILE_50000_128.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_2_descomposicion/SECUENCIA_CHILE.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_3_transicion/COMBINACIONES_ILUSTRATIVAS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_3_transicion/RANGOS_DOMINIO_DIAGNOSTICO.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07g/bloque_3_transicion/TRAYECTORIAS_CONFIGURACION.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07h/resultados/ENVOLVENTES_CASOS_7.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07h/resultados/FINANCIACION_DISTRIBUCION_56.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07h/resultados/UMBRALES_CASOS_7.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07l/resultados/CELDAS_FINANCIACION_VERIFICADAS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07l/resultados/CELDAS_RESULTADOS_VERIFICADAS.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07l/resultados/TITULARES_CALIBRACION.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07l/resultados/VERIFICACION_COMPLEMENTOS.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07l/resultados/VERIFICACION_FINANCIACION.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07l/resultados/VERIFICACION_NUCLEO.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "revision_jpm_v2/paso_07l/resultados/VERIFICACION_RESULTADOS.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "run_logs/COMPARISON.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "run_logs/COMPARISON_COMPLETE.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "run_logs/PACKAGE_CHECK.json",
+      "kind": "generated_by_package_verifier"
+    },
+    {
+      "path": "survey_results/SURVEY_REPRODUCTION.json",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "survey_results/gmimicro_chl_cost_comparison_baseline-official-v3.csv",
+      "kind": "generated_by_reproduction"
+    },
+    {
+      "path": "survey_results/gmimicro_cost_comparison_baseline-official-v3.csv",
+      "kind": "generated_by_reproduction"
+    }
+  ]
+}

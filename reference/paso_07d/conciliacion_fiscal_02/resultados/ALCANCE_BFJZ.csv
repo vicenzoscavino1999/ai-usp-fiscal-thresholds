@@ -1,0 +1,5 @@
+country_id,ETR_first_year,ETR_last_year,ETR_L_last,ETR_K_last,PIT_aux_last_year,PIT_aux_K_share,PIT_threshold_imputed,use
+PER,1965,2018,0.078222021,0.13115671,2019,0.23339726030826569,1.0,Historical methodological comparison only; ETR uses factor-price NDP; no direct replacement of 2024 GDP anchors.
+CHL,1965,2018,0.081950486,0.21729968,2019,0.1883833259344101,1.0,Historical methodological comparison only; ETR uses factor-price NDP; no direct replacement of 2024 GDP anchors.
+COL,1965,2018,0.07162448,0.2327638,2019,0.2502080202102661,1.0,Historical methodological comparison only; ETR uses factor-price NDP; no direct replacement of 2024 GDP anchors.
+MEX,1965,2018,0.13333513,0.10750633,2019,0.1633007973432541,1.0,Historical methodological comparison only; ETR uses factor-price NDP; no direct replacement of 2024 GDP anchors.

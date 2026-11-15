@@ -1,0 +1,5 @@
+country_id,status,matched_year,ratio_grd_oecd,total_candidate_rows,excluded_missing_or_implausible,latest_unique_value_pairs,grd_tax_including_sc_gdp,oecd_tax_including_sc_gdp,role
+PER,AVAILABLE_AGGREGATE_CONTRAST,2022,1.023472987933991,46,23,1,0.19219047111271023,0.187782651206722,aggregate ratio only; tax composition and current economic inputs held fixed; not a complete OECD-free rebuild
+CHL,AVAILABLE_AGGREGATE_CONTRAST,2023,0.999030134203901,48,24,1,0.20612407236608726,0.206324179130334,aggregate ratio only; tax composition and current economic inputs held fixed; not a complete OECD-free rebuild
+COL,AVAILABLE_AGGREGATE_CONTRAST,2023,1.1422644956844643,48,25,1,0.25216030534351147,0.220754743140653,aggregate ratio only; tax composition and current economic inputs held fixed; not a complete OECD-free rebuild
+MEX,AVAILABLE_AGGREGATE_CONTRAST,2023,1.0010873997062946,48,24,1,0.17749806765940213,0.17730526596526702,aggregate ratio only; tax composition and current economic inputs held fixed; not a complete OECD-free rebuild

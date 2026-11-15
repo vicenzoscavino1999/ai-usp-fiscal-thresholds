@@ -1,0 +1,834 @@
+[
+  {
+    "original_id": "ASPIRE_LITERATURE_ASSUMPTION",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "documented alias or modelling convention",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "AUTHOR_CONVENTION_4A",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "documented alias or modelling convention",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "AUTHOR_REVIEW_PENDING_NATIONAL_ACCOUNTS",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "AUTHOR_SIGNATURE_2026_07_09",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "CHL_GMI_ideal_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "CHL_GMI_loaded_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "CHL_MUT_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "CHL_PBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "CHL_PEN_2024_OFFICIAL",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "SP_CHILE_PGU_2024",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "CHL_UBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "COL_GMI_ideal_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "COL_GMI_loaded_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "COL_MUT_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "COL_PBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "COL_PEN_2024_OFFICIAL",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PROSPERIDAD_SOCIAL_COLOMBIA_MAYOR_2024",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "COL_UBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "FRONTIER_BENCHMARK",
+    "catalogue_ids": [
+      "FRONTIER_BENCHMARK"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "Gasparini_Tornarolli_2007_CEDLAS_WP46",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "Gasparini_Tornarolli_2009_followup",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "Gmyrek_Berg_Bescond_2023_ILO_WP96",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "Hoyland_Moene_Willumsen_2012_JDE",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "ILOSTAT",
+    "catalogue_ids": [
+      "ILOSTAT"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "ILO_WP140_2025",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "IMF_AIPI_DATA360",
+    "catalogue_ids": [
+      "IMF_AIPI_DATA360"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "IMF_AIPI_NOTE_COMPONENTS",
+    "catalogue_ids": [
+      "IMF_AIPI_NOTE_COMPONENTS"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "provenance/variable_source_map.parquet"
+    ]
+  },
+  {
+    "original_id": "IMF_WEO_GFS",
+    "catalogue_ids": [
+      "IMF_WEO_GFS"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "ITU_DATAHUB",
+    "catalogue_ids": [
+      "ITU_DATAHUB_WDI_FALLBACK"
+    ],
+    "kind": "documented alias or modelling convention",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "provenance/variable_source_map.parquet"
+    ]
+  },
+  {
+    "original_id": "MEX_GMI_ideal_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "MEX_GMI_loaded_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "MEX_MUT_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "MEX_PBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "MEX_PEN_2024_OFFICIAL",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "BIENESTAR_MEXICO_ADULTOS_MAYORES_2024",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "MEX_UBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "OECD2025G7",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "OECD_MICRO_TO_MACRO",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "OECD_REVSTAT_LAC",
+    "catalogue_ids": [
+      "OECD_REVSTAT_LAC"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "OOKLA_SPEEDTEST_OPEN_DATA",
+    "catalogue_ids": [
+      "OOKLA_SPEEDTEST_OPEN_DATA"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "provenance/variable_source_map.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_ADOPTION_MODULE",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "documented alias or modelling convention",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_APP_FISCAL_CONVERSION",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_LAC_AUTOMATION_RISK_ANCHOR",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "documented alias or modelling convention",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_MASTER_CALIBRATION_MATRIX",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_SEC_10_4",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_SEC_10_6",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_SEC_PARAMETERS",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_TABLE_PHI_SCENARIO_LADDER",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_TABLE_PHI_SCENARIO_LADDER_STRESS_DIAGNOSTIC",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PAPER_TRANSLATION_GRID",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PER_GMI_ideal_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PER_GMI_loaded_aggregate_2024",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PER_MUT_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PER_PBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PER_PEN_2024_OFFICIAL",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "MIDIS_PENSION65",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PER_UBI_2024_ASSUMED_ETA",
+    "catalogue_ids": [
+      "AUTHOR_MODEL",
+      "PIP",
+      "WDI",
+      "UN_WPP"
+    ],
+    "kind": "generated policy-parameter identifier; aggregate reconstruction",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PIP",
+    "catalogue_ids": [
+      "PIP"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/variable_source_map.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_01_02",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "documented alias or modelling convention",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_01_SEC_14_6",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_10_10",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_10_6",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_10_8",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_14_2",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_15_1",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_7_3",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "documented alias or modelling convention",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_7_4_1",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_7_4_2",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PLAN_02_SEC_7_7",
+    "catalogue_ids": [
+      "AUTHOR_MODEL"
+    ],
+    "kind": "project modelling convention; retains original label",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "PWT_10_01",
+    "catalogue_ids": [
+      "PWT_10_01"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "Saisana_Saltelli_Tarantola_2005_JRSSA",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "UN_WPP",
+    "catalogue_ids": [
+      "UN_WPP"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/variable_source_map.parquet"
+    ]
+  },
+  {
+    "original_id": "WDI",
+    "catalogue_ids": [
+      "WDI"
+    ],
+    "kind": "source catalogue identifier",
+    "found_in": [
+      "provenance/assumption_registry.parquet",
+      "provenance/calibrated_parameter_registry.parquet",
+      "provenance/variable_source_map.parquet",
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "acemoglu2024simple",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "brollo2024fiscal",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "filippucci2024miracle",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  },
+  {
+    "original_id": "oecd2025g7",
+    "catalogue_ids": [
+      "LITERATURE_CONTEXT"
+    ],
+    "kind": "bibliographic citation; not a bundled data provider",
+    "found_in": [
+      "reference_inputs/values.parquet"
+    ]
+  }
+]

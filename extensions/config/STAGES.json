@@ -1,0 +1,17 @@
+{
+  "core_stages": 28,
+  "added": [
+    "extensions/convergence/scripts/convergencia_v2.py",
+    "extensions/convergence/scripts/diagnosticos_v2.py",
+    "extensions/convergence/scripts/verificar_convergencia_v2.py",
+    "extensions/paired/scripts/ejecutar_emparejados_v2.py",
+    "extensions/paired/scripts/verificar_emparejados_v2.py",
+    "extensions/stress/scripts/ejecutar_estres_dependencia_v2.py",
+    "extensions/stress/scripts/verificar_estres_dependencia_v2.py",
+    "extensions/stress/scripts/resumir_estres_v2.py",
+    "extensions/scope/scripts/derivar_alcance_v2.py",
+    "extensions/scope/scripts/registrar_alcance_integrado.py",
+    "verify_all.py"
+  ],
+  "total": 39
+}

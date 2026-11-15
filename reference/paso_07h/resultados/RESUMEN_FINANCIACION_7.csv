@@ -1,0 +1,8 @@
+case_id,country_id,scenario_id,regime_id,policy_variant_id,first_annual_min,first_annual_max,return_min,return_max,censored_paths,capital_min,capital_max
+0,CHL,mid,r0,GMI:GMI_ideal_aggregate,11.0,12.0,17.0,18.0,0,0.0306704822281968,0.0349212965650655
+1,CHL,mid,r4,GMI:GMI_ideal_aggregate,9.0,9.0,14.0,15.0,0,0.0216142671407719,0.0249305866052015
+2,CHL,stress,r0,GMI:GMI_ideal_aggregate,4.0,4.0,6.0,6.0,0,0.0068962737904083,0.0078065493845341
+3,PER,stress,r0,PEN,15.0,16.0,25.0,25.0,4,0.1279800311184737,0.1415792704280035
+4,PER,stress,r4,PEN,12.0,12.0,19.0,20.0,0,0.0876067155308723,0.0966347730677835
+5,COL,stress,r4,PEN,22.0,23.0,,,8,0.3075782999102804,0.3223752385406599
+6,MEX,stress,r4,GMI:GMI_ideal_aggregate,,,,,8,0.4013416850311577,0.4148958459760518

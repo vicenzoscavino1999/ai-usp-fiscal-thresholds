@@ -1,0 +1,46 @@
+{
+  "role": "Explicit post-revision scope decisions; numeric statements are gated by regenerated evidence. Not preregistered statistical hypotheses.",
+  "definitions": [
+    [
+      "H1",
+      "MIXED",
+      "ASSESSED_CONDITIONALLY",
+      "El margen disminuye con el compromiso total (1.200 pares); el orden nominal de beneficios se cumple en 100 de 160 comparaciones de diseño, con repeticiones por régimen y variante. No existe un orden universal PEN/MUT < GMI < PBI < UBI.",
+      "H1_MONOTONICIDAD_COMPROMISO.csv;H1_ORDEN_NOMINAL_POLITICAS.csv",
+      "Se retiene la propiedad presupuestaria condicional y se descarta el orden estricto como afirmación general."
+    ],
+    [
+      "H2",
+      "NOT_TESTABLE",
+      "NOT_IDENTIFIED_IN_CURRENT_DESIGN",
+      "E_prod central es regional y común; el target de adopción determina q tras re-invertir mu. No se identifica una comparación empírica entre preparación y exposición país-específica.",
+      "../evidencia/main_contenido_vigente.json;H3_MARGEN_ADOPCION_80.csv",
+      "Se conserva explícitamente NOT_TESTABLE en el margen entre países, conforme al propio plan original."
+    ],
+    [
+      "H3",
+      "NOT_TESTABLE",
+      "NOT_IDENTIFIED_AS_TWO_CHANNEL_CLAIM",
+      "Retirar informalidad sólo del módulo de adopción cambia el techo, pero deja q y los ingresos iguales en los 80 contextos centrales. El efecto fiscal no se separa de las anclas observadas sin un contrafactual tributario adicional.",
+      "H3_MARGEN_ADOPCION_80.csv",
+      "Cambia la etiqueta histórica MIXED por NOT_TESTABLE para la proposición conjunta. La inactividad del margen de adopción sí fue comprobada; no se inventa un efecto tributario de informalidad."
+    ],
+    [
+      "H4",
+      "HOLDS",
+      "ASSESSED_CONDITIONALLY",
+      "Al comparar r1–r4 con r0 en 384 filas, se ganan cuatro cruces B2 y no se pierden cruces centrales. Es sensibilidad dentro del modelo, no un efecto causal de reformas.",
+      "H4_COMPARACION_REGIMENES_384.csv",
+      "Se conserva la afirmación de dependencia del régimen. No se atribuye el cambio sólo a rentas IA."
+    ],
+    [
+      "H5",
+      null,
+      "RETIRED_LEGACY_CLASSIFICATION_RULE",
+      "La regla histórica P90/fragilidad se conserva en el archivo previo. V2 presenta R/g con intercepto distributivo, comparadores históricos separados y cobertura en el dominio de coeficientes, sin usar robustly_feasible ni asignar probabilidad al dominio.",
+      "CLASIFICACION_COBERTURA_V2_480.csv;../evidencia/main_contenido_vigente.json",
+      "No se reporta HOLDS ni NOT_TESTABLE como sustituto de una regla retirada. El verdict vigente queda vacío con motivo obligatorio; la regla histórica permanece trazable y no se certifica en V2."
+    ]
+  ],
+  "origin_sha256": "d07e0c3bae44081453be0cde377bc9dcf7d25514c275a094546e8905a2808d37"
+}

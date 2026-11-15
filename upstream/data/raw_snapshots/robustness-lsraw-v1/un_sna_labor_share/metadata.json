@@ -1,0 +1,85 @@
+{
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "denominator": "GDP at market prices (B.1*g), group_code 101; never Table 4.1 balancing item",
+  "download_date": "2026-07-10T17:54:23.063341+00:00",
+  "download_file_hashes": {
+    "UNdata_SNA_CHL_group_101.zip": "dbfa02aa528bfa88e0453d647bfa7172512a74133d0fe26697001de9a264fda2",
+    "UNdata_SNA_CHL_group_401.zip": "257b05100536aefa5f7bef7aecfc5d32ae8b8d00dcfaee8c6051a396dded6a71",
+    "UNdata_SNA_COL_group_101.zip": "8852321b95ab0dcf3cdea6222940c64d71722872171b782e7a077b67ecc3acc2",
+    "UNdata_SNA_COL_group_401.zip": "0c5bec95d9472f2a8f348d628bbd992c49521c97589baacd31e7501a5b42e12d",
+    "UNdata_SNA_MEX_group_101.zip": "4265c7320add93711a05a21d8f0bde9ddbf581e5b6dc463f4d85099fe6a6e60e",
+    "UNdata_SNA_MEX_group_401.zip": "0e66c6489615f897f7de0d424702db039161f96212141f42b5e714da708c6eb8",
+    "UNdata_SNA_PER_group_101.zip": "70c5a9bbe69e9aa328835c4515eb30ef927618a8d8424a4c70ea14fa0ea9bf63",
+    "UNdata_SNA_PER_group_401.zip": "7ae1df712202fc4bc0d529976ccde65694ba4026f3f879efd14a02d30df0aac9",
+    "un_sna_labor_share_raw.parquet": "619656bc9d1989fa12f76ec96bd236fa36d280b3e90c1d1b6e535f9b5a2c2ada"
+  },
+  "latest_values": [
+    {
+      "carried_forward_to_2024": true,
+      "compensation_of_employees_lcu": 114740251000000.0,
+      "country_id": "CHL",
+      "gdp_market_prices_lcu": 281857486452000.0,
+      "labor_share_raw": 0.4070860506291364,
+      "national_cross_check_note": "BCCh 2024: 0.3948",
+      "source_year": 2023,
+      "target_year": 2024
+    },
+    {
+      "carried_forward_to_2024": false,
+      "compensation_of_employees_lcu": 577674000000000.0,
+      "country_id": "COL",
+      "gdp_market_prices_lcu": 1705322382923770.0,
+      "labor_share_raw": 0.3387476794912993,
+      "national_cross_check_note": "DANE 2024p: 0.3369",
+      "source_year": 2024,
+      "target_year": 2024
+    },
+    {
+      "carried_forward_to_2024": true,
+      "compensation_of_employees_lcu": 9076368000000.0,
+      "country_id": "MEX",
+      "gdp_market_prices_lcu": 31855566301000.0,
+      "labor_share_raw": 0.2849225128895316,
+      "national_cross_check_note": "INEGI 2024: 0.3004",
+      "source_year": 2023,
+      "target_year": 2024
+    },
+    {
+      "carried_forward_to_2024": true,
+      "compensation_of_employees_lcu": 283189000000.0,
+      "country_id": "PER",
+      "gdp_market_prices_lcu": 999447000000.0,
+      "labor_share_raw": 0.28334569016666217,
+      "national_cross_check_note": "INEI 2025E: 0.2825",
+      "source_year": 2023,
+      "target_year": 2024
+    }
+  ],
+  "method": "direct_zip_csv",
+  "notes": "New input series for the declared LS raw-vs-adjusted robustness extension. It is isolated from every official baseline snapshot.",
+  "numerator": "Compensation of employees (D.1), Table 4.1 group_code 401, generation of income account - Uses",
+  "query_or_endpoint": [
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A604%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A604%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A152%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A152%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A170%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A170%3Bgroup_code%3A101&DataMartId=SNA&Format=csv",
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A484%3Bgroup_code%3A401&DataMartId=SNA&Format=csv",
+    "https://data.un.org/Handlers/DownloadHandler.ashx?DataFilter=country_code%3A484%3Bgroup_code%3A101&DataMartId=SNA&Format=csv"
+  ],
+  "raw_file_hash": "619656bc9d1989fa12f76ec96bd236fa36d280b3e90c1d1b6e535f9b5a2c2ada",
+  "script_name": "16_download_un_sna_labor_share.py",
+  "script_version": "1.0.0-post-baseline-extension",
+  "series_filter": "SNA System=2008; Series=1000; Western calendar year",
+  "snapshot_id": "robustness-lsraw-v1",
+  "source_id": "UN_SNA",
+  "source_url": "https://data.un.org/Data.aspx?d=SNA&f=group_code%3A401",
+  "status": "ok",
+  "year_filter": "full matched SNA2008 series; latest common CoE/GDP year used at t0=2024"
+}

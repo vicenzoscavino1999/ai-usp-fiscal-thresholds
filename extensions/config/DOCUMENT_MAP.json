@@ -1,0 +1,28 @@
+[
+  {
+    "tag": "main",
+    "original": "revision_jpm_v2/deposito_definitivo_v2/documentos/MANUSCRITO_JPM_V2.docx",
+    "packaged": "revision_jpm_v2/paso_07l/evidencia/MANUSCRITO_JPM_V2.docx",
+    "sha256": "b0a1bc93ed9b6191dec648c9ce02640d191b97fc78142c6a671028ecc3865cd2",
+    "body_xml_sha256": "a6f253ad7f43dabfba16ca7a3530b72b991447f62ce967fc982fcb18bfd85bc8",
+    "paragraphs": 148,
+    "tables": 6,
+    "equations": 17,
+    "integration_status": "INTEGRATED_LOCAL_CANDIDATE",
+    "previous_packaged_sha256": "8d1da965cec51b1dfcd7584801f7e52fa1b8be8054eb2d7f3bf464f56df192bb",
+    "path_note": "The technical path is retained for runner compatibility; content is the current editorial version."
+  },
+  {
+    "tag": "supp",
+    "original": "revision_jpm_v2/deposito_definitivo_v2/documentos/SUPLEMENTO_TECNICO_JPM_V2.docx",
+    "packaged": "revision_jpm_v2/paso_07l/evidencia/SUPLEMENTO_TECNICO_JPM_V2.docx",
+    "sha256": "f656d78da422d27e3fc8612920b824c12460ec1903b32129ee6bd85c458ec13b",
+    "body_xml_sha256": "2264242ea76595b23000f634789dd8c84553496e52f2000c58d4bea9726b8146",
+    "paragraphs": 79,
+    "tables": 7,
+    "equations": 8,
+    "integration_status": "INTEGRATED_LOCAL_CANDIDATE",
+    "previous_packaged_sha256": "7dfaab772cff7037892892d5bb331d378daad30552f93788d5a5a99f29c94154",
+    "path_note": "The technical path is retained for runner compatibility; content is the current editorial version."
+  }
+]

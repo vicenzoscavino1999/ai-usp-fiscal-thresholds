@@ -1,0 +1,143 @@
+[
+  {
+    "original": "revision_jpm_v2/convergencia_diagnosticos_v2/scripts/convergencia_v2.py",
+    "original_sha256": "9c5f44d586325da66603ea7e538298b3936bf79b6d675a639dc910c238327f8f",
+    "adapted": "extensions/convergence/scripts/convergencia_v2.py",
+    "adapted_sha256": "7f6dfcba435a05527bf202f2986ff801ecdaae751d03dab0112a5ac53c152f83",
+    "changes": [
+      {
+        "before": "B=Path(os.environ.get('V2_ROOT','/app'))/'revision_jpm_v2'",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2'"
+      },
+      {
+        "before": "Path(os.environ.get('V2_RESULTS','/results'))",
+        "after": "ROOT/'extensions/convergence/resultados'"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/convergencia_diagnosticos_v2/scripts/diagnosticos_v2.py",
+    "original_sha256": "b7557925e2a6e4aa9fee33720409b80ea9985bfcd4e230cef533fd0035b0d79e",
+    "adapted": "extensions/convergence/scripts/diagnosticos_v2.py",
+    "adapted_sha256": "5f1ab0f74abd5cbc26497de7b2f15cde4988b36ae4d90953700fee311c9dad0f",
+    "changes": [
+      {
+        "before": "B=Path(os.environ.get('V2_ROOT','/app'))/'revision_jpm_v2'",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2'"
+      },
+      {
+        "before": "Path(os.environ.get('V2_RESULTS','/results'))",
+        "after": "ROOT/'extensions/convergence/resultados'"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/convergencia_diagnosticos_v2/scripts/verificar_convergencia_v2.py",
+    "original_sha256": "2d4c719d469d607220e1001f97abf16738d9252afd28d9c5e970e0b5f4e0a671",
+    "adapted": "extensions/convergence/scripts/verificar_convergencia_v2.py",
+    "adapted_sha256": "32cbd4bf862a86b9d885dde044ede63705606dd24b8e45e97c4e9d85fcecd097",
+    "changes": [
+      {
+        "before": "B=Path('/app/revision_jpm_v2');O=Path('/results')",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2';O=ROOT/'extensions/convergence/resultados'"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/convergencia_emparejada_v2/scripts/ejecutar_emparejados_v2.py",
+    "original_sha256": "91e1a04d6dba485109d84436aba57639a22b6095ad947aa30f463d673be00fe9",
+    "adapted": "extensions/paired/scripts/ejecutar_emparejados_v2.py",
+    "adapted_sha256": "05ce4a8a84b0d4eb0a610d84a1456b302f4721a5c6c8ce053a4cc40adc844652",
+    "changes": [
+      {
+        "before": "B=Path('/app/revision_jpm_v2');O=Path('/results')",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2';O=ROOT/'extensions/paired/resultados'"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/convergencia_emparejada_v2/scripts/verificar_emparejados_v2.py",
+    "original_sha256": "90f021607058e52a15d36e76dcccbe4c4481484f44b757659ea1832fbc5a0530",
+    "adapted": "extensions/paired/scripts/verificar_emparejados_v2.py",
+    "adapted_sha256": "02ee87fafa606a82fd6bdb57861a9f6218b86b7ffa4ae3651350dfa3b10d7e24",
+    "changes": [
+      {
+        "before": "B=Path('/app/revision_jpm_v2');O=Path('/results')",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2';O=ROOT/'extensions/paired/resultados'"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/estres_dependencia_v2/scripts/ejecutar_estres_dependencia_v2.py",
+    "original_sha256": "07ec2bf5d82fe6c0c084e53fa53ee00b9fcc4acb709df5857797d27b400ef758",
+    "adapted": "extensions/stress/scripts/ejecutar_estres_dependencia_v2.py",
+    "adapted_sha256": "7c7994ef8a2c4ada3bb72c0e842cbcd68fac289de6bc89f62b3990dce7f79de4",
+    "changes": [
+      {
+        "before": "B=Path('/app/revision_jpm_v2');O=Path('/results');PRIOR=Path('/prior')",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2';O=ROOT/'extensions/stress/resultados';PRIOR=ROOT/'extensions/convergence'"
+      },
+      {
+        "before": "Path('/evidence/CONTRATO_ALCANCE_CONGELADO.json')",
+        "after": "(ROOT/'extensions/config/CONTRATO_ALCANCE_V2.json')"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/estres_dependencia_v2/scripts/verificar_estres_dependencia_v2.py",
+    "original_sha256": "2cc0461f1fc53abd5ef937a42aaeabf86862a5a31a4eb17fe95e8e971bfcb404",
+    "adapted": "extensions/stress/scripts/verificar_estres_dependencia_v2.py",
+    "adapted_sha256": "62c49d62b61c4e5d97109bbdf4dea7db4efdc1db0c16d70bc30bd8d37016de6d",
+    "changes": [
+      {
+        "before": "B=Path('/app/revision_jpm_v2');O=Path('/results')",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2';O=ROOT/'extensions/stress/resultados'"
+      },
+      {
+        "before": "Path('/evidence/CONTRATO_ALCANCE_CONGELADO.json')",
+        "after": "(ROOT/'extensions/config/CONTRATO_ALCANCE_V2.json')"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/estres_dependencia_v2/scripts/resumir_estres_v2.py",
+    "original_sha256": "12f9f6defe8434d6f2eeeb7c6c4a3f8dd30cfc763d9f4cd2c49fc0e4cb2ee400",
+    "adapted": "extensions/stress/scripts/resumir_estres_v2.py",
+    "adapted_sha256": "efd9bcbb46e288d4acc13408fd1483296383c10d01089c4fcce9f0f4117e75d9",
+    "changes": [
+      {
+        "before": "R=Path(r'D:\\Copia_Laptop_D\\paper de economia\\revision_jpm_v2');T=R/'estres_dependencia_v2';O=T/'resultados'",
+        "after": "ROOT=Path(__file__).resolve().parents[3];R=ROOT/'revision_jpm_v2';T=ROOT/'extensions/stress';O=T/'resultados'"
+      },
+      {
+        "before": "shutil.copy2(__file__,T/'scripts'/Path(__file__).name)\n",
+        "after": ""
+      },
+      {
+        "before": "R/f'convergencia_diagnosticos_v2/resultados/",
+        "after": "ROOT/f'extensions/convergence/resultados/"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  },
+  {
+    "original": "revision_jpm_v2/alcance_reproduccion_v2/scripts/derivar_alcance_v2.py",
+    "original_sha256": "c9ec289a89b82a0f06a215bfffcb71aa22ca88fd5c426c57e23c8cbe93e4ee00",
+    "adapted": "extensions/scope/scripts/derivar_alcance_v2.py",
+    "adapted_sha256": "a7bfd1149c215e6be7168844dc6df403a650d348cc458557ed93692267e9c687",
+    "changes": [
+      {
+        "before": "B=Path('/app/revision_jpm_v2');O=Path('/results')",
+        "after": "ROOT=Path(__file__).resolve().parents[3];B=ROOT/'revision_jpm_v2';O=ROOT/'extensions/scope/resultados'"
+      }
+    ],
+    "purpose": "Portable paths only, except removal of host self-copy in summarizer"
+  }
+]

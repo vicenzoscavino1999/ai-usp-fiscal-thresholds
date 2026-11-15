@@ -1,0 +1,7 @@
+country_id,survey_year,validation_object,recalculated_exact,official_exact,recalculated_percent,official_percent,assert_status,formula
+CHL,2024,FGT0_national_methodology,0.17288766847452391,0.172887668474524,17.28876684745239,17.2887668474524,PASS,"weighted mean[yae < lp], weight=expr on valid persons"
+CHL,2024,FGT1_national_methodology,0.054187491847885856,0.0541874918475942,5.418749184788585,5.41874918475942,PASS,"weighted mean[max(0,(lp-yae)/lp)], weight=expr"
+CHL,2024,pobreza_classification,218260.0,218260.0,100.0,100.0,PASS,"pobreza in {1,2} equals yae < lp: 218260/218260"
+CHL,2024,expr_constant_within_household,0.0,0.0,,,PASS,number of folios with more than one expr value
+CHL,2024,person_expansion_identity,20119214.0,20119214.0,,,PASS,sum_households(expr*numper) = sum_valid_person_rows(expr)
+CHL,2024,ypchtotcor_rounding,0.5,0.5,,,PASS,max abs(ytotcorh/numper - ypchtotcor) <= CLP 0.50 monthly

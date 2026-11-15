@@ -1,0 +1,33 @@
+{
+  "source_id": "SEDLAC",
+  "download_date": "2026-07-08T22:13:47.900266+00:00",
+  "source_url": "https://www.cedlas.econo.unlp.edu.ar/wp/en/estadisticas/sedlac/",
+  "query_or_endpoint": "manual download: CEDLAS SEDLAC statistics Excel files",
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "all available survey years",
+  "raw_file_hash": null,
+  "script_name": "03_download_sedlac.py",
+  "script_version": "0.1.1-stage1",
+  "status": "manual_pending",
+  "manual_registration": {
+    "registration_script": "12_register_manual_sources.py",
+    "expected_fields": [
+      "country_id",
+      "survey_year",
+      "welfare_concept",
+      "poverty_headcount",
+      "poverty_gap",
+      "gini",
+      "income_deciles",
+      "informality_rate"
+    ],
+    "hash_status": "pending_manual_file",
+    "instructions": "Download SEDLAC/CEDLAS Excel statistics from the CEDLAS SEDLAC site, store the original file under the manual-source intake area, compute sha256, and update metadata/manual_source_registry.yml before any non-pilot run that uses SEDLAC values."
+  },
+  "notes": "SEDLAC/CEDLAS has no public API for this pull; registered as manual_pending, not as a pipeline failure."
+}

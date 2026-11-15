@@ -1,0 +1,80 @@
+{
+  "archive_listing": [
+    {
+      "name": "966-Modulo34/",
+      "uncompressed_bytes": 0
+    },
+    {
+      "name": "966-Modulo34/ConstVarGasto-Metodologia actualizada.zip",
+      "uncompressed_bytes": 24486
+    },
+    {
+      "name": "966-Modulo34/DefinicionValoresMonetariosBasedeDatos.pdf",
+      "uncompressed_bytes": 254671
+    },
+    {
+      "name": "966-Modulo34/Diccionario2024.pdf",
+      "uncompressed_bytes": 3940690
+    },
+    {
+      "name": "966-Modulo34/Estratificacion del Marco.pdf",
+      "uncompressed_bytes": 207192
+    },
+    {
+      "name": "966-Modulo34/FichaTecnica.pdf",
+      "uncompressed_bytes": 487444
+    },
+    {
+      "name": "966-Modulo34/sumaria-2024-12g.dta",
+      "uncompressed_bytes": 29991565
+    },
+    {
+      "name": "966-Modulo34/Sumaria-2024-12g.pdf",
+      "uncompressed_bytes": 2727028
+    },
+    {
+      "name": "966-Modulo34/sumaria-2024.dta",
+      "uncompressed_bytes": 21219121
+    },
+    {
+      "name": "966-Modulo34/Sumaria-2024.pdf",
+      "uncompressed_bytes": 2142849
+    }
+  ],
+  "carried_forward_to_2024": false,
+  "country_filter": [
+    "PER"
+  ],
+  "download_date": "2026-07-10T19:22:40.640597+00:00",
+  "file_hashes": {
+    "966-Modulo34.zip": "5ee98dad87810d42d7e252401d8366feac2fbce151c7af986d9644a40952567c",
+    "enaho_sumaria_2024_required_variables.parquet": "762717615f316603f4a2ccb155b4f29ce2be68b2f723690fa679737a9bde785c",
+    "sumaria-2024.dta": "491066f6049b0debc542739ea379e66e8eac8912162e31c5628114aae3c4592d"
+  },
+  "method": "direct_zip_stata_anonymous",
+  "module": 34,
+  "notes": "New ENAHO 2024 Sumaria input for a labelled post-baseline GMI microdata robustness extension. It is isolated from every official baseline snapshot.",
+  "portal_url": "https://proyectos.inei.gob.pe/microdatos/",
+  "query_or_endpoint": "https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip",
+  "raw_file_hash": "5ee98dad87810d42d7e252401d8366feac2fbce151c7af986d9644a40952567c",
+  "record_count": 33691,
+  "required_variables": [
+    "GASHOG2D",
+    "INGHOG2D",
+    "MIEPERHO",
+    "FACTOR07",
+    "POBREZA",
+    "LINEA",
+    "LINPE"
+  ],
+  "script_name": "17_download_enaho_sumaria.py",
+  "script_version": "1.0.0-post-baseline-extension",
+  "selected_archive_member": "966-Modulo34/sumaria-2024.dta",
+  "snapshot_id": "robustness-gmimicro-per-v1",
+  "source_id": "INEI_ENAHO_SUMARIA",
+  "source_url": "https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip",
+  "status": "ok",
+  "survey_code": 966,
+  "survey_year": 2024,
+  "target_year": 2024
+}

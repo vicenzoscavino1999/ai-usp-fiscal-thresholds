@@ -1,0 +1,100 @@
+{
+  "source_id": "IMF_WEO_GFS",
+  "download_date": "2026-07-08T22:20:30.718335+00:00",
+  "source_url": "https://www.imf.org/external/datamapper/api/v1",
+  "script_name": "06_download_imf_weo_gfs.py",
+  "script_version": "0.1.2-stage1",
+  "status": "ok",
+  "query_or_endpoint": [
+    "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/PER",
+    "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/CHL",
+    "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/COL",
+    "https://www.imf.org/external/datamapper/api/v1/G_XWDG_G01_GDP_PT/MEX",
+    "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/PER",
+    "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/CHL",
+    "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/COL",
+    "https://www.imf.org/external/datamapper/api/v1/GGXONLB_G01_GDP_PT/MEX",
+    "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/PER",
+    "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/CHL",
+    "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/COL",
+    "https://www.imf.org/external/datamapper/api/v1/GGXCNL_G01_GDP_PT/MEX",
+    "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/PER",
+    "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/CHL",
+    "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/COL",
+    "https://www.imf.org/external/datamapper/api/v1/GGR_G01_GDP_PT/MEX",
+    "https://www.imf.org/external/datamapper/api/v1/NGDPD/PER",
+    "https://www.imf.org/external/datamapper/api/v1/NGDPD/CHL",
+    "https://www.imf.org/external/datamapper/api/v1/NGDPD/COL",
+    "https://www.imf.org/external/datamapper/api/v1/NGDPD/MEX",
+    "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/PER",
+    "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/CHL",
+    "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/COL",
+    "https://www.imf.org/external/datamapper/api/v1/NGDP_RPCH/MEX",
+    "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/PER",
+    "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/CHL",
+    "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/COL",
+    "https://www.imf.org/external/datamapper/api/v1/PCPIPCH/MEX"
+  ],
+  "country_filter": [
+    "PER",
+    "CHL",
+    "COL",
+    "MEX"
+  ],
+  "year_filter": "all",
+  "raw_file_hash": "f5668875a25ce88fe2a1021e8ab740b7dcd20c09870f59ac3ff3a3c9c37f6089",
+  "request_headers": {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    "Referer": "https://www.imf.org/external/datamapper/"
+  },
+  "resolved_indicator_codes": {
+    "GGXWDG_NGDP": {
+      "source_code": "G_XWDG_G01_GDP_PT",
+      "name": "General government gross debt, percent of GDP",
+      "unit": "percent_of_gdp",
+      "dataset_note": "Fiscal Monitor DataMapper alias used for consistency with primary balance and revenue."
+    },
+    "GGXONLB_NGDP": {
+      "source_code": "GGXONLB_G01_GDP_PT",
+      "name": "General government primary net lending/borrowing, percent of GDP",
+      "unit": "percent_of_gdp",
+      "dataset_note": "Fiscal Monitor DataMapper alias because GGXONLB_NGDP is not exposed in the public WEO DataMapper catalog."
+    },
+    "GGXCNL_NGDP": {
+      "source_code": "GGXCNL_G01_GDP_PT",
+      "name": "General government net lending/borrowing, percent of GDP",
+      "unit": "percent_of_gdp",
+      "dataset_note": "Fiscal Monitor DataMapper alias used for consistency with primary balance."
+    },
+    "GGR_NGDP": {
+      "source_code": "GGR_G01_GDP_PT",
+      "name": "General government revenue, percent of GDP",
+      "unit": "percent_of_gdp",
+      "dataset_note": "Fiscal Monitor DataMapper alias because GGR_NGDP is not exposed in the public WEO DataMapper catalog."
+    },
+    "NGDPD": {
+      "source_code": "NGDPD",
+      "name": "Gross domestic product, current prices, U.S. dollars",
+      "unit": "current_usd",
+      "dataset_note": "WEO DataMapper."
+    },
+    "NGDP_RPCH": {
+      "source_code": "NGDP_RPCH",
+      "name": "Gross domestic product, constant prices, percent change",
+      "unit": "percent_change",
+      "dataset_note": "WEO DataMapper."
+    },
+    "PCPIPCH": {
+      "source_code": "PCPIPCH",
+      "name": "Inflation, average consumer prices, percent change",
+      "unit": "percent_change",
+      "dataset_note": "WEO DataMapper."
+    }
+  },
+  "manual_registration": {
+    "source_url": "https://www.imf.org/en/Publications/WEO/weo-database",
+    "status": "manual_contrast_optional",
+    "instructions": "If exact WEO bulk fiscal codes are required later, download the latest WEO database bulk file from IMF, store the original, compute sha256, and register it before replacing these DataMapper Fiscal Monitor aliases."
+  },
+  "notes": "IMF DataMapper API pull using browser User-Agent; response filtered explicitly to requested ISO3 countries. Fiscal Monitor DataMapper aliases are used where the requested WEO-style codes are not exposed in the public indicator catalog."
+}

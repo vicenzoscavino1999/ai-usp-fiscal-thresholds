@@ -1,0 +1,18 @@
+{
+  "country_id": "CHL",
+  "scenario_id": "stress",
+  "regime_id": "r0",
+  "policy_variant_id": "GMI:GMI_ideal_aggregate",
+  "reference_exposure": 0.11,
+  "tested_exposure": 0.035,
+  "minimum_exposure_B2_numeric": 0.03422560375280034,
+  "minimum_exposure_B2_analytic": 0.034225603752800475,
+  "required_revenue": 0.00455998514519997,
+  "required_gain": 0.033826119273183956,
+  "test_gain": 0.03460324752279583,
+  "test_revenue": 0.004664245668242521,
+  "test_margin_B2": 0.00010426052304255123,
+  "g_zero_redistribution_intercept": 2.1829583768123716e-05,
+  "zero_crossing_expectation_status": "FAIL_RETAINED",
+  "interpretation": "The stress growth shock remains large enough at low positive exposure. This is consistent with the current budget threshold, not a failure of the no-AI anchor. Zero crossings cannot be claimed for this diagnostic."
+}

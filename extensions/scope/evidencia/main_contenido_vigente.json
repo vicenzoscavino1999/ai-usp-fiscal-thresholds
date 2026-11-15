@@ -1,0 +1,1147 @@
+{
+  "source": "revision_jpm_v2/paso_07l/evidencia/MANUSCRITO_JPM_V2.docx",
+  "sha256": "b0a1bc93ed9b6191dec648c9ce02640d191b97fc78142c6a671028ecc3865cd2",
+  "paragraphs": [
+    {
+      "paragraph_index": 0,
+      "style": "Title",
+      "text": "AI revenue and social protection in four Latin American economies",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 1,
+      "style": "Subtitle",
+      "text": "Recurring cost frontiers and transition financing under alternative scenarios",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 2,
+      "style": null,
+      "text": "Vicenzo ScavinoIndependent Researcher, Lima, Peruvicenzoscavino52@gmail.com",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 3,
+      "style": null,
+      "text": "Running title: AI revenues and social protection",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 4,
+      "style": null,
+      "text": "Abstract",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 5,
+      "style": null,
+      "text": "What recurring social protection commitments could prospective AI revenues support? We construct cost frontiers for Chile, Colombia, Mexico and Peru, linking income gains, fiscal capture, benefit costs and primary-balance requirements. Moderate coverage emerges for Chile's minimum income benchmark under selected assumptions, but none of the non-stress crossings is uniform over the stated coefficient domain. Annual coverage also precedes recovery of transition financing. Elsewhere, existing fiscal requirements can absorb the prospective receipts. The framework identifies operating budgets and bridge resources that a proposal would need to substantiate before converting uncertain gains into recurrent commitments.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 6,
+      "style": null,
+      "text": "Keywords: artificial intelligence; fiscal space; social protection; Latin America.JEL: O33, H53, H24, I38, O54.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 7,
+      "style": null,
+      "text": "",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 8,
+      "style": "Heading1",
+      "text": "1 The fiscal commitment decision",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 9,
+      "style": null,
+      "text": "A finance ministry considering a recurring social benefit faces two financing decisions: the annual commitment it can sustain and the funds needed for early payments. AI gains could expand taxable income, with receipts depending on income distribution, taxation and competing fiscal obligations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 10,
+      "style": null,
+      "text": "We construct the maximum recurring implementation cost compatible with an additional benefit in Chile, Colombia, Mexico and Peru, using a harmonised 2024 fiscal anchor and 2034 endpoint. We also trace financing requirements from installation over the transition path. Five policy concepts yield six benchmarks because guaranteed minimum income (GMI) has ideal and loaded variants. Existing expenditure remains in the base budget.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 11,
+      "style": null,
+      "text": "Selected moderate scenarios accommodate Chile's ideal GMI under illustrative capture and operating costs. Primary adjustment can absorb prospective receipts elsewhere. The annual and transition conditions identify resources needed to reassess proposals alongside their distributional and administrative merits.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 12,
+      "style": "Heading1",
+      "text": "2 Evidence on AI and social protection finance",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 13,
+      "style": null,
+      "text": "Task-based research connects automation and new tasks to productivity and factor income, while aggregate gains depend on adoption and economic structure (Acemoglu, 2025; Acemoglu and Restrepo, 2019; Filippucci et al., 2025). Fiscal-policy research considers how taxation and redistribution respond to AI (Brollo et al., 2024; Korinek and Lockwood, 2026). Employment structure and tax capacity help explain why similar income gains can produce different receipts (Jensen, 2022; Gaspar et al., 2016). Complementary investment can precede measured productivity gains, motivating attention to implementation timing (Brynjolfsson et al., 2021).",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 14,
+      "style": null,
+      "text": "Financing studies connect technological change to transfer thresholds. Nayebi relates capabilities, public capture, costs and market structure to broad transfers; Ito examines UBI financing in Japan with social-security spending adjustments (Nayebi, 2026; Ito, 2026). Retaining existing expenditure, we compare additional recurring budgets and financing during implementation.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 15,
+      "style": null,
+      "text": "Tax-benefit and behavioural microsimulations examine poverty, inequality and labour supply; wider scenarios compare basic income, job guarantees and working-time reduction (Caamal-Olvera et al., 2022; Lara and Oliver, 2026; D'Alessandro et al., 2025). Targeting research highlights information and administrative constraints (Hanna and Olken, 2018). Our frontiers supply the budget constraint for these evaluations, incorporating the primary-balance restriction from standard debt accounting (Escolano, 2010; IMF, 2016).",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 16,
+      "style": "Heading1",
+      "text": "3 From income gains to financing conditions",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 17,
+      "style": "Heading2",
+      "text": "3.1 Output and factor income",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 18,
+      "style": null,
+      "text": "Let H denote years from the anchor, φ the annual AI increment in nominal-GDP-equivalent units, and T a domestic translation factor capped at one. T compares smoothed productive-exposure and adoption scores with their frontier benchmark. The AI level gain is",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 19,
+      "style": null,
+      "text": "(1)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 20,
+      "style": null,
+      "text": "The output gain g and all annual fiscal and cost ratios use the same year's counterfactual GDP without AI as their denominator. With initial labour share ℓ and transformed share ℓ′, the income increments are",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 21,
+      "style": null,
+      "text": "(2)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 22,
+      "style": null,
+      "text": "The non-labour residual includes income beyond corporate profit (Gollin, 2002). The labour share follows , where σ is logistic, q productive adoption and p the calibrated displacement–augmentation pressure (Supplement S1). Holding q and ℓ′ fixed from year one defines the scenario path. Income can redistribute even when aggregate gain is zero.",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 23,
+      "style": "Heading2",
+      "text": "3.2 Fiscal capture and disposable income",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 24,
+      "style": null,
+      "text": "PIT, CIT and SSC denote initial personal income tax, corporate income tax and social-contribution receipts as shares of GDP. If α allocates part of PIT to capital, ordinary incremental taxes are",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 25,
+      "style": null,
+      "text": "(3)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 26,
+      "style": null,
+      "text": "The corporate composition index z measures taxable exposure relative to its central baseline. Applying CIT/(1−ℓ) to aggregate non-labour income preserves that anchor when z = 1, while PIT allocation preserves baseline receipts. These aggregate revenue yields map incremental income into receipts under the maintained composition assumptions (OECD, 2001).",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 27,
+      "style": null,
+      "text": "For channel j, the regime response is , where d changes the registered effective-rate index and ε governs erosion. The denominator normalises the initial state: d = 0 gives u = 1. These response curves are calibrated, and their initial indices remain fixed when α varies. Relative corporate exposure additionally responds to base broadening. Taxable-income responses and profit shifting motivate this behavioural channel (Saez et al., 2012; Beer et al., 2020).",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 28,
+      "style": null,
+      "text": "AI rents retain ordinary taxation within ΔN. An additional term represents effective receipts net of interactions with ordinary income taxes:",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 29,
+      "style": null,
+      "text": "(4)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 30,
+      "style": null,
+      "text": "λ sets the incremental rent share and τA the additional effective revenue coefficient. Consumption uses disposable increments after these taxes:",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 31,
+      "style": null,
+      "text": "(5)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 32,
+      "style": null,
+      "text": "kW and kN capture domestic spending out of disposable labour and non-labour income; kN jointly incorporates retention and spending. Changes may be negative. The VAT yield v equals observed VAT relative to aggregate consumption, carried to the marginal spending basket. Destination taxation includes imported consumption (OECD, 2017). Total incremental receipts and fiscal conversion are",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 33,
+      "style": null,
+      "text": "(6)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 34,
+      "style": null,
+      "text": "At fixed adoption and coefficients, . Thus  is an average ratio for g > 0, whereas . Redistribution can make B nonzero at g = 0, where M is undefined. Supplement S1 derives both terms.",
+      "math_count": 3
+    },
+    {
+      "paragraph_index": 35,
+      "style": null,
+      "text": "The channel reference links income allocation and taxable bases to receipts. Historical responses incorporate reforms and the cycle, providing a complementary comparison of revenue mappings.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 36,
+      "style": "Heading2",
+      "text": "3.3 The recurring cost frontier",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 37,
+      "style": null,
+      "text": "Let c be annual gross benefit cost and F additional recurring administration, operation and leakage, net of documented savings. Installation is a separate investment I. Basic coverage B0 requires R−F ≥ c. B1 adds a prudential margin ξ = 0.10. B2 also reserves the residual primary adjustment",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 38,
+      "style": null,
+      "text": "(7)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 39,
+      "style": null,
+      "text": "Here i is nominal interest, n nominal GDP growth, b0 the maintained debt ratio and PB0 the base primary balance. The interest rate uses interest/GDP multiplied by 1+n and divided by inherited debt/GDP. The margin is an analytical allowance. Holding this fiscal convention fixed, the main result is",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 40,
+      "style": null,
+      "text": "(8)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 41,
+      "style": null,
+      "text": "A costed proposal can be compared with this ceiling; a negative frontier leaves a B2 shortfall even at zero operating cost. The calculation prices gross additional benefits, so programme expansion also requires measuring displaced spending.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 42,
+      "style": "Heading2",
+      "text": "3.4 Transition financing and reassessment",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 43,
+      "style": null,
+      "text": "Let counterfactual GDP follow , with η = (1+i)/(1+n). For installation I0 and subsequent investments It, the incremental financing balance is",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 44,
+      "style": null,
+      "text": "(9)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 45,
+      "style": null,
+      "text": "This incremental account measures financing relative to the counterfactual: positive B requires funds and negative B records savings. Interest enters through η, and principal transactions remain outside primary expenditure. Debt service and gross refinancing needs require maturity information (Acosta-Ormaechea et al., 2025). Alongside the cash account, we report a prudential B2 account replacing ct with 1.1ct+s. It reserves resources for the benefit margin and primary adjustment as appraisal requirements beyond the programme cash flows.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 46,
+      "style": null,
+      "text": "The constant recurring cost compatible with a non-positive balance at H is",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 47,
+      "style": null,
+      "text": "(10)",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 48,
+      "style": null,
+      "text": "Receipt and payment timing makes interim funding a separate requirement (Hürcan et al., 2020). With fixed path coefficients and equal rates on assets and liabilities, peak balances and minimum initial capital measure funds whose availability programme appraisal must establish.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 49,
+      "style": null,
+      "text": "H* is the first year from 1 to 25 satisfying annual B2, with capture and demography recomputed; absence of coverage is censored. Financing recovery is separate. With Q = (1+ξ)c+F+s and A > 0, the fixed-adoption threshold is . Adoption and exposure inverses recompute the system within bounds. The additional AI-rate inverse includes the VAT loss from reduced disposable income. Supplement S1 states the zero-gain interpretation.",
+      "math_count": 1
+    },
+    {
+      "paragraph_index": 50,
+      "style": "Heading1",
+      "text": "4 Data and empirical assessment",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 51,
+      "style": "Heading2",
+      "text": "4.1 Data sources and calibration rationale",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 52,
+      "style": null,
+      "text": "The data combine World Development Indicators, OECD revenue statistics and IMF fiscal inputs; UNU-WIDER's Government Revenue Dataset supplies historical comparisons. Poverty costs use PIP and demography uses WPP (World Bank, 2026b; OECD et al., 2025; UNU-WIDER, 2025; World Bank, 2026a; United Nations, 2024). Fiscal concepts are harmonised to general government within country and anchored in 2024. PWT labour shares for 2019 are carried forward (Feenstra et al., 2015, 2023).",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 53,
+      "style": null,
+      "text": "Translation combines preparedness, digital-access and exposure inputs (IMF, 2024; ITU, 2026; Ookla, 2024; World Bank and ILO, 2024). Productive exposure uses the shared regional calibration of 0.11, with support 0.08–0.14. Adoption targets scale a 24-country Eurostat enterprise benchmark by relative preparedness (Supplement S1). Both translation exponents equal one. These choices construct T as a scenario mapping from observed indicators to domestic output gains; its productivity response remains calibrated.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 54,
+      "style": "Caption",
+      "text": "Table 1 Selected anchors and constructed quantities",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 55,
+      "style": "Note",
+      "text": "Labour share is an observation carried forward; T and M are constructed, unitless quantities. M uses the illustrative allocation and consumption coefficients. s is the residual primary adjustment at the 2024 fiscal anchor. Sources: PWT 10.01, fiscal inputs and model calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 56,
+      "style": null,
+      "text": "We evaluate α over [0, 0.30] and kW, kN over [0, 1] as scenario supports without a confidence level. The PIT range uses a simplified allocation convention from Bachas et al. (2024), holding contemporary revenue anchors fixed; it is a sensitivity rule, not a national estimate. The spending domain confines additional consumption to available income within one period. Receipts are multiaffine, so the eight vertices give exact extrema. Uniform coverage holds throughout this domain at the other fixed inputs; possible coverage holds for at least one combination.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 57,
+      "style": null,
+      "text": "Evidence of liquidity-dependent consumption responses motivates heterogeneous spending coefficients (Fagereng et al., 2021). Our common illustrative reference sets α = 0.15, kW equal to total final consumption/GDP and kN = 0.5kW. The aggregate ratio includes government consumption; household marginal responses remain unestimated, and the one-half rule defines the non-labour scenario. Corporate composition, rent shares and regime responses also use author calibrations, with rent shares of 0.03 in the moderate case and 0.10 under stress.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 58,
+      "style": "Heading2",
+      "text": "4.2 Benefits and implementation resources",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 59,
+      "style": null,
+      "text": "Table 2 prices social pensions, a minimum transfer, GMI, partial adult basic income and full UBI. Pensions use fixed reference benefit schedules and demographic eligibility. The minimum transfer pays 25 percent of the annual poverty line to all persons, partial basic income pays 50 percent to adults, and UBI pays the full line to all persons. GMI uses the grouped poverty gap at 8.30 international dollars daily in PPP terms, freezing the distribution at the endpoint. The loaded variant multiplies benefits by 1.5; administration remains separate.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 60,
+      "style": null,
+      "text": "Following delivery-system costing, we separate recurring resources from installation (Lindert et al., 2020, p. 391). The illustrative GMI r0 reference combines administration, recurring transition expenditure and leakage of 0.250, 0.025 and 0.020 percent of GDP: F = 0.295 percent, with installation of 0.200 percent. A three-year annuity at 3 percent gives an equivalent installation cost of 0.0707 percent annually. Costs generally follow eligible population shares; Colombian pensions retain weighted eligible counts, with a population-share sensitivity. Existing-spending offsets are zero.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 61,
+      "style": "Caption",
+      "text": "Table 2 Gross annual benefit costs",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 62,
+      "style": "Note",
+      "text": "Percent of no-AI GDP at the 2034 endpoint. Operating costs F and installation I enter separately. GMI freezes the poverty distribution; its loaded variant multiplies benefits by 1.5. Colombian pension costs retain the count-based demographic convention, with a population-share sensitivity reported in the results. Sources: benefit inputs, PIP and WPP; model calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 63,
+      "style": null,
+      "text": "Administrative reports help define cost boundaries. Chile's PGU records administration near 0.13 percent of total spending; Peru's Pension 65 reports current non-benefit outlays around 5.73 percent of subsidies (DIPRES, 2023; Pension 65, 2024). Their denominators and allocation of shared services differ. Programme-specific costing is therefore needed to compare operating requirements with the frontier.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 64,
+      "style": "Heading2",
+      "text": "4.3 Validation and sensitivity design",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 65,
+      "style": null,
+      "text": "The low, moderate and disruptive-stress annual inputs are 0.050, 0.425 and 1.500 percent. A labour-productivity case starts at 0.850 percent and uses the 2019 labour share to convert it to 0.306–0.421 percent in output units; it can therefore fall below the moderate case. The AI price increment is zero. Stress is a diagnostic scenario. Regimes describe baseline rates (r0), compliance (r1), base broadening (r2), additional rent capture (r3) and combined changes (r4). The r3 comparison combines changes in ordinary bases with the additional rent term.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 66,
+      "style": null,
+      "text": "Four countries, six benefit benchmarks, four technological scenarios and five regimes give 480 cells. Baseline simulations use 5,000 bounded PERT draws per cell, sharing country–scenario–regime vectors across instruments. The coefficients α, kW and kN span the stated domain. Costs are held fixed or varied through the leakage multiplier. The matched Chile comparison uses 50,000 common gain draws. Additional calculations vary sample size, seed and institutional dependence and assess structural limiting cases (Supplement S4). Frequencies describe conditional outcomes; binomial intervals measure simulation error, not future financing probabilities.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 67,
+      "style": null,
+      "text": "Separate ENAHO and CASEN household-cost comparisons use the same PPP line as aggregate GMI (INEI, 2024; MDSF, 2024). Selected income-based estimates differ by −7.734 percent in Peru and +0.387 percent in Chile. These contrasts concern income harmonisation and expansion procedures; programme evidence must establish implementation costs, take-up and targeting.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 68,
+      "style": null,
+      "text": "Historical revenue changes divided by nominal GDP changes measure fiscal responsiveness. Chile has 24 annual differences over 2001–2024, including negative changes. Supplement S3 combines joint fiscal vectors with costs, installation, replacement and fixed coefficient paths in a diagnostic range without assigned probabilities.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 69,
+      "style": "Heading1",
+      "text": "5 Results and the constraints they reveal",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 70,
+      "style": "Heading2",
+      "text": "5.1 Annual budgets and the primary adjustment",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 71,
+      "style": null,
+      "text": "The illustrative reference gives five basic-coverage crossings among 360 non-stress cells; four meet B2: Chile's ideal GMI under moderate r1, r2 and r4, and the labour-productivity case under r4. None is uniform over the coefficient domain; 18 non-stress cells permit B2 for some combinations. Under stress, 24 cells pass B0, 23 pass B1 and ten pass B2 in the reference. Those ten are uniform within the domain, and twelve are possible.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 72,
+      "style": null,
+      "text": "For Chile's ideal GMI under moderate r0, the annual frontier is 0.2539 percent of GDP, below assumed recurring costs of 0.295 percent. Under r4 it reaches 0.3588 percent, above the cost scenario of 0.285 percent. At α = 0.15 and kN = 0.5kW, r4 requires kW ≥ 0.4824; the illustrative value is 0.7337. This spending threshold and the cost frontier define joint conditions for a commitment at the other reference inputs (Supplement S1).",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 73,
+      "style": "Caption",
+      "text": "Table 3 Annual recurring cost frontiers under B2",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 74,
+      "style": "Note",
+      "text": "Percent of no-AI GDP at year 10. GMI is the ideal benchmark. F max = R − 1.1c − s. The reference uses α = 0.15, kW equal to the aggregate consumption/GDP proxy and kN = 0.5kW; the domain varies α over [0, 0.30] and kW, kN over [0, 1]. Negative frontiers are retained. Scenario F is an author assumption. Source: model calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 75,
+      "style": null,
+      "text": "Peru's pension under stress r4 covers benefits but leaves a B2 gap of 0.1632 percentage points of GDP after recurring costs. Its negative frontier implies a shortfall even at zero operating cost. For Colombia's pension and Mexico's ideal GMI under stress r4, the primary adjustment alone exceeds receipts. Reducing administration alone cannot resolve these budget constraints.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 76,
+      "style": "Heading2",
+      "text": "5.2 Coverage arrives before financing is recovered",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 77,
+      "style": null,
+      "text": "Chile's moderate r4 reference reaches annual B2 in year 9 and recovers the prudential financing balance in year 15 without replacement; alternative labour calibrations give recovery in years 14–15 (Supplement S1). At year ten, the remaining reference balance is 1.0300 percent of that year's no-AI GDP. A recurring cost of at most 0.1437 percent permits recovery by year ten. Avoiding positive balances through that year requires initial capital of 2.3883 percent of 2024 GDP, including installation, under the same financing terms.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 78,
+      "style": null,
+      "text": "Replacing installation every three years shifts recovery to year 16 under r4 and 20 under r0. Under a joint adverse diagnostic—interest +2 percentage points, nominal growth −2 points, recurring costs +25 percent and installation +50 percent—r4 reaches annual B2 only in year 20 and does not recover financing within 25 years. With triennial replacement, required initial capital reaches 16.1092 percent of 2024 GDP over that horizon (Supplement S3). Figure 1 compares the reference paths.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 79,
+      "style": "Caption",
+      "text": "Figure 1 Annual coverage and transition financing in Chile",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 80,
+      "style": null,
+      "text": "",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 81,
+      "style": "Note",
+      "text": "Ideal GMI, moderate scenario, illustrative capture reference. The upper panel compares the B2 recurring frontier with author cost scenarios. The lower panel includes installation, interest and the B2 reserve; positive balances require financing and negative balances are savings relative to the counterfactual. Ratios use each year’s no-AI GDP. Three-year replacement is a sensitivity assumption. Source: model calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 82,
+      "style": null,
+      "text": "Table 4 applies the conventional and full assessments to the same inputs for each r4 case. Both countries pass the annual budget test, while B2 reveals Peru's adjustment gap and the financing account exposes the delay in recovery. Adoption changes require recomputing income allocation and tax responses.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 83,
+      "style": "Caption",
+      "text": "Table 4 What the full assessment adds to an annual budget check",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 84,
+      "style": "Note",
+      "text": "Illustrative capture and recurring cost scenarios. Balances are at H = 10; positive values denote surpluses. B2 subtracts the benefit margin and primary adjustment from B0. Years run from 2024; financing includes installation and interest, without replacement. Gain thresholds hold adoption fixed. Source: model calculations.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 85,
+      "style": "Heading2",
+      "text": "5.3 Capture and fiscal conditions alter the comparison",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 86,
+      "style": "Caption",
+      "text": "Table 5 Matched annual coverage under alternative capture",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 87,
+      "style": "Note",
+      "text": "Chile, ideal GMI, moderate r0; 50,000 common gain draws, identical benefits and recurring F = 0.295 percent of no-AI GDP. B0 requires R − F ≥ c; B2 requires R − F ≥ 1.1c + s. Intervals are exact 95 percent binomial intervals for simulation error only. Historical capture measures annual revenue responsiveness, not AI receipts. Sources: model calculations and preserved OECD, IMF and GRD series.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 88,
+      "style": null,
+      "text": "On identical gains and factor-income allocations, reconciling tax-base and disposable-income conventions raises B2 frequency from 0.020 to 11.140 percent with annuitised installation; treating installation separately yields 26.438 percent (Supplement S2). Historical taxes and total revenue yield 71.990 and 79.518 percent under the same recurring budget. The comparison quantifies sensitivity to the alternative revenue mappings defined in Section 3.2.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 89,
+      "style": null,
+      "text": "With joint fiscal vectors from 2015–2024 and the 2024 debt target, Chile's moderate r4 case passes B2 in five of ten vectors and its stress r0 case in eight. Peru's pension under stress r4 passes in five. Population-share harmonisation lowers Colombian pension costs, but primary adjustment still exceeds receipts. Institutional dependence also changes conditional frequencies: stronger co-movement raises Chile's moderate r0 frequency and lowers r4's. Differences reach 6.716 percentage points across the evaluated coverage metrics relative to independence (Supplement S4).",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 90,
+      "style": "Heading1",
+      "text": "6 Implications for budget preparation",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 91,
+      "style": null,
+      "text": "Table 6 links each country's binding constraint to a budget response. An annual operating margin supports a commitment only when the transition also has financing.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 92,
+      "style": "Caption",
+      "text": "Table 6 Conditions for reassessing the country cases",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 93,
+      "style": "Note",
+      "text": "Selected cases at H = 10: Chile ideal GMI, moderate r4; Peru and Colombia pensions and Mexico ideal GMI, stress r4. pp: percentage points. Revised assumptions require recalculation. Source: model results and policy interpretation.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 94,
+      "style": null,
+      "text": "Budget offices should distinguish benefits, installation, operation, replacement and displaced spending (IMF, 2022). Implementing ministries can then compare operating needs with the frontier. For Chile, this requires translating the poverty-gap benchmark into payments and assessing exclusion and delivery risks. A shortfall calls for other revenues, revised benefits or delivery, or a phased commitment with a recalculated financing path.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 95,
+      "style": null,
+      "text": "Tax administrations should distinguish reforms, resource revenues, inflation and the cycle from receipts associated with the assessed income increment. Budget and debt offices can match those receipts with committed resources for early payments and assess adverse transition conditions. Instrument choice also requires evaluating welfare, labour supply and implementation.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 96,
+      "style": "Heading1",
+      "text": "7 Conclusion",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 97,
+      "style": null,
+      "text": "The recurring frontier identifies the operating budget compatible with prospective AI receipts and existing fiscal obligations. The transition account identifies the funding needed to sustain that commitment over time. Chile's moderate r4 case reaches annual coverage, yet fails to recover financing within 25 years under the joint adverse scenario. Negative frontiers elsewhere reveal competing fiscal claims. Budget preparation should therefore pair programme costing and revenue assessment with a funded transition path.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 98,
+      "style": "Heading1",
+      "text": "Data and code availability",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 99,
+      "style": null,
+      "text": "Code, frozen aggregate inputs and replication files are archived as version 2.0.0 (Zenodo, DOI 10.5281/zenodo.24257720). The package reconstructs the fiscal, cost-frontier, financing and sensitivity results. Its parameter register and source notices document input versions, transformations, assumptions and reuse terms. Household-cost comparisons are reconstructed separately from the original ENAHO/CASEN files, obtained from the providers and verified against recorded hashes; individual records are not redistributed. The supplement describes the reconstruction scope.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 100,
+      "style": "Heading1",
+      "text": "Acknowledgments",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 101,
+      "style": null,
+      "text": "The author thanks the public-data institutions supporting this research and his family: Luciana Franceska Scavino Alfaro, Isabel Betzabe Alfaro Ninahuanca and Luigi Stefano Scavino Montero. He also thanks Oddie for the steady company.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 102,
+      "style": "Heading1",
+      "text": "Declarations",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 103,
+      "style": null,
+      "text": "The author declares no competing financial interests or personal relationships that could have appeared to influence this work. This research received no external funding.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 104,
+      "style": null,
+      "text": "Claude (Anthropic) and Codex (OpenAI) assisted with language, document preparation, code revision and computational checks. Responsibility for reviewing the analysis, interpretations and final manuscript rests with the author.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 105,
+      "style": "Heading1",
+      "text": "References",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 106,
+      "style": "Reference",
+      "text": "Acemoglu, D. (2025) The simple macroeconomics of AI. Economic Policy 40(121): 13–58. DOI: 10.1093/epolic/eiae042.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 107,
+      "style": "Reference",
+      "text": "Acemoglu, D. and Restrepo, P. (2019) Automation and new tasks: How technology displaces and reinstates labor. Journal of Economic Perspectives 33(2): 3–30. DOI: 10.1257/jep.33.2.3.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 108,
+      "style": "Reference",
+      "text": "Acosta-Ormaechea, S., Martinez, L., and Restrepo, J. (2025) A guide and tool for projecting public gross financing needs. IMF Technical Notes and Manuals 2025/01. https://www.imf.org/-/media/files/publications/tnm/2025/english/tnmea2025001.pdf.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 109,
+      "style": "Reference",
+      "text": "Bachas, P., Fisher-Post, M.H., Jensen, A., and Zucman, G. (2024) Capital taxation, development, and globalization: Evidence from a macro-historical database. NBER Working Paper 29819, revised May 2024. DOI: 10.3386/w29819. Replication code: github.com/pierrebachas/Globalization_Factor_Taxation, commit a1aba1f98ce6e5bd5964be15a61fe772ea77f928.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 110,
+      "style": "Reference",
+      "text": "Beer, S., de Mooij, R., and Liu, L. (2020) International corporate tax avoidance: A review of the channels, magnitudes, and blind spots. Journal of Economic Surveys 34(3): 660–688. DOI: 10.1111/joes.12305.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 111,
+      "style": "Reference",
+      "text": "Brollo, F., Dabla-Norris, E., de Mooij, R., Garcia-Macia, D., Hanappi, T., Liu, L., and Nguyen, A.D.M. (2024) Broadening the gains from generative AI: The role of fiscal policies. IMF Staff Discussion Note 2024/002. DOI: 10.5089/9798400277177.006.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 112,
+      "style": "Reference",
+      "text": "Brynjolfsson, E., Rock, D., and Syverson, C. (2021) The productivity J-curve: How intangibles complement general purpose technologies. American Economic Journal: Macroeconomics 13(1): 333–372. DOI: 10.1257/mac.20180386.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 113,
+      "style": "Reference",
+      "text": "Caamal-Olvera, C.G., Huesca, L. and Llamas, L. (2022) Universal basic income: A feasible alternative to move people out of poverty in Mexico? Journal of Policy Modeling 44(5): 1077–1093. DOI: 10.1016/j.jpolmod.2022.07.005.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 114,
+      "style": "Reference",
+      "text": "D'Alessandro, S., Distefano, T., Spinato Morlin, G. and Villani, D. (2025) Exploring policy responses to labour-saving technologies: An assessment of basic income, job guarantee, and working time reduction. Journal of Policy Modeling 47(1): 49–63. DOI: 10.1016/j.jpolmod.2025.01.001.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 115,
+      "style": "Reference",
+      "text": "Direccion de Presupuestos (2023) Monitoreo y seguimiento oferta publica 2023: Pension Garantizada Universal. Chile. https://www.dipres.gob.cl/597/articles-337729_doc_pdf.pdf.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 116,
+      "style": "Reference",
+      "text": "Escolano, J. (2010) A practical guide to public debt dynamics, fiscal sustainability, and cyclical adjustment of budgetary aggregates. IMF Technical Notes and Manuals 2010/002. DOI: 10.5089/9781462396955.005.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 117,
+      "style": "Reference",
+      "text": "Fagereng, A., Holm, M.B., and Natvik, G.J. (2021) MPC heterogeneity and household balance sheets. American Economic Journal: Macroeconomics 13(4): 1–54. DOI: 10.1257/mac.20190211.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 118,
+      "style": "Reference",
+      "text": "Feenstra, R.C., Inklaar, R., and Timmer, M.P. (2015) The next generation of the Penn World Table. American Economic Review 105(10): 3150–3182. DOI: 10.1257/aer.20130954.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 119,
+      "style": "Reference",
+      "text": "[dataset] Feenstra, R.C., Inklaar, R., and Timmer, M.P. (2023) Penn World Table, Version 10.01, released 23 January 2023. DOI: 10.34894/QT5BCC.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 120,
+      "style": "Reference",
+      "text": "Filippucci, F., Gal, P., Laengle, K., and Schief, M. (2025) Macroeconomic productivity gains from artificial intelligence in G7 economies. OECD Artificial Intelligence Papers No. 41. DOI: 10.1787/a5319ab5-en.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 121,
+      "style": "Reference",
+      "text": "Gaspar, V., Jaramillo, L., and Wingender, P. (2016) Tax capacity and growth: Is there a tipping point? IMF Working Paper 16/234. DOI: 10.5089/9781475558173.001.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 122,
+      "style": "Reference",
+      "text": "Gollin, D. (2002) Getting income shares right. Journal of Political Economy 110(2): 458–474. DOI: 10.1086/338747.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 123,
+      "style": "Reference",
+      "text": "Hanna, R. and Olken, B.A. (2018) Universal basic incomes versus targeted transfers: Anti-poverty programs in developing countries. Journal of Economic Perspectives 32(4): 201–226. DOI: 10.1257/jep.32.4.201.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 124,
+      "style": "Reference",
+      "text": "Hürcan, Y., Koç, F., and Balıbek, E. (2020) How to set up a cash buffer: A practical guide to developing and implementing a cash buffer policy. IMF How to Notes 20/04. DOI: 10.5089/9781513563848.061.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 125,
+      "style": "Reference",
+      "text": "[dataset] Instituto Nacional de Estadistica e Informatica (2024) Encuesta Nacional de Hogares 2024, Modulo 34 Sumaria. https://proyectos.inei.gob.pe/iinei/srienaho/descarga/STATA/966-Modulo34.zip.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 126,
+      "style": "Reference",
+      "text": "International Monetary Fund (2016) Assessing fiscal space: An initial consistent set of considerations. IMF Policy Paper, June 23, 2016. DOI: 10.5089/9781498345583.007.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 127,
+      "style": "Reference",
+      "text": "International Monetary Fund (2022) PIMA Handbook: Public Investment Management Assessment. Washington, DC: IMF. DOI: 10.5089/9781513571829.071.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 128,
+      "style": "Reference",
+      "text": "International Monetary Fund (2024) AI Preparedness Index (AIPI). Data accessed through World Bank Data360, archived 8 July 2026. https://data360api.worldbank.org/data360/data?DATABASE_ID=IMF_AI.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 129,
+      "style": "Reference",
+      "text": "[dataset] International Telecommunication Union (2026) Population coverage, by mobile network technology. ITU DataHub, indicator collection 100095. https://datahub.itu.int/data/?e=701&i=100095&v=chart. Accessed July 8, 2026.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 130,
+      "style": "Reference",
+      "text": "Ito, S. (2026) Feasibility of Universal Basic Income (UBI) in the Age of AI: A Comprehensive Simulation with a 16-Parameter Model. SSRN Working Paper 6170447. DOI: 10.2139/ssrn.6170447.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 131,
+      "style": "Reference",
+      "text": "Jensen, A. (2022) Employment structure and the rise of the modern tax system. American Economic Review 112(1): 213–234. DOI: 10.1257/aer.20191528.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 132,
+      "style": "Reference",
+      "text": "Korinek, A. and Lockwood, L. (2026) Public finance in the age of AI: A primer. NBER Working Paper No. 34873. DOI: 10.3386/w34873.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 133,
+      "style": "Reference",
+      "text": "Lara, F. and Oliver, X. (2026) Basic income reduces poverty and inequality: Are there costs in terms of efficiency? Journal of Policy Modeling 48(1): 23–42. DOI: 10.1016/j.jpolmod.2025.06.002.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 134,
+      "style": "Reference",
+      "text": "Lindert, K., Karippacheril, T.G., Rodríguez Caillava, I., and Nishikawa Chávez, K. (eds.) (2020) Sourcebook on the Foundations of Social Protection Delivery Systems. Washington, DC: World Bank. DOI: 10.1596/978-1-4648-1577-5.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 135,
+      "style": "Reference",
+      "text": "[dataset] Ministerio de Desarrollo Social y Familia (2024) Encuesta de Caracterizacion Socioeconomica Nacional 2024. https://observatorio.ministeriodesarrollosocial.gob.cl/storage/docs/casen/2024/casen_2024.sav.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 136,
+      "style": "Reference",
+      "text": "Nayebi, A. (2026) When do AI gains become broadly shareable? A policy threshold for AI-driven automation. arXiv:2505.18687v4, revised 29 July 2026. https://arxiv.org/abs/2505.18687v4.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 137,
+      "style": "Reference",
+      "text": "OECD (2001) Tax Ratios: A Critical Survey. OECD Tax Policy Studies No. 5. DOI: 10.1787/9789264195622-en.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 138,
+      "style": "Reference",
+      "text": "OECD (2017) International VAT/GST Guidelines. OECD Publishing. DOI: 10.1787/9789264271401-en.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 139,
+      "style": "Reference",
+      "text": "OECD, ECLAC, CIAT, and IDB (2025) Revenue Statistics in Latin America and the Caribbean 2025. OECD Publishing. DOI: 10.1787/7594fbdd-en.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 140,
+      "style": "Reference",
+      "text": "[dataset] Ookla (2024) Speedtest Open Data, 2024 Q4. https://registry.opendata.aws/speedtest-global-performance/.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 141,
+      "style": "Reference",
+      "text": "Programa Nacional de Asistencia Solidaria Pension 65 (2024) Memoria anual 2024. Peru, pp. 57–58. https://cdn.www.gob.pe/uploads/document/file/8046462/6755344-memoria-anual-2024-pension-65.pdf?v=1746829376.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 142,
+      "style": "Reference",
+      "text": "Saez, E., Slemrod, J., and Giertz, S.H. (2012) The elasticity of taxable income with respect to marginal tax rates: A critical review. Journal of Economic Literature 50(1): 3–50. DOI: 10.1257/jel.50.1.3.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 143,
+      "style": "Reference",
+      "text": "[dataset] United Nations, Department of Economic and Social Affairs, Population Division (2024) World Population Prospects 2024, Standard Projections, Medium variant. https://population.un.org/wpp/.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 144,
+      "style": "Reference",
+      "text": "[dataset] UNU-WIDER (2025) UNU-WIDER Government Revenue Dataset. Version 2025. Helsinki: UNU-WIDER. DOI: 10.35188/UNU-WIDER/GRD-2025.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 145,
+      "style": "Reference",
+      "text": "[dataset] World Bank (2026a) Poverty and Inequality Platform. https://api.worldbank.org/pip/v1/pip. Archived snapshot 8 July 2026.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 146,
+      "style": "Reference",
+      "text": "[dataset] World Bank (2026b) World Development Indicators. https://api.worldbank.org/v2. Archived snapshot 8 July 2026.",
+      "math_count": 0
+    },
+    {
+      "paragraph_index": 147,
+      "style": "Reference",
+      "text": "World Bank and International Labour Organization (2024) Buffer or bottleneck? Employment exposure to generative AI and the digital divide in Latin America. Prepared by P. Gmyrek, H. Winkler and S. Garganta. World Bank Policy Research Working Paper No. 10863. DOI: 10.1596/1813-9450-10863.",
+      "math_count": 0
+    }
+  ],
+  "tables": [
+    {
+      "table_index": 0,
+      "rows": [
+        [
+          "Quantity",
+          "Chile",
+          "Colombia",
+          "Mexico",
+          "Peru"
+        ],
+        [
+          "Labour share 2019",
+          "0.440",
+          "0.495",
+          "0.360",
+          "0.447"
+        ],
+        [
+          "Translation T moderate",
+          "0.714",
+          "0.597",
+          "0.649",
+          "0.599"
+        ],
+        [
+          "Reference capture M moderate r0",
+          "0.135",
+          "0.124",
+          "0.129",
+          "0.116"
+        ],
+        [
+          "Residual s percent GDP",
+          "0.000",
+          "1.938",
+          "3.602",
+          "0.829"
+        ]
+      ]
+    },
+    {
+      "table_index": 1,
+      "rows": [
+        [
+          "Instrument",
+          "Chile",
+          "Colombia",
+          "Mexico",
+          "Peru"
+        ],
+        [
+          "Social pension",
+          "3.10",
+          "0.90",
+          "1.60",
+          "0.56"
+        ],
+        [
+          "Minimum transfer",
+          "2.90",
+          "4.75",
+          "3.95",
+          "5.34"
+        ],
+        [
+          "GMI ideal",
+          "0.15",
+          "2.99",
+          "1.01",
+          "2.79"
+        ],
+        [
+          "GMI loaded",
+          "0.22",
+          "4.48",
+          "1.52",
+          "4.18"
+        ],
+        [
+          "Partial basic income",
+          "4.85",
+          "7.43",
+          "5.91",
+          "7.97"
+        ],
+        [
+          "Full UBI benchmark",
+          "11.62",
+          "18.98",
+          "15.81",
+          "21.36"
+        ]
+      ]
+    },
+    {
+      "table_index": 2,
+      "rows": [
+        [
+          "Case",
+          "Receipts R",
+          "Scenario F",
+          "F max ref",
+          "F max domain"
+        ],
+        [
+          "CHL GMI mid r0",
+          "0.415",
+          "0.295",
+          "0.254",
+          "[0.074, 0.408]"
+        ],
+        [
+          "CHL GMI mid r4",
+          "0.520",
+          "0.285",
+          "0.359",
+          "[0.142, 0.544]"
+        ],
+        [
+          "CHL GMI stress r0",
+          "1.510",
+          "0.295",
+          "1.349",
+          "[0.702, 1.919]"
+        ],
+        [
+          "PER pension stress r0",
+          "1.084",
+          "0.142",
+          "-0.358",
+          "[-0.755, -0.019]"
+        ],
+        [
+          "PER pension stress r4",
+          "1.415",
+          "0.137",
+          "-0.026",
+          "[-0.504, 0.379]"
+        ],
+        [
+          "COL pension stress r4",
+          "1.512",
+          "0.137",
+          "-1.421",
+          "[-1.859, -1.204]"
+        ],
+        [
+          "MEX GMI stress r4",
+          "1.679",
+          "0.285",
+          "-3.036",
+          "[-3.341, -2.788]"
+        ]
+      ]
+    },
+    {
+      "table_index": 3,
+      "rows": [
+        [
+          "Assessment",
+          "Chile GMImoderate r4",
+          "Peru pensionstress r4"
+        ],
+        [
+          "Conventional annual balance B0 at H = 10 (% GDP)",
+          "+0.0885",
+          "+0.7212"
+        ],
+        [
+          "Balance with margin and primary adjustment B2 (% GDP)",
+          "+0.0738",
+          "-0.1632"
+        ],
+        [
+          "First annual B2 coverage, sustained to H = 25 (year)",
+          "9",
+          "12"
+        ],
+        [
+          "First B2 financing recovery (year)",
+          "15",
+          "19"
+        ],
+        [
+          "Gain at H = 10 / gain required for B2 (%)",
+          "3.0762 / 2.6372",
+          "9.3513 / 10.4313"
+        ]
+      ]
+    },
+    {
+      "table_index": 4,
+      "rows": [
+        [
+          "Capture specification",
+          "B0 percent",
+          "B2 percent",
+          "B2 MC interval"
+        ],
+        [
+          "Channel reference",
+          "30.904",
+          "26.438",
+          "26.052–26.827"
+        ],
+        [
+          "Historical taxes",
+          "73.222",
+          "71.990",
+          "71.594–72.383"
+        ],
+        [
+          "Historical total revenue",
+          "80.228",
+          "79.518",
+          "79.162–79.871"
+        ]
+      ]
+    },
+    {
+      "table_index": 5,
+      "rows": [
+        [
+          "Country",
+          "Constraint",
+          "Condition for reconsideration"
+        ],
+        [
+          "Chile",
+          "B2 passes; transition needs funding.",
+          "Substantiate receipts and operating costs; secure bridge finance under adverse conditions."
+        ],
+        [
+          "Peru",
+          "B2 gap: 0.1632 pp of GDP.",
+          "Close the gap with durable resources or revise the benefit."
+        ],
+        [
+          "Colombia",
+          "Receipts below primary adjustment.",
+          "Confirm pension eligibility and costs; secure revenue or revise the fiscal adjustment."
+        ],
+        [
+          "Mexico",
+          "Receipts below primary adjustment.",
+          "Secure recurring resources and finance installation and early outlays."
+        ]
+      ]
+    }
+  ],
+  "tracked_insertions": 0,
+  "tracked_deletions": 0
+}

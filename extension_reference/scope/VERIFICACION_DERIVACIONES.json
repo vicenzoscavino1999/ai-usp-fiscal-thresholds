@@ -1,0 +1,380 @@
+{
+  "summary": {
+    "status": "PASS",
+    "source_policy_cells": 480,
+    "policy_variant_summaries": 24,
+    "coverage_counts": {
+      "disruptive_stress": {
+        "covers_B2_reference": 10,
+        "covers_B2_uniform": 10,
+        "covers_B2_possible": 12
+      },
+      "nonstress": {
+        "covers_B2_reference": 4,
+        "covers_B2_uniform": 0,
+        "covers_B2_possible": 18
+      }
+    },
+    "H1_named_order_pairs": 160,
+    "H1_named_order_holds": 100,
+    "H1_commitment_monotonicity_pairs": 1200,
+    "H4_gained_crossings": 4,
+    "H4_lost_crossings": 0,
+    "H3_max_abs_revenue_change": 0.0,
+    "H3_max_abs_q_change": 0.0,
+    "H3_fiscal_counterfactual_identified": false,
+    "checks": 87,
+    "new_stochastic_draws": false,
+    "model_modified": false
+  },
+  "checks": [
+    {
+      "check": "480_unique_cells",
+      "passed": true
+    },
+    {
+      "check": "stored_flags:reference",
+      "passed": true
+    },
+    {
+      "check": "stored_flags:uniform",
+      "passed": true
+    },
+    {
+      "check": "stored_flags:possible",
+      "passed": true
+    },
+    {
+      "check": "domain_encloses_reference",
+      "passed": true
+    },
+    {
+      "check": "24_country_policy_variants",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:low:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:low:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:low:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:low:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:low:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:mid:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:mid:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:mid:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:mid:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:mid:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:high:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:high:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:high:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:high:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:high:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:stress:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:stress:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:stress:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:stress:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:PER:stress:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:low:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:low:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:low:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:low:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:low:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:mid:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:mid:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:mid:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:mid:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:mid:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:high:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:high:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:high:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:high:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:high:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:stress:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:stress:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:stress:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:stress:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:CHL:stress:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:low:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:low:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:low:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:low:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:low:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:mid:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:mid:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:mid:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:mid:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:mid:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:high:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:high:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:high:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:high:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:high:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:stress:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:stress:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:stress:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:stress:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:COL:stress:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:low:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:low:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:low:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:low:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:low:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:mid:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:mid:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:mid:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:mid:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:mid:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:high:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:high:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:high:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:high:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:high:r4",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:stress:r0",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:stress:r1",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:stress:r2",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:stress:r3",
+      "passed": true
+    },
+    {
+      "check": "common_receipts:MEX:stress:r4",
+      "passed": true
+    },
+    {
+      "check": "H1_cost_identity",
+      "passed": true
+    }
+  ]
+}

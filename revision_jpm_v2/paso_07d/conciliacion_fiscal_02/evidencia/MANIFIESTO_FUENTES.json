@@ -1,0 +1,55 @@
+{
+  "github_commit": "a1aba1f98ce6e5bd5964be15a61fe772ea77f928",
+  "files": [
+    {
+      "file": "BFJZ_globalETR.csv",
+      "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/globalETR_bfjz.csv",
+      "retrieved_utc": "2026-11-14T18:53:39.485381+00:00",
+      "status": 200,
+      "saved": true,
+      "bytes": 1517515,
+      "sha256": "18fa975144e5fe8f857fe52698b0fd8d58d7aba4e0a693b19e7820eb62f35212"
+    },
+    {
+      "file": "BFJZ_pit_alpha.dta",
+      "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/Data_construction/data/misc/rhs/pit_alpha.dta",
+      "retrieved_utc": "2026-11-14T18:53:39.421008+00:00",
+      "status": 200,
+      "saved": true,
+      "bytes": 619362,
+      "sha256": "ae780ef0cf37a3d9e3f091865ff1029ddbd05b4a6c720d59ef44680a4395e61f"
+    },
+    {
+      "file": "BFJZ_README.md",
+      "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/README.md",
+      "retrieved_utc": "2026-11-14T18:53:38.570442+00:00",
+      "status": 200,
+      "saved": true,
+      "bytes": 2047,
+      "sha256": "10f299142eabb6fa7a63a1a26b3841b09b5a90e5a9a348931068f912893b610d"
+    },
+    {
+      "file": "BFJZ_LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/pierrebachas/Globalization_Factor_Taxation/a1aba1f98ce6e5bd5964be15a61fe772ea77f928/LICENSE",
+      "retrieved_utc": "2026-11-14T18:53:38.586209+00:00",
+      "status": 200,
+      "saved": true,
+      "bytes": 1070,
+      "sha256": "5f0edb1ceb98028bc7a7c4aea7bfc7249c7711b551aff5575e829fa2196b72bc"
+    },
+    {
+      "file": "IMF_AI_FISCAL_2024.pdf",
+      "url": "https://www.imf.org/-/media/files/publications/sdn/2024/english/sdnea2024002.pdf",
+      "retrieved_utc": "2026-11-14T18:53:39.389634+00:00",
+      "status": 403,
+      "saved": false
+    },
+    {
+      "file": "IMF_EXCESS_PROFIT_2022.pdf",
+      "url": "https://www.imf.org/-/media/websites/imf/imported-full-text-pdf/external/pubs/ft/wp/2022/english/wpiea2022187-print-pdf.pdf",
+      "retrieved_utc": "2026-11-14T18:53:39.388488+00:00",
+      "status": 403,
+      "saved": false
+    }
+  ]
+}
